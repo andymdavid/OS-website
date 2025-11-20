@@ -1,65 +1,94 @@
-import Image from "next/image";
+'use client';
+
+import { useEffect } from 'react';
+import { Navigation } from './components/Navigation';
+import { Hero } from './components/Hero';
+import { Section } from './components/Section';
+import { FunnelSection } from './components/FunnelSection';
+import { Testimonials } from './components/Testimonials';
+import { GoodStuff } from './components/GoodStuff';
+import { Footer } from './components/Footer';
+import { useScrollAnimation } from './hooks/useScrollAnimation';
 
 export default function Home() {
+  // Initialize scroll animations
+  useScrollAnimation();
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <>
+      <Navigation />
+      <main>
+        {/* Hero Section */}
+        <Hero />
+
+        {/* Philosophy Section 1: The Price of Intelligence */}
+        <Section
+          eyebrow="THE PRICE OF INTELLIGENCE"
+          heading="The cost of intelligence is collapsing - now we can grow faster than ever."
+          paragraphs={[
+            "Historically, the only way for a business to access 'intelligence' - its capacity to sense, decide, and act - was to hire more humans. Every marginal unit of intelligence came packaged inside a full-time salary, benefits, and management overhead. But now the price of cognition - the cost of a decision, analysis, or a line of code - is plummeting. Intelligence itself is becoming modular, fluid, and ambient.",
+            "Businesses that still scale through hiring for headcount will be outpaced by those that scale through orchestration — assembling human and artificial intelligence in new configurations at near-zero marginal cost.",
+          ]}
+          ctaButton={{
+            text: 'Explore Workshops',
+            variant: 'secondary',
+          }}
+          ctaLink={{
+            text: 'Read - The Price of Intelligence',
+            href: '#',
+          }}
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+
+        {/* Philosophy Section 2: The New Operating System */}
+        <Section
+          eyebrow="THE NEW OPERATING SYSTEM"
+          heading="The new operating system for business is built on abundant intelligence."
+          paragraphs={[
+            "Intelligence used to be scarce. That scarcity shaped how organisations looked. Departments, hierarchies and processes reflected the limitations of human cognition. At its core, a company was a system for distributing human intelligence at scale.",
+            "But now intelligence is abundant. The opportunity is to rethink how work happens when analysis, language, and code are instantly available. In this world, the advantage shifts to those who can shape intelligence — human and artificial — into systems that are adaptive, generative, and responsive.",
+            "The companies that will thrive are the ones that learn to direct this new energy — where intelligence flows where it's needed most, and smaller teams can achieve what once took entire enterprises.",
+          ]}
+          ctaButton={{
+            text: 'Explore Workshops',
+            variant: 'secondary',
+          }}
+          ctaLink={{
+            text: 'Read - Abundant Intelligence',
+            href: '#',
+          }}
+        />
+
+        {/* Philosophy Section 3: How to Take Advantage */}
+        <Section
+          eyebrow="HOW TO TAKE ADVANTAGE OF THE NEW SYSTEM"
+          heading="The organisations that thrive in the age of intelligence will design for flow."
+          paragraphs={[
+            "Business is moving into a new mode — one where intelligence flows freely. Your advantage comes from how quickly you can turn insight into action, automate the repeatable, and scale what makes you unique.",
+            "The result is leverage. Faster innovation, lower operating costs, and a business that grows smarter every time it moves — less like a factory, and more like an organism. As intelligence flows freely across teams, the gap between signal and response closes, giving leaders more visibility, faster feedback, and higher-fidelity information.",
+            "Human attention gets reallocated to what can't be automated — creativity, judgement, relationships, and taste. Designing for flow — where intelligence moves freely to create leverage — is what we help businesses do.",
+          ]}
+          ctaButton={{
+            text: 'Explore Workshops',
+            variant: 'secondary',
+          }}
+          ctaLink={{
+            text: 'Read - Designing for Flow',
+            href: '#',
+          }}
+        />
+
+        {/* Funnel Section: How We Can Help */}
+        <FunnelSection />
+
+        {/* Testimonials Section */}
+        <Testimonials />
+
+        {/* The Good Stuff Section */}
+        <GoodStuff />
       </main>
-    </div>
+
+      {/* Footer */}
+      <Footer />
+    </>
   );
 }
