@@ -72,12 +72,12 @@
 
   /* ===== LAYOUT ===== */
   /* Container Widths */
-  --container-max: 1440px;
+  --container-max: 1366px;
   --container-content: 1200px;
   --container-text: 800px;
 
   /* Container Padding */
-  --container-padding: clamp(24px, 5vw, 80px);
+  --container-padding: clamp(32px, 6vw, 120px);
 
   /* Grid */
   --grid-gap: 24px;
@@ -154,7 +154,7 @@ h1 {
 h2 {
   font-family: var(--font-heading);
   font-weight: var(--weight-bold);
-  font-size: clamp(22px, 3.5vw, 35px);
+  font-size: clamp(26px, 4.2vw, 42px);
   line-height: 0.9;
   letter-spacing: -0.05em;
   color: var(--color-text);
@@ -221,19 +221,36 @@ a:hover {
 
 .section {
   background: var(--color-background);
-  padding: clamp(64px, 10vw, 160px) 0;
+  min-height: 100vh;
+  padding: clamp(64px, 10vw, 160px) var(--container-padding);
+  position: relative;
+}
+
+.section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: var(--container-padding);
+  right: var(--container-padding);
+  height: 1px;
+  background: rgba(240, 240, 240, 0.1);
+}
+
+/* Remove divider from last section */
+.section:last-of-type::after {
+  display: none;
 }
 
 .section-container {
-  max-width: var(--container-content);
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 0 var(--container-padding);
 }
 
 .section-container-wide {
-  max-width: var(--container-max);
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 0 var(--container-padding);
 }
 
 /* ==========================================================================

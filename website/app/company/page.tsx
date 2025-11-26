@@ -1,16 +1,11 @@
 'use client';
 
-import { useEffect } from 'react';
-import { Navigation } from './components/Navigation';
-import { Hero } from './components/Hero';
-import { Section } from './components/Section';
-import { FunnelSection } from './components/FunnelSection';
-import { Testimonials } from './components/Testimonials';
-import { GoodStuff } from './components/GoodStuff';
-import { Footer } from './components/Footer';
-import { useScrollAnimation } from './hooks/useScrollAnimation';
+import { Navigation } from '../components/Navigation';
+import { Section } from '../components/Section';
+import { Footer } from '../components/Footer';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
-export default function Home() {
+export default function Company() {
   // Initialize scroll animations
   useScrollAnimation();
 
@@ -18,9 +13,6 @@ export default function Home() {
     <>
       <Navigation />
       <main>
-        {/* Hero Section */}
-        <Hero />
-
         {/* Philosophy Section 1: The Price of Intelligence */}
         <Section
           eyebrow="THE PRICE OF INTELLIGENCE"
@@ -76,15 +68,6 @@ export default function Home() {
             href: '#',
           }}
         />
-
-        {/* Funnel Section: How We Can Help */}
-        <FunnelSection />
-
-        {/* Testimonials Section */}
-        <Testimonials />
-
-        {/* The Good Stuff Section */}
-        <GoodStuff />
       </main>
 
       {/* Footer */}

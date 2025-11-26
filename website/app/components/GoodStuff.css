@@ -2,26 +2,44 @@
 
 .good-stuff-section {
   background: var(--color-background);
+  padding-left: var(--container-padding) !important;
+  padding-right: var(--container-padding) !important;
+}
+
+/* Pill-style label */
+.good-stuff-pill {
+  display: inline-block;
+  padding: 8px 16px;
+  background: rgba(240, 240, 240, 0.1);
+  border: 1px solid rgba(240, 240, 240, 0.2);
+  border-radius: 4px;
+  font-family: var(--font-eyebrow);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  margin-bottom: 24px;
 }
 
 .good-stuff-header {
-  text-align: center;
   max-width: 800px;
-  margin: 0 auto 64px;
+  margin: 0 0 64px 0;
 }
 
-.good-stuff-header h2 {
-  margin-bottom: 16px;
-}
-
-.good-stuff-header p {
-  margin: 0 auto 32px;
-  line-height: 1.6;
+.good-stuff-header .section-heading {
+  margin-bottom: 32px;
+  max-width: 960px;
+  /* Override default h3 styles to use heading font */
+  font-family: var(--font-heading);
+  font-weight: var(--weight-bold);
+  font-size: clamp(18px, 2.8vw, 28px);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  text-transform: none;
 }
 
 .good-stuff-cta {
   display: flex;
-  justify-content: center;
   gap: 16px;
   flex-wrap: wrap;
 }

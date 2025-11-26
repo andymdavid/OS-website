@@ -1,0 +1,185 @@
+/* Funnel Section Styles */
+
+.funnel-section {
+  background: var(--color-background);
+  padding-left: var(--container-padding) !important;
+  padding-right: var(--container-padding) !important;
+  padding-bottom: clamp(32px, 5vw, 64px) !important;
+}
+
+/* Pill-style label */
+.funnel-pill {
+  display: inline-block;
+  padding: 8px 16px;
+  background: rgba(240, 240, 240, 0.1);
+  border: 1px solid rgba(240, 240, 240, 0.2);
+  border-radius: 4px;
+  font-family: var(--font-eyebrow);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  margin-bottom: 24px;
+}
+
+/* Adjusted spacing for title and intro */
+.funnel-section .section-heading {
+  margin-bottom: 20px;
+  max-width: 800px;
+}
+
+.funnel-intro {
+  max-width: 800px;
+  margin-bottom: 48px;
+  line-height: 1.6;
+}
+
+/* Card grid layout */
+.funnel-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+  margin-bottom: 0;
+}
+
+.funnel-card {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  background: rgba(240, 240, 240, 0.05);
+  cursor: pointer;
+  transition: all var(--duration-base) var(--ease-out);
+  aspect-ratio: 1 / 1;
+}
+
+.funnel-card:hover {
+  transform: translateY(-4px);
+}
+
+.funnel-card-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.funnel-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-slow) var(--ease-out);
+}
+
+.funnel-card:hover .funnel-card-image img {
+  transform: scale(1.05);
+}
+
+.funnel-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 32px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0) 30%,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 0, 0, 0.7) 90%,
+    rgba(0, 0, 0, 0.85) 100%
+  );
+}
+
+.funnel-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.funnel-card-category,
+.funnel-card-date {
+  font-family: var(--font-eyebrow);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  opacity: 0.9;
+}
+
+.funnel-card-footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.funnel-card h4 {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: var(--weight-bold);
+  color: var(--color-text);
+  line-height: 1.2;
+  flex: 1;
+}
+
+.funnel-card-button {
+  flex-shrink: 0;
+  padding: 12px 24px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(240, 240, 240, 0.3);
+  border-radius: 4px;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: all var(--duration-base) var(--ease-out);
+  white-space: nowrap;
+}
+
+.funnel-card-button:hover {
+  background: rgba(0, 0, 0, 0.7);
+  border-color: rgba(240, 240, 240, 0.5);
+}
+
+/* Tablet: 2 columns and button moves below title */
+@media (max-width: 1024px) {
+  .funnel-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .funnel-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .funnel-card h4 {
+    font-size: 24px;
+  }
+}
+
+/* Mobile: Stack vertically */
+@media (max-width: 768px) {
+  .funnel-cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .funnel-card-overlay {
+    padding: 24px;
+  }
+
+  .funnel-card h4 {
+    font-size: 20px;
+  }
+
+  .funnel-card-button {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}

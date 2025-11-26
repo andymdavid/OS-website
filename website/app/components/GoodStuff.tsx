@@ -87,16 +87,12 @@ export function GoodStuff() {
       <div className="section-container-wide">
         {/* Header */}
         <div className="good-stuff-header">
-          <h3 className="section-eyebrow fade-in">THE GOOD STUFF</h3>
-          <h2 className="fade-in fade-in-stagger-1">
-            We share our experiences working with AI
-          </h2>
-          <p className="fade-in fade-in-stagger-2">
-            How it's changing the rules of work and business, the economy,
-            entrepreneurship, and human potential.
-          </p>
+          <div className="good-stuff-pill fade-in">THE GOOD STUFF</div>
+          <h3 className="section-heading fade-in fade-in-stagger-1">
+            We share our experiences working with AI and explore how it's changing the rules of work and business, the economy, entrepreneurship, and human potential.
+          </h3>
 
-          <div className="good-stuff-cta fade-in fade-in-stagger-3">
+          <div className="good-stuff-cta fade-in fade-in-stagger-2">
             <Button variant="primary">Join the Good Stuff</Button>
             <Button variant="secondary">Read More</Button>
           </div>
