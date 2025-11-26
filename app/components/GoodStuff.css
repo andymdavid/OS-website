@@ -1,0 +1,78 @@
+/* The Good Stuff Section Styles */
+
+.good-stuff-section {
+  background: var(--color-background);
+}
+
+.good-stuff-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 64px;
+}
+
+.good-stuff-header h2 {
+  margin-bottom: 16px;
+}
+
+.good-stuff-header p {
+  margin: 0 auto 32px;
+  line-height: 1.6;
+}
+
+.good-stuff-cta {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.good-stuff-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 48px;
+}
+
+.good-stuff-column-title {
+  font-family: var(--font-eyebrow);
+  font-size: clamp(12px, 1.5vw, 14px);
+  letter-spacing: 0;
+  margin-bottom: 24px;
+}
+
+.good-stuff-column ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.good-stuff-column li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.item-title {
+  font-family: var(--font-heading);
+  font-weight: var(--weight-bold);
+  font-size: 16px;
+}
+
+.item-meta {
+  font-size: 13px;
+  color: rgba(240, 240, 240, 0.7);
+}
+
+@media (max-width: 768px) {
+  .good-stuff-header {
+    margin-bottom: 48px;
+  }
+
+  .good-stuff-cta button {
+    width: 100%;
+  }
+
+  .good-stuff-columns {
+    gap: 32px;
+  }
+}
