@@ -7,21 +7,21 @@ import './FunnelSection.css';
 export function FunnelSection() {
   const cards = [
     {
-      category: 'CATEGORY',
-      date: 'PLACEHOLDER DATE',
-      title: 'Card One Title Goes Here',
+      category: '90 Minute Hands-On Session',
+      date: 'We Start Here',
+      title: "Touch, Don't Look.",
       image: '/Hero-Background.png', // Placeholder - replace with actual image
     },
     {
-      category: 'CATEGORY',
-      date: 'PLACEHOLDER DATE',
-      title: 'Card Two Title Goes Here',
+      category: 'Full-Day Workshop',
+      date: 'Where We Go Next',
+      title: 'Speedrun.',
       image: '/Hero-Background.png', // Placeholder - replace with actual image
     },
     {
-      category: 'CATEGORY',
-      date: 'PLACEHOLDER DATE',
-      title: 'Card Three Title Goes Here',
+      category: 'In-Person Community',
+      date: 'For Speedrun Graduates',
+      title: 'Marginal Gains Club.',
       image: '/Hero-Background.png', // Placeholder - replace with actual image
     },
   ];
@@ -32,16 +32,16 @@ export function FunnelSection() {
         <div className="funnel-pill fade-in">HOW WE CAN HELP</div>
 
         <h2 className="section-heading fade-in fade-in-stagger-1">
-          We're a venture studio and systems practice for the age of
-          intelligence.
+          We help you make sense of AI by getting you hands-on and building
+          things that matter to your business.
         </h2>
 
         <p className="funnel-intro fade-in fade-in-stagger-2">
-          You know your business better than anyone. You've built the systems,
-          the culture, the instincts that make it work. We're not consultants.
-          We're builders and systems thinkers. Our role isn't to tell you how to
-          run your business — it's to help you apply AI in ways that amplify
-          what you already do best.
+          You know your business better than anyone. Our job isn’t to tell you
+          how to run it — it’s to help you apply AI in practical ways that
+          support what already works. We teach you to build by building
+          together, not by presenting, and everything we do is designed to get
+          you hands-on as quickly as possible.
         </p>
 
         <div className="funnel-cards">
@@ -57,7 +57,9 @@ export function FunnelSection() {
                 </div>
                 <div className="funnel-card-footer">
                   <h4>{card.title}</h4>
-                  <button className="funnel-card-button">Learn More</button>
+                  {index === 0 && (
+                    <button className="funnel-card-button">Start Here</button>
+                  )}
                 </div>
               </div>
             </div>

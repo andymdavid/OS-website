@@ -32,11 +32,6 @@ export function GoodStuff() {
       author: 'Andy David',
       image: 'https://placehold.co/800x450/1a1a1a/F0F0F0?text=Article',
     },
-    {
-      title: 'Optimal Human Placement™',
-      author: 'Pete Winn, Andy David',
-      image: 'https://placehold.co/800x450/1a1a1a/F0F0F0?text=Article',
-    },
   ];
 
   const podcasts = [
@@ -84,22 +79,28 @@ export function GoodStuff() {
 
   return (
     <section id="media" className="section good-stuff-section">
-      <div className="section-container-wide">
-        {/* Header */}
-        <div className="good-stuff-header">
-          <div className="good-stuff-pill fade-in">THE GOOD STUFF</div>
-          <h3 className="section-heading fade-in fade-in-stagger-1">
-            We share our experiences working with AI and explore how it's changing the rules of work and business, the economy, entrepreneurship, and human potential.
-          </h3>
+      <div className="good-stuff-top">
+        <div className="good-stuff-pill fade-in">THE GOOD STUFF</div>
+        <h2 className="good-stuff-heading fade-in fade-in-stagger-1">
+          The Good Stuff is where we dig into how AI is changing the way we work,
+          build businesses, and shape the broader economy.
+        </h2>
 
-          <div className="good-stuff-cta fade-in fade-in-stagger-2">
-            <Button variant="primary">Join the Good Stuff</Button>
-            <Button variant="secondary">Read More</Button>
-          </div>
+        <p className="good-stuff-subpara fade-in fade-in-stagger-2">
+          We publish essays, stories, and conversations about the way humans and
+          AI work together — and what that means for small businesses. If you
+          want to understand how we think, this is the best place to start.
+        </p>
+
+        <div className="good-stuff-cta fade-in fade-in-stagger-3">
+          <Button variant="primary">Join the Good Stuff</Button>
+          <Button variant="secondary">Read More</Button>
         </div>
+      </div>
 
-        <div className="good-stuff-columns">
-          <div className="good-stuff-column fade-in">
+      <div className="good-stuff-bottom">
+        <div className="good-stuff-row">
+          <div className="good-stuff-column">
             <h4 className="good-stuff-column-title">Featured Articles</h4>
             <ul>
               {articles.map((article) => (
@@ -111,7 +112,7 @@ export function GoodStuff() {
             </ul>
           </div>
 
-          <div className="good-stuff-column fade-in fade-in-stagger-1">
+          <div className="good-stuff-column">
             <h4 className="good-stuff-column-title">Recent Podcasts</h4>
             <ul>
               {podcasts.map((podcast) => (
@@ -123,7 +124,7 @@ export function GoodStuff() {
             </ul>
           </div>
 
-          <div className="good-stuff-column fade-in fade-in-stagger-2">
+          <div className="good-stuff-column">
             <h4 className="good-stuff-column-title">Podcast Highlights</h4>
             <ul>
               {highlights.map((highlight) => (

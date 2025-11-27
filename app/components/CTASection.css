@@ -4,6 +4,7 @@
   background: var(--color-background);
   padding-left: var(--container-padding) !important;
   padding-right: var(--container-padding) !important;
+  padding-bottom: clamp(32px, 5vw, 64px) !important;
 }
 
 /* Pill-style label */
@@ -28,24 +29,24 @@
 
 .cta-intro {
   max-width: 800px;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
   line-height: 1.6;
 }
 
 .cta-cards {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
-  margin-bottom: 48px;
+  gap: 40px;
+  margin-top: 48px;
+  margin-bottom: 32px;
 }
 
 .cta-card {
   border-radius: 4px;
-  padding: 48px;
+  padding: 60px;
   display: flex;
   flex-direction: column;
   gap: 24px;
-  min-height: 500px;
   transition: transform var(--duration-base) var(--ease-out);
 }
 
@@ -73,14 +74,16 @@
   opacity: 0.9;
 }
 
-.cta-card h3 {
+.cta-card h3,
+.cta-card-heading {
   font-family: var(--font-heading);
   font-weight: var(--weight-bold);
-  font-size: clamp(24px, 3vw, 32px);
+  font-size: clamp(22px, 2.5vw, 28px);
   line-height: 1.2;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   color: var(--color-text);
   flex: 1;
+  text-transform: none;
 }
 
 .cta-card p {

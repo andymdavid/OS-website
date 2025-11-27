@@ -11,50 +11,56 @@ export function CTASection() {
         <div className="cta-pill fade-in">HOW TO GET STARTED</div>
 
         <h2 className="section-heading fade-in fade-in-stagger-1">
-          Here's how we begin
+          Ready to get started? Here’s where to begin.
         </h2>
 
         <p className="cta-intro fade-in fade-in-stagger-2">
-          Whether you're looking to clarify your offer, align your messaging, or build systems that scale with intelligence — we meet you where you are and help you move forward with confidence.
+          If you’re ready to start working with AI in a practical way, here’s how
+          to get started.
         </p>
 
         <div className="cta-cards">
           <div className="cta-card cta-card-dark fade-in">
             <div className="cta-card-icon">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="2"/>
-                <path d="M3 10h18M8 2v4M16 2v4" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                <rect x="9" y="4" width="6" height="12" rx="3" stroke="currentColor" strokeWidth="2"/>
+                <path d="M7 9v4" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                <path d="M17 9v4" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                <path d="M6 14c0 3.866 2.686 7 6 7s6-3.134 6-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
               </svg>
             </div>
-            <h3>Let's talk about what's not working yet</h3>
-            <p>When pricing and content finally speak the same language, results follow.</p>
-            <Button variant="primary">Book a consultation</Button>
+            <h3>
+              If you want to get a feel for how we think and work, The Good Stuff
+              is the best place to start.
+            </h3>
+            <p>
+              Sign up for The Good Stuff, and get the ideas, insights, and
+              observations we’re learning as AI changes how people work and how
+              businesses are built — delivered weekly to your inbox.
+            </p>
+            <Button variant="primary">Join The Good Stuff</Button>
           </div>
 
           <div className="cta-card cta-card-gradient fade-in fade-in-stagger-1">
             <div className="cta-card-icon">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="2"/>
-                <path d="M12 8v4l3 3" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+                <path d="M10 8l6 4-6 4V8z" fill="currentColor"/>
               </svg>
             </div>
-            <h3>Explore how we structure complex services</h3>
-            <p>From core offer to brand voice, our frameworks help you align what you do with how it's understood.</p>
-            <Button variant="primary">See our services</Button>
+            <h3 className="cta-card-heading">
+              Get started with a Touch, Don’t Look workshop — and go from zero to
+              building your own app in under an hour.
+            </h3>
+            <p>
+              In this 90-minute hands-on session, you will build a working mobile
+              app with AI, even if you’ve never built anything before. If you want
+              to try this for yourself, book your session below.
+            </p>
+            <Button variant="primary">Book Your Session</Button>
           </div>
         </div>
 
-        <div className="cta-disclaimer fade-in fade-in-stagger-2">
-          <p>
-            This area is intentionally left open for long-form content that carries legal, structural, or operational importance.
-            It exists to support the type of information that doesn't always fit into marketing headlines — but is no less essential
-            to a fully functional and trustworthy digital presence. Use this space to include service disclaimers, contractual notes,
-            policy outlines, or technical documentation that helps clarify how your company operates, what your clients can expect,
-            and what rules govern that relationship. This might include terms of service, refund policies, privacy disclaimers,
-            copyright statements, platform notices, or operational workflows — anything that would otherwise be lost in footnotes
-            or buried in PDFs.
-          </p>
-        </div>
       </div>
     </section>
   );

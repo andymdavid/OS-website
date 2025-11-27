@@ -3,8 +3,11 @@
 import { useEffect } from 'react';
 import { Navigation } from './components/Navigation';
 import { Hero } from './components/Hero';
+import { IntroSection } from './components/IntroSection';
 import { Section } from './components/Section';
 import { FunnelSection } from './components/FunnelSection';
+import { FollowUpSection } from './components/FollowUpSection';
+import { WingmanSection } from './components/WingmanSection';
 import { Testimonials } from './components/Testimonials';
 import { GoodStuff } from './components/GoodStuff';
 import { CTASection } from './components/CTASection';
@@ -22,8 +25,17 @@ export default function Home() {
         {/* Hero Section */}
         <Hero />
 
+        {/* Intro Section: The Problem */}
+        <IntroSection />
+
         {/* Funnel Section: How We Can Help */}
         <FunnelSection />
+
+        {/* Follow Up Section (mirrors The Problem) */}
+        <FollowUpSection />
+
+        {/* Follow-up Problem Section */}
+        <WingmanSection />
 
         {/* Testimonials Section */}
         <Testimonials />

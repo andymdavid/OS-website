@@ -26,6 +26,7 @@
 .funnel-section .section-heading {
   margin-bottom: 20px;
   max-width: 800px;
+  line-height: 1.1;
 }
 
 .funnel-intro {
@@ -113,9 +114,10 @@
 
 .funnel-card-footer {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
   gap: 20px;
+  min-height: 88px;
 }
 
 .funnel-card h4 {
@@ -156,6 +158,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 16px;
+    min-height: auto;
   }
 
   .funnel-card h4 {

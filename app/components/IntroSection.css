@@ -1,0 +1,79 @@
+/* Intro Section Styles */
+
+.intro-section {
+  background: var(--color-background);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(64px, 10vw, 160px) 0;
+  border-bottom: 1px solid rgba(240, 240, 240, 0.1);
+}
+
+.intro-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+  text-align: center;
+}
+
+/* Pill-style label */
+.intro-pill {
+  display: inline-block;
+  padding: 8px 16px;
+  background: rgba(240, 240, 240, 0.1);
+  border: 1px solid rgba(240, 240, 240, 0.2);
+  border-radius: 4px;
+  font-family: var(--font-eyebrow);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  margin-bottom: 32px;
+}
+
+.intro-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: var(--weight-bold);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  margin-bottom: 32px;
+  max-width: 100%;
+}
+
+.intro-text {
+  font-family: var(--font-body);
+  font-size: clamp(16px, 2vw, 18px);
+  line-height: 1.6;
+  color: rgba(240, 240, 240, 0.8);
+  margin-bottom: 24px;
+  max-width: 100%;
+}
+
+.intro-text:last-child {
+  margin-bottom: 0;
+}
+
+.intro-text-emphasis {
+  font-weight: var(--weight-bold);
+  color: var(--color-text);
+  margin-top: 32px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .intro-section {
+    min-height: auto;
+    padding: clamp(48px, 10vw, 80px) 0;
+  }
+
+  .intro-heading {
+    margin-bottom: 24px;
+  }
+
+  .intro-text {
+    font-size: 16px;
+  }
+}

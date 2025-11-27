@@ -9,13 +9,17 @@ export function Hero() {
       <div className="hero-sticky">
         <div className="hero-inner">
           <div className="hero-title-block">
+            <div className="hero-logo">
+              <img src="/Logo-Main-Icon.png" alt="Logo" />
+            </div>
             <h1>
               Artificial Intelligence is a <br />
-              new dawn for <em>human flourishing</em>
+              new dawn for <em>small business</em>
             </h1>
             <p>
-              We help SME's identify <strong>Optimal Human Placement™</strong>, where humans and AI do
-              their best work—together—so you grow faster, leaner, and smarter.
+              We help SMEs figure out how to use AI in a way that actually works for people,
+              <br />
+              so your team moves faster and your business runs smarter.
             </p>
             <div className="hero-cta">
               <Button variant="primary">Marginal Gains Club</Button>
