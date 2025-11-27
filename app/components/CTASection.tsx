@@ -49,8 +49,8 @@ export function CTASection() {
               </svg>
             </div>
             <h3 className="cta-card-heading">
-              Get started with a Touch, Don’t Look workshop — and go from zero to
-              building your own app in under an hour.
+              Get started with Touch, Don’t Look — and go from zero to building
+              your own app in under an hour.
             </h3>
             <p>
               In this 90-minute hands-on session, you will build a working mobile

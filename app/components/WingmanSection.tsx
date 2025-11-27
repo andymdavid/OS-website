@@ -29,6 +29,11 @@ export function WingmanSection() {
     },
   ];
 
+  const imageSources = {
+    primary: '/WingmanScreen2.png',
+    secondary: '/WingmanScreen1.png',
+  };
+
   return (
     <section className="wingman-approach">
       <div className="wingman-top">
@@ -76,7 +81,11 @@ export function WingmanSection() {
         </div>
 
         <div className="wingman-image-panel">
-          <img src="/Hero-Background.png" alt="Wingman Interface" />
+          <div className="wingman-image-stack">
+            <div className="wingman-image-primary">
+              <img src={imageSources.primary} alt="Wingman Interface primary" />
+            </div>
+          </div>
         </div>
       </div>
     </section>

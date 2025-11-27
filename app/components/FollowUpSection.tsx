@@ -61,7 +61,7 @@ export function FollowUpSection() {
 
       <div className="followup-bottom">
         <div className="followup-image-panel">
-          <img src="/Hero-Background.png" alt="Workshop" />
+          <img src="/OurApproach.jpeg" alt="Workshop" />
         </div>
 
         <div className="followup-steps">

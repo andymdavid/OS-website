@@ -10,19 +10,19 @@ export function FunnelSection() {
       category: '90 Minute Hands-On Session',
       date: 'We Start Here',
       title: "Touch, Don't Look.",
-      image: '/Hero-Background.png', // Placeholder - replace with actual image
+      image: '/Card1.png',
     },
     {
       category: 'Full-Day Workshop',
       date: 'Where We Go Next',
       title: 'Speedrun.',
-      image: '/Hero-Background.png', // Placeholder - replace with actual image
+      image: '/Card2.png',
     },
     {
       category: 'In-Person Community',
       date: 'For Speedrun Graduates',
       title: 'Marginal Gains Club.',
-      image: '/Hero-Background.png', // Placeholder - replace with actual image
+      image: '/Card3.png',
     },
   ];
 

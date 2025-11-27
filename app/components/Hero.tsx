@@ -12,10 +12,7 @@ export function Hero() {
             <div className="hero-logo">
               <img src="/Logo-Main-Icon.png" alt="Logo" />
             </div>
-            <h1>
-              Artificial Intelligence is a <br />
-              new dawn for <em>small business</em>
-            </h1>
+            <h1>You can just build with AI</h1>
             <p>
               We help SMEs figure out how to use AI in a way that actually works for people,
               <br />
@@ -46,7 +43,12 @@ export function Hero() {
             </svg>
           </div>
 
-          <div className="podcast-card">
+          <a
+            className="podcast-card"
+            href="https://youtu.be/7NIW9uWyiEU?si=38nxIqHMtnasSTfm"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <div className="podcast-card-content">
               <div className="podcast-episode">Episode 32 - Stewarding SME's and AI</div>
               <div className="podcast-hosts">Pete & Andy with Bill Withers & Gabe Enslin</div>
@@ -69,7 +71,7 @@ export function Hero() {
                 />
               </svg>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </section>
