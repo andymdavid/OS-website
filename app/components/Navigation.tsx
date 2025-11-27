@@ -1,10 +1,12 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import { NewsletterModal } from './NewsletterModal';
 import './Navigation.css';
 
 export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -31,7 +33,11 @@ export function Navigation() {
       <div className="nav-container">
         {/* Left Section: Logo Icon + Menu */}
         <div className="nav-left">
-          <div className="nav-logo-icon">
+          <div
+            className="nav-logo-icon"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            style={{ cursor: 'pointer' }}
+          >
             <img src="/Logo-Main-Icon.png" alt="Other Stuff Logo" width="46" height="31" />
           </div>
 
@@ -49,7 +55,11 @@ export function Navigation() {
             <a href="#media" className="nav-link">
               Media
             </a>
-            <a href="#company" className="nav-link">
+            <a
+              href="#approach"
+              className="nav-link"
+              onClick={(event) => handleScrollTo(event, 'approach')}
+            >
               Company
             </a>
           </div>
@@ -57,7 +67,13 @@ export function Navigation() {
 
         {/* Center Section: Logo Text */}
         <div className="nav-center">
-          <div className="nav-logo">OTHER STUFF</div>
+          <div
+            className="nav-logo"
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            style={{ cursor: 'pointer' }}
+          >
+            OTHER STUFF
+          </div>
         </div>
 
         {/* Right Section: Buttons */}
@@ -65,7 +81,12 @@ export function Navigation() {
           <a href="mailto:info@otherstuff.studio" className="nav-link nav-contact-link">
             Contact Us
           </a>
-          <button className="nav-join-btn">Join the Good Stuff</button>
+          <button
+            className="nav-join-btn"
+            onClick={() => setIsModalOpen(true)}
+          >
+            Join the Good Stuff
+          </button>
         </div>
 
         {/* Mobile Toggle */}
@@ -80,6 +101,9 @@ export function Navigation() {
           <span></span>
         </button>
       </div>
+
+      {/* Newsletter Modal */}
+      <NewsletterModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </nav>
   );
 }

@@ -1,6 +1,6 @@
 'use client';
 
-import { Button } from './Button';
+import { EmailCaptureForm } from './EmailCaptureForm';
 import './Hero.css';
 
 export function Hero() {
@@ -22,7 +22,11 @@ export function Hero() {
               We share what we're building every week.
             </p>
             <div className="hero-cta">
-              <Button variant="primary">Join The Good Stuff</Button>
+              <EmailCaptureForm
+                variant="inline"
+                placeholder="Enter your email"
+                buttonText="Join The Good Stuff"
+              />
             </div>
           </div>
 

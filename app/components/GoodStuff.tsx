@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Button } from './Button';
+import { EmailCaptureForm } from './EmailCaptureForm';
 import './GoodStuff.css';
 
 export function GoodStuff() {
@@ -93,8 +93,11 @@ export function GoodStuff() {
         </p>
 
         <div className="good-stuff-cta fade-in fade-in-stagger-3">
-          <Button variant="primary">Join the Good Stuff</Button>
-          <Button variant="secondary">Read More</Button>
+          <EmailCaptureForm
+            variant="inline"
+            placeholder="Enter your email"
+            buttonText="Join the Good Stuff"
+          />
         </div>
       </div>
 

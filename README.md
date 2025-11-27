@@ -1,5 +1,20 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Environment Setup
+
+This project requires environment variables for the Beehiiv newsletter integration.
+
+1. Copy `.env.example` to `.env.local`:
+```bash
+cp .env.example .env.local
+```
+
+2. Add your Beehiiv credentials to `.env.local`:
+   - `BEEHIIV_PUBLICATION_ID` - Your publication ID (starts with `pub_`)
+   - `BEEHIIV_API_KEY` - Your API key
+
+Get these values from your Beehiiv dashboard: **Settings → Integrations → API V2**
+
 ## Getting Started
 
 First, run the development server:
@@ -19,6 +34,18 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Site Configuration
+
+### Testimonials Section
+
+The Testimonials section is currently hidden (commented out in `app/page.tsx`) as testimonials are not yet available.
+
+**To enable the Testimonials section when ready:**
+1. Open `app/page.tsx`
+2. Find the commented section: `{/* <Testimonials /> */}`
+3. Uncomment it to: `<Testimonials />`
+4. Add your testimonials data in `app/components/Testimonials.tsx`
 
 ## Learn More
 

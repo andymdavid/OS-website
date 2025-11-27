@@ -33,7 +33,7 @@ const STEPS = [
 
 export function FollowUpSection() {
   return (
-    <section className="followup-approach">
+    <section id="approach" className="followup-approach">
       <div className="followup-top">
         <div className="intro-pill fade-in">OUR APPROACH</div>
 

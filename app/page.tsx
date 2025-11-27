@@ -37,8 +37,9 @@ export default function Home() {
         {/* Follow-up Problem Section */}
         <WingmanSection />
 
-        {/* Testimonials Section */}
-        <Testimonials />
+        {/* Testimonials Section - Hidden until testimonials are available */}
+        {/* Uncomment the line below when you're ready to show testimonials */}
+        {/* <Testimonials /> */}
 
         {/* The Good Stuff Section */}
         <GoodStuff />

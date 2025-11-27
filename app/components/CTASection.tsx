@@ -1,10 +1,13 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from './Button';
+import { NewsletterModal } from './NewsletterModal';
 import './CTASection.css';
 
 export function CTASection() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <section className="section cta-section">
       <div className="section-container-wide">
@@ -35,10 +38,12 @@ export function CTASection() {
             </h3>
             <p>
               Sign up for The Good Stuff, and get the ideas, insights, and
-              observations we’re learning as AI changes how people work and how
+              observations we're learning as AI changes how people work and how
               businesses are built — delivered weekly to your inbox.
             </p>
-            <Button variant="primary">Join The Good Stuff</Button>
+            <Button variant="primary" onClick={() => setIsModalOpen(true)}>
+              Join The Good Stuff
+            </Button>
           </div>
 
           <div className="cta-card cta-card-gradient fade-in fade-in-stagger-1">
@@ -70,6 +75,9 @@ export function CTASection() {
         </div>
 
       </div>
+
+      {/* Newsletter Modal */}
+      <NewsletterModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 }
