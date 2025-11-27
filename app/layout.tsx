@@ -31,8 +31,9 @@ export const metadata: Metadata = {
   description: "We help SME businesses design systems where humans and AI do their best work together. From education to implementation, discover your path to AI transformation.",
   keywords: "AI implementation, artificial intelligence consulting, SME AI solutions, business AI systems, AI workshops, Marginal Gains Club",
   icons: {
-    icon: '/icon.png',
-    apple: '/icon.png',
+    icon: '/Logo-Main-Icon.png',
+    shortcut: '/Logo-Main-Icon.png',
+    apple: '/Logo-Main-Icon.png',
   },
 };
 
