@@ -35,7 +35,7 @@ export function WingmanSection() {
   };
 
   return (
-    <section className="wingman-approach">
+    <section id="system" className="wingman-approach">
       <div className="wingman-top">
         <div className="intro-pill fade-in">THE SYSTEM</div>
 
@@ -76,7 +76,12 @@ export function WingmanSection() {
               </div>
               <p>We’re always happy to advise on setup and best practice.</p>
             </div>
-            <Button variant="primary">Contact Us</Button>
+            <Button
+              variant="primary"
+              onClick={() => (window.location.href = 'mailto:info@otherstuff.studio')}
+            >
+              Contact Us
+            </Button>
           </div>
         </div>
 

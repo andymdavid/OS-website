@@ -60,6 +60,12 @@
   line-height: 1.4;
 }
 
+.hero-title-block .hero-bridge {
+  margin-top: 16px;
+  font-size: clamp(14px, 1.75vw, 18px);
+  opacity: 0.85;
+}
+
 .hero-cta {
   margin-top: 32px;
   display: flex;

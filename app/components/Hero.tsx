@@ -18,9 +18,11 @@ export function Hero() {
               <br />
               so your team moves faster and your business runs smarter.
             </p>
+            <p className="hero-bridge">
+              We share what we're building every week.
+            </p>
             <div className="hero-cta">
-              <Button variant="primary">Marginal Gains Club</Button>
-              <Button variant="secondary">Explore Workshops</Button>
+              <Button variant="primary">Join The Good Stuff</Button>
             </div>
           </div>
 

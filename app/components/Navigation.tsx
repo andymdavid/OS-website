@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Navigation.css';
 
 export function Navigation() {
@@ -8,6 +8,22 @@ export function Navigation() {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.location.hash) {
+      window.history.replaceState(null, '', window.location.pathname);
+      window.scrollTo({ top: 0 });
+    }
+  }, []);
+
+  const handleScrollTo = (event: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    event.preventDefault();
+    const target = document.getElementById(targetId);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    window.history.replaceState(null, '', window.location.pathname);
   };
 
   return (
@@ -23,7 +39,11 @@ export function Navigation() {
             <a href="#services" className="nav-link">
               Services
             </a>
-            <a href="#products" className="nav-link">
+            <a
+              href="#system"
+              className="nav-link"
+              onClick={(event) => handleScrollTo(event, 'system')}
+            >
               Products
             </a>
             <a href="#media" className="nav-link">
@@ -42,7 +62,7 @@ export function Navigation() {
 
         {/* Right Section: Buttons */}
         <div className="nav-right">
-          <a href="#contact" className="nav-link nav-contact-link">
+          <a href="mailto:info@otherstuff.studio" className="nav-link nav-contact-link">
             Contact Us
           </a>
           <button className="nav-join-btn">Join the Good Stuff</button>

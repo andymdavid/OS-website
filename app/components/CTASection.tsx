@@ -57,7 +57,15 @@ export function CTASection() {
               app with AI, even if you’ve never built anything before. If you want
               to try this for yourself, book your session below.
             </p>
-            <Button variant="primary">Book Your Session</Button>
+            <Button
+              variant="primary"
+              onClick={() =>
+                (window.location.href =
+                  'https://events.humanitix.com/touch-don-t-look-how-to-actually-build-things-with-ai')
+              }
+            >
+              Book Your Session
+            </Button>
           </div>
         </div>
 
