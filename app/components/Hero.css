@@ -168,9 +168,10 @@
 /* Responsive adjustments for podcast card */
 @media (max-width: 768px) {
   .podcast-card {
-    bottom: 80px;
-    left: 20px;
-    right: 20px;
-    max-width: none;
+    position: static;
+    width: 100%;
+    max-width: 420px;
+    margin: 24px auto 0;
+    align-self: center;
   }
 }
