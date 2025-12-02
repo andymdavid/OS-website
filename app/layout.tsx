@@ -51,6 +51,11 @@ export default function RootLayout({
         className={`${figtree.variable} ${silkscreen.variable} ${inter.variable} antialiased`}
       >
         {children}
+        <script
+          src="https://unpkg.com/nanalytics-tracker@0.1.2/dist/index.global.js"
+          data-site-uuid="c0cb28c5-6b00-4b5d-891a-ea3f8ebb47f8"
+          data-cvm-pubkey="d8a066f85d621d634e24ee0bf741e27b6436af28782195de8aa90972e310e937"
+        ></script>
       </body>
     </html>
   );

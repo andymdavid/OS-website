@@ -150,7 +150,7 @@
 /* Mobile adjustments */
 @media (max-width: 768px) {
   .footer {
-    padding: 60px 0 32px;
+    padding: 60px 24px 32px;
   }
 
   .footer-grid {

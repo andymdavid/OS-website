@@ -222,8 +222,51 @@
     gap: 16px;
   }
 
+  .funnel-card {
+    aspect-ratio: auto;
+    min-height: 0;
+  }
+
+  .funnel-card-image {
+    position: relative;
+    inset: unset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 96px;
+    padding: 16px;
+    background: rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(240, 240, 240, 0.1);
+  }
+
+  .funnel-card-image img {
+    width: 72px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.4));
+  }
+
   .funnel-card-overlay {
+    position: relative;
+    inset: unset;
     padding: 24px;
+    background: rgba(0, 0, 0, 0.75);
+    gap: 16px;
+  }
+
+  .funnel-card-footer {
+    min-height: auto;
+    transform: none;
+    gap: 16px;
+  }
+
+  .funnel-card:hover .funnel-card-footer {
+    transform: none;
+  }
+
+  .funnel-card-description {
+    opacity: 1;
+    max-height: none;
   }
 
   .funnel-card h4 {
