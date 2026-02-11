@@ -16,6 +16,7 @@ export function Section({
   return (
     <section
       id={id}
+      style={{ scrollMarginTop: "-80px" }}
       className={cn(
         "py-16 sm:py-24",
         variant === "muted" && "bg-muted/50",

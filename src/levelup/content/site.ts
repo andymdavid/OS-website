@@ -98,7 +98,7 @@ export const siteContent: SiteContent = {
         ],
         speed: 50,
         arcDepth: 60,
-        overlapTop: "-280px",
+        overlapTop: "-320px",
         overlapBottom: "60px",
       },
     },

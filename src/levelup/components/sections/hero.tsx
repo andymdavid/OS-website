@@ -48,7 +48,8 @@ export function Hero({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col items-center text-center space-y-6 max-w-5xl mx-auto -mt-[15vh]"
+          className="flex flex-col items-center text-center space-y-6 max-w-5xl mx-auto"
+          style={{ marginTop: "-22vh" }}
         >
           {/* Optional Badge */}
           {badge && (
