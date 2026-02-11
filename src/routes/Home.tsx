@@ -15,7 +15,7 @@ export default function Home() {
   useScrollAnimation();
 
   return (
-    <>
+    <div className="os-theme">
       <Navigation />
       <main>
         {/* Hero Section */}
@@ -46,6 +46,6 @@ export default function Home() {
 
       {/* Footer */}
       <Footer />
-    </>
+    </div>
   );
 }

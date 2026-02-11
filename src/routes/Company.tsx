@@ -8,7 +8,7 @@ export default function Company() {
   useScrollAnimation();
 
   return (
-    <>
+    <div className="os-theme">
       <Navigation />
       <main>
         {/* Philosophy Section 1: The Price of Intelligence */}
@@ -70,6 +70,6 @@ export default function Company() {
 
       {/* Footer */}
       <Footer />
-    </>
+    </div>
   );
 }

@@ -127,7 +127,7 @@ html {
   scroll-padding-top: 75px;
 }
 
-body {
+.os-theme {
   background: var(--color-background);
   color: var(--color-text);
   font-family: var(--font-body);
@@ -146,7 +146,7 @@ h2 {
    TYPOGRAPHY
    ========================================================================== */
 
-h1 {
+.os-theme h1 {
   font-family: var(--font-heading);
   font-weight: var(--weight-bold);
   font-size: clamp(28px, 5vw, 50px);
@@ -155,7 +155,7 @@ h1 {
   color: var(--color-text);
 }
 
-h2 {
+.os-theme h2 {
   font-family: var(--font-heading);
   font-weight: var(--weight-bold);
   font-size: clamp(26px, 4.2vw, 42px);
@@ -164,7 +164,7 @@ h2 {
   color: var(--color-text);
 }
 
-h3 {
+.os-theme h3 {
   font-family: var(--font-eyebrow);
   font-weight: var(--weight-regular);
   font-size: clamp(12px, 1.5vw, 14px);
@@ -173,7 +173,7 @@ h3 {
   color: var(--color-text);
 }
 
-p {
+.os-theme p {
   font-family: var(--font-body);
   font-weight: var(--weight-regular);
   font-size: 14px;
@@ -183,13 +183,13 @@ p {
   max-width: 65ch;
 }
 
-a {
+.os-theme a {
   color: var(--color-text);
   text-decoration: none;
   transition: opacity var(--duration-base) var(--ease-out);
 }
 
-a:hover {
+.os-theme a:hover {
   opacity: 0.8;
 }
 
@@ -223,14 +223,14 @@ a:hover {
    LAYOUT UTILITIES
    ========================================================================== */
 
-.section {
+.os-theme .section {
   background: var(--color-background);
   min-height: 100vh;
   padding: clamp(64px, 10vw, 160px) var(--container-padding);
   position: relative;
 }
 
-.section::after {
+.os-theme .section::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -241,17 +241,17 @@ a:hover {
 }
 
 /* Remove divider from last section */
-.section:last-of-type::after {
+.os-theme .section:last-of-type::after {
   display: none;
 }
 
-.section-container {
+.os-theme .section-container {
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
 }
 
-.section-container-wide {
+.os-theme .section-container-wide {
   width: 100%;
   max-width: 100%;
   margin: 0 auto;
@@ -261,7 +261,7 @@ a:hover {
    BUTTON COMPONENTS
    ========================================================================== */
 
-.btn-primary {
+.os-theme .btn-primary {
   /* Dimensions */
   width: auto;
   height: 32px;
@@ -295,25 +295,25 @@ a:hover {
   user-select: none;
 }
 
-.btn-primary:hover {
+.os-theme .btn-primary:hover {
   background: var(--color-hover);
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(240, 240, 240, 0.2);
 }
 
-.btn-primary:active {
+.os-theme .btn-primary:active {
   transform: translateY(0);
   box-shadow: 0 2px 4px rgba(240, 240, 240, 0.2);
 }
 
-.btn-primary:disabled {
+.os-theme .btn-primary:disabled {
   background: rgba(240, 240, 240, 0.3);
   cursor: not-allowed;
   transform: none;
   box-shadow: none;
 }
 
-.btn-secondary {
+.os-theme .btn-secondary {
   /* Dimensions */
   width: auto;
   height: 32px;
@@ -347,17 +347,17 @@ a:hover {
   user-select: none;
 }
 
-.btn-secondary:hover {
+.os-theme .btn-secondary:hover {
   background: rgba(240, 240, 240, 0.1);
   border-color: var(--color-hover);
   transform: translateY(-1px);
 }
 
-.btn-secondary:active {
+.os-theme .btn-secondary:active {
   transform: translateY(0);
 }
 
-.btn-secondary:disabled {
+.os-theme .btn-secondary:disabled {
   border-color: var(--color-disabled);
   color: var(--color-disabled);
   cursor: not-allowed;
@@ -368,7 +368,7 @@ a:hover {
    FORM ELEMENTS
    ========================================================================== */
 
-.form-input {
+.os-theme .form-input {
   /* Dimensions */
   height: 40px;
   min-width: 250px;
@@ -390,11 +390,11 @@ a:hover {
   transition: all var(--duration-base) var(--ease-in-out);
 }
 
-.form-input::placeholder {
+.os-theme .form-input::placeholder {
   color: var(--color-disabled);
 }
 
-.form-input:focus {
+.os-theme .form-input:focus {
   border-color: var(--color-text);
   background: rgba(240, 240, 240, 0.08);
   outline: none;
@@ -404,24 +404,24 @@ a:hover {
    ANIMATION UTILITIES
    ========================================================================== */
 
-.fade-in {
+.os-theme .fade-in {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity var(--duration-slow) var(--ease-out),
               transform var(--duration-slow) var(--ease-out);
 }
 
-.fade-in.visible {
+.os-theme .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
 /* Staggered animations */
-.fade-in-stagger-1 { transition-delay: 0.1s; }
-.fade-in-stagger-2 { transition-delay: 0.2s; }
-.fade-in-stagger-3 { transition-delay: 0.3s; }
-.fade-in-stagger-4 { transition-delay: 0.4s; }
-.fade-in-stagger-5 { transition-delay: 0.5s; }
+.os-theme .fade-in-stagger-1 { transition-delay: 0.1s; }
+.os-theme .fade-in-stagger-2 { transition-delay: 0.2s; }
+.os-theme .fade-in-stagger-3 { transition-delay: 0.3s; }
+.os-theme .fade-in-stagger-4 { transition-delay: 0.4s; }
+.os-theme .fade-in-stagger-5 { transition-delay: 0.5s; }
 
 /* ==========================================================================
    RESPONSIVE DESIGN
@@ -429,12 +429,12 @@ a:hover {
 
 /* Mobile: 375px - 767px */
 @media (max-width: 767px) {
-  .section {
+  .os-theme .section {
     padding: var(--section-spacing-mobile) 0;
   }
 
-  .btn-primary,
-  .btn-secondary {
+  .os-theme .btn-primary,
+  .os-theme .btn-secondary {
     width: 100%;
     max-width: 300px;
   }
@@ -442,14 +442,14 @@ a:hover {
 
 /* Tablet: 768px - 1023px */
 @media (min-width: 768px) and (max-width: 1023px) {
-  .section {
+  .os-theme .section {
     padding: var(--section-spacing-tablet) 0;
   }
 }
 
 /* Desktop: 1024px+ */
 @media (min-width: 1024px) {
-  .section {
+  .os-theme .section {
     padding: var(--section-spacing-desktop) 0;
   }
 }
@@ -458,7 +458,7 @@ a:hover {
    UTILITY CLASSES
    ========================================================================== */
 
-.visually-hidden {
+.os-theme .visually-hidden {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -470,11 +470,11 @@ a:hover {
   border-width: 0;
 }
 
-.text-center {
+.os-theme .text-center {
   text-align: center;
 }
 
-.mx-auto {
+.os-theme .mx-auto {
   margin-left: auto;
   margin-right: auto;
 }
