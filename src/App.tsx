@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './routes/Home';
 import Company from './routes/Company';
 import LevelUp from './routes/LevelUp';
+import Speedrun from './routes/Speedrun';
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
   {
     path: '/levelup',
     element: <LevelUp />,
+  },
+  {
+    path: '/speedrun',
+    element: <Speedrun />,
   },
 ]);
 
