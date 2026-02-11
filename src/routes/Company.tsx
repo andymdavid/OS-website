@@ -1,5 +1,3 @@
-'use client';
-
 import { Navigation } from '../components/Navigation';
 import { Section } from '../components/Section';
 import { Footer } from '../components/Footer';

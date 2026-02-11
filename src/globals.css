@@ -35,9 +35,9 @@
 
   /* ===== TYPOGRAPHY ===== */
   /* Font Families */
-  --font-heading: var(--font-heading), 'Figtree', sans-serif;
-  --font-eyebrow: var(--font-eyebrow), 'Silkscreen', monospace;
-  --font-body: var(--font-body), 'Inter', sans-serif;
+  --font-heading: 'Figtree', sans-serif;
+  --font-eyebrow: 'Silkscreen', monospace;
+  --font-body: 'Inter', sans-serif;
   --font-ui: 'Alfabet Regular', 'Alfabet', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
   /* Font Weights */

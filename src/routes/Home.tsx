@@ -1,18 +1,14 @@
-'use client';
-
-import { useEffect } from 'react';
-import { Navigation } from './components/Navigation';
-import { Hero } from './components/Hero';
-import { IntroSection } from './components/IntroSection';
-import { Section } from './components/Section';
-import { FunnelSection } from './components/FunnelSection';
-import { FollowUpSection } from './components/FollowUpSection';
-import { WingmanSection } from './components/WingmanSection';
-import { Testimonials } from './components/Testimonials';
-import { GoodStuff } from './components/GoodStuff';
-import { CTASection } from './components/CTASection';
-import { Footer } from './components/Footer';
-import { useScrollAnimation } from './hooks/useScrollAnimation';
+import { Navigation } from '../components/Navigation';
+import { Hero } from '../components/Hero';
+import { IntroSection } from '../components/IntroSection';
+import { FunnelSection } from '../components/FunnelSection';
+import { FollowUpSection } from '../components/FollowUpSection';
+import { WingmanSection } from '../components/WingmanSection';
+import { Testimonials } from '../components/Testimonials';
+import { GoodStuff } from '../components/GoodStuff';
+import { CTASection } from '../components/CTASection';
+import { Footer } from '../components/Footer';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export default function Home() {
   // Initialize scroll animations

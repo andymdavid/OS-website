@@ -1,4 +1,3 @@
-'use client';
 
 import { EmailCaptureForm } from './EmailCaptureForm';
 import './Hero.css';
