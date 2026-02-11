@@ -28,6 +28,7 @@ Open http://localhost:5173 to view the site.
 
 - `src/routes/Home.tsx` - Home page
 - `src/routes/Company.tsx` - Company page
+- `src/routes/LevelUp.tsx` - Level-Up landing page
 - `src/components/*` - UI sections
 - `src/hooks/*` - Hooks
 - `src/globals.css` - Global styles and design tokens
@@ -45,3 +46,7 @@ To enable:
 ## Backend note
 
 The old Next.js API route has been moved to `server/subscribe.ts` as a placeholder. You will need to host an equivalent endpoint for `/api/subscribe` when deploying.
+
+## Level-Up note
+
+The Level-Up landing page is available at `/levelup`. It uses its own scoped theme in `src/levelup/levelup.css`.

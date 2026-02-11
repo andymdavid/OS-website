@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './routes/Home';
 import Company from './routes/Company';
+import LevelUp from './routes/LevelUp';
 
 const router = createBrowserRouter([
   {
@@ -10,6 +11,10 @@ const router = createBrowserRouter([
   {
     path: '/company',
     element: <Company />,
+  },
+  {
+    path: '/levelup',
+    element: <LevelUp />,
   },
 ]);
 
