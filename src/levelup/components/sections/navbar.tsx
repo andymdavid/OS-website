@@ -34,7 +34,7 @@ export function Navbar({ links, cta }: NavbarProps) {
   return (
     <header className="fixed top-0 z-50 w-full pt-4">
       <div className="flex justify-center px-4">
-        <nav className="flex items-center justify-between bg-black rounded-md p-2 w-full max-w-xl">
+        <nav className="relative flex items-center justify-between bg-black rounded-md p-2 w-full max-w-xl">
           {/* Menu Trigger */}
           {mounted ? (
             <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
@@ -44,7 +44,7 @@ export function Navbar({ links, cta }: NavbarProps) {
                   <span className="text-sm font-medium">Menu</span>
                 </button>
               </SheetTrigger>
-              <SheetContent side="left" className="w-[300px] sm:w-[400px] bg-black border-r-neutral-800">
+              <SheetContent side="left" className="levelup-theme-vars w-[300px] sm:w-[400px] bg-black border-r-neutral-800">
                 <SheetHeader>
                   <SheetTitle className="text-white font-bungee text-2xl tracking-tight">LEVEL-UP</SheetTitle>
                 </SheetHeader>
@@ -76,12 +76,14 @@ export function Navbar({ links, cta }: NavbarProps) {
           )}
 
           {/* Center Logo */}
-          <a
-            href="#"
-            className="absolute left-1/2 -translate-x-1/2 text-white font-bungee text-3xl tracking-tight"
-          >
-            LEVEL-UP
-          </a>
+          <div className="pointer-events-none absolute inset-x-0 flex justify-center">
+            <a
+              href="#"
+              className="pointer-events-auto text-white font-bungee text-3xl tracking-tight"
+            >
+              LEVEL-UP
+            </a>
+          </div>
 
           {/* Login Button */}
           <Button
