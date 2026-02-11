@@ -69,7 +69,10 @@ export function Footer({ logo, logoText, links, social, contact, privacyLink }: 
 
       {/* Large GETHYPED logo on the left */}
       <div className="absolute bottom-4 left-6 sm:left-8 md:left-12 z-10">
-        <div className="font-bungee text-[54px] sm:text-[100px] md:text-[140px] lg:text-[180px] leading-none text-white tracking-tighter translate-y-[15%]">
+        <div
+          className="font-bungee text-[54px] sm:text-[100px] md:text-[140px] lg:text-[180px] leading-none text-white tracking-tighter"
+          style={{ transform: "translateY(14%)" }}
+        >
           {logoText || logo}
         </div>
       </div>

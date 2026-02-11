@@ -43,7 +43,7 @@ export function FinalCta({
       </Container>
 
       {/* Spinning Badge */}
-      <div className="absolute right-4 sm:right-8 md:right-16 lg:right-24 top-1/2 -translate-y-1/2 hidden sm:block">
+      <div className="absolute right-4 sm:right-8 md:right-16 lg:right-24 top-[56%] -translate-y-1/2 hidden sm:block">
         <a
           href="https://otherstuff.ai"
           target="_blank"
