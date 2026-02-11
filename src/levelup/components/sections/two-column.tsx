@@ -57,7 +57,7 @@ interface TwoColumnProps {
   }>;
   hideTitle?: boolean;
   bodyVariant?: "default" | "display";
-  blocksVariant?: "numbered" | "feature" | "profile";
+  blocksVariant?: "numbered" | "feature" | "profile" | "expandable";
 }
 
 export function TwoColumn({
@@ -85,6 +85,8 @@ export function TwoColumn({
   blocksVariant = "numbered",
 }: TwoColumnProps) {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+  const [expandedCardIndex, setExpandedCardIndex] = useState<number | null>(null);
+  const [hoveredCardIndex, setHoveredCardIndex] = useState<number | null>(null);
 
   const bodyClassName =
     bodyVariant === "display"
@@ -369,6 +371,175 @@ export function TwoColumn({
                   </div>
                 ))}
               </div>
+            ) : blocksVariant === "expandable" ? (
+              (() => {
+                const cardColors = ["#211f1e", "#0a90d2", "#e54f10", "#53f399"];
+                const getCardColor = (index: number) => cardColors[index] || "#2a2a2a";
+                const isLightCard = (index: number) => index === 3;
+
+                return (
+                  <div className="mt-4 relative h-[580px] flex items-start justify-center pt-[50px]">
+                    <AnimatePresence>
+                      {expandedCardIndex !== null && (
+                        <motion.div
+                          key="expanded-overlay"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 1 }}
+                          exit={{ opacity: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="absolute inset-0 z-20 flex flex-col items-center"
+                          onClick={() => setExpandedCardIndex(null)}
+                        >
+                          <motion.div
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.8 }}
+                            className="rounded-2xl w-[300px] h-[400px] cursor-pointer flex flex-col p-4"
+                            style={{ backgroundColor: getCardColor(expandedCardIndex) }}
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            {blocks[expandedCardIndex]?.image && (
+                              <div className="h-[200px] w-full rounded-xl overflow-hidden">
+                                <img
+                                  src={blocks[expandedCardIndex].image}
+                                  alt={blocks[expandedCardIndex]?.title || ""}
+                                  className="h-full w-full object-cover"
+                                  loading="lazy"
+                                />
+                              </div>
+                            )}
+                            <div className="flex flex-col justify-end flex-1 pt-4 px-3 pb-3">
+                              <h3
+                                className={`text-2xl font-semibold leading-tight ${
+                                  isLightCard(expandedCardIndex) ? "text-[#201d1d]" : "text-white"
+                                }`}
+                              >
+                                {blocks[expandedCardIndex]?.title}
+                              </h3>
+                              <p
+                                className={`text-sm mt-4 leading-relaxed ${
+                                  isLightCard(expandedCardIndex) ? "text-neutral-700" : "text-white/70"
+                                }`}
+                              >
+                                {blocks[expandedCardIndex]?.body}
+                              </p>
+                            </div>
+                          </motion.div>
+
+                          <div className="relative flex items-end justify-center mt-0 h-[160px]">
+                            {blocks.map((block, index) => {
+                              if (index === expandedCardIndex) return null;
+                              const remainingIndices = blocks
+                                .map((_, i) => i)
+                                .filter((i) => i !== expandedCardIndex);
+                              const posIndex = remainingIndices.indexOf(index);
+                              const centerOffset = (remainingIndices.length - 1) / 2;
+                              const xPos = (posIndex - centerOffset) * 100;
+                              const rotation = (posIndex - centerOffset) * 5;
+
+                              return (
+                                <motion.div
+                                  key={block.number ?? block.title}
+                                  initial={{ opacity: 0, y: 50 }}
+                                  animate={{ opacity: 1, y: 0, x: xPos, rotate: rotation }}
+                                  transition={{ type: "spring", stiffness: 300, damping: 25, delay: 0.1 }}
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    setExpandedCardIndex(index);
+                                  }}
+                                  className="absolute rounded-2xl p-2 w-[110px] h-[160px] cursor-pointer flex flex-col shadow-xl"
+                                  style={{ backgroundColor: getCardColor(index), zIndex: index }}
+                                >
+                                  {block.image && (
+                                    <div className="h-[70px] w-full rounded-lg overflow-hidden">
+                                      <img
+                                        src={block.image}
+                                        alt={block.title}
+                                        className="h-full w-full object-cover"
+                                        loading="lazy"
+                                      />
+                                    </div>
+                                  )}
+                                  <div className="flex flex-col justify-end flex-1 px-1 pb-1">
+                                    <h3
+                                      className={`text-sm font-semibold leading-tight ${
+                                        isLightCard(index) ? "text-[#201d1d]" : "text-white"
+                                      }`}
+                                    >
+                                      {block.title}
+                                    </h3>
+                                  </div>
+                                </motion.div>
+                              );
+                            })}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+
+                    {expandedCardIndex === null && (
+                      <div className="relative flex items-start justify-center h-[334px]">
+                        {blocks.map((block, index) => {
+                          const centerOffset = (blocks.length - 1) / 2;
+                          const rotation = (index - centerOffset) * 5;
+                          const xOffset = (index - centerOffset) * 184;
+                          const yOffset = Math.abs(index - centerOffset) * 8;
+                          const isHovered = hoveredCardIndex === index;
+                          const baseZIndex = index;
+                          const zIndex = isHovered ? 20 : baseZIndex;
+
+                          return (
+                            <motion.div
+                              key={block.number ?? block.title}
+                              onClick={() => setExpandedCardIndex(index)}
+                              onMouseEnter={() => setHoveredCardIndex(index)}
+                              onMouseLeave={() => setHoveredCardIndex(null)}
+                              initial={false}
+                              animate={{
+                                rotate: rotation,
+                                x: xOffset,
+                                y: isHovered ? yOffset - 30 : yOffset,
+                                scale: isHovered ? 1.08 : 1,
+                                zIndex,
+                              }}
+                              transition={{ type: "spring", stiffness: 300, damping: 25 }}
+                              className="absolute rounded-2xl w-[207px] h-[276px] cursor-pointer flex flex-col shadow-xl p-1.5"
+                              style={{ backgroundColor: getCardColor(index), transformOrigin: "center bottom" }}
+                            >
+                              {block.image && (
+                                <div className="h-[150px] w-full rounded-xl overflow-hidden">
+                                  <img
+                                    src={block.image}
+                                    alt={block.title}
+                                    className="h-full w-full object-cover"
+                                    loading="lazy"
+                                  />
+                                </div>
+                              )}
+                              <div className="flex flex-col justify-end flex-1 pt-2 px-3 pb-3">
+                                <span
+                                  className={`text-sm font-medium font-jersey ${
+                                    isLightCard(index) ? "text-neutral-600" : "text-neutral-400"
+                                  }`}
+                                >
+                                  {block.number}
+                                </span>
+                                <h3
+                                  className={`text-[22px] font-semibold mt-2 leading-tight ${
+                                    isLightCard(index) ? "text-[#201d1d]" : "text-white"
+                                  }`}
+                                >
+                                  {block.title}
+                                </h3>
+                              </div>
+                            </motion.div>
+                          );
+                        })}
+                      </div>
+                    )}
+                  </div>
+                );
+              })()
             ) : blocksVariant === "profile" ? (
               <div className="mt-10 pt-6 grid gap-8 md:grid-cols-2">
                 {blocks.map((block, index) => (
