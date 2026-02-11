@@ -338,12 +338,8 @@ export function TwoColumn({
             blocksVariant === "feature" ? (
               <div className="mt-10 pt-6 grid gap-x-10 gap-y-12 md:grid-cols-3">
                 {blocks.map((block) => (
-                  <div key={block.number ?? block.title} className="border-t border-neutral-300/70 pt-6">
-                    <h3 className="text-base font-semibold text-[#201d1d]">
-                      {block.title}
-                    </h3>
-                    <p className="mt-2 text-sm text-neutral-600">{block.body}</p>
-                    <div className="mt-6 overflow-hidden rounded-xl bg-neutral-200/70">
+                  <div key={block.number ?? block.title} className="border-t border-neutral-300/70 pt-4">
+                    <div className="mt-4 overflow-hidden rounded-xl bg-neutral-200/70">
                       {block.video ? (
                         <video
                           className="aspect-[16/10] w-full object-contain bg-white"
@@ -366,6 +362,10 @@ export function TwoColumn({
                         <div className="aspect-[16/10] w-full bg-neutral-300/70" />
                       )}
                     </div>
+                    <h3 className="mt-4 text-base font-semibold text-[#201d1d]">
+                      {block.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-neutral-600">{block.body}</p>
                   </div>
                 ))}
               </div>
