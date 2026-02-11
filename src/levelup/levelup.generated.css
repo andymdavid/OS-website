@@ -122,6 +122,10 @@
   pointer-events: none
 }
 
+.pointer-events-auto {
+  pointer-events: auto
+}
+
 .visible {
   visibility: visible
 }
@@ -220,8 +224,16 @@
   top: 1.5rem
 }
 
+.top-\[56\%\] {
+  top: 56%
+}
+
 .z-10 {
   z-index: 10
+}
+
+.z-20 {
+  z-index: 20
 }
 
 .z-50 {
@@ -268,6 +280,10 @@
 
 .ml-2 {
   margin-left: 0.5rem
+}
+
+.mt-0 {
+  margin-top: 0px
 }
 
 .mt-0\.5 {
@@ -389,8 +405,40 @@
   height: 24rem
 }
 
+.h-\[150px\] {
+  height: 150px
+}
+
+.h-\[160px\] {
+  height: 160px
+}
+
+.h-\[200px\] {
+  height: 200px
+}
+
+.h-\[276px\] {
+  height: 276px
+}
+
+.h-\[334px\] {
+  height: 334px
+}
+
+.h-\[400px\] {
+  height: 400px
+}
+
 .h-\[420px\] {
   height: 420px
+}
+
+.h-\[580px\] {
+  height: 580px
+}
+
+.h-\[70px\] {
+  height: 70px
 }
 
 .h-full {
@@ -457,6 +505,14 @@
   width: 2.25rem
 }
 
+.w-\[110px\] {
+  width: 110px
+}
+
+.w-\[207px\] {
+  width: 207px
+}
+
 .w-\[260px\] {
   width: 260px
 }
@@ -467,6 +523,10 @@
 
 .w-\[90vw\] {
   width: 90vw
+}
+
+.w-auto {
+  width: auto
 }
 
 .w-full {
@@ -544,6 +604,10 @@
 
 .animate-spin-slow {
   animation: spin 20s linear infinite
+}
+
+.cursor-pointer {
+  cursor: pointer
 }
 
 .resize {
@@ -998,6 +1062,11 @@
   padding-bottom: 0px !important
 }
 
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem
+}
+
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem
@@ -1082,8 +1151,16 @@
   padding-bottom: 0px
 }
 
+.pb-1 {
+  padding-bottom: 0.25rem
+}
+
 .pb-24 {
   padding-bottom: 6rem
+}
+
+.pb-3 {
+  padding-bottom: 0.75rem
 }
 
 .pb-4 {
@@ -1132,6 +1209,10 @@
 
 .pt-6 {
   padding-top: 1.5rem
+}
+
+.pt-\[50px\] {
+  padding-top: 50px
 }
 
 .text-left {
@@ -1183,6 +1264,10 @@
 
 .text-\[18px\] {
   font-size: 18px
+}
+
+.text-\[22px\] {
+  font-size: 22px
 }
 
 .text-\[40px\] {
@@ -1328,6 +1413,11 @@
   color: rgb(82 82 82 / var(--tw-text-opacity, 1))
 }
 
+.text-neutral-700 {
+  --tw-text-opacity: 1;
+  color: rgb(64 64 64 / var(--tw-text-opacity, 1))
+}
+
 .text-primary {
   color: hsl(var(--primary))
 }
@@ -1418,6 +1508,12 @@
 .shadow-sm {
   --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
+}
+
+.shadow-xl {
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
 }
 
