@@ -17,9 +17,10 @@ interface NavbarProps {
     label: string;
     href: string;
   };
+  title?: string;
 }
 
-export function Navbar({ links, cta }: NavbarProps) {
+export function Navbar({ links, cta, title = "LEVEL-UP" }: NavbarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
 
@@ -81,7 +82,7 @@ export function Navbar({ links, cta }: NavbarProps) {
               href="#"
               className="pointer-events-auto text-white font-bungee text-3xl tracking-tight"
             >
-              LEVEL-UP
+              {title}
             </a>
           </div>
 
