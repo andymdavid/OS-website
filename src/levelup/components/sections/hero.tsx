@@ -10,6 +10,8 @@ interface HeroProps {
   badge?: string;
   title: string;
   subtitle: string;
+  subtitleMaxWidth?: string;
+  centerContent?: boolean;
   ctaPrimary:
     | string
     | {
@@ -29,6 +31,8 @@ export function Hero({
   badge,
   title,
   subtitle,
+  subtitleMaxWidth = "50.4rem",
+  centerContent = false,
   ctaPrimary,
   socialProof,
   socialProofLogo,
@@ -49,7 +53,7 @@ export function Hero({
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className="flex flex-col items-center text-center space-y-6 max-w-5xl mx-auto"
-          style={{ marginTop: "-22vh" }}
+          style={centerContent ? undefined : { marginTop: "-22vh" }}
         >
           {/* Optional Badge */}
           {badge && (
@@ -72,9 +76,23 @@ export function Hero({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="font-anton text-4xl tracking-tight leading-tight sm:text-5xl md:text-6xl uppercase"
+            className="font-anton tracking-tight leading-tight uppercase"
           >
-            {title}
+            {title.split("\n").map((line, index) => {
+              const isPrimary = index === 0;
+              return (
+                <span
+                  key={index}
+                  className={`block ${
+                    isPrimary
+                      ? "text-5xl sm:text-6xl md:text-7xl"
+                      : "text-4xl sm:text-5xl md:text-6xl"
+                  }`}
+                >
+                  {line}
+                </span>
+              );
+            })}
           </motion.h1>
 
           {/* Subtitle */}
@@ -83,7 +101,7 @@ export function Hero({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
             className="text-base text-[#201d1d]"
-            style={{ maxWidth: "50.4rem" }}
+            style={{ maxWidth: subtitleMaxWidth }}
           >
             {subtitle}
           </motion.p>
