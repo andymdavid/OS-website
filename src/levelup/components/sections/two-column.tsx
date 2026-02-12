@@ -51,6 +51,9 @@ interface TwoColumnProps {
     video?: string;
   }>;
   levelUpCards?: LevelUpCard[];
+  levelUpCardsLayout?: "staggered" | "flat";
+  levelUpCardsMaxWidth?: "default" | "wide";
+  levelUpCardsSize?: "default" | "uniform";
   faqItems?: Array<{
     question: string;
     answer: string;
@@ -59,6 +62,10 @@ interface TwoColumnProps {
   bodyVariant?: "default" | "display";
   blocksVariant?: "numbered" | "feature" | "profile" | "expandable";
   textAlign?: "center" | "left";
+  maxWidth?: "default" | "wide";
+  expandableCardSize?: "default" | "large" | "uniform";
+  expandableCardsLayout?: "container" | "fullBleed";
+  expandableCardsMaxWidth?: "default" | "wide";
 }
 
 export function TwoColumn({
@@ -75,6 +82,9 @@ export function TwoColumn({
   splitBlocks,
   blocks,
   levelUpCards,
+  levelUpCardsLayout = "staggered",
+  levelUpCardsMaxWidth = "default",
+  levelUpCardsSize = "default",
   faqItems,
   bodyLinks,
   bodyMobileSplitOn,
@@ -85,9 +95,22 @@ export function TwoColumn({
   bodyVariant = "default",
   blocksVariant = "numbered",
   textAlign = "center",
+  maxWidth = "default",
+  expandableCardSize = "default",
+  expandableCardsLayout = "container",
+  expandableCardsMaxWidth = "default",
 }: TwoColumnProps) {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const isCentered = textAlign === "center";
+  const isWide = maxWidth === "wide";
+  const isLargeCards = expandableCardSize === "large";
+  const isUniformExpandable = expandableCardSize === "uniform";
+  const isFullBleedExpandable = expandableCardsLayout === "fullBleed";
+  const expandableMaxWidth =
+    expandableCardsMaxWidth === "wide" ? "max-w-[90rem]" : "max-w-7xl";
+  const isFlatCards = levelUpCardsLayout === "flat";
+  const cardsMaxWidth = levelUpCardsMaxWidth === "wide" ? "max-w-[90rem]" : "max-w-7xl";
+  const isUniformCards = levelUpCardsSize === "uniform";
 
   const bodyClassName =
     bodyVariant === "display"
@@ -286,7 +309,7 @@ export function TwoColumn({
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="max-w-5xl mx-auto"
+          className={isWide ? "max-w-6xl mx-auto" : "max-w-5xl mx-auto"}
         >
           {!hideTitle ? (
             <h2
@@ -377,39 +400,86 @@ export function TwoColumn({
                 ))}
               </div>
             ) : blocksVariant === "expandable" ? (
-              <div className="mt-6 grid gap-6 md:grid-cols-4">
-                {blocks.map((block, index) => (
-                  <div
-                    key={block.number ?? block.title}
-                    className="rounded-2xl bg-[#2a2a2a] p-3 shadow-xl"
-                  >
-                    <div className="rounded-xl overflow-hidden bg-white">
-                      {block.image ? (
-                        <img
-                          src={block.image}
-                          alt={block.title}
-                          className="h-[150px] w-full object-cover"
-                          loading="lazy"
-                        />
-                      ) : (
-                        <div className="h-[150px] w-full bg-neutral-200" />
-                      )}
+              <div
+                className={
+                  isFullBleedExpandable
+                    ? "mt-6 relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen px-4 sm:px-6 md:px-16 lg:px-24"
+                    : "mt-6"
+                }
+              >
+                <div
+                  className={`grid gap-6 md:grid-cols-4 ${isUniformExpandable ? "md:gap-6" : ""} ${
+                    isFullBleedExpandable ? `${expandableMaxWidth} mx-auto` : ""
+                  }`}
+                >
+                  {blocks.map((block) => (
+                    <div
+                      key={block.number ?? block.title}
+                      className={`rounded-2xl bg-[#2a2a2a] shadow-xl transition-all duration-300 ease-out md:hover:-translate-y-1.5 md:hover:shadow-[0_20px_40px_rgba(0,0,0,0.3),0_0_30px_rgba(161,255,98,0.1)] ${
+                        isUniformExpandable
+                          ? "p-6 h-[440px] w-[280px] sm:w-[300px] md:w-full"
+                          : isLargeCards
+                            ? "p-4 md:p-5"
+                            : "p-3"
+                      }`}
+                    >
+                    <div
+                      className="rounded-xl overflow-hidden bg-white"
+                      style={
+                        isUniformExpandable
+                          ? { marginLeft: "-12px", marginRight: "-12px", marginTop: "-12px", marginBottom: "16px" }
+                          : undefined
+                      }
+                    >
+                        {block.image ? (
+                          <img
+                            src={block.image}
+                            alt={block.title}
+                            className={`w-full object-cover ${
+                              isUniformExpandable
+                                ? "h-[190px] md:h-[200px]"
+                                : isLargeCards
+                                  ? "h-[175px] md:h-[185px]"
+                                  : "h-[150px]"
+                            }`}
+                            loading="lazy"
+                          />
+                        ) : (
+                          <div
+                            className={`w-full bg-neutral-200 ${
+                              isUniformExpandable
+                                ? "h-[190px] md:h-[200px]"
+                                : isLargeCards
+                                  ? "h-[175px] md:h-[185px]"
+                                  : "h-[150px]"
+                            }`}
+                          />
+                        )}
+                      </div>
+                      <div
+                        className={
+                          isUniformExpandable
+                            ? "pt-4"
+                            : isLargeCards
+                              ? "px-3 pt-4 pb-3"
+                              : "px-2 pt-3 pb-2"
+                        }
+                      >
+                        <span className="text-sm font-medium font-jersey text-neutral-400">
+                          {block.number}
+                        </span>
+                        <h3 className="mt-2 text-xl font-semibold leading-tight text-white">
+                          {block.title}
+                        </h3>
+                        {block.body ? (
+                          <p className="mt-2 text-sm leading-relaxed text-white/70">
+                            {block.body}
+                          </p>
+                        ) : null}
+                      </div>
                     </div>
-                    <div className="px-2 pt-3 pb-2">
-                      <span className="text-sm font-medium font-jersey text-neutral-400">
-                        {block.number}
-                      </span>
-                      <h3 className="mt-2 text-[18px] font-semibold leading-tight text-white">
-                        {block.title}
-                      </h3>
-                      {block.body ? (
-                        <p className="mt-2 text-xs leading-relaxed text-white/70">
-                          {block.body}
-                        </p>
-                      ) : null}
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             ) : blocksVariant === "profile" ? (
               <div className="mt-10 pt-6 grid gap-8 md:grid-cols-2">
@@ -503,16 +573,24 @@ export function TwoColumn({
           ) : null}
           {levelUpCards && levelUpCards.length > 0 && (
             <div className="mt-10 relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen px-4 sm:px-6 md:px-16 lg:px-24">
-              <div className="flex gap-4 overflow-x-auto pb-4 md:pb-0 md:overflow-visible md:grid md:grid-cols-4 md:gap-5 max-w-7xl mx-auto items-end md:items-end">
+              <div
+                className={`flex gap-4 overflow-x-auto pb-4 md:pb-0 md:overflow-visible md:grid md:grid-cols-4 md:gap-6 ${cardsMaxWidth} mx-auto ${
+                  isFlatCards ? "items-start md:items-stretch" : "items-end md:items-end"
+                }`}
+              >
                 {levelUpCards.map((card, index) => {
                   // Progressive step-up: cards are same height but offset vertically
-                  const stepOffset = index * 32;
+                  const stepOffset = isFlatCards ? 0 : index * 32;
 
                   return (
                     <div
                       key={card.id}
-                      className="rounded-2xl bg-[#2a2a2a] p-5 h-[420px] w-[260px] sm:w-[280px] flex-shrink-0 md:flex-shrink md:w-auto flex flex-col transition-all duration-300 ease-out md:hover:-translate-y-1.5 md:hover:shadow-[0_20px_40px_rgba(0,0,0,0.3),0_0_30px_rgba(161,255,98,0.1)]"
-                      style={{ marginBottom: `${stepOffset}px` }}
+                      className={`rounded-2xl bg-[#2a2a2a] flex-shrink-0 md:flex-shrink flex flex-col transition-all duration-300 ease-out md:hover:-translate-y-1.5 md:hover:shadow-[0_20px_40px_rgba(0,0,0,0.3),0_0_30px_rgba(161,255,98,0.1)] ${
+                        isUniformCards
+                          ? "p-6 h-[440px] w-[280px] sm:w-[300px] md:w-full"
+                          : "p-5 h-[420px] w-[260px] sm:w-[280px] md:w-full"
+                      }`}
+                      style={stepOffset ? { marginBottom: `${stepOffset}px` } : undefined}
                     >
                       {/* Top section */}
                       <div className="shrink-0">
