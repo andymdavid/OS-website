@@ -110,23 +110,26 @@ export const siteContent: SiteContent = {
       enabled: true,
       id: "twoColumn",
       props: {
-        title: "What is Speedrun?",
+        title: "Speedrun at a glance",
         body:
-          "Speedrun is a hands-on workshop designed to help small and medium sized businesses understand how AI actually works by building practical tools and workflows with them for their own business.",
+          "Every Speedrun session follows the same hands-on format. You'll work directly with AI agents to build practical tools from the beginning, and by the end you'll have firsthand experience with what AI can actually do.",
         singleColumn: true,
-        textAlign: "left",
+        maxWidth: "wide",
         blocksVariant: "expandable",
+        expandableCardSize: "uniform",
+        expandableCardsLayout: "fullBleed",
+        expandableCardsMaxWidth: "wide",
         minHeightClass: "min-h-[90vh]",
         blocks: [
           {
             number: "01",
-            title: "Who It's For",
-            body: "Speedrun is for small and medium businesses, designed so founders, operators, and team leads can work with AI without a technical background.",
+            title: "Who Should Attend",
+            body: "Speedrun is for SME operators and team leads who need to understand what AI can do for their business - no technical background required.",
             image: "/Card01.png",
           },
           {
             number: "02",
-            title: "Session Format",
+            title: "Session Structure",
             body: "Speedrun is a 3-hour, guided, hands-on workshop, delivered in small groups with facilitation and support throughout.",
             image: "/Card02.png",
           },
@@ -138,8 +141,8 @@ export const siteContent: SiteContent = {
           },
           {
             number: "04",
-            title: "After The Session",
-            body: "You leave with something that works and a clear sense of how to keep building or decide what to do next.",
+            title: "What You Leave With",
+            body: "You leave with a working tool you've built yourself and clarity about what's possible when you apply AI to your own business context.",
             image: "/Card04.png",
           },
         ],
@@ -187,6 +190,9 @@ export const siteContent: SiteContent = {
         body: "You begin with a blank project and leave with your own working app. During the session you use AI coding agents to build a simple Kanban-style to-do tool from scratch, change it, and watch it evolve on screen as you work.",
         singleColumn: true,
         fullHeight: true,
+        levelUpCardsLayout: "flat",
+        levelUpCardsMaxWidth: "wide",
+        levelUpCardsSize: "uniform",
         levelUpCards: [
           {
             id: "1",
