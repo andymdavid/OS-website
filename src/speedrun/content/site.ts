@@ -73,12 +73,14 @@ export const siteContent: SiteContent = {
       id: "hero",
       variant: "default",
       props: {
-        badge: "For SME's interested in exploring applied AI",
-        title: "Start making sense of AI by actually building with it",
+        badge: "For business leaders who need firsthand experience with AI",
+        title: "LEARN HOW TO WORK WITH AI\nBY BUILDING SOMETHING WITH IT",
         subtitle:
-          "Speedrun is a hands-on workshop format designed to help businesses learn how to work with AI by building practical business tools and workflows.",
-        ctaPrimary: { label: "Get Started", href: "#pricing" },
-        socialProof: "Designed by Other Stuff, drawing on real-world AI work with teams in Australia and Silicon Valley",
+          "Speedrun is a hands-on workshop where business leaders learn what AI is and how it works by building practical tools with AI agents. No coding experience required.",
+        subtitleMaxWidth: "45.36rem",
+        centerContent: true,
+        ctaPrimary: { label: "Book a Call", href: "#pricing" },
+        socialProof: "Built by Other Stuff, drawing on work with teams across Australia and Silicon Valley",
         socialProofLogo: "/logo-other-stuff.png",
         socialProofLink: { text: "Other Stuff", href: "https://otherstuff.ai" },
       },
@@ -112,6 +114,7 @@ export const siteContent: SiteContent = {
         body:
           "Speedrun is a hands-on workshop designed to help small and medium sized businesses understand how AI actually works by building practical tools and workflows with them for their own business.",
         singleColumn: true,
+        textAlign: "left",
         blocksVariant: "expandable",
         minHeightClass: "min-h-[90vh]",
         blocks: [
