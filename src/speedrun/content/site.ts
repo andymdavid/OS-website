@@ -238,7 +238,7 @@ export const siteContent: SiteContent = {
             metaTags: ["3 Hours", "In-person", "Small groups"],
             introBody:
               "This session takes the app built in Speedrun Lite and extends it into a simple operational workflow. AI agents begin carrying work forward across defined stages, following rules and triggers you set.",
-            secondaryCtaLabel: "Available to teams who have completed Speedrun Lite",
+            secondaryNote: "Available to teams who have completed Speedrun Lite",
           },
         ],
       },

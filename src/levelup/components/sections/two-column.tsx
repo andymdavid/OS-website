@@ -55,7 +55,7 @@ interface TwoColumnProps {
       label: string;
       href: string;
     };
-    secondaryCtaLabel?: string;
+    secondaryNote?: string;
   }>;
   blocks?: Array<{
     number?: string;
@@ -408,10 +408,10 @@ export function TwoColumn({
                             </Button>
                           ) : null}
 
-                          {column.secondaryCtaLabel ? (
-                            <Button size="lg" variant="secondary" asChild className="cursor-default">
-                              <span>{column.secondaryCtaLabel}</span>
-                            </Button>
+                          {column.secondaryNote ? (
+                            <p className="text-sm text-neutral-600 italic">
+                              {column.secondaryNote}
+                            </p>
                           ) : null}
                         </div>
                       </div>
