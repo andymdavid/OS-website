@@ -352,14 +352,15 @@ export function TwoColumn({
                   return (
                     <article
                       key={`${column.title}-${index}`}
-                      className={`w-full text-center flex flex-col items-center${isPrimaryColumn ? " border border-neutral-200" : ""}`}
+                      className={`w-full text-center flex flex-col items-center${
+                        isPrimaryColumn
+                          ? " border border-neutral-200 shadow-sm transition-all duration-300 ease-out hover:shadow-lg"
+                          : ""
+                      }`}
                       style={{
                         maxWidth: "30rem",
                         justifySelf: index === 0 ? "end" : "start",
                         borderRadius: isPrimaryColumn ? "20px" : undefined,
-                        boxShadow: isPrimaryColumn
-                          ? "0 18px 40px rgba(15, 15, 15, 0.12)"
-                          : undefined,
                       }}
                     >
                       <div style={{ padding: "2.5rem 2.25rem" }}>
