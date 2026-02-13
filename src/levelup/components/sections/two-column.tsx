@@ -336,23 +336,27 @@ export function TwoColumn({
               </h2>
             ) : null}
             <p
-              className={`mt-6 pb-10 md:pb-12 text-sm md:text-base text-[#201d1d] ${isCentered ? "text-center mx-auto" : "text-left"} max-w-[46rem]`}
-              style={{ whiteSpace: "pre-line" }}
+              className={`mt-6 text-sm md:text-base text-[#201d1d] ${isCentered ? "text-center mx-auto" : "text-left"}`}
+              style={{ whiteSpace: "pre-line", paddingBottom: "4.5rem", maxWidth: "46rem" }}
             >
               {renderBody()}
             </p>
 
             {dualColumns && dualColumns.length > 0 ? (
-              <div className="mt-14 relative grid gap-y-14 lg:grid-cols-2 lg:gap-x-20 lg:gap-y-0 px-6 sm:px-8 lg:px-12">
+              <div
+                className="mt-10 relative grid gap-y-12 lg:grid-cols-2 gap-x-12 px-8"
+              >
                 <div className="hidden lg:block absolute left-1/2 top-0 h-full w-px bg-neutral-300 -translate-x-1/2" />
                 {dualColumns.map((column, index) => {
                   const isEmphasis = column.emphasis;
                   return (
                     <article
                       key={`${column.title}-${index}`}
-                      className={`${
-                        index === 0 ? "lg:pr-12" : "lg:pl-12"
-                      }`}
+                      className="w-full"
+                      style={{
+                        maxWidth: "30rem",
+                        justifySelf: index === 0 ? "end" : "start",
+                      }}
                     >
                       {column.label ? (
                         <span
@@ -368,7 +372,7 @@ export function TwoColumn({
                       <h3 className="mt-6 font-anton text-[34px] leading-tight uppercase text-[#201d1d]">
                         {column.title}
                       </h3>
-                      <div className="mt-8 space-y-8 max-w-[26rem]">
+                      <div className="mt-8 space-y-8" style={{ maxWidth: "26rem" }}>
                         {column.introBody ? (
                           <div className="pb-1">
                             <p className="text-sm leading-relaxed text-neutral-700">{column.introBody}</p>
