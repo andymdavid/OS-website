@@ -20,9 +20,7 @@ interface FeaturePanelProps {
   steps: FeaturePanelStep[];
 }
 
-type PanelTheme = "dark" | "light";
-
-const THEME_TOKENS: Record<PanelTheme, {
+const THEME_TOKENS: {
   panel: string;
   panelText: string;
   panelMuted: string;
@@ -31,27 +29,15 @@ const THEME_TOKENS: Record<PanelTheme, {
   stageBorder: string;
   accent: string;
   accentSoft: string;
-}> = {
-  dark: {
-    panel: "#141312",
-    panelText: "#f6f2ef",
-    panelMuted: "rgba(246, 242, 239, 0.65)",
-    panelBorder: "rgba(255, 255, 255, 0.06)",
-    railDivider: "rgba(255, 255, 255, 0.08)",
-    stageBorder: "rgba(255, 255, 255, 0.08)",
-    accent: "#a1ff62",
-    accentSoft: "rgba(161, 255, 98, 0.16)",
-  },
-  light: {
-    panel: "#ffffff",
-    panelText: "#201d1d",
-    panelMuted: "rgba(32, 29, 29, 0.65)",
-    panelBorder: "rgba(32, 29, 29, 0.08)",
-    railDivider: "rgba(32, 29, 29, 0.1)",
-    stageBorder: "rgba(32, 29, 29, 0.08)",
-    accent: "#a1ff62",
-    accentSoft: "rgba(161, 255, 98, 0.2)",
-  },
+} = {
+  panel: "#141312",
+  panelText: "#f6f2ef",
+  panelMuted: "rgba(246, 242, 239, 0.65)",
+  panelBorder: "rgba(255, 255, 255, 0.06)",
+  railDivider: "rgba(255, 255, 255, 0.08)",
+  stageBorder: "rgba(255, 255, 255, 0.08)",
+  accent: "#a1ff62",
+  accentSoft: "rgba(161, 255, 98, 0.16)",
 };
 
 export function FeaturePanel({
@@ -63,13 +49,12 @@ export function FeaturePanel({
   steps,
 }: FeaturePanelProps) {
   const [activeStepIndex, setActiveStepIndex] = useState(0);
-  const [theme, setTheme] = useState<PanelTheme>("dark");
   const [isHovering, setIsHovering] = useState(false);
   const pauseUntilRef = useRef<number>(0);
   const stepsCount = steps.length;
 
   const activeStep = steps[activeStepIndex] ?? steps[0];
-  const tokens = THEME_TOKENS[theme];
+  const tokens = THEME_TOKENS;
 
   useEffect(() => {
     if (stepsCount <= 1) {
@@ -93,10 +78,8 @@ export function FeaturePanel({
   };
 
   const panelShadow = useMemo(
-    () => (theme === "dark"
-      ? "0 30px 70px rgba(10, 10, 10, 0.45)"
-      : "0 22px 60px rgba(20, 20, 20, 0.18)"),
-    [theme]
+    () => "0 30px 70px rgba(10, 10, 10, 0.45)",
+    []
   );
 
   return (
@@ -119,27 +102,12 @@ export function FeaturePanel({
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
           >
-            <div className="flex items-center justify-between">
-              <div className="font-anton text-xl uppercase">{title}</div>
-              <button
-                type="button"
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="text-xs uppercase tracking-[0.16em]"
-                style={{
-                  color: tokens.panelMuted,
-                  border: `1px solid ${tokens.panelBorder}`,
-                  padding: "0.5rem 0.9rem",
-                  borderRadius: "999px",
-                }}
-              >
-                {theme === "dark" ? "Light Panel" : "Dark Panel"}
-              </button>
-            </div>
+            <div className="font-anton text-xl uppercase">{title}</div>
 
             <div
-              className="mt-8 grid gap-8 lg:grid-cols-[320px_minmax(0,1fr)]"
+              className="mt-8 grid gap-8 lg:grid-cols-[320px_minmax(0,1fr)] items-stretch"
             >
-              <div style={{ width: "320px" }}>
+              <div style={{ width: "320px" }} className="h-full">
                 <p className="text-sm" style={{ color: tokens.panelMuted }}>
                   {body}
                 </p>
@@ -193,18 +161,18 @@ export function FeaturePanel({
                 </div>
               </div>
 
-              <div className="w-full">
+              <div className="w-full h-full flex" style={{ padding: "0.5rem" }}>
                 <div
                   className="rounded-3xl overflow-hidden"
                   style={{
                     border: `1px solid ${tokens.stageBorder}`,
                     backgroundColor: tokens.accentSoft,
-                    boxShadow: theme === "dark"
-                      ? "0 26px 70px rgba(5, 5, 5, 0.55)"
-                      : "0 24px 60px rgba(20, 20, 20, 0.2)",
+                    boxShadow: "0 26px 70px rgba(5, 5, 5, 0.55)",
+                    height: "100%",
+                    width: "100%",
                   }}
                 >
-                  <div style={{ aspectRatio: "16 / 10" }}>
+                  <div style={{ height: "100%" }}>
                     <AnimatePresence mode="wait">
                       {activeStep ? (
                         <motion.img
