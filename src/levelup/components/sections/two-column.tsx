@@ -2,7 +2,7 @@
 import { Section } from "@/levelup/components/layout/section";
 import { Container } from "@/levelup/components/layout/container";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import React, { useState } from "react";
 
 interface LevelUpCard {
   id: string;
@@ -66,6 +66,7 @@ interface TwoColumnProps {
   expandableCardSize?: "default" | "large" | "uniform";
   expandableCardsLayout?: "container" | "fullBleed";
   expandableCardsMaxWidth?: "default" | "wide";
+  bodyMaxWidth?: string;
 }
 
 export function TwoColumn({
@@ -99,6 +100,7 @@ export function TwoColumn({
   expandableCardSize = "default",
   expandableCardsLayout = "container",
   expandableCardsMaxWidth = "default",
+  bodyMaxWidth,
 }: TwoColumnProps) {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const isCentered = textAlign === "center";
@@ -223,7 +225,7 @@ export function TwoColumn({
       );
     }
 
-    return <p className={className}>{renderBody()}</p>;
+    return <p className={className} style={{ whiteSpace: "pre-line" }}>{renderBody()}</p>;
   };
 
   // Split layout: 50/50 with content left, image right
@@ -320,15 +322,22 @@ export function TwoColumn({
               {title}
             </h2>
           ) : null}
-          {renderDefaultBody(
-            `${bodyClassName} ${
-              singleColumn
-                ? bodyVariant === "display"
-                  ? `${isCentered ? "max-w-3xl mx-auto" : "max-w-3xl mr-auto"}`
-                  : `${isCentered ? "max-w-[40rem] mx-auto" : "max-w-[40rem] mr-auto"}`
-                : "md:columns-2 md:gap-10"
-            }`
-          )}
+          {(() => {
+            const bodyWidthClass = singleColumn
+              ? bodyVariant === "display"
+                ? `${isCentered ? "max-w-3xl mx-auto" : "max-w-3xl mr-auto"}`
+                : `${isCentered ? "max-w-[40rem] mx-auto" : "max-w-[40rem] mr-auto"}`
+              : "md:columns-2 md:gap-10";
+            const bodyElement = renderDefaultBody(`${bodyClassName} ${bodyWidthClass}`);
+
+            if (bodyMaxWidth && React.isValidElement(bodyElement)) {
+              return React.cloneElement(bodyElement, {
+                style: { ...(bodyElement.props.style || {}), maxWidth: bodyMaxWidth },
+              });
+            }
+
+            return bodyElement;
+          })()}
           {faqItems && faqItems.length > 0 && (
             <div className="mt-10 max-w-3xl mx-auto">
               {faqItems.map((item, index) => (
@@ -587,54 +596,58 @@ export function TwoColumn({
                       key={card.id}
                       className={`rounded-2xl bg-[#2a2a2a] flex-shrink-0 md:flex-shrink flex flex-col transition-all duration-300 ease-out md:hover:-translate-y-1.5 md:hover:shadow-[0_20px_40px_rgba(0,0,0,0.3),0_0_30px_rgba(161,255,98,0.1)] ${
                         isUniformCards
-                          ? "p-6 h-[440px] w-[280px] sm:w-[300px] md:w-full"
+                          ? "p-6 h-auto w-[280px] sm:w-[300px] md:w-full"
                           : "p-5 h-[420px] w-[260px] sm:w-[280px] md:w-full"
                       }`}
                       style={stepOffset ? { marginBottom: `${stepOffset}px` } : undefined}
                     >
-                      {/* Top section */}
-                      <div className="shrink-0">
+                      <div className="mt-auto">
                         <span className="text-neutral-500 text-sm font-medium font-jersey">
                           {card.number}
                         </span>
                         <h3 className="text-white text-xl font-semibold mt-3 leading-tight">{card.title}</h3>
-                        <p className="text-neutral-400 text-xs mt-3 leading-relaxed">
+                        <p className="text-white/70 text-sm mt-3 leading-relaxed">
                           {card.description}
                         </p>
-                      </div>
 
-                      {/* Divider */}
-                      <div className="border-t border-neutral-700 my-5 shrink-0" />
+                        {/* Divider */}
+                        <div className="border-t border-neutral-700 my-5" />
 
-                      {/* Tags */}
-                      <div className="flex items-center gap-2 shrink-0">
-                        <span className="px-2.5 py-1 text-xs font-semibold bg-[#a1ff62] text-black rounded uppercase tracking-wide">
-                          {card.primaryTag}
-                        </span>
-                        {card.secondaryTag && (
-                          <span className="px-2.5 py-1 text-xs font-medium text-neutral-400 border border-neutral-600 rounded flex items-center gap-1.5">
-                            <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <circle cx="12" cy="12" r="10" strokeWidth="2" />
-                              <path strokeLinecap="round" strokeWidth="2" d="M12 6v6l4 2" />
-                            </svg>
-                            {card.secondaryTag}
+                        {/* Tags */}
+                        <div className="flex items-center gap-2">
+                          <span className="px-2.5 py-1 text-xs font-semibold bg-[#a1ff62] text-black rounded uppercase tracking-wide">
+                            {card.primaryTag}
                           </span>
-                        )}
+                          {card.secondaryTag && (
+                            <span className="px-2.5 py-1 text-xs font-medium text-neutral-400 border border-neutral-600 rounded flex items-center gap-1.5">
+                              <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <circle cx="12" cy="12" r="10" strokeWidth="2" />
+                                <path strokeLinecap="round" strokeWidth="2" d="M12 6v6l4 2" />
+                              </svg>
+                              {card.secondaryTag}
+                            </span>
+                          )}
+                        </div>
                       </div>
 
                       {/* Summary box */}
-                      <div className="mt-4 flex-1 rounded-xl bg-[#1a1a1a] px-4 flex flex-col">
-                        {card.summaryItems.map((item, itemIndex) => (
-                          <div key={item.number} className="flex-1 flex items-center border-b border-neutral-800 last:border-b-0">
-                            <div className="flex items-baseline gap-3">
-                              <span className="text-[#a1ff62] text-xs font-medium font-jersey shrink-0">
-                                {item.number}
-                              </span>
-                              <span className="text-white text-xs">{item.text}</span>
+                      {card.summaryItems.length > 0 ? (
+                        <div className="mt-4 flex-1 rounded-xl bg-[#1a1a1a] px-4 flex flex-col">
+                          {card.summaryItems.map((item) => (
+                            <div
+                              key={item.number}
+                              className="flex-1 flex items-center border-b border-neutral-800 last:border-b-0"
+                            >
+                              <div className="flex items-baseline gap-3">
+                                <span className="text-[#a1ff62] text-xs font-medium font-jersey shrink-0">
+                                  {item.number}
+                                </span>
+                                <span className="text-white text-xs">{item.text}</span>
+                              </div>
                             </div>
-                          </div>
-                        ))}
-                      </div>
+                          ))}
+                        </div>
+                      ) : null}
                     </div>
                   );
                 })}
