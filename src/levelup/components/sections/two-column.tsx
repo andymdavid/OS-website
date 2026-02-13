@@ -55,6 +55,7 @@ interface TwoColumnProps {
       label: string;
       href: string;
     };
+    secondaryCtaLabel?: string;
   }>;
   blocks?: Array<{
     number?: string;
@@ -404,6 +405,12 @@ export function TwoColumn({
                                 {column.cta.label}
                                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                               </a>
+                            </Button>
+                          ) : null}
+
+                          {column.secondaryCtaLabel ? (
+                            <Button size="lg" variant="secondary" asChild className="cursor-default">
+                              <span>{column.secondaryCtaLabel}</span>
                             </Button>
                           ) : null}
                         </div>
