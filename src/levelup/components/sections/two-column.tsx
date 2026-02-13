@@ -344,10 +344,10 @@ export function TwoColumn({
                   return (
                     <article
                       key={`${column.title}-${index}`}
-                      className={`rounded-2xl border p-6 md:p-8 ${
+                      className={`rounded-2xl p-6 md:p-8 transition-all duration-300 ease-out md:hover:-translate-y-1.5 ${
                         isEmphasis
-                          ? "border-neutral-900 bg-neutral-100/70 shadow-[0_12px_30px_rgba(0,0,0,0.08)]"
-                          : "border-neutral-300 bg-white"
+                          ? "bg-[#2a2a2a] border border-[#a1ff62]/35 shadow-[0_20px_40px_rgba(0,0,0,0.3),0_0_30px_rgba(161,255,98,0.14)]"
+                          : "bg-[#2a2a2a] border border-neutral-700/80 md:hover:shadow-[0_20px_40px_rgba(0,0,0,0.3),0_0_30px_rgba(161,255,98,0.1)]"
                       }`}
                     >
                       {column.label ? (
@@ -355,16 +355,16 @@ export function TwoColumn({
                           className={`inline-flex px-2.5 py-1 text-[11px] font-semibold rounded uppercase tracking-wide ${
                             isEmphasis
                               ? "bg-[#a1ff62] text-black"
-                              : "bg-neutral-100 text-neutral-700 border border-neutral-200"
+                              : "bg-[#1f1f1f] text-neutral-300 border border-neutral-600"
                           }`}
                         >
                           {column.label}
                         </span>
                       ) : null}
-                      <h3 className="mt-4 font-anton text-[34px] leading-tight uppercase text-[#201d1d]">
+                      <h3 className="mt-4 font-anton text-[34px] leading-tight uppercase text-white">
                         {column.title}
                       </h3>
-                      <p className="mt-4 text-sm md:text-base text-[#201d1d]">
+                      <p className="mt-4 text-sm md:text-base text-white/80">
                         {column.body}
                       </p>
                       {column.blocks && column.blocks.length > 0 ? (
@@ -372,12 +372,10 @@ export function TwoColumn({
                           {column.blocks.map((block, blockIndex) => (
                             <div
                               key={`${block.title}-${blockIndex}`}
-                              className={`border-t pt-5 pb-6 ${
-                                isEmphasis ? "border-neutral-800/20" : "border-neutral-200"
-                              }`}
+                              className={`border-t pt-5 pb-6 ${isEmphasis ? "border-neutral-600/70" : "border-neutral-700"}`}
                             >
-                              <h4 className="text-base font-semibold text-[#201d1d]">{block.title}</h4>
-                              <p className="mt-2 text-sm text-neutral-600">{block.body}</p>
+                              <h4 className="text-base font-semibold text-white">{block.title}</h4>
+                              <p className="mt-2 text-sm text-white/70">{block.body}</p>
                             </div>
                           ))}
                         </div>
