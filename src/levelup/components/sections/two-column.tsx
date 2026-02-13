@@ -338,7 +338,7 @@ export function TwoColumn({
             </p>
 
             {dualColumns && dualColumns.length > 0 ? (
-              <div className="mt-10 grid gap-6 lg:grid-cols-[1.2fr_1fr]">
+              <div className="mt-10 grid gap-6 lg:grid-cols-2">
                 {dualColumns.map((column, index) => {
                   const isEmphasis = column.emphasis;
                   return (
