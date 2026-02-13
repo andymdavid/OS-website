@@ -346,60 +346,66 @@ export function TwoColumn({
               <div
                 className="mt-10 relative grid gap-y-12 lg:grid-cols-2 gap-x-12 px-8"
               >
-                <div className="hidden lg:block absolute left-1/2 top-0 h-full w-px bg-neutral-300 -translate-x-1/2" />
                 {dualColumns.map((column, index) => {
                   const isEmphasis = column.emphasis;
+                  const isPrimaryColumn = index === 0;
                   return (
                     <article
                       key={`${column.title}-${index}`}
-                      className="w-full text-center flex flex-col items-center"
+                      className={`w-full text-center flex flex-col items-center${isPrimaryColumn ? " border border-neutral-200" : ""}`}
                       style={{
                         maxWidth: "30rem",
                         justifySelf: index === 0 ? "end" : "start",
+                        borderRadius: isPrimaryColumn ? "20px" : undefined,
+                        boxShadow: isPrimaryColumn
+                          ? "0 18px 40px rgba(15, 15, 15, 0.12)"
+                          : undefined,
                       }}
                     >
-                      {column.label ? (
-                        <span
-                          className={`inline-flex px-2.5 py-1 text-[11px] font-semibold rounded uppercase tracking-wide ${
-                            isEmphasis
-                              ? "bg-[#a1ff62] text-black"
-                              : "bg-neutral-100 text-[#201d1d] border border-neutral-300"
-                          }`}
-                        >
-                          {column.label}
-                        </span>
-                      ) : null}
-                      <h3 className="mt-6 font-anton text-[34px] leading-tight uppercase text-[#201d1d]">
-                        {column.title}
-                      </h3>
-                      <div className="mt-8 space-y-8" style={{ maxWidth: "26rem" }}>
-                        {column.metaTags && column.metaTags.length > 0 ? (
-                          <div className="pt-1 flex flex-wrap items-center justify-center gap-2">
-                            {column.metaTags.map((tag, tagIndex) => (
-                              <span
-                                key={`${tag}-${tagIndex}`}
-                                className="inline-flex px-2.5 py-1 text-[11px] font-semibold rounded uppercase tracking-wide bg-neutral-100 text-[#201d1d] border border-neutral-300"
-                              >
-                                {tag}
-                              </span>
-                            ))}
-                          </div>
+                      <div style={{ padding: "2.5rem 2.25rem" }}>
+                        {column.label ? (
+                          <span
+                            className={`inline-flex px-2.5 py-1 text-[11px] font-semibold rounded uppercase tracking-wide ${
+                              isEmphasis
+                                ? "bg-[#a1ff62] text-black"
+                                : "bg-neutral-100 text-[#201d1d] border border-neutral-300"
+                            }`}
+                          >
+                            {column.label}
+                          </span>
                         ) : null}
+                        <h3 className="mt-6 font-anton text-[34px] leading-tight uppercase text-[#201d1d]">
+                          {column.title}
+                        </h3>
+                        <div className="mt-8 space-y-8" style={{ maxWidth: "26rem" }}>
+                          {column.metaTags && column.metaTags.length > 0 ? (
+                            <div className="pt-1 flex flex-wrap items-center justify-center gap-2">
+                              {column.metaTags.map((tag, tagIndex) => (
+                                <span
+                                  key={`${tag}-${tagIndex}`}
+                                  className="inline-flex px-2.5 py-1 text-[11px] font-semibold rounded uppercase tracking-wide bg-neutral-100 text-[#201d1d] border border-neutral-300"
+                                >
+                                  {tag}
+                                </span>
+                              ))}
+                            </div>
+                          ) : null}
 
-                        {column.introBody ? (
-                          <div className="pb-1">
-                            <p className="text-sm leading-relaxed text-neutral-700">{column.introBody}</p>
-                          </div>
-                        ) : null}
+                          {column.introBody ? (
+                            <div className="pb-1">
+                              <p className="text-sm leading-relaxed text-neutral-700">{column.introBody}</p>
+                            </div>
+                          ) : null}
 
-                        {column.cta ? (
-                          <Button size="lg" asChild className="group hover:bg-[#a1ff62] hover:text-black">
-                            <a href={column.cta.href} target="_blank" rel="noopener noreferrer">
-                              {column.cta.label}
-                              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                            </a>
-                          </Button>
-                        ) : null}
+                          {column.cta ? (
+                            <Button size="lg" asChild className="group hover:bg-[#a1ff62] hover:text-black">
+                              <a href={column.cta.href} target="_blank" rel="noopener noreferrer">
+                                {column.cta.label}
+                                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                              </a>
+                            </Button>
+                          ) : null}
+                        </div>
                       </div>
                     </article>
                   );
