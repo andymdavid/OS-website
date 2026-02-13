@@ -44,14 +44,11 @@ interface TwoColumnProps {
   dualColumns?: Array<{
     title: string;
     metaTags?: string[];
+    introBody?: string;
     buildBody?: string;
-    bestFor?: string;
+    leaveWith?: string;
     label?: string;
     emphasis?: boolean;
-    gainItems?: Array<{
-      title: string;
-      body: string;
-    }>;
   }>;
   blocks?: Array<{
     number?: string;
@@ -380,12 +377,9 @@ export function TwoColumn({
                           ))}
                         </div>
                       ) : null}
-                      {column.bestFor ? (
+                      {column.introBody ? (
                         <div className="mt-8 border-t border-neutral-300 pt-6">
-                          <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-neutral-500">
-                            Best for
-                          </p>
-                          <p className="mt-2 text-sm leading-relaxed text-neutral-700">{column.bestFor}</p>
+                          <p className="text-sm leading-relaxed text-neutral-700">{column.introBody}</p>
                         </div>
                       ) : null}
 
@@ -394,28 +388,18 @@ export function TwoColumn({
                           <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-neutral-500">
                             What you build
                           </p>
-                          <p className="mt-2 text-sm md:text-base leading-relaxed text-neutral-700">
+                          <p className="mt-2 text-sm leading-relaxed text-neutral-700">
                             {column.buildBody}
                           </p>
                         </div>
                       ) : null}
 
-                      {column.gainItems && column.gainItems.length > 0 ? (
+                      {column.leaveWith ? (
                         <div className="mt-8 border-t border-neutral-300 pt-6">
                           <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-neutral-500">
-                            What you gain
+                            You leave with
                           </p>
-                          <div className="mt-4">
-                            {column.gainItems.map((item, blockIndex) => (
-                              <div
-                                key={`${item.title}-${blockIndex}`}
-                                className="border-t border-neutral-300 py-4"
-                              >
-                                <h4 className="text-sm font-semibold text-[#201d1d]">{item.title}</h4>
-                                <p className="mt-2 text-sm leading-relaxed text-neutral-700">{item.body}</p>
-                              </div>
-                            ))}
-                          </div>
+                          <p className="mt-2 text-sm leading-relaxed text-neutral-700">{column.leaveWith}</p>
                         </div>
                       ) : null}
                     </article>

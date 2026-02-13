@@ -228,47 +228,22 @@ export const siteContent: SiteContent = {
             label: "Start here",
             emphasis: true,
             metaTags: ["3 hours", "In-person", "Small groups"],
-            buildBody:
-              "By the end of the session, you have built a working Kanban-style task app and connected it to an AI agent yourself.",
-            gainItems: [
-              {
-                title: "Understand how AI works",
-                body: "Learn how your instructions become working features and how small changes affect the outcome, without needing to be technical.",
-              },
-              {
-                title: "Confidence to build and adapt",
-                body: "You leave knowing you can create tools yourself. AI becomes something you can direct and improve, not something you need explained to you.",
-              },
-              {
-                title: "Your own app with an AI agent",
-                body: "You leave with a usable Kanban-style app connected to an agent that can summarise tasks, plan work, and generate updates.",
-              },
-            ],
-            bestFor:
-              "Teams who need firsthand AI experience before making bigger decisions about implementation or strategy.",
+            introBody:
+              "In this session, you build a simple Kanban-style task app from scratch using AI coding agents. You connect it to an AI agent yourself and see how your instructions become working features in real time.",
+            buildBody: "A working Kanban-style task app connected to your own AI agent.",
+            leaveWith:
+              "Firsthand experience of how AI works and the confidence to keep building.",
           },
           {
             title: "Speedrun Applied",
             label: "Go Deeper",
-            metaTags: ["Full day (6-7 hours)", "In-person", "Small groups"],
+            metaTags: ["3 Hours", "In-person", "Small groups"],
+            introBody:
+              "This session takes the app built in Speedrun Lite and extends it into a simple operational workflow. AI agents begin carrying work forward across defined stages, following rules and triggers you set.",
             buildBody:
-              "Your original task app evolves into a simple operational workflow where AI agents begin carrying work forward across stages.",
-            gainItems: [
-              {
-                title: "Extend the app into a live workflow",
-                body: "You take the Kanban app built in Speedrun Lite and connect it to defined stages of work, introducing clear triggers and hand-offs between tasks.",
-              },
-              {
-                title: "Let agents act across stages of work",
-                body: "Instead of responding to single prompts, agents summarise progress, generate updates, and move tasks forward based on rules you define.",
-              },
-              {
-                title: "See how AI operates over time",
-                body: "You observe how agents behave when they are part of ongoing work, learning where to trust them, where to intervene, and how to stay in control.",
-              },
-            ],
-            bestFor:
-              "Teams who've completed Speedrun Lite and are ready to see how AI agents can operate autonomously within real business workflows.",
+              "A connected workflow where agents summarise, update, and move tasks forward.",
+            leaveWith:
+              "A practical understanding of how AI can operate inside day-to-day business processes.",
           },
         ],
       },
