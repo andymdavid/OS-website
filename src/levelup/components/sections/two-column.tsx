@@ -340,16 +340,18 @@ export function TwoColumn({
             </p>
 
             {dualColumns && dualColumns.length > 0 ? (
-              <div className="mt-10 grid gap-6 lg:grid-cols-2">
+              <div className="mt-12 relative grid gap-y-14 lg:grid-cols-2 lg:gap-x-16 lg:gap-y-0">
+                <div className="hidden lg:block absolute left-1/2 top-0 h-full w-px bg-neutral-300 -translate-x-1/2" />
+                <div className="hidden lg:flex absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 h-12 w-12 items-center justify-center rounded-full border border-neutral-300 bg-neutral-100 text-neutral-500 text-sm font-semibold">
+                  or
+                </div>
                 {dualColumns.map((column, index) => {
                   const isEmphasis = column.emphasis;
                   return (
                     <article
                       key={`${column.title}-${index}`}
-                      className={`rounded-2xl p-6 md:p-8 transition-all duration-300 ease-out md:hover:-translate-y-1.5 ${
-                        isEmphasis
-                          ? "bg-[#2a2a2a] border border-[#a1ff62]/35 shadow-[0_20px_40px_rgba(0,0,0,0.3),0_0_30px_rgba(161,255,98,0.14)]"
-                          : "bg-[#2a2a2a] border border-neutral-700/80 md:hover:shadow-[0_20px_40px_rgba(0,0,0,0.3),0_0_30px_rgba(161,255,98,0.1)]"
+                      className={`${
+                        index === 0 ? "lg:pr-10" : "lg:pl-10"
                       }`}
                     >
                       {column.label ? (
@@ -357,13 +359,13 @@ export function TwoColumn({
                           className={`inline-flex px-2.5 py-1 text-[11px] font-semibold rounded uppercase tracking-wide ${
                             isEmphasis
                               ? "bg-[#a1ff62] text-black"
-                              : "bg-[#1f1f1f] text-neutral-300 border border-neutral-600"
+                              : "bg-neutral-100 text-[#201d1d] border border-neutral-300"
                           }`}
                         >
                           {column.label}
                         </span>
                       ) : null}
-                      <h3 className="mt-4 font-anton text-[34px] leading-tight uppercase text-white">
+                      <h3 className="mt-4 font-anton text-[34px] leading-tight uppercase text-[#201d1d]">
                         {column.title}
                       </h3>
                       {column.metaTags && column.metaTags.length > 0 ? (
@@ -371,7 +373,7 @@ export function TwoColumn({
                           {column.metaTags.map((tag, tagIndex) => (
                             <span
                               key={`${tag}-${tagIndex}`}
-                              className="inline-flex px-2.5 py-1 text-[11px] font-semibold rounded uppercase tracking-wide bg-[#1f1f1f] text-neutral-300 border border-neutral-600"
+                              className="inline-flex px-2.5 py-1 text-[11px] font-semibold rounded uppercase tracking-wide bg-neutral-100 text-[#201d1d] border border-neutral-300"
                             >
                               {tag}
                             </span>
@@ -379,40 +381,38 @@ export function TwoColumn({
                         </div>
                       ) : null}
                       {column.bestFor ? (
-                        <div className="mt-8 border-t border-neutral-700 pt-6">
-                          <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-neutral-400">
+                        <div className="mt-8 border-t border-neutral-300 pt-6">
+                          <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-neutral-500">
                             Best for
                           </p>
-                          <p className="mt-2 text-sm text-white/80">{column.bestFor}</p>
+                          <p className="mt-2 text-sm leading-relaxed text-neutral-700">{column.bestFor}</p>
                         </div>
                       ) : null}
 
                       {column.buildBody ? (
-                        <div className="mt-8 border-t border-neutral-700 pt-6">
-                          <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-neutral-400">
+                        <div className="mt-8 border-t border-neutral-300 pt-6">
+                          <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-neutral-500">
                             What you build
                           </p>
-                          <p className="mt-2 text-sm md:text-base text-white/80">
+                          <p className="mt-2 text-sm md:text-base leading-relaxed text-neutral-700">
                             {column.buildBody}
                           </p>
                         </div>
                       ) : null}
 
                       {column.gainItems && column.gainItems.length > 0 ? (
-                        <div className="mt-8 border-t border-neutral-700 pt-6">
-                          <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-neutral-400">
+                        <div className="mt-8 border-t border-neutral-300 pt-6">
+                          <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-neutral-500">
                             What you gain
                           </p>
-                          <div className="mt-4 space-y-5">
+                          <div className="mt-4">
                             {column.gainItems.map((item, blockIndex) => (
                               <div
                                 key={`${item.title}-${blockIndex}`}
-                                className={`rounded-xl border bg-black/10 px-4 py-4 ${
-                                  isEmphasis ? "border-neutral-600/80" : "border-neutral-700"
-                                }`}
+                                className="border-t border-neutral-300 py-4"
                               >
-                                <h4 className="text-sm font-semibold text-white">{item.title}</h4>
-                                <p className="mt-2 text-sm text-white/70">{item.body}</p>
+                                <h4 className="text-sm font-semibold text-[#201d1d]">{item.title}</h4>
+                                <p className="mt-2 text-sm leading-relaxed text-neutral-700">{item.body}</p>
                               </div>
                             ))}
                           </div>
