@@ -161,7 +161,14 @@ export function FeaturePanel({
                 </div>
               </div>
 
-              <div className="w-full h-full flex">
+              <div
+                className="w-full h-full flex"
+                style={{
+                  marginTop: "-1.25rem",
+                  marginRight: "-1.25rem",
+                  marginBottom: "-1.25rem",
+                }}
+              >
                 <div
                   className="rounded-3xl overflow-hidden"
                   style={{
