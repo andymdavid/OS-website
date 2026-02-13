@@ -3,6 +3,7 @@ export type SectionKey =
   | "navbar"
   | "hero"
   | "twoColumn"
+  | "featurePanel"
   | "arcCarousel"
   | "logos"
   | "benefits"
@@ -239,6 +240,49 @@ export const siteContent: SiteContent = {
             introBody:
               "This session takes the app built in Speedrun Lite and extends it into a simple operational workflow. AI agents begin carrying work forward across defined stages, following rules and triggers you set.",
             secondaryNote: "Available to teams who have completed Speedrun Lite",
+          },
+        ],
+      },
+    },
+    {
+      key: "featurePanel",
+      enabled: true,
+      id: "featurePanel",
+      props: {
+        title: "Placeholder Title",
+        body: "Short placeholder copy that explains the section in one or two lines.",
+        ctaLabel: "Placeholder CTA",
+        ctaHref: "#",
+        steps: [
+          {
+            label: "Create the agent",
+            body: "Short supporting line about this step or capability.",
+            imageSrc: "/WingmanScreen1.png",
+            imageAlt: "Placeholder visual 1",
+          },
+          {
+            label: "Define policies",
+            body: "Short supporting line about this step or capability.",
+            imageSrc: "/WingmanScreen2.png",
+            imageAlt: "Placeholder visual 2",
+          },
+          {
+            label: "Design the logic",
+            body: "Short supporting line about this step or capability.",
+            imageSrc: "/WingmanScreen1.png",
+            imageAlt: "Placeholder visual 3",
+          },
+          {
+            label: "Test and launch",
+            body: "Short supporting line about this step or capability.",
+            imageSrc: "/WingmanScreen2.png",
+            imageAlt: "Placeholder visual 4",
+          },
+          {
+            label: "Monitor and improve",
+            body: "Short supporting line about this step or capability.",
+            imageSrc: "/WingmanScreen1.png",
+            imageAlt: "Placeholder visual 5",
           },
         ],
       },

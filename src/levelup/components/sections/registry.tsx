@@ -2,6 +2,7 @@ import { SectionKey, SectionConfig } from "@/levelup/content/site";
 import { Navbar } from "./navbar";
 import { Hero } from "./hero";
 import { TwoColumn } from "./two-column";
+import { FeaturePanel } from "./feature-panel";
 import { ArcCarousel } from "./arc-carousel";
 import { Logos } from "./logos";
 import { Benefits } from "./benefits";
@@ -17,6 +18,7 @@ const sectionComponents: Record<SectionKey, React.ComponentType<any>> = {
   navbar: Navbar,
   hero: Hero,
   twoColumn: TwoColumn,
+  featurePanel: FeaturePanel,
   arcCarousel: ArcCarousel,
   logos: Logos,
   benefits: Benefits,

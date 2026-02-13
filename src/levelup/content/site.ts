@@ -3,6 +3,7 @@ export type SectionKey =
   | "navbar"
   | "hero"
   | "twoColumn"
+  | "featurePanel"
   | "arcCarousel"
   | "logos"
   | "benefits"
