@@ -43,7 +43,7 @@ interface TwoColumnProps {
   }>;
   dualColumns?: Array<{
     title: string;
-    meta?: string;
+    metaTags?: string[];
     buildBody?: string;
     bestFor?: string;
     label?: string;
@@ -353,23 +353,38 @@ export function TwoColumn({
                       }`}
                     >
                       {column.label ? (
-                        <span
-                          className={`inline-flex px-2.5 py-1 text-[11px] font-semibold rounded uppercase tracking-wide ${
-                            isEmphasis
-                              ? "bg-[#a1ff62] text-black"
-                              : "bg-[#1f1f1f] text-neutral-300 border border-neutral-600"
-                          }`}
-                        >
-                          {column.label}
-                        </span>
+                        <div className="flex flex-wrap items-center gap-2">
+                          <span
+                            className={`inline-flex px-2.5 py-1 text-[11px] font-semibold rounded uppercase tracking-wide ${
+                              isEmphasis
+                                ? "bg-[#a1ff62] text-black"
+                                : "bg-[#1f1f1f] text-neutral-300 border border-neutral-600"
+                            }`}
+                          >
+                            {column.label}
+                          </span>
+                          {column.metaTags && column.metaTags.length > 0
+                            ? column.metaTags.map((tag, tagIndex) => (
+                                <span
+                                  key={`${tag}-${tagIndex}`}
+                                  className="inline-flex px-2.5 py-1 text-[11px] font-semibold rounded uppercase tracking-wide bg-[#1f1f1f] text-neutral-300 border border-neutral-600"
+                                >
+                                  {tag}
+                                </span>
+                              ))
+                            : null}
+                        </div>
                       ) : null}
                       <h3 className="mt-4 font-anton text-[34px] leading-tight uppercase text-white">
                         {column.title}
                       </h3>
-                      {column.meta ? (
-                        <p className="mt-4 inline-flex rounded-full border border-neutral-600 bg-[#1f1f1f] px-3 py-1.5 text-xs text-neutral-300">
-                          {column.meta}
-                        </p>
+                      {column.bestFor ? (
+                        <div className="mt-7 border-t border-neutral-700 pt-5">
+                          <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-neutral-400">
+                            Best for
+                          </p>
+                          <p className="mt-2 text-sm text-white/80">{column.bestFor}</p>
+                        </div>
                       ) : null}
 
                       {column.buildBody ? (
@@ -401,15 +416,6 @@ export function TwoColumn({
                               </div>
                             ))}
                           </div>
-                        </div>
-                      ) : null}
-
-                      {column.bestFor ? (
-                        <div className="mt-7 border-t border-neutral-700 pt-5">
-                          <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-neutral-400">
-                            Best for
-                          </p>
-                          <p className="mt-2 text-sm text-white/80">{column.bestFor}</p>
                         </div>
                       ) : null}
                     </article>

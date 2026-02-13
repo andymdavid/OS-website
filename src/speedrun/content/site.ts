@@ -227,7 +227,7 @@ export const siteContent: SiteContent = {
             title: "Speedrun Lite",
             label: "Start here",
             emphasis: true,
-            meta: "Duration: 3 hours | In-person or online | Small groups (max 8)",
+            metaTags: ["3 hours", "In-person", "Small groups"],
             buildBody:
               "By the end of the session, you have built a working Kanban-style task app and connected it to an AI agent yourself.",
             gainItems: [
@@ -250,7 +250,7 @@ export const siteContent: SiteContent = {
           {
             title: "Speedrun Applied",
             label: "Go Deeper",
-            meta: "Duration: Full day (6-7 hours) | In-person or online | Small groups (max 8)",
+            metaTags: ["Full day (6-7 hours)", "In-person", "Small groups"],
             buildBody:
               "Your original task app evolves into a simple operational workflow where AI agents begin carrying work forward across stages.",
             gainItems: [
