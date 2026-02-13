@@ -84,7 +84,7 @@ export function FeaturePanel({
 
   return (
     <Section id={id} className="min-h-screen flex items-center">
-      <Container>
+      <Container className="max-w-none">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -98,6 +98,7 @@ export function FeaturePanel({
               border: `1px solid ${tokens.panelBorder}`,
               boxShadow: panelShadow,
               padding: "2.5rem",
+              width: "100%",
             }}
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
