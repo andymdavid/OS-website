@@ -1,7 +1,9 @@
 
 import { Section } from "@/levelup/components/layout/section";
 import { Container } from "@/levelup/components/layout/container";
+import { Button } from "@/levelup/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import React, { useState } from "react";
 
 interface LevelUpCard {
@@ -49,6 +51,10 @@ interface TwoColumnProps {
     leaveWith?: string;
     label?: string;
     emphasis?: boolean;
+    cta?: {
+      label: string;
+      href: string;
+    };
   }>;
   blocks?: Array<{
     number?: string;
@@ -330,14 +336,14 @@ export function TwoColumn({
               </h2>
             ) : null}
             <p
-              className={`mt-6 pb-6 md:pb-8 text-sm md:text-base text-[#201d1d] ${isCentered ? "text-center mx-auto" : "text-left"} max-w-[46rem]`}
+              className={`mt-6 pb-10 md:pb-12 text-sm md:text-base text-[#201d1d] ${isCentered ? "text-center mx-auto" : "text-left"} max-w-[46rem]`}
               style={{ whiteSpace: "pre-line" }}
             >
               {renderBody()}
             </p>
 
             {dualColumns && dualColumns.length > 0 ? (
-              <div className="mt-14 relative grid gap-y-14 lg:grid-cols-2 lg:gap-x-20 lg:gap-y-0 px-4 sm:px-6 lg:px-10">
+              <div className="mt-14 relative grid gap-y-14 lg:grid-cols-2 lg:gap-x-20 lg:gap-y-0 px-6 sm:px-8 lg:px-12">
                 <div className="hidden lg:block absolute left-1/2 top-0 h-full w-px bg-neutral-300 -translate-x-1/2" />
                 {dualColumns.map((column, index) => {
                   const isEmphasis = column.emphasis;
@@ -362,7 +368,7 @@ export function TwoColumn({
                       <h3 className="mt-6 font-anton text-[34px] leading-tight uppercase text-[#201d1d]">
                         {column.title}
                       </h3>
-                      <div className="mt-8 space-y-8">
+                      <div className="mt-8 space-y-8 max-w-[26rem]">
                         {column.introBody ? (
                           <div className="pb-1">
                             <p className="text-sm leading-relaxed text-neutral-700">{column.introBody}</p>
@@ -382,24 +388,13 @@ export function TwoColumn({
                           </div>
                         ) : null}
 
-                        {column.buildBody ? (
-                          <div className="border-t border-neutral-300 pt-7 pb-1">
-                            <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-neutral-500">
-                              What you build
-                            </p>
-                            <p className="mt-3 text-sm leading-relaxed text-neutral-700">
-                              {column.buildBody}
-                            </p>
-                          </div>
-                        ) : null}
-
-                        {column.leaveWith ? (
-                          <div className="border-y border-neutral-300 py-7">
-                            <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-neutral-500">
-                              You leave with
-                            </p>
-                            <p className="mt-3 text-sm leading-relaxed text-neutral-700">{column.leaveWith}</p>
-                          </div>
+                        {column.cta ? (
+                          <Button size="lg" asChild className="group hover:bg-[#a1ff62] hover:text-black">
+                            <a href={column.cta.href} target="_blank" rel="noopener noreferrer">
+                              {column.cta.label}
+                              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                            </a>
+                          </Button>
                         ) : null}
                       </div>
                     </article>

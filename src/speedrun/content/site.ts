@@ -230,9 +230,7 @@ export const siteContent: SiteContent = {
             metaTags: ["3 hours", "In-person", "Small groups"],
             introBody:
               "In this session, you build a simple Kanban-style task app from scratch using AI coding agents. You connect it to an AI agent yourself and see how your instructions become working features in real time.",
-            buildBody: "A working Kanban-style task app connected to your own AI agent.",
-            leaveWith:
-              "Firsthand experience of how AI works and the confidence to keep building.",
+            cta: { label: "Book a Call", href: "#pricing" },
           },
           {
             title: "Speedrun Applied",
@@ -240,10 +238,6 @@ export const siteContent: SiteContent = {
             metaTags: ["3 Hours", "In-person", "Small groups"],
             introBody:
               "This session takes the app built in Speedrun Lite and extends it into a simple operational workflow. AI agents begin carrying work forward across defined stages, following rules and triggers you set.",
-            buildBody:
-              "A connected workflow where agents summarise, update, and move tasks forward.",
-            leaveWith:
-              "A practical understanding of how AI can operate inside day-to-day business processes.",
           },
         ],
       },
