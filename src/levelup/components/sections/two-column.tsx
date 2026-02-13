@@ -330,25 +330,22 @@ export function TwoColumn({
               </h2>
             ) : null}
             <p
-              className={`mt-6 text-sm md:text-base text-[#201d1d] ${isCentered ? "text-center mx-auto" : "text-left"} max-w-[46rem]`}
+              className={`mt-6 pb-6 md:pb-8 text-sm md:text-base text-[#201d1d] ${isCentered ? "text-center mx-auto" : "text-left"} max-w-[46rem]`}
               style={{ whiteSpace: "pre-line" }}
             >
               {renderBody()}
             </p>
 
             {dualColumns && dualColumns.length > 0 ? (
-              <div className="mt-12 relative grid gap-y-14 lg:grid-cols-2 lg:gap-x-16 lg:gap-y-0">
+              <div className="mt-14 relative grid gap-y-14 lg:grid-cols-2 lg:gap-x-20 lg:gap-y-0 px-4 sm:px-6 lg:px-10">
                 <div className="hidden lg:block absolute left-1/2 top-0 h-full w-px bg-neutral-300 -translate-x-1/2" />
-                <div className="hidden lg:flex absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 h-12 w-12 items-center justify-center rounded-full border border-neutral-300 bg-neutral-100 text-neutral-500 text-sm font-semibold">
-                  or
-                </div>
                 {dualColumns.map((column, index) => {
                   const isEmphasis = column.emphasis;
                   return (
                     <article
                       key={`${column.title}-${index}`}
                       className={`${
-                        index === 0 ? "lg:pr-10" : "lg:pl-10"
+                        index === 0 ? "lg:pr-12" : "lg:pl-12"
                       }`}
                     >
                       {column.label ? (
@@ -362,46 +359,49 @@ export function TwoColumn({
                           {column.label}
                         </span>
                       ) : null}
-                      <h3 className="mt-4 font-anton text-[34px] leading-tight uppercase text-[#201d1d]">
+                      <h3 className="mt-6 font-anton text-[34px] leading-tight uppercase text-[#201d1d]">
                         {column.title}
                       </h3>
-                      {column.metaTags && column.metaTags.length > 0 ? (
-                        <div className="mt-4 flex flex-wrap items-center gap-2">
-                          {column.metaTags.map((tag, tagIndex) => (
-                            <span
-                              key={`${tag}-${tagIndex}`}
-                              className="inline-flex px-2.5 py-1 text-[11px] font-semibold rounded uppercase tracking-wide bg-neutral-100 text-[#201d1d] border border-neutral-300"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      ) : null}
-                      {column.introBody ? (
-                        <div className="mt-8 border-t border-neutral-300 pt-6">
-                          <p className="text-sm leading-relaxed text-neutral-700">{column.introBody}</p>
-                        </div>
-                      ) : null}
+                      <div className="mt-8 space-y-8">
+                        {column.introBody ? (
+                          <div className="pb-1">
+                            <p className="text-sm leading-relaxed text-neutral-700">{column.introBody}</p>
+                          </div>
+                        ) : null}
 
-                      {column.buildBody ? (
-                        <div className="mt-8 border-t border-neutral-300 pt-6">
-                          <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-neutral-500">
-                            What you build
-                          </p>
-                          <p className="mt-2 text-sm leading-relaxed text-neutral-700">
-                            {column.buildBody}
-                          </p>
-                        </div>
-                      ) : null}
+                        {column.metaTags && column.metaTags.length > 0 ? (
+                          <div className="pt-1 flex flex-wrap items-center gap-2">
+                            {column.metaTags.map((tag, tagIndex) => (
+                              <span
+                                key={`${tag}-${tagIndex}`}
+                                className="inline-flex px-2.5 py-1 text-[11px] font-semibold rounded uppercase tracking-wide bg-neutral-100 text-[#201d1d] border border-neutral-300"
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                        ) : null}
 
-                      {column.leaveWith ? (
-                        <div className="mt-8 border-t border-neutral-300 pt-6">
-                          <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-neutral-500">
-                            You leave with
-                          </p>
-                          <p className="mt-2 text-sm leading-relaxed text-neutral-700">{column.leaveWith}</p>
-                        </div>
-                      ) : null}
+                        {column.buildBody ? (
+                          <div className="border-t border-neutral-300 pt-7 pb-1">
+                            <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-neutral-500">
+                              What you build
+                            </p>
+                            <p className="mt-3 text-sm leading-relaxed text-neutral-700">
+                              {column.buildBody}
+                            </p>
+                          </div>
+                        ) : null}
+
+                        {column.leaveWith ? (
+                          <div className="border-y border-neutral-300 py-7">
+                            <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-neutral-500">
+                              You leave with
+                            </p>
+                            <p className="mt-3 text-sm leading-relaxed text-neutral-700">{column.leaveWith}</p>
+                          </div>
+                        ) : null}
+                      </div>
                     </article>
                   );
                 })}

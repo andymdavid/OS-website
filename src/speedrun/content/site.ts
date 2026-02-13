@@ -221,7 +221,7 @@ export const siteContent: SiteContent = {
       props: {
         layout: "dualFocus",
         title: "Where to start",
-        body: "Speedrun Lite is where everyone starts. In 3 hours, you build a working tool with AI agents and understand what's possible. Teams that want to go deeper can extend that same build into a complete operational workflow with Speedrun Applied.",
+        body: "Speedrun is delivered in two formats. Speedrun Lite gets your team building a working AI-powered task app in three hours. Speedrun Applied extends that same build into a live workflow where agents begin carrying work across stages.",
         dualColumns: [
           {
             title: "Speedrun Lite",
