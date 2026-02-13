@@ -219,46 +219,48 @@ export const siteContent: SiteContent = {
       enabled: true,
       id: "twoColumn-4",
       props: {
-        layout: "split",
-        title: "Speedrun Lite",
-        body: "By the end of the session, you haven’t just seen AI in action. You’ve built a working Kanban-style task app and connected it to an AI agent yourself.",
-        splitBlocks: [
+        layout: "dualFocus",
+        title: "What You Build in Speedrun",
+        body: "Speedrun outcomes are structured across two connected layers. Speedrun Lite is the core workshop result every participant completes. Speedrun Applied extends that same build into a practical multi-stage workflow.",
+        dualColumns: [
           {
-            title: "Understand how AI works",
-            body: "Learn how your instructions become working features and how small changes affect the outcome all without needing to be technical.",
+            title: "Speedrun Lite",
+            label: "Core Workshop Outcome",
+            emphasis: true,
+            body: "By the end of the session, you have built a working Kanban-style task app and connected it to an AI agent yourself.",
+            blocks: [
+              {
+                title: "Understand how AI works",
+                body: "Learn how your instructions become working features and how small changes affect the outcome, without needing to be technical.",
+              },
+              {
+                title: "Confidence to build and adapt",
+                body: "You leave knowing you can create tools yourself. AI becomes something you can direct and improve, not something you need explained to you.",
+              },
+              {
+                title: "Your own app with an AI agent",
+                body: "You leave with a usable Kanban-style app connected to an agent that can summarise tasks, plan work, and generate updates.",
+              },
+            ],
           },
           {
-            title: "Confidence to build and adapt",
-            body: "You leave knowing you can create tools yourself. AI becomes something you can direct and improve, not something you need explained to you.",
-          },
-          {
-            title: "Your own app with an AI agent",
-            body: "You leave with a usable Kanban-style app connected to an agent that can summarise tasks, plan work, and generate updates.",
-          },
-        ],
-      },
-    },
-    {
-      key: "twoColumn",
-      enabled: true,
-      id: "twoColumn-5",
-      props: {
-        layout: "split",
-        splitReverse: true,
-        title: "Speedrun Applied",
-        body: "By the end of the session, your original task app is no longer just a tool. It forms part of a simple operational workflow where AI agents begin carrying work forward across stages.",
-        splitBlocks: [
-          {
-            title: "Extend the app into a live workflow",
-            body: "You take the Kanban app built in Speedrun Lite and connect it to defined stages of work, introducing clear triggers and hand-offs between tasks.",
-          },
-          {
-            title: "Let agents act across stages of work",
-            body: "Instead of responding to single prompts, agents summarise progress, generate updates, and move tasks forward based on rules you define.",
-          },
-          {
-            title: "See how AI operates over time",
-            body: "You observe how agents behave when they are part of ongoing work, learning where to trust them, where to intervene, and how to stay in control.",
+            title: "Speedrun Applied",
+            label: "Extension Layer",
+            body: "Your original task app evolves into a simple operational workflow where AI agents begin carrying work forward across stages.",
+            blocks: [
+              {
+                title: "Extend the app into a live workflow",
+                body: "You take the Kanban app built in Speedrun Lite and connect it to defined stages of work, introducing clear triggers and hand-offs between tasks.",
+              },
+              {
+                title: "Let agents act across stages of work",
+                body: "Instead of responding to single prompts, agents summarise progress, generate updates, and move tasks forward based on rules you define.",
+              },
+              {
+                title: "See how AI operates over time",
+                body: "You observe how agents behave when they are part of ongoing work, learning where to trust them, where to intervene, and how to stay in control.",
+              },
+            ],
           },
         ],
       },

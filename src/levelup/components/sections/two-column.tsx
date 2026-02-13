@@ -32,7 +32,7 @@ interface TwoColumnProps {
   profileLogo?: string;
   singleColumn?: boolean;
   fullHeight?: boolean;
-  layout?: "default" | "split";
+  layout?: "default" | "split" | "dualFocus";
   splitReverse?: boolean;
   splitImage?: string;
   splitImageAlt?: string;
@@ -40,6 +40,16 @@ interface TwoColumnProps {
   splitBlocks?: Array<{
     title: string;
     body: string;
+  }>;
+  dualColumns?: Array<{
+    title: string;
+    body: string;
+    label?: string;
+    emphasis?: boolean;
+    blocks?: Array<{
+      title: string;
+      body: string;
+    }>;
   }>;
   blocks?: Array<{
     number?: string;
@@ -81,6 +91,7 @@ export function TwoColumn({
   splitImageAlt,
   splitVideo,
   splitBlocks,
+  dualColumns,
   blocks,
   levelUpCards,
   levelUpCardsLayout = "staggered",
@@ -300,6 +311,84 @@ export function TwoColumn({
             </div>
           </motion.div>
         </div>
+      </Section>
+    );
+  }
+
+  if (layout === "dualFocus") {
+    return (
+      <Section id={anchorId || id} className="min-h-[75vh]">
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="max-w-6xl mx-auto py-16 md:py-20"
+          >
+            {!hideTitle ? (
+              <h2 className={`font-anton text-[40px] tracking-tight leading-tight uppercase ${isCentered ? "text-center" : "text-left"}`}>
+                {title}
+              </h2>
+            ) : null}
+            <p
+              className={`mt-6 text-sm md:text-base text-[#201d1d] ${isCentered ? "text-center mx-auto" : "text-left"} max-w-[46rem]`}
+              style={{ whiteSpace: "pre-line" }}
+            >
+              {renderBody()}
+            </p>
+
+            {dualColumns && dualColumns.length > 0 ? (
+              <div className="mt-10 grid gap-6 lg:grid-cols-[1.2fr_1fr]">
+                {dualColumns.map((column, index) => {
+                  const isEmphasis = column.emphasis;
+                  return (
+                    <article
+                      key={`${column.title}-${index}`}
+                      className={`rounded-2xl border p-6 md:p-8 ${
+                        isEmphasis
+                          ? "border-neutral-900 bg-neutral-100/70 shadow-[0_12px_30px_rgba(0,0,0,0.08)]"
+                          : "border-neutral-300 bg-white"
+                      }`}
+                    >
+                      {column.label ? (
+                        <span
+                          className={`inline-flex px-2.5 py-1 text-[11px] font-semibold rounded uppercase tracking-wide ${
+                            isEmphasis
+                              ? "bg-[#a1ff62] text-black"
+                              : "bg-neutral-100 text-neutral-700 border border-neutral-200"
+                          }`}
+                        >
+                          {column.label}
+                        </span>
+                      ) : null}
+                      <h3 className="mt-4 font-anton text-[34px] leading-tight uppercase text-[#201d1d]">
+                        {column.title}
+                      </h3>
+                      <p className="mt-4 text-sm md:text-base text-[#201d1d]">
+                        {column.body}
+                      </p>
+                      {column.blocks && column.blocks.length > 0 ? (
+                        <div className="mt-8">
+                          {column.blocks.map((block, blockIndex) => (
+                            <div
+                              key={`${block.title}-${blockIndex}`}
+                              className={`border-t pt-5 pb-6 ${
+                                isEmphasis ? "border-neutral-800/20" : "border-neutral-200"
+                              }`}
+                            >
+                              <h4 className="text-base font-semibold text-[#201d1d]">{block.title}</h4>
+                              <p className="mt-2 text-sm text-neutral-600">{block.body}</p>
+                            </div>
+                          ))}
+                        </div>
+                      ) : null}
+                    </article>
+                  );
+                })}
+              </div>
+            ) : null}
+          </motion.div>
+        </Container>
       </Section>
     );
   }
