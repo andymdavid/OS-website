@@ -220,12 +220,12 @@ export const siteContent: SiteContent = {
       id: "twoColumn-4",
       props: {
         layout: "dualFocus",
-        title: "What You Build in Speedrun",
-        body: "Speedrun outcomes are structured across two connected layers. Speedrun Lite is the core workshop result every participant completes. Speedrun Applied extends that same build into a practical multi-stage workflow.",
+        title: "Where to start",
+        body: "Speedrun Lite is where everyone starts. In 3 hours, you build a working tool with AI agents and understand what's possible. Teams that want to go deeper can extend that same build into a complete operational workflow with Speedrun Applied.",
         dualColumns: [
           {
             title: "Speedrun Lite",
-            label: "Core Workshop Outcome",
+            label: "Start here",
             emphasis: true,
             body: "By the end of the session, you have built a working Kanban-style task app and connected it to an AI agent yourself.",
             blocks: [
@@ -245,7 +245,7 @@ export const siteContent: SiteContent = {
           },
           {
             title: "Speedrun Applied",
-            label: "Extension Layer",
+            label: "Go Deeper",
             body: "Your original task app evolves into a simple operational workflow where AI agents begin carrying work forward across stages.",
             blocks: [
               {
