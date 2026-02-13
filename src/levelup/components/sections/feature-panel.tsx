@@ -102,13 +102,12 @@ export function FeaturePanel({
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
           >
-            <div className="font-anton text-xl uppercase">{title}</div>
-
             <div
-              className="mt-8 grid gap-8 lg:grid-cols-[320px_minmax(0,1fr)] items-stretch"
+              className="grid gap-8 lg:grid-cols-[320px_minmax(0,1fr)] items-stretch"
             >
               <div style={{ width: "320px" }} className="h-full">
-                <p className="text-sm" style={{ color: tokens.panelMuted }}>
+                <div className="font-anton text-xl uppercase">{title}</div>
+                <p className="text-sm mt-4" style={{ color: tokens.panelMuted }}>
                   {body}
                 </p>
                 <div className="mt-6">
@@ -161,7 +160,7 @@ export function FeaturePanel({
                 </div>
               </div>
 
-              <div className="w-full h-full flex" style={{ padding: "0.5rem" }}>
+              <div className="w-full h-full flex">
                 <div
                   className="rounded-3xl overflow-hidden"
                   style={{
