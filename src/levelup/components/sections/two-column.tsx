@@ -43,10 +43,12 @@ interface TwoColumnProps {
   }>;
   dualColumns?: Array<{
     title: string;
-    body: string;
+    meta?: string;
+    buildBody?: string;
+    bestFor?: string;
     label?: string;
     emphasis?: boolean;
-    blocks?: Array<{
+    gainItems?: Array<{
       title: string;
       body: string;
     }>;
@@ -364,20 +366,50 @@ export function TwoColumn({
                       <h3 className="mt-4 font-anton text-[34px] leading-tight uppercase text-white">
                         {column.title}
                       </h3>
-                      <p className="mt-4 text-sm md:text-base text-white/80">
-                        {column.body}
-                      </p>
-                      {column.blocks && column.blocks.length > 0 ? (
-                        <div className="mt-8">
-                          {column.blocks.map((block, blockIndex) => (
-                            <div
-                              key={`${block.title}-${blockIndex}`}
-                              className={`border-t pt-5 pb-6 ${isEmphasis ? "border-neutral-600/70" : "border-neutral-700"}`}
-                            >
-                              <h4 className="text-base font-semibold text-white">{block.title}</h4>
-                              <p className="mt-2 text-sm text-white/70">{block.body}</p>
-                            </div>
-                          ))}
+                      {column.meta ? (
+                        <p className="mt-4 inline-flex rounded-full border border-neutral-600 bg-[#1f1f1f] px-3 py-1.5 text-xs text-neutral-300">
+                          {column.meta}
+                        </p>
+                      ) : null}
+
+                      {column.buildBody ? (
+                        <div className="mt-7">
+                          <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-neutral-400">
+                            What you build
+                          </p>
+                          <p className="mt-2 text-sm md:text-base text-white/80">
+                            {column.buildBody}
+                          </p>
+                        </div>
+                      ) : null}
+
+                      {column.gainItems && column.gainItems.length > 0 ? (
+                        <div className="mt-7">
+                          <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-neutral-400">
+                            What you gain
+                          </p>
+                          <div className="mt-4 space-y-4">
+                            {column.gainItems.map((item, blockIndex) => (
+                              <div
+                                key={`${item.title}-${blockIndex}`}
+                                className={`rounded-xl border bg-black/10 px-4 py-4 ${
+                                  isEmphasis ? "border-neutral-600/80" : "border-neutral-700"
+                                }`}
+                              >
+                                <h4 className="text-sm font-semibold text-white">{item.title}</h4>
+                                <p className="mt-2 text-sm text-white/70">{item.body}</p>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      ) : null}
+
+                      {column.bestFor ? (
+                        <div className="mt-7 border-t border-neutral-700 pt-5">
+                          <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-neutral-400">
+                            Best for
+                          </p>
+                          <p className="mt-2 text-sm text-white/80">{column.bestFor}</p>
                         </div>
                       ) : null}
                     </article>

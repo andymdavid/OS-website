@@ -227,8 +227,10 @@ export const siteContent: SiteContent = {
             title: "Speedrun Lite",
             label: "Start here",
             emphasis: true,
-            body: "By the end of the session, you have built a working Kanban-style task app and connected it to an AI agent yourself.",
-            blocks: [
+            meta: "Duration: 3 hours | In-person or online | Small groups (max 8)",
+            buildBody:
+              "By the end of the session, you have built a working Kanban-style task app and connected it to an AI agent yourself.",
+            gainItems: [
               {
                 title: "Understand how AI works",
                 body: "Learn how your instructions become working features and how small changes affect the outcome, without needing to be technical.",
@@ -242,12 +244,16 @@ export const siteContent: SiteContent = {
                 body: "You leave with a usable Kanban-style app connected to an agent that can summarise tasks, plan work, and generate updates.",
               },
             ],
+            bestFor:
+              "Teams who need firsthand AI experience before making bigger decisions about implementation or strategy.",
           },
           {
             title: "Speedrun Applied",
             label: "Go Deeper",
-            body: "Your original task app evolves into a simple operational workflow where AI agents begin carrying work forward across stages.",
-            blocks: [
+            meta: "Duration: Full day (6-7 hours) | In-person or online | Small groups (max 8)",
+            buildBody:
+              "Your original task app evolves into a simple operational workflow where AI agents begin carrying work forward across stages.",
+            gainItems: [
               {
                 title: "Extend the app into a live workflow",
                 body: "You take the Kanban app built in Speedrun Lite and connect it to defined stages of work, introducing clear triggers and hand-offs between tasks.",
@@ -261,6 +267,8 @@ export const siteContent: SiteContent = {
                 body: "You observe how agents behave when they are part of ongoing work, learning where to trust them, where to intervene, and how to stay in control.",
               },
             ],
+            bestFor:
+              "Teams who've completed Speedrun Lite and are ready to see how AI agents can operate autonomously within real business workflows.",
           },
         ],
       },
