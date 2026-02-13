@@ -337,7 +337,7 @@ export function TwoColumn({
             ) : null}
             <p
               className={`mt-6 text-sm md:text-base text-[#201d1d] ${isCentered ? "text-center mx-auto" : "text-left"}`}
-              style={{ whiteSpace: "pre-line", paddingBottom: "4.5rem", maxWidth: "46rem" }}
+              style={{ whiteSpace: "pre-line", paddingBottom: "2.75rem", maxWidth: "46rem" }}
             >
               {renderBody()}
             </p>
