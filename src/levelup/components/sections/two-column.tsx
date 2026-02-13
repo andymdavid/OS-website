@@ -353,33 +353,33 @@ export function TwoColumn({
                       }`}
                     >
                       {column.label ? (
-                        <div className="flex flex-wrap items-center gap-2">
-                          <span
-                            className={`inline-flex px-2.5 py-1 text-[11px] font-semibold rounded uppercase tracking-wide ${
-                              isEmphasis
-                                ? "bg-[#a1ff62] text-black"
-                                : "bg-[#1f1f1f] text-neutral-300 border border-neutral-600"
-                            }`}
-                          >
-                            {column.label}
-                          </span>
-                          {column.metaTags && column.metaTags.length > 0
-                            ? column.metaTags.map((tag, tagIndex) => (
-                                <span
-                                  key={`${tag}-${tagIndex}`}
-                                  className="inline-flex px-2.5 py-1 text-[11px] font-semibold rounded uppercase tracking-wide bg-[#1f1f1f] text-neutral-300 border border-neutral-600"
-                                >
-                                  {tag}
-                                </span>
-                              ))
-                            : null}
-                        </div>
+                        <span
+                          className={`inline-flex px-2.5 py-1 text-[11px] font-semibold rounded uppercase tracking-wide ${
+                            isEmphasis
+                              ? "bg-[#a1ff62] text-black"
+                              : "bg-[#1f1f1f] text-neutral-300 border border-neutral-600"
+                          }`}
+                        >
+                          {column.label}
+                        </span>
                       ) : null}
                       <h3 className="mt-4 font-anton text-[34px] leading-tight uppercase text-white">
                         {column.title}
                       </h3>
+                      {column.metaTags && column.metaTags.length > 0 ? (
+                        <div className="mt-4 flex flex-wrap items-center gap-2">
+                          {column.metaTags.map((tag, tagIndex) => (
+                            <span
+                              key={`${tag}-${tagIndex}`}
+                              className="inline-flex px-2.5 py-1 text-[11px] font-semibold rounded uppercase tracking-wide bg-[#1f1f1f] text-neutral-300 border border-neutral-600"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      ) : null}
                       {column.bestFor ? (
-                        <div className="mt-7 border-t border-neutral-700 pt-5">
+                        <div className="mt-8 border-t border-neutral-700 pt-6">
                           <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-neutral-400">
                             Best for
                           </p>
@@ -388,7 +388,7 @@ export function TwoColumn({
                       ) : null}
 
                       {column.buildBody ? (
-                        <div className="mt-7">
+                        <div className="mt-8 border-t border-neutral-700 pt-6">
                           <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-neutral-400">
                             What you build
                           </p>
@@ -399,11 +399,11 @@ export function TwoColumn({
                       ) : null}
 
                       {column.gainItems && column.gainItems.length > 0 ? (
-                        <div className="mt-7">
+                        <div className="mt-8 border-t border-neutral-700 pt-6">
                           <p className="text-[11px] font-semibold uppercase tracking-[0.08em] text-neutral-400">
                             What you gain
                           </p>
-                          <div className="mt-4 space-y-4">
+                          <div className="mt-4 space-y-5">
                             {column.gainItems.map((item, blockIndex) => (
                               <div
                                 key={`${item.title}-${blockIndex}`}
