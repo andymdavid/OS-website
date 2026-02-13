@@ -64,7 +64,7 @@ export function Hero({
             >
               <Badge
                 variant="secondary"
-                className="inline-flex items-center gap-1 px-3 py-1 text-lg font-jersey"
+                className="inline-flex items-center gap-1 px-3 py-1 text-lg font-jersey bg-background"
               >
                 {badge}
               </Badge>
