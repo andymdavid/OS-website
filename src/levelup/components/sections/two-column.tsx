@@ -352,7 +352,7 @@ export function TwoColumn({
                   return (
                     <article
                       key={`${column.title}-${index}`}
-                      className="w-full"
+                      className="w-full text-center flex flex-col items-center"
                       style={{
                         maxWidth: "30rem",
                         justifySelf: index === 0 ? "end" : "start",
@@ -373,14 +373,8 @@ export function TwoColumn({
                         {column.title}
                       </h3>
                       <div className="mt-8 space-y-8" style={{ maxWidth: "26rem" }}>
-                        {column.introBody ? (
-                          <div className="pb-1">
-                            <p className="text-sm leading-relaxed text-neutral-700">{column.introBody}</p>
-                          </div>
-                        ) : null}
-
                         {column.metaTags && column.metaTags.length > 0 ? (
-                          <div className="pt-1 flex flex-wrap items-center gap-2">
+                          <div className="pt-1 flex flex-wrap items-center justify-center gap-2">
                             {column.metaTags.map((tag, tagIndex) => (
                               <span
                                 key={`${tag}-${tagIndex}`}
@@ -389,6 +383,12 @@ export function TwoColumn({
                                 {tag}
                               </span>
                             ))}
+                          </div>
+                        ) : null}
+
+                        {column.introBody ? (
+                          <div className="pb-1">
+                            <p className="text-sm leading-relaxed text-neutral-700">{column.introBody}</p>
                           </div>
                         ) : null}
 
