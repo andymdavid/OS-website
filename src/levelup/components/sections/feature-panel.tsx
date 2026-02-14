@@ -83,7 +83,7 @@ export function FeaturePanel({
   );
 
   return (
-    <Section id={id} className="min-h-screen flex items-center">
+    <Section id={id} className="flex items-end">
       <Container className="max-w-none">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -98,15 +98,16 @@ export function FeaturePanel({
               boxShadow: panelShadow,
               padding: "1.25rem",
               borderRadius: "1rem",
+              height: "calc(100vh - 90px)",
               width: "100%",
             }}
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
           >
             <div
-              className="grid gap-8 lg:grid-cols-[320px_minmax(0,1fr)] items-stretch"
+              className="grid gap-8 lg:grid-cols-[320px_minmax(0,1fr)] items-stretch h-full"
             >
-              <div style={{ width: "320px" }} className="h-full flex flex-col">
+              <div style={{ width: "320px", minHeight: 0 }} className="h-full flex flex-col">
                 <div>
                   <div className="font-anton text-xl uppercase">{title}</div>
                   <p className="text-sm mt-4" style={{ color: tokens.panelMuted }}>
@@ -163,7 +164,7 @@ export function FeaturePanel({
                 </div>
               </div>
 
-              <div className="w-full h-full flex">
+              <div className="w-full h-full flex" style={{ minHeight: 0 }}>
                 <div
                   className="overflow-hidden"
                   style={{
