@@ -152,7 +152,7 @@ export function FeaturePanel({
                           <div>
                             <div className="text-sm font-semibold">{step.label}</div>
                             {step.body ? (
-                              <div className="mt-2 text-sm" style={{ color: tokens.panelMuted }}>
+                              <div className="mt-2 text-xs" style={{ color: tokens.panelMuted }}>
                                 {step.body}
                               </div>
                             ) : null}
