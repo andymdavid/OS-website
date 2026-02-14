@@ -97,7 +97,7 @@ export function FeaturePanel({
               border: `1px solid ${tokens.panelBorder}`,
               boxShadow: panelShadow,
               padding: "1.25rem",
-              borderRadius: "1.2rem",
+              borderRadius: "1rem",
               width: "100%",
             }}
             onMouseEnter={() => setIsHovering(true)}
@@ -170,7 +170,7 @@ export function FeaturePanel({
                     boxShadow: "0 26px 70px rgba(5, 5, 5, 0.55)",
                     height: "100%",
                     width: "100%",
-                    borderRadius: "1.2rem",
+                    borderRadius: "0.8rem",
                   }}
                 >
                   <div style={{ height: "100%" }}>
