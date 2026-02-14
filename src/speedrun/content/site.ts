@@ -249,8 +249,8 @@ export const siteContent: SiteContent = {
       enabled: true,
       id: "featurePanel",
       props: {
-        title: "How the Speedrun session unfolds",
-        body: "In a few structured stages, you move from cloning a starting app to customising it, expanding it, and ultimately connecting it to an AI agent that begins doing real tasks on your behalf.",
+        title: "How Speedrun Lite Unfolds",
+        body: "Go from cloning a starter app to customising it, and connecting it to an AI agent that begins doing real tasks on your behalf.",
         ctaLabel: "Book a Call",
         ctaHref: "#",
         steps: [
