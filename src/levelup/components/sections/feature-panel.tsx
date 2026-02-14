@@ -107,7 +107,10 @@ export function FeaturePanel({
             <div
               className="grid gap-8 lg:grid-cols-[320px_minmax(0,1fr)] items-stretch h-full"
             >
-              <div style={{ width: "320px", minHeight: 0 }} className="h-full flex flex-col">
+              <div
+                style={{ width: "320px", minHeight: 0, paddingTop: "0.75rem" }}
+                className="h-full flex flex-col"
+              >
                 <div>
                   <div className="font-anton text-xl uppercase">{title}</div>
                   <p className="text-sm mt-4" style={{ color: tokens.panelMuted }}>
