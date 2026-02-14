@@ -106,20 +106,22 @@ export function FeaturePanel({
             <div
               className="grid gap-8 lg:grid-cols-[320px_minmax(0,1fr)] items-stretch"
             >
-              <div style={{ width: "320px" }} className="h-full">
-                <div className="font-anton text-xl uppercase">{title}</div>
-                <p className="text-sm mt-4" style={{ color: tokens.panelMuted }}>
-                  {body}
-                </p>
-                <div className="mt-6">
-                  <Button size="lg" asChild className="group">
-                    <a href={ctaHref} target="_blank" rel="noopener noreferrer">
-                      {ctaLabel}
-                    </a>
-                  </Button>
+              <div style={{ width: "320px" }} className="h-full flex flex-col">
+                <div>
+                  <div className="font-anton text-xl uppercase">{title}</div>
+                  <p className="text-sm mt-4" style={{ color: tokens.panelMuted }}>
+                    {body}
+                  </p>
+                  <div className="mt-6">
+                    <Button size="lg" asChild className="group">
+                      <a href={ctaHref} target="_blank" rel="noopener noreferrer">
+                        {ctaLabel}
+                      </a>
+                    </Button>
+                  </div>
                 </div>
 
-                <div className="mt-10">
+                <div className="mt-10" style={{ marginTop: "auto" }}>
                   {steps.map((step, index) => {
                     const isActive = index === activeStepIndex;
                     return (
