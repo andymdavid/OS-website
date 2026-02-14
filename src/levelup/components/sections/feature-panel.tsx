@@ -91,13 +91,13 @@ export function FeaturePanel({
           transition={{ duration: 0.5 }}
         >
           <div
-            className="rounded-3xl"
             style={{
               backgroundColor: tokens.panel,
               color: tokens.panelText,
               border: `1px solid ${tokens.panelBorder}`,
               boxShadow: panelShadow,
               padding: "1.25rem",
+              borderRadius: "1.2rem",
               width: "100%",
             }}
             onMouseEnter={() => setIsHovering(true)}
@@ -163,13 +163,14 @@ export function FeaturePanel({
 
               <div className="w-full h-full flex">
                 <div
-                  className="rounded-3xl overflow-hidden"
+                  className="overflow-hidden"
                   style={{
                     border: `1px solid ${tokens.stageBorder}`,
                     backgroundColor: tokens.accentSoft,
                     boxShadow: "0 26px 70px rgba(5, 5, 5, 0.55)",
                     height: "100%",
                     width: "100%",
+                    borderRadius: "1.2rem",
                   }}
                 >
                   <div style={{ height: "100%" }}>
