@@ -255,34 +255,32 @@ export const siteContent: SiteContent = {
         ctaHref: "#",
         steps: [
           {
-            label: "Create the agent",
-            body: "Short supporting line about this step or capability.",
+            label: "Setup the foundation",
+            body:
+              "We start by cloning a structured open-source repo and get a working starting point immediately. You begin with something real.",
             imageSrc: "/WingmanScreen1.png",
-            imageAlt: "Placeholder visual 1",
+            imageAlt: "Setup the foundation",
           },
           {
-            label: "Define policies",
-            body: "Short supporting line about this step or capability.",
+            label: "Make small changes",
+            body:
+              "Change the title. Adjust colours. Modify simple elements. You see instantly how instructions become working features.",
             imageSrc: "/WingmanScreen2.png",
-            imageAlt: "Placeholder visual 2",
+            imageAlt: "Make small changes",
           },
           {
-            label: "Design the logic",
-            body: "Short supporting line about this step or capability.",
+            label: "Build your version",
+            body:
+              "Extend the app into a Kanban board. Replace Trello. Gamify it. Shape it into the productivity tool you actually want to use.",
             imageSrc: "/WingmanScreen1.png",
-            imageAlt: "Placeholder visual 3",
+            imageAlt: "Build your version",
           },
           {
-            label: "Test and launch",
-            body: "Short supporting line about this step or capability.",
+            label: "Put Wingman to work",
+            body:
+              "An agent produces daily summaries, plans your workload, and carries tasks forward like a capable assistant.",
             imageSrc: "/WingmanScreen2.png",
-            imageAlt: "Placeholder visual 4",
-          },
-          {
-            label: "Monitor and improve",
-            body: "Short supporting line about this step or capability.",
-            imageSrc: "/WingmanScreen1.png",
-            imageAlt: "Placeholder visual 5",
+            imageAlt: "Put Wingman to work",
           },
         ],
       },
