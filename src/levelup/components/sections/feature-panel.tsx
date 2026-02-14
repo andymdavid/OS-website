@@ -139,7 +139,7 @@ export function FeaturePanel({
         >
           <div
             style={{
-              backgroundColor: tokens.panel,
+              backgroundColor: "#2a2a2a",
               color: tokens.panelText,
               border: `1px solid ${tokens.panelBorder}`,
               boxShadow: panelShadow,
