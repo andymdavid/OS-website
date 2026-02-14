@@ -249,9 +249,9 @@ export const siteContent: SiteContent = {
       enabled: true,
       id: "featurePanel",
       props: {
-        title: "Placeholder Title",
-        body: "Short placeholder copy that explains the section in one or two lines.",
-        ctaLabel: "Placeholder CTA",
+        title: "How the Speedrun session unfolds",
+        body: "In a few structured stages, you move from cloning a starting app to customising it, expanding it, and ultimately connecting it to an AI agent that begins doing real tasks on your behalf.",
+        ctaLabel: "Book a Call",
         ctaHref: "#",
         steps: [
           {
