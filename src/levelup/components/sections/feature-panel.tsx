@@ -49,8 +49,12 @@ export function FeaturePanel({
   steps,
 }: FeaturePanelProps) {
   const [activeStepIndex, setActiveStepIndex] = useState(0);
+  const [progress, setProgress] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
   const pauseUntilRef = useRef<number>(0);
+  const rafRef = useRef<number | null>(null);
+  const lastTickRef = useRef<number | null>(null);
+  const elapsedRef = useRef<number>(0);
   const stepsCount = steps.length;
 
   const activeStep = steps[activeStepIndex] ?? steps[0];
@@ -67,14 +71,54 @@ export function FeaturePanel({
       }
 
       setActiveStepIndex((prev) => (prev + 1) % stepsCount);
+      setProgress(0);
     }, 5000);
 
     return () => window.clearInterval(intervalId);
   }, [isHovering, stepsCount]);
 
+  useEffect(() => {
+    if (stepsCount <= 1) {
+      setProgress(0);
+      return;
+    }
+
+    const duration = 5000;
+    elapsedRef.current = 0;
+    lastTickRef.current = null;
+
+    const tick = (time: number) => {
+      if (lastTickRef.current === null) {
+        lastTickRef.current = time;
+      }
+
+      if (isHovering || Date.now() < pauseUntilRef.current) {
+        lastTickRef.current = time;
+        rafRef.current = requestAnimationFrame(tick);
+        return;
+      }
+
+      const delta = time - (lastTickRef.current ?? time);
+      lastTickRef.current = time;
+      elapsedRef.current = Math.min(duration, elapsedRef.current + delta);
+      const nextProgress = Math.min(1, elapsedRef.current / duration);
+      setProgress(nextProgress);
+      rafRef.current = requestAnimationFrame(tick);
+    };
+
+    rafRef.current = requestAnimationFrame(tick);
+
+    return () => {
+      if (rafRef.current) {
+        cancelAnimationFrame(rafRef.current);
+      }
+    };
+  }, [activeStepIndex, isHovering, stepsCount]);
+
   const handleStepClick = (index: number) => {
     setActiveStepIndex(index);
     pauseUntilRef.current = Date.now() + 10000;
+    setProgress(0);
   };
 
   const panelShadow = useMemo(
@@ -138,25 +182,36 @@ export function FeaturePanel({
                         className="w-full text-left"
                         style={{
                           padding: "1rem 0",
-                          borderTop: `1px solid ${tokens.railDivider}`,
                           color: isActive ? tokens.panelText : tokens.panelMuted,
                         }}
                       >
-                        <div className="flex items-start gap-3">
-                          <span
+                        <div className="relative" style={{ paddingTop: "0.85rem" }}>
+                          <div
                             aria-hidden="true"
                             style={{
-                              height: "10px",
-                              width: "10px",
-                              borderRadius: "999px",
-                              marginTop: "0.4rem",
-                              backgroundColor: isActive ? tokens.accent : "transparent",
-                              border: `1px solid ${isActive ? tokens.accent : tokens.railDivider}`,
+                              position: "absolute",
+                              top: 0,
+                              left: 0,
+                              right: 0,
+                              height: "1px",
+                              backgroundColor: tokens.railDivider,
+                            }}
+                          />
+                          <div
+                            aria-hidden="true"
+                            style={{
+                              position: "absolute",
+                              top: 0,
+                              left: 0,
+                              height: "1px",
+                              width: isActive ? `${Math.round(progress * 100)}%` : "0%",
+                              backgroundColor: tokens.panelText,
+                              transition: "width 0.4s ease",
                             }}
                           />
                           <div>
                             <div className="text-sm font-semibold">{step.label}</div>
-                            {step.body ? (
+                            {isActive && step.body ? (
                               <div className="mt-2 text-xs" style={{ color: tokens.panelMuted }}>
                                 {step.body}
                               </div>
