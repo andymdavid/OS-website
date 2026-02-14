@@ -352,7 +352,7 @@ export const siteContent: SiteContent = {
           "Speedrun is the starting point for building practical AI capability inside your organisation.\n\nFor most SMEs, the real barrier is not interest in AI, it is uncertainty. Leaders are being asked to make decisions about tools, risk, investment, and policy without having worked directly with the technology themselves. Speedrun closes that gap by creating shared, hands-on experience inside the business.\n\nWhen your team has built with AI in the context of real work, decisions become informed rather than speculative. Strategy discussions are based on what you’ve seen and tested. Risk is easier to judge. Leadership, IT, and operations can evaluate next steps from a common understanding. Capability then grows from within the organisation rather than being delegated externally.\n\nSpeedrun creates the foundation for practical AI adoption inside your organisation, so future investment is deliberate, grounded, and internally owned.",
         layout: "splitModal",
         textAlign: "left",
-        splitModalVideoUrl: "https://www.youtube.com/embed/xVSldYWFxU8",
+        splitModalVideoUrl: "https://www.youtube.com/embed/xVSldYWFxU8?start=3",
       },
     },
     {
