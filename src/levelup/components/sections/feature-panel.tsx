@@ -55,6 +55,7 @@ export function FeaturePanel({
   const rafRef = useRef<number | null>(null);
   const lastTickRef = useRef<number | null>(null);
   const elapsedRef = useRef<number>(0);
+  const [isListHovering, setIsListHovering] = useState(false);
   const stepsCount = steps.length;
 
   const activeStep = steps[activeStepIndex] ?? steps[0];
@@ -83,7 +84,7 @@ export function FeaturePanel({
       return;
     }
 
-    const duration = 5000;
+    const duration = 6500;
     elapsedRef.current = 0;
     lastTickRef.current = null;
 
@@ -92,7 +93,7 @@ export function FeaturePanel({
         lastTickRef.current = time;
       }
 
-      if (isHovering || Date.now() < pauseUntilRef.current) {
+      if (isListHovering || Date.now() < pauseUntilRef.current) {
         lastTickRef.current = time;
         rafRef.current = requestAnimationFrame(tick);
         return;
@@ -113,7 +114,7 @@ export function FeaturePanel({
         cancelAnimationFrame(rafRef.current);
       }
     };
-  }, [activeStepIndex, isHovering, stepsCount]);
+  }, [activeStepIndex, isListHovering, stepsCount]);
 
   const handleStepClick = (index: number) => {
     setActiveStepIndex(index);
@@ -145,8 +146,6 @@ export function FeaturePanel({
               height: "calc(100vh - 90px)",
               width: "100%",
             }}
-            onMouseEnter={() => setIsHovering(true)}
-            onMouseLeave={() => setIsHovering(false)}
           >
             <div
               className="grid gap-8 lg:grid-cols-[320px_minmax(0,1fr)] items-stretch h-full"
@@ -171,7 +170,12 @@ export function FeaturePanel({
                   </div>
                 </div>
 
-                <div className="mt-10" style={{ marginTop: "auto" }}>
+                <div
+                  className="mt-10"
+                  style={{ marginTop: "auto" }}
+                  onMouseEnter={() => setIsListHovering(true)}
+                  onMouseLeave={() => setIsListHovering(false)}
+                >
                   {steps.map((step, index) => {
                     const isActive = index === activeStepIndex;
                     return (
