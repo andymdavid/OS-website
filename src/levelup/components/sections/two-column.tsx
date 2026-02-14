@@ -360,7 +360,7 @@ export function TwoColumn({
                     borderRadius: "0.8rem",
                     overflow: "hidden",
                     backgroundColor: "rgba(255,255,255,0.04)",
-                    aspectRatio: "9 / 16",
+                    aspectRatio: "16 / 10",
                   }}
                 >
                   {splitModalPlaceholder ? (
