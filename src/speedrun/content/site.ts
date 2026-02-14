@@ -302,9 +302,9 @@ export const siteContent: SiteContent = {
           {
             id: "p1",
             number: "01",
-            title: "A working app your team understands",
+            title: "An App You've Built",
             description:
-              "Your team builds a functioning app during the session and understands how it was created, how it works, and how to continue adapting it after the workshop.",
+              "Participants builds an app and understand how it was created, how it works, and how to adapt that approach to their own tools.",
             primaryTag: "Outcome",
             secondaryTag: "App",
             summaryItems: [],
@@ -312,9 +312,9 @@ export const siteContent: SiteContent = {
           {
             id: "p2",
             number: "02",
-            title: "Practical experience with AI agents",
+            title: "Hands-on with AI",
             description:
-              "Participants gain direct experience working with AI agents, seeing how instructions translate into outcomes, where systems need guidance, and how oversight fits into the process.",
+              "Participants use AI coding agents to build and modify their app, seeing how clear instructions translate into working features.",
             primaryTag: "Outcome",
             secondaryTag: "Agents",
             summaryItems: [],
@@ -322,9 +322,9 @@ export const siteContent: SiteContent = {
           {
             id: "p3",
             number: "03",
-            title: "Internal capability begins forming",
+            title: "Growing Internal Capability",
             description:
-              "Team members develop the confidence and judgement to test ideas, refine systems, and extend AI use within the business without defaulting to external providers.",
+              "Team members develop the confidence and judgement to test ideas and extend AI use within the business without defaulting to external providers.",
             primaryTag: "Outcome",
             secondaryTag: "Capability",
             summaryItems: [],
@@ -332,9 +332,9 @@ export const siteContent: SiteContent = {
           {
             id: "p4",
             number: "04",
-            title: "Grounded conversations about strategy",
+            title: "Clearer Decisions About AI",
             description:
-              "Future discussions about AI strategy, governance, and investment are anchored in lived experience rather than assumptions, vendor claims, or theory.",
+              "Discussions on strategy, governance, and investment are anchored in lived experience rather than theory, assumptions, or vendor claims.",
             primaryTag: "Outcome",
             secondaryTag: "Strategy",
             summaryItems: [],
