@@ -348,15 +348,13 @@ export function TwoColumn({
                 {renderBody()}
               </p>
             </div>
-            <div className="flex justify-center">
+            <div>
               <div
                 style={{
                   backgroundColor: "#2a2a2a",
                   borderRadius: "1rem",
                   padding: "1.25rem",
                   boxShadow: "0 30px 70px rgba(10, 10, 10, 0.45)",
-                  width: "70%",
-                  maxWidth: "420px",
                 }}
               >
                 <div
