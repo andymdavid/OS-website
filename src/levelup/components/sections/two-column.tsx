@@ -40,7 +40,6 @@ interface TwoColumnProps {
   splitImageAlt?: string;
   splitVideo?: string;
   splitModalPlaceholder?: boolean;
-  splitModalVideoUrl?: string;
   splitBlocks?: Array<{
     title: string;
     body: string;
@@ -99,7 +98,6 @@ export function TwoColumn({
   splitImageAlt,
   splitVideo,
   splitModalPlaceholder = false,
-  splitModalVideoUrl,
   splitBlocks,
   dualColumns,
   blocks,
@@ -365,15 +363,7 @@ export function TwoColumn({
                     aspectRatio: "9 / 16",
                   }}
                 >
-                  {splitModalVideoUrl ? (
-                    <iframe
-                      src={splitModalVideoUrl}
-                      title={`${title} video`}
-                      className="h-full w-full"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      allowFullScreen
-                    />
-                  ) : splitModalPlaceholder ? (
+                  {splitModalPlaceholder ? (
                     <div className="h-full w-full flex items-center justify-center text-xs text-neutral-400">
                       Video placeholder
                     </div>
