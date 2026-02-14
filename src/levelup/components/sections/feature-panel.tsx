@@ -50,7 +50,6 @@ export function FeaturePanel({
 }: FeaturePanelProps) {
   const [activeStepIndex, setActiveStepIndex] = useState(0);
   const [progress, setProgress] = useState(0);
-  const [isHovering, setIsHovering] = useState(false);
   const pauseUntilRef = useRef<number>(0);
   const rafRef = useRef<number | null>(null);
   const lastTickRef = useRef<number | null>(null);
@@ -63,29 +62,14 @@ export function FeaturePanel({
 
   useEffect(() => {
     if (stepsCount <= 1) {
-      return;
-    }
-
-    const intervalId = window.setInterval(() => {
-      if (isHovering || Date.now() < pauseUntilRef.current) {
-        return;
-      }
-
-      setActiveStepIndex((prev) => (prev + 1) % stepsCount);
-      setProgress(0);
-    }, 5000);
-
-    return () => window.clearInterval(intervalId);
-  }, [isHovering, stepsCount]);
-
-  useEffect(() => {
-    if (stepsCount <= 1) {
       setProgress(0);
       return;
     }
 
     const duration = 6500;
-    elapsedRef.current = 0;
+    if (elapsedRef.current === 0) {
+      setProgress(0);
+    }
     lastTickRef.current = null;
 
     const tick = (time: number) => {
@@ -104,6 +88,15 @@ export function FeaturePanel({
       elapsedRef.current = Math.min(duration, elapsedRef.current + delta);
       const nextProgress = Math.min(1, elapsedRef.current / duration);
       setProgress(nextProgress);
+
+      if (nextProgress >= 1) {
+        elapsedRef.current = 0;
+        lastTickRef.current = null;
+        setProgress(0);
+        setActiveStepIndex((prev) => (prev + 1) % stepsCount);
+        rafRef.current = requestAnimationFrame(tick);
+        return;
+      }
       rafRef.current = requestAnimationFrame(tick);
     };
 
@@ -115,6 +108,15 @@ export function FeaturePanel({
       }
     };
   }, [activeStepIndex, isListHovering, stepsCount]);
+
+  useEffect(() => {
+    if (!isListHovering) {
+      return;
+    }
+
+    elapsedRef.current = progress * 6500;
+    lastTickRef.current = null;
+  }, [isListHovering, progress]);
 
   const handleStepClick = (index: number) => {
     setActiveStepIndex(index);
