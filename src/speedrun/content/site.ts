@@ -355,6 +355,7 @@ export const siteContent: SiteContent = {
         layout: "splitModal",
         textAlign: "left",
         splitModalPlaceholder: true,
+        splitModalVideoUrl: "https://www.youtube.com/embed/xVSldYWFxU8",
       },
     },
     {
