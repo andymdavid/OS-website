@@ -288,6 +288,17 @@ export const siteContent: SiteContent = {
     {
       key: "twoColumn",
       enabled: true,
+      id: "twoColumn-5",
+      props: {
+        title: "Placeholder Title",
+        body: "Placeholder subpara copy goes here.",
+        singleColumn: true,
+        fullHeight: true,
+      },
+    },
+    {
+      key: "twoColumn",
+      enabled: true,
       id: "twoColumn-6",
       props: {
         title: "Frequently Asked Questions",
