@@ -153,7 +153,7 @@ export function FeaturePanel({
               className="grid gap-8 lg:grid-cols-[320px_minmax(0,1fr)] items-stretch h-full"
             >
               <div
-                style={{ width: "320px", minHeight: 0, paddingTop: "0.75rem" }}
+                style={{ width: "320px", minHeight: 0, paddingTop: "1.5rem" }}
                 className="h-full flex flex-col"
               >
                 <div>
