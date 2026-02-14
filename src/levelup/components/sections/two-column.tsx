@@ -34,12 +34,11 @@ interface TwoColumnProps {
   profileLogo?: string;
   singleColumn?: boolean;
   fullHeight?: boolean;
-  layout?: "default" | "split" | "dualFocus" | "splitModal";
+  layout?: "default" | "split" | "dualFocus";
   splitReverse?: boolean;
   splitImage?: string;
   splitImageAlt?: string;
   splitVideo?: string;
-  splitModalPlaceholder?: boolean;
   splitBlocks?: Array<{
     title: string;
     body: string;
@@ -97,7 +96,6 @@ export function TwoColumn({
   splitImage,
   splitImageAlt,
   splitVideo,
-  splitModalPlaceholder = false,
   splitBlocks,
   dualColumns,
   blocks,
@@ -319,60 +317,6 @@ export function TwoColumn({
             </div>
           </motion.div>
         </div>
-      </Section>
-    );
-  }
-
-  if (layout === "splitModal") {
-    return (
-      <Section id={anchorId || id} className="min-h-screen flex items-center">
-        <Container>
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="grid gap-10 lg:grid-cols-2 items-center"
-          >
-            <div className="max-w-xl">
-              {!hideTitle ? (
-                <h2 className="font-anton text-[40px] tracking-tight leading-tight uppercase text-[#201d1d] text-left">
-                  {title}
-                </h2>
-              ) : null}
-              <p
-                className="mt-6 text-sm md:text-base text-[#201d1d] text-left"
-                style={{ whiteSpace: "pre-line" }}
-              >
-                {renderBody()}
-              </p>
-            </div>
-            <div>
-              <div
-                style={{
-                  backgroundColor: "#2a2a2a",
-                  borderRadius: "1rem",
-                  padding: "1.25rem",
-                  boxShadow: "0 30px 70px rgba(10, 10, 10, 0.45)",
-                }}
-              >
-                <div
-                  style={{
-                    borderRadius: "0.8rem",
-                    overflow: "hidden",
-                    backgroundColor: "rgba(255,255,255,0.04)",
-                    aspectRatio: "16 / 10",
-                  }}
-                >
-                  {splitModalPlaceholder ? (
-                    <div className="h-full w-full flex items-center justify-center text-xs text-neutral-400">
-                      Video placeholder
-                    </div>
-                  ) : null}
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </Container>
       </Section>
     );
   }
