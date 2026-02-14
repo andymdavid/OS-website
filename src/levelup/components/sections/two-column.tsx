@@ -546,7 +546,7 @@ export function TwoColumn({
                   {blocks.map((block) => (
                     <div
                       key={block.number ?? block.title}
-                      className={`rounded-2xl bg-[#141312] shadow-xl transition-all duration-300 ease-out md:hover:-translate-y-1.5 md:hover:shadow-[0_20px_40px_rgba(0,0,0,0.3),0_0_30px_rgba(161,255,98,0.1)] ${
+                      className={`rounded-2xl bg-[#2a2a2a] shadow-xl transition-all duration-300 ease-out md:hover:-translate-y-1.5 md:hover:shadow-[0_20px_40px_rgba(0,0,0,0.3),0_0_30px_rgba(161,255,98,0.1)] ${
                         isUniformExpandable
                           ? "p-6 h-[440px] w-[280px] sm:w-[300px] md:w-full"
                           : isLargeCards
@@ -716,7 +716,7 @@ export function TwoColumn({
                   return (
                     <div
                       key={card.id}
-                      className={`rounded-2xl bg-[#141312] flex-shrink-0 md:flex-shrink flex flex-col transition-all duration-300 ease-out md:hover:-translate-y-1.5 md:hover:shadow-[0_20px_40px_rgba(0,0,0,0.3),0_0_30px_rgba(161,255,98,0.1)] ${
+                      className={`rounded-2xl bg-[#2a2a2a] flex-shrink-0 md:flex-shrink flex flex-col transition-all duration-300 ease-out md:hover:-translate-y-1.5 md:hover:shadow-[0_20px_40px_rgba(0,0,0,0.3),0_0_30px_rgba(161,255,98,0.1)] ${
                         isUniformCards
                           ? "p-6 h-auto w-[280px] sm:w-[300px] md:w-full"
                           : "p-5 h-[420px] w-[260px] sm:w-[280px] md:w-full"
