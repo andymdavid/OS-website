@@ -395,11 +395,11 @@ export const siteContent: SiteContent = {
       props: {
         title: "Who we are",
         body:
-          "Level Up is delivered by Other Stuff, a Perth-based team that works hands-on with AI systems in the real-world. Our work focuses on helping people understand how AI actually behaves by building and running things that are practical, not by talking about them in theory. We’ve also worked with Stakwork, a Silicon Valley AI company on agent-based systems, and that lived experience shapes how we teach, advise, and support others - always grounded in what works in practice, not just in theory. We’ve seen that confidence and understanding come fastest when people are able to build something themselves and observe how it works in practice. Level Up is an extension of that approach, adapted for schools. It brings the same build-first, practical way of learning AI into the classroom, designed to be accessible, supportive, and grounded in real experience.",
+          "Speedrun is delivered by Other Stuff, a Perth-based AI-native product studio that works hands-on with AI systems. We help business leaders understand how AI works by building practical tools with it, not by talking about it in theory.\n\nWe’ve worked with Stakwork, a Silicon Valley company building agent-based systems, and our experience shapes how we approach building internal AI capability for organisations. Understanding comes fastest when teams move from observing AI to working with it directly.\n\nWe operate as an AI-first business ourselves, using these tools across our own operations and building systems like Wingman, our open-source agent management platform. Speedrun brings that same build-first approach into your organisation, helping teams develop practical judgement and confidence from direct experience.",
         bodyMobileSplitParas: [
-          "We’ve also worked with Stakwork",
-          "We’ve seen that confidence",
-          "Level Up is an extension",
+          "We’ve worked with Stakwork",
+          "We operate as an AI-first business",
+          "Speedrun brings",
         ],
         bodyLinks: [
           {
