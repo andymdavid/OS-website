@@ -112,7 +112,9 @@ export function FeaturePanel({
                 className="h-full flex flex-col"
               >
                 <div>
-                  <div className="font-anton text-xl uppercase">{title}</div>
+                  <div className="font-anton uppercase" style={{ fontSize: "34px", lineHeight: "1.15" }}>
+                    {title}
+                  </div>
                   <p className="text-sm mt-4" style={{ color: tokens.panelMuted }}>
                     {body}
                   </p>
