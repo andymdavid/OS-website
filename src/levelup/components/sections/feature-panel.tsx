@@ -168,8 +168,6 @@ export function FeaturePanel({
                 <div
                   className="overflow-hidden"
                   style={{
-                    border: `1px solid ${tokens.stageBorder}`,
-                    backgroundColor: tokens.accentSoft,
                     boxShadow: "0 26px 70px rgba(5, 5, 5, 0.55)",
                     height: "100%",
                     width: "100%",
