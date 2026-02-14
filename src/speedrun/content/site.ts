@@ -292,7 +292,7 @@ export const siteContent: SiteContent = {
       props: {
         title: "What your team leaves with",
         body:
-          "Speedrun is designed to produce practical outcomes, not just exposure to AI. By the end of the session, your team has built something real and gained the clarity to keep building.",
+          "Speedrun is designed to move your team from exposure to action. By the end of the session, you have built a working app and understand enough to continue building with confidence.",
         singleColumn: true,
         fullHeight: true,
         levelUpCardsLayout: "flat",
