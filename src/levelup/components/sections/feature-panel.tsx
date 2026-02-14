@@ -164,8 +164,28 @@ export function FeaturePanel({
                     {body}
                   </p>
                   <div className="mt-6">
-                    <Button size="lg" asChild className="group">
-                      <a href={ctaHref} target="_blank" rel="noopener noreferrer">
+                    <Button
+                      size="lg"
+                      asChild
+                      className="group"
+                      style={{
+                        backgroundColor: "#f9f7f6",
+                        color: "#201d1d",
+                        transition: "background-color 0.2s ease",
+                      }}
+                    >
+                      <a
+                        href={ctaHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ backgroundColor: "#f9f7f6", color: "#201d1d" }}
+                        onMouseEnter={(event) => {
+                          event.currentTarget.style.backgroundColor = "#eee9e6";
+                        }}
+                        onMouseLeave={(event) => {
+                          event.currentTarget.style.backgroundColor = "#f9f7f6";
+                        }}
+                      >
                         {ctaLabel}
                       </a>
                     </Button>
