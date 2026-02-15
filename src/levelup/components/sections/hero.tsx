@@ -7,8 +7,10 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 const homeStyleCSS = `
+  h1.hero-home-style,
   .hero-home-style {
     font-family: 'Figtree', sans-serif !important;
+    font-weight: 400 !important;
   }
 `;
 
@@ -55,7 +57,7 @@ export function Hero({
 
   return (
     <Section className="!py-0 min-h-screen flex items-center justify-center">
-      {variant === "homeStyle" && <style>{homeStyleCSS}</style>}
+      <style>{homeStyleCSS}</style>
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -86,7 +88,7 @@ export function Hero({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             className={variant === "homeStyle" ? "hero-home-style" : "font-anton tracking-tight leading-tight uppercase"}
-            style={variant === "homeStyle" ? { fontSize: "clamp(36px, 6vw, 72px)", lineHeight: 1 } : undefined}
+            style={variant === "homeStyle" ? { fontFamily: "Figtree, sans-serif", fontSize: "clamp(36px, 6vw, 72px)", lineHeight: 1 } : undefined}
           >
             {variant === "homeStyle" ? (
               title.split("\n").map((line, index) => (
