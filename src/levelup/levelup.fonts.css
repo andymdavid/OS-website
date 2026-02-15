@@ -46,6 +46,7 @@
   color: hsl(var(--foreground));
 }
 
-.levelup-theme .font-figtree {
-  font-family: var(--font-figtree), sans-serif;
+.levelup-theme .font-figtree,
+.levelup-theme h1.hero-home-style {
+  font-family: 'Figtree', sans-serif !important;
 }

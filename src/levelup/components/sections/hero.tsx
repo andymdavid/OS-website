@@ -78,8 +78,8 @@ export function Hero({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className={variant === "homeStyle" ? "" : "font-anton tracking-tight leading-tight uppercase"}
-            style={variant === "homeStyle" ? { fontFamily: "'Figtree', sans-serif", fontSize: "clamp(36px, 6vw, 72px)", lineHeight: 1 } : undefined}
+            className={variant === "homeStyle" ? "hero-home-style" : "font-anton tracking-tight leading-tight uppercase"}
+            style={variant === "homeStyle" ? { fontSize: "clamp(36px, 6vw, 72px)", lineHeight: 1 } : undefined}
           >
             {variant === "homeStyle" ? (
               title.split("\n").map((line, index) => (
