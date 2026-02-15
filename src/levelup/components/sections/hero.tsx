@@ -76,23 +76,14 @@ export function Hero({
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="font-anton tracking-tight leading-tight uppercase"
+            className="font-figtree"
+            style={{ fontSize: "clamp(36px, 6vw, 72px)", lineHeight: 1 }}
           >
-            {title.split("\n").map((line, index) => {
-              const isPrimary = index === 0;
-              return (
-                <span
-                  key={index}
-                  className={`block ${
-                    isPrimary
-                      ? "text-5xl sm:text-6xl md:text-7xl"
-                      : "text-4xl sm:text-5xl md:text-6xl"
-                  }`}
-                >
-                  {line}
-                </span>
-              );
-            })}
+            {title.split("\n").map((line, index) => (
+              <span key={index} className="block">
+                {line}
+              </span>
+            ))}
           </motion.h1>
 
           {/* Subtitle */}

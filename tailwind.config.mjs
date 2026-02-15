@@ -12,6 +12,7 @@ export default {
         jersey: ["var(--font-jersey)", "sans-serif"],
         bungee: ["var(--font-bungee)", "sans-serif"],
         alfabet: ["var(--font-alfabet)", "sans-serif"],
+        figtree: ["'Figtree'", "sans-serif"],
       },
       animation: {
         "spin-slow": "spin 20s linear infinite",
