@@ -72,8 +72,9 @@ export const siteContent: SiteContent = {
       key: "hero",
       enabled: true,
       id: "hero",
-      variant: "default",
+      variant: "homeStyle",
       props: {
+        variant: "homeStyle",
         badge: "For business leaders who need firsthand experience with AI",
         title: "LEARN HOW TO WORK WITH AI\nBY BUILDING SOMETHING WITH IT",
         subtitle:
