@@ -6,6 +6,12 @@ import { Badge } from "@/levelup/components/ui/badge";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
+const homeStyleCSS = `
+  .hero-home-style {
+    font-family: 'Figtree', sans-serif !important;
+  }
+`;
+
 interface HeroProps {
   badge?: string;
   title: string;
@@ -49,6 +55,7 @@ export function Hero({
 
   return (
     <Section className="!py-0 min-h-screen flex items-center justify-center">
+      {variant === "homeStyle" && <style>{homeStyleCSS}</style>}
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
