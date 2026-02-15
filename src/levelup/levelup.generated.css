@@ -2339,3 +2339,8 @@
 .\[\&_svg\]\:shrink-0 svg {
   flex-shrink: 0
 }
+
+/* Speedrun home-style H1 font override */
+h1.hero-home-style {
+  font-family: 'Figtree', sans-serif !important;
+}
