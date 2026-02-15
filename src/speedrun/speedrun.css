@@ -1,0 +1,4 @@
+/* Speedrun-specific overrides */
+h1.hero-home-style {
+  font-family: 'Figtree', sans-serif !important;
+}
