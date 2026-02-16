@@ -486,3 +486,17 @@ h2 {
 .os-draft {
   --color-background: #0f0e0d;
 }
+
+/* Section pills/labels */
+.os-draft .intro-pill,
+.os-draft .funnel-pill,
+.os-draft .good-stuff-pill {
+  background: #0c0b0a;
+}
+
+/* Content boxes (except bottom row) */
+.os-draft .wingman-step,
+.os-draft .followup-step,
+.os-draft .funnel-card {
+  background: #0c0b0a;
+}
