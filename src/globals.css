@@ -500,3 +500,8 @@ h2 {
 .os-draft .funnel-card {
   background: #0c0b0a;
 }
+
+/* Hero logo size */
+.os-draft .hero-logo img {
+  width: clamp(30px, 4vw, 50px);
+}
