@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './routes/Home';
+import HomeDuplicate from './routes/HomeDuplicate';
 import Company from './routes/Company';
 import LevelUp from './routes/LevelUp';
 import Speedrun from './routes/Speedrun';
@@ -8,6 +9,10 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Home />,
+  },
+  {
+    path: '/home-duplicate',
+    element: <HomeDuplicate />,
   },
   {
     path: '/company',
