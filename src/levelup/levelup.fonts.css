@@ -6,6 +6,11 @@
   font-display: swap;
 }
 
+/* Ensure Figtree is available - loaded via Google Fonts in index.html */
+.levelup-theme {
+  --font-heading: 'Figtree', sans-serif;
+}
+
 .levelup-theme,
 .levelup-theme-vars {
   --background: 20 60% 99%;

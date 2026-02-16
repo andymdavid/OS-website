@@ -1,18 +1,12 @@
 
+import { useEffect, useRef } from "react";
 import { Section } from "@/levelup/components/layout/section";
 import { Container } from "@/levelup/components/layout/container";
 import { Button } from "@/levelup/components/ui/button";
 import { Badge } from "@/levelup/components/ui/badge";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-
-const homeStyleCSS = `
-  h1.hero-home-style,
-  .hero-home-style {
-    font-family: 'Figtree', sans-serif !important;
-    font-weight: 400 !important;
-  }
-`;
+import "@/components/Hero.css";
 
 interface HeroProps {
   badge?: string;
@@ -49,6 +43,15 @@ export function Hero({
   socialProofLink,
   onGetStarted,
 }: HeroProps) {
+  const h1Ref = useRef<HTMLHeadingElement>(null);
+
+  // Force Figtree font directly on DOM for homeStyle variant
+  useEffect(() => {
+    if (variant === "homeStyle" && h1Ref.current) {
+      h1Ref.current.style.setProperty("font-family", "'Figtree', sans-serif", "important");
+    }
+  }, [variant]);
+
   // Normalize CTA props to objects
   const primaryCta =
     typeof ctaPrimary === "string"
@@ -57,7 +60,6 @@ export function Hero({
 
   return (
     <Section className="!py-0 min-h-screen flex items-center justify-center">
-      <style>{homeStyleCSS}</style>
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -83,21 +85,24 @@ export function Hero({
           )}
 
           {/* Headline */}
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className={variant === "homeStyle" ? "hero-home-style" : "font-anton tracking-tight leading-tight uppercase"}
-            style={variant === "homeStyle" ? { fontFamily: "Figtree, sans-serif", fontSize: "clamp(36px, 6vw, 72px)", lineHeight: 1 } : undefined}
-          >
-            {variant === "homeStyle" ? (
-              title.split("\n").map((line, index) => (
-                <span key={index} className="block">
-                  {line}
-                </span>
-              ))
-            ) : (
-              title.split("\n").map((line, index) => {
+          {variant === "homeStyle" ? (
+            <div className="hero-title-block">
+              <h1>
+                {title.split("\n").map((line, index) => (
+                  <span key={index} className="block">
+                    {line}
+                  </span>
+                ))}
+              </h1>
+            </div>
+          ) : (
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="font-anton tracking-tight leading-tight uppercase"
+            >
+              {title.split("\n").map((line, index) => {
                 const isPrimary = index === 0;
                 return (
                   <span
@@ -111,9 +116,9 @@ export function Hero({
                     {line}
                   </span>
                 );
-              })
-            )}
-          </motion.h1>
+              })}
+            </motion.h1>
+          )}
 
           {/* Subtitle */}
           <motion.p

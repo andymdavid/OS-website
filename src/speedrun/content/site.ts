@@ -76,7 +76,7 @@ export const siteContent: SiteContent = {
       props: {
         variant: "homeStyle",
         badge: "For business leaders who need firsthand experience with AI",
-        title: "LEARN HOW TO WORK WITH AI\nBY BUILDING SOMETHING WITH IT",
+        title: "Learn how to work with AI\nby building something with it",
         subtitle:
           "Speedrun is a hands-on workshop where business leaders learn what AI is and how it works by building practical tools with AI agents. No coding experience required.",
         subtitleMaxWidth: "45.36rem",
