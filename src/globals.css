@@ -525,3 +525,10 @@ h2 {
     var(--color-background) 100%
   );
 }
+
+/* Keep podcast card and scroll indicator above gradients */
+.os-draft .podcast-card,
+.os-draft .scroll-indicator {
+  position: relative;
+  z-index: 20;
+}
