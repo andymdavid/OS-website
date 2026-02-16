@@ -526,11 +526,11 @@ h2 {
   );
 }
 
-/* Keep podcast card and scroll indicator above gradients */
-.os-draft .podcast-card {
-  z-index: 20;
+/* Keep hero content above intro section gradient overlay */
+.os-draft .hero-extended {
+  z-index: 2;
 }
 
-.os-draft .scroll-indicator {
-  z-index: 20;
+.os-draft .intro-section {
+  z-index: 1;
 }
