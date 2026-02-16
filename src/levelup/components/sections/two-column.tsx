@@ -259,7 +259,7 @@ export function TwoColumn({
             transition={{ duration: 0.5 }}
             className={`flex flex-col justify-center px-8 md:px-16 lg:px-24 py-16 ${splitReverse ? "md:order-2" : "md:order-1"}`}
           >
-            <h2 className="font-anton text-[40px] tracking-tight leading-tight uppercase">
+            <h2 className="font-anton text-[40px] tracking-tight leading-tight">
               {title}
             </h2>
             {renderMobileParagraphs(body, "The workshop is facilitated")}
@@ -334,7 +334,7 @@ export function TwoColumn({
             className="max-w-6xl mx-auto py-16 md:py-20"
           >
             {!hideTitle ? (
-              <h2 className={`font-anton text-[40px] tracking-tight leading-tight uppercase ${isCentered ? "text-center" : "text-left"}`}>
+              <h2 className={`font-anton text-[40px] tracking-tight leading-tight ${isCentered ? "text-center" : "text-left"}`}>
                 {title}
               </h2>
             ) : null}
@@ -378,7 +378,7 @@ export function TwoColumn({
                             {column.label}
                           </span>
                         ) : null}
-                        <h3 className="mt-6 font-anton text-[34px] leading-tight uppercase text-[#201d1d]">
+                        <h3 className="mt-6 font-anton text-[34px] leading-tight text-[#201d1d]">
                           {column.title}
                         </h3>
                         <div className="mt-8 space-y-8" style={{ maxWidth: "26rem" }}>
@@ -440,7 +440,7 @@ export function TwoColumn({
           >
             <div className="max-w-xl">
               {!hideTitle ? (
-                <h2 className="font-anton text-[40px] tracking-tight leading-tight uppercase text-[#201d1d] text-left">
+                <h2 className="font-anton text-[40px] tracking-tight leading-tight text-[#201d1d] text-left">
                   {title}
                 </h2>
               ) : null}
@@ -504,7 +504,7 @@ export function TwoColumn({
         >
           {!hideTitle ? (
             <h2
-              className={`font-anton text-[40px] tracking-tight leading-tight uppercase ${
+              className={`font-anton text-[40px] tracking-tight leading-tight ${
                 isCentered ? "text-center" : "text-left"
               }`}
             >
@@ -705,7 +705,7 @@ export function TwoColumn({
                           </div>
                         )}
                       <div>
-                        <h3 className="font-anton text-2xl uppercase text-[#201d1d]">
+                        <h3 className="font-anton text-2xl text-[#201d1d]">
                           {block.title}
                         </h3>
                         {block.role || profileLogo ? (
