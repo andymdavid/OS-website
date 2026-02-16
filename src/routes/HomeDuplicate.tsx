@@ -1,5 +1,5 @@
 import { Navigation } from '../components/Navigation';
-import { Hero } from '../components/Hero';
+import { HeroDraft } from '../components/HeroDraft';
 import { IntroSection } from '../components/IntroSection';
 import { FunnelSection } from '../components/FunnelSection';
 import { FollowUpSection } from '../components/FollowUpSection';
@@ -19,7 +19,7 @@ export default function HomeDuplicate() {
       <Navigation />
       <main>
         {/* Hero Section */}
-        <Hero />
+        <HeroDraft />
 
         {/* Intro Section: The Problem */}
         <IntroSection />
