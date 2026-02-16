@@ -156,10 +156,11 @@ export function FeaturePanel({
                 style={{ width: "320px", minHeight: 0, paddingTop: "1.5rem" }}
                 className="h-full flex flex-col"
               >
-                <div>
-                  <div style={{ fontFamily: "var(--font-heading)", fontSize: "34px", lineHeight: "1.15" }}>
+                <div className="hero-title-block">
+                  <h1 style={{ fontSize: "34px", marginBottom: 0 }}>
                     {title}
-                  </div>
+                  </h1>
+                </div>
                   <p className="text-sm mt-4" style={{ color: tokens.panelMuted }}>
                     {body}
                   </p>
