@@ -527,8 +527,10 @@ h2 {
 }
 
 /* Keep podcast card and scroll indicator above gradients */
-.os-draft .podcast-card,
+.os-draft .podcast-card {
+  z-index: 20;
+}
+
 .os-draft .scroll-indicator {
-  position: relative;
   z-index: 20;
 }
