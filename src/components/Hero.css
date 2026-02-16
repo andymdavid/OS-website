@@ -179,5 +179,5 @@
 /* Draft page overrides */
 .os-draft .hero-sticky {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-    url('/hero-background-1.png?v=2') center -20% / 110% auto no-repeat;
+    url('/hero-background-1.png?v=2') center 20% / cover no-repeat;
 }
