@@ -518,19 +518,28 @@ h2 {
   position: relative;
   margin-top: -150px;
   padding-top: 150px;
+  background: transparent;
+}
+
+.os-draft .intro-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: linear-gradient(
     to bottom,
     transparent 0%,
     var(--color-background) 150px,
     var(--color-background) 100%
   );
+  z-index: -1;
+  pointer-events: none;
 }
 
-/* Keep hero content above intro section gradient overlay */
-.os-draft .hero-extended {
-  z-index: 2;
-}
-
-.os-draft .intro-section {
-  z-index: 1;
+/* Keep podcast card and scroll indicator above the gradient */
+.os-draft .podcast-card,
+.os-draft .scroll-indicator {
+  z-index: 10;
 }
