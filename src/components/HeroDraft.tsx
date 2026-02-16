@@ -11,7 +11,7 @@ export function HeroDraft() {
             <div className="hero-logo">
               <img src="/Logo-Main-Icon.png" alt="Logo" />
             </div>
-            <h1>We help teams build practical AI capability inside their business.</h1>
+            <h1>Build practical AI capability inside your business.</h1>
             <p>
               We help SMEs figure out how to use AI in a way that actually works for people,
               <br />
