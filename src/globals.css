@@ -505,3 +505,9 @@ h2 {
 .os-draft .hero-logo img {
   width: clamp(30px, 4vw, 50px);
 }
+
+/* Hero H1 font */
+.os-draft .hero-title-block h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 300;
+}
