@@ -512,3 +512,16 @@ h2 {
   font-weight: 300;
   font-size: clamp(41px, 7vw, 83px);
 }
+
+/* Intro section gradient blend from hero */
+.os-draft .intro-section {
+  position: relative;
+  margin-top: -150px;
+  padding-top: 150px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--color-background) 150px,
+    var(--color-background) 100%
+  );
+}
