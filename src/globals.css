@@ -545,3 +545,14 @@ h2 {
 .os-draft .hero-inner {
   z-index: 5;
 }
+
+/* Podcast card clarity improvements */
+.os-draft .podcast-card-footer span {
+  color: #ffffff;
+  opacity: 1;
+}
+
+.os-draft .podcast-card {
+  z-index: 10;
+  position: absolute;
+}
