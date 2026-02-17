@@ -534,16 +534,19 @@ h2 {
     var(--color-background) 100%
   );
   pointer-events: none;
+  z-index: 1;
 }
 
 .os-draft .intro-container {
   position: relative;
   background: var(--color-background);
+  z-index: 2;
 }
 
-/* Keep podcast card and scroll indicator above the gradient */
-.os-draft .hero-inner {
-  z-index: 5;
+/* Keep hero content above the intro gradient overlay */
+.os-draft .hero-extended {
+  position: relative;
+  z-index: 10;
 }
 
 /* Podcast card clarity improvements */
@@ -553,6 +556,5 @@ h2 {
 }
 
 .os-draft .podcast-card {
-  z-index: 10;
-  position: absolute;
+  z-index: 20;
 }
