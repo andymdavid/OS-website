@@ -534,27 +534,24 @@ h2 {
     var(--color-background) 100%
   );
   pointer-events: none;
-  z-index: 1;
 }
 
 .os-draft .intro-container {
   position: relative;
   background: var(--color-background);
-  z-index: 2;
 }
 
-/* Keep hero content above the intro gradient overlay */
-.os-draft .hero-extended {
-  position: relative;
-  z-index: 10;
+/* Podcast card - above gradient overlay */
+.os-draft .podcast-card {
+  z-index: 100;
 }
 
-/* Podcast card clarity improvements */
 .os-draft .podcast-card-footer span {
   color: #ffffff;
   opacity: 1;
 }
 
-.os-draft .podcast-card {
-  z-index: 20;
+/* Scroll indicator - above gradient overlay */
+.os-draft .scroll-indicator {
+  z-index: 100;
 }
