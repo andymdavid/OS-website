@@ -513,46 +513,8 @@ h2 {
   font-size: clamp(41px, 7vw, 83px);
 }
 
-/* Intro section adjustments for gradient blend */
-.os-draft .intro-section {
-  position: relative;
-  background: var(--color-background);
-}
-
-/* Gradient overlay - positioned at bottom of hero, extending below */
-.os-draft .hero-extended {
-  position: relative;
-  z-index: 2;
-  margin-bottom: -150px;
-}
-
-.os-draft .hero-extended::after {
-  content: '';
-  position: absolute;
-  bottom: -150px;
-  left: 0;
-  right: 0;
-  height: 150px;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    var(--color-background) 100%
-  );
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Podcast card - above gradient overlay */
-.os-draft .podcast-card {
-  z-index: 10;
-}
-
+/* Podcast card styling */
 .os-draft .podcast-card-footer span {
   color: #ffffff;
   opacity: 1;
-}
-
-/* Scroll indicator - above gradient overlay */
-.os-draft .scroll-indicator {
-  z-index: 10;
 }
