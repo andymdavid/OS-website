@@ -527,19 +527,21 @@ h2 {
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+  height: 150px;
   background: linear-gradient(
     to bottom,
     transparent 0%,
-    var(--color-background) 150px,
     var(--color-background) 100%
   );
-  z-index: -1;
   pointer-events: none;
 }
 
+.os-draft .intro-container {
+  position: relative;
+  background: var(--color-background);
+}
+
 /* Keep podcast card and scroll indicator above the gradient */
-.os-draft .podcast-card,
-.os-draft .scroll-indicator {
-  z-index: 10;
+.os-draft .hero-inner {
+  z-index: 5;
 }
