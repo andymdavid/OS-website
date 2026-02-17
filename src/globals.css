@@ -509,7 +509,7 @@ h2 {
 /* Hero H1 font */
 .os-draft .hero-title-block h1 {
   font-family: 'Cormorant Garamond', serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: clamp(41px, 7vw, 83px);
 }
 
