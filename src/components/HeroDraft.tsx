@@ -1,8 +1,12 @@
 
+import { useState } from 'react';
 import { EmailCaptureForm } from './EmailCaptureForm';
+import { NewsletterModal } from './NewsletterModal';
 import './Hero.css';
 
 export function HeroDraft() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <section className="hero-extended">
       <div className="hero-sticky">
@@ -48,15 +52,13 @@ export function HeroDraft() {
             </svg>
           </div>
 
-          <a
+          <div
             className="podcast-card"
-            href="https://youtu.be/7NIW9uWyiEU?si=38nxIqHMtnasSTfm"
-            target="_blank"
-            rel="noopener noreferrer"
+            onClick={() => setIsModalOpen(true)}
           >
             <div className="podcast-card-content">
-              <div className="podcast-episode">Episode 32 - Stewarding SME's and AI</div>
-              <div className="podcast-hosts">Pete & Andy with Bill Withers & Gabe Enslin</div>
+              <div className="podcast-episode">Join The Good Stuff</div>
+              <div className="podcast-hosts">Weekly insights on AI for SMEs</div>
             </div>
             <div className="podcast-card-footer">
               <span>THE GOOD STUFF</span>
@@ -76,9 +78,11 @@ export function HeroDraft() {
                 />
               </svg>
             </div>
-          </a>
+          </div>
         </div>
       </div>
+
+      <NewsletterModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 }
