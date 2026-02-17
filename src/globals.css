@@ -516,16 +516,20 @@ h2 {
 /* Intro section adjustments for gradient blend */
 .os-draft .intro-section {
   position: relative;
-  margin-top: -150px;
-  padding-top: 150px;
   background: var(--color-background);
 }
 
-/* Gradient overlay inside hero - bottom fade */
-.os-draft .hero-sticky::after {
+/* Gradient overlay - positioned at bottom of hero, extending below */
+.os-draft .hero-extended {
+  position: relative;
+  z-index: 2;
+  margin-bottom: -150px;
+}
+
+.os-draft .hero-extended::after {
   content: '';
   position: absolute;
-  bottom: 0;
+  bottom: -150px;
   left: 0;
   right: 0;
   height: 150px;
