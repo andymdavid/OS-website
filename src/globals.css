@@ -564,12 +564,12 @@ h2 {
 
 .os-theme.os-draft .intro-draft-left .section-heading {
   margin-bottom: 20px;
-  max-width: 800px;
+  max-width: 600px;
   line-height: 1.1;
 }
 
 .os-theme.os-draft .intro-draft-left .intro-text {
-  max-width: 800px;
+  max-width: 600px;
   margin-bottom: 24px;
   line-height: 1.6;
   text-align: left;
