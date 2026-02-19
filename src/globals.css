@@ -513,6 +513,12 @@ h2 {
   font-size: clamp(41px, 7vw, 83px);
 }
 
+/* Hero bridge - match main paragraph exactly */
+.os-draft .hero-title-block .hero-bridge {
+  font-size: inherit;
+  opacity: 1;
+}
+
 
 /* Podcast card styling */
 .os-draft .podcast-card-footer span {
