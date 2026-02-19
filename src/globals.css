@@ -513,6 +513,11 @@ h2 {
   font-size: clamp(41px, 7vw, 83px);
 }
 
+/* Hero bridge text - match subpara size */
+.os-draft .hero-title-block .hero-bridge {
+  font-size: clamp(16px, 2vw, 20px);
+}
+
 /* Podcast card styling */
 .os-draft .podcast-card-footer span {
   color: #ffffff;

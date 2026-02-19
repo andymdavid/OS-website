@@ -22,7 +22,7 @@ export function HeroDraft() {
               so your team moves faster and your business runs smarter.
             </p>
             <p className="hero-bridge">
-              We share what we're building every week.
+              Learn how we're building internal AI capability in practice.
             </p>
             <div className="hero-cta">
               <EmailCaptureForm
