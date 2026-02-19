@@ -533,6 +533,42 @@ h2 {
   border-color: rgba(240, 240, 240, 0.4);
 }
 
+/* Intro section two-column layout */
+.os-draft .intro-two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  text-align: left;
+  max-width: 100%;
+}
+
+.os-draft .intro-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.os-draft .intro-left .intro-pill {
+  align-self: flex-start;
+}
+
+.os-draft .intro-left .intro-heading,
+.os-draft .intro-left .intro-text {
+  text-align: left;
+}
+
+.os-draft .intro-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .os-draft .intro-two-column {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Podcast card styling */
 .os-draft .podcast-card-footer span {
   color: #ffffff;
