@@ -534,12 +534,19 @@ h2 {
 }
 
 /* Intro section two-column layout */
-.os-draft .intro-two-column {
+.os-draft .intro-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.os-draft .intro-container.intro-two-column {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 64px;
   text-align: left;
-  max-width: 100%;
+  max-width: 1200px;
+  width: 100%;
 }
 
 .os-draft .intro-left {
@@ -564,7 +571,7 @@ h2 {
 }
 
 @media (max-width: 768px) {
-  .os-draft .intro-two-column {
+  .os-draft .intro-container.intro-two-column {
     grid-template-columns: 1fr;
   }
 }
