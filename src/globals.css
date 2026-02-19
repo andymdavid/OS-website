@@ -539,16 +539,23 @@ h2 {
   padding-right: var(--container-padding) !important;
 }
 
+.os-draft .intro-section-draft::after {
+  left: 0 !important;
+  right: 0 !important;
+}
+
 .os-draft .intro-draft-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 64px;
+  align-items: center;
 }
 
 .os-draft .intro-draft-left {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
 }
 
 .os-draft .intro-draft-left .section-heading {
@@ -562,6 +569,10 @@ h2 {
   margin-bottom: 24px;
   line-height: 1.6;
   text-align: left;
+}
+
+.os-draft .intro-draft-left .intro-text:last-child {
+  margin-bottom: 0;
 }
 
 .os-draft .intro-draft-right {
