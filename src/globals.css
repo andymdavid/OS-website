@@ -533,45 +533,45 @@ h2 {
   border-color: rgba(240, 240, 240, 0.4);
 }
 
-/* Intro section two-column layout */
-.os-draft .intro-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* Intro section draft - two-column layout */
+.os-draft .intro-section-draft {
+  padding-left: var(--container-padding) !important;
+  padding-right: var(--container-padding) !important;
 }
 
-.os-draft .intro-container.intro-two-column {
+.os-draft .intro-draft-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 64px;
-  text-align: left;
-  max-width: 1200px;
-  width: 100%;
 }
 
-.os-draft .intro-left {
+.os-draft .intro-draft-left {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-.os-draft .intro-left .intro-pill {
-  align-self: flex-start;
+.os-draft .intro-draft-left .section-heading {
+  margin-bottom: 20px;
+  max-width: 800px;
+  line-height: 1.1;
 }
 
-.os-draft .intro-left .intro-heading,
-.os-draft .intro-left .intro-text {
+.os-draft .intro-draft-left .intro-text {
+  max-width: 800px;
+  margin-bottom: 24px;
+  line-height: 1.6;
   text-align: left;
 }
 
-.os-draft .intro-right {
+.os-draft .intro-draft-right {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 @media (max-width: 768px) {
-  .os-draft .intro-container.intro-two-column {
+  .os-draft .intro-draft-grid {
     grid-template-columns: 1fr;
   }
 }

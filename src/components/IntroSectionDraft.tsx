@@ -4,12 +4,12 @@ import './IntroSection.css';
 
 export function IntroSectionDraft() {
   return (
-    <section className="intro-section intro-section-draft">
-      <div className="intro-container intro-two-column">
-        <div className="intro-left">
+    <section className="section intro-section-draft">
+      <div className="section-container-wide intro-draft-grid">
+        <div className="intro-draft-left">
           <div className="intro-pill">BUILDING CAPABILITY</div>
 
-          <h2 className="intro-heading">
+          <h2 className="section-heading">
             If you haven't worked hands-on with AI tools in your own business, it's difficult to judge where they genuinely add value.
           </h2>
 
@@ -22,7 +22,7 @@ export function IntroSectionDraft() {
           </p>
         </div>
 
-        <div className="intro-right">
+        <div className="intro-draft-right">
           {/* Right column - empty for now */}
         </div>
       </div>
