@@ -1,6 +1,6 @@
 import { NavigationDraft } from '../components/NavigationDraft';
 import { HeroDraft } from '../components/HeroDraft';
-import { IntroSection } from '../components/IntroSection';
+import { IntroSectionDraft } from '../components/IntroSectionDraft';
 import { FunnelSection } from '../components/FunnelSection';
 import { FollowUpSection } from '../components/FollowUpSection';
 import { WingmanSection } from '../components/WingmanSection';
@@ -21,8 +21,8 @@ export default function HomeDuplicate() {
         {/* Hero Section */}
         <HeroDraft />
 
-        {/* Intro Section: The Problem */}
-        <IntroSection />
+        {/* Intro Section: Building Capability */}
+        <IntroSectionDraft />
 
         {/* Funnel Section: How We Can Help */}
         <FunnelSection />
