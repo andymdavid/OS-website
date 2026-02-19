@@ -520,23 +520,17 @@ h2 {
 }
 
 
-/* Hero email form - glassmorphic styling */
-.os-draft .hero-cta .email-form-content {
+/* Hero email input - glassmorphic styling */
+.os-draft .hero-cta .email-input {
   background: rgba(13, 13, 13, 0.25);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(240, 240, 240, 0.15);
-  border-radius: 4px;
-  padding: 6px;
-}
-
-.os-draft .hero-cta .email-input {
-  background: transparent;
-  border: none;
+  border: 1px solid rgba(240, 240, 240, 0.2);
 }
 
 .os-draft .hero-cta .email-input:focus {
-  background: transparent;
+  background: rgba(13, 13, 13, 0.35);
+  border-color: rgba(240, 240, 240, 0.4);
 }
 
 /* Podcast card styling */
