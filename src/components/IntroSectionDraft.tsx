@@ -10,7 +10,7 @@ export function IntroSectionDraft() {
           <div className="intro-pill">BUILDING CAPABILITY</div>
 
           <h2 className="section-heading">
-            If you haven't worked hands-on with AI tools in your own business, it's difficult to judge where they genuinely add value.
+            When your team works hands-on with AI tools, it becomes clear where they add value.
           </h2>
 
           <p className="intro-text">
