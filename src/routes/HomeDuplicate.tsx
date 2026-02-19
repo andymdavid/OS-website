@@ -1,4 +1,4 @@
-import { Navigation } from '../components/Navigation';
+import { NavigationDraft } from '../components/NavigationDraft';
 import { HeroDraft } from '../components/HeroDraft';
 import { IntroSection } from '../components/IntroSection';
 import { FunnelSection } from '../components/FunnelSection';
@@ -16,7 +16,7 @@ export default function HomeDuplicate() {
 
   return (
     <div className="os-theme os-draft">
-      <Navigation />
+      <NavigationDraft />
       <main>
         {/* Hero Section */}
         <HeroDraft />
