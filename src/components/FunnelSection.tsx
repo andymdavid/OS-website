@@ -6,9 +6,9 @@ import './FunnelSection.css';
 export function FunnelSection() {
   const cards = [
     {
-      category: 'Workshops',
+      category: 'Build Internal Capability',
       date: 'We Start Here',
-      title: 'Speedrun',
+      title: 'Speedrun Workshops',
       description:
         "Speedrun is a hands-on workshop format designed to help businesses learn how to work with AI by building practical business tools and workflows.\n\nIt is delivered in two formats - Speedrun and Speedrun Applied - which share the same approach but differ in scope and depth.\n\nAcross both formats, participants work hands-on with AI agents (including Wingman, Claude Code, Codex, and Goose) to build real, working business tools.",
       image: '/Card1.png',

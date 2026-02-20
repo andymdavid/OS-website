@@ -75,6 +75,7 @@
   height: 100%;
   object-fit: cover;
   transition: transform var(--duration-slow) var(--ease-out);
+  filter: brightness(0.7);
 }
 
 .funnel-card:hover .funnel-card-image {
