@@ -37,8 +37,8 @@ export function FunnelSection() {
         <div className="funnel-pill fade-in">HOW WE CAN HELP</div>
 
         <h2 className="section-heading fade-in fade-in-stagger-1">
-          We help you make sense of AI by getting you hands-on and building
-          with it inside your business.
+          We help you make sense of AI by getting you hands-on with it inside
+          your business.
         </h2>
 
         <p className="funnel-intro fade-in fade-in-stagger-2">
