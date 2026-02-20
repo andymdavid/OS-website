@@ -52,7 +52,8 @@
   cursor: pointer;
   transition: all var(--duration-base) var(--ease-out);
   aspect-ratio: 1 / 1;
-  border: 1px solid transparent;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.06);
 }
 
 .funnel-card:hover {
