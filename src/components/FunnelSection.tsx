@@ -30,7 +30,7 @@ export function FunnelSection() {
       date: 'Infrastructure',
       title: 'Wingman',
       description:
-        'A community of SME business leaders who keep building together. Monthly online sessions and in-person events. Each month the group votes on a real problem facing their business, then builds a solution everyone can use.\n\nFor graduates of Speedrun only.',
+        "Wingman is our AI agent management system, designed to bring AI automation into SME's without adding technical complexity.\n\nWhere Speedrun and Marginal Gains focus on building understanding and internal capability, Wingman provides the infrastructure layer that allows that capability to become operational systems.\n\nIt moves beyond using AI as an assistive drafting tool and instead deploy agents into real world processes where work is coordinated, scheduled, and progressed with reduced manual oversight.",
       image: '/Card3.png',
       buttonText: 'Learn More',
       buttonHref: '#',
