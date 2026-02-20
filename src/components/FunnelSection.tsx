@@ -20,7 +20,7 @@ export function FunnelSection() {
       date: 'Where We Go Next',
       title: 'Marginal Gains Club',
       description:
-        'Build a complete workflow in five hours. A custom CRM, a website to launch it, an agent that writes content for your site, and another agent that finds leads and feeds them into your new CRM. Everything connected in a loop.\n\nLearn how AI handles entire processes, not just individual tasks.\n\nFor business leaders ready to go deeper.',
+        'Marginal Gains is a community for the key people in your business who we develop and support and to become your AI Champions.\n\nWe provide guidance on how to use the tools effectively, helping them to adapt as the technology continually evolves, assist with rapid prototyping of new tools and workflows for use within the business - & providing access to Wingman.\n\nMarginal Gains is designed so your AI Champions can become the evangelists that help drive strategy, adoption and implementation from within.',
       image: '/Card2.png',
       buttonText: 'Learn More',
       buttonHref: '#',
