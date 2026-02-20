@@ -173,8 +173,9 @@ export function AIChatDemo() {
   }, [phase, displayedText, terminalLines, scenario.message, scenario.agentSteps]);
 
   return (
-    <div className="ai-chat-demo">
-      {/* Terminal Panel */}
+    <div className="ai-chat-demo-modal">
+      <div className="ai-chat-demo">
+        {/* Terminal Panel */}
       <div className={`terminal-panel ${showTerminal ? 'visible' : ''}`}>
         <div className="terminal-header">
           <span className="terminal-title">Agent Output</span>
@@ -251,6 +252,7 @@ export function AIChatDemo() {
           <div className="notification-subtitle">{scenario.notification.subtitle}</div>
         </div>
         <div className="notification-time">now</div>
+      </div>
       </div>
     </div>
   );
