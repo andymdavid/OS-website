@@ -38,15 +38,13 @@ export function FunnelSection() {
 
         <h2 className="section-heading fade-in fade-in-stagger-1">
           We help you make sense of AI by getting you hands-on and building
-          things that matter to your business.
+          with it inside your business.
         </h2>
 
         <p className="funnel-intro fade-in fade-in-stagger-2">
-          You know your business better than anyone. Our job isn’t to tell you
-          how to run it — it’s to help you apply AI in practical ways that
-          support what already works. We teach you to build by building
-          together, not by presenting, and everything we do is designed to get
-          you hands-on as quickly as possible.
+          You know your business better than anyone. Our job isn't to tell you
+          how to run it - it's to help you apply AI in practical ways that
+          support what already works. Here's how.
         </p>
 
         <div className="funnel-cards">
