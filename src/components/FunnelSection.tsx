@@ -10,7 +10,7 @@ export function FunnelSection() {
       date: 'We Start Here',
       title: 'Speedrun',
       description:
-        "Build a working mobile app in an hour. No slides, no technical background, just you, your laptop, and the tools. You'll walk away with something you made yourself and a completely different sense of what's possible.\n\nFor business leaders who think they're not technical.",
+        "Speedrun is a hands-on workshop format designed to help businesses learn how to work with AI by building practical business tools and workflows.\n\nIt is delivered in two formats - Speedrun and Speedrun Applied - which share the same approach but differ in scope and depth.\n\nAcross both formats, participants work hands-on with AI agents (including Wingman, Claude Code, Codex, and Goose) to build real, working business tools.",
       image: '/Card1.png',
       buttonText: 'Start Here',
       buttonHref: 'https://events.humanitix.com/touch-don-t-look-how-to-actually-build-things-with-ai',
