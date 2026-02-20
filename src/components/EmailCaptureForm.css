@@ -54,7 +54,7 @@
   flex-shrink: 0;
   height: 35px;
   min-width: 170px;
-  padding: 0 20px;
+  padding: 1px 20px 0;
   background: var(--color-text);
   color: var(--color-background);
   border: none;
@@ -63,6 +63,7 @@
   font-size: 13px;
   font-weight: var(--weight-regular);
   letter-spacing: 0.2px;
+  line-height: 1;
   cursor: pointer;
   transition: all var(--duration-base) var(--ease-in-out);
   white-space: nowrap;
