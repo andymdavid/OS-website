@@ -39,7 +39,7 @@
 }
 
 .terminal-panel.visible {
-  height: 240px;
+  height: 260px;
   opacity: 1;
 }
 
@@ -129,7 +129,7 @@
   font-size: 15px;
   line-height: 1.5;
   color: #1a1a1a;
-  height: 72px;
+  height: 48px;
   overflow: hidden;
 }
 
