@@ -8,7 +8,7 @@ export function FunnelSection() {
     {
       category: 'Workshops',
       date: 'We Start Here',
-      title: 'Speedrun.',
+      title: 'Speedrun',
       description:
         "Build a working mobile app in an hour. No slides, no technical background, just you, your laptop, and the tools. You'll walk away with something you made yourself and a completely different sense of what's possible.\n\nFor business leaders who think they're not technical.",
       image: '/Card1.png',
@@ -18,7 +18,7 @@ export function FunnelSection() {
     {
       category: 'Develop Your AI Champions',
       date: 'Where We Go Next',
-      title: 'Marginal Gains Club.',
+      title: 'Marginal Gains Club',
       description:
         'Build a complete workflow in five hours. A custom CRM, a website to launch it, an agent that writes content for your site, and another agent that finds leads and feeds them into your new CRM. Everything connected in a loop.\n\nLearn how AI handles entire processes, not just individual tasks.\n\nFor business leaders ready to go deeper.',
       image: '/Card2.png',
@@ -28,7 +28,7 @@ export function FunnelSection() {
     {
       category: 'Automate Your Work',
       date: 'Infrastructure',
-      title: 'Wingman.',
+      title: 'Wingman',
       description:
         'A community of SME business leaders who keep building together. Monthly online sessions and in-person events. Each month the group votes on a real problem facing their business, then builds a solution everyone can use.\n\nFor graduates of Speedrun only.',
       image: '/Card3.png',
