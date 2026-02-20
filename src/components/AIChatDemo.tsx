@@ -14,20 +14,70 @@ interface Scenario {
 
 const scenarios: Scenario[] = [
   {
-    message: "Create an event for Tuesday at 2:00 PM and attach all emails I haven't responded to yet but should.",
+    message: "Schedule a client check-in with Horizon Media for Thursday arvo and prep the talking points",
     agentSteps: [
       '● Thinking...',
-      '● Reading calendar availability',
-      '● Scanning inbox for pending replies',
-      '● Found 3 emails requiring response',
-      '● Creating event "Follow up time"',
-      '● Attaching email threads',
-      '✓ Event created successfully',
+      '● Checking your calendar for Thursday',
+      '● Finding contact details for Horizon Media',
+      '● Creating meeting invite',
+      '● Generating talking points from recent activity',
+      '● Adding agenda to calendar event',
+      '✓ Meeting scheduled',
     ],
     notification: {
       icon: 'calendar',
-      title: 'New event "Follow up time"',
-      subtitle: 'scheduled for Tuesday at 2:00 PM',
+      title: 'Client check-in with Horizon Media',
+      subtitle: 'Thursday at 2:30 PM · Agenda attached',
+    },
+  },
+  {
+    message: "Summarise the thread with Northern Construction and draft a response confirming the timeline",
+    agentSteps: [
+      '● Thinking...',
+      '● Finding email thread',
+      '● Reading 12 messages in thread',
+      '● Extracting key dates and commitments',
+      '● Drafting confirmation response',
+      '✓ Draft ready for review',
+    ],
+    notification: {
+      icon: 'email',
+      title: 'Draft ready: Re: Project Timeline',
+      subtitle: 'Northern Construction · Ready to send',
+    },
+  },
+  {
+    message: "Create a project status update for the Mitchell account and share it with the team",
+    agentSteps: [
+      '● Thinking...',
+      '● Pulling project data for Mitchell account',
+      '● Reviewing activity from last 7 days',
+      '● Compiling status summary',
+      '● Formatting update',
+      '● Sending to team channel',
+      '✓ Update shared',
+    ],
+    notification: {
+      icon: 'document',
+      title: 'Status update sent',
+      subtitle: 'Mitchell account · Shared with 4 team members',
+    },
+  },
+  {
+    message: "Help me plan how to add a customer feedback widget to the dashboard",
+    agentSteps: [
+      '● Thinking...',
+      '● Analysing requirements',
+      '● Reviewing existing dashboard components',
+      '● Outlining implementation approach',
+      '● Identifying dependencies',
+      '● Breaking down into tasks',
+      '✓ Implementation plan created',
+    ],
+    notification: {
+      icon: 'tasks',
+      title: '6 tasks created',
+      subtitle: 'Feedback widget · Added to backlog',
     },
   },
 ];
@@ -48,7 +98,7 @@ export function AIChatDemo() {
   const [showTerminal, setShowTerminal] = useState(false);
   const [terminalLines, setTerminalLines] = useState<string[]>([]);
   const [showNotification, setShowNotification] = useState(false);
-  const [currentScenario] = useState(0);
+  const [currentScenario, setCurrentScenario] = useState(0);
   const charIndexRef = useRef(0);
   const lineIndexRef = useRef(0);
 
@@ -108,12 +158,13 @@ export function AIChatDemo() {
       // Clear visuals first
       setShowNotification(false);
       setShowTerminal(false);
-      // Wait, then reset text and restart
+      // Wait, then reset text and move to next scenario
       timeout = setTimeout(() => {
         setTerminalLines([]);
         setDisplayedText('');
         charIndexRef.current = 0;
         lineIndexRef.current = 0;
+        setCurrentScenario((prev) => (prev + 1) % scenarios.length);
         setPhase('typing');
       }, 1000);
     }
@@ -174,8 +225,26 @@ export function AIChatDemo() {
 
       {/* Notification */}
       <div className={`notification-card ${showNotification ? 'visible' : ''}`}>
-        <div className="notification-icon calendar-icon">
-          <span>31</span>
+        <div className={`notification-icon ${scenario.notification.icon}-icon`}>
+          {scenario.notification.icon === 'calendar' && <span>31</span>}
+          {scenario.notification.icon === 'email' && (
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M22 6l-10 7L2 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          )}
+          {scenario.notification.icon === 'document' && (
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          )}
+          {scenario.notification.icon === 'tasks' && (
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 11l3 3L22 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          )}
         </div>
         <div className="notification-content">
           <div className="notification-title">{scenario.notification.title}</div>
