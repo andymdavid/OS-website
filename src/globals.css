@@ -513,10 +513,10 @@ h2 {
   font-size: clamp(41px, 7vw, 83px);
 }
 
-/* H2 font - same as H1 but light weight */
+/* H2 font - same as H1 */
 .os-draft h2 {
   font-family: 'Cormorant Garamond', serif;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 /* Hero bridge - match main paragraph exactly */
