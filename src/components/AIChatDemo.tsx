@@ -4,6 +4,7 @@ import './AIChatDemo.css';
 
 interface Scenario {
   message: string;
+  agentSteps: string[];
   notification: {
     icon: string;
     title: string;
@@ -14,6 +15,15 @@ interface Scenario {
 const scenarios: Scenario[] = [
   {
     message: "Create an event for Tuesday at 2:00 PM and attach all emails I haven't responded to yet but should.",
+    agentSteps: [
+      '● Thinking...',
+      '● Reading calendar availability',
+      '● Scanning inbox for pending replies',
+      '● Found 3 emails requiring response',
+      '● Creating event "Follow up time"',
+      '● Attaching email threads',
+      '✓ Event created successfully',
+    ],
     notification: {
       icon: 'calendar',
       title: 'New event "Follow up time"',
@@ -22,15 +32,29 @@ const scenarios: Scenario[] = [
   },
 ];
 
+type Phase =
+  | 'typing'
+  | 'sending'
+  | 'terminal-open'
+  | 'terminal-running'
+  | 'terminal-close'
+  | 'notification'
+  | 'hold'
+  | 'reset';
+
 export function AIChatDemo() {
   const [displayedText, setDisplayedText] = useState('');
-  const [phase, setPhase] = useState<'typing' | 'sending' | 'notification' | 'hold' | 'reset'>('typing');
+  const [phase, setPhase] = useState<Phase>('typing');
+  const [showTerminal, setShowTerminal] = useState(false);
+  const [terminalLines, setTerminalLines] = useState<string[]>([]);
   const [showNotification, setShowNotification] = useState(false);
   const [currentScenario] = useState(0);
   const charIndexRef = useRef(0);
+  const lineIndexRef = useRef(0);
 
   const scenario = scenarios[currentScenario];
-  const typingSpeed = 35; // ms per character
+  const typingSpeed = 35;
+  const lineDelay = 400;
 
   useEffect(() => {
     let timeout: ReturnType<typeof setTimeout>;
@@ -42,42 +66,86 @@ export function AIChatDemo() {
           charIndexRef.current += 1;
         }, typingSpeed);
       } else {
-        // Typing complete, pause then send
         timeout = setTimeout(() => {
           setPhase('sending');
         }, 600);
       }
     } else if (phase === 'sending') {
-      // Brief send animation, then show notification
+      timeout = setTimeout(() => {
+        setShowTerminal(true);
+        setPhase('terminal-open');
+      }, 400);
+    } else if (phase === 'terminal-open') {
+      timeout = setTimeout(() => {
+        setPhase('terminal-running');
+      }, 300);
+    } else if (phase === 'terminal-running') {
+      if (lineIndexRef.current < scenario.agentSteps.length) {
+        timeout = setTimeout(() => {
+          setTerminalLines(scenario.agentSteps.slice(0, lineIndexRef.current + 1));
+          lineIndexRef.current += 1;
+        }, lineDelay);
+      } else {
+        timeout = setTimeout(() => {
+          setPhase('terminal-close');
+        }, 800);
+      }
+    } else if (phase === 'terminal-close') {
+      setShowTerminal(false);
       timeout = setTimeout(() => {
         setShowNotification(true);
         setPhase('notification');
       }, 400);
     } else if (phase === 'notification') {
-      // Hold notification visible
       timeout = setTimeout(() => {
         setPhase('hold');
       }, 3000);
     } else if (phase === 'hold') {
-      // Reset after hold
       timeout = setTimeout(() => {
         setPhase('reset');
       }, 2000);
     } else if (phase === 'reset') {
-      // Reset everything and start over
       setShowNotification(false);
+      setShowTerminal(false);
+      setTerminalLines([]);
       setDisplayedText('');
       charIndexRef.current = 0;
+      lineIndexRef.current = 0;
       timeout = setTimeout(() => {
         setPhase('typing');
       }, 1000);
     }
 
     return () => clearTimeout(timeout);
-  }, [phase, displayedText, scenario.message]);
+  }, [phase, displayedText, terminalLines, scenario.message, scenario.agentSteps]);
 
   return (
     <div className="ai-chat-demo">
+      {/* Terminal Panel */}
+      <div className={`terminal-panel ${showTerminal ? 'visible' : ''}`}>
+        <div className="terminal-header">
+          <span className="terminal-title">Agent Output</span>
+          <span className="terminal-status">
+            <span className="status-dot"></span>
+            Running
+          </span>
+        </div>
+        <div className="terminal-content">
+          {terminalLines.map((line, index) => (
+            <div
+              key={index}
+              className={`terminal-line ${line.startsWith('✓') ? 'success' : ''}`}
+            >
+              {line}
+            </div>
+          ))}
+          {phase === 'terminal-running' && lineIndexRef.current < scenario.agentSteps.length && (
+            <span className="terminal-cursor">▋</span>
+          )}
+        </div>
+      </div>
+
+      {/* Chat Input */}
       <div className="chat-input-container">
         <div className="chat-input-box">
           <div className="chat-text">
@@ -102,6 +170,7 @@ export function AIChatDemo() {
         </div>
       </div>
 
+      {/* Notification */}
       <div className={`notification-card ${showNotification ? 'visible' : ''}`}>
         <div className="notification-icon calendar-icon">
           <span>31</span>
