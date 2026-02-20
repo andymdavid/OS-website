@@ -521,8 +521,7 @@ h2 {
 }
 
 .os-draft .funnel-section .funnel-pill {
-  display: flex;
-  justify-content: center;
+  width: fit-content;
   margin-left: auto;
   margin-right: auto;
 }
