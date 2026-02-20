@@ -492,6 +492,25 @@ h2 {
 .os-draft .funnel-pill,
 .os-draft .good-stuff-pill {
   background: #0c0b0a;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.os-draft .intro-pill::before,
+.os-draft .funnel-pill::before,
+.os-draft .good-stuff-pill::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2ea782;
+  animation: pill-pulse 1.5s infinite;
+}
+
+@keyframes pill-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
 }
 
 /* Content boxes (except bottom row) */
