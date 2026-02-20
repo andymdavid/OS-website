@@ -20,7 +20,7 @@ export function FunnelSection() {
       date: 'Where We Go Next',
       title: 'Marginal Gains Club',
       description:
-        'Marginal Gains is a community for the key people in your business who we develop and support and to become your AI Champions.\n\nWe provide guidance on how to use the tools effectively, helping them to adapt as the technology continually evolves, assist with rapid prototyping of new tools and workflows for use within the business - & providing access to Wingman.\n\nMarginal Gains is designed so your AI Champions can become the evangelists that help drive strategy, adoption and implementation from within.',
+        'Marginal Gains is a community for the key people in your business who we develop and support to become your AI Champions.\n\nWe guide them on how to use the tools, helping them adapt as the technology evolves, assist with rapid prototyping of new software and workflows for use in the business & we provide access to Wingman.\n\nMarginal Gains is designed so your AI Champions become the evangelists that help drive strategy, adoption and implementation from within.',
       image: '/Card2.png',
       buttonText: 'Learn More',
       buttonHref: '#',
