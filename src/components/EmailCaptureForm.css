@@ -22,7 +22,7 @@
 /* Input Styling */
 .email-input {
   flex: 1;
-  height: 44px;
+  height: 35px;
   min-width: 0; /* Allows flex item to shrink below content size */
   padding: 0 16px;
   background: rgba(240, 240, 240, 0.05);
@@ -52,7 +52,7 @@
 /* Submit Button */
 .email-submit-btn {
   flex-shrink: 0;
-  height: 44px;
+  height: 35px;
   min-width: 170px;
   padding: 0 20px;
   background: var(--color-text);
