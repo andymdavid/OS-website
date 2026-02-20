@@ -224,7 +224,9 @@ export function AIChatDemo() {
         </div>
       </div>
 
-      {/* Notification */}
+      </div>
+
+      {/* Notification - positioned relative to modal */}
       <div className={`notification-card ${showNotification ? 'visible' : ''}`}>
         <div className={`notification-icon ${scenario.notification.icon}-icon`}>
           {scenario.notification.icon === 'calendar' && <span>31</span>}
@@ -252,7 +254,6 @@ export function AIChatDemo() {
           <div className="notification-subtitle">{scenario.notification.subtitle}</div>
         </div>
         <div className="notification-time">now</div>
-      </div>
       </div>
     </div>
   );
