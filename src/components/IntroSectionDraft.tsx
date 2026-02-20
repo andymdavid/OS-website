@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { AIChatDemo } from './AIChatDemo';
 import './IntroSection.css';
 
 export function IntroSectionDraft() {
@@ -23,7 +24,7 @@ export function IntroSectionDraft() {
         </div>
 
         <div className="intro-draft-right">
-          {/* Right column - empty for now */}
+          <AIChatDemo />
         </div>
       </div>
     </section>
