@@ -62,7 +62,6 @@ export function FunnelSection() {
               <div className="funnel-card-overlay">
                 <div className="funnel-card-header">
                   <span className="funnel-card-category">{card.category}</span>
-                  <span className="funnel-card-date">{card.date}</span>
                 </div>
               <div className="funnel-card-footer">
                 <div className="funnel-card-title-block">
