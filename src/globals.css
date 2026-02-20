@@ -514,22 +514,18 @@ h2 {
 }
 
 /* Funnel section - center header content */
-.os-draft .funnel-section .funnel-pill,
-.os-draft .funnel-section .section-heading,
-.os-draft .funnel-section .funnel-intro {
+.os-draft .funnel-section .section-container-wide {
   text-align: center;
 }
 
-.os-draft .funnel-section .funnel-pill {
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .os-draft .funnel-section .section-heading,
 .os-draft .funnel-section .funnel-intro {
   margin-left: auto;
   margin-right: auto;
+}
+
+.os-draft .funnel-section .funnel-cards {
+  text-align: left;
 }
 
 /* Content boxes (except bottom row) */
