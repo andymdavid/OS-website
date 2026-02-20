@@ -105,13 +105,15 @@ export function AIChatDemo() {
         setPhase('reset');
       }, 2000);
     } else if (phase === 'reset') {
+      // Clear visuals first
       setShowNotification(false);
       setShowTerminal(false);
-      setTerminalLines([]);
-      setDisplayedText('');
-      charIndexRef.current = 0;
-      lineIndexRef.current = 0;
+      // Wait, then reset text and restart
       timeout = setTimeout(() => {
+        setTerminalLines([]);
+        setDisplayedText('');
+        charIndexRef.current = 0;
+        lineIndexRef.current = 0;
         setPhase('typing');
       }, 1000);
     }
