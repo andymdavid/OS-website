@@ -67,6 +67,9 @@
   transition: all var(--duration-base) var(--ease-in-out);
   white-space: nowrap;
   text-transform: capitalize;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .email-submit-btn:hover:not(:disabled) {
