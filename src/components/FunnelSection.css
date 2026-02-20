@@ -199,6 +199,17 @@
   border-color: #f0f0f0;
 }
 
+.funnel-card-button-dark {
+  background: #17181D;
+  border-color: transparent;
+}
+
+.funnel-card-button-dark:hover {
+  background: #1f2026;
+  color: var(--color-text);
+  border-color: transparent;
+}
+
 /* Tablet: 2 columns and button moves below title */
 @media (max-width: 1024px) {
   .funnel-cards {
