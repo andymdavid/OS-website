@@ -513,6 +513,26 @@ h2 {
   50% { opacity: 0.4; }
 }
 
+/* Funnel section - center header content */
+.os-draft .funnel-section .funnel-pill,
+.os-draft .funnel-section .section-heading,
+.os-draft .funnel-section .funnel-intro {
+  text-align: center;
+}
+
+.os-draft .funnel-section .funnel-pill {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.os-draft .funnel-section .section-heading,
+.os-draft .funnel-section .funnel-intro {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* Content boxes (except bottom row) */
 .os-draft .wingman-step,
 .os-draft .followup-step,
