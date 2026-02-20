@@ -41,15 +41,8 @@ export function NavigationDraft() {
           </div>
 
           <div className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
-            <a href="#services" className="nav-link">
-              Services
-            </a>
-            <a
-              href="#system"
-              className="nav-link"
-              onClick={(event) => handleScrollTo(event, 'system')}
-            >
-              Products
+            <a href="#solutions" className="nav-link">
+              Solutions
             </a>
             <a href="#media" className="nav-link">
               Media
