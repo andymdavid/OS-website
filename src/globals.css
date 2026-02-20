@@ -524,6 +524,10 @@ h2 {
   margin-right: auto;
 }
 
+.os-draft .funnel-section .funnel-intro {
+  max-width: 580px;
+}
+
 .os-draft .funnel-section .funnel-cards {
   text-align: left;
 }
