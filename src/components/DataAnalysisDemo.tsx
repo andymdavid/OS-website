@@ -8,25 +8,33 @@ interface TerminalStep {
 }
 
 const terminalSequence: TerminalStep[] = [
-  { type: 'action', content: 'Loading support_tickets.csv' },
-  { type: 'status', content: 'Reading 847 records...' },
-  { type: 'action', content: 'Analysing patterns' },
-  { type: 'code', content: 'categories = df.groupby(\'category\').count()' },
-  { type: 'code', content: 'resolution_times = df[\'resolved_at\'] - df[\'created_at\']' },
-  { type: 'code', content: 'top_issues = categories.nlargest(5)' },
-  { type: 'status', content: 'Pattern analysis complete' },
-  { type: 'action', content: 'Generating insights' },
-  { type: 'code', content: 'insights = model.summarize(top_issues, resolution_times)' },
-  { type: 'status', content: 'Done' },
+  { type: 'action', content: 'Connecting to Xero' },
+  { type: 'status', content: 'Authenticated' },
+  { type: 'action', content: 'Loading receivables' },
+  { type: 'code', content: 'invoices = xero.get_invoices(status="AUTHORISED")' },
+  { type: 'status', content: 'Retrieved 847 invoices' },
+  { type: 'action', content: 'Calculating aging brackets' },
+  { type: 'code', content: 'aged = invoices.groupby(aging_bucket).sum()' },
+  { type: 'code', content: 'overdue = aged[aged.days > 30]' },
+  { type: 'status', content: 'Found 23 overdue accounts' },
+  { type: 'action', content: 'Analysing payment patterns' },
+  { type: 'code', content: 'risk_score = model.predict_collection(overdue)' },
+  { type: 'action', content: 'Prioritising follow-ups' },
+  { type: 'code', content: 'priority = overdue.sort_values([\"risk\", \"amount\"])' },
+  { type: 'status', content: 'Analysis complete' },
 ];
 
-const insights = [
-  { label: 'Onboarding', value: 67, color: '#2ea782' },
-  { label: 'Billing', value: 18, color: '#4a9eff' },
-  { label: 'Technical', value: 15, color: '#f59e0b' },
+const accounts = [
+  { name: 'Mitchell & Co', amount: 18400, days: 75, risk: 'high' },
+  { name: 'Horizon Media', amount: 12200, days: 45, risk: 'medium' },
+  { name: 'Northern Group', amount: 8600, days: 32, risk: 'low' },
 ];
 
-const insightText = "67% of tickets relate to onboarding issues. Most common: password resets and account setup. Recommend updating FAQ and adding in-app guidance.";
+const notifications = [
+  { icon: 'email', title: 'Payment reminder sent', subtitle: 'Mitchell & Co · $18,400 overdue' },
+  { icon: 'calendar', title: 'Follow-up call scheduled', subtitle: 'Horizon Media · Tomorrow 2pm' },
+  { icon: 'email', title: 'Invoice resent', subtitle: 'Northern Group · Due in 5 days' },
+];
 
 type Phase =
   | 'typing'
@@ -34,7 +42,9 @@ type Phase =
   | 'terminal-open'
   | 'terminal-running'
   | 'terminal-close'
-  | 'insights'
+  | 'report'
+  | 'report-hold'
+  | 'notifications'
   | 'hold'
   | 'reset';
 
@@ -42,21 +52,28 @@ export function DataAnalysisDemo() {
   const [displayedText, setDisplayedText] = useState('');
   const [phase, setPhase] = useState<Phase>('typing');
   const [showTerminal, setShowTerminal] = useState(false);
+  const [showChat, setShowChat] = useState(true);
   const [terminalLines, setTerminalLines] = useState<TerminalStep[]>([]);
   const [currentCodeText, setCurrentCodeText] = useState('');
-  const [showInsights, setShowInsights] = useState(false);
-  const [insightDisplayText, setInsightDisplayText] = useState('');
-  const [showChart, setShowChart] = useState(false);
+  const [showReport, setShowReport] = useState(false);
+  const [visibleNotifications, setVisibleNotifications] = useState<number[]>([]);
 
   const charIndexRef = useRef(0);
   const stepIndexRef = useRef(0);
   const codeCharIndexRef = useRef(0);
-  const insightCharIndexRef = useRef(0);
+  const notificationIndexRef = useRef(0);
+  const terminalContentRef = useRef<HTMLDivElement>(null);
 
-  const prompt = "Analyse our support tickets from last month and identify patterns";
+  const prompt = "Review our aged receivables and flag collection priorities";
   const typingSpeed = 35;
-  const codeTypingSpeed = 25;
-  const insightTypingSpeed = 20;
+  const codeTypingSpeed = 20;
+
+  // Auto-scroll terminal to bottom
+  useEffect(() => {
+    if (terminalContentRef.current) {
+      terminalContentRef.current.scrollTop = terminalContentRef.current.scrollHeight;
+    }
+  }, [terminalLines, currentCodeText]);
 
   useEffect(() => {
     let timeout: ReturnType<typeof setTimeout>;
@@ -81,69 +98,69 @@ export function DataAnalysisDemo() {
       const currentStep = terminalSequence[stepIndexRef.current];
 
       if (!currentStep) {
-        // All steps done
-        timeout = setTimeout(() => setPhase('terminal-close'), 800);
+        timeout = setTimeout(() => setPhase('terminal-close'), 600);
       } else if (currentStep.type === 'code') {
-        // Type out code character by character
         if (codeCharIndexRef.current < currentStep.content.length) {
           timeout = setTimeout(() => {
             setCurrentCodeText(currentStep.content.slice(0, codeCharIndexRef.current + 1));
             codeCharIndexRef.current += 1;
           }, codeTypingSpeed);
         } else {
-          // Code line complete, add to terminal and move to next step
           setTerminalLines(prev => [...prev, currentStep]);
           setCurrentCodeText('');
           codeCharIndexRef.current = 0;
           stepIndexRef.current += 1;
-          timeout = setTimeout(() => {}, 200);
+          timeout = setTimeout(() => {}, 150);
         }
       } else {
-        // Action or status - show immediately
         setTerminalLines(prev => [...prev, currentStep]);
         stepIndexRef.current += 1;
-        timeout = setTimeout(() => {}, currentStep.type === 'action' ? 600 : 400);
+        timeout = setTimeout(() => {}, currentStep.type === 'action' ? 500 : 300);
       }
     } else if (phase === 'terminal-close') {
       setShowTerminal(false);
+      setShowChat(false);
       timeout = setTimeout(() => {
-        setShowInsights(true);
-        setPhase('insights');
+        setShowReport(true);
+        setPhase('report');
       }, 400);
-    } else if (phase === 'insights') {
-      if (insightCharIndexRef.current < insightText.length) {
+    } else if (phase === 'report') {
+      timeout = setTimeout(() => setPhase('report-hold'), 3500);
+    } else if (phase === 'report-hold') {
+      setShowReport(false);
+      timeout = setTimeout(() => setPhase('notifications'), 400);
+    } else if (phase === 'notifications') {
+      if (notificationIndexRef.current < notifications.length) {
         timeout = setTimeout(() => {
-          setInsightDisplayText(insightText.slice(0, insightCharIndexRef.current + 1));
-          insightCharIndexRef.current += 1;
-          // Show chart when we're partway through
-          if (insightCharIndexRef.current === 30) {
-            setShowChart(true);
-          }
-        }, insightTypingSpeed);
+          setVisibleNotifications(prev => [...prev, notificationIndexRef.current]);
+          notificationIndexRef.current += 1;
+        }, 600);
       } else {
-        timeout = setTimeout(() => setPhase('hold'), 1000);
+        timeout = setTimeout(() => setPhase('hold'), 500);
       }
     } else if (phase === 'hold') {
-      timeout = setTimeout(() => setPhase('reset'), 3000);
+      timeout = setTimeout(() => setPhase('reset'), 2500);
     } else if (phase === 'reset') {
-      setShowInsights(false);
+      setShowReport(false);
       setShowTerminal(false);
-      setShowChart(false);
+      setVisibleNotifications([]);
       timeout = setTimeout(() => {
         setTerminalLines([]);
         setDisplayedText('');
         setCurrentCodeText('');
-        setInsightDisplayText('');
+        setShowChat(true);
         charIndexRef.current = 0;
         stepIndexRef.current = 0;
         codeCharIndexRef.current = 0;
-        insightCharIndexRef.current = 0;
+        notificationIndexRef.current = 0;
         setPhase('typing');
-      }, 1000);
+      }, 800);
     }
 
     return () => clearTimeout(timeout);
-  }, [phase, displayedText, terminalLines, currentCodeText, insightDisplayText]);
+  }, [phase, displayedText, terminalLines, currentCodeText, visibleNotifications]);
+
+  const totalOverdue = accounts.reduce((sum, acc) => sum + acc.amount, 0);
 
   return (
     <div className="data-analysis-demo-modal">
@@ -157,7 +174,7 @@ export function DataAnalysisDemo() {
               Running
             </span>
           </div>
-          <div className="da-terminal-content">
+          <div className="da-terminal-content" ref={terminalContentRef}>
             {terminalLines.map((line, index) => (
               <div key={index} className={`da-terminal-line ${line.type}`}>
                 {line.type === 'action' && <span className="da-action-icon">●</span>}
@@ -182,7 +199,7 @@ export function DataAnalysisDemo() {
         </div>
 
         {/* Chat Input */}
-        <div className="da-chat-input-container">
+        <div className={`da-chat-input-container ${showChat ? 'visible' : ''}`}>
           <div className="da-chat-input-box">
             <div className="da-chat-text">
               {displayedText}
@@ -206,41 +223,73 @@ export function DataAnalysisDemo() {
           </div>
         </div>
 
-        {/* Insights Card */}
-        <div className={`da-insights-card ${showInsights ? 'visible' : ''}`}>
-          <div className="da-insights-header">
-            <div className="da-insights-icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M21 21H4.6c-.56 0-.84 0-1.054-.109a1 1 0 01-.437-.437C3 20.24 3 19.96 3 19.4V3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                <path d="M7 14l4-4 4 4 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        {/* Report Card */}
+        <div className={`da-report-card ${showReport ? 'visible' : ''}`}>
+          <div className="da-report-header">
+            <div className="da-report-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </div>
-            <span className="da-insights-title">Support Ticket Analysis</span>
+            <div className="da-report-title-block">
+              <span className="da-report-title">Aged Receivables Report</span>
+              <span className="da-report-subtitle">23 accounts · ${totalOverdue.toLocaleString()} overdue</span>
+            </div>
           </div>
 
-          <div className={`da-insights-chart ${showChart ? 'visible' : ''}`}>
-            {insights.map((item, index) => (
-              <div key={index} className="da-chart-bar-container">
-                <div className="da-chart-label">{item.label}</div>
-                <div className="da-chart-bar-bg">
-                  <div
-                    className="da-chart-bar"
-                    style={{
-                      width: `${item.value}%`,
-                      backgroundColor: item.color,
-                      transitionDelay: `${index * 150}ms`
-                    }}
-                  />
+          <div className="da-report-section">
+            <div className="da-report-section-title">Priority Follow-ups</div>
+            <div className="da-accounts-list">
+              {accounts.map((account, index) => (
+                <div key={index} className="da-account-row">
+                  <div className="da-account-info">
+                    <span className="da-account-name">{account.name}</span>
+                    <span className="da-account-days">{account.days} days overdue</span>
+                  </div>
+                  <div className="da-account-right">
+                    <span className="da-account-amount">${account.amount.toLocaleString()}</span>
+                    <span className={`da-risk-badge ${account.risk}`}>{account.risk}</span>
+                  </div>
                 </div>
-                <div className="da-chart-value">{item.value}%</div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
-          <div className="da-insights-text">
-            {insightDisplayText}
-            {phase === 'insights' && <span className="da-insight-cursor">|</span>}
+          <div className="da-report-insight">
+            <span className="da-insight-icon">💡</span>
+            <span>Mitchell & Co last paid Feb 3. Consider direct call before escalation.</span>
           </div>
+        </div>
+
+        {/* Notifications */}
+        <div className="da-notifications-container">
+          {notifications.map((notification, index) => (
+            <div
+              key={index}
+              className={`da-notification ${visibleNotifications.includes(index) ? 'visible' : ''}`}
+              style={{ transitionDelay: `${index * 100}ms` }}
+            >
+              <div className={`da-notification-icon ${notification.icon}`}>
+                {notification.icon === 'email' && (
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M22 6l-10 7L2 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                )}
+                {notification.icon === 'calendar' && (
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="2"/>
+                    <path d="M16 2v4M8 2v4M3 10h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                  </svg>
+                )}
+              </div>
+              <div className="da-notification-content">
+                <div className="da-notification-title">{notification.title}</div>
+                <div className="da-notification-subtitle">{notification.subtitle}</div>
+              </div>
+              <div className="da-notification-time">now</div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
