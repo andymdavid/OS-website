@@ -13,22 +13,6 @@
   text-align: left;
 }
 
-.followup-top .intro-pill {
-  align-self: flex-start;
-}
-
-.followup-top .intro-heading {
-  max-width: 800px;
-  margin-bottom: 20px;
-  line-height: 1.1;
-}
-
-.followup-top .intro-text {
-  max-width: 800px;
-  line-height: 1.6;
-  font-size: 14px;
-}
-
 .followup-bottom {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
