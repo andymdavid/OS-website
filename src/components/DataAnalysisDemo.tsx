@@ -48,7 +48,7 @@ type Phase =
   | 'report-hold'
   | 'notifications'
   | 'hold'
-  | 'reset';
+  | 'fade-out';
 
 export function DataAnalysisDemo() {
   const [displayedText, setDisplayedText] = useState('');
@@ -151,12 +151,14 @@ export function DataAnalysisDemo() {
         timeout = setTimeout(() => setPhase('hold'), 500);
       }
     } else if (phase === 'hold') {
-      timeout = setTimeout(() => setPhase('reset'), 2500);
-    } else if (phase === 'reset') {
-      // Fade out notifications
-      setVisibleNotifications([]);
       timeout = setTimeout(() => {
-        // Reset all state and show chat immediately before starting to type
+        // Clear notifications and transition to fade-out phase
+        setVisibleNotifications([]);
+        setPhase('fade-out');
+      }, 2500);
+    } else if (phase === 'fade-out') {
+      // Wait for notifications to fade, then reset
+      timeout = setTimeout(() => {
         setShowReport(false);
         setShowTerminal(false);
         setTerminalLines([]);
@@ -173,7 +175,7 @@ export function DataAnalysisDemo() {
     }
 
     return () => clearTimeout(timeout);
-  }, [phase, displayedText, terminalLines, currentCodeText, visibleNotifications, reportBuildStep]);
+  }, [phase, displayedText, terminalLines, currentCodeText, reportBuildStep]);
 
   const totalOverdue = accounts.reduce((sum, acc) => sum + acc.amount, 0);
 
