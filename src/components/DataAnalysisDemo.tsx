@@ -153,21 +153,23 @@ export function DataAnalysisDemo() {
     } else if (phase === 'hold') {
       timeout = setTimeout(() => setPhase('reset'), 2500);
     } else if (phase === 'reset') {
-      setShowReport(false);
-      setShowTerminal(false);
+      // Fade out notifications
       setVisibleNotifications([]);
       timeout = setTimeout(() => {
+        // Reset all state and show chat immediately before starting to type
+        setShowReport(false);
+        setShowTerminal(false);
         setTerminalLines([]);
         setDisplayedText('');
         setCurrentCodeText('');
-        setShowChat(true);
         setReportBuildStep(0);
         charIndexRef.current = 0;
         stepIndexRef.current = 0;
         codeCharIndexRef.current = 0;
         notificationIndexRef.current = 0;
+        setShowChat(true);
         setPhase('typing');
-      }, 800);
+      }, 500);
     }
 
     return () => clearTimeout(timeout);
