@@ -8,11 +8,11 @@
   padding: 0 var(--container-padding);
 }
 
-.os-theme .good-stuff-section::after {
-  left: 50%;
-  right: auto;
-  width: 100vw;
-  transform: translateX(-50%);
+.os-theme .section.good-stuff-section::after {
+  left: 0;
+  right: 0;
+  width: auto;
+  transform: none;
 }
 
 /* Pill-style label */
