@@ -4,10 +4,9 @@
 }
 
 .followup-top {
-  min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: clamp(48px, 8vw, 120px) var(--container-padding);
+  padding: clamp(48px, 8vw, 120px) var(--container-padding) clamp(32px, 4vw, 64px);
   max-width: 100%;
 }
 
@@ -51,7 +50,7 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 40px;
-  padding: clamp(48px, 8vw, 120px) var(--container-padding);
+  padding: clamp(32px, 4vw, 64px) var(--container-padding) clamp(48px, 8vw, 120px);
   align-items: stretch;
 }
 
