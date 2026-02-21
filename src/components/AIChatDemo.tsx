@@ -94,20 +94,45 @@ type Phase =
 
 export function AIChatDemo() {
   const [displayedText, setDisplayedText] = useState('');
-  const [phase, setPhase] = useState<Phase>('typing');
+  const [phase, setPhase] = useState<Phase | 'waiting'>('waiting');
   const [showTerminal, setShowTerminal] = useState(false);
   const [terminalLines, setTerminalLines] = useState<string[]>([]);
   const [showNotification, setShowNotification] = useState(false);
   const [currentScenario, setCurrentScenario] = useState(0);
+  const [hasStarted, setHasStarted] = useState(false);
   const charIndexRef = useRef(0);
   const lineIndexRef = useRef(0);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const scenario = scenarios[currentScenario];
   const typingSpeed = 35;
   const lineDelay = 400;
 
+  // Start animation when scrolled into view
+  useEffect(() => {
+    if (!containerRef.current || hasStarted) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasStarted) {
+          setHasStarted(true);
+          setPhase('typing');
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(containerRef.current);
+
+    return () => observer.disconnect();
+  }, [hasStarted]);
+
   useEffect(() => {
     let timeout: ReturnType<typeof setTimeout>;
+
+    if (phase === 'waiting') {
+      return;
+    }
 
     if (phase === 'typing') {
       if (charIndexRef.current < scenario.message.length) {
@@ -173,7 +198,7 @@ export function AIChatDemo() {
   }, [phase, displayedText, terminalLines, scenario.message, scenario.agentSteps]);
 
   return (
-    <div className="ai-chat-demo-modal">
+    <div className="ai-chat-demo-modal" ref={containerRef}>
       <div className="ai-chat-demo">
         {/* Terminal Panel */}
       <div className={`terminal-panel ${showTerminal ? 'visible' : ''}`}>

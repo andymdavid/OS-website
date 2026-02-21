@@ -52,7 +52,7 @@ type Phase =
 
 export function DataAnalysisDemo() {
   const [displayedText, setDisplayedText] = useState('');
-  const [phase, setPhase] = useState<Phase>('typing');
+  const [phase, setPhase] = useState<Phase | 'waiting'>('waiting');
   const [showTerminal, setShowTerminal] = useState(false);
   const [showChat, setShowChat] = useState(true);
   const [terminalLines, setTerminalLines] = useState<TerminalStep[]>([]);
@@ -61,15 +61,36 @@ export function DataAnalysisDemo() {
   const [reportBuildStep, setReportBuildStep] = useState(0);
   const [visibleNotifications, setVisibleNotifications] = useState<number[]>([]);
   const [cycleCount, setCycleCount] = useState(0);
+  const [hasStarted, setHasStarted] = useState(false);
 
   const charIndexRef = useRef(0);
   const stepIndexRef = useRef(0);
   const codeCharIndexRef = useRef(0);
   const terminalContentRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const prompt = "Review our aged receivables and flag collection priorities";
   const typingSpeed = 35;
   const codeTypingSpeed = 20;
+
+  // Start animation when scrolled into view
+  useEffect(() => {
+    if (!containerRef.current || hasStarted) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasStarted) {
+          setHasStarted(true);
+          setPhase('typing');
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(containerRef.current);
+
+    return () => observer.disconnect();
+  }, [hasStarted]);
 
   // Auto-scroll terminal to bottom
   useEffect(() => {
@@ -80,6 +101,11 @@ export function DataAnalysisDemo() {
 
   useEffect(() => {
     let timeout: ReturnType<typeof setTimeout>;
+
+    if (phase === 'waiting') {
+      // Do nothing, wait for intersection observer to start
+      return;
+    }
 
     if (phase === 'typing') {
       if (charIndexRef.current < prompt.length) {
@@ -179,7 +205,7 @@ export function DataAnalysisDemo() {
   const totalOverdue = accounts.reduce((sum, acc) => sum + acc.amount, 0);
 
   return (
-    <div className="data-analysis-demo-modal">
+    <div className="data-analysis-demo-modal" ref={containerRef}>
       <div className="data-analysis-demo">
         {/* Terminal Panel */}
         <div className={`da-terminal-panel ${showTerminal ? 'visible' : ''}`}>
