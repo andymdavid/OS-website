@@ -37,8 +37,7 @@ export function FollowUpSection() {
         <div className="intro-pill">OUR APPROACH</div>
 
         <h2 className="intro-heading">
-          We believe the best way to learn AI is to build with it on real
-          use-cases — inside your business, with your people.
+          The best way to learn AI is to build with it - inside your business, with your people.
         </h2>
 
         <p className="intro-text">
