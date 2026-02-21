@@ -60,6 +60,7 @@ export function DataAnalysisDemo() {
   const [showReport, setShowReport] = useState(false);
   const [reportBuildStep, setReportBuildStep] = useState(0);
   const [visibleNotifications, setVisibleNotifications] = useState<number[]>([]);
+  const [cycleCount, setCycleCount] = useState(0);
 
   const charIndexRef = useRef(0);
   const stepIndexRef = useRef(0);
@@ -170,12 +171,13 @@ export function DataAnalysisDemo() {
         codeCharIndexRef.current = 0;
         notificationIndexRef.current = 0;
         setShowChat(true);
+        setCycleCount(c => c + 1);
         setPhase('typing');
       }, 500);
     }
 
     return () => clearTimeout(timeout);
-  }, [phase, displayedText, terminalLines, currentCodeText, reportBuildStep]);
+  }, [phase, displayedText, terminalLines, currentCodeText, reportBuildStep, cycleCount]);
 
   const totalOverdue = accounts.reduce((sum, acc) => sum + acc.amount, 0);
 
