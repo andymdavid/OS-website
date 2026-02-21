@@ -32,35 +32,33 @@ const STEPS = [
 
 export function FollowUpSection() {
   return (
-    <section id="approach" className="followup-approach">
-      <div className="followup-top">
-        <div className="section-container-wide intro-draft-grid">
-          <div className="intro-draft-left">
-            <div className="intro-pill fade-in">OUR APPROACH</div>
+    <section id="approach" className="section followup-approach">
+      <div className="section-container-wide intro-draft-grid followup-top-grid">
+        <div className="intro-draft-left">
+          <div className="intro-pill fade-in">OUR APPROACH</div>
 
-            <h2 className="section-heading fade-in fade-in-stagger-1">
-              We believe the best way to learn AI is to build with it on real
-              use-cases — inside your business, with your people.
-            </h2>
+          <h2 className="section-heading fade-in fade-in-stagger-1">
+            We believe the best way to learn AI is to build with it on real
+            use-cases — inside your business, with your people.
+          </h2>
 
-            <p className="intro-text fade-in fade-in-stagger-2">
-              You don't learn AI by watching someone talk about it — you learn it by
-              building with it on the real work your team already does. Everything we
-              teach is hands-on, practical, and grounded in the day-to-day of small
-              business.
-            </p>
+          <p className="intro-text fade-in fade-in-stagger-2">
+            You don't learn AI by watching someone talk about it — you learn it by
+            building with it on the real work your team already does. Everything we
+            teach is hands-on, practical, and grounded in the day-to-day of small
+            business.
+          </p>
 
-            <p className="intro-text fade-in fade-in-stagger-3">
-              We focus on showing how people and AI can work side by side in ways
-              that make your existing systems stronger, not more complicated.
-            </p>
+          <p className="intro-text fade-in fade-in-stagger-3">
+            We focus on showing how people and AI can work side by side in ways
+            that make your existing systems stronger, not more complicated.
+          </p>
 
-            <Button className="followup-cta fade-in fade-in-stagger-4">
-              About Us
-            </Button>
-          </div>
-          <div className="intro-draft-right"></div>
+          <Button className="followup-cta fade-in fade-in-stagger-4">
+            About Us
+          </Button>
         </div>
+        <div className="intro-draft-right"></div>
       </div>
 
       <div className="followup-bottom">

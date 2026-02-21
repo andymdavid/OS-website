@@ -3,14 +3,11 @@
   border-bottom: 1px solid rgba(240, 240, 240, 0.08);
 }
 
-.followup-top {
+.followup-top-grid {
   min-height: 50vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: clamp(48px, 8vw, 120px) var(--container-padding) 0;
-  max-width: 100%;
-  text-align: left;
+  padding-top: clamp(48px, 8vw, 120px);
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
 }
 
 .followup-bottom {
