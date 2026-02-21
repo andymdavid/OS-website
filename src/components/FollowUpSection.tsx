@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Button } from './Button';
+import { DataAnalysisDemo } from './DataAnalysisDemo';
 import './FollowUpSection.css';
 
 const STEPS = [
@@ -34,23 +35,31 @@ export function FollowUpSection() {
   return (
     <section id="approach" className="followup-approach">
       <div className="followup-top">
-        <div className="intro-pill">OUR APPROACH</div>
+        <div className="followup-top-grid">
+          <div className="followup-top-left">
+            <div className="intro-pill">OUR APPROACH</div>
 
-        <h2 className="intro-heading">
-          The best way to learn AI is to build with it - inside your business, with your people.
-        </h2>
+            <h2 className="intro-heading">
+              The best way to learn AI is to build with it - inside your business, with your people.
+            </h2>
 
-        <p className="intro-text">
-          You don't learn AI by watching someone talk about it — you learn it by building with it on the real work your team already does.
-        </p>
+            <p className="intro-text">
+              You don't learn AI by watching someone talk about it — you learn it by building with it on the real work your team already does.
+            </p>
 
-        <p className="intro-text">
-          We are a delivery and ecosystem partner for small and medium sized businesses, offering hands-on technical workshops, access to an applied AI community, and an agent management system, designed to develop AI capability organically inside the business.
-        </p>
+            <p className="intro-text">
+              We are a delivery and ecosystem partner for small and medium sized businesses, offering hands-on technical workshops, access to an applied AI community, and an agent management system, designed to develop AI capability organically inside the business.
+            </p>
 
-        <Button className="followup-cta">
-          About Us
-        </Button>
+            <Button className="followup-cta">
+              About Us
+            </Button>
+          </div>
+
+          <div className="followup-top-right">
+            <DataAnalysisDemo />
+          </div>
+        </div>
       </div>
 
       <div className="followup-bottom">
