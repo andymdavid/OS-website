@@ -31,9 +31,11 @@ const accounts = [
 ];
 
 const notifications = [
-  { icon: 'email', title: 'Payment reminder sent', subtitle: 'Mitchell & Co · $18,400 overdue' },
-  { icon: 'calendar', title: 'Follow-up call scheduled', subtitle: 'Horizon Media · Tomorrow 2pm' },
-  { icon: 'email', title: 'Invoice resent', subtitle: 'Northern Group · Due in 5 days' },
+  { title: 'Payment reminder sent', subtitle: 'Mitchell & Co · $18,400 overdue' },
+  { title: 'Follow-up email sent', subtitle: 'Horizon Media · $12,200 at 45 days' },
+  { title: 'Invoice resent', subtitle: 'Northern Group · $8,600 due' },
+  { title: 'Statement sent', subtitle: 'Coastal Supplies · $4,200 at 38 days' },
+  { title: 'Payment reminder sent', subtitle: 'Summit Partners · $3,100 at 31 days' },
 ];
 
 type Phase =
@@ -56,6 +58,7 @@ export function DataAnalysisDemo() {
   const [terminalLines, setTerminalLines] = useState<TerminalStep[]>([]);
   const [currentCodeText, setCurrentCodeText] = useState('');
   const [showReport, setShowReport] = useState(false);
+  const [reportBuildStep, setReportBuildStep] = useState(0);
   const [visibleNotifications, setVisibleNotifications] = useState<number[]>([]);
 
   const charIndexRef = useRef(0);
@@ -122,10 +125,19 @@ export function DataAnalysisDemo() {
       setShowChat(false);
       timeout = setTimeout(() => {
         setShowReport(true);
+        setReportBuildStep(1);
         setPhase('report');
       }, 400);
     } else if (phase === 'report') {
-      timeout = setTimeout(() => setPhase('report-hold'), 3500);
+      // Build report card progressively: header(1), section-title(2), accounts(3,4,5), insight(6)
+      const maxSteps = 6;
+      if (reportBuildStep < maxSteps) {
+        timeout = setTimeout(() => {
+          setReportBuildStep(prev => prev + 1);
+        }, 350);
+      } else {
+        timeout = setTimeout(() => setPhase('report-hold'), 1500);
+      }
     } else if (phase === 'report-hold') {
       setShowReport(false);
       timeout = setTimeout(() => setPhase('notifications'), 400);
@@ -149,6 +161,7 @@ export function DataAnalysisDemo() {
         setDisplayedText('');
         setCurrentCodeText('');
         setShowChat(true);
+        setReportBuildStep(0);
         charIndexRef.current = 0;
         stepIndexRef.current = 0;
         codeCharIndexRef.current = 0;
@@ -158,7 +171,7 @@ export function DataAnalysisDemo() {
     }
 
     return () => clearTimeout(timeout);
-  }, [phase, displayedText, terminalLines, currentCodeText, visibleNotifications]);
+  }, [phase, displayedText, terminalLines, currentCodeText, visibleNotifications, reportBuildStep]);
 
   const totalOverdue = accounts.reduce((sum, acc) => sum + acc.amount, 0);
 
@@ -225,7 +238,7 @@ export function DataAnalysisDemo() {
 
         {/* Report Card */}
         <div className={`da-report-card ${showReport ? 'visible' : ''}`}>
-          <div className="da-report-header">
+          <div className={`da-report-header ${reportBuildStep >= 1 ? 'visible' : ''}`}>
             <div className="da-report-icon">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -238,10 +251,10 @@ export function DataAnalysisDemo() {
           </div>
 
           <div className="da-report-section">
-            <div className="da-report-section-title">Priority Follow-ups</div>
+            <div className={`da-report-section-title ${reportBuildStep >= 2 ? 'visible' : ''}`}>Priority Follow-ups</div>
             <div className="da-accounts-list">
               {accounts.map((account, index) => (
-                <div key={index} className="da-account-row">
+                <div key={index} className={`da-account-row ${reportBuildStep >= index + 3 ? 'visible' : ''}`}>
                   <div className="da-account-info">
                     <span className="da-account-name">{account.name}</span>
                     <span className="da-account-days">{account.days} days overdue</span>
@@ -255,7 +268,7 @@ export function DataAnalysisDemo() {
             </div>
           </div>
 
-          <div className="da-report-insight">
+          <div className={`da-report-insight ${reportBuildStep >= 6 ? 'visible' : ''}`}>
             <span className="da-insight-icon">💡</span>
             <span>Mitchell & Co last paid Feb 3. Consider direct call before escalation.</span>
           </div>
@@ -269,19 +282,11 @@ export function DataAnalysisDemo() {
               className={`da-notification ${visibleNotifications.includes(index) ? 'visible' : ''}`}
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <div className={`da-notification-icon ${notification.icon}`}>
-                {notification.icon === 'email' && (
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M22 6l-10 7L2 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                )}
-                {notification.icon === 'calendar' && (
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" strokeWidth="2"/>
-                    <path d="M16 2v4M8 2v4M3 10h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-                  </svg>
-                )}
+              <div className="da-notification-icon email">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M22 6l-10 7L2 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
               </div>
               <div className="da-notification-content">
                 <div className="da-notification-title">{notification.title}</div>

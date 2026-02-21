@@ -287,6 +287,14 @@
   margin-bottom: 20px;
   padding-bottom: 16px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.da-report-header.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .da-report-icon {
@@ -332,6 +340,14 @@
   letter-spacing: 0.05em;
   color: rgba(255, 255, 255, 0.4);
   margin-bottom: 12px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.da-report-section-title.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .da-accounts-list {
@@ -348,6 +364,14 @@
   background: rgba(255, 255, 255, 0.03);
   border-radius: 6px;
   border: 1px solid rgba(255, 255, 255, 0.06);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.da-account-row.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .da-account-info {
@@ -418,6 +442,14 @@
   font-size: 12px;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.8);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.da-report-insight.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .da-insight-icon {
@@ -466,11 +498,6 @@
 }
 
 .da-notification-icon.email {
-  background: linear-gradient(135deg, #ea4335 0%, #fbbc05 100%);
-  color: #ffffff;
-}
-
-.da-notification-icon.calendar {
   background: linear-gradient(135deg, #4285f4 0%, #34a853 100%);
   color: #ffffff;
 }
