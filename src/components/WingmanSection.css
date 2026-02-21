@@ -50,7 +50,7 @@
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: 32px;
-  padding: clamp(72px, 10vw, 140px) var(--container-padding);
+  padding: clamp(56px, 9vw, 120px) var(--container-padding);
   align-items: stretch;
 }
 
