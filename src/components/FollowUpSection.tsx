@@ -41,15 +41,11 @@ export function FollowUpSection() {
         </h2>
 
         <p className="intro-text">
-          You don't learn AI by watching someone talk about it — you learn it by
-          building with it on the real work your team already does. Everything we
-          teach is hands-on, practical, and grounded in the day-to-day of small
-          business.
+          You don't learn AI by watching someone talk about it — you learn it by building with it on the real work your team already does.
         </p>
 
         <p className="intro-text">
-          We focus on showing how people and AI can work side by side in ways
-          that make your existing systems stronger, not more complicated.
+          We are a delivery and ecosystem partner for small and medium sized businesses, offering hands-on technical workshops, access to an applied AI community, and an agent management system, designed to develop AI capability organically inside the business.
         </p>
 
         <Button className="followup-cta">
