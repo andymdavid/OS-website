@@ -34,26 +34,26 @@ export function FollowUpSection() {
   return (
     <section id="approach" className="followup-approach">
       <div className="followup-top">
-        <div className="intro-pill fade-in">OUR APPROACH</div>
+        <div className="intro-pill">OUR APPROACH</div>
 
-        <h2 className="intro-heading fade-in fade-in-stagger-1">
+        <h2 className="intro-heading">
           We believe the best way to learn AI is to build with it on real
           use-cases — inside your business, with your people.
         </h2>
 
-        <p className="intro-text fade-in fade-in-stagger-2">
-          You don’t learn AI by watching someone talk about it — you learn it by
+        <p className="intro-text">
+          You don't learn AI by watching someone talk about it — you learn it by
           building with it on the real work your team already does. Everything we
           teach is hands-on, practical, and grounded in the day-to-day of small
           business.
         </p>
 
-        <p className="intro-text fade-in fade-in-stagger-3">
+        <p className="intro-text">
           We focus on showing how people and AI can work side by side in ways
           that make your existing systems stronger, not more complicated.
         </p>
 
-        <Button className="followup-cta fade-in fade-in-stagger-4">
+        <Button className="followup-cta">
           About Us
         </Button>
       </div>
