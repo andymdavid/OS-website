@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { Button } from './Button';
+import { WingmanDemo } from './WingmanDemo';
 import './IntroSection.css';
 import './WingmanSection.css';
 
@@ -28,35 +29,22 @@ export function WingmanSection() {
     },
   ];
 
-  const imageSources = {
-    primary: '/WingmanScreen2.png',
-    secondary: '/WingmanScreen1.png',
-  };
-
   return (
     <section id="system" className="wingman-approach">
       <div className="wingman-top">
         <div className="intro-pill fade-in">THE SYSTEM</div>
 
         <h2 className="intro-heading fade-in fade-in-stagger-1">
-          To make all of this practical, we built Wingman — an open-source agent
-          system that helps SMEs automate real work with AI.
+          Introducing Wingman - an agent management system - that helps SMEs automate real work with AI.
         </h2>
 
         <p className="intro-text fade-in fade-in-stagger-2">
-          Wingman is an open-source environment that lets you build and run AI
-          agents on real work inside your business — without code, complexity, or
-          being tied to a single vendor. It’s the system we use in every session
-          and workshop, and it gives small teams a simple, practical way to put AI
-          to work on the things that matter most.
-
-          <br />
-          <br />
-          <span className="intro-text-emphasis">
-            Here are a few ways Wingman can start making a difference in your
-            business.
-          </span>
+          Wingman lets you build and run AI agents on real work inside your business - without code, complexity, or being tied to a single vendor. Participants use Wingman in every workshop, and it gives teams a simple, practical way to put AI to work practically.
         </p>
+
+        <Button className="followup-cta fade-in fade-in-stagger-3">
+          Learn More
+        </Button>
       </div>
 
       <div className="wingman-bottom">
@@ -84,12 +72,8 @@ export function WingmanSection() {
           </div>
         </div>
 
-        <div className="wingman-image-panel">
-          <div className="wingman-image-stack">
-            <div className="wingman-image-primary">
-              <img src={imageSources.primary} alt="Wingman Interface primary" />
-            </div>
-          </div>
+        <div className="wingman-demo-panel">
+          <WingmanDemo />
         </div>
       </div>
     </section>
