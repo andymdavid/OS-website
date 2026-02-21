@@ -61,11 +61,11 @@ export function DataAnalysisDemo() {
   const [reportBuildStep, setReportBuildStep] = useState(0);
   const [visibleNotifications, setVisibleNotifications] = useState<number[]>([]);
   const [cycleCount, setCycleCount] = useState(0);
+  const [notificationIndex, setNotificationIndex] = useState(0);
 
   const charIndexRef = useRef(0);
   const stepIndexRef = useRef(0);
   const codeCharIndexRef = useRef(0);
-  const notificationIndexRef = useRef(0);
   const terminalContentRef = useRef<HTMLDivElement>(null);
 
   const prompt = "Review our aged receivables and flag collection priorities";
@@ -143,10 +143,10 @@ export function DataAnalysisDemo() {
       setShowReport(false);
       timeout = setTimeout(() => setPhase('notifications'), 400);
     } else if (phase === 'notifications') {
-      if (notificationIndexRef.current < notifications.length) {
+      if (notificationIndex < notifications.length) {
         timeout = setTimeout(() => {
-          setVisibleNotifications(prev => [...prev, notificationIndexRef.current]);
-          notificationIndexRef.current += 1;
+          setVisibleNotifications(prev => [...prev, notificationIndex]);
+          setNotificationIndex(n => n + 1);
         }, 600);
       } else {
         timeout = setTimeout(() => setPhase('hold'), 500);
@@ -166,10 +166,10 @@ export function DataAnalysisDemo() {
         setDisplayedText('');
         setCurrentCodeText('');
         setReportBuildStep(0);
+        setNotificationIndex(0);
         charIndexRef.current = 0;
         stepIndexRef.current = 0;
         codeCharIndexRef.current = 0;
-        notificationIndexRef.current = 0;
         setShowChat(true);
         setCycleCount(c => c + 1);
         setPhase('typing');
@@ -177,7 +177,7 @@ export function DataAnalysisDemo() {
     }
 
     return () => clearTimeout(timeout);
-  }, [phase, displayedText, terminalLines, currentCodeText, reportBuildStep, cycleCount]);
+  }, [phase, displayedText, terminalLines, currentCodeText, reportBuildStep, cycleCount, notificationIndex]);
 
   const totalOverdue = accounts.reduce((sum, acc) => sum + acc.amount, 0);
 
