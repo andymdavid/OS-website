@@ -8,6 +8,11 @@
   padding: 0 var(--container-padding);
 }
 
+.good-stuff-section::after {
+  left: 0;
+  right: 0;
+}
+
 /* Pill-style label */
 .good-stuff-pill {
   display: inline-flex;
