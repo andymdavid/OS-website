@@ -8,7 +8,7 @@
   padding: 0 var(--container-padding);
 }
 
-.good-stuff-section::after {
+.os-theme .good-stuff-section::after {
   left: 0;
   right: 0;
 }
