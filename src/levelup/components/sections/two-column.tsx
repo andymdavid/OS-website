@@ -635,7 +635,7 @@ export function TwoColumn({
                         className="expandable-card-media rounded-xl overflow-hidden bg-white"
                         style={
                           isUniformExpandable && !expandableCardFlushMedia
-                            ? { marginLeft: "-12px", marginRight: "-12px", marginTop: "-12px", marginBottom: "16px" }
+                            ? { marginLeft: "-12px", marginRight: "-12px", marginTop: "-12px", marginBottom: 0 }
                             : undefined
                         }
                       >
