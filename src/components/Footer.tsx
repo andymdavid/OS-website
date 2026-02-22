@@ -29,19 +29,20 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Column 2: Services */}
+          {/* Column 2: Solutions */}
           <div className="footer-column">
-            <h4>Services</h4>
-            <a href="#touch-dont-look">Touch, Don't Look</a>
-            <a href="#speedrun">Speedrun</a>
+            <h4>Solutions</h4>
+            <a href="#speedrun-workshop">Speedrun Workshop</a>
+            <a href="#speedrun-applied">Speedrun Applied Workshop</a>
             <a href="#marginal-gains">Marginal Gains Club</a>
+            <a href="#wingman">Wingman</a>
           </div>
 
           {/* Column 3: Media */}
           <div className="footer-column">
             <h4>Media</h4>
-            <a href="#articles">Articles</a>
-            <a href="#podcasts">Podcasts</a>
+            <a href="#writing">Writing</a>
+            <a href="#podcast">Podcast</a>
             <a href="#newsletter">Newsletter</a>
           </div>
 
