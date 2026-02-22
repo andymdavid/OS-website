@@ -299,6 +299,7 @@ export const siteContent: SiteContent = {
         levelUpCardsLayout: "flat",
         levelUpCardsMaxWidth: "wide",
         levelUpCardsSize: "uniform",
+        levelUpCardClassName: "speedrun-levelup-card",
         levelUpCards: [
           {
             id: "p1",
