@@ -106,6 +106,12 @@
   text-transform: none;
 }
 
+.speedrun-page .speedrun-levelup-card .levelup-card-tag-primary {
+  background: #2ea782 !important;
+  color: #0f0e0d !important;
+  border: none !important;
+}
+
 .speedrun-page .intro-pill {
   background: #0c0b0a;
   display: inline-flex;
