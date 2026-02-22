@@ -75,7 +75,7 @@
 
 .speedrun-page .speedrun-card .expandable-card-body {
   padding: 0 !important;
-  margin-top: 0;
+  margin-top: auto;
   display: grid;
   grid-template-rows: auto minmax(2.6em, auto) auto;
   row-gap: 8px;
