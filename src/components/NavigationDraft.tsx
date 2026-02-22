@@ -112,11 +112,7 @@ export function NavigationDraft({ titleOverride, titleSwapOnScroll }: Navigation
     window.history.replaceState(null, '', window.location.pathname);
   };
 
-  const navTitle = titleSwapOnScroll
-    ? isPastTarget
-      ? titleSwapOnScroll.after
-      : titleSwapOnScroll.before
-    : titleOverride ?? 'OTHER STUFF';
+  const navTitle = titleOverride ?? 'OTHER STUFF';
 
   return (
     <nav className={`nav ${isSolutionsOpen ? 'mega-open' : ''}`}>
@@ -166,7 +162,23 @@ export function NavigationDraft({ titleOverride, titleSwapOnScroll }: Navigation
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               style={{ cursor: 'pointer' }}
             >
-              {navTitle}
+              {titleSwapOnScroll ? (
+                <span className="nav-logo-swap" aria-label={isPastTarget ? titleSwapOnScroll.after : titleSwapOnScroll.before}>
+                  <span className="nav-logo-measure" aria-hidden="true">
+                    {titleSwapOnScroll.before.length >= titleSwapOnScroll.after.length
+                      ? titleSwapOnScroll.before
+                      : titleSwapOnScroll.after}
+                  </span>
+                  <span className={`nav-logo-text ${isPastTarget ? '' : 'is-active'}`} aria-hidden="true">
+                    {titleSwapOnScroll.before}
+                  </span>
+                  <span className={`nav-logo-text ${isPastTarget ? 'is-active' : ''}`} aria-hidden="true">
+                    {titleSwapOnScroll.after}
+                  </span>
+                </span>
+              ) : (
+                navTitle
+              )}
             </div>
           </div>
 

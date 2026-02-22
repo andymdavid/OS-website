@@ -120,6 +120,31 @@
   white-space: nowrap;
 }
 
+.nav-logo-swap {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-logo-swap .nav-logo-measure {
+  visibility: hidden;
+  display: inline-block;
+}
+
+.nav-logo-swap .nav-logo-text {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 220ms var(--ease-out),
+    transform 220ms var(--ease-out);
+}
+
+.nav-logo-swap .nav-logo-text.is-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .nav-logo:hover {
   opacity: 0.85;
   transform: scale(1.05);
@@ -244,6 +269,49 @@
   padding: 16px;
   text-decoration: none;
   transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.mega-menu-card::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  right: -10px;
+  width: 100px;
+  height: 100px;
+  opacity: 0.12;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.mega-menu-card:hover::after {
+  opacity: 0.2;
+}
+
+/* Card 1: Speedrun Workshop - Network dots */
+.mega-menu-card:nth-child(1)::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='20' cy='80' r='3' fill='%232ea782'/%3E%3Ccircle cx='50' cy='60' r='4' fill='%232ea782'/%3E%3Ccircle cx='80' cy='75' r='3' fill='%232ea782'/%3E%3Ccircle cx='35' cy='40' r='2' fill='%232ea782'/%3E%3Ccircle cx='70' cy='35' r='3' fill='%232ea782'/%3E%3Cline x1='20' y1='80' x2='50' y2='60' stroke='%232ea782' stroke-width='1'/%3E%3Cline x1='50' y1='60' x2='80' y2='75' stroke='%232ea782' stroke-width='1'/%3E%3Cline x1='50' y1='60' x2='35' y2='40' stroke='%232ea782' stroke-width='1'/%3E%3Cline x1='35' y1='40' x2='70' y2='35' stroke='%232ea782' stroke-width='1'/%3E%3C/svg%3E");
+}
+
+/* Card 2: Speedrun Applied - Target circles */
+.mega-menu-card:nth-child(2)::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='60' cy='60' r='35' fill='none' stroke='%232ea782' stroke-width='1'/%3E%3Ccircle cx='60' cy='60' r='25' fill='none' stroke='%232ea782' stroke-width='1'/%3E%3Ccircle cx='60' cy='60' r='15' fill='none' stroke='%232ea782' stroke-width='1'/%3E%3Ccircle cx='60' cy='60' r='4' fill='%232ea782'/%3E%3C/svg%3E");
+}
+
+/* Card 3: Level-Up - Ascending bars */
+.mega-menu-card:nth-child(3)::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='15' y='70' width='12' height='20' fill='%232ea782'/%3E%3Crect x='35' y='55' width='12' height='35' fill='%232ea782'/%3E%3Crect x='55' y='40' width='12' height='50' fill='%232ea782'/%3E%3Crect x='75' y='25' width='12' height='65' fill='%232ea782'/%3E%3C/svg%3E");
+}
+
+/* Card 4: Marginal Gains - Wave pattern */
+.mega-menu-card:nth-child(4)::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M0 70 Q25 50 50 70 T100 70' fill='none' stroke='%232ea782' stroke-width='2'/%3E%3Cpath d='M0 55 Q25 35 50 55 T100 55' fill='none' stroke='%232ea782' stroke-width='1.5'/%3E%3Cpath d='M0 40 Q25 20 50 40 T100 40' fill='none' stroke='%232ea782' stroke-width='1'/%3E%3C/svg%3E");
+}
+
+/* Card 5: Wingman - Gear/cog */
+.mega-menu-card:nth-child(5)::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M60 30 L65 35 L75 35 L75 45 L80 50 L75 55 L75 65 L65 65 L60 70 L55 65 L45 65 L45 55 L40 50 L45 45 L45 35 L55 35 Z' fill='none' stroke='%232ea782' stroke-width='2'/%3E%3Ccircle cx='60' cy='50' r='10' fill='none' stroke='%232ea782' stroke-width='2'/%3E%3C/svg%3E");
 }
 
 .mega-menu-card:hover {
