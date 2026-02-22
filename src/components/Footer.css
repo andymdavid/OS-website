@@ -3,7 +3,7 @@
 .footer {
   background: var(--color-background);
   border-top: 1px solid rgba(240, 240, 240, 0.1);
-  padding: 48px var(--container-padding) 32px;
+  padding: 48px var(--container-padding) 16px;
 }
 
 .footer-container {
