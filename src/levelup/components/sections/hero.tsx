@@ -95,7 +95,12 @@ export function Hero({
                 className="speedrun-hero-subtitle"
                 style={{ maxWidth: subtitleMaxWidth }}
               >
-                {subtitle}
+                {subtitle.split("\n").map((line, index, arr) => (
+                  <span key={index}>
+                    {line}
+                    {index < arr.length - 1 && <br />}
+                  </span>
+                ))}
               </motion.p>
               {/* CTA */}
               <motion.div
