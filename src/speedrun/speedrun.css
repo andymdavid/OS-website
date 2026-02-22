@@ -65,7 +65,7 @@
 }
 
 .speedrun-page .speedrun-card .expandable-card-media {
-  border-radius: 4px 4px 0 0;
+  border-radius: 3px 3px 0 0;
   background: rgba(15, 14, 13, 0.6);
   margin-bottom: 0 !important;
 }
@@ -73,7 +73,7 @@
 .speedrun-page .speedrun-card .expandable-card-media img {
   filter: brightness(0.7);
   height: 240px !important;
-  border-radius: 4px 4px 0 0;
+  border-radius: 3px 3px 0 0;
 }
 
 .speedrun-page .speedrun-card .expandable-card-body {
