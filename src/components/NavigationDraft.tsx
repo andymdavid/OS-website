@@ -71,8 +71,8 @@ export function NavigationDraft() {
   };
 
   return (
-    <nav className="nav">
-      <div className="nav-container">
+    <nav className={`nav ${isSolutionsOpen ? 'mega-open' : ''}`}>
+      <div className={`nav-container ${isSolutionsOpen ? 'mega-open' : ''}`}>
         {/* Left Section: Logo Icon + Menu */}
         <div className="nav-left">
           <div
@@ -144,15 +144,13 @@ export function NavigationDraft() {
           <span></span>
           <span></span>
         </button>
-      </div>
 
-      {/* Mega Menu */}
-      <div
-        className={`mega-menu ${isSolutionsOpen ? 'visible' : ''}`}
-        onMouseEnter={handleSolutionsEnter}
-        onMouseLeave={handleSolutionsLeave}
-      >
-        <div className="mega-menu-container">
+        {/* Mega Menu - Inside nav-container */}
+        <div
+          className={`mega-menu ${isSolutionsOpen ? 'visible' : ''}`}
+          onMouseEnter={handleSolutionsEnter}
+          onMouseLeave={handleSolutionsLeave}
+        >
           <div className="mega-menu-grid">
             {solutions.map((solution) => (
               <a key={solution.title} href={solution.href} className="mega-menu-card">

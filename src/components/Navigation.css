@@ -39,6 +39,15 @@
   align-items: center;
   padding: 0 8px 0 30px;
   gap: 21px;
+
+  /* Transition for expanding */
+  transition: height 0.25s ease, border-radius 0.25s ease;
+  position: relative;
+}
+
+.nav-container.mega-open {
+  height: auto;
+  border-radius: 4px;
 }
 
 /* Left Section: Logo Icon + Menu */
@@ -199,74 +208,56 @@
 
 /* Mega Menu */
 .mega-menu {
-  position: fixed;
-  top: 95px;
-  left: 0;
-  right: 0;
-  z-index: calc(var(--z-nav) - 1);
-  display: flex;
-  justify-content: center;
-  padding: 0 var(--container-padding);
+  grid-column: 1 / -1;
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
   opacity: 0;
-  visibility: hidden;
-  transform: translateY(-10px);
-  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
-  pointer-events: none;
+  transition: max-height 0.3s ease, opacity 0.25s ease, padding 0.25s ease;
+  padding: 0 0;
 }
 
 .mega-menu.visible {
+  max-height: 300px;
   opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  pointer-events: auto;
-}
-
-.mega-menu-container {
-  width: 1000px;
-  max-width: 100%;
-  background: rgba(13, 13, 13, 0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(240, 240, 240, 0.1);
-  border-top: none;
-  border-radius: 0 0 4px 4px;
-  padding: 24px;
+  padding: 20px 0 8px 0;
+  border-top: 1px solid rgba(240, 240, 240, 0.08);
+  margin-top: 12px;
 }
 
 .mega-menu-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 16px;
+  gap: 12px;
 }
 
 .mega-menu-card {
   background: rgba(240, 240, 240, 0.03);
-  border: 1px solid rgba(240, 240, 240, 0.08);
+  border: 1px solid rgba(240, 240, 240, 0.06);
   border-radius: 4px;
-  padding: 20px;
+  padding: 16px;
   text-decoration: none;
   transition: all 0.2s ease;
 }
 
 .mega-menu-card:hover {
-  background: rgba(240, 240, 240, 0.06);
-  border-color: rgba(240, 240, 240, 0.15);
-  transform: translateY(-2px);
+  background: rgba(240, 240, 240, 0.08);
+  border-color: rgba(240, 240, 240, 0.12);
 }
 
 .mega-menu-card h4 {
   font-family: var(--font-heading);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   color: var(--color-text);
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .mega-menu-card p {
   font-family: var(--font-body);
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1.5;
-  color: rgba(240, 240, 240, 0.6);
+  color: rgba(240, 240, 240, 0.5);
 }
 
 /* Mobile Navigation */
