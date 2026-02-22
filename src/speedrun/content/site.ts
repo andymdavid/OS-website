@@ -131,7 +131,7 @@ export const siteContent: SiteContent = {
           {
             number: "02",
             title: "Session Structure",
-            body: "Speedrun is a 3-hour, guided, hands-on workshop, delivered in small groups with facilitation and support throughout.",
+            body: "Speedrun is a 3-hour, guided, hands-on workshop, delivered in small groups with facilitation and support provided throughout.",
             image: "/Card02.png",
           },
           {
