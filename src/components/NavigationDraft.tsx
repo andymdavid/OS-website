@@ -76,21 +76,40 @@ export function NavigationDraft({ titleOverride, titleSwapOnScroll }: Navigation
       return undefined;
     }
 
-    const target = document.getElementById(titleSwapOnScroll.targetId);
-    if (!target) {
-      setIsPastTarget(false);
-      return undefined;
-    }
+    let observer: IntersectionObserver | null = null;
+    let cancelled = false;
+    let attempts = 0;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsPastTarget(!entry.isIntersecting);
-      },
-      { root: null, threshold: 0 }
-    );
+    const attachObserver = () => {
+      if (cancelled) {
+        return;
+      }
 
-    observer.observe(target);
-    return () => observer.disconnect();
+      const target = document.getElementById(titleSwapOnScroll.targetId);
+      if (!target) {
+        attempts += 1;
+        if (attempts < 60) {
+          requestAnimationFrame(attachObserver);
+        }
+        return;
+      }
+
+      observer = new IntersectionObserver(
+        ([entry]) => {
+          setIsPastTarget(!entry.isIntersecting);
+        },
+        { root: null, threshold: 0 }
+      );
+      observer.observe(target);
+    };
+
+    attachObserver();
+    return () => {
+      cancelled = true;
+      if (observer) {
+        observer.disconnect();
+      }
+    };
   }, [titleSwapOnScroll]);
 
   const handleScrollTo = (event: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
