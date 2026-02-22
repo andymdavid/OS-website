@@ -19,7 +19,7 @@ export function Footer() {
           {/* Column 1: Tagline & Info (Wider) */}
           <div className="footer-brand-column">
             <div className="footer-tagline">
-              Artificial Intelligence is a new dawn for human flourishing
+              Helping SMEs develop practical AI capability internally.
             </div>
             <div className="footer-company-info">
               <p>Other Stuff Pty Ltd</p>
