@@ -818,11 +818,11 @@ export function TwoColumn({
 
                         {/* Tags */}
                         <div className="flex items-center gap-2">
-                          <span className="px-2.5 py-1 text-xs font-semibold bg-[#a1ff62] text-black rounded uppercase tracking-wide">
+                          <span className="levelup-card-tag-primary px-2.5 py-1 text-xs font-semibold bg-[#a1ff62] text-black rounded uppercase tracking-wide">
                             {card.primaryTag}
                           </span>
                           {card.secondaryTag && (
-                            <span className="px-2.5 py-1 text-xs font-medium text-neutral-400 border border-neutral-600 rounded flex items-center gap-1.5">
+                            <span className="levelup-card-tag-secondary px-2.5 py-1 text-xs font-medium text-neutral-400 border border-neutral-600 rounded flex items-center gap-1.5">
                               <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <circle cx="12" cy="12" r="10" strokeWidth="2" />
                                 <path strokeLinecap="round" strokeWidth="2" d="M12 6v6l4 2" />
