@@ -80,12 +80,12 @@
   margin-top: auto;
   display: grid;
   grid-template-rows: auto minmax(2.6em, auto) auto;
-  row-gap: 8px;
+  row-gap: 2px;
 }
 
 .speedrun-page .speedrun-card .expandable-card-body h3 {
   color: #ffffff;
-  min-height: 2.6em;
+  min-height: 2.2em;
   margin: 0;
   font-family: 'Figtree', sans-serif;
   font-size: 22px;
