@@ -54,6 +54,37 @@
   margin-top: 32px;
 }
 
+.speedrun-page .speedrun-card {
+  border-radius: 4px !important;
+  background: rgba(240, 240, 240, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+}
+
+.speedrun-page .speedrun-card .expandable-card-media {
+  border-radius: 0;
+  background: rgba(15, 14, 13, 0.6);
+}
+
+.speedrun-page .speedrun-card .expandable-card-media img {
+  filter: brightness(0.7);
+}
+
+.speedrun-page .speedrun-card .expandable-card-body {
+  padding: 24px !important;
+  margin-top: auto;
+}
+
+.speedrun-page .speedrun-card .expandable-card-body h3 {
+  color: #ffffff;
+}
+
+.speedrun-page .speedrun-card .expandable-card-body p {
+  color: rgba(255, 255, 255, 0.75);
+}
+
 .speedrun-page section {
   position: relative;
 }

@@ -83,6 +83,9 @@ interface TwoColumnProps {
   expandableCardSize?: "default" | "large" | "uniform";
   expandableCardsLayout?: "container" | "fullBleed";
   expandableCardsMaxWidth?: "default" | "wide";
+  expandableCardClassName?: string;
+  disableExpandableHover?: boolean;
+  expandableCardFlushMedia?: boolean;
   bodyMaxWidth?: string;
 }
 
@@ -119,6 +122,9 @@ export function TwoColumn({
   expandableCardSize = "default",
   expandableCardsLayout = "container",
   expandableCardsMaxWidth = "default",
+  expandableCardClassName,
+  disableExpandableHover = false,
+  expandableCardFlushMedia = false,
   bodyMaxWidth,
 }: TwoColumnProps) {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
@@ -613,7 +619,11 @@ export function TwoColumn({
                   {blocks.map((block) => (
                     <div
                       key={block.number ?? block.title}
-                      className={`rounded-2xl bg-[#2a2a2a] shadow-xl transition-all duration-300 ease-out md:hover:-translate-y-1.5 md:hover:shadow-[0_20px_40px_rgba(0,0,0,0.3),0_0_30px_rgba(161,255,98,0.1)] ${
+                      className={`rounded-2xl bg-[#2a2a2a] shadow-xl transition-all duration-300 ease-out ${
+                        disableExpandableHover
+                          ? ""
+                          : "md:hover:-translate-y-1.5 md:hover:shadow-[0_20px_40px_rgba(0,0,0,0.3),0_0_30px_rgba(161,255,98,0.1)]"
+                      } ${expandableCardClassName ?? ""} ${
                         isUniformExpandable
                           ? "p-6 h-[440px] w-[280px] sm:w-[300px] md:w-full"
                           : isLargeCards
@@ -621,14 +631,14 @@ export function TwoColumn({
                             : "p-3"
                       }`}
                     >
-                    <div
-                      className="rounded-xl overflow-hidden bg-white"
-                      style={
-                        isUniformExpandable
-                          ? { marginLeft: "-12px", marginRight: "-12px", marginTop: "-12px", marginBottom: "16px" }
-                          : undefined
-                      }
-                    >
+                      <div
+                        className="expandable-card-media rounded-xl overflow-hidden bg-white"
+                        style={
+                          isUniformExpandable && !expandableCardFlushMedia
+                            ? { marginLeft: "-12px", marginRight: "-12px", marginTop: "-12px", marginBottom: "16px" }
+                            : undefined
+                        }
+                      >
                         {block.image ? (
                           <img
                             src={block.image}
@@ -655,13 +665,13 @@ export function TwoColumn({
                         )}
                       </div>
                       <div
-                        className={
+                        className={`expandable-card-body ${
                           isUniformExpandable
                             ? "pt-4"
                             : isLargeCards
                               ? "px-3 pt-4 pb-3"
                               : "px-2 pt-3 pb-2"
-                        }
+                        }`}
                       >
                         <span className="text-sm font-medium font-jersey text-neutral-400">
                           {block.number}
