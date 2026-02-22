@@ -118,7 +118,7 @@ export const siteContent: SiteContent = {
         expandableCardsLayout: "fullBleed",
         expandableCardsMaxWidth: "wide",
         expandableCardClassName: "speedrun-card",
-        disableExpandableHover: true,
+        disableExpandableHover: false,
         expandableCardFlushMedia: true,
         fullHeight: true,
         blocks: [
