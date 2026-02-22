@@ -1,5 +1,4 @@
 
-import { useEffect, useRef } from "react";
 import { Section } from "@/levelup/components/layout/section";
 import { Container } from "@/levelup/components/layout/container";
 import { Button } from "@/levelup/components/ui/button";
@@ -43,15 +42,6 @@ export function Hero({
   socialProofLink,
   onGetStarted,
 }: HeroProps) {
-  const h1Ref = useRef<HTMLHeadingElement>(null);
-
-  // Force Figtree font directly on DOM for homeStyle variant
-  useEffect(() => {
-    if (variant === "homeStyle" && h1Ref.current) {
-      h1Ref.current.style.setProperty("font-family", "'Figtree', sans-serif", "important");
-    }
-  }, [variant]);
-
   // Normalize CTA props to objects
   const primaryCta =
     typeof ctaPrimary === "string"
@@ -65,7 +55,9 @@ export function Hero({
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="flex flex-col items-center text-center space-y-6 max-w-5xl mx-auto"
+          className={`flex flex-col items-center text-center max-w-5xl mx-auto ${
+            variant === "homeStyle" ? "speedrun-hero-stack" : "space-y-6"
+          }`}
           style={centerContent ? undefined : { marginTop: "-22vh" }}
         >
           {/* Optional Badge */}
