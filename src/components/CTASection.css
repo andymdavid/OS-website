@@ -16,20 +16,6 @@
   text-align: center;
 }
 
-/* Pill-style label */
-.cta-pill {
-  display: inline-block;
-  padding: 8px 16px;
-  background: rgba(240, 240, 240, 0.1);
-  border: 1px solid rgba(240, 240, 240, 0.2);
-  border-radius: 4px;
-  font-family: var(--font-eyebrow);
-  font-size: 12px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--color-text);
-  margin-bottom: 24px;
-}
 
 .cta-section .section-heading {
   margin-bottom: 20px;
