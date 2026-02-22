@@ -1,5 +1,7 @@
 import { SpeedrunSiteShell } from "@/speedrun/components/site-shell";
 import { NavigationDraft } from "@/components/NavigationDraft";
+import { CTASection } from "@/components/CTASection";
+import { Footer } from "@/components/Footer";
 import "@/levelup/levelup.fonts.css";
 import "@/levelup/levelup.generated.css";
 import "@/speedrun/speedrun.css";
@@ -15,6 +17,8 @@ export default function Speedrun() {
         }}
       />
       <SpeedrunSiteShell />
+      <CTASection />
+      <Footer />
     </div>
   );
 }

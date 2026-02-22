@@ -659,7 +659,7 @@ export const siteContent: SiteContent = {
     },
     {
       key: "finalCta",
-      enabled: true,
+      enabled: false,
       id: "finalCta",
       props: {
         title: "Let’s talk about bringing Level-Up to your school.",
@@ -669,7 +669,7 @@ export const siteContent: SiteContent = {
     },
     {
       key: "footer",
-      enabled: true,
+      enabled: false,
       id: "footer",
       props: {
         logo: "Level-Up",
