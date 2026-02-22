@@ -8,7 +8,7 @@ export function CTASection() {
   return (
     <section className="section cta-section">
       <div className="section-container-wide cta-content">
-        <div className="intro-pill">HOW TO GET STARTED</div>
+        <div className="intro-pill">Get Started</div>
 
         <h2 className="section-heading">
           Ready to get started? Here's where to begin.
