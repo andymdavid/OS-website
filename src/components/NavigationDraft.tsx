@@ -77,7 +77,7 @@ export function NavigationDraft() {
             href="mailto:info@otherstuff.studio"
             className="nav-join-btn"
           >
-            Talk to us
+            Talk to Us
           </a>
         </div>
 

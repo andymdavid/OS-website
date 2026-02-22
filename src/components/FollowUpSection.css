@@ -12,8 +12,8 @@
 
 .followup-top-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 40px;
   align-items: center;
   width: 100%;
 }

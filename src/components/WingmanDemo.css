@@ -1,0 +1,561 @@
+/* ==========================================================================
+   WINGMAN DEMO
+   ========================================================================== */
+
+.wingman-demo-modal {
+  position: relative;
+  background: rgba(20, 19, 18, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  padding: 32px;
+  width: 100%;
+  height: 100%;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.wingman-demo {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+}
+
+.wingman-demo > * {
+  width: 100%;
+}
+
+.wm-chat-input-container.visible {
+  margin-top: 12px;
+}
+
+/* Spreadsheet Preview */
+.wm-spreadsheet {
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  max-height: 0;
+  opacity: 0;
+  border-width: 0;
+  transition: opacity 0.4s ease, max-height 0.3s ease, border-width 0.3s ease;
+  flex-shrink: 0;
+}
+
+.wm-spreadsheet.visible {
+  max-height: 300px;
+  opacity: 1;
+  border-width: 1px;
+}
+
+.wm-spreadsheet-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.wm-spreadsheet-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.wm-spreadsheet-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.wm-spreadsheet-title {
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.wm-spreadsheet-content {
+  padding: 0;
+  overflow-x: auto;
+}
+
+.wm-spreadsheet-content table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 11px;
+}
+
+.wm-spreadsheet-content tr.header-row td {
+  background: rgba(255, 255, 255, 0.08);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.wm-spreadsheet-content td {
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.6);
+  white-space: nowrap;
+}
+
+.wm-spreadsheet-content td.messy {
+  color: #f87171;
+  background: rgba(248, 113, 113, 0.1);
+}
+
+/* Terminal Panel */
+.wm-terminal-panel {
+  background: #0a0a0a;
+  border: 0px solid rgba(46, 167, 130, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  opacity: 0;
+  transition: height 0.3s ease, opacity 0.3s ease, border-width 0.3s ease;
+  flex-shrink: 0;
+  box-shadow: 0 0 30px rgba(46, 167, 130, 0.1);
+}
+
+.wm-terminal-panel.visible {
+  height: 280px;
+  opacity: 1;
+  border-width: 1px;
+}
+
+.wm-terminal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: rgba(46, 167, 130, 0.1);
+  border-bottom: 1px solid rgba(46, 167, 130, 0.2);
+}
+
+.wm-terminal-title {
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.wm-terminal-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 11px;
+  color: #2ea782;
+}
+
+.wm-status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #2ea782;
+  animation: wm-pulse 1.5s infinite;
+}
+
+@keyframes wm-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.wm-terminal-content {
+  padding: 16px;
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 12px;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+  height: calc(100% - 42px);
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.wm-terminal-content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.wm-terminal-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.wm-terminal-content::-webkit-scrollbar-thumb {
+  background: rgba(46, 167, 130, 0.3);
+  border-radius: 2px;
+}
+
+.wm-terminal-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 6px;
+  animation: wm-fadeIn 0.15s ease;
+}
+
+.wm-terminal-line.action {
+  color: #2ea782;
+  font-weight: 500;
+}
+
+.wm-terminal-line.status {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 11px;
+}
+
+.wm-terminal-line.code {
+  color: #f8f8f2;
+}
+
+.wm-action-icon {
+  color: #2ea782;
+  font-size: 8px;
+  margin-top: 4px;
+}
+
+.wm-status-icon {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 10px;
+}
+
+.wm-code-prefix {
+  color: #bd93f9;
+  user-select: none;
+}
+
+.wm-code-text {
+  color: #f8f8f2;
+}
+
+@keyframes wm-fadeIn {
+  from { opacity: 0; transform: translateX(-4px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.wm-cursor {
+  color: #2ea782;
+  animation: wm-blink 0.8s infinite;
+  margin-left: 2px;
+}
+
+@keyframes wm-blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Chat Input Container */
+.wm-chat-input-container {
+  position: relative;
+  width: 100%;
+  flex-shrink: 0;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.wm-chat-input-container.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.wm-chat-input-box {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px 20px 12px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.08);
+  width: 100%;
+}
+
+.wm-chat-text {
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.5;
+  color: #1a1a1a;
+  height: 24px;
+  overflow: hidden;
+}
+
+.wm-input-cursor {
+  color: #1a1a1a;
+  font-weight: 300;
+  opacity: 0;
+}
+
+.wm-input-cursor.blinking {
+  animation: wm-blink 1s infinite;
+}
+
+.wm-chat-input-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+  padding-top: 8px;
+}
+
+.wm-attach-btn {
+  background: transparent;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.wm-attach-btn:hover {
+  color: #333;
+}
+
+.wm-send-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #1a1a1a;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.wm-send-btn:hover {
+  background: #333;
+}
+
+.wm-send-btn.pressed {
+  transform: scale(0.92);
+  background: #000;
+}
+
+/* App Result */
+.wm-app-result {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 90%;
+  max-width: 100%;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+}
+
+.wm-app-result.visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  pointer-events: auto;
+}
+
+.wm-app-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.wm-app-header.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.wm-app-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-ui);
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.wm-app-title svg {
+  color: #2ea782;
+}
+
+.wm-app-badge {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 12px;
+  background: rgba(46, 167, 130, 0.15);
+  color: #2ea782;
+}
+
+.wm-app-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: #f5f5f5;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.wm-app-search.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.wm-app-search svg {
+  color: #999;
+}
+
+.wm-app-search span {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: #999;
+}
+
+.wm-app-section-title {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.wm-app-inventory {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.wm-inventory-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  background: #fafafa;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.wm-inventory-row.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.wm-inventory-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.wm-inventory-sku {
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 10px;
+  color: #999;
+}
+
+.wm-inventory-name {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.wm-inventory-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.wm-inventory-qty {
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.wm-qty-current {
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.wm-qty-divider {
+  color: #ccc;
+}
+
+.wm-qty-reorder {
+  color: #999;
+}
+
+.wm-status-badge {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.wm-status-badge.low {
+  background: rgba(245, 158, 11, 0.15);
+  color: #d97706;
+}
+
+.wm-status-badge.critical {
+  background: rgba(239, 68, 68, 0.15);
+  color: #dc2626;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .wingman-demo-modal {
+    height: 520px;
+    padding: 16px;
+  }
+
+  .wm-terminal-panel.visible {
+    height: 240px;
+  }
+
+  .wm-chat-text {
+    font-size: 14px;
+  }
+
+  .wm-spreadsheet-content td {
+    padding: 6px 8px;
+    font-size: 10px;
+  }
+}

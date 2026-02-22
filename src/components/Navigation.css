@@ -140,7 +140,7 @@
   font-family: var(--font-ui);
   font-size: 14px;
   font-weight: var(--weight-regular);
-  text-transform: capitalize;
+  text-transform: none;
   cursor: pointer;
   transition: all var(--duration-base) var(--ease-in-out);
   display: inline-flex;
