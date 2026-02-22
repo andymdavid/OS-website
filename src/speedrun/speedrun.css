@@ -87,6 +87,10 @@
   color: #ffffff;
   min-height: 2.6em;
   margin: 0;
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: var(--weight-bold);
+  line-height: 1.2;
 }
 
 .speedrun-page .speedrun-card .expandable-card-body p {
