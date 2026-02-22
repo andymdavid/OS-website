@@ -50,7 +50,11 @@ export function Hero({
       : ctaPrimary;
 
   return (
-    <Section className="!py-0 min-h-screen flex items-center justify-center">
+    <Section
+      className={`!py-0 min-h-screen flex items-center justify-center ${
+        variant === "homeStyle" ? "speedrun-hero" : ""
+      }`}
+    >
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
