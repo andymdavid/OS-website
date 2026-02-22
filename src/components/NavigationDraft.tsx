@@ -31,10 +31,20 @@ const solutions = [
   },
 ];
 
-export function NavigationDraft() {
+interface NavigationDraftProps {
+  titleOverride?: string;
+  titleSwapOnScroll?: {
+    before: string;
+    after: string;
+    targetId: string;
+  };
+}
+
+export function NavigationDraft({ titleOverride, titleSwapOnScroll }: NavigationDraftProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
+  const [isPastTarget, setIsPastTarget] = useState(false);
   const solutionsTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const toggleMenu = () => {
@@ -61,6 +71,31 @@ export function NavigationDraft() {
     }
   }, []);
 
+  useEffect(() => {
+    if (!titleSwapOnScroll) {
+      return undefined;
+    }
+
+    const updateState = () => {
+      const target = document.getElementById(titleSwapOnScroll.targetId);
+      if (!target) {
+        setIsPastTarget(false);
+        return;
+      }
+
+      const targetBottom = target.offsetTop + target.offsetHeight;
+      setIsPastTarget(window.scrollY > targetBottom);
+    };
+
+    updateState();
+    window.addEventListener('scroll', updateState, { passive: true });
+    window.addEventListener('resize', updateState);
+    return () => {
+      window.removeEventListener('scroll', updateState);
+      window.removeEventListener('resize', updateState);
+    };
+  }, [titleSwapOnScroll]);
+
   const handleScrollTo = (event: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     event.preventDefault();
     const target = document.getElementById(targetId);
@@ -69,6 +104,12 @@ export function NavigationDraft() {
     }
     window.history.replaceState(null, '', window.location.pathname);
   };
+
+  const navTitle = titleSwapOnScroll
+    ? isPastTarget
+      ? titleSwapOnScroll.after
+      : titleSwapOnScroll.before
+    : titleOverride ?? 'OTHER STUFF';
 
   return (
     <nav className={`nav ${isSolutionsOpen ? 'mega-open' : ''}`}>
@@ -118,7 +159,7 @@ export function NavigationDraft() {
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               style={{ cursor: 'pointer' }}
             >
-              OTHER STUFF
+              {navTitle}
             </div>
           </div>
 

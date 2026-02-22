@@ -7,7 +7,13 @@ import "@/speedrun/speedrun.css";
 export default function Speedrun() {
   return (
     <div className="os-theme levelup-theme levelup-theme-vars min-h-screen speedrun-page" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
-      <NavigationDraft />
+      <NavigationDraft
+        titleSwapOnScroll={{
+          before: "OTHER STUFF",
+          after: "SPEEDRUN",
+          targetId: "hero",
+        }}
+      />
       <SpeedrunSiteShell />
     </div>
   );
