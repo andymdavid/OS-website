@@ -33,11 +33,15 @@
 }
 
 .speedrun-page .speedrun-hero-stack .hero-title-block {
-  margin-bottom: 24px;
+  margin-bottom: 0;
 }
 
-.speedrun-page .speedrun-hero-stack > p {
+.speedrun-page .speedrun-hero-subtitle {
   margin: 0;
+  margin-top: 24px;
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 1.4;
+  color: #ffffff;
 }
 
 .speedrun-page .speedrun-hero-stack > p + div {
