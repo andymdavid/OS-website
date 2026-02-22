@@ -57,9 +57,10 @@
 }
 
 .footer-company-info p {
-  font-size: 12px;
+  font-size: 12px !important;
   color: rgba(240, 240, 240, 0.6);
   margin-bottom: 4px;
+  line-height: 1.6;
 }
 
 /* Columns 2-4: Menus */
