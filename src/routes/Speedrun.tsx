@@ -5,7 +5,7 @@ import "@/speedrun/speedrun.css";
 
 export default function Speedrun() {
   return (
-    <div className="os-theme levelup-theme levelup-theme-vars min-h-screen" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
+    <div className="os-theme levelup-theme levelup-theme-vars min-h-screen speedrun-page" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
       <SpeedrunSiteShell />
     </div>
   );

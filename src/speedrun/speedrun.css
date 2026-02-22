@@ -1,4 +1,23 @@
 /* Speedrun-specific overrides */
-h1.hero-home-style {
-  font-family: 'Figtree', sans-serif !important;
+.speedrun-page {
+  background: #0f0e0d;
+  --color-background: #0f0e0d;
+}
+
+.speedrun-page h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: clamp(41px, 7vw, 83px);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  color: #ffffff;
+}
+
+.speedrun-page h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: clamp(26px, 4.2vw, 42px);
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  color: #ffffff;
 }
