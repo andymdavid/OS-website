@@ -73,79 +73,82 @@ export function NavigationDraft() {
   return (
     <nav className={`nav ${isSolutionsOpen ? 'mega-open' : ''}`}>
       <div className={`nav-container ${isSolutionsOpen ? 'mega-open' : ''}`}>
-        {/* Left Section: Logo Icon + Menu */}
-        <div className="nav-left">
-          <div
-            className="nav-logo-icon"
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            style={{ cursor: 'pointer' }}
-          >
-            <img src="/Logo-Main-Icon.png" alt="Other Stuff Logo" width="46" height="31" />
+        {/* Main Nav Row */}
+        <div className="nav-row">
+          {/* Left Section: Logo Icon + Menu */}
+          <div className="nav-left">
+            <div
+              className="nav-logo-icon"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              style={{ cursor: 'pointer' }}
+            >
+              <img src="/Logo-Main-Icon.png" alt="Other Stuff Logo" width="46" height="31" />
+            </div>
+
+            <div className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
+              <div
+                className="nav-link-wrapper"
+                onMouseEnter={handleSolutionsEnter}
+                onMouseLeave={handleSolutionsLeave}
+              >
+                <button className={`nav-link nav-link-dropdown ${isSolutionsOpen ? 'active' : ''}`}>
+                  Solutions
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </button>
+              </div>
+              <a href="#media" className="nav-link">
+                Media
+              </a>
+              <a
+                href="#approach"
+                className="nav-link"
+                onClick={(event) => handleScrollTo(event, 'approach')}
+              >
+                Company
+              </a>
+            </div>
           </div>
 
-          <div className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
+          {/* Center Section: Logo Text */}
+          <div className="nav-center">
             <div
-              className="nav-link-wrapper"
-              onMouseEnter={handleSolutionsEnter}
-              onMouseLeave={handleSolutionsLeave}
+              className="nav-logo"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              style={{ cursor: 'pointer' }}
             >
-              <button className={`nav-link nav-link-dropdown ${isSolutionsOpen ? 'active' : ''}`}>
-                Solutions
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
+              OTHER STUFF
             </div>
-            <a href="#media" className="nav-link">
-              Media
+          </div>
+
+          {/* Right Section: Buttons */}
+          <div className="nav-right">
+            <a href="https://welcome.otherstuff.ai/" className="nav-link nav-contact-link">
+              Sign In
             </a>
             <a
-              href="#approach"
-              className="nav-link"
-              onClick={(event) => handleScrollTo(event, 'approach')}
+              href="mailto:info@otherstuff.studio"
+              className="nav-join-btn"
             >
-              Company
+              Talk to Us
             </a>
           </div>
-        </div>
 
-        {/* Center Section: Logo Text */}
-        <div className="nav-center">
-          <div
-            className="nav-logo"
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            style={{ cursor: 'pointer' }}
+          {/* Mobile Toggle */}
+          <button
+            className={`nav-toggle ${isMenuOpen ? 'active' : ''}`}
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+            aria-expanded={isMenuOpen}
           >
-            OTHER STUFF
-          </div>
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
         </div>
 
-        {/* Right Section: Buttons */}
-        <div className="nav-right">
-          <a href="https://welcome.otherstuff.ai/" className="nav-link nav-contact-link">
-            Sign In
-          </a>
-          <a
-            href="mailto:info@otherstuff.studio"
-            className="nav-join-btn"
-          >
-            Talk to Us
-          </a>
-        </div>
-
-        {/* Mobile Toggle */}
-        <button
-          className={`nav-toggle ${isMenuOpen ? 'active' : ''}`}
-          onClick={toggleMenu}
-          aria-label="Toggle menu"
-          aria-expanded={isMenuOpen}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
-        {/* Mega Menu - Inside nav-container */}
+        {/* Mega Menu - Below nav-row */}
         <div
           className={`mega-menu ${isSolutionsOpen ? 'visible' : ''}`}
           onMouseEnter={handleSolutionsEnter}

@@ -31,7 +31,7 @@ const scenarios: Scenario[] = [
     },
   },
   {
-    message: "Summarise the thread with Northern Construction and draft a response confirming the timeline",
+    message: "Summarise the email thread with Northern Construction and draft a response confirming the timeline",
     agentSteps: [
       '● Thinking...',
       '● Finding email thread',
