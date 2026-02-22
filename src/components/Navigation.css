@@ -123,6 +123,7 @@
 .nav-logo-swap {
   position: relative;
   display: inline-block;
+  text-align: center;
 }
 
 .nav-logo-swap .nav-logo-measure {
@@ -132,17 +133,17 @@
 
 .nav-logo-swap .nav-logo-text {
   position: absolute;
-  left: 0;
+  left: 50%;
   top: 0;
+  transform: translate(-50%, 4px);
   opacity: 0;
-  transform: translateY(4px);
   transition: opacity 220ms var(--ease-out),
     transform 220ms var(--ease-out);
 }
 
 .nav-logo-swap .nav-logo-text.is-active {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate(-50%, 0);
 }
 
 .nav-logo:hover {
