@@ -71,6 +71,7 @@ interface TwoColumnProps {
   levelUpCardsLayout?: "staggered" | "flat";
   levelUpCardsMaxWidth?: "default" | "wide";
   levelUpCardsSize?: "default" | "uniform";
+  levelUpCardClassName?: string;
   faqItems?: Array<{
     question: string;
     answer: string;
@@ -108,6 +109,7 @@ export function TwoColumn({
   levelUpCardsLayout = "staggered",
   levelUpCardsMaxWidth = "default",
   levelUpCardsSize = "default",
+  levelUpCardClassName,
   faqItems,
   bodyLinks,
   bodyMobileSplitOn,
@@ -795,7 +797,7 @@ export function TwoColumn({
                   return (
                     <div
                       key={card.id}
-                      className={`rounded-2xl bg-[#2a2a2a] flex-shrink-0 md:flex-shrink flex flex-col transition-all duration-300 ease-out md:hover:-translate-y-1.5 md:hover:shadow-[0_20px_40px_rgba(0,0,0,0.3),0_0_30px_rgba(161,255,98,0.1)] ${
+                      className={`rounded-2xl bg-[#2a2a2a] flex-shrink-0 md:flex-shrink flex flex-col transition-all duration-300 ease-out md:hover:-translate-y-1.5 md:hover:shadow-[0_20px_40px_rgba(0,0,0,0.3),0_0_30px_rgba(161,255,98,0.1)] ${levelUpCardClassName ?? ""} ${
                         isUniformCards
                           ? "p-6 h-auto w-[280px] sm:w-[300px] md:w-full"
                           : "p-5 h-[420px] w-[260px] sm:w-[280px] md:w-full"

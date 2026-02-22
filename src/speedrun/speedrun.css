@@ -91,6 +91,21 @@
   text-transform: none;
 }
 
+.speedrun-page .speedrun-levelup-card {
+  border-radius: 4px !important;
+  background: rgba(240, 240, 240, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.06);
+}
+
+.speedrun-page .speedrun-levelup-card h3 {
+  font-family: 'Figtree', sans-serif;
+  font-size: 22px;
+  font-weight: var(--weight-bold);
+  line-height: 1.2;
+  text-transform: none;
+}
+
 .speedrun-page .mega-menu-card h4 {
   font-family: 'Figtree', sans-serif;
 }
