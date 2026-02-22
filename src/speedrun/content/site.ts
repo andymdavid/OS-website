@@ -117,7 +117,7 @@ export const siteContent: SiteContent = {
         expandableCardSize: "uniform",
         expandableCardsLayout: "fullBleed",
         expandableCardsMaxWidth: "wide",
-        minHeightClass: "min-h-[90vh]",
+        minHeightClass: "min-h-[100vh]",
         blocks: [
           {
             number: "01",
