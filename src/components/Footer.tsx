@@ -34,6 +34,7 @@ export function Footer() {
             <h4>Solutions</h4>
             <a href="#speedrun-workshop">Speedrun Workshop</a>
             <a href="#speedrun-applied">Speedrun Applied Workshop</a>
+            <a href="#level-up">Level-Up Workshop</a>
             <a href="#marginal-gains">Marginal Gains Club</a>
             <a href="#wingman">Wingman</a>
           </div>
