@@ -82,7 +82,7 @@
 
 .speedrun-page .speedrun-card .expandable-card-body h3 {
   color: #ffffff;
-  margin: 0;
+  margin: 12px 0 0;
   font-family: 'Figtree', sans-serif;
   font-size: 22px;
   font-weight: var(--weight-bold);
