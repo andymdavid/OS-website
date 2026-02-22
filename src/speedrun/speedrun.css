@@ -35,3 +35,25 @@
 .speedrun-page .speedrun-hero-cta {
   margin-top: 32px;
 }
+
+.speedrun-page section {
+  position: relative;
+}
+
+.speedrun-page section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(240, 240, 240, 0.08);
+}
+
+.speedrun-page section#hero::after {
+  display: none;
+}
+
+.speedrun-page section:last-of-type::after {
+  display: none;
+}
