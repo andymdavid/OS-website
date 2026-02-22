@@ -83,8 +83,8 @@ export function NavigationDraft({ titleOverride, titleSwapOnScroll }: Navigation
         return;
       }
 
-      const targetBottom = target.offsetTop + target.offsetHeight;
-      setIsPastTarget(window.scrollY > targetBottom);
+      const { bottom } = target.getBoundingClientRect();
+      setIsPastTarget(bottom <= 0);
     };
 
     updateState();
