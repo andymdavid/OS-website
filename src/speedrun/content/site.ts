@@ -108,7 +108,7 @@ export const siteContent: SiteContent = {
       enabled: true,
       id: "twoColumn",
       props: {
-        title: "Speedrun at a glance",
+        title: "Speedrun at a glance.",
         body:
           "Every Speedrun session follows the same hands-on format. You'll work directly with AI agents to build practical tools from the beginning, and by the end you'll have firsthand experience with what AI can actually do.",
         singleColumn: true,
@@ -124,25 +124,25 @@ export const siteContent: SiteContent = {
         blocks: [
           {
             number: "01",
-            title: "Who Should Attend",
+            title: "Who should attend",
             body: "Speedrun is for SME operators and team leads who need to understand what AI can do for their business - no technical background required.",
             image: "/Card01.png",
           },
           {
             number: "02",
-            title: "Session Structure",
+            title: "Session structure",
             body: "Speedrun is a 3-hour, guided, hands-on workshop, delivered in small groups with facilitation and support provided throughout.",
             image: "/Card02.png",
           },
           {
             number: "03",
-            title: "What You'll Build",
+            title: "What you'll build",
             body: "Participants build a working Kanban-style task tool and connect an AI agent that tracks and summarises work as it changes.",
             image: "/Card03.png",
           },
           {
             number: "04",
-            title: "What You Leave With",
+            title: "What you leave with",
             body: "You leave with a working tool you've built yourself and clarity about what's possible when you apply AI to your own business context.",
             image: "/Card04.png",
           },
@@ -154,7 +154,7 @@ export const siteContent: SiteContent = {
       enabled: true,
       id: "twoColumn-2",
       props: {
-        title: "Why Speedrun Exists",
+        title: "Why Speedrun Exists.",
         body:
           "Most businesses know they should be doing more with AI and automation, but they don’t know where to start, what to connect, or how to turn ideas into something real. Progress often remains stuck at research, demos, or random experiments.\n\nSpeedrun exists to help people move from wanting to use AI in their business to actually building with it and compresses that gap into short, focused workshops.\n\nIn a few hours, participants work hands-on with AI agents to build practical tools and workflows that reflect how their business operates.",
         singleColumn: true,
@@ -167,7 +167,7 @@ export const siteContent: SiteContent = {
       enabled: true,
       id: "twoColumn-3",
       props: {
-        title: "How Speedrun Works",
+        title: "How Speedrun Works.",
         body: "You begin with a blank project and leave with your own working app. During the session you use AI coding agents to build a simple Kanban-style to-do tool from scratch, change it, and watch it evolve on screen as you work.",
         singleColumn: true,
         fullHeight: true,
@@ -221,7 +221,7 @@ export const siteContent: SiteContent = {
       id: "twoColumn-4",
       props: {
         layout: "dualFocus",
-        title: "Where to start",
+        title: "Where to start.",
         body: "Speedrun is delivered in two formats. Speedrun Lite gets your team building a working AI-powered task app in three hours. Speedrun Applied extends that same build into a live workflow where agents begin carrying work across stages.",
         dualColumns: [
           {
@@ -249,7 +249,7 @@ export const siteContent: SiteContent = {
       enabled: true,
       id: "featurePanel",
       props: {
-        title: "How Speedrun Lite Unfolds",
+        title: "How Speedrun Lite Unfolds.",
         body: "Go from cloning a starter app to customising it, and connecting it to an AI agent that begins doing real tasks on your behalf.",
         ctaLabel: "Book a Call",
         ctaHref: "#",
@@ -290,7 +290,7 @@ export const siteContent: SiteContent = {
       enabled: true,
       id: "twoColumn-5",
       props: {
-        title: "What your team leaves with",
+        title: "What your team leaves with.",
         body:
           "Speedrun is designed to move your team from exposure to action. By the end of the session, you have built a working app and understand enough to continue building with confidence.",
         singleColumn: true,
@@ -347,7 +347,7 @@ export const siteContent: SiteContent = {
       enabled: true,
       id: "twoColumn-8",
       props: {
-        title: "Where Speedrun fits inside your organisation",
+        title: "Where Speedrun fits inside your organisation.",
         body:
           "Speedrun is the starting point for building practical AI capability inside your organisation.\n\nFor most SMEs, the real barrier is not interest in AI, it is uncertainty. Leaders are being asked to make decisions about tools, risk, investment, and policy without having worked directly with the technology themselves. Speedrun closes that gap by creating shared, hands-on experience inside the business.\n\nWhen your team has built with AI in the context of real work, decisions become informed rather than speculative. Strategy discussions are based on what you’ve seen and tested. Risk is easier to judge. Leadership, IT, and operations can evaluate next steps from a common understanding. Capability then grows from within the organisation rather than being delegated externally.\n\nSpeedrun creates the foundation for practical AI adoption inside your organisation, so future investment is deliberate, grounded, and internally owned.",
         layout: "splitModal",
@@ -360,7 +360,7 @@ export const siteContent: SiteContent = {
       enabled: true,
       id: "twoColumn-6",
       props: {
-        title: "Frequently Asked Questions",
+        title: "Frequently Asked Questions.",
         body: "Here are answers to some of the common practical questions schools and teachers ask when considering Level Up.",
         anchorId: "faq",
         singleColumn: true,
@@ -393,7 +393,7 @@ export const siteContent: SiteContent = {
       enabled: true,
       id: "twoColumn-7",
       props: {
-        title: "Who we are",
+        title: "Who we are.",
         body:
           "Speedrun is delivered by Other Stuff, a Perth-based AI-native product studio that works hands-on with AI systems. We help business leaders understand how AI works by building practical tools with it, not by talking about it in theory.\n\nWe’ve worked with Stakwork, a Silicon Valley company building agent-based systems, and our experience shapes how we approach building internal AI capability for organisations. Understanding comes fastest when teams move from observing AI to working with it directly.\n\nWe operate as an AI-first business ourselves, using these tools across our own operations and building systems like Wingman, our open-source agent management platform. Speedrun brings that same build-first approach into your organisation, helping teams develop practical judgement and confidence from direct experience.",
         bodyMobileSplitParas: [
@@ -432,7 +432,7 @@ export const siteContent: SiteContent = {
       enabled: false,
       id: "logos",
       props: {
-        title: "Trusted by teams at leading companies",
+        title: "Trusted by teams at leading companies.",
         subtitle: "Join thousands of developers building better products",
         logos: [
           { name: "Acme Corp", href: "https://example.com" },
@@ -450,7 +450,7 @@ export const siteContent: SiteContent = {
       id: "benefits",
       variant: "bento",
       props: {
-        title: "Everything you need to succeed",
+        title: "Everything you need to succeed.",
         subtitle: "Powerful features designed to help you convert more visitors",
         items: [
           {
@@ -505,7 +505,7 @@ export const siteContent: SiteContent = {
       enabled: false,
       id: "howItWorks",
       props: {
-        title: "Get started in minutes",
+        title: "Get started in minutes.",
         subtitle: "Three simple steps to launch your landing page",
         steps: [
           {
@@ -542,7 +542,7 @@ export const siteContent: SiteContent = {
       enabled: false,
       id: "pricing",
       props: {
-        title: "Simple, transparent pricing",
+        title: "Simple, transparent pricing.",
         subtitle: "Choose the plan that fits your needs",
         plans: [
           {
@@ -597,7 +597,7 @@ export const siteContent: SiteContent = {
       enabled: false,
       id: "testimonials",
       props: {
-        title: "Loved by builders everywhere",
+        title: "Loved by builders everywhere.",
         subtitle: "See what our customers have to say",
         testimonials: [
           {
@@ -629,7 +629,7 @@ export const siteContent: SiteContent = {
       enabled: false,
       id: "faq",
       props: {
-        title: "Frequently asked questions",
+        title: "Frequently asked questions.",
         subtitle: "Everything you need to know",
         faqs: [
           {
@@ -660,7 +660,7 @@ export const siteContent: SiteContent = {
       enabled: true,
       id: "finalCta",
       props: {
-        title: "Let’s talk about bringing Level-Up to your school",
+        title: "Let’s talk about bringing Level-Up to your school.",
         ctaPrimary: "Get Started",
         ctaSecondary: "Mail ons direct",
       },
