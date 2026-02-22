@@ -70,6 +70,7 @@
 
 .speedrun-page .speedrun-card .expandable-card-media img {
   filter: brightness(0.7);
+  height: 220px !important;
 }
 
 .speedrun-page .speedrun-card .expandable-card-body {
