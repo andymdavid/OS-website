@@ -78,9 +78,9 @@ export const siteContent: SiteContent = {
         title: "Learn how to work with AI\nby building with it.",
         subtitle:
           "Speedrun is a hands-on workshop where business leaders learn what AI is and how it works by building practical tools with AI agents. No coding experience required.",
-        subtitleMaxWidth: "45.36rem",
+        subtitleMaxWidth: "960px",
         centerContent: true,
-        ctaPrimary: { label: "Book a Call", href: "#pricing" },
+        ctaPrimary: { label: "Talk to Us", href: "mailto:info@otherstuff.studio" },
       },
     },
     {

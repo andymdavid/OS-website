@@ -3,6 +3,7 @@ import { Section } from "@/levelup/components/layout/section";
 import { Container } from "@/levelup/components/layout/container";
 import { Button } from "@/levelup/components/ui/button";
 import { Badge } from "@/levelup/components/ui/badge";
+import { Button as OsButton } from "@/components/Button";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import "@/components/Hero.css";
@@ -104,22 +105,23 @@ export function Hero({
                 className="speedrun-hero-cta"
               >
                 {onGetStarted ? (
-                  <Button
-                    size="lg"
-                    className="group hover:bg-[#a1ff62] hover:text-black"
+                  <OsButton
+                    variant="primary"
                     onClick={onGetStarted}
                     type="button"
                   >
                     {primaryCta.label}
-                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </Button>
+                  </OsButton>
                 ) : (
-                  <Button size="lg" asChild className="group hover:bg-[#a1ff62] hover:text-black">
-                    <a href={primaryCta.href} target="_blank" rel="noopener noreferrer">
-                      {primaryCta.label}
-                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                    </a>
-                  </Button>
+                  <OsButton
+                    variant="primary"
+                    onClick={() => {
+                      window.location.href = primaryCta.href;
+                    }}
+                    type="button"
+                  >
+                    {primaryCta.label}
+                  </OsButton>
                 )}
               </motion.div>
             </div>
