@@ -66,6 +66,7 @@
 .speedrun-page .speedrun-card .expandable-card-media {
   border-radius: 0;
   background: rgba(15, 14, 13, 0.6);
+  margin-bottom: -12px;
 }
 
 .speedrun-page .speedrun-card .expandable-card-media img {
@@ -74,7 +75,7 @@
 }
 
 .speedrun-page .speedrun-card .expandable-card-body {
-  padding: 0 !important;
+  padding: 12px 0 0 !important;
   margin-top: auto;
   display: grid;
   grid-template-rows: auto minmax(2.6em, auto) auto;
