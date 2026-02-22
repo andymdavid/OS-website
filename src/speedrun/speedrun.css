@@ -2,21 +2,22 @@
 .speedrun-page {
   background: #0f0e0d;
   --color-background: #0f0e0d;
+  --font-heading: 'Cormorant Garamond', serif;
 }
 
 .speedrun-page h1 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Cormorant Garamond', serif !important;
   font-weight: 400;
-  font-size: clamp(41px, 7vw, 83px);
+  font-size: clamp(41px, 7vw, 83px) !important;
   line-height: 0.9;
   letter-spacing: -0.05em;
   color: #ffffff;
 }
 
 .speedrun-page h2 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Cormorant Garamond', serif !important;
   font-weight: 400;
-  font-size: clamp(26px, 4.2vw, 42px);
+  font-size: clamp(26px, 4.2vw, 42px) !important;
   line-height: 0.9;
   letter-spacing: -0.05em;
   color: #ffffff;
