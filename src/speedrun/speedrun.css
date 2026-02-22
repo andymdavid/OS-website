@@ -5,6 +5,17 @@
   --font-heading: 'Cormorant Garamond', serif;
 }
 
+.speedrun-page .hero-sticky {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.35) 0%,
+      rgba(0, 0, 0, 0.35) 85%,
+      rgba(15, 14, 13, 1) 100%
+    ),
+    url('/speedrun-background.png') center 0% / 110% auto no-repeat;
+}
+
 .speedrun-page h1 {
   font-family: 'Cormorant Garamond', serif !important;
   font-weight: 400 !important;
