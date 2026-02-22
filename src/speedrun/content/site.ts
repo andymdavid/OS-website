@@ -324,7 +324,7 @@ export const siteContent: SiteContent = {
           {
             id: "p3",
             number: "03",
-            title: "Growing Internal Capability",
+            title: "Growing Capability",
             description:
               "Team members develop the confidence and judgement to test ideas and extend AI use within the business without defaulting to external providers.",
             primaryTag: "Outcome",
