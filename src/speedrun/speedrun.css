@@ -5,7 +5,7 @@
   --font-heading: 'Cormorant Garamond', serif;
 }
 
-.speedrun-page .hero-sticky {
+.speedrun-page section#hero {
   background:
     linear-gradient(
       to bottom,
