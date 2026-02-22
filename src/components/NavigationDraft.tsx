@@ -76,39 +76,30 @@ export function NavigationDraft({ titleOverride, titleSwapOnScroll }: Navigation
       return undefined;
     }
 
-    let observer: IntersectionObserver | null = null;
-    let cancelled = false;
-    let attempts = 0;
+    const resolveTarget = () =>
+      document.getElementById(titleSwapOnScroll.targetId) ||
+      document.querySelector('.speedrun-page section');
 
-    const attachObserver = () => {
-      if (cancelled) {
-        return;
-      }
-
-      const target = document.getElementById(titleSwapOnScroll.targetId);
+    const updateState = () => {
+      const target = resolveTarget();
       if (!target) {
-        attempts += 1;
-        if (attempts < 60) {
-          requestAnimationFrame(attachObserver);
-        }
+        setIsPastTarget(false);
         return;
       }
 
-      observer = new IntersectionObserver(
-        ([entry]) => {
-          setIsPastTarget(!entry.isIntersecting);
-        },
-        { root: null, threshold: 0 }
-      );
-      observer.observe(target);
+      const { bottom } = target.getBoundingClientRect();
+      setIsPastTarget(bottom <= 0);
     };
 
-    attachObserver();
+    updateState();
+    window.addEventListener('scroll', updateState, { passive: true });
+    window.addEventListener('resize', updateState);
+    const intervalId = window.setInterval(updateState, 250);
+
     return () => {
-      cancelled = true;
-      if (observer) {
-        observer.disconnect();
-      }
+      window.removeEventListener('scroll', updateState);
+      window.removeEventListener('resize', updateState);
+      window.clearInterval(intervalId);
     };
   }, [titleSwapOnScroll]);
 
