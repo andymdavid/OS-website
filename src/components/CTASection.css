@@ -2,7 +2,7 @@
 
 .cta-section {
   background: var(--color-background);
-  min-height: 50vh !important;
+  min-height: calc(100vh - 350px) !important;
   display: flex;
   align-items: center;
   justify-content: center;
