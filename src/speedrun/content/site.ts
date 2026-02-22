@@ -50,7 +50,7 @@ export const siteContent: SiteContent = {
   sections: [
     {
       key: "navbar",
-      enabled: true,
+      enabled: false,
       props: {
         title: "SPEEDRUN",
         links: [
