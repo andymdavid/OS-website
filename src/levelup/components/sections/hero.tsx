@@ -78,7 +78,7 @@ export function Hero({
 
           {/* Headline */}
           {variant === "homeStyle" ? (
-            <div className="hero-title-block">
+            <div className="hero-title-block speedrun-hero-title-block">
               <h1>
                 {title.split("\n").map((line, index) => (
                   <span key={index} className="block">
@@ -86,6 +86,42 @@ export function Hero({
                   </span>
                 ))}
               </h1>
+              {/* Subtitle */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="speedrun-hero-subtitle"
+                style={{ maxWidth: subtitleMaxWidth }}
+              >
+                {subtitle}
+              </motion.p>
+              {/* CTA */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="speedrun-hero-cta"
+              >
+                {onGetStarted ? (
+                  <Button
+                    size="lg"
+                    className="group hover:bg-[#a1ff62] hover:text-black"
+                    onClick={onGetStarted}
+                    type="button"
+                  >
+                    {primaryCta.label}
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </Button>
+                ) : (
+                  <Button size="lg" asChild className="group hover:bg-[#a1ff62] hover:text-black">
+                    <a href={primaryCta.href} target="_blank" rel="noopener noreferrer">
+                      {primaryCta.label}
+                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </a>
+                  </Button>
+                )}
+              </motion.div>
             </div>
           ) : (
             <motion.h1
@@ -113,45 +149,45 @@ export function Hero({
           )}
 
           {/* Subtitle */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className={
-              variant === "homeStyle"
-                ? "speedrun-hero-subtitle"
-                : "text-base text-[#201d1d]"
-            }
-            style={{ maxWidth: subtitleMaxWidth }}
-          >
-            {subtitle}
-          </motion.p>
+          {variant !== "homeStyle" && (
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-base text-[#201d1d]"
+              style={{ maxWidth: subtitleMaxWidth }}
+            >
+              {subtitle}
+            </motion.p>
+          )}
 
           {/* CTA */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
-            {onGetStarted ? (
-              <Button
-                size="lg"
-                className="group hover:bg-[#a1ff62] hover:text-black"
-                onClick={onGetStarted}
-                type="button"
-              >
-                {primaryCta.label}
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Button>
-            ) : (
-              <Button size="lg" asChild className="group hover:bg-[#a1ff62] hover:text-black">
-                <a href={primaryCta.href} target="_blank" rel="noopener noreferrer">
+          {variant !== "homeStyle" && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              {onGetStarted ? (
+                <Button
+                  size="lg"
+                  className="group hover:bg-[#a1ff62] hover:text-black"
+                  onClick={onGetStarted}
+                  type="button"
+                >
                   {primaryCta.label}
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </a>
-              </Button>
-            )}
-          </motion.div>
+                </Button>
+              ) : (
+                <Button size="lg" asChild className="group hover:bg-[#a1ff62] hover:text-black">
+                  <a href={primaryCta.href} target="_blank" rel="noopener noreferrer">
+                    {primaryCta.label}
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </a>
+                </Button>
+              )}
+            </motion.div>
+          )}
 
           {/* Social Proof */}
           {socialProof && (

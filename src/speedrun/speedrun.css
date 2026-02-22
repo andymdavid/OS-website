@@ -28,20 +28,10 @@
   color: #ffffff;
 }
 
-.speedrun-page .speedrun-hero-stack {
-  gap: 0;
-}
-
-.speedrun-page .speedrun-hero-stack .hero-title-block {
-  margin-bottom: 0;
-}
-
 .speedrun-page .speedrun-hero-subtitle {
-  margin: 0;
-  margin-top: 24px;
   color: #ffffff;
 }
 
-.speedrun-page .speedrun-hero-stack > p + div {
+.speedrun-page .speedrun-hero-cta {
   margin-top: 32px;
 }
