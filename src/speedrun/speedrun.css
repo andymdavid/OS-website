@@ -61,14 +61,14 @@
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.06);
   display: flex;
   flex-direction: column;
-  padding: 16px !important;
+  padding: 0 !important;
   overflow: hidden;
 }
 
 .speedrun-page .speedrun-card .expandable-card-media {
   border-radius: 4px 4px 0 0;
   background: rgba(15, 14, 13, 0.6);
-  margin: -16px -16px 0 !important;
+  margin: 0 !important;
 }
 
 .speedrun-page .speedrun-card .expandable-card-media img {
@@ -78,7 +78,7 @@
 }
 
 .speedrun-page .speedrun-card .expandable-card-body {
-  padding: 16px 0 0 !important;
+  padding: 16px 0 16px !important;
   margin-top: auto;
 }
 
