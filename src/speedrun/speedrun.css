@@ -107,16 +107,17 @@
 }
 
 .speedrun-page .speedrun-levelup-card .levelup-card-tag-primary {
-  background: #0c0b0a;
-  color: var(--color-text);
-  font-family: var(--font-eyebrow);
-  font-size: 12px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  border-radius: 4px;
-  padding: 6px 10px;
+  background: #0c0b0a !important;
+  color: var(--color-text) !important;
+  font-family: var(--font-eyebrow) !important;
+  font-size: 12px !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  border-radius: 4px !important;
+  padding: 6px 10px !important;
+  border: none !important;
   position: relative;
-  display: inline-flex;
+  display: inline-flex !important;
   align-items: center;
   gap: 10px;
 }
@@ -131,12 +132,12 @@
 }
 
 .speedrun-page .speedrun-levelup-card .levelup-card-tag-secondary {
-  font-family: var(--font-eyebrow);
-  font-size: 12px;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  border-radius: 4px;
-  padding: 6px 10px;
+  font-family: var(--font-eyebrow) !important;
+  font-size: 12px !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  border-radius: 4px !important;
+  padding: 6px 10px !important;
 }
 
 .speedrun-page .mega-menu-card h4 {
