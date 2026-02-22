@@ -75,14 +75,19 @@
 .speedrun-page .speedrun-card .expandable-card-body {
   padding: 16px 0 0 !important;
   margin-top: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .speedrun-page .speedrun-card .expandable-card-body h3 {
   color: #ffffff;
+  min-height: 2.6em;
+  margin-bottom: 12px;
 }
 
 .speedrun-page .speedrun-card .expandable-card-body p {
   color: rgba(255, 255, 255, 0.75);
+  margin-top: 0;
 }
 
 .speedrun-page section {
