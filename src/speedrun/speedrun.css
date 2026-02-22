@@ -19,6 +19,10 @@
   line-height: 1 !important;
 }
 
+.speedrun-page .speedrun-hero-title-block {
+  margin-top: 0;
+}
+
 .speedrun-page h2 {
   font-family: 'Cormorant Garamond', serif !important;
   font-weight: 400 !important;
