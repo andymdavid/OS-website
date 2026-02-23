@@ -649,46 +649,66 @@ h3.showcase-card-title {
 }
 
 .kb-terminal-line.action {
-  color: #2ea782;
-  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 8px;
+  margin-bottom: 4px;
+}
+
+.kb-terminal-line.action:first-child {
+  margin-top: 0;
 }
 
 .kb-terminal-line.action .kb-line-icon {
   color: #2ea782;
   font-size: 8px;
-  margin-top: 5px;
+  margin-top: 4px;
+  margin-right: 8px;
+}
+
+.kb-action-text {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .kb-terminal-line.status {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.4);
   font-size: 11px;
+  margin-bottom: 4px;
+  padding-left: 46px;
 }
 
-.kb-terminal-line.status .kb-line-icon {
-  color: rgba(255, 255, 255, 0.4);
-  font-size: 10px;
+.kb-line-gutter {
+  width: 46px;
+}
+
+.kb-status-text {
+  font-style: italic;
 }
 
 .kb-terminal-line.code {
-  color: #f8f8f2;
-  background: rgba(255, 255, 255, 0.03);
-  margin: 2px -16px;
-  padding: 4px 16px;
-  border-left: 2px solid #bd93f9;
+  background: rgba(46, 167, 130, 0.12);
+  margin: 0 -16px;
+  padding: 3px 16px;
 }
 
 .kb-line-number {
-  color: rgba(255, 255, 255, 0.3);
-  font-size: 10px;
-  min-width: 18px;
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 11px;
+  min-width: 24px;
   text-align: right;
-  margin-right: 12px;
+  margin-right: 8px;
+  user-select: none;
+}
+
+.kb-line-plus {
+  color: #2ea782;
+  margin-right: 8px;
+  font-weight: 600;
   user-select: none;
 }
 
 .kb-code-text {
   font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
-  color: #f8f8f2;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .kb-terminal-line.typing .kb-cursor {

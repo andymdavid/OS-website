@@ -145,22 +145,25 @@ interface TerminalStep {
 }
 
 const kanbanTerminalSequence: TerminalStep[] = [
-  { type: 'action', content: 'Analysing requirements' },
-  { type: 'status', content: 'Kanban board with 3 columns' },
-  { type: 'action', content: 'Creating board component' },
+  { type: 'action', content: 'Creating components/KanbanBoard.tsx' },
   { type: 'code', content: 'export function KanbanBoard() {' },
-  { type: 'code', content: '  const [columns] = useState(["To Do", "In Progress", "Done"])' },
-  { type: 'action', content: 'Adding drag-and-drop' },
+  { type: 'code', content: '  const [columns] = useState([' },
+  { type: 'code', content: '    "To Do", "In Progress", "Done"' },
+  { type: 'code', content: '  ])' },
+  { type: 'status', content: 'Added 4 lines' },
+  { type: 'action', content: 'Adding drag handler' },
   { type: 'code', content: '  const onDragEnd = (result) => {' },
   { type: 'code', content: '    moveTask(result.source, result.destination)' },
   { type: 'code', content: '  }' },
-  { type: 'status', content: 'Drag handlers configured' },
-  { type: 'action', content: 'Building column layout' },
-  { type: 'code', content: '  return <DragDropContext onDragEnd={onDragEnd}>' },
-  { type: 'code', content: '    {columns.map(col => <Column key={col} />)}' },
-  { type: 'code', content: '  </DragDropContext>' },
+  { type: 'status', content: 'Added 3 lines' },
+  { type: 'action', content: 'Building render output' },
+  { type: 'code', content: '  return (' },
+  { type: 'code', content: '    <DragDropContext onDragEnd={onDragEnd}>' },
+  { type: 'code', content: '      {columns.map(col => <Column />)}' },
+  { type: 'code', content: '    </DragDropContext>' },
+  { type: 'code', content: '  )' },
   { type: 'code', content: '}' },
-  { type: 'status', content: 'Board ready' },
+  { type: 'status', content: 'Added 6 lines' },
 ];
 
 // Sample tasks for the Kanban board
@@ -357,19 +360,37 @@ function KanbanBuilderDemo() {
           </span>
         </div>
         <div className="kb-terminal-content" ref={terminalContentRef}>
-          {terminalLines.map((line, index) => (
-            <div key={index} className={`kb-terminal-line ${line.type}`}>
-              {line.type === 'action' && <span className="kb-line-icon">●</span>}
-              {line.type === 'status' && <span className="kb-line-icon">→</span>}
-              {line.type === 'code' && <span className="kb-line-number">{index + 1}</span>}
-              <span className={line.type === 'code' ? 'kb-code-text' : ''}>
-                {line.content}
-              </span>
-            </div>
-          ))}
+          {terminalLines.map((line, index) => {
+            // Count code lines up to this point for line numbers
+            const codeLinesBefore = terminalLines.slice(0, index).filter(l => l.type === 'code').length;
+            return (
+              <div key={index} className={`kb-terminal-line ${line.type}`}>
+                {line.type === 'action' && (
+                  <>
+                    <span className="kb-line-icon">●</span>
+                    <span className="kb-action-text">{line.content}</span>
+                  </>
+                )}
+                {line.type === 'status' && (
+                  <>
+                    <span className="kb-line-gutter" />
+                    <span className="kb-status-text">{line.content}</span>
+                  </>
+                )}
+                {line.type === 'code' && (
+                  <>
+                    <span className="kb-line-number">{codeLinesBefore + 1}</span>
+                    <span className="kb-line-plus">+</span>
+                    <span className="kb-code-text">{line.content}</span>
+                  </>
+                )}
+              </div>
+            );
+          })}
           {currentCodeText && (
             <div className="kb-terminal-line code typing">
-              <span className="kb-line-number">{terminalLines.length + 1}</span>
+              <span className="kb-line-number">{terminalLines.filter(l => l.type === 'code').length + 1}</span>
+              <span className="kb-line-plus">+</span>
               <span className="kb-code-text">{currentCodeText}</span>
               <span className="kb-cursor">▋</span>
             </div>
