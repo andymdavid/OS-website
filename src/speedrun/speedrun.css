@@ -67,6 +67,19 @@
   --feature-panel-image-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
 }
 
+.speedrun-page .showcase-header {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.speedrun-page .showcase-body {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  max-width: 700px;
+}
+
 .speedrun-page .speedrun-card {
   border-radius: 4px !important;
   background: rgba(240, 240, 240, 0.05) !important;
