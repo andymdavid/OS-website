@@ -124,7 +124,7 @@ export function AnimatedShowcaseCards({
                       {isSpeedrun ? (
                         <KanbanBuilderDemo />
                       ) : (
-                        <SpeedrunAppliedDemo />
+                        <ProjectStatusDemo />
                       )}
                     </motion.div>
                   )}
@@ -465,36 +465,293 @@ function KanbanBuilderDemo() {
   );
 }
 
-// Mock UI for Speedrun Applied - Workflow with agents
-function SpeedrunAppliedDemo() {
+// Terminal sequence for Project Status Aggregator
+const statusTerminalSequence: TerminalStep[] = [
+  { type: 'action', content: 'Connecting to GitHub' },
+  { type: 'code', content: 'GET /repos/acme/webapp/commits?since=7d' },
+  { type: 'code', content: '→ Found 23 commits across 4 contributors' },
+  { type: 'status', content: 'Repository scanned' },
+  { type: 'action', content: 'Pulling Linear tickets' },
+  { type: 'code', content: 'GET /issues?team=engineering&updated=7d' },
+  { type: 'code', content: '→ 8 completed, 3 in progress, 2 blocked' },
+  { type: 'status', content: 'Tickets aggregated' },
+  { type: 'action', content: 'Analyzing patterns' },
+  { type: 'code', content: 'Velocity: 34 points (+12% vs last week)' },
+  { type: 'code', content: 'Blockers: API rate limits, design review' },
+  { type: 'status', content: 'Analysis complete' },
+  { type: 'action', content: 'Generating summary report' },
+];
+
+// Report data for Project Status
+const statusReport = {
+  title: 'Weekly Engineering Update',
+  period: 'Feb 17 - Feb 23',
+  metrics: [
+    { label: 'Commits', value: '23', trend: 'up' },
+    { label: 'PRs Merged', value: '8', trend: 'up' },
+    { label: 'Velocity', value: '34 pts', trend: 'up' },
+  ],
+  highlights: [
+    'Auth flow shipped to production',
+    'Database migration completed',
+    'API response time improved 40%',
+  ],
+};
+
+type StatusPhase =
+  | 'waiting'
+  | 'typing'
+  | 'sending'
+  | 'terminal-open'
+  | 'terminal-running'
+  | 'terminal-close'
+  | 'report-reveal'
+  | 'report-build'
+  | 'notification'
+  | 'hold'
+  | 'fade-out';
+
+// Animated Project Status Demo
+function ProjectStatusDemo() {
+  const [phase, setPhase] = useState<StatusPhase>('waiting');
+  const [displayedText, setDisplayedText] = useState('');
+  const [showChat, setShowChat] = useState(false);
+  const [showTerminal, setShowTerminal] = useState(false);
+  const [showReport, setShowReport] = useState(false);
+  const [showNotification, setShowNotification] = useState(false);
+  const [terminalLines, setTerminalLines] = useState<TerminalStep[]>([]);
+  const [currentCodeText, setCurrentCodeText] = useState('');
+  const [reportBuildStep, setReportBuildStep] = useState(0);
+  const [hasStarted, setHasStarted] = useState(false);
+  const [tick, setTick] = useState(0);
+
+  const charIndexRef = useRef(0);
+  const stepIndexRef = useRef(0);
+  const codeCharIndexRef = useRef(0);
+  const terminalContentRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const prompt = "Compile this week's project updates into a summary";
+  const typingSpeed = 35;
+  const codeTypingSpeed = 15;
+
+  // Start animation when scrolled into view
+  useEffect(() => {
+    if (!containerRef.current || hasStarted) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !hasStarted) {
+          setHasStarted(true);
+          setShowChat(true);
+          setPhase('typing');
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(containerRef.current);
+
+    return () => observer.disconnect();
+  }, [hasStarted]);
+
+  // Auto-scroll terminal
+  useEffect(() => {
+    if (terminalContentRef.current) {
+      terminalContentRef.current.scrollTop = terminalContentRef.current.scrollHeight;
+    }
+  }, [terminalLines, currentCodeText]);
+
+  useEffect(() => {
+    let timeout: ReturnType<typeof setTimeout>;
+
+    if (phase === 'waiting') {
+      return;
+    }
+
+    if (phase === 'typing') {
+      if (charIndexRef.current < prompt.length) {
+        timeout = setTimeout(() => {
+          setDisplayedText(prompt.slice(0, charIndexRef.current + 1));
+          charIndexRef.current += 1;
+        }, typingSpeed);
+      } else {
+        timeout = setTimeout(() => setPhase('sending'), 600);
+      }
+    } else if (phase === 'sending') {
+      timeout = setTimeout(() => {
+        setShowTerminal(true);
+        setPhase('terminal-open');
+      }, 400);
+    } else if (phase === 'terminal-open') {
+      timeout = setTimeout(() => setPhase('terminal-running'), 300);
+    } else if (phase === 'terminal-running') {
+      const currentStep = statusTerminalSequence[stepIndexRef.current];
+
+      if (!currentStep) {
+        timeout = setTimeout(() => setPhase('terminal-close'), 600);
+      } else if (currentStep.type === 'code') {
+        if (codeCharIndexRef.current < currentStep.content.length) {
+          timeout = setTimeout(() => {
+            setCurrentCodeText(currentStep.content.slice(0, codeCharIndexRef.current + 1));
+            codeCharIndexRef.current += 1;
+          }, codeTypingSpeed);
+        } else {
+          setTerminalLines(prev => [...prev, currentStep]);
+          setCurrentCodeText('');
+          codeCharIndexRef.current = 0;
+          stepIndexRef.current += 1;
+          timeout = setTimeout(() => setTick(t => t + 1), 80);
+        }
+      } else {
+        setTerminalLines(prev => [...prev, currentStep]);
+        stepIndexRef.current += 1;
+        timeout = setTimeout(() => setTick(t => t + 1), currentStep.type === 'action' ? 400 : 250);
+      }
+    } else if (phase === 'terminal-close') {
+      setShowTerminal(false);
+      setShowChat(false);
+      timeout = setTimeout(() => {
+        setShowReport(true);
+        setReportBuildStep(1);
+        setPhase('report-reveal');
+      }, 400);
+    } else if (phase === 'report-reveal') {
+      timeout = setTimeout(() => setPhase('report-build'), 200);
+    } else if (phase === 'report-build') {
+      const maxSteps = 7; // header + period + 3 metrics + highlights header + highlights
+      if (reportBuildStep < maxSteps) {
+        timeout = setTimeout(() => {
+          setReportBuildStep(prev => prev + 1);
+        }, 200);
+      } else {
+        timeout = setTimeout(() => setPhase('notification'), 400);
+      }
+    } else if (phase === 'notification') {
+      setShowNotification(true);
+      timeout = setTimeout(() => setPhase('hold'), 2000);
+    } else if (phase === 'hold') {
+      timeout = setTimeout(() => setPhase('fade-out'), 2000);
+    } else if (phase === 'fade-out') {
+      setShowReport(false);
+      setShowNotification(false);
+      timeout = setTimeout(() => {
+        // Reset everything
+        setShowTerminal(false);
+        setShowChat(false);
+        setTerminalLines([]);
+        setDisplayedText('');
+        setCurrentCodeText('');
+        setReportBuildStep(0);
+        charIndexRef.current = 0;
+        stepIndexRef.current = 0;
+        codeCharIndexRef.current = 0;
+        // Restart
+        setShowChat(true);
+        setPhase('typing');
+      }, 500);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [phase, displayedText, terminalLines, currentCodeText, reportBuildStep, tick]);
+
   return (
-    <div className="demo-window applied">
-      <div className="demo-window-header">
-        <div className="demo-window-dots">
-          <span /><span /><span />
+    <div className="status-demo" ref={containerRef}>
+      {/* Chat Input */}
+      <div className={`ps-chat-container ${showChat ? 'visible' : ''}`}>
+        <div className="ps-chat-box">
+          <div className="ps-chat-text">
+            {displayedText}
+            <span className={`ps-cursor ${phase === 'typing' ? 'blinking' : ''}`}>|</span>
+          </div>
+          <button className={`ps-send-btn ${phase === 'sending' ? 'pressed' : ''}`}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+              <path d="M12 19V5m0 0l-7 7m7-7l7 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+          </button>
         </div>
-        <span className="demo-window-title">Workflow Runner</span>
       </div>
-      <div className="demo-window-content">
-        <div className="demo-workflow">
-          <div className="demo-workflow-stage">
-            <span className="demo-stage-label">Stage 1</span>
-            <span className="demo-stage-status complete">Complete</span>
-          </div>
-          <div className="demo-workflow-connector" />
-          <div className="demo-workflow-stage active">
-            <span className="demo-stage-label">Stage 2</span>
-            <span className="demo-stage-status running">
-              <span className="demo-pulse" />
-              Agent working
-            </span>
-          </div>
-          <div className="demo-workflow-connector dim" />
-          <div className="demo-workflow-stage dim">
-            <span className="demo-stage-label">Stage 3</span>
-            <span className="demo-stage-status">Pending</span>
-          </div>
+
+      {/* Terminal Panel */}
+      <div className={`ps-terminal ${showTerminal ? 'visible' : ''}`}>
+        <div className="ps-terminal-header">
+          <span className="ps-terminal-title">Wingman</span>
+          <span className="ps-terminal-status">
+            <span className="ps-status-dot"></span>
+            Working
+          </span>
         </div>
+        <div className="ps-terminal-content" ref={terminalContentRef}>
+          {terminalLines.map((line, index) => (
+            <div key={index} className={`ps-terminal-line ${line.type}`}>
+              {line.type === 'action' && (
+                <>
+                  <span className="ps-line-icon">●</span>
+                  <span className="ps-action-text">{line.content}</span>
+                </>
+              )}
+              {line.type === 'status' && (
+                <>
+                  <span className="ps-line-icon check">✓</span>
+                  <span className="ps-status-text">{line.content}</span>
+                </>
+              )}
+              {line.type === 'code' && (
+                <>
+                  <span className="ps-line-indent" />
+                  <span className="ps-code-text">{line.content}</span>
+                </>
+              )}
+            </div>
+          ))}
+          {currentCodeText && (
+            <div className="ps-terminal-line code typing">
+              <span className="ps-line-indent" />
+              <span className="ps-code-text">{currentCodeText}</span>
+              <span className="ps-cursor">▋</span>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Report Result */}
+      <div className={`ps-report ${showReport ? 'visible' : ''}`}>
+        <div className={`ps-report-header ${reportBuildStep >= 1 ? 'visible' : ''}`}>
+          <span className="ps-report-title">{statusReport.title}</span>
+        </div>
+        <div className={`ps-report-period ${reportBuildStep >= 2 ? 'visible' : ''}`}>
+          {statusReport.period}
+        </div>
+
+        <div className="ps-metrics">
+          {statusReport.metrics.map((metric, idx) => (
+            <div key={idx} className={`ps-metric ${reportBuildStep >= 3 + idx ? 'visible' : ''}`}>
+              <span className="ps-metric-value">{metric.value}</span>
+              <span className="ps-metric-label">{metric.label}</span>
+              <span className="ps-metric-trend up">↑</span>
+            </div>
+          ))}
+        </div>
+
+        <div className={`ps-highlights ${reportBuildStep >= 6 ? 'visible' : ''}`}>
+          <div className="ps-highlights-title">Highlights</div>
+          {statusReport.highlights.map((item, idx) => (
+            <div key={idx} className={`ps-highlight-item ${reportBuildStep >= 7 ? 'visible' : ''}`}>
+              <span className="ps-highlight-check">✓</span>
+              {item}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Notification */}
+      <div className={`ps-notification ${showNotification ? 'visible' : ''}`}>
+        <span className="ps-notif-icon">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+        </span>
+        <span className="ps-notif-text">Sent to #engineering</span>
       </div>
     </div>
   );
