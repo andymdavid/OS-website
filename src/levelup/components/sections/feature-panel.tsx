@@ -13,6 +13,8 @@ interface FeaturePanelStep {
 
 interface FeaturePanelProps {
   id?: string;
+  sectionTitle?: string;
+  sectionBody?: string;
   title: string;
   body: string;
   ctaLabel: string;
@@ -42,6 +44,8 @@ const THEME_TOKENS: {
 
 export function FeaturePanel({
   id,
+  sectionTitle,
+  sectionBody,
   title,
   body,
   ctaLabel,
@@ -140,8 +144,37 @@ export function FeaturePanel({
   );
 
   return (
-    <Section id={id} className="flex items-end">
+    <Section id={id}>
       <Container className="!max-w-[1400px] !px-6">
+        {/* Section Header (above modal) */}
+        {sectionTitle && (
+          <div className="text-center mb-12">
+            <h2
+              style={{
+                fontFamily: "var(--font-heading)",
+                fontSize: "40px",
+                lineHeight: "1.1",
+                color: "#201d1d",
+                marginBottom: "16px",
+              }}
+            >
+              {sectionTitle}
+            </h2>
+            {sectionBody && (
+              <p
+                style={{
+                  fontSize: "15px",
+                  lineHeight: "1.6",
+                  color: "#4a4a4a",
+                  maxWidth: "700px",
+                  margin: "0 auto",
+                }}
+              >
+                {sectionBody}
+              </p>
+            )}
+          </div>
+        )}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -166,10 +199,10 @@ export function FeaturePanel({
                 className="flex flex-col h-full"
               >
                 <div>
-                  <h2 style={{ fontSize: "34px", lineHeight: "1.15", fontFamily: "var(--font-heading)" }}>
+                  <h3 style={{ fontSize: "24px", lineHeight: "1.2", fontFamily: "var(--font-heading)" }}>
                     {title}
-                  </h2>
-                  <p className="text-sm mt-4" style={{ color: tokens.panelMuted }}>
+                  </h3>
+                  <p className="text-xs mt-3" style={{ color: tokens.panelMuted }}>
                     {body}
                   </p>
                   <div className="mt-6">
