@@ -155,7 +155,7 @@ export const siteContent: SiteContent = {
       enabled: true,
       id: "twoColumn-2",
       props: {
-        title: "Why Speedrun Exists.",
+        title: "Why Speedrun exists.",
         body:
           "Most businesses know they should be doing more with AI and automation, but they don’t know where to start, what to connect, or how to turn ideas into something real. Progress often remains stuck at research, demos, or random experiments.\n\nSpeedrun exists to help people move from wanting to use AI in their business to actually building with it and compresses that gap into short, focused workshops. In a few hours, participants work hands-on with AI agents to build practical tools and workflows that reflect how their business operates.",
         layout: "split",
@@ -201,7 +201,7 @@ export const siteContent: SiteContent = {
       enabled: true,
       id: "how-speedrun-works",
       props: {
-        sectionTitle: "How Speedrun Works.",
+        sectionTitle: "How Speedrun works.",
         body: "You begin with a blank project and leave with your own working app. During the session you use AI coding agents to build a simple Kanban-style to-do tool from scratch, change it, and watch it evolve on screen as you work.",
         ctaLabel: "Book a Call",
         ctaHref: "#",
@@ -313,7 +313,7 @@ export const siteContent: SiteContent = {
       enabled: true,
       id: "twoColumn-6",
       props: {
-        title: "Frequently Asked Questions.",
+        title: "Frequently asked questions.",
         body: "Here are answers to some of the common practical questions schools and teachers ask when considering Level Up.",
         anchorId: "faq",
         singleColumn: true,
