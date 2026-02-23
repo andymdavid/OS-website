@@ -4,6 +4,7 @@ import HomeDuplicate from './routes/HomeDuplicate';
 import Company from './routes/Company';
 import LevelUp from './routes/LevelUp';
 import Speedrun from './routes/Speedrun';
+import MarginalGains from './routes/MarginalGains';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: '/speedrun',
     element: <Speedrun />,
+  },
+  {
+    path: '/marginal-gains',
+    element: <MarginalGains />,
   },
 ]);
 

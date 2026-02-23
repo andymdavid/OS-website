@@ -1,0 +1,317 @@
+/* Marginal Gains-specific overrides */
+.marginal-gains-page {
+  background: #0f0e0d;
+  --color-background: #0f0e0d;
+  --font-heading: 'Cormorant Garamond', serif;
+}
+
+.marginal-gains-page .speedrun-hero {
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.5) 0%,
+      rgba(0, 0, 0, 0.5) 85%,
+      rgba(15, 14, 13, 1) 100%
+    ),
+    url('/speedrun-background.png?v=2');
+  background-position: center 0%, center 0%;
+  background-size: 110% auto, 110% auto;
+  background-repeat: no-repeat, no-repeat;
+}
+
+.marginal-gains-page h1 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-weight: 400 !important;
+  font-size: clamp(28px, 5vw, 50px) !important;
+  line-height: 0.9 !important;
+  letter-spacing: -0.05em !important;
+  color: #ffffff;
+}
+
+.marginal-gains-page .hero-title-block h1 {
+  font-size: clamp(41px, 7vw, 83px) !important;
+  line-height: 1 !important;
+}
+
+.marginal-gains-page h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-weight: 400 !important;
+  font-size: clamp(26px, 4.2vw, 42px) !important;
+  line-height: 0.9 !important;
+  letter-spacing: -0.05em !important;
+  color: #ffffff !important;
+}
+
+.marginal-gains-page #twoColumn-3 h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.05em !important;
+}
+
+.marginal-gains-page .speedrun-hero-title-block {
+  margin-top: 0;
+}
+
+
+.marginal-gains-page .speedrun-hero-subtitle {
+  color: #ffffff;
+}
+
+.marginal-gains-page .speedrun-hero-cta {
+  margin-top: 32px;
+}
+
+.marginal-gains-page #how-speedrun-works {
+  --feature-panel-radius: 4px;
+  --feature-panel-image-radius: 3px;
+  --feature-panel-image-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+.marginal-gains-page .showcase-header {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.marginal-gains-page .showcase-body {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  max-width: 40rem;
+}
+
+.marginal-gains-page .speedrun-card {
+  border-radius: 4px !important;
+  background: rgba(240, 240, 240, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 12px;
+}
+
+.marginal-gains-page .speedrun-card .expandable-card-media {
+  border-radius: 3px 3px 0 0;
+  background: rgba(15, 14, 13, 0.6);
+  margin-bottom: 0 !important;
+}
+
+.marginal-gains-page .speedrun-card .expandable-card-media img {
+  filter: brightness(0.7);
+  height: 240px !important;
+  border-radius: 3px 3px 0 0;
+}
+
+.marginal-gains-page .speedrun-card .expandable-card-media .demo-window,
+.marginal-gains-page .speedrun-card .expandable-card-media .kanban-demo {
+  max-width: 100%;
+}
+
+.marginal-gains-page .speedrun-card .expandable-card-media .demo-window {
+  border-radius: 3px;
+}
+
+.marginal-gains-page .speedrun-card .expandable-card-media .demo-window-content {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.marginal-gains-page .speedrun-card .expandable-card-media .kanban-demo {
+  padding: 4px 0;
+  max-width: 100%;
+  min-height: auto;
+  justify-content: center;
+  width: 100%;
+}
+
+.marginal-gains-page .speedrun-card .expandable-card-media .demo-preview-scale {
+  transform: none !important;
+  transform-origin: center !important;
+  margin-top: 0;
+}
+
+.marginal-gains-page .speedrun-card .expandable-card-media .kanban-demo {
+  min-height: 0;
+}
+
+.marginal-gains-page .speedrun-card .expandable-card-media .kb-board {
+  position: static;
+  transform: none !important;
+  width: 100%;
+  opacity: 1;
+  height: auto;
+}
+
+.marginal-gains-page .speedrun-card .expandable-card-media .demo-task-app,
+.marginal-gains-page .speedrun-card .expandable-card-media .demo-workflow {
+  width: 100%;
+}
+
+.marginal-gains-page .speedrun-card .expandable-card-media .kb-board {
+  padding: 10px;
+}
+
+.marginal-gains-page .speedrun-card .expandable-card-media .kb-board-header {
+  margin-bottom: 8px;
+}
+
+.marginal-gains-page .speedrun-card .expandable-card-media .kb-columns {
+  gap: 8px;
+}
+
+.marginal-gains-page .speedrun-card .expandable-card-media .kb-column-header {
+  margin-bottom: 6px;
+  padding-bottom: 4px;
+}
+
+.marginal-gains-page .speedrun-card .expandable-card-media .kb-card {
+  padding: 8px;
+}
+
+.marginal-gains-page .speedrun-card .expandable-card-body {
+  padding: 16px 0 16px !important;
+  margin-top: auto;
+}
+
+.marginal-gains-page .speedrun-card .expandable-card-body h3 {
+  color: #ffffff;
+  margin: 9px 0 0;
+  font-family: 'Figtree', sans-serif;
+  font-size: 22px;
+  font-weight: var(--weight-bold);
+  line-height: 1.2;
+  text-transform: none;
+}
+
+.marginal-gains-page .speedrun-levelup-card {
+  border-radius: 4px !important;
+  background: rgba(240, 240, 240, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.06);
+}
+
+.marginal-gains-page .speedrun-levelup-card h3 {
+  font-family: 'Figtree', sans-serif;
+  font-size: 22px;
+  font-weight: var(--weight-bold);
+  line-height: 1.2;
+  text-transform: none;
+}
+
+.marginal-gains-page .split-modal-shell {
+  border-radius: 4px !important;
+}
+
+.marginal-gains-page .split-modal-frame {
+  border-radius: 3px !important;
+}
+
+.marginal-gains-page #twoColumn-8 {
+  --split-modal-width: 315px;
+}
+
+.marginal-gains-page .speedrun-levelup-card .levelup-card-tag-primary {
+  background: #2ea782 !important;
+  color: #0f0e0d !important;
+  border: none !important;
+}
+
+.marginal-gains-page #twoColumn-6 .faq-question {
+  font-family: 'Figtree', sans-serif !important;
+  font-size: 14px !important;
+  font-weight: var(--weight-bold) !important;
+  letter-spacing: 0.01em !important;
+}
+
+.marginal-gains-page .intro-pill {
+  background: #0c0b0a;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.marginal-gains-page .intro-pill::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2ea782;
+  animation: pill-pulse 1.5s infinite;
+}
+
+.marginal-gains-page .mega-menu-card h4 {
+  font-family: 'Figtree', sans-serif;
+}
+
+.marginal-gains-page .speedrun-card .expandable-card-body p {
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+}
+
+.marginal-gains-page .speedrun-card .expandable-card-body h3 + p {
+  margin-top: 12px;
+}
+
+/* Showcase card titles */
+.marginal-gains-page .showcase-card-title {
+  font-family: 'Figtree', sans-serif !important;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.marginal-gains-page .showcase-card.inactive .showcase-card-title {
+  font-size: 18px;
+}
+
+.marginal-gains-page .levelup-container {
+  max-width: 100%;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.marginal-gains-page .two-column-split {
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.marginal-gains-page .two-column-split-grid {
+  gap: 40px;
+  align-items: center;
+}
+
+.marginal-gains-page .two-column-split-left,
+.marginal-gains-page .two-column-split-right {
+  padding: 0;
+}
+
+.marginal-gains-page .two-column-split-left {
+  align-items: flex-start;
+}
+
+.marginal-gains-page section {
+  position: relative;
+  min-height: 100vh;
+}
+
+.marginal-gains-page section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50% !important;
+  right: auto !important;
+  width: 100vw;
+  transform: translateX(-50%);
+  height: 1px;
+  background: rgba(240, 240, 240, 0.08);
+}
+
+.marginal-gains-page section.speedrun-hero::after {
+  display: none;
+}
+
+.marginal-gains-page section:last-of-type::after {
+  display: none;
+}
