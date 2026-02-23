@@ -85,8 +85,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: clamp(64px, 10vw, 140px) var(--container-padding);
-  padding-bottom: clamp(48px, 8vw, 110px);
+  padding-top: clamp(96px, 12vw, 180px);
+  padding-bottom: clamp(40px, 6vw, 80px);
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
   max-width: 100%;
 }
 
