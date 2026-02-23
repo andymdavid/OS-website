@@ -476,7 +476,7 @@ export function TwoColumn({
                   padding: "1.25rem",
                   boxShadow: "0 30px 70px rgba(10, 10, 10, 0.45)",
                   width: "100%",
-                  maxWidth: "420px",
+                  maxWidth: "var(--split-modal-width, 420px)",
                   boxSizing: "border-box",
                 }}
               >

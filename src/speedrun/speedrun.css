@@ -127,6 +127,10 @@
   border-radius: 3px !important;
 }
 
+.speedrun-page #twoColumn-8 {
+  --split-modal-width: 315px;
+}
+
 .speedrun-page .speedrun-levelup-card .levelup-card-tag-primary {
   background: #2ea782 !important;
   color: #0f0e0d !important;
