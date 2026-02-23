@@ -572,7 +572,7 @@ export function TwoColumn({
                     onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
                     className="w-full py-6 flex items-center justify-between text-left"
                   >
-                    <h3 className="text-base font-semibold text-[#201d1d] pr-4">
+                    <h3 className="faq-question text-base font-semibold text-[#201d1d] pr-4">
                       {item.question}
                     </h3>
                     <span className="text-2xl text-neutral-400 shrink-0">

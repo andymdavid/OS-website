@@ -218,7 +218,7 @@
   border: none !important;
 }
 
-.speedrun-page #twoColumn-6 button h3 {
+.speedrun-page #twoColumn-6 .faq-question {
   font-family: 'Figtree', sans-serif !important;
   font-size: 14px !important;
   font-weight: var(--weight-bold) !important;
