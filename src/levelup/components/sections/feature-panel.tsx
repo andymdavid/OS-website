@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Section } from "@/levelup/components/layout/section";
 import { Container } from "@/levelup/components/layout/container";
-import { Button } from "@/levelup/components/ui/button";
+import { Button } from "@/components/Button";
 import { AnimatePresence, motion } from "framer-motion";
 
 interface FeaturePanelStep {
@@ -192,29 +192,12 @@ export function FeaturePanel({
                   </p>
                   <div className="mt-6">
                     <Button
-                      size="lg"
-                      asChild
-                      className="group"
-                      style={{
-                        backgroundColor: "#f9f7f6",
-                        color: "#201d1d",
-                        transition: "background-color 0.2s ease",
+                      variant="primary"
+                      onClick={() => {
+                        window.location.href = ctaHref;
                       }}
                     >
-                      <a
-                        href={ctaHref}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        style={{ backgroundColor: "#f9f7f6", color: "#201d1d" }}
-                        onMouseEnter={(event) => {
-                          event.currentTarget.style.backgroundColor = "#eee9e6";
-                        }}
-                        onMouseLeave={(event) => {
-                          event.currentTarget.style.backgroundColor = "#f9f7f6";
-                        }}
-                      >
-                        {ctaLabel}
-                      </a>
+                      {ctaLabel}
                     </Button>
                   </div>
                 </div>

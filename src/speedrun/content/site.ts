@@ -203,8 +203,8 @@ export const siteContent: SiteContent = {
       props: {
         sectionTitle: "How Speedrun works.",
         body: "You begin with a blank project and leave with your own working app. During the session you use AI coding agents to build a simple Kanban-style to-do tool from scratch, change it, and watch it evolve on screen as you work.",
-        ctaLabel: "Book a Call",
-        ctaHref: "#",
+        ctaLabel: "Talk to Us",
+        ctaHref: "mailto:info@otherstuff.studio",
         steps: [
           {
             label: "Setup the foundation",
