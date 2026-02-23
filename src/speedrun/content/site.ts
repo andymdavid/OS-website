@@ -202,9 +202,7 @@ export const siteContent: SiteContent = {
       id: "how-speedrun-works",
       props: {
         sectionTitle: "How Speedrun Works.",
-        sectionBody: "You begin with a blank project and leave with your own working app. During the session you use AI coding agents to build a simple Kanban-style to-do tool from scratch, change it, and watch it evolve on screen as you work.",
-        title: "How Speedrun Unfolds.",
-        body: "Go from cloning a starter app to customising it, and connecting it to an AI agent that begins doing real tasks on your behalf.",
+        body: "You begin with a blank project and leave with your own working app. During the session you use AI coding agents to build a simple Kanban-style to-do tool from scratch, change it, and watch it evolve on screen as you work.",
         ctaLabel: "Book a Call",
         ctaHref: "#",
         steps: [

@@ -14,8 +14,6 @@ interface FeaturePanelStep {
 interface FeaturePanelProps {
   id?: string;
   sectionTitle?: string;
-  sectionBody?: string;
-  title: string;
   body: string;
   ctaLabel: string;
   ctaHref: string;
@@ -45,8 +43,6 @@ const THEME_TOKENS: {
 export function FeaturePanel({
   id,
   sectionTitle,
-  sectionBody,
-  title,
   body,
   ctaLabel,
   ctaHref,
@@ -150,29 +146,16 @@ export function FeaturePanel({
         {sectionTitle && (
           <div className="text-center mb-12">
             <h2
+              className="section-title"
               style={{
-                fontFamily: "var(--font-heading)",
+                fontFamily: "'Anton', sans-serif",
                 fontSize: "40px",
                 lineHeight: "1.1",
                 color: "#201d1d",
-                marginBottom: "16px",
               }}
             >
               {sectionTitle}
             </h2>
-            {sectionBody && (
-              <p
-                style={{
-                  fontSize: "15px",
-                  lineHeight: "1.6",
-                  color: "#4a4a4a",
-                  maxWidth: "700px",
-                  margin: "0 auto",
-                }}
-              >
-                {sectionBody}
-              </p>
-            )}
           </div>
         )}
         <motion.div
@@ -199,10 +182,7 @@ export function FeaturePanel({
                 className="flex flex-col h-full"
               >
                 <div>
-                  <h3 style={{ fontSize: "24px", lineHeight: "1.2", fontFamily: "var(--font-heading)" }}>
-                    {title}
-                  </h3>
-                  <p className="text-xs mt-3" style={{ color: tokens.panelMuted }}>
+                  <p className="text-sm" style={{ color: tokens.panelMuted, lineHeight: "1.6" }}>
                     {body}
                   </p>
                   <div className="mt-6">
