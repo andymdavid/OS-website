@@ -39,7 +39,7 @@
   font-size: clamp(26px, 4.2vw, 42px) !important;
   line-height: 0.9 !important;
   letter-spacing: -0.05em !important;
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 .speedrun-page #twoColumn-3 h2 {
