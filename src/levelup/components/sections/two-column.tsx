@@ -473,7 +473,6 @@ export function TwoColumn({
                 className="split-modal-shell"
                 style={{
                   backgroundColor: "#2a2a2a",
-                  borderRadius: "1rem",
                   padding: "1.25rem",
                   boxShadow: "0 30px 70px rgba(10, 10, 10, 0.45)",
                   width: "100%",
@@ -484,7 +483,6 @@ export function TwoColumn({
                 <div
                   className="split-modal-frame"
                   style={{
-                    borderRadius: "0.8rem",
                     overflow: "hidden",
                     backgroundColor: "rgba(255,255,255,0.04)",
                     aspectRatio: "9 / 16",
