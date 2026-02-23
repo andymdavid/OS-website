@@ -113,11 +113,11 @@
   text-transform: none;
 }
 
-.speedrun-page #twoColumn-4 div[style*="maxWidth: 420px"] {
+.speedrun-page #twoColumn-4 .split-modal-shell {
   border-radius: 4px !important;
 }
 
-.speedrun-page #twoColumn-4 div[style*="aspectRatio: 9 / 16"] {
+.speedrun-page #twoColumn-4 .split-modal-frame {
   border-radius: 3px !important;
 }
 

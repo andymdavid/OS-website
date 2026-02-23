@@ -470,6 +470,7 @@ export function TwoColumn({
             </div>
             <div className="flex justify-center">
               <div
+                className="split-modal-shell"
                 style={{
                   backgroundColor: "#2a2a2a",
                   borderRadius: "1rem",
@@ -481,6 +482,7 @@ export function TwoColumn({
                 }}
               >
                 <div
+                  className="split-modal-frame"
                   style={{
                     borderRadius: "0.8rem",
                     overflow: "hidden",
