@@ -120,8 +120,9 @@ export function FeaturePanel({
 
   const handleStepClick = (index: number) => {
     setActiveStepIndex(index);
-    pauseUntilRef.current = Date.now() + 10000;
+    pauseUntilRef.current = Date.now() + 4000;
     setProgress(0);
+    elapsedRef.current = 0;
   };
 
   const panelShadow = useMemo(
@@ -229,9 +230,8 @@ export function FeaturePanel({
                               top: 0,
                               left: 0,
                               height: "1px",
-                              width: isActive ? `${Math.round(progress * 100)}%` : "0%",
+                              width: isActive ? `${progress * 100}%` : "0%",
                               backgroundColor: tokens.panelText,
-                              transition: "width 0.4s ease",
                             }}
                           />
                           <div>
