@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import React, { useState } from "react";
 import { DemoPreview } from "@/levelup/components/sections/demo-previews";
+import { Button as OsButton } from "@/components/Button";
 
 interface LevelUpCard {
   id: string;
@@ -42,6 +43,10 @@ interface TwoColumnProps {
   splitVideo?: string;
   splitModalVideoUrl?: string;
   splitRightEmpty?: boolean;
+  splitModalCta?: {
+    label: string;
+    href: string;
+  };
   splitBlocks?: Array<{
     title: string;
     body: string;
@@ -106,6 +111,7 @@ export function TwoColumn({
   splitVideo,
   splitModalVideoUrl,
   splitRightEmpty = false,
+  splitModalCta,
   splitBlocks,
   dualColumns,
   blocks,
@@ -469,6 +475,18 @@ export function TwoColumn({
               >
                 {renderBody()}
               </p>
+              {splitModalCta ? (
+                <div className="mt-6">
+                  <OsButton
+                    variant="primary"
+                    onClick={() => {
+                      window.location.href = splitModalCta.href;
+                    }}
+                  >
+                    {splitModalCta.label}
+                  </OsButton>
+                </div>
+              ) : null}
             </div>
             <div className="flex justify-center">
               <div

@@ -306,6 +306,7 @@ export const siteContent: SiteContent = {
         layout: "splitModal",
         textAlign: "left",
         splitModalVideoUrl: "https://www.youtube.com/embed/xVSldYWFxU8?start=3",
+        splitModalCta: { label: "Talk to Us", href: "mailto:info@otherstuff.studio" },
       },
     },
     {
