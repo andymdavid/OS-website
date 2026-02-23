@@ -183,8 +183,10 @@
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0 !important;
-  right: 0 !important;
+  left: 50% !important;
+  right: auto !important;
+  width: 100vw;
+  transform: translateX(-50%);
   height: 1px;
   background: rgba(240, 240, 240, 0.08);
 }
