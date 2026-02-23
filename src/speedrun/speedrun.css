@@ -63,6 +63,8 @@
 
 .speedrun-page #how-speedrun-works {
   --feature-panel-radius: 4px;
+  --feature-panel-image-radius: 3px;
+  --feature-panel-image-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
 }
 
 .speedrun-page .speedrun-card {

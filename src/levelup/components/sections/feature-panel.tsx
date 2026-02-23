@@ -280,8 +280,8 @@ export function FeaturePanel({
                 <div
                   className="overflow-hidden w-full"
                   style={{
-                    boxShadow: "0 26px 70px rgba(5, 5, 5, 0.55)",
-                    borderRadius: "0.8rem",
+                    boxShadow: "var(--feature-panel-image-shadow, 0 26px 70px rgba(5, 5, 5, 0.55))",
+                    borderRadius: "var(--feature-panel-image-radius, 0.8rem)",
                     aspectRatio: "16 / 10",
                   }}
                 >
