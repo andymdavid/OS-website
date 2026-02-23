@@ -102,6 +102,23 @@
   border-radius: 3px 3px 0 0;
 }
 
+.speedrun-page .speedrun-card .expandable-card-media .demo-window,
+.speedrun-page .speedrun-card .expandable-card-media .kanban-demo {
+  max-width: 100%;
+}
+
+.speedrun-page .speedrun-card .expandable-card-media .demo-window {
+  border-radius: 3px;
+}
+
+.speedrun-page .speedrun-card .expandable-card-media .demo-window-content {
+  padding: 16px;
+}
+
+.speedrun-page .speedrun-card .expandable-card-media .kanban-demo {
+  padding: 8px 0;
+}
+
 .speedrun-page .speedrun-card .expandable-card-body {
   padding: 16px 0 16px !important;
   margin-top: auto;

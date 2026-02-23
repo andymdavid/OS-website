@@ -5,6 +5,7 @@ import { Button } from "@/levelup/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import React, { useState } from "react";
+import { DemoPreview } from "@/levelup/components/sections/demo-previews";
 
 interface LevelUpCard {
   id: string;
@@ -67,6 +68,7 @@ interface TwoColumnProps {
     image?: string;
     imageAlt?: string;
     video?: string;
+    demoKey?: "teamRoles" | "timeline" | "kanban" | "outcomes";
   }>;
   levelUpCards?: LevelUpCard[];
   levelUpCardsLayout?: "staggered" | "flat";
@@ -652,7 +654,9 @@ export function TwoColumn({
                             : undefined
                         }
                       >
-                        {block.image ? (
+                        {block.demoKey ? (
+                          <DemoPreview demoKey={block.demoKey} />
+                        ) : block.image ? (
                           <img
                             src={block.image}
                             alt={block.title}
