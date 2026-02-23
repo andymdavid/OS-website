@@ -131,6 +131,17 @@
   margin-top: 0;
 }
 
+.speedrun-page .speedrun-card .expandable-card-media .kanban-demo {
+  min-height: 0;
+}
+
+.speedrun-page .speedrun-card .expandable-card-media .kb-board {
+  position: static;
+  transform: none !important;
+  width: 100%;
+  opacity: 1;
+}
+
 .speedrun-page .speedrun-card .expandable-card-body {
   padding: 16px 0 16px !important;
   margin-top: auto;
