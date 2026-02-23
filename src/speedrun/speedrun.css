@@ -118,11 +118,14 @@
 .speedrun-page .speedrun-card .expandable-card-media .kanban-demo {
   padding: 4px 0;
   max-width: 100%;
+  min-height: auto;
+  justify-content: flex-start;
 }
 
 .speedrun-page .speedrun-card .expandable-card-media .demo-preview-scale {
   transform: scale(0.9);
   transform-origin: top center;
+  margin-top: -6px;
 }
 
 .speedrun-page .speedrun-card .expandable-card-body {
