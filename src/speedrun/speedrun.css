@@ -86,15 +86,12 @@
   flex-direction: column;
   justify-content: center;
   padding: clamp(64px, 10vw, 140px) var(--container-padding);
+  padding-bottom: clamp(48px, 8vw, 110px);
   max-width: 100%;
 }
 
 .speedrun-page .showcase-header {
   margin-bottom: 32px;
-}
-
-.speedrun-page .showcase-cards-container {
-  min-height: 520px;
 }
 
 .speedrun-page .speedrun-card {
