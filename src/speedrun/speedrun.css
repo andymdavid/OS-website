@@ -116,7 +116,8 @@
 }
 
 .speedrun-page .speedrun-card .expandable-card-media .kanban-demo {
-  padding: 8px 0;
+  padding: 4px 0;
+  max-width: 100%;
 }
 
 .speedrun-page .speedrun-card .expandable-card-body {

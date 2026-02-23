@@ -84,50 +84,62 @@ export function DemoPreview({ demoKey }: DemoPreviewProps) {
       );
     case "kanban":
       return (
-        <div className="kanban-demo">
-          <div className="kb-board visible">
-            <div className="kb-board-header visible">
-              <span className="kb-board-title">Ops Kanban</span>
-              <span className="kb-board-badge">Live</span>
+        <div className="demo-window">
+          <div className="demo-window-header">
+            <div className="demo-window-dots">
+              <span />
+              <span />
+              <span />
             </div>
-            <div className="kb-columns">
-              <div className="kb-column visible">
-                <div className="kb-column-header">
-                  <span className="kb-column-title">To Do</span>
-                  <span className="kb-column-count">2</span>
+            <span className="demo-window-title">Ops Kanban</span>
+          </div>
+          <div className="demo-window-content">
+            <div className="kanban-demo">
+              <div className="kb-board visible">
+                <div className="kb-board-header visible">
+                  <span className="kb-board-title">Ops Kanban</span>
+                  <span className="kb-board-badge">Live</span>
                 </div>
-                <div className="kb-column-cards">
-                  <div className="kb-card visible">
-                    <span className="kb-card-title">Supplier emails</span>
-                    <span className="kb-card-tag">Ops</span>
+                <div className="kb-columns">
+                  <div className="kb-column visible">
+                    <div className="kb-column-header">
+                      <span className="kb-column-title">To Do</span>
+                      <span className="kb-column-count">2</span>
+                    </div>
+                    <div className="kb-column-cards">
+                      <div className="kb-card visible">
+                        <span className="kb-card-title">Supplier emails</span>
+                        <span className="kb-card-tag">Ops</span>
+                      </div>
+                      <div className="kb-card visible">
+                        <span className="kb-card-title">Team roster</span>
+                        <span className="kb-card-tag">Ops</span>
+                      </div>
+                    </div>
                   </div>
-                  <div className="kb-card visible">
-                    <span className="kb-card-title">Team roster</span>
-                    <span className="kb-card-tag">Ops</span>
+                  <div className="kb-column visible">
+                    <div className="kb-column-header">
+                      <span className="kb-column-title">In Progress</span>
+                      <span className="kb-column-count">1</span>
+                    </div>
+                    <div className="kb-column-cards">
+                      <div className="kb-card visible">
+                        <span className="kb-card-title">Weekly summary</span>
+                        <span className="kb-card-tag">Agent</span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div className="kb-column visible">
-                <div className="kb-column-header">
-                  <span className="kb-column-title">In Progress</span>
-                  <span className="kb-column-count">1</span>
-                </div>
-                <div className="kb-column-cards">
-                  <div className="kb-card visible">
-                    <span className="kb-card-title">Weekly summary</span>
-                    <span className="kb-card-tag">Agent</span>
-                  </div>
-                </div>
-              </div>
-              <div className="kb-column visible">
-                <div className="kb-column-header">
-                  <span className="kb-column-title">Done</span>
-                  <span className="kb-column-count">1</span>
-                </div>
-                <div className="kb-column-cards">
-                  <div className="kb-card visible">
-                    <span className="kb-card-title">Draft update</span>
-                    <span className="kb-card-tag done">Agent</span>
+                  <div className="kb-column visible">
+                    <div className="kb-column-header">
+                      <span className="kb-column-title">Done</span>
+                      <span className="kb-column-count">1</span>
+                    </div>
+                    <div className="kb-column-cards">
+                      <div className="kb-card visible">
+                        <span className="kb-card-title">Draft update</span>
+                        <span className="kb-card-tag done">Agent</span>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
