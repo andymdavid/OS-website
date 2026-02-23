@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/Button";
 import "./animated-showcase-cards.css";
 
 interface ShowcaseCard {
@@ -97,10 +98,14 @@ export function AnimatedShowcaseCards({
                         <p className="showcase-card-description">{card.description}</p>
 
                         {card.cta && (
-                          <a href={card.cta.href} className="showcase-cta">
+                          <Button
+                            variant="primary"
+                            onClick={() => {
+                              window.location.href = card.cta?.href ?? "#";
+                            }}
+                          >
                             {card.cta.label}
-                            <ArrowRight className="showcase-cta-arrow" />
-                          </a>
+                          </Button>
                         )}
 
                         {card.secondaryNote && (

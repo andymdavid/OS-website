@@ -182,7 +182,7 @@ export const siteContent: SiteContent = {
             metaTags: ["3 hours", "In-person", "Small groups"],
             description:
               "In this session, you build a simple Kanban-style task app from scratch using AI coding agents. You connect it to an AI agent yourself and see how your instructions become working features in real time.",
-            cta: { label: "Book a Call", href: "mailto:info@otherstuff.studio" },
+            cta: { label: "Talk to Us", href: "mailto:info@otherstuff.studio" },
           },
           {
             id: "speedrun-applied",
