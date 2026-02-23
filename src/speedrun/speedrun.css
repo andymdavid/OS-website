@@ -33,10 +33,6 @@
   line-height: 1 !important;
 }
 
-.speedrun-page .speedrun-hero-title-block {
-  margin-top: 0;
-}
-
 .speedrun-page h2 {
   font-family: 'Cormorant Garamond', serif !important;
   font-weight: 400 !important;
@@ -45,6 +41,17 @@
   letter-spacing: -0.05em !important;
   color: #ffffff;
 }
+
+.speedrun-page #twoColumn-3 h2 {
+  font-family: 'Cormorant Garamond', serif !important;
+  font-weight: 400 !important;
+  letter-spacing: -0.05em !important;
+}
+
+.speedrun-page .speedrun-hero-title-block {
+  margin-top: 0;
+}
+
 
 .speedrun-page .speedrun-hero-subtitle {
   color: #ffffff;
