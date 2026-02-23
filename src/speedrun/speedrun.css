@@ -61,6 +61,10 @@
   margin-top: 32px;
 }
 
+.speedrun-page #how-speedrun-works {
+  --feature-panel-radius: 4px;
+}
+
 .speedrun-page .speedrun-card {
   border-radius: 4px !important;
   background: rgba(240, 240, 240, 0.05) !important;

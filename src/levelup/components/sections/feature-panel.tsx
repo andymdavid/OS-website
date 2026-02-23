@@ -175,7 +175,7 @@ export function FeaturePanel({
               border: `1px solid ${tokens.panelBorder}`,
               boxShadow: panelShadow,
               padding: "1.25rem",
-              borderRadius: "1rem",
+              borderRadius: "var(--feature-panel-radius, 1rem)",
               width: "100%",
             }}
           >
