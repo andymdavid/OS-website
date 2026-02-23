@@ -131,7 +131,7 @@ export function FeaturePanel({
 
   return (
     <Section id={id} className="flex items-end">
-      <Container className="max-w-none">
+      <Container className="!max-w-[1400px] !px-6">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
