@@ -141,6 +141,18 @@
   margin-top: 12px;
 }
 
+/* Showcase card titles */
+.speedrun-page .showcase-card-title {
+  font-family: 'Figtree', sans-serif !important;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.speedrun-page .showcase-card.inactive .showcase-card-title {
+  font-size: 18px;
+}
+
 .speedrun-page section {
   position: relative;
 }

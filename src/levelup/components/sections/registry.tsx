@@ -12,6 +12,7 @@ import { Testimonials } from "./testimonials";
 import { Faq } from "./faq";
 import { FinalCta } from "./final-cta";
 import { Footer } from "./footer";
+import { AnimatedShowcaseCards } from "@/speedrun/components/animated-showcase-cards";
 
 // Map section keys to their components
 const sectionComponents: Record<SectionKey, React.ComponentType<any>> = {
@@ -28,6 +29,7 @@ const sectionComponents: Record<SectionKey, React.ComponentType<any>> = {
   faq: Faq,
   finalCta: FinalCta,
   footer: Footer,
+  showcaseCards: AnimatedShowcaseCards,
 };
 
 interface SectionRendererProps {

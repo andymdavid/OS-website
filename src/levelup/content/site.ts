@@ -12,7 +12,8 @@ export type SectionKey =
   | "testimonials"
   | "faq"
   | "finalCta"
-  | "footer";
+  | "footer"
+  | "showcaseCards";
 
 // Section configuration
 export interface SectionConfig {

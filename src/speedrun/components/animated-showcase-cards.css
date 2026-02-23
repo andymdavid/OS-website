@@ -1,0 +1,509 @@
+/* Animated Showcase Cards */
+
+.showcase-section {
+  padding: 80px 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.showcase-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 48px;
+}
+
+.showcase-title {
+  font-family: 'Anton', sans-serif;
+  font-size: 40px;
+  line-height: 1.1;
+  color: #201d1d;
+  margin-bottom: 16px;
+}
+
+.showcase-body {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #4a4a4a;
+}
+
+/* Cards Container */
+.showcase-cards-container {
+  display: flex;
+  gap: 16px;
+  min-height: 600px;
+}
+
+/* Individual Card */
+.showcase-card {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: flex 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.06);
+}
+
+/* Speedrun card - blue/navy gradient */
+.showcase-card.speedrun {
+  background: linear-gradient(
+    165deg,
+    rgba(25, 35, 50, 0.98) 0%,
+    rgba(30, 42, 58, 0.95) 30%,
+    rgba(35, 48, 62, 0.92) 60%,
+    rgba(40, 55, 70, 0.9) 100%
+  );
+}
+
+/* Speedrun Applied card - green gradient based on #2ea782 */
+.showcase-card.speedrun-applied {
+  background: linear-gradient(
+    165deg,
+    rgba(25, 40, 35, 0.98) 0%,
+    rgba(30, 50, 45, 0.95) 30%,
+    rgba(35, 60, 50, 0.92) 60%,
+    rgba(40, 70, 55, 0.9) 100%
+  );
+}
+
+/* Active state - takes most of the width */
+.showcase-card.active {
+  flex: 4;
+}
+
+/* Inactive state - narrow collapsed strip */
+.showcase-card.inactive {
+  flex: 1;
+  max-width: 280px;
+}
+
+.showcase-card.inactive:hover {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Dot grid overlay */
+.showcase-card-dots {
+  position: absolute;
+  inset: 0;
+  background-size: 20px 20px;
+  pointer-events: none;
+}
+
+/* Blue dots for Speedrun card */
+.showcase-card.speedrun .showcase-card-dots {
+  background-image: radial-gradient(
+    circle,
+    rgba(100, 140, 180, 0.12) 1px,
+    transparent 1px
+  );
+}
+
+/* Green dots for Speedrun Applied card */
+.showcase-card.speedrun-applied .showcase-card-dots {
+  background-image: radial-gradient(
+    circle,
+    rgba(46, 167, 130, 0.15) 1px,
+    transparent 1px
+  );
+}
+
+/* Card inner content */
+.showcase-card-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 32px;
+  transition: padding 0.4s ease;
+}
+
+/* Inactive card - center title vertically */
+.showcase-card.inactive .showcase-card-inner {
+  justify-content: center;
+  align-items: center;
+  padding: 24px 16px;
+}
+
+/* Top section */
+.showcase-card-top {
+  margin-bottom: 24px;
+  transition: margin 0.3s ease;
+}
+
+.showcase-card.inactive .showcase-card-top {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.showcase-label {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 16px;
+}
+
+.showcase-label.emphasis {
+  background: #a1ff62;
+  color: #000;
+}
+
+/* Hide label on inactive cards */
+.showcase-card.inactive .showcase-label {
+  display: none;
+}
+
+.showcase-card-title,
+h3.showcase-card-title {
+  font-family: 'Figtree', sans-serif !important;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff;
+  transition: font-size 0.4s ease;
+}
+
+/* Inactive card - smaller title, vertically centered */
+.showcase-card.inactive .showcase-card-title,
+.showcase-card.inactive h3.showcase-card-title {
+  font-size: 18px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Demo area */
+.showcase-card-demo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 0;
+}
+
+/* Bottom section */
+.showcase-card-bottom {
+  margin-top: auto;
+}
+
+/* Hide bottom section on inactive cards */
+.showcase-card.inactive .showcase-card-bottom {
+  display: none;
+}
+
+.showcase-meta-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.showcase-meta-tag {
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.showcase-card-description {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 20px;
+}
+
+.showcase-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  background: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.showcase-cta:hover {
+  background: #a1ff62;
+  transform: translateY(-2px);
+}
+
+.showcase-cta-arrow {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease;
+}
+
+.showcase-cta:hover .showcase-cta-arrow {
+  transform: translateX(4px);
+}
+
+.showcase-secondary-note {
+  margin-top: 16px;
+  font-size: 13px;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Demo Window Styles */
+.demo-window {
+  width: 100%;
+  max-width: 380px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.demo-window-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.demo-window-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.demo-window-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.demo-window-title {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-left: auto;
+}
+
+.demo-window-content {
+  padding: 20px;
+}
+
+/* Task App Demo */
+.demo-task-app {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.demo-task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.demo-task-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #201d1d;
+}
+
+.demo-add-btn {
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #fff;
+  background: #2ea782;
+  border: none;
+  border-radius: 4px;
+  cursor: default;
+}
+
+.demo-task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.demo-task-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: #f5f5f5;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #333;
+}
+
+.demo-task-item.done {
+  color: #888;
+  text-decoration: line-through;
+}
+
+.demo-checkbox {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  border: 2px solid #ccc;
+  flex-shrink: 0;
+}
+
+.demo-checkbox.checked {
+  background: #2ea782;
+  border-color: #2ea782;
+  position: relative;
+}
+
+.demo-checkbox.checked::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 4px;
+  height: 8px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Workflow Demo */
+.demo-workflow {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.demo-workflow-stage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.demo-workflow-stage.active {
+  background: rgba(46, 167, 130, 0.15);
+  border-color: rgba(46, 167, 130, 0.3);
+}
+
+.demo-workflow-stage.dim {
+  opacity: 0.4;
+}
+
+.demo-stage-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.demo-stage-status {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.demo-stage-status.complete {
+  color: #2ea782;
+}
+
+.demo-stage-status.running {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #a1ff62;
+}
+
+.demo-pulse {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #a1ff62;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.demo-workflow-connector {
+  width: 2px;
+  height: 12px;
+  background: rgba(46, 167, 130, 0.4);
+  margin-left: 24px;
+}
+
+.demo-workflow-connector.dim {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Mobile responsive */
+@media (max-width: 900px) {
+  .showcase-cards-container {
+    flex-direction: column;
+    min-height: auto;
+    gap: 12px;
+  }
+
+  .showcase-card {
+    min-height: auto;
+  }
+
+  .showcase-card.active {
+    flex: none;
+    min-height: 500px;
+  }
+
+  .showcase-card.inactive {
+    flex: none;
+    max-width: none;
+    min-height: 80px;
+  }
+
+  .showcase-card.inactive .showcase-card-inner {
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px 24px;
+  }
+
+  .showcase-card.inactive .showcase-card-title {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .showcase-section {
+    padding: 60px 16px;
+  }
+
+  .showcase-title {
+    font-size: 32px;
+  }
+
+  .showcase-card-title {
+    font-size: 26px;
+  }
+
+  .showcase-card-inner {
+    padding: 24px;
+  }
+
+  .demo-window {
+    max-width: 100%;
+  }
+}

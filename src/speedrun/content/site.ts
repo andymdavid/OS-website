@@ -12,7 +12,8 @@ export type SectionKey =
   | "testimonials"
   | "faq"
   | "finalCta"
-  | "footer";
+  | "footer"
+  | "showcaseCards";
 
 // Section configuration
 export interface SectionConfig {
@@ -219,30 +220,32 @@ export const siteContent: SiteContent = {
       },
     },
     {
-      key: "twoColumn",
+      key: "showcaseCards",
       enabled: true,
-      id: "twoColumn-4",
+      id: "where-to-start",
       props: {
-        layout: "dualFocus",
         title: "Where to start.",
-        body: "Speedrun is delivered in two formats. Speedrun Lite gets your team building a working AI-powered task app in three hours. Speedrun Applied extends that same build into a live workflow where agents begin carrying work across stages.",
-        dualColumns: [
+        body: "Speedrun is delivered in two formats. Speedrun gets your team building a working AI-powered task app in three hours. Speedrun Applied extends that same build into a live workflow where agents begin carrying work across stages.",
+        defaultActiveId: "speedrun",
+        cards: [
           {
-            title: "Speedrun Lite",
+            id: "speedrun",
+            title: "Speedrun",
             label: "Start here",
             emphasis: true,
             metaTags: ["3 hours", "In-person", "Small groups"],
-            introBody:
+            description:
               "In this session, you build a simple Kanban-style task app from scratch using AI coding agents. You connect it to an AI agent yourself and see how your instructions become working features in real time.",
-            cta: { label: "Book a Call", href: "#pricing" },
+            cta: { label: "Book a Call", href: "mailto:info@otherstuff.studio" },
           },
           {
+            id: "speedrun-applied",
             title: "Speedrun Applied",
             label: "Go Deeper",
             metaTags: ["3 Hours", "In-person", "Small groups"],
-            introBody:
-              "This session takes the app built in Speedrun Lite and extends it into a simple operational workflow. AI agents begin carrying work forward across defined stages, following rules and triggers you set.",
-            secondaryNote: "Available to teams who have completed Speedrun Lite",
+            description:
+              "This session takes the app built in Speedrun and extends it into a simple operational workflow. AI agents begin carrying work forward across defined stages, following rules and triggers you set.",
+            secondaryNote: "Available to teams who have completed Speedrun",
           },
         ],
       },
@@ -252,7 +255,7 @@ export const siteContent: SiteContent = {
       enabled: true,
       id: "featurePanel",
       props: {
-        title: "How Speedrun Lite Unfolds.",
+        title: "How Speedrun Unfolds.",
         body: "Go from cloning a starter app to customising it, and connecting it to an AI agent that begins doing real tasks on your behalf.",
         ctaLabel: "Book a Call",
         ctaHref: "#",
