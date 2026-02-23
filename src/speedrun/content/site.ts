@@ -315,29 +315,49 @@ export const siteContent: SiteContent = {
       id: "twoColumn-6",
       props: {
         title: "Frequently asked questions.",
-        body: "Here are answers to some of the common practical questions schools and teachers ask when considering Level Up.",
+        body: "Here are answers to some of the common practical questions teams ask when considering Speedrun.",
         anchorId: "faq",
         singleColumn: true,
         faqItems: [
           {
-            question: "What age range is Level Up designed for?",
-            answer: "Level Up is designed for junior to middle high school students. The workshop supports mixed abilities and does not require any prior coding or technical experience.",
+            question: "Do we need a technical background to take part?",
+            answer:
+              "No. Speedrun is designed for founders, operators, and team leads without a technical background. You’ll work with AI coding agents in a guided environment, focusing on understanding how the tools behave rather than writing code yourself.",
           },
           {
-            question: "What do students need to participate?",
-            answer: "Students need access to a laptop or desktop computer and an internet connection. The workshop is designed to work with standard school devices and existing classroom setups.",
+            question: "What exactly do we build during the session?",
+            answer:
+              "In Speedrun, participants build a working Kanban-style task application using AI coding agents. In Speedrun Applied, that same tool is extended into a simple operational workflow where an AI agent begins carrying out tasks such as summaries, planning, and coordination.",
           },
           {
-            question: "How many students can take part in a session?",
-            answer: "Level Up works well with typical class sizes. We can adapt facilitation to suit different group sizes and classroom contexts.",
+            question: "Is this just another AI presentation or demo?",
+            answer:
+              "No. There are no slide-heavy sessions or abstract case studies. The workshop is structured around building and modifying a real tool, so understanding comes from direct interaction rather than observation.",
           },
           {
-            question: "What role do teachers play during the workshop?",
-            answer: "Teachers are welcome to take part alongside students, but are not expected to lead or have prior AI knowledge. The session is facilitated by our team from start to finish.",
+            question: "How many people should attend?",
+            answer:
+              "Speedrun is designed as a small-group working session. The value comes from having cross-functional perspectives in the room and beginning to build shared internal capability, rather than training a single individual.",
           },
           {
-            question: "What happens after the workshop?",
-            answer: "Students leave with a playable game they've built and a practical understanding of how AI works. The workshop is designed to stand alone, while also giving students a strong foundation for future learning.",
+            question: "Will this replace the need for consultants or developers?",
+            answer:
+              "No. Speedrun is not about replacing expertise. It is about helping your team build enough lived experience with AI to make informed decisions about when external support is needed and when it isn’t.",
+          },
+          {
+            question: "Is the app we build intended to be production software?",
+            answer:
+              "No. The app is treated as a working artefact — a practical learning vehicle. The purpose is to understand how AI behaves and how systems are structured, not to deploy a finished enterprise system on day one.",
+          },
+          {
+            question: "What happens after Speedrun?",
+            answer:
+              "Teams can extend the work through Speedrun Applied, where AI agents begin operating across workflows. For organisations wanting to deepen internal capability over time, Marginal Gains provides ongoing support and structured experimentation.",
+          },
+          {
+            question: "How is this different from using tools like ChatGPT?",
+            answer:
+              "Speedrun goes beyond prompting a chatbot. Participants work with coding and task-based AI agents to build and run structured systems, which creates a deeper understanding of how AI behaves inside operational workflows.",
           },
         ],
       },
