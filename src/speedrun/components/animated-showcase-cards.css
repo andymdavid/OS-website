@@ -671,10 +671,19 @@ h3.showcase-card-title {
 
 .kb-terminal-line.code {
   color: #f8f8f2;
+  background: rgba(255, 255, 255, 0.03);
+  margin: 2px -16px;
+  padding: 4px 16px;
+  border-left: 2px solid #bd93f9;
 }
 
-.kb-terminal-line.code .kb-line-icon {
-  color: #bd93f9;
+.kb-line-number {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 10px;
+  min-width: 18px;
+  text-align: right;
+  margin-right: 12px;
+  user-select: none;
 }
 
 .kb-code-text {

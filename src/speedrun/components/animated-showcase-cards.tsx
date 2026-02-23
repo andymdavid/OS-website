@@ -201,6 +201,7 @@ function KanbanBuilderDemo() {
   const [currentCodeText, setCurrentCodeText] = useState('');
   const [kanbanBuildStep, setKanbanBuildStep] = useState(0);
   const [hasStarted, setHasStarted] = useState(false);
+  const [tick, setTick] = useState(0); // Used to force re-renders
 
   const charIndexRef = useRef(0);
   const stepIndexRef = useRef(0);
@@ -274,16 +275,17 @@ function KanbanBuilderDemo() {
             codeCharIndexRef.current += 1;
           }, codeTypingSpeed);
         } else {
+          // Finished typing this code line - add it and move to next
           setTerminalLines(prev => [...prev, currentStep]);
           setCurrentCodeText('');
           codeCharIndexRef.current = 0;
           stepIndexRef.current += 1;
-          timeout = setTimeout(() => {}, 120);
+          timeout = setTimeout(() => setTick(t => t + 1), 80);
         }
       } else {
         setTerminalLines(prev => [...prev, currentStep]);
         stepIndexRef.current += 1;
-        timeout = setTimeout(() => {}, currentStep.type === 'action' ? 350 : 200);
+        timeout = setTimeout(() => setTick(t => t + 1), currentStep.type === 'action' ? 400 : 250);
       }
     } else if (phase === 'terminal-close') {
       setShowTerminal(false);
@@ -326,7 +328,7 @@ function KanbanBuilderDemo() {
     }
 
     return () => clearTimeout(timeout);
-  }, [phase, displayedText, terminalLines, currentCodeText, kanbanBuildStep]);
+  }, [phase, displayedText, terminalLines, currentCodeText, kanbanBuildStep, tick]);
 
   return (
     <div className="kanban-demo" ref={containerRef}>
@@ -359,7 +361,7 @@ function KanbanBuilderDemo() {
             <div key={index} className={`kb-terminal-line ${line.type}`}>
               {line.type === 'action' && <span className="kb-line-icon">●</span>}
               {line.type === 'status' && <span className="kb-line-icon">→</span>}
-              {line.type === 'code' && <span className="kb-line-icon">$</span>}
+              {line.type === 'code' && <span className="kb-line-number">{index + 1}</span>}
               <span className={line.type === 'code' ? 'kb-code-text' : ''}>
                 {line.content}
               </span>
@@ -367,7 +369,7 @@ function KanbanBuilderDemo() {
           ))}
           {currentCodeText && (
             <div className="kb-terminal-line code typing">
-              <span className="kb-line-icon">$</span>
+              <span className="kb-line-number">{terminalLines.length + 1}</span>
               <span className="kb-code-text">{currentCodeText}</span>
               <span className="kb-cursor">▋</span>
             </div>
