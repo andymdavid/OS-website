@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1a1a1a"/>
+      <stop offset="1" stop-color="#11100f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect x="70" y="70" width="1060" height="660" rx="12" fill="#141312" stroke="rgba(255,255,255,0.08)"/>
+
+  <text x="120" y="150" fill="#f0f0f0" font-family="Figtree, sans-serif" font-size="28" font-weight="600">Team Roles Board</text>
+  <text x="120" y="190" fill="rgba(240,240,240,0.6)" font-family="Inter, sans-serif" font-size="16">Cross-functional, no code required</text>
+
+  <rect x="120" y="250" width="220" height="140" rx="8" fill="#1f1e1c" stroke="rgba(255,255,255,0.08)"/>
+  <text x="140" y="305" fill="#2ea782" font-family="Silkscreen, monospace" font-size="12" letter-spacing="1">OPS</text>
+  <text x="140" y="345" fill="rgba(240,240,240,0.75)" font-family="Inter, sans-serif" font-size="14">Weekly planning</text>
+
+  <rect x="380" y="250" width="220" height="140" rx="8" fill="#1f1e1c" stroke="rgba(255,255,255,0.08)"/>
+  <text x="400" y="305" fill="#2ea782" font-family="Silkscreen, monospace" font-size="12" letter-spacing="1">SALES</text>
+  <text x="400" y="345" fill="rgba(240,240,240,0.75)" font-family="Inter, sans-serif" font-size="14">Follow-ups</text>
+
+  <rect x="640" y="250" width="220" height="140" rx="8" fill="#1f1e1c" stroke="rgba(255,255,255,0.08)"/>
+  <text x="660" y="305" fill="#2ea782" font-family="Silkscreen, monospace" font-size="12" letter-spacing="1">FINANCE</text>
+  <text x="660" y="345" fill="rgba(240,240,240,0.75)" font-family="Inter, sans-serif" font-size="14">Monthly close</text>
+
+  <rect x="900" y="250" width="220" height="140" rx="8" fill="#1f1e1c" stroke="rgba(255,255,255,0.08)"/>
+  <text x="920" y="305" fill="#2ea782" font-family="Silkscreen, monospace" font-size="12" letter-spacing="1">SUPPORT</text>
+  <text x="920" y="345" fill="rgba(240,240,240,0.75)" font-family="Inter, sans-serif" font-size="14">Inbox triage</text>
+
+  <rect x="120" y="450" width="280" height="56" rx="28" fill="#0c0b0a" stroke="rgba(255,255,255,0.08)"/>
+  <circle cx="150" cy="478" r="6" fill="#2ea782"/>
+  <text x="168" y="485" fill="#f0f0f0" font-family="Silkscreen, monospace" font-size="12" letter-spacing="1">NO CODE REQUIRED</text>
+</svg>
