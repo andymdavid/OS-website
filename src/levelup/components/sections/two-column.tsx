@@ -164,12 +164,12 @@ export function TwoColumn({
       ? `mt-4 text-2xl sm:text-3xl md:text-4xl leading-snug text-[#201d1d] ${isCentered ? "text-center" : "text-left"}`
       : `mt-8 text-sm md:text-base text-[#201d1d]${singleColumn ? ` ${isCentered ? "text-center" : "text-left"} mb-8` : " mb-8"}`;
 
-  const renderBody = () => {
+  const renderBodyWithLinks = (text: string) => {
     if (!bodyLinks || bodyLinks.length === 0) {
-      return body;
+      return text;
     }
 
-    let parts: React.ReactNode[] = [body];
+    let parts: React.ReactNode[] = [text];
 
     bodyLinks.forEach((link, linkIndex) => {
       const nextParts: React.ReactNode[] = [];
@@ -204,6 +204,8 @@ export function TwoColumn({
 
     return parts;
   };
+
+  const renderBody = () => renderBodyWithLinks(body);
 
   const renderMobileParagraphs = (text: string, splitOn: string) => {
     const splitIndex = text.indexOf(splitOn);
@@ -273,6 +275,21 @@ export function TwoColumn({
     return <p className={className} style={{ whiteSpace: "pre-line" }}>{renderBody()}</p>;
   };
 
+  const renderSplitParagraphs = () => {
+    const paragraphs = body
+      .split("\n\n")
+      .map((paragraph) => paragraph.trim())
+      .filter(Boolean);
+
+    return (
+      <div className="mt-6 space-y-4 text-sm md:text-base text-[#201d1d]">
+        {paragraphs.map((paragraph, index) => (
+          <p key={index}>{renderBodyWithLinks(paragraph)}</p>
+        ))}
+      </div>
+    );
+  };
+
   // Split layout: 50/50 with content left, image right
   if (layout === "split") {
     return (
@@ -288,7 +305,7 @@ export function TwoColumn({
             <h2 className="font-anton text-[40px] tracking-tight leading-tight">
               {title}
             </h2>
-            {renderDefaultBody("mt-6 text-sm md:text-base text-[#201d1d]")}
+            {renderSplitParagraphs()}
             {splitModalCta ? (
               <div className="mt-6">
                 <OsButton
