@@ -16,26 +16,34 @@ export function DemoPreview({ demoKey }: DemoPreviewProps) {
             <span className="demo-window-title">Team mix</span>
           </div>
           <div className="demo-window-content">
-            <div className="demo-role-grid">
+            <div className="demo-role-stack">
               <div className="demo-role-card">
-                <span className="demo-role-initial">OP</span>
-                <span className="demo-role-title">Ops lead</span>
-                <span className="demo-role-note">Hands-on</span>
+                <div className="demo-role-row">
+                  <span className="demo-role-initial">OP</span>
+                  <span className="demo-role-title">Ops lead</span>
+                  <span className="demo-role-pill active">Hands‑on</span>
+                </div>
               </div>
               <div className="demo-role-card">
-                <span className="demo-role-initial">SA</span>
-                <span className="demo-role-title">Sales lead</span>
-                <span className="demo-role-note">Hands-on</span>
+                <div className="demo-role-row">
+                  <span className="demo-role-initial">SA</span>
+                  <span className="demo-role-title">Sales lead</span>
+                  <span className="demo-role-pill active">Hands‑on</span>
+                </div>
               </div>
               <div className="demo-role-card">
-                <span className="demo-role-initial">FI</span>
-                <span className="demo-role-title">Finance</span>
-                <span className="demo-role-note">Observer</span>
+                <div className="demo-role-row">
+                  <span className="demo-role-initial">FI</span>
+                  <span className="demo-role-title">Finance</span>
+                  <span className="demo-role-pill">Observer</span>
+                </div>
               </div>
               <div className="demo-role-card">
-                <span className="demo-role-initial">SU</span>
-                <span className="demo-role-title">Support</span>
-                <span className="demo-role-note">Observer</span>
+                <div className="demo-role-row">
+                  <span className="demo-role-initial">SU</span>
+                  <span className="demo-role-title">Support</span>
+                  <span className="demo-role-pill">Observer</span>
+                </div>
               </div>
             </div>
           </div>
