@@ -120,6 +120,11 @@
   max-width: 100%;
 }
 
+.speedrun-page .speedrun-card .expandable-card-media .demo-preview-scale {
+  transform: scale(0.9);
+  transform-origin: top center;
+}
+
 .speedrun-page .speedrun-card .expandable-card-body {
   padding: 16px 0 16px !important;
   margin-top: auto;

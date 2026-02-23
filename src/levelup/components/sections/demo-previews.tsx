@@ -94,7 +94,7 @@ export function DemoPreview({ demoKey }: DemoPreviewProps) {
             <span className="demo-window-title">Ops Kanban</span>
           </div>
           <div className="demo-window-content">
-            <div className="kanban-demo">
+            <div className="kanban-demo demo-preview-scale">
               <div className="kb-board visible">
                 <div className="kb-board-header visible">
                   <span className="kb-board-title">Ops Kanban</span>
@@ -119,7 +119,7 @@ export function DemoPreview({ demoKey }: DemoPreviewProps) {
                   </div>
                   <div className="kb-column visible">
                     <div className="kb-column-header">
-                      <span className="kb-column-title">In Progress</span>
+                      <span className="kb-column-title">In‑progress</span>
                       <span className="kb-column-count">1</span>
                     </div>
                     <div className="kb-column-cards">
