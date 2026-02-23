@@ -126,8 +126,8 @@
 }
 
 .speedrun-page .speedrun-card .expandable-card-media .demo-preview-scale {
-  transform: scale(0.78);
-  transform-origin: top center;
+  transform: scale(0.7) !important;
+  transform-origin: top center !important;
   margin-top: 0;
 }
 
