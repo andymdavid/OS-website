@@ -144,9 +144,14 @@ export function FeaturePanel({
       <Container className="!max-w-[1400px] !px-6">
         {/* Section Header (above modal) */}
         {sectionTitle && (
-          <div className="text-center mb-12">
+          <div
+            style={{
+              textAlign: "center",
+              maxWidth: "700px",
+              margin: "0 auto 48px",
+            }}
+          >
             <h2
-              className="section-title"
               style={{
                 fontFamily: "'Anton', sans-serif",
                 fontSize: "40px",
