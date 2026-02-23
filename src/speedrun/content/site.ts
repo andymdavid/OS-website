@@ -191,6 +191,7 @@ export const siteContent: SiteContent = {
             metaTags: ["3 Hours", "In-person", "Small groups"],
             description:
               "This session takes the app built in Speedrun and extends it into a simple operational workflow. AI agents begin carrying work forward across defined stages, following rules and triggers you set.",
+            cta: { label: "Learn more", href: "mailto:info@otherstuff.studio" },
             secondaryNote: "Available to teams who have completed Speedrun",
           },
         ],
