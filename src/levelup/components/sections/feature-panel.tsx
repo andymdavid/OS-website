@@ -52,13 +52,19 @@ export function FeaturePanel({
   const [progress, setProgress] = useState(0);
   const pauseUntilRef = useRef<number>(0);
   const rafRef = useRef<number | null>(null);
-  const lastTickRef = useRef<number | null>(null);
-  const elapsedRef = useRef<number>(0);
+  const progressRef = useRef<number>(0);
+  const pausedAtRef = useRef<number | null>(null);
+  const isHoveringRef = useRef(false);
   const [isListHovering, setIsListHovering] = useState(false);
   const stepsCount = steps.length;
 
   const activeStep = steps[activeStepIndex] ?? steps[0];
   const tokens = THEME_TOKENS;
+
+  // Keep ref in sync with state
+  useEffect(() => {
+    isHoveringRef.current = isListHovering;
+  }, [isListHovering]);
 
   useEffect(() => {
     if (stepsCount <= 1) {
@@ -67,36 +73,47 @@ export function FeaturePanel({
     }
 
     const duration = 6500;
-    if (elapsedRef.current === 0) {
-      setProgress(0);
-    }
-    lastTickRef.current = null;
+    let startTime: number | null = null;
+    let initialProgress = progressRef.current;
 
     const tick = (time: number) => {
-      if (lastTickRef.current === null) {
-        lastTickRef.current = time;
-      }
+      const isPaused = isHoveringRef.current || Date.now() < pauseUntilRef.current;
 
-      if (isListHovering || Date.now() < pauseUntilRef.current) {
-        lastTickRef.current = time;
+      // If paused, record where we paused and wait
+      if (isPaused) {
+        if (pausedAtRef.current === null) {
+          pausedAtRef.current = progressRef.current;
+        }
+        startTime = null;
         rafRef.current = requestAnimationFrame(tick);
         return;
       }
 
-      const delta = time - (lastTickRef.current ?? time);
-      lastTickRef.current = time;
-      elapsedRef.current = Math.min(duration, elapsedRef.current + delta);
-      const nextProgress = Math.min(1, elapsedRef.current / duration);
+      // If resuming from pause, start from where we left off
+      if (pausedAtRef.current !== null) {
+        initialProgress = pausedAtRef.current;
+        pausedAtRef.current = null;
+        startTime = null;
+      }
+
+      // Initialize start time
+      if (startTime === null) {
+        startTime = time;
+      }
+
+      const elapsed = time - startTime;
+      const nextProgress = Math.min(1, initialProgress + (elapsed / duration));
+      progressRef.current = nextProgress;
       setProgress(nextProgress);
 
       if (nextProgress >= 1) {
-        elapsedRef.current = 0;
-        lastTickRef.current = null;
+        progressRef.current = 0;
+        initialProgress = 0;
+        startTime = null;
         setProgress(0);
         setActiveStepIndex((prev) => (prev + 1) % stepsCount);
-        rafRef.current = requestAnimationFrame(tick);
-        return;
       }
+
       rafRef.current = requestAnimationFrame(tick);
     };
 
@@ -107,22 +124,14 @@ export function FeaturePanel({
         cancelAnimationFrame(rafRef.current);
       }
     };
-  }, [activeStepIndex, isListHovering, stepsCount]);
-
-  useEffect(() => {
-    if (!isListHovering) {
-      return;
-    }
-
-    elapsedRef.current = progress * 6500;
-    lastTickRef.current = null;
-  }, [isListHovering, progress]);
+  }, [activeStepIndex, stepsCount]);
 
   const handleStepClick = (index: number) => {
     setActiveStepIndex(index);
     pauseUntilRef.current = Date.now() + 4000;
     setProgress(0);
-    elapsedRef.current = 0;
+    progressRef.current = 0;
+    pausedAtRef.current = null;
   };
 
   const panelShadow = useMemo(
