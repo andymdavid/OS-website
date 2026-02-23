@@ -147,16 +147,19 @@ interface TerminalStep {
 const kanbanTerminalSequence: TerminalStep[] = [
   { type: 'action', content: 'Analysing requirements' },
   { type: 'status', content: 'Kanban board with 3 columns' },
-  { type: 'action', content: 'Scaffolding components' },
-  { type: 'code', content: 'create_component("KanbanBoard")' },
-  { type: 'code', content: 'create_component("Column", ["To Do", "In Progress", "Done"])' },
-  { type: 'status', content: 'Components created' },
+  { type: 'action', content: 'Creating board component' },
+  { type: 'code', content: 'export function KanbanBoard() {' },
+  { type: 'code', content: '  const [columns] = useState(["To Do", "In Progress", "Done"])' },
   { type: 'action', content: 'Adding drag-and-drop' },
-  { type: 'code', content: 'import { DragDropContext } from "dnd"' },
+  { type: 'code', content: '  const onDragEnd = (result) => {' },
+  { type: 'code', content: '    moveTask(result.source, result.destination)' },
+  { type: 'code', content: '  }' },
   { type: 'status', content: 'Drag handlers configured' },
-  { type: 'action', content: 'Setting up state' },
-  { type: 'code', content: 'const [tasks, setTasks] = useState([])' },
-  { type: 'action', content: 'Generating UI' },
+  { type: 'action', content: 'Building column layout' },
+  { type: 'code', content: '  return <DragDropContext onDragEnd={onDragEnd}>' },
+  { type: 'code', content: '    {columns.map(col => <Column key={col} />)}' },
+  { type: 'code', content: '  </DragDropContext>' },
+  { type: 'code', content: '}' },
   { type: 'status', content: 'Board ready' },
 ];
 
@@ -345,7 +348,7 @@ function KanbanBuilderDemo() {
       {/* Terminal Panel */}
       <div className={`kb-terminal ${showTerminal ? 'visible' : ''}`}>
         <div className="kb-terminal-header">
-          <span className="kb-terminal-title">Claude</span>
+          <span className="kb-terminal-title">Wingman</span>
           <span className="kb-terminal-status">
             <span className="kb-status-dot"></span>
             Building
