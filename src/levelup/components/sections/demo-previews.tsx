@@ -94,7 +94,7 @@ export function DemoPreview({ demoKey }: DemoPreviewProps) {
             <span className="demo-window-title">Ops Kanban</span>
           </div>
           <div className="demo-window-content">
-            <div className="kanban-demo demo-preview-scale">
+            <div className="kanban-demo demo-preview-scale demo-preview-kanban">
               <div className="kb-board visible">
                 <div className="kb-board-header visible">
                   <span className="kb-board-title">Ops Kanban</span>

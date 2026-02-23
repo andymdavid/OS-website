@@ -113,19 +113,26 @@
 
 .speedrun-page .speedrun-card .expandable-card-media .demo-window-content {
   padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .speedrun-page .speedrun-card .expandable-card-media .kanban-demo {
   padding: 4px 0;
   max-width: 100%;
   min-height: auto;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .speedrun-page .speedrun-card .expandable-card-media .demo-preview-scale {
   transform: scale(0.9);
   transform-origin: top center;
-  margin-top: -6px;
+  margin-top: 0;
+}
+
+.speedrun-page .speedrun-card .expandable-card-media .demo-preview-kanban {
+  transform: scale(0.82);
 }
 
 .speedrun-page .speedrun-card .expandable-card-body {
