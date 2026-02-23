@@ -157,10 +157,11 @@ export const siteContent: SiteContent = {
         title: "Why Speedrun Exists.",
         body:
           "Most businesses know they should be doing more with AI and automation, but they don’t know where to start, what to connect, or how to turn ideas into something real. Progress often remains stuck at research, demos, or random experiments.\n\nSpeedrun exists to help people move from wanting to use AI in their business to actually building with it and compresses that gap into short, focused workshops.\n\nIn a few hours, participants work hands-on with AI agents to build practical tools and workflows that reflect how their business operates.",
-        singleColumn: false,
+        layout: "split",
         fullHeight: true,
         textAlign: "left",
         maxWidth: "wide",
+        splitRightEmpty: true,
       },
     },
     {

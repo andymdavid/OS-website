@@ -40,6 +40,7 @@ interface TwoColumnProps {
   splitImageAlt?: string;
   splitVideo?: string;
   splitModalVideoUrl?: string;
+  splitRightEmpty?: boolean;
   splitBlocks?: Array<{
     title: string;
     body: string;
@@ -102,6 +103,7 @@ export function TwoColumn({
   splitImageAlt,
   splitVideo,
   splitModalVideoUrl,
+  splitRightEmpty = false,
   splitBlocks,
   dualColumns,
   blocks,
@@ -301,30 +303,34 @@ export function TwoColumn({
             transition={{ duration: 0.5, delay: 0.1 }}
             className={`flex items-center p-8 md:p-12 lg:p-16 ${splitReverse ? "md:order-1" : "md:order-2"}`}
           >
-            <div className="relative w-full aspect-[4/3] bg-neutral-300 rounded-2xl overflow-hidden">
-              {splitVideo ? (
-                <video
-                  className="h-full w-full object-cover"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                >
-                  <source src={splitVideo} type="video/mp4" />
-                </video>
-              ) : splitImage ? (
-                <img
-                  src={splitImage}
-                  alt={splitImageAlt || title}
-                  className="h-full w-full object-cover"
-                  loading="lazy"
-                />
-              ) : (
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-neutral-500 text-sm">Image placeholder</span>
-                </div>
-              )}
-            </div>
+            {splitRightEmpty ? (
+              <div className="w-full" aria-hidden="true" />
+            ) : (
+              <div className="relative w-full aspect-[4/3] bg-neutral-300 rounded-2xl overflow-hidden">
+                {splitVideo ? (
+                  <video
+                    className="h-full w-full object-cover"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                  >
+                    <source src={splitVideo} type="video/mp4" />
+                  </video>
+                ) : splitImage ? (
+                  <img
+                    src={splitImage}
+                    alt={splitImageAlt || title}
+                    className="h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-neutral-500 text-sm">Image placeholder</span>
+                  </div>
+                )}
+              </div>
+            )}
           </motion.div>
         </div>
       </Section>
