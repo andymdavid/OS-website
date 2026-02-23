@@ -113,6 +113,14 @@
   text-transform: none;
 }
 
+.speedrun-page #twoColumn-4 div[style*="maxWidth: 420px"] {
+  border-radius: 4px !important;
+}
+
+.speedrun-page #twoColumn-4 div[style*="aspectRatio: 9 / 16"] {
+  border-radius: 3px !important;
+}
+
 .speedrun-page .speedrun-levelup-card .levelup-card-tag-primary {
   background: #2ea782 !important;
   color: #0f0e0d !important;
