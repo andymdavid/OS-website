@@ -482,12 +482,17 @@ h3.showcase-card-title {
 .kanban-demo {
   width: 100%;
   max-width: 480px;
-  min-height: 320px;
+  min-height: 360px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Chat Input */
 .kb-chat-container {
+  width: 100%;
   opacity: 0;
   transform: translateY(10px);
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -551,6 +556,7 @@ h3.showcase-card-title {
 
 /* Terminal Panel */
 .kb-terminal {
+  width: 100%;
   opacity: 0;
   transform: translateY(10px);
   transition: opacity 0.3s ease, transform 0.3s ease, border-width 0.3s ease;
@@ -720,8 +726,12 @@ h3.showcase-card-title {
 
 /* Kanban Board Result */
 .kb-board {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  width: 100%;
   opacity: 0;
-  transform: scale(0.95);
   transition: opacity 0.4s ease, transform 0.4s ease;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 8px;
@@ -731,7 +741,7 @@ h3.showcase-card-title {
 
 .kb-board.visible {
   opacity: 1;
-  transform: scale(1);
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .kb-board-header {
@@ -863,12 +873,17 @@ h3.showcase-card-title {
 .status-demo {
   width: 100%;
   max-width: 480px;
-  min-height: 320px;
+  min-height: 360px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Chat Input */
 .ps-chat-container {
+  width: 100%;
   opacity: 0;
   transform: translateY(10px);
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -932,6 +947,7 @@ h3.showcase-card-title {
 
 /* Terminal Panel */
 .ps-terminal {
+  width: 100%;
   opacity: 0;
   transform: translateY(10px);
   transition: opacity 0.3s ease, transform 0.3s ease, border-width 0.3s ease;
@@ -1078,8 +1094,12 @@ h3.showcase-card-title {
 
 /* Report Result */
 .ps-report {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  width: 100%;
   opacity: 0;
-  transform: scale(0.95);
   transition: opacity 0.4s ease, transform 0.4s ease;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 8px;
@@ -1089,7 +1109,7 @@ h3.showcase-card-title {
 
 .ps-report.visible {
   opacity: 1;
-  transform: scale(1);
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .ps-report-header {
@@ -1227,7 +1247,7 @@ h3.showcase-card-title {
 /* Notification */
 .ps-notification {
   position: absolute;
-  bottom: -8px;
+  bottom: 20px;
   right: 0;
   display: flex;
   align-items: center;
@@ -1242,6 +1262,7 @@ h3.showcase-card-title {
   transform: translateY(10px);
   transition: opacity 0.3s ease, transform 0.3s ease;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 10;
 }
 
 .ps-notification.visible {
