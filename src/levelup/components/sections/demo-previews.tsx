@@ -13,31 +13,29 @@ export function DemoPreview({ demoKey }: DemoPreviewProps) {
               <span />
               <span />
             </div>
-            <span className="demo-window-title">Team roles</span>
+            <span className="demo-window-title">Team mix</span>
           </div>
           <div className="demo-window-content">
-            <div className="demo-task-app">
-              <div className="demo-task-header">
-                <span className="demo-task-title">Roles & workflows</span>
-                <span className="demo-add-btn">No code</span>
+            <div className="demo-role-grid">
+              <div className="demo-role-card">
+                <span className="demo-role-initial">OP</span>
+                <span className="demo-role-title">Ops lead</span>
+                <span className="demo-role-note">Hands-on</span>
               </div>
-              <div className="demo-task-list">
-                <div className="demo-task-item">
-                  <span className="demo-checkbox checked" />
-                  Ops — weekly planning
-                </div>
-                <div className="demo-task-item">
-                  <span className="demo-checkbox checked" />
-                  Sales — follow-ups
-                </div>
-                <div className="demo-task-item">
-                  <span className="demo-checkbox checked" />
-                  Finance — monthly close
-                </div>
-                <div className="demo-task-item">
-                  <span className="demo-checkbox checked" />
-                  Support — inbox triage
-                </div>
+              <div className="demo-role-card">
+                <span className="demo-role-initial">SA</span>
+                <span className="demo-role-title">Sales lead</span>
+                <span className="demo-role-note">Hands-on</span>
+              </div>
+              <div className="demo-role-card">
+                <span className="demo-role-initial">FI</span>
+                <span className="demo-role-title">Finance</span>
+                <span className="demo-role-note">Observer</span>
+              </div>
+              <div className="demo-role-card">
+                <span className="demo-role-initial">SU</span>
+                <span className="demo-role-title">Support</span>
+                <span className="demo-role-note">Observer</span>
               </div>
             </div>
           </div>
