@@ -145,16 +145,15 @@ export function FeaturePanel({
               boxShadow: panelShadow,
               padding: "1.25rem",
               borderRadius: "1rem",
-              height: "calc(100vh - 90px)",
               width: "100%",
             }}
           >
             <div
-              className="grid gap-8 lg:grid-cols-[320px_minmax(0,1fr)] items-stretch h-full"
+              className="grid gap-8 lg:grid-cols-[320px_minmax(0,1fr)] items-start"
             >
               <div
-                style={{ width: "320px", minHeight: 0, paddingTop: "1.5rem" }}
-                className="h-full flex flex-col"
+                style={{ width: "320px", paddingTop: "1.5rem" }}
+                className="flex flex-col"
               >
                 <div>
                   <h2 style={{ fontSize: "34px", lineHeight: "1.15", fontFamily: "var(--font-heading)" }}>
@@ -250,33 +249,30 @@ export function FeaturePanel({
                 </div>
               </div>
 
-              <div className="w-full h-full flex" style={{ minHeight: 0 }}>
+              <div className="w-full flex">
                 <div
-                  className="overflow-hidden"
+                  className="overflow-hidden w-full"
                   style={{
                     boxShadow: "0 26px 70px rgba(5, 5, 5, 0.55)",
-                    height: "100%",
-                    width: "100%",
                     borderRadius: "0.8rem",
+                    aspectRatio: "16 / 10",
                   }}
                 >
-                  <div style={{ height: "100%" }}>
-                    <AnimatePresence mode="wait">
-                      {activeStep ? (
-                        <motion.img
-                          key={activeStep.imageSrc}
-                          src={activeStep.imageSrc}
-                          alt={activeStep.imageAlt || activeStep.label}
-                          className="h-full w-full object-cover"
-                          loading="lazy"
-                          initial={{ opacity: 0 }}
-                          animate={{ opacity: 1 }}
-                          exit={{ opacity: 0 }}
-                          transition={{ duration: 0.4 }}
-                        />
-                      ) : null}
-                    </AnimatePresence>
-                  </div>
+                  <AnimatePresence mode="wait">
+                    {activeStep ? (
+                      <motion.img
+                        key={activeStep.imageSrc}
+                        src={activeStep.imageSrc}
+                        alt={activeStep.imageAlt || activeStep.label}
+                        className="h-full w-full object-cover"
+                        loading="lazy"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.4 }}
+                      />
+                    ) : null}
+                  </AnimatePresence>
                 </div>
               </div>
             </div>
