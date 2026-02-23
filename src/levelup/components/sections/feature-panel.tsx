@@ -149,11 +149,11 @@ export function FeaturePanel({
             }}
           >
             <div
-              className="grid gap-8 lg:grid-cols-[320px_minmax(0,1fr)] items-start"
+              className="grid gap-8 lg:grid-cols-[320px_minmax(0,1fr)]"
             >
               <div
                 style={{ width: "320px", paddingTop: "1.5rem" }}
-                className="flex flex-col"
+                className="flex flex-col h-full"
               >
                 <div>
                   <h2 style={{ fontSize: "34px", lineHeight: "1.15", fontFamily: "var(--font-heading)" }}>
@@ -206,11 +206,11 @@ export function FeaturePanel({
                         onClick={() => handleStepClick(index)}
                         className="w-full text-left"
                         style={{
-                          padding: "1rem 0",
+                          padding: isActive ? "0.75rem 0" : "0.5rem 0",
                           color: isActive ? tokens.panelText : tokens.panelMuted,
                         }}
                       >
-                        <div className="relative" style={{ paddingTop: "0.85rem" }}>
+                        <div className="relative" style={{ paddingTop: "0.5rem" }}>
                           <div
                             aria-hidden="true"
                             style={{
