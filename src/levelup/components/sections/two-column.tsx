@@ -47,6 +47,13 @@ interface TwoColumnProps {
     label: string;
     href: string;
   };
+  splitRightBlocks?: Array<{
+    title: string;
+    role?: string;
+    image?: string;
+    imageAlt?: string;
+    body: string;
+  }>;
   splitBlocks?: Array<{
     title: string;
     body: string;
@@ -112,6 +119,7 @@ export function TwoColumn({
   splitModalVideoUrl,
   splitRightEmpty = false,
   splitModalCta,
+  splitRightBlocks,
   splitBlocks,
   dualColumns,
   blocks,
@@ -280,13 +288,19 @@ export function TwoColumn({
             <h2 className="font-anton text-[40px] tracking-tight leading-tight">
               {title}
             </h2>
-            {renderMobileParagraphs(body, "The workshop is facilitated")}
-            <p
-              className="hidden md:block mt-6 text-sm md:text-base text-[#201d1d]"
-              style={{ whiteSpace: "pre-line" }}
-            >
-              {renderBody()}
-            </p>
+            {renderDefaultBody("mt-6 text-sm md:text-base text-[#201d1d]")}
+            {splitModalCta ? (
+              <div className="mt-6">
+                <OsButton
+                  variant="primary"
+                  onClick={() => {
+                    window.location.href = splitModalCta.href;
+                  }}
+                >
+                  {splitModalCta.label}
+                </OsButton>
+              </div>
+            ) : null}
 
             {/* Split blocks */}
             {splitBlocks && splitBlocks.length > 0 && (
@@ -314,7 +328,40 @@ export function TwoColumn({
             transition={{ duration: 0.5, delay: 0.1 }}
             className={`flex items-center p-8 md:p-12 lg:p-16 ${splitReverse ? "md:order-1" : "md:order-2"}`}
           >
-            {splitRightEmpty ? (
+            {splitRightBlocks && splitRightBlocks.length > 0 ? (
+              <div className="w-full flex flex-col gap-6">
+                {splitRightBlocks.map((block, index) => (
+                  <div
+                    key={`${block.title}-${index}`}
+                    className="border-t border-neutral-300/70 py-6 last:border-b md:border-b"
+                  >
+                    <div className="grid gap-6 md:grid-cols-[180px_1fr] md:gap-8">
+                      <div className="flex items-start gap-4">
+                        {block.image ? (
+                          <div className="relative h-16 w-16 overflow-hidden rounded-full bg-neutral-200">
+                            <img
+                              src={block.image}
+                              alt={block.imageAlt || block.title}
+                              className="h-full w-full object-cover"
+                              loading="lazy"
+                            />
+                          </div>
+                        ) : null}
+                        <div>
+                          <h3 className="text-base font-semibold text-[#201d1d]">
+                            {block.title}
+                          </h3>
+                          {block.role ? (
+                            <p className="text-xs text-neutral-500 mt-1">{block.role}</p>
+                          ) : null}
+                        </div>
+                      </div>
+                      <p className="text-sm text-neutral-600">{block.body}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : splitRightEmpty ? (
               <div className="w-full" aria-hidden="true" />
             ) : (
               <div className="relative w-full aspect-[4/3] bg-neutral-300 rounded-2xl overflow-hidden">
