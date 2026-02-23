@@ -273,7 +273,10 @@ export function TwoColumn({
               {title}
             </h2>
             {renderMobileParagraphs(body, "The workshop is facilitated")}
-            <p className="hidden md:block mt-6 text-sm md:text-base text-[#201d1d]">
+            <p
+              className="hidden md:block mt-6 text-sm md:text-base text-[#201d1d]"
+              style={{ whiteSpace: "pre-line" }}
+            >
               {renderBody()}
             </p>
 
