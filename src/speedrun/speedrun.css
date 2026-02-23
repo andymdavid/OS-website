@@ -113,11 +113,11 @@
   text-transform: none;
 }
 
-.speedrun-page #twoColumn-4 .split-modal-shell {
+.speedrun-page .split-modal-shell {
   border-radius: 4px !important;
 }
 
-.speedrun-page #twoColumn-4 .split-modal-frame {
+.speedrun-page .split-modal-frame {
   border-radius: 3px !important;
 }
 
