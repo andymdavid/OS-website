@@ -116,7 +116,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 260px;
 }
 
 .speedrun-page .speedrun-card .expandable-card-media .kanban-demo {
@@ -128,8 +127,8 @@
 }
 
 .speedrun-page .speedrun-card .expandable-card-media .demo-preview-scale {
-  transform: scale(0.7) !important;
-  transform-origin: top center !important;
+  transform: none !important;
+  transform-origin: center !important;
   margin-top: 0;
 }
 
@@ -142,12 +141,33 @@
   transform: none !important;
   width: 100%;
   opacity: 1;
-  height: 100%;
+  height: auto;
 }
 
 .speedrun-page .speedrun-card .expandable-card-media .demo-task-app,
 .speedrun-page .speedrun-card .expandable-card-media .demo-workflow {
   width: 100%;
+}
+
+.speedrun-page .speedrun-card .expandable-card-media .kb-board {
+  padding: 10px;
+}
+
+.speedrun-page .speedrun-card .expandable-card-media .kb-board-header {
+  margin-bottom: 8px;
+}
+
+.speedrun-page .speedrun-card .expandable-card-media .kb-columns {
+  gap: 8px;
+}
+
+.speedrun-page .speedrun-card .expandable-card-media .kb-column-header {
+  margin-bottom: 6px;
+  padding-bottom: 4px;
+}
+
+.speedrun-page .speedrun-card .expandable-card-media .kb-card {
+  padding: 8px;
 }
 
 .speedrun-page .speedrun-card .expandable-card-body {
