@@ -574,7 +574,12 @@ export function TwoColumn({
                   >
                     <h3
                       className="faq-question text-base font-semibold text-[#201d1d] pr-4"
-                      style={{ fontFamily: "'Figtree', sans-serif", fontSize: "14px", fontWeight: 700 }}
+                      style={{
+                        fontFamily: "'Figtree', sans-serif",
+                        fontSize: "14px",
+                        fontWeight: 700,
+                        textTransform: "none",
+                      }}
                     >
                       {item.question}
                     </h3>
