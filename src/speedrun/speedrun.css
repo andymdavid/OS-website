@@ -80,6 +80,23 @@
   max-width: 40rem;
 }
 
+.speedrun-page .showcase-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(64px, 10vw, 140px) var(--container-padding);
+  max-width: 100%;
+}
+
+.speedrun-page .showcase-header {
+  margin-bottom: 32px;
+}
+
+.speedrun-page .showcase-cards-container {
+  min-height: 520px;
+}
+
 .speedrun-page .speedrun-card {
   border-radius: 4px !important;
   background: rgba(240, 240, 240, 0.05) !important;
