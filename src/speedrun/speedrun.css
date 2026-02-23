@@ -126,13 +126,9 @@
 }
 
 .speedrun-page .speedrun-card .expandable-card-media .demo-preview-scale {
-  transform: scale(0.9);
+  transform: scale(0.78);
   transform-origin: top center;
   margin-top: 0;
-}
-
-.speedrun-page .speedrun-card .expandable-card-media .demo-preview-kanban {
-  transform: scale(0.82);
 }
 
 .speedrun-page .speedrun-card .expandable-card-body {
