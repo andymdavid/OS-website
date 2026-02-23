@@ -276,14 +276,14 @@ export function TwoColumn({
   // Split layout: 50/50 with content left, image right
   if (layout === "split") {
     return (
-      <Section id={anchorId || id} className="min-h-[75vh]">
-        <div className="grid md:grid-cols-2 min-h-[75vh]">
+      <Section id={anchorId || id} className="min-h-[75vh] two-column-split">
+        <div className="grid md:grid-cols-2 min-h-[75vh] two-column-split-grid">
           {/* Content column */}
           <motion.div
             initial={{ opacity: 0, x: splitReverse ? 20 : -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
-            className={`flex flex-col justify-center px-8 md:px-16 lg:px-24 py-16 ${splitReverse ? "md:order-2" : "md:order-1"}`}
+            className={`flex flex-col justify-center px-8 md:px-16 lg:px-24 py-16 two-column-split-left ${splitReverse ? "md:order-2" : "md:order-1"}`}
           >
             <h2 className="font-anton text-[40px] tracking-tight leading-tight">
               {title}
@@ -326,7 +326,7 @@ export function TwoColumn({
             initial={{ opacity: 0, x: splitReverse ? -20 : 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className={`flex items-center p-8 md:p-12 lg:p-16 ${splitReverse ? "md:order-1" : "md:order-2"}`}
+            className={`flex items-center p-8 md:p-12 lg:p-16 two-column-split-right ${splitReverse ? "md:order-1" : "md:order-2"}`}
           >
             {splitRightBlocks && splitRightBlocks.length > 0 ? (
               <div className="w-full flex flex-col gap-6">

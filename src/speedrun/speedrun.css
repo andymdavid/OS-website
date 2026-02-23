@@ -266,6 +266,31 @@
   font-size: 18px;
 }
 
+.speedrun-page .levelup-container {
+  max-width: 100%;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.speedrun-page .two-column-split {
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.speedrun-page .two-column-split-grid {
+  gap: 40px;
+  align-items: center;
+}
+
+.speedrun-page .two-column-split-left,
+.speedrun-page .two-column-split-right {
+  padding: 0;
+}
+
+.speedrun-page .two-column-split-left {
+  align-items: flex-start;
+}
+
 .speedrun-page section {
   position: relative;
   min-height: 100vh;
