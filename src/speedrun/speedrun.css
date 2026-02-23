@@ -176,14 +176,15 @@
 
 .speedrun-page section {
   position: relative;
+  min-height: 100vh;
 }
 
 .speedrun-page section::after {
   content: '';
   position: absolute;
   bottom: 0;
-  left: 0;
-  right: 0;
+  left: 0 !important;
+  right: 0 !important;
   height: 1px;
   background: rgba(240, 240, 240, 0.08);
 }
