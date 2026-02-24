@@ -1,7 +1,12 @@
 .the-good-stuff-page .good-stuff-hero {
-  min-height: 60vh;
+  height: 60vh;
   display: flex;
   align-items: center;
+}
+
+.the-good-stuff-page .good-stuff-hero.section {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .the-good-stuff-page .hero-title-block {
@@ -21,6 +26,11 @@
 
 .the-good-stuff-page .good-stuff-blank {
   min-height: 100vh;
+}
+
+.the-good-stuff-page .good-stuff-blank.section {
+  padding-top: 12px;
+  padding-bottom: 64px;
 }
 
 .the-good-stuff-page .section::after {
