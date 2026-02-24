@@ -4,9 +4,10 @@ import { KanbanMoveDemo } from "@/speedrun/components/kanban-move-demo";
 import { OutcomesChecklistDemo } from "@/speedrun/components/outcomes-checklist-demo";
 import { WorkflowBuilderDemo } from "@/marginal-gains/components/workflow-builder-demo";
 import { AgentActivityDemo } from "@/marginal-gains/components/agent-activity-demo";
+import { DiscussionThreadDemo } from "@/marginal-gains/components/discussion-thread-demo";
 
 interface DemoPreviewProps {
-  demoKey: "teamRoles" | "timeline" | "kanban" | "outcomes" | "workflowBuilder" | "agentActivity";
+  demoKey: "teamRoles" | "timeline" | "kanban" | "outcomes" | "workflowBuilder" | "agentActivity" | "discussionThread";
 }
 
 export function DemoPreview({ demoKey }: DemoPreviewProps) {
@@ -23,6 +24,8 @@ export function DemoPreview({ demoKey }: DemoPreviewProps) {
       return <WorkflowBuilderDemo />;
     case "agentActivity":
       return <AgentActivityDemo />;
+    case "discussionThread":
+      return <DiscussionThreadDemo />;
     default:
       return null;
   }

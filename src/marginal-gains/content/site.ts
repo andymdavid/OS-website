@@ -155,7 +155,7 @@ export const siteContent: SiteContent = {
             number: "03",
             title: "Shared learning",
             body: "Results, failures, and refinements are shared across the group, accelerating understanding and reducing isolated trial and error.",
-            demoKey: "kanban",
+            demoKey: "discussionThread",
           },
           {
             number: "04",
