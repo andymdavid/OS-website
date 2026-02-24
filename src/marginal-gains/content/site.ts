@@ -109,7 +109,7 @@ export const siteContent: SiteContent = {
       enabled: true,
       id: "twoColumn-2",
       props: {
-        title: "Internal AI capability doesn’t form in\n a single workshop.",
+        title: "Internal AI capability doesn't form in\n a single workshop.",
         body:
           "Marginal Gains takes its name from the approach popularised by Sir Dave Brailsford, who focused on improving many small things by 1% rather than chasing dramatic change all at once.\n\nThe same principle applies to AI capability. Instead of attempting a large rollout on day one, we help you develop your AI champions inside the business who continue building and applying agents to real work over time.\n\nAs that capability strengthens inside your team, decisions about where AI should be used, how and why, are shaped by the people who understand your business intimately, not by third parties working from the outside.\n\nMarginal Gains provides the structure and ongoing guidance required to build that capability deliberately and sustain it over time.",
         layout: "split",
@@ -117,7 +117,7 @@ export const siteContent: SiteContent = {
         fullHeight: true,
         textAlign: "left",
         splitModalCta: { label: "Talk to Us", href: "mailto:info@otherstuff.studio" },
-        splitRightEmpty: true,
+        splitRightDemo: "capabilityDepth",
       },
     },
     {
@@ -178,7 +178,7 @@ export const siteContent: SiteContent = {
         maxWidth: "wide",
         fullHeight: true,
         splitModalCta: { label: "Talk to Us", href: "mailto:info@otherstuff.studio" },
-        splitRightEmpty: true,
+        splitRightDemo: "capabilitySpread",
       },
     },
     {
@@ -246,12 +246,12 @@ export const siteContent: SiteContent = {
       props: {
         title: "What your Marginal Gains membership\nlooks like month to month.",
         body:
-          "Selected members of your team are onboarded into the Marginal Gains community with the aim of becoming AI Champions inside your business.\n\nEach month they will participate in monthly online working sessions, supported by periodic in-person gatherings that deepen collaboration and momentum.\n\nBetween sessions, members apply agents and workflows to real business problems using Wingman, with direct support and optional peer exchange to help refine and strengthen what they’re building.\n\nParticipants receive practical guidance, shared problem-solving, and access to Wingman and other tools that emerge out of our Product Lab, so what you build can be deployed directly into day-to-day work.\n\nThe emphasis is on consistent application, not theory. Over time, capability strengthens through repeated use, shared learning, and small improvements that compound.",
+          "Selected members of your team are onboarded into the Marginal Gains community with the aim of becoming AI Champions inside your business.\n\nEach month they will participate in monthly online working sessions, supported by periodic in-person gatherings that deepen collaboration and momentum.\n\nBetween sessions, members apply agents and workflows to real business problems using Wingman, with direct support and optional peer exchange to help refine and strengthen what they're building.\n\nParticipants receive practical guidance, shared problem-solving, and access to Wingman and other tools that emerge out of our Product Lab, so what you build can be deployed directly into day-to-day work.\n\nThe emphasis is on consistent application, not theory. Over time, capability strengthens through repeated use, shared learning, and small improvements that compound.",
         layout: "split",
         maxWidth: "wide",
         fullHeight: true,
         splitModalCta: { label: "Talk to Us", href: "mailto:info@otherstuff.studio" },
-        splitRightEmpty: true,
+        splitRightDemo: "monthlyRhythm",
       },
     },
     {

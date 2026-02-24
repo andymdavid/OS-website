@@ -6,9 +6,12 @@ import { WorkflowBuilderDemo } from "@/marginal-gains/components/workflow-builde
 import { AgentActivityDemo } from "@/marginal-gains/components/agent-activity-demo";
 import { DiscussionThreadDemo } from "@/marginal-gains/components/discussion-thread-demo";
 import { ProductGraphDemo } from "@/marginal-gains/components/product-graph-demo";
+import { CapabilityDepthDemo } from "@/marginal-gains/components/capability-depth-demo";
+import { CapabilitySpreadDemo } from "@/marginal-gains/components/capability-spread-demo";
+import { MonthlyRhythmDemo } from "@/marginal-gains/components/monthly-rhythm-demo";
 
 interface DemoPreviewProps {
-  demoKey: "teamRoles" | "timeline" | "kanban" | "outcomes" | "workflowBuilder" | "agentActivity" | "discussionThread" | "productGraph";
+  demoKey: "teamRoles" | "timeline" | "kanban" | "outcomes" | "workflowBuilder" | "agentActivity" | "discussionThread" | "productGraph" | "capabilityDepth" | "capabilitySpread" | "monthlyRhythm";
 }
 
 export function DemoPreview({ demoKey }: DemoPreviewProps) {
@@ -29,6 +32,12 @@ export function DemoPreview({ demoKey }: DemoPreviewProps) {
       return <DiscussionThreadDemo />;
     case "productGraph":
       return <ProductGraphDemo />;
+    case "capabilityDepth":
+      return <CapabilityDepthDemo />;
+    case "capabilitySpread":
+      return <CapabilitySpreadDemo />;
+    case "monthlyRhythm":
+      return <MonthlyRhythmDemo />;
     default:
       return null;
   }

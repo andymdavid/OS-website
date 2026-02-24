@@ -44,6 +44,7 @@ interface TwoColumnProps {
   splitVideo?: string;
   splitModalVideoUrl?: string;
   splitRightEmpty?: boolean;
+  splitRightDemo?: "teamRoles" | "timeline" | "kanban" | "outcomes" | "workflowBuilder" | "agentActivity" | "discussionThread" | "productGraph" | "capabilityDepth" | "capabilitySpread" | "monthlyRhythm";
   splitModalCta?: {
     label: string;
     href: string;
@@ -125,6 +126,7 @@ export function TwoColumn({
   splitVideo,
   splitModalVideoUrl,
   splitRightEmpty = false,
+  splitRightDemo,
   splitModalCta,
   splitRightBlocks,
   splitBlocks,
@@ -392,6 +394,10 @@ export function TwoColumn({
                     </div>
                   </div>
                 ))}
+              </div>
+            ) : splitRightDemo ? (
+              <div className="w-full rounded-2xl bg-[#2a2a2a] overflow-hidden shadow-xl">
+                <DemoPreview demoKey={splitRightDemo} />
               </div>
             ) : splitRightEmpty ? (
               <div className="w-full" aria-hidden="true" />
