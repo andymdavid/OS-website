@@ -11,7 +11,15 @@ export default function TheGoodStuff() {
         <section className="section good-stuff-hero">
           <div className="section-container-wide good-stuff-hero-inner">
             <div className="hero-title-block">
-              <h1>The Good Stuff is a low-fi dialogue with Pete Winn and Andy David.</h1>
+              <h1>
+                {"The Good Stuff is a low-fi dialogue\nwith Pete Winn and Andy David."
+                  .split("\n")
+                  .map((line) => (
+                    <span key={line} className="block">
+                      {line}
+                    </span>
+                  ))}
+              </h1>
               <p className="hero-bridge">
                 A podcast exploring our everyday experiences working with artificial intelligence, and how it's changing the rules of work, business, entrepreneurship, the economy and human potential.
               </p>
