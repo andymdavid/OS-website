@@ -7,6 +7,7 @@ import { ArrowRight } from "lucide-react";
 import React, { useState } from "react";
 import { DemoPreview } from "@/levelup/components/sections/demo-previews";
 import { Button as OsButton } from "@/components/Button";
+import { TestimonialCarousel } from "@/speedrun/components/testimonial-carousel";
 
 interface LevelUpCard {
   id: string;
@@ -103,6 +104,12 @@ interface TwoColumnProps {
   disableExpandableHover?: boolean;
   expandableCardFlushMedia?: boolean;
   bodyMaxWidth?: string;
+  testimonials?: Array<{
+    quote: string;
+    author: string;
+    role: string;
+    company?: string;
+  }>;
 }
 
 export function TwoColumn({
@@ -146,6 +153,7 @@ export function TwoColumn({
   disableExpandableHover = false,
   expandableCardFlushMedia = false,
   bodyMaxWidth,
+  testimonials,
 }: TwoColumnProps) {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const isCentered = textAlign === "center";
@@ -962,6 +970,11 @@ export function TwoColumn({
           )}
         </motion.div>
       </Container>
+
+      {/* Testimonial carousel - full width */}
+      {testimonials && testimonials.length > 0 && (
+        <TestimonialCarousel testimonials={testimonials} />
+      )}
     </Section>
   );
 }

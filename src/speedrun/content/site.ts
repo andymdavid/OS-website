@@ -157,12 +157,42 @@ export const siteContent: SiteContent = {
       props: {
         title: "Why Speedrun exists.",
         body:
-          "Most businesses know they should be doing more with AI and automation, but they don’t know where to start, what to connect, or how to turn ideas into something real. Progress often remains stuck at research, demos, or random experiments.\n\nSpeedrun exists to help people move from wanting to use AI in their business to actually building with it and compresses that gap into short, focused workshops. In a few hours, participants work hands-on with AI agents to build practical tools and workflows that reflect how their business operates.",
-        layout: "split",
+          "Most businesses know they should be doing more with AI and automation, but they don't know where to start, what to connect, or how to turn ideas into something real. Progress often remains stuck at research, demos, or random experiments.\n\nSpeedrun exists to help people move from wanting to use AI in their business to actually building with it and compresses that gap into short, focused workshops. In a few hours, participants work hands-on with AI agents to build practical tools and workflows that reflect how their business operates.",
         fullHeight: true,
-        textAlign: "left",
+        textAlign: "center",
         maxWidth: "wide",
-        splitRightEmpty: true,
+        testimonials: [
+          {
+            quote: "I'd been reading about AI for months. In three hours, I actually built something that works for our team.",
+            author: "Sarah Chen",
+            role: "Operations Lead",
+            company: "Meridian Logistics",
+          },
+          {
+            quote: "We left with a working tool and, more importantly, the confidence to keep building. That's rare from a workshop.",
+            author: "Marcus Webb",
+            role: "Founder",
+            company: "Threadline Studio",
+          },
+          {
+            quote: "The hands-on approach made all the difference. No slides, no theory - just building something real with guidance.",
+            author: "Priya Sharma",
+            role: "Team Lead",
+            company: "Coastal Partners",
+          },
+          {
+            quote: "Finally understood what AI agents can actually do for our workflows. Seeing it work in real-time was the breakthrough.",
+            author: "James Okonkwo",
+            role: "Director of Operations",
+            company: "Summit Advisory",
+          },
+          {
+            quote: "Worth more than months of research. We went from curious to capable in a single session.",
+            author: "Elena Ruiz",
+            role: "COO",
+            company: "Brightpath Consulting",
+          },
+        ],
       },
     },
     {
