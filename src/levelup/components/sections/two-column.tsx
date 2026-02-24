@@ -396,7 +396,19 @@ export function TwoColumn({
                 ))}
               </div>
             ) : splitRightDemo ? (
-              <div className="w-full rounded-2xl bg-[#2a2a2a] overflow-hidden shadow-xl">
+              <div
+                className="w-full overflow-hidden"
+                style={{
+                  background: "rgba(20, 19, 18, 0.95)",
+                  border: "1px solid rgba(255, 255, 255, 0.06)",
+                  borderRadius: "4px",
+                  padding: "32px",
+                  height: "560px",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
                 <DemoPreview demoKey={splitRightDemo} />
               </div>
             ) : splitRightEmpty ? (

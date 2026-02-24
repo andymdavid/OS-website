@@ -2,11 +2,11 @@
 
 .capability-depth-demo {
   width: 100%;
-  height: 280px;
+  height: 100%;
   background: transparent;
-  padding: 20px 24px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 16px;
 }
 
@@ -124,8 +124,6 @@
 /* Responsive */
 @media (max-width: 900px) {
   .capability-depth-demo {
-    height: 240px;
-    padding: 16px 20px;
     gap: 12px;
   }
 
@@ -174,8 +172,7 @@
 
 @media (max-width: 600px) {
   .capability-depth-demo {
-    height: 200px;
-    padding: 14px 16px;
+    gap: 10px;
   }
 
   .depth-header {
