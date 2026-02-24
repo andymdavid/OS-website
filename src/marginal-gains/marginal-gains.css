@@ -212,25 +212,13 @@
   --split-modal-width: 315px;
 }
 
-.marginal-gains-page #twoColumn-2 h2 {
-  max-width: 44rem;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: left;
+/* Two-column layout alignment for intro section */
+.marginal-gains-page #twoColumn-2 .two-column-split-left h2 {
+  max-width: 34rem;
 }
 
-.marginal-gains-page #twoColumn-2 p {
+.marginal-gains-page #twoColumn-2 .two-column-split-left p {
   max-width: 44rem;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: left;
-}
-
-.marginal-gains-page #twoColumn-2 .section-container {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .marginal-gains-page #twoColumn h2 {

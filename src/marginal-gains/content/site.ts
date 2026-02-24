@@ -112,10 +112,11 @@ export const siteContent: SiteContent = {
         title: "Internal AI capability doesn’t form in\n a single workshop.",
         body:
           "Marginal Gains takes its name from the approach popularised by Sir Dave Brailsford, who focused on improving many small things by 1% rather than chasing dramatic change all at once.\n\nThe same principle applies to AI capability. Instead of attempting a large rollout on day one, we help you develop your AI champions inside the business who continue building and applying agents to real work over time.\n\nAs that capability strengthens inside your team, decisions about where AI should be used, how and why, are shaped by the people who understand your business intimately, not by third parties working from the outside.\n\nMarginal Gains provides the structure and ongoing guidance required to build that capability deliberately and sustain it over time.",
-        singleColumn: true,
+        layout: "split",
         maxWidth: "wide",
         fullHeight: true,
         textAlign: "left",
+        splitRightEmpty: true,
       },
     },
     {
@@ -172,9 +173,10 @@ export const siteContent: SiteContent = {
         title: "",
         body: "",
         hideTitle: true,
-        singleColumn: true,
+        layout: "split",
         maxWidth: "wide",
         fullHeight: true,
+        splitRightEmpty: true,
       },
     },
     {
