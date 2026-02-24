@@ -149,7 +149,7 @@ export const siteContent: SiteContent = {
             number: "02",
             title: "Access to Wingman",
             body: "Members deploy and manage agents using our open-source agent management system, ensuring capability translates into real operational use.",
-            demoKey: "timeline",
+            demoKey: "agentActivity",
           },
           {
             number: "03",
