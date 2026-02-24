@@ -185,7 +185,7 @@ export const siteContent: SiteContent = {
       enabled: true,
       id: "twoColumn-5",
       props: {
-        title: "Marginal Gains is designed for teams committed to building internal AI capability.",
+        title: "Marginal Gains is designed for teams committed to\nbuilding internal AI capability.",
         body:
           "This community is suited to businesses who want to develop internal AI champions rather than outsource capability. It works best when a small, cross-functional group is willing to apply agents to real work each month and gradually strengthen capability from within.",
         singleColumn: true,
