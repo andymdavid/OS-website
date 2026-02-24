@@ -165,6 +165,19 @@ export const siteContent: SiteContent = {
       },
     },
     {
+      key: "twoColumn",
+      enabled: true,
+      id: "mg-blank",
+      props: {
+        title: "",
+        body: "",
+        hideTitle: true,
+        singleColumn: true,
+        maxWidth: "wide",
+        fullHeight: true,
+      },
+    },
+    {
       key: "showcaseCards",
       enabled: true,
       id: "where-to-start",
@@ -192,47 +205,6 @@ export const siteContent: SiteContent = {
               "This session takes the app built in Speedrun and extends it into a simple operational workflow. AI agents begin carrying work forward across defined stages, following rules and triggers you set.",
             cta: { label: "Learn more", href: "mailto:info@otherstuff.studio" },
             secondaryNote: "Available to teams who have completed Speedrun",
-          },
-        ],
-      },
-    },
-    {
-      key: "featurePanel",
-      enabled: true,
-      id: "how-speedrun-works",
-      props: {
-        sectionTitle: "How Speedrun works.",
-        body: "You begin with a blank project and leave with your own working app. During the session you use AI coding agents to build a simple Kanban-style to-do tool from scratch, change it, and watch it evolve on screen as you work.",
-        ctaLabel: "Talk to Us",
-        ctaHref: "mailto:info@otherstuff.studio",
-        steps: [
-          {
-            label: "Setup the foundation",
-            body:
-              "We start by cloning a structured open-source repo and get a working starting point immediately. You begin with something real.",
-            imageSrc: "/WingmanScreen1.png",
-            imageAlt: "Setup the foundation",
-          },
-          {
-            label: "Make small changes",
-            body:
-              "Change the title. Adjust colours. Modify simple elements. You see instantly how instructions become working features.",
-            imageSrc: "/WingmanScreen2.png",
-            imageAlt: "Make small changes",
-          },
-          {
-            label: "Build your version",
-            body:
-              "Extend the app into a Kanban board. Replace Trello. Gamify it. Shape it into the productivity tool you actually want to use.",
-            imageSrc: "/WingmanScreen1.png",
-            imageAlt: "Build your version",
-          },
-          {
-            label: "Put Wingman to work",
-            body:
-              "An agent produces daily summaries, plans your workload, and carries tasks forward like a capable assistant.",
-            imageSrc: "/WingmanScreen2.png",
-            imageAlt: "Put Wingman to work",
           },
         ],
       },
