@@ -1,3 +1,5 @@
+import { CollaborativeCursorsDemo } from "@/speedrun/components/collaborative-cursors-demo";
+
 interface DemoPreviewProps {
   demoKey: "teamRoles" | "timeline" | "kanban" | "outcomes";
 }
@@ -5,50 +7,7 @@ interface DemoPreviewProps {
 export function DemoPreview({ demoKey }: DemoPreviewProps) {
   switch (demoKey) {
     case "teamRoles":
-      return (
-        <div className="demo-window">
-          <div className="demo-window-header">
-            <div className="demo-window-dots">
-              <span />
-              <span />
-              <span />
-            </div>
-            <span className="demo-window-title">Team mix</span>
-          </div>
-          <div className="demo-window-content">
-            <div className="demo-role-stack">
-              <div className="demo-role-card">
-                <div className="demo-role-row">
-                  <span className="demo-role-initial">OP</span>
-                  <span className="demo-role-title">Ops lead</span>
-                  <span className="demo-role-pill active">Hands‑on</span>
-                </div>
-              </div>
-              <div className="demo-role-card">
-                <div className="demo-role-row">
-                  <span className="demo-role-initial">SA</span>
-                  <span className="demo-role-title">Sales lead</span>
-                  <span className="demo-role-pill active">Hands‑on</span>
-                </div>
-              </div>
-              <div className="demo-role-card">
-                <div className="demo-role-row">
-                  <span className="demo-role-initial">FI</span>
-                  <span className="demo-role-title">Finance</span>
-                  <span className="demo-role-pill">Observer</span>
-                </div>
-              </div>
-              <div className="demo-role-card">
-                <div className="demo-role-row">
-                  <span className="demo-role-initial">SU</span>
-                  <span className="demo-role-title">Support</span>
-                  <span className="demo-role-pill">Observer</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      );
+      return <CollaborativeCursorsDemo />;
     case "timeline":
       return (
         <div className="demo-window">

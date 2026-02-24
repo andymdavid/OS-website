@@ -1,0 +1,239 @@
+/* Collaborative Cursors Demo */
+
+.collab-cursors-demo {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  overflow: hidden;
+}
+
+/* Individual cursor container */
+.collab-cursor {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  pointer-events: none;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.collab-cursor-pointer {
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+}
+
+/* Name pill with avatar */
+.collab-cursor-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 12px;
+  margin-top: -2px;
+  padding: 4px 10px 4px 4px;
+  background: var(--cursor-color);
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.collab-cursor-avatar {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  color: white;
+  font-size: 9px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.02em;
+}
+
+.collab-cursor-name {
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/*
+ * Animation paths - designed to keep cursors distributed across canvas
+ * Canvas is divided into zones to prevent clustering:
+ * - Elisa: primarily left-center area
+ * - Marcus: primarily right-upper area
+ * - Sarah: primarily center-lower area
+ * Safe bounds: top 8-55%, left 8-60% (accounting for label width)
+ */
+
+/* Elisa (green) - left to center flow */
+.cursor-path-1 {
+  animation: cursor-elisa 15s infinite ease-in-out;
+  animation-delay: 0s;
+}
+
+@keyframes cursor-elisa {
+  0%, 100% {
+    top: 15%;
+    left: 8%;
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  20% {
+    top: 28%;
+    left: 18%;
+  }
+  40% {
+    top: 18%;
+    left: 32%;
+  }
+  60% {
+    top: 38%;
+    left: 22%;
+  }
+  80% {
+    top: 25%;
+    left: 12%;
+  }
+  95% {
+    opacity: 1;
+  }
+}
+
+/* Marcus (blue) - right to upper-center flow */
+.cursor-path-2 {
+  animation: cursor-marcus 17s infinite ease-in-out;
+  animation-delay: 1s;
+}
+
+@keyframes cursor-marcus {
+  0%, 100% {
+    top: 12%;
+    left: 55%;
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  25% {
+    top: 22%;
+    left: 45%;
+  }
+  45% {
+    top: 10%;
+    left: 38%;
+  }
+  65% {
+    top: 28%;
+    left: 52%;
+  }
+  85% {
+    top: 18%;
+    left: 58%;
+  }
+  95% {
+    opacity: 1;
+  }
+}
+
+/* Sarah (amber) - center-bottom area */
+.cursor-path-3 {
+  animation: cursor-sarah 13s infinite ease-in-out;
+  animation-delay: 2.5s;
+}
+
+@keyframes cursor-sarah {
+  0%, 100% {
+    top: 50%;
+    left: 35%;
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  30% {
+    top: 42%;
+    left: 48%;
+  }
+  50% {
+    top: 52%;
+    left: 28%;
+  }
+  70% {
+    top: 45%;
+    left: 42%;
+  }
+  92% {
+    opacity: 1;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .collab-cursors-demo {
+    min-height: 220px;
+  }
+
+  .collab-cursor-label {
+    padding: 3px 8px 3px 3px;
+    gap: 5px;
+  }
+
+  .collab-cursor-avatar {
+    width: 18px;
+    height: 18px;
+    font-size: 8px;
+  }
+
+  .collab-cursor-name {
+    font-size: 11px;
+  }
+
+  .collab-cursor-pointer {
+    width: 14px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .collab-cursors-demo {
+    min-height: 180px;
+  }
+
+  .collab-cursor-name {
+    font-size: 10px;
+  }
+
+  .collab-cursor-avatar {
+    width: 16px;
+    height: 16px;
+    font-size: 7px;
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .collab-cursor {
+    animation: none;
+    opacity: 1;
+  }
+
+  .cursor-path-1 {
+    top: 20%;
+    left: 12%;
+  }
+
+  .cursor-path-2 {
+    top: 15%;
+    left: 50%;
+  }
+
+  .cursor-path-3 {
+    top: 48%;
+    left: 35%;
+  }
+}
