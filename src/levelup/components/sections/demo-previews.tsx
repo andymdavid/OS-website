@@ -1,4 +1,5 @@
 import { CollaborativeCursorsDemo } from "@/speedrun/components/collaborative-cursors-demo";
+import { SessionTimelineDemo } from "@/speedrun/components/session-timeline-demo";
 
 interface DemoPreviewProps {
   demoKey: "teamRoles" | "timeline" | "kanban" | "outcomes";
@@ -9,44 +10,7 @@ export function DemoPreview({ demoKey }: DemoPreviewProps) {
     case "teamRoles":
       return <CollaborativeCursorsDemo />;
     case "timeline":
-      return (
-        <div className="demo-window">
-          <div className="demo-window-header">
-            <div className="demo-window-dots">
-              <span />
-              <span />
-              <span />
-            </div>
-            <span className="demo-window-title">Session flow</span>
-          </div>
-          <div className="demo-window-content">
-            <div className="demo-workflow">
-              <div className="demo-workflow-stage active">
-                <span className="demo-stage-label">Intro & setup</span>
-                <span className="demo-stage-status complete">15 mins</span>
-              </div>
-              <div className="demo-workflow-connector" />
-              <div className="demo-workflow-stage active">
-                <span className="demo-stage-label">Build the app</span>
-                <span className="demo-stage-status running">
-                  <span className="demo-pulse" />
-                  90 mins
-                </span>
-              </div>
-              <div className="demo-workflow-connector" />
-              <div className="demo-workflow-stage">
-                <span className="demo-stage-label">Add an agent</span>
-                <span className="demo-stage-status">45 mins</span>
-              </div>
-              <div className="demo-workflow-connector dim" />
-              <div className="demo-workflow-stage dim">
-                <span className="demo-stage-label">Review & next steps</span>
-                <span className="demo-stage-status">30 mins</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      );
+      return <SessionTimelineDemo />;
     case "kanban":
       return (
         <div className="demo-window">
