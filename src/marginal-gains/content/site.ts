@@ -289,20 +289,6 @@ export const siteContent: SiteContent = {
     {
       key: "twoColumn",
       enabled: true,
-      id: "twoColumn-8",
-      props: {
-        title: "Where Speedrun fits inside your organisation.",
-        body:
-          "Many SMEs have to make decisions about tools, risk, investment, and policy without having worked directly with the technology themselves. Speedrun closes that gap by creating shared, hands-on experience inside the business.\n\nWhen start working practically with AI, capability can begin to grow from within the business rather than being delegated externally.",
-        layout: "splitModal",
-        textAlign: "left",
-        splitModalVideoUrl: "https://www.youtube.com/embed/xVSldYWFxU8?start=3",
-        splitModalCta: { label: "Talk to Us", href: "mailto:info@otherstuff.studio" },
-      },
-    },
-    {
-      key: "twoColumn",
-      enabled: true,
       id: "twoColumn-6",
       props: {
         title: "Frequently asked questions.",
