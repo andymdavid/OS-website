@@ -161,7 +161,7 @@ export const siteContent: SiteContent = {
             number: "04",
             title: "Product Lab access",
             body: "Members gain early access to tools and workflows developed by Other Stuff, shaped by real business needs.",
-            demoKey: "outcomes",
+            demoKey: "productGraph",
           },
         ],
       },

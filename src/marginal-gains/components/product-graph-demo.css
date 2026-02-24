@@ -1,0 +1,160 @@
+/* Product Graph Demo - Knowledge graph style */
+
+.product-graph-demo {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  background: #2a2a2a;
+  overflow: hidden;
+}
+
+/* Edge lines */
+.graph-edges {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.graph-edge {
+  stroke: rgba(255, 255, 255, 0.15);
+  stroke-width: 0.4;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.graph-edge.visible {
+  opacity: 1;
+}
+
+.graph-edge.new {
+  stroke: #2ea782;
+  stroke-width: 0.5;
+}
+
+/* Nodes */
+.graph-node {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  padding: 8px 14px;
+  background: #353535;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.graph-node.visible {
+  opacity: 1;
+}
+
+.graph-node.new {
+  background: #2d3d36;
+  border-color: #2ea782;
+}
+
+.graph-node.new.visible {
+  animation: nodeAppear 0.4s ease-out;
+}
+
+@keyframes nodeAppear {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.graph-node-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  white-space: nowrap;
+}
+
+.graph-node.new .graph-node-label {
+  color: #2ea782;
+}
+
+/* New badge */
+.graph-new-badge {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  padding: 3px 8px;
+  background: #2ea782;
+  border-radius: 4px;
+  font-size: 9px;
+  font-weight: 600;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  animation: badgePop 0.3s ease-out;
+}
+
+@keyframes badgePop {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .product-graph-demo {
+    height: 240px;
+  }
+
+  .graph-node {
+    padding: 6px 12px;
+  }
+
+  .graph-node-label {
+    font-size: 10px;
+  }
+
+  .graph-new-badge {
+    font-size: 8px;
+    padding: 2px 6px;
+  }
+}
+
+@media (max-width: 600px) {
+  .product-graph-demo {
+    height: 200px;
+  }
+
+  .graph-node {
+    padding: 5px 10px;
+    border-radius: 16px;
+  }
+
+  .graph-node-label {
+    font-size: 9px;
+  }
+
+  .graph-new-badge {
+    font-size: 7px;
+    padding: 2px 5px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .graph-node,
+  .graph-edge {
+    transition: none;
+  }
+
+  .graph-node.new.visible,
+  .graph-new-badge {
+    animation: none;
+  }
+}
