@@ -243,8 +243,8 @@ export const siteContent: SiteContent = {
       enabled: true,
       id: "where-to-start",
       props: {
-        title: "Where to start.",
-        body: "Speedrun is delivered in two formats. Speedrun gets your team building a working AI-powered task app in three hours. Speedrun Applied extends that same build into a live workflow where agents begin carrying work across stages.",
+        title: "Start with Speedrun. Continue with Marginal Gains.",
+        body: "Speedrun workshops provide hands-on experience for how to start working with AI. Marginal Gains builds on that foundation by supporting your AI champions as they continue applying agents to real work over time. Together, they form a practical pathway from first exposure to sustained internal capability.",
         defaultActiveId: "speedrun",
         cards: [
           {
