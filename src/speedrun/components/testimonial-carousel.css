@@ -4,29 +4,6 @@
   width: 100%;
   overflow: hidden;
   padding: 40px 0;
-  position: relative;
-}
-
-/* Fade edges */
-.testimonial-carousel::before,
-.testimonial-carousel::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 80px;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.testimonial-carousel::before {
-  left: 0;
-  background: linear-gradient(to right, #1a1a1a, transparent);
-}
-
-.testimonial-carousel::after {
-  right: 0;
-  background: linear-gradient(to left, #1a1a1a, transparent);
 }
 
 .testimonial-track {
@@ -34,18 +11,21 @@
   gap: 24px;
   width: max-content;
   animation: scroll 40s linear infinite;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
-.testimonial-track.paused {
+.testimonial-carousel:hover .testimonial-track {
   animation-play-state: paused;
 }
 
 @keyframes scroll {
   0% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
   }
 }
 

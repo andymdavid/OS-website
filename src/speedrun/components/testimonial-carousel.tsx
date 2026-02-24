@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./testimonial-carousel.css";
 
 interface Testimonial {
@@ -13,18 +12,12 @@ interface TestimonialCarouselProps {
 }
 
 export function TestimonialCarousel({ testimonials }: TestimonialCarouselProps) {
-  const [isPaused, setIsPaused] = useState(false);
-
   // Double the testimonials for seamless loop
   const duplicatedTestimonials = [...testimonials, ...testimonials];
 
   return (
-    <div
-      className="testimonial-carousel"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-    >
-      <div className={`testimonial-track ${isPaused ? "paused" : ""}`}>
+    <div className="testimonial-carousel">
+      <div className="testimonial-track">
         {duplicatedTestimonials.map((testimonial, index) => (
           <div key={index} className="testimonial-card">
             <blockquote className="testimonial-quote">
