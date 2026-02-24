@@ -42,7 +42,7 @@
 
 .the-good-stuff-page .hero-title-block h1 {
   margin-bottom: 16px;
-  font-size: clamp(30px, 4.2vw, 56px);
+  font-size: clamp(28px, 3.8vw, 50px);
 }
 
 .the-good-stuff-page .hero-title-block .hero-bridge {
