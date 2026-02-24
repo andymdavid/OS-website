@@ -13,8 +13,7 @@ const activityItems: ActivityItem[] = [
   { id: 1, agent: "Inbox Agent", action: "completed", detail: "Sorted 12 emails", status: "success" },
   { id: 2, agent: "Report Agent", action: "started", detail: "Weekly summary", status: "running" },
   { id: 3, agent: "CRM Agent", action: "updated", detail: "3 contacts synced", status: "success" },
-  { id: 4, agent: "Slack Agent", action: "posted", detail: "Team standup reminder", status: "info" },
-  { id: 5, agent: "Report Agent", action: "completed", detail: "Weekly summary", status: "success" },
+  { id: 4, agent: "Report Agent", action: "completed", detail: "Weekly summary", status: "success" },
 ];
 
 export function AgentActivityDemo() {
@@ -56,8 +55,8 @@ export function AgentActivityDemo() {
         );
       case "running":
         return (
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" className="spinning">
-            <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4" />
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+            <path d="M3 3v18h18M7 16v-3M12 16V9M17 16v-6" />
           </svg>
         );
       case "info":
