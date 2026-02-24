@@ -181,45 +181,13 @@ export const siteContent: SiteContent = {
       },
     },
     {
-      key: "showcaseCards",
-      enabled: true,
-      id: "where-to-start",
-      props: {
-        title: "Where to start.",
-        body: "Speedrun is delivered in two formats. Speedrun gets your team building a working AI-powered task app in three hours. Speedrun Applied extends that same build into a live workflow where agents begin carrying work across stages.",
-        defaultActiveId: "speedrun",
-        cards: [
-          {
-            id: "speedrun",
-            title: "Speedrun",
-            label: "Start here",
-            emphasis: true,
-            metaTags: ["3 hours", "In-person", "Small groups"],
-            description:
-              "In this session, you build a simple Kanban-style task app from scratch using AI coding agents. You connect it to an AI agent yourself and see how your instructions become working features in real time.",
-            cta: { label: "Talk to Us", href: "mailto:info@otherstuff.studio" },
-          },
-          {
-            id: "speedrun-applied",
-            title: "Speedrun Applied",
-            label: "Go Deeper",
-            metaTags: ["3 Hours", "In-person", "Small groups"],
-            description:
-              "This session takes the app built in Speedrun and extends it into a simple operational workflow. AI agents begin carrying work forward across defined stages, following rules and triggers you set.",
-            cta: { label: "Learn more", href: "mailto:info@otherstuff.studio" },
-            secondaryNote: "Available to teams who have completed Speedrun",
-          },
-        ],
-      },
-    },
-    {
       key: "twoColumn",
       enabled: true,
       id: "twoColumn-5",
       props: {
-        title: "What your team leaves with.",
+        title: "Marginal Gains is designed for teams committed to building internal AI capability.",
         body:
-          "Speedrun is designed to move your team from exposure to action. By the end of the session, you have built a working app and understand enough to continue building with confidence.",
+          "This community is suited to businesses who want to develop internal AI champions rather than outsource capability. It works best when a small, cross-functional group is willing to apply agents to real work each month and gradually strengthen capability from within.",
         singleColumn: true,
         fullHeight: true,
         levelUpCardsLayout: "flat",
@@ -266,6 +234,38 @@ export const siteContent: SiteContent = {
             primaryTag: "Outcome",
             secondaryTag: "Strategy",
             summaryItems: [],
+          },
+        ],
+      },
+    },
+    {
+      key: "showcaseCards",
+      enabled: true,
+      id: "where-to-start",
+      props: {
+        title: "Where to start.",
+        body: "Speedrun is delivered in two formats. Speedrun gets your team building a working AI-powered task app in three hours. Speedrun Applied extends that same build into a live workflow where agents begin carrying work across stages.",
+        defaultActiveId: "speedrun",
+        cards: [
+          {
+            id: "speedrun",
+            title: "Speedrun",
+            label: "Start here",
+            emphasis: true,
+            metaTags: ["3 hours", "In-person", "Small groups"],
+            description:
+              "In this session, you build a simple Kanban-style task app from scratch using AI coding agents. You connect it to an AI agent yourself and see how your instructions become working features in real time.",
+            cta: { label: "Talk to Us", href: "mailto:info@otherstuff.studio" },
+          },
+          {
+            id: "speedrun-applied",
+            title: "Speedrun Applied",
+            label: "Go Deeper",
+            metaTags: ["3 Hours", "In-person", "Small groups"],
+            description:
+              "This session takes the app built in Speedrun and extends it into a simple operational workflow. AI agents begin carrying work forward across defined stages, following rules and triggers you set.",
+            cta: { label: "Learn more", href: "mailto:info@otherstuff.studio" },
+            secondaryNote: "Available to teams who have completed Speedrun",
           },
         ],
       },
