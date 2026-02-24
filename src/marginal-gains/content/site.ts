@@ -123,9 +123,9 @@ export const siteContent: SiteContent = {
       enabled: true,
       id: "twoColumn",
       props: {
-        title: "Speedrun at a glance.",
+        title: "A structured environment for ongoing AI capability development.",
         body:
-          "Every Speedrun session follows the same hands-on format. You'll work directly with AI agents to build practical tools from the beginning, and by the end you'll have firsthand experience with what AI can actually do.",
+          "Marginal Gains runs as a guided, ongoing program designed to support internal AI champions as they build, apply, and refine AI systems inside their business. Each month combines hands-on building, shared problem-solving, and access to practical tools that can be deployed directly into day-to-day work.",
         singleColumn: true,
         maxWidth: "wide",
         blocksVariant: "expandable",
@@ -139,26 +139,26 @@ export const siteContent: SiteContent = {
         blocks: [
           {
             number: "01",
-            title: "Who should attend",
-            body: "Speedrun is for SME operators and team leads who need to understand what AI can do for their business - no technical background required.",
+            title: "Monthly working sessions",
+            body: "Members bring real business problems. Together we design, build, and refine practical agents and workflows.",
             demoKey: "teamRoles",
           },
           {
             number: "02",
-            title: "Session structure",
-            body: "Speedrun is a 3-hour, guided, hands-on workshop, delivered in small groups with facilitation and support provided throughout.",
+            title: "Access to Wingman",
+            body: "Members deploy and manage agents using our open-source agent management system, ensuring capability translates into real operational use.",
             demoKey: "timeline",
           },
           {
             number: "03",
-            title: "What you'll build",
-            body: "Participants build a working Kanban-style task tool and connect an AI agent that tracks and summarises work as it changes.",
+            title: "Shared learning",
+            body: "Results, failures, and refinements are shared across the group, accelerating understanding and reducing isolated trial and error.",
             demoKey: "kanban",
           },
           {
             number: "04",
-            title: "What you leave with",
-            body: "You leave with a working tool you've built yourself and clarity about what's possible when you apply AI to your own business context.",
+            title: "Product Lab access",
+            body: "Members gain early access to tools and workflows developed by Other Stuff, shaped by real business needs.",
             demoKey: "outcomes",
           },
         ],
