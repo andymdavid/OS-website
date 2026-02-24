@@ -4,17 +4,19 @@
   align-items: center;
 }
 
+.the-good-stuff-page .hero-title-block {
+  transform: translateY(16px);
+}
+
 .the-good-stuff-page .good-stuff-hero-inner {
   display: flex;
-  justify-content: flex-start;
-  padding-left: clamp(32px, 6vw, 120px);
-  padding-right: clamp(32px, 6vw, 120px);
+  justify-content: center;
 }
 
 .the-good-stuff-page .hero-title-block {
-  text-align: left;
+  text-align: center;
   margin-top: 0;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .the-good-stuff-page .good-stuff-blank {
