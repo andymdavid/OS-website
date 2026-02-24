@@ -298,6 +298,13 @@ export function TwoColumn({
     );
   };
 
+  const renderTitle = () =>
+    title.split("\n").map((line, index) => (
+      <span key={`${line}-${index}`} className="block">
+        {line}
+      </span>
+    ));
+
   // Split layout: 50/50 with content left, image right
   if (layout === "split") {
     return (
@@ -311,7 +318,7 @@ export function TwoColumn({
             className={`flex flex-col justify-center px-8 md:px-16 lg:px-24 py-16 two-column-split-left ${splitReverse ? "md:order-2" : "md:order-1"}`}
           >
             <h2 className="font-anton text-[40px] tracking-tight leading-tight">
-              {title}
+              {renderTitle()}
             </h2>
             {renderSplitParagraphs()}
             {splitModalCta ? (
@@ -618,7 +625,7 @@ export function TwoColumn({
                 isCentered ? "text-center" : "text-left"
               }`}
             >
-              {title}
+              {renderTitle()}
             </h2>
           ) : null}
           {(() => {
