@@ -244,7 +244,7 @@ export const siteContent: SiteContent = {
       id: "where-to-start",
       props: {
         title: "Marginal Gains builds on the\nfoundations created in Speedrun.",
-        body: "Speedrun workshops provide hands-on experience for how to start working with AI. Marginal Gains builds on that foundation by supporting your AI champions as they continue applying agents to real work over time. Together, they form a practical pathway from first exposure to sustained internal capability.",
+        body: "Speedrun workshops provide hands-on experience for how to start working with AI. Marginal Gains builds on that foundation by supporting your AI champions as they continue applying agents to real work over time.",
         defaultActiveId: "speedrun",
         cards: [
           {
