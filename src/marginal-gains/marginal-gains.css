@@ -220,10 +220,17 @@
 }
 
 .marginal-gains-page #twoColumn-2 p {
-  max-width: 46rem;
+  max-width: 44rem;
   margin-left: auto;
   margin-right: auto;
   text-align: left;
+}
+
+.marginal-gains-page #twoColumn-2 .section-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .marginal-gains-page .speedrun-levelup-card .levelup-card-tag-primary {
