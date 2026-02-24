@@ -243,9 +243,9 @@ export const siteContent: SiteContent = {
       enabled: true,
       id: "mg-blank-2",
       props: {
-        title: "",
-        body: "",
-        hideTitle: true,
+        title: "What participation looks like month to month",
+        body:
+          "Marginal Gains runs as a structured, ongoing program. A small group from your team participates in monthly working sessions, applies agents to real business problems between sessions, and shares progress and learning back into the organisation. Capability develops through repeated use, not passive attendance.",
         layout: "split",
         maxWidth: "wide",
         fullHeight: true,
