@@ -604,6 +604,7 @@ export function TwoColumn({
 
   return (
     <Section id={anchorId || id} className={`${fullHeight ? "min-h-screen" : "min-h-[75vh]"} flex items-center`}>
+      <div className={`w-full ${testimonials && testimonials.length > 0 ? "flex flex-col justify-center" : ""}`}>
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 16 }}
@@ -975,6 +976,7 @@ export function TwoColumn({
       {testimonials && testimonials.length > 0 && (
         <TestimonialCarousel testimonials={testimonials} />
       )}
+      </div>
     </Section>
   );
 }
