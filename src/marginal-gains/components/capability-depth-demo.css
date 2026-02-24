@@ -1,0 +1,222 @@
+/* Capability Depth Demo - Shows agent growing more capable over time */
+
+.capability-depth-demo {
+  width: 100%;
+  height: 280px;
+  background: transparent;
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Header */
+.depth-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.depth-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: rgba(46, 167, 130, 0.15);
+  border-radius: 6px;
+  color: #2ea782;
+}
+
+.depth-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.depth-phase {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 500;
+  color: #2ea782;
+  background: rgba(46, 167, 130, 0.12);
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+/* Steps list */
+.depth-steps {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.depth-step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: #353535;
+  border-radius: 8px;
+  animation: stepSlideIn 0.3s ease-out both;
+}
+
+@keyframes stepSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.depth-step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: rgba(46, 167, 130, 0.15);
+  border-radius: 50%;
+  color: #2ea782;
+  flex-shrink: 0;
+}
+
+.depth-step-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Progress indicator */
+.depth-progress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 8px;
+}
+
+.depth-progress-bar {
+  flex: 1;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.depth-progress-fill {
+  height: 100%;
+  background: #2ea782;
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.depth-progress-label {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  white-space: nowrap;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .capability-depth-demo {
+    height: 240px;
+    padding: 16px 20px;
+    gap: 12px;
+  }
+
+  .depth-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .depth-icon svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .depth-title {
+    font-size: 13px;
+  }
+
+  .depth-phase {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+
+  .depth-steps {
+    gap: 6px;
+  }
+
+  .depth-step {
+    padding: 8px 10px;
+    gap: 8px;
+  }
+
+  .depth-step-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .depth-step-icon svg {
+    width: 8px;
+    height: 8px;
+  }
+
+  .depth-step-label {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 600px) {
+  .capability-depth-demo {
+    height: 200px;
+    padding: 14px 16px;
+  }
+
+  .depth-header {
+    gap: 8px;
+  }
+
+  .depth-icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .depth-title {
+    font-size: 12px;
+  }
+
+  .depth-step {
+    padding: 7px 9px;
+    border-radius: 6px;
+  }
+
+  .depth-step-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .depth-step-label {
+    font-size: 10px;
+  }
+
+  .depth-progress-label {
+    font-size: 9px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .depth-step {
+    animation: none;
+  }
+
+  .depth-progress-fill {
+    transition: none;
+  }
+}
