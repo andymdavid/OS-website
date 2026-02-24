@@ -38,36 +38,39 @@ export function KanbanMoveDemo() {
     return () => clearTimeout(timeoutId);
   }, []);
 
-  // Reset to idle state on new cycle
-  const currentPhase = phase;
-  const isDragging = currentPhase === "dragging" || currentPhase === "dropped" || currentPhase === "settled";
-  const isLifted = currentPhase === "lifting" || currentPhase === "dragging";
-  const hasLanded = currentPhase === "dropped" || currentPhase === "settled";
+  // Determine animation states
+  const isIdle = phase === "idle";
+  const isLifted = phase === "lifting" || phase === "dragging";
+  const isMoving = phase === "dragging";
+  const hasLanded = phase === "dropped" || phase === "settled";
+  const cardHasMoved = phase === "dragging" || phase === "dropped" || phase === "settled";
 
   return (
     <div className="kanban-move-demo" key={cycle}>
-      {/* The dragging card - positioned absolutely */}
-      <div
-        className={`km-drag-card ${isLifted ? "lifted" : ""} ${currentPhase === "dragging" ? "moving" : ""} ${hasLanded ? "landed" : ""}`}
-      >
-        <span className="km-card-title">Weekly summary</span>
-        <span className="km-card-tag agent">Agent</span>
-      </div>
+      {/* The dragging card - positioned absolutely, hidden in idle */}
+      {!isIdle && (
+        <div
+          className={`km-drag-card ${isLifted ? "lifted" : ""} ${isMoving ? "moving" : ""} ${hasLanded ? "landed" : ""}`}
+        >
+          <span className="km-card-title">Weekly summary</span>
+          <span className="km-card-tag agent">Agent</span>
+        </div>
+      )}
 
       {/* In Progress Column */}
       <div className="km-column">
         <div className="km-column-header">
           <span className="km-column-title">In Progress</span>
-          <span className="km-column-count">{isDragging ? 1 : 2}</span>
+          <span className="km-column-count">{cardHasMoved ? 1 : 2}</span>
         </div>
         <div className="km-column-cards">
-          {/* Ghost placeholder for the dragging card */}
-          <div className={`km-card km-card-ghost ${isLifted || isDragging ? "hidden" : ""}`}>
+          {/* Ghost placeholder - visible only in idle, hidden once lifting starts */}
+          <div className={`km-card km-card-ghost ${!isIdle ? "hidden" : ""}`}>
             <span className="km-card-title">Weekly summary</span>
             <span className="km-card-tag agent">Agent</span>
           </div>
           {/* Review quotes - shifts up when card is dragged */}
-          <div className={`km-card km-card-shifter ${isDragging ? "shifted" : ""}`}>
+          <div className={`km-card km-card-shifter ${cardHasMoved ? "shifted" : ""}`}>
             <span className="km-card-title">Review quotes</span>
             <span className="km-card-tag">Ops</span>
           </div>
