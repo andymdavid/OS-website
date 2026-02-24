@@ -5,8 +5,10 @@
 }
 
 .the-good-stuff-page .good-stuff-hero.section {
-  padding-top: 0;
-  padding-bottom: 0;
+  min-height: 60vh;
+  height: 60vh;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 .the-good-stuff-page .hero-title-block {
@@ -29,8 +31,8 @@
 }
 
 .the-good-stuff-page .good-stuff-blank.section {
-  padding-top: 12px;
-  padding-bottom: 64px;
+  padding-top: 12px !important;
+  padding-bottom: 64px !important;
 }
 
 .the-good-stuff-page .section::after {
