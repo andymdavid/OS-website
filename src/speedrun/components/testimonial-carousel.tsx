@@ -51,17 +51,16 @@ export function TestimonialCarousel({ testimonials }: TestimonialCarouselProps) 
     }
 
     const speed = 40; // px per second
+    const maxDelta = 0.05;
 
     const animate = (time: number) => {
       if (!lastTime) lastTime = time;
-      const delta = (time - lastTime) / 1000;
+      const delta = Math.min((time - lastTime) / 1000, maxDelta);
       lastTime = time;
 
       if (!pausedRef.current && loopWidth > 0) {
-        offset -= speed * delta;
-        if (Math.abs(offset) >= loopWidth) {
-          offset += loopWidth;
-        }
+        offset = (offset - speed * delta) % loopWidth;
+        if (offset > 0) offset -= loopWidth;
         track.style.transform = `translate3d(${offset}px, 0, 0)`;
       }
 
