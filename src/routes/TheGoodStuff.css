@@ -11,6 +11,7 @@
 
 .the-good-stuff-page .hero-title-block {
   text-align: center;
+  margin-top: 0;
 }
 
 .the-good-stuff-page .good-stuff-blank {
@@ -20,4 +21,16 @@
 .the-good-stuff-page .section::after {
   left: 0;
   right: 0;
+}
+
+.the-good-stuff-page .hero-title-block h1 {
+  margin-bottom: 16px;
+}
+
+.the-good-stuff-page .hero-title-block .hero-bridge {
+  margin-top: 8px;
+}
+
+.the-good-stuff-page .hero-cta {
+  margin-top: 24px;
 }
