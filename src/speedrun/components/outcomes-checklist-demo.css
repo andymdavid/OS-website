@@ -1,0 +1,151 @@
+/* Outcomes Checklist Demo - Dark themed */
+
+.outcomes-checklist-demo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 280px;
+  padding: 20px;
+}
+
+.outcomes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 240px;
+}
+
+.outcomes-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+}
+
+.outcomes-item.checked {
+  border-color: rgba(46, 167, 130, 0.3);
+}
+
+/* Unchecked state */
+.outcomes-checkbox {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: white;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Checked state */
+.outcomes-checkbox.checked {
+  background: #2ea782;
+  border-color: #2ea782;
+  animation: checkPop 0.3s ease;
+}
+
+@keyframes checkPop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.outcomes-text {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.3;
+  transition: color 0.3s ease;
+}
+
+.outcomes-item.checked .outcomes-text {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .outcomes-checklist-demo {
+    height: 240px;
+    padding: 16px;
+  }
+
+  .outcomes-list {
+    max-width: 220px;
+    gap: 10px;
+  }
+
+  .outcomes-item {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+
+  .outcomes-checkbox {
+    width: 18px;
+    height: 18px;
+  }
+
+  .outcomes-checkbox svg {
+    width: 9px;
+    height: 7px;
+  }
+
+  .outcomes-text {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .outcomes-checklist-demo {
+    height: 200px;
+    padding: 12px;
+  }
+
+  .outcomes-list {
+    max-width: 200px;
+    gap: 8px;
+  }
+
+  .outcomes-item {
+    padding: 8px 10px;
+    gap: 8px;
+    border-radius: 5px;
+  }
+
+  .outcomes-checkbox {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+  }
+
+  .outcomes-checkbox svg {
+    width: 8px;
+    height: 6px;
+  }
+
+  .outcomes-text {
+    font-size: 11px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .outcomes-checkbox {
+    transition: none;
+    animation: none;
+  }
+
+  .outcomes-item,
+  .outcomes-text {
+    transition: none;
+  }
+}
