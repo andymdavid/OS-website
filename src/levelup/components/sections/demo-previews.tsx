@@ -2,9 +2,10 @@ import { CollaborativeCursorsDemo } from "@/speedrun/components/collaborative-cu
 import { SessionTimelineDemo } from "@/speedrun/components/session-timeline-demo";
 import { KanbanMoveDemo } from "@/speedrun/components/kanban-move-demo";
 import { OutcomesChecklistDemo } from "@/speedrun/components/outcomes-checklist-demo";
+import { WorkflowBuilderDemo } from "@/marginal-gains/components/workflow-builder-demo";
 
 interface DemoPreviewProps {
-  demoKey: "teamRoles" | "timeline" | "kanban" | "outcomes";
+  demoKey: "teamRoles" | "timeline" | "kanban" | "outcomes" | "workflowBuilder";
 }
 
 export function DemoPreview({ demoKey }: DemoPreviewProps) {
@@ -17,6 +18,8 @@ export function DemoPreview({ demoKey }: DemoPreviewProps) {
       return <KanbanMoveDemo />;
     case "outcomes":
       return <OutcomesChecklistDemo />;
+    case "workflowBuilder":
+      return <WorkflowBuilderDemo />;
     default:
       return null;
   }

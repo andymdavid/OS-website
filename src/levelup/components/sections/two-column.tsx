@@ -81,7 +81,7 @@ interface TwoColumnProps {
     image?: string;
     imageAlt?: string;
     video?: string;
-    demoKey?: "teamRoles" | "timeline" | "kanban" | "outcomes";
+    demoKey?: "teamRoles" | "timeline" | "kanban" | "outcomes" | "workflowBuilder";
   }>;
   levelUpCards?: LevelUpCard[];
   levelUpCardsLayout?: "staggered" | "flat";

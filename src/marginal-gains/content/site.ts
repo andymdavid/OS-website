@@ -143,7 +143,7 @@ export const siteContent: SiteContent = {
             number: "01",
             title: "Monthly working sessions",
             body: "Members bring real business problems. Together we design, build, and refine practical agents and workflows.",
-            demoKey: "teamRoles",
+            demoKey: "workflowBuilder",
           },
           {
             number: "02",
