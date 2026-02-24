@@ -13,7 +13,7 @@ export default function TheGoodStuff() {
             <div className="hero-title-block">
               <h1>The Good Stuff is a low-fi dialogue with Pete Winn and Andy David.</h1>
               <p className="hero-bridge">
-                A podcast exploring how AI is changing the rules of work, business, entrepreneurship, the economy and human potential.
+                A podcast exploring our everyday experiences working with artificial intelligence, and how it's changing the rules of work, business, entrepreneurship, the economy and human potential.
               </p>
               <div className="hero-cta">
                 <Button

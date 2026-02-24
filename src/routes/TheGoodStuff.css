@@ -7,6 +7,8 @@
 .the-good-stuff-page .good-stuff-hero-inner {
   display: flex;
   justify-content: flex-start;
+  padding-left: clamp(32px, 6vw, 120px);
+  padding-right: clamp(32px, 6vw, 120px);
 }
 
 .the-good-stuff-page .hero-title-block {
