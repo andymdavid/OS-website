@@ -210,7 +210,7 @@ export const siteContent: SiteContent = {
             number: "02",
             title: "Developing AI Champions",
             description:
-              "A small, cross-functional group commits to building experience over time so practical AI capability strengthens inside the organisation rather than relying on external providers.",
+              "A cross-functional team building experience over time so practical AI capability strengthens inside the organisation rather than relying on external providers.",
             primaryTag: "Outcome",
             secondaryTag: "Agents",
             summaryItems: [],
