@@ -28,8 +28,11 @@ const edges: Edge[] = [
   { from: "inventory", to: "crm" },
   { from: "orders", to: "reports" },
   { from: "crm", to: "reports" },
+  { from: "orders", to: "crm" },
+  { from: "inventory", to: "reports" },
   { from: "reports", to: "alerts", isNew: true },
   { from: "crm", to: "alerts", isNew: true },
+  { from: "inventory", to: "alerts", isNew: true },
 ];
 
 export function ProductGraphDemo() {
