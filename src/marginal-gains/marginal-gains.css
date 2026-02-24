@@ -80,6 +80,22 @@
   max-width: 40rem;
 }
 
+.marginal-gains-page .showcase-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: clamp(96px, 12vw, 180px);
+  padding-bottom: clamp(40px, 6vw, 80px);
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+  max-width: 100%;
+}
+
+.marginal-gains-page .showcase-header {
+  margin-bottom: 32px;
+}
+
 .marginal-gains-page .speedrun-card {
   border-radius: 4px !important;
   background: rgba(240, 240, 240, 0.05) !important;
