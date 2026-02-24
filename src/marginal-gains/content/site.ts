@@ -76,9 +76,9 @@ export const siteContent: SiteContent = {
       variant: "homeStyle",
       props: {
         variant: "homeStyle",
-        title: "Where your key people become AI Champions",
+        title: "Where your key people become AI Champions.",
         subtitle:
-          "Speedrun is a hands-on workshop where teams learn how to use AI effectively by building practical tools with AI agents. No coding experience required.",
+          "Marginal Gains is a community for teams who want to build practical AI capability inside their business. Members work hands-on with agents and real workflows that support day-to-day work, with structured guidance, shared learning, and ongoing support to help that capability deepen over time.",
         subtitleMaxWidth: "65ch",
         centerContent: true,
         ctaPrimary: { label: "Talk to Us", href: "mailto:info@otherstuff.studio" },
