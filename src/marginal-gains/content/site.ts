@@ -107,6 +107,21 @@ export const siteContent: SiteContent = {
     {
       key: "twoColumn",
       enabled: true,
+      id: "twoColumn-2",
+      props: {
+        title: "Internal AI capability doesn’t form in a single workshop.",
+        body:
+          "Most businesses know they should be doing more with AI and automation, but they don’t know where to start, what to connect, or how to turn ideas into something real. Progress often remains stuck at research, demos, or random experiments.\n\nSpeedrun exists to help people move from wanting to use AI in their business to actually building with it and compresses that gap into short, focused workshops. In a few hours, participants work hands-on with AI agents to build practical tools and workflows that reflect how their business operates.",
+        layout: "split",
+        maxWidth: "wide",
+        fullHeight: true,
+        textAlign: "left",
+        splitRightEmpty: true,
+      },
+    },
+    {
+      key: "twoColumn",
+      enabled: true,
       id: "twoColumn",
       props: {
         title: "Speedrun at a glance.",
@@ -148,21 +163,6 @@ export const siteContent: SiteContent = {
             demoKey: "outcomes",
           },
         ],
-      },
-    },
-    {
-      key: "twoColumn",
-      enabled: true,
-      id: "twoColumn-2",
-      props: {
-        title: "Why Speedrun exists.",
-        body:
-          "Most businesses know they should be doing more with AI and automation, but they don’t know where to start, what to connect, or how to turn ideas into something real. Progress often remains stuck at research, demos, or random experiments.\n\nSpeedrun exists to help people move from wanting to use AI in their business to actually building with it and compresses that gap into short, focused workshops. In a few hours, participants work hands-on with AI agents to build practical tools and workflows that reflect how their business operates.",
-        layout: "split",
-        fullHeight: true,
-        textAlign: "left",
-        maxWidth: "wide",
-        splitRightEmpty: true,
       },
     },
     {
