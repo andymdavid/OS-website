@@ -243,12 +243,13 @@ export const siteContent: SiteContent = {
       enabled: true,
       id: "mg-blank-2",
       props: {
-        title: "What participation looks like month to month",
+        title: "What your Marginal Gains membership looks like month to month.",
         body:
-          "Marginal Gains runs as a structured, ongoing program. A small group from your team participates in monthly working sessions, applies agents to real business problems between sessions, and shares progress and learning back into the organisation. Capability develops through repeated use, not passive attendance.",
+          "Selected members of your team are onboarded into the Marginal Gains community with the aim of becoming AI Champions inside your business.\n\nEach month they will participate in monthly online working sessions, supported by periodic in-person gatherings that deepen collaboration and momentum.\n\nBetween sessions, members apply agents and workflows to real business problems using Wingman, with direct support and optional peer exchange to help refine and strengthen what they’re building.\n\nParticipants receive practical guidance, shared problem-solving, and access to Wingman and other tools that emerge out of our Product Lab, so what you build can be deployed directly into day-to-day work.\n\nThe emphasis is on consistent application, not theory. Over time, capability strengthens through repeated use, shared learning, and small improvements that compound.",
         layout: "split",
         maxWidth: "wide",
         fullHeight: true,
+        splitModalCta: { label: "Talk to Us", href: "mailto:info@otherstuff.studio" },
         splitRightEmpty: true,
       },
     },
