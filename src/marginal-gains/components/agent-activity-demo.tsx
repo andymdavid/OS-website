@@ -71,13 +71,6 @@ export function AgentActivityDemo() {
 
   return (
     <div className="agent-activity-demo" key={cycle}>
-      <div className="activity-header">
-        <span className="activity-title">Agent Activity</span>
-        <span className="activity-status">
-          <span className="status-dot" />
-          Live
-        </span>
-      </div>
       <div className="activity-feed">
         {activityItems.slice(0, visibleCount).map((item, index) => (
           <div
