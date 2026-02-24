@@ -26,9 +26,9 @@ export default function TheGoodStuff() {
               <div className="hero-cta">
                 <Button
                   variant="primary"
-                  onClick={() => (window.location.href = "mailto:info@otherstuff.studio")}
+                  onClick={() => (window.location.href = "https://www.youtube.com/@OtherStuffAI")}
                 >
-                  Talk to Us
+                  Explore the Pod
                 </Button>
               </div>
             </div>
