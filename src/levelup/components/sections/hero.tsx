@@ -9,6 +9,7 @@ import { ArrowRight } from "lucide-react";
 import "@/components/Hero.css";
 
 interface HeroProps {
+  id?: string;
   badge?: string;
   title: string;
   subtitle: string;
@@ -31,6 +32,7 @@ interface HeroProps {
 }
 
 export function Hero({
+  id,
   badge,
   title,
   subtitle,
@@ -51,6 +53,7 @@ export function Hero({
 
   return (
     <Section
+      id={id}
       className={`!py-0 min-h-screen flex items-center justify-center ${
         variant === "homeStyle" ? "speedrun-hero" : ""
       }`}
