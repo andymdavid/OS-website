@@ -31,6 +31,12 @@ export function AnimatedShowcaseCards({
   cards,
   defaultActiveId,
 }: AnimatedShowcaseCardsProps) {
+  const renderTitle = (value: string) =>
+    value.split("\n").map((line, index) => (
+      <span key={`${line}-${index}`} className="block">
+        {line}
+      </span>
+    ));
   // Ensure we always have an active card - default to first card if no defaultActiveId
   const initialActiveId = defaultActiveId || cards[0]?.id || "speedrun";
   const [activeId, setActiveId] = useState<string>(initialActiveId);
@@ -45,7 +51,7 @@ export function AnimatedShowcaseCards({
   return (
     <section className="showcase-section">
       <div className="showcase-header">
-        <h2 className="showcase-title">{title}</h2>
+        <h2 className="showcase-title">{renderTitle(title)}</h2>
         <p className="showcase-body">{body}</p>
       </div>
 
