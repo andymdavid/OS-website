@@ -9,6 +9,7 @@
   padding: 16px;
   align-items: flex-start;
   justify-content: center;
+  position: relative;
 }
 
 /* Column */
@@ -55,13 +56,12 @@
   position: relative;
 }
 
-/* Task card */
+/* Base task card */
 .km-card {
   padding: 10px;
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 6px;
-  transition: all 0.3s ease;
 }
 
 .km-card.done {
@@ -100,45 +100,75 @@
   color: #2ea782;
 }
 
-/* Moving card animation */
-.km-card-moving {
-  position: relative;
-  z-index: 10;
-  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.km-card-moving.moved {
-  opacity: 0;
-  transform: translateX(20px);
-  pointer-events: none;
-}
-
-/* Placeholder in done column for the arriving card */
-.km-card-placeholder {
-  height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.km-card-placeholder.visible {
-  height: auto;
+/* The dragging card - positioned absolutely */
+.km-drag-card {
+  position: absolute;
+  top: 53px; /* Below header */
+  left: calc(50% - 160px - 6px); /* Start in left column */
+  width: 160px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  z-index: 100;
   opacity: 1;
+  transform: scale(1);
+  transition: none;
 }
 
-.km-card-placeholder .km-card {
-  animation: card-arrive 0.5s ease-out forwards;
+.km-drag-card.lifted {
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(46, 167, 130, 0.3);
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out, background 0.2s ease;
 }
 
-@keyframes card-arrive {
-  0% {
-    opacity: 0;
-    transform: translateX(-20px) scale(0.95);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-  }
+.km-drag-card.moving {
+  left: calc(50% + 6px); /* Move to right column */
+  transform: scale(1.03);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(46, 167, 130, 0.3);
+  transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s ease-out;
+}
+
+.km-drag-card.landed {
+  left: calc(50% + 6px);
+  transform: scale(1);
+  box-shadow: none;
+  background: rgba(46, 167, 130, 0.12);
+  border-color: rgba(46, 167, 130, 0.25);
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out, background 0.2s ease;
+}
+
+/* Ghost card - the original position placeholder */
+.km-card-ghost {
+  opacity: 1;
+  transition: opacity 0.15s ease;
+}
+
+.km-card-ghost.hidden {
+  opacity: 0;
+}
+
+/* Card that shifts up */
+.km-card-shifter {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.km-card-shifter.shifted {
+  transform: translateY(calc(-100% - 6px));
+}
+
+/* Landing space in done column */
+.km-card-landing {
+  height: 0;
+  transition: height 0.3s ease-out;
+}
+
+.km-card-landing.visible {
+  height: 58px; /* Match card height */
 }
 
 /* Responsive */
@@ -150,10 +180,11 @@
   }
 
   .km-column {
-    max-width: 140px;
+    max-width: 130px;
   }
 
-  .km-card {
+  .km-card,
+  .km-drag-card {
     padding: 8px;
   }
 
@@ -170,6 +201,21 @@
   .km-column-title {
     font-size: 10px;
   }
+
+  .km-drag-card {
+    width: 130px;
+    left: calc(50% - 130px - 5px);
+    top: 49px;
+  }
+
+  .km-drag-card.moving,
+  .km-drag-card.landed {
+    left: calc(50% + 5px);
+  }
+
+  .km-card-landing.visible {
+    height: 52px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -180,7 +226,7 @@
   }
 
   .km-column {
-    max-width: 120px;
+    max-width: 110px;
     gap: 6px;
   }
 
@@ -188,7 +234,8 @@
     padding-bottom: 6px;
   }
 
-  .km-card {
+  .km-card,
+  .km-drag-card {
     padding: 7px;
     border-radius: 5px;
   }
@@ -215,27 +262,39 @@
   .km-column-cards {
     gap: 5px;
   }
+
+  .km-drag-card {
+    width: 110px;
+    left: calc(50% - 110px - 4px);
+    top: 45px;
+  }
+
+  .km-drag-card.moving,
+  .km-drag-card.landed {
+    left: calc(50% + 4px);
+  }
+
+  .km-card-landing.visible {
+    height: 46px;
+  }
+
+  .km-card-shifter.shifted {
+    transform: translateY(calc(-100% - 5px));
+  }
 }
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .km-card-moving,
-  .km-card-placeholder,
-  .km-card-placeholder .km-card {
+  .km-drag-card,
+  .km-card-shifter,
+  .km-card-ghost,
+  .km-card-landing {
     transition: none;
-    animation: none;
   }
 
-  .km-card-moving.moved {
-    opacity: 0;
-  }
-
-  .km-card-placeholder.visible {
-    opacity: 1;
-  }
-
-  .km-card-placeholder.visible .km-card {
-    opacity: 1;
-    transform: none;
+  .km-drag-card.lifted,
+  .km-drag-card.moving {
+    transform: scale(1);
+    box-shadow: none;
   }
 }

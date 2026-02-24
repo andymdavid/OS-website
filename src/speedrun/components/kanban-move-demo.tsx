@@ -1,30 +1,19 @@
 import { useState, useEffect } from "react";
 import "./kanban-move-demo.css";
 
-interface Task {
-  id: string;
-  title: string;
-  tag: string;
-}
-
-const inProgressTasks: Task[] = [
-  { id: "task-1", title: "Weekly summary", tag: "Agent" },
-  { id: "task-2", title: "Review quotes", tag: "Ops" },
-];
-
-const doneTasks: Task[] = [
-  { id: "task-3", title: "Send invoices", tag: "Finance" },
-];
+type Phase = "idle" | "lifting" | "dragging" | "dropped" | "settled";
 
 export function KanbanMoveDemo() {
-  const [phase, setPhase] = useState<"idle" | "moving" | "done">("idle");
+  const [phase, setPhase] = useState<Phase>("idle");
   const [cycle, setCycle] = useState(0);
 
   useEffect(() => {
-    const timeline = [
-      { phase: "idle" as const, duration: 3000 },
-      { phase: "moving" as const, duration: 800 },
-      { phase: "done" as const, duration: 4000 },
+    const timeline: { phase: Phase; duration: number }[] = [
+      { phase: "idle", duration: 2500 },
+      { phase: "lifting", duration: 300 },
+      { phase: "dragging", duration: 600 },
+      { phase: "dropped", duration: 300 },
+      { phase: "settled", duration: 3000 },
     ];
 
     let timeoutId: ReturnType<typeof setTimeout>;
@@ -44,32 +33,43 @@ export function KanbanMoveDemo() {
       }, step.duration);
     };
 
-    // Initial delay before starting
-    timeoutId = setTimeout(runStep, 1000);
+    timeoutId = setTimeout(runStep, 800);
 
     return () => clearTimeout(timeoutId);
   }, []);
 
-  const isTaskMoving = phase === "moving" || phase === "done";
+  // Reset to idle state on new cycle
+  const currentPhase = phase;
+  const isDragging = currentPhase === "dragging" || currentPhase === "dropped" || currentPhase === "settled";
+  const isLifted = currentPhase === "lifting" || currentPhase === "dragging";
+  const hasLanded = currentPhase === "dropped" || currentPhase === "settled";
 
   return (
     <div className="kanban-move-demo" key={cycle}>
+      {/* The dragging card - positioned absolutely */}
+      <div
+        className={`km-drag-card ${isLifted ? "lifted" : ""} ${currentPhase === "dragging" ? "moving" : ""} ${hasLanded ? "landed" : ""}`}
+      >
+        <span className="km-card-title">Weekly summary</span>
+        <span className="km-card-tag agent">Agent</span>
+      </div>
+
       {/* In Progress Column */}
       <div className="km-column">
         <div className="km-column-header">
           <span className="km-column-title">In Progress</span>
-          <span className="km-column-count">{isTaskMoving ? 1 : 2}</span>
+          <span className="km-column-count">{isDragging ? 1 : 2}</span>
         </div>
         <div className="km-column-cards">
-          {/* The moving task */}
-          <div className={`km-card km-card-moving ${isTaskMoving ? "moved" : ""}`}>
-            <span className="km-card-title">{inProgressTasks[0].title}</span>
-            <span className="km-card-tag agent">{inProgressTasks[0].tag}</span>
+          {/* Ghost placeholder for the dragging card */}
+          <div className={`km-card km-card-ghost ${isLifted || isDragging ? "hidden" : ""}`}>
+            <span className="km-card-title">Weekly summary</span>
+            <span className="km-card-tag agent">Agent</span>
           </div>
-          {/* Static task */}
-          <div className="km-card">
-            <span className="km-card-title">{inProgressTasks[1].title}</span>
-            <span className="km-card-tag">{inProgressTasks[1].tag}</span>
+          {/* Review quotes - shifts up when card is dragged */}
+          <div className={`km-card km-card-shifter ${isDragging ? "shifted" : ""}`}>
+            <span className="km-card-title">Review quotes</span>
+            <span className="km-card-tag">Ops</span>
           </div>
         </div>
       </div>
@@ -78,20 +78,15 @@ export function KanbanMoveDemo() {
       <div className="km-column">
         <div className="km-column-header">
           <span className="km-column-title">Done</span>
-          <span className="km-column-count">{isTaskMoving ? 2 : 1}</span>
+          <span className="km-column-count">{hasLanded ? 2 : 1}</span>
         </div>
         <div className="km-column-cards">
-          {/* Placeholder for moved task */}
-          <div className={`km-card-placeholder ${isTaskMoving ? "visible" : ""}`}>
-            <div className="km-card done">
-              <span className="km-card-title">{inProgressTasks[0].title}</span>
-              <span className="km-card-tag agent">{inProgressTasks[0].tag}</span>
-            </div>
-          </div>
+          {/* Space for landed card */}
+          <div className={`km-card-landing ${hasLanded ? "visible" : ""}`} />
           {/* Existing done task */}
           <div className="km-card done">
-            <span className="km-card-title">{doneTasks[0].title}</span>
-            <span className="km-card-tag">{doneTasks[0].tag}</span>
+            <span className="km-card-title">Send invoices</span>
+            <span className="km-card-tag">Finance</span>
           </div>
         </div>
       </div>
