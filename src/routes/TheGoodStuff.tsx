@@ -11,9 +11,9 @@ export default function TheGoodStuff() {
         <section className="section good-stuff-hero">
           <div className="section-container-wide good-stuff-hero-inner">
             <div className="hero-title-block">
-              <h1>Replace this H1</h1>
+              <h1>The Good Stuff is a low-fi dialogue with Pete Winn and Andy David.</h1>
               <p className="hero-bridge">
-                Replace this subpara copy for The Good Stuff page.
+                A podcast exploring how AI is changing the rules of work, business, entrepreneurship, the economy and human potential.
               </p>
               <div className="hero-cta">
                 <Button
