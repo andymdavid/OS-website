@@ -76,7 +76,7 @@ export const siteContent: SiteContent = {
       variant: "homeStyle",
       props: {
         variant: "homeStyle",
-        title: "Learn how to work with AI\nby building with it.",
+        title: "Where your key people become AI Champions",
         subtitle:
           "Speedrun is a hands-on workshop where teams learn how to use AI effectively by building practical tools with AI agents. No coding experience required.",
         subtitleMaxWidth: "65ch",
