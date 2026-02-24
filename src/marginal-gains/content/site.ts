@@ -76,9 +76,9 @@ export const siteContent: SiteContent = {
       variant: "homeStyle",
       props: {
         variant: "homeStyle",
-        title: "Develop internal AI champions inside your business.",
+        title: "Develop internal AI Champions inside your business.",
         subtitle:
-          "Marginal Gains is a community for teams who want to build practical AI capability inside their business. Members work hands-on with agents and real workflows that support day-to-day work, with structured guidance, shared learning, and ongoing support to help that capability deepen over time.",
+          "Marginal Gains is a community for teams who want to build practical AI capability inside their business. Members work hands-on with agents that support day-to-day work, with structured guidance, shared learning, and ongoing support to help that capability compound over time.",
         subtitleMaxWidth: "72ch",
         centerContent: true,
         ctaPrimary: { label: "Talk to Us", href: "mailto:info@otherstuff.studio" },
