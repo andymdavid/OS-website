@@ -239,6 +239,20 @@ export const siteContent: SiteContent = {
       },
     },
     {
+      key: "twoColumn",
+      enabled: true,
+      id: "mg-blank-2",
+      props: {
+        title: "",
+        body: "",
+        hideTitle: true,
+        layout: "split",
+        maxWidth: "wide",
+        fullHeight: true,
+        splitRightEmpty: true,
+      },
+    },
+    {
       key: "showcaseCards",
       enabled: true,
       id: "where-to-start",
