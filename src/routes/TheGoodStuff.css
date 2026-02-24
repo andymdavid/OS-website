@@ -31,7 +31,7 @@
 }
 
 .the-good-stuff-page .good-stuff-blank.section {
-  padding-top: 12px !important;
+  padding-top: 24px !important;
   padding-bottom: 64px !important;
 }
 
@@ -42,7 +42,7 @@
 
 .the-good-stuff-page .hero-title-block h1 {
   margin-bottom: 16px;
-  font-size: clamp(28px, 3.8vw, 50px);
+  font-size: 42px !important;
 }
 
 .the-good-stuff-page .hero-title-block .hero-bridge {
@@ -58,7 +58,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 32px 28px;
-  padding: 12px clamp(32px, 6vw, 120px) 80px;
+  padding: 24px clamp(32px, 6vw, 120px) 80px;
 }
 
 .the-good-stuff-page .good-stuff-episode {
