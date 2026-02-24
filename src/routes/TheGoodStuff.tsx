@@ -11,9 +11,9 @@ export default function TheGoodStuff() {
         <section className="section good-stuff-hero">
           <div className="section-container-wide good-stuff-hero-inner">
             <div className="hero-title-block">
-              <h1>Placeholder H1</h1>
+              <h1>Replace this H1</h1>
               <p className="hero-bridge">
-                Placeholder subpara text for The Good Stuff page.
+                Replace this subpara copy for The Good Stuff page.
               </p>
               <div className="hero-cta">
                 <Button

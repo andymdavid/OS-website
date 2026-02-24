@@ -16,3 +16,8 @@
 .the-good-stuff-page .good-stuff-blank {
   min-height: 100vh;
 }
+
+.the-good-stuff-page .section::after {
+  left: 0;
+  right: 0;
+}
