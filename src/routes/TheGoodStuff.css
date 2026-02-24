@@ -1,15 +1,16 @@
 .the-good-stuff-page .good-stuff-hero {
-  height: 60vh;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
 }
 
-.the-good-stuff-page .good-stuff-hero-sticky {
-  height: 60vh;
-  position: relative;
+.the-good-stuff-page .good-stuff-hero-inner {
+  display: flex;
+  justify-content: center;
 }
 
-.the-good-stuff-page .section::after {
-  left: 0;
-  right: 0;
+.the-good-stuff-page .hero-title-block {
+  text-align: center;
 }
 
 .the-good-stuff-page .good-stuff-blank {
