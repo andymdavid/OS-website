@@ -253,6 +253,13 @@
   max-width: 44rem;
 }
 
+.marginal-gains-page #where-to-start .showcase-title,
+.marginal-gains-page #where-to-start .showcase-body {
+  max-width: 44rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .marginal-gains-page .speedrun-levelup-card .levelup-card-tag-primary {
   background: #2ea782 !important;
   color: #0f0e0d !important;
