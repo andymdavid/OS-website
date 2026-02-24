@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import "./kanban-move-demo.css";
 
-type Phase = "idle" | "lifting" | "dragging" | "dropped" | "settled";
+// Simple phases: idle → moving → shifted → hold
+type Phase = "idle" | "moving" | "shifted" | "hold";
 
 export function KanbanMoveDemo() {
   const [phase, setPhase] = useState<Phase>("idle");
@@ -10,10 +11,9 @@ export function KanbanMoveDemo() {
   useEffect(() => {
     const timeline: { phase: Phase; duration: number }[] = [
       { phase: "idle", duration: 2500 },
-      { phase: "lifting", duration: 300 },
-      { phase: "dragging", duration: 600 },
-      { phase: "dropped", duration: 300 },
-      { phase: "settled", duration: 3000 },
+      { phase: "moving", duration: 700 },
+      { phase: "shifted", duration: 500 },
+      { phase: "hold", duration: 3000 },
     ];
 
     let timeoutId: ReturnType<typeof setTimeout>;
@@ -33,44 +33,28 @@ export function KanbanMoveDemo() {
       }, step.duration);
     };
 
-    timeoutId = setTimeout(runStep, 800);
-
+    timeoutId = setTimeout(runStep, 1000);
     return () => clearTimeout(timeoutId);
   }, []);
 
-  // Determine animation states
-  const isIdle = phase === "idle";
-  const isLifted = phase === "lifting" || phase === "dragging";
-  const isMoving = phase === "dragging";
-  const hasLanded = phase === "dropped" || phase === "settled";
-  const cardHasMoved = phase === "dragging" || phase === "dropped" || phase === "settled";
+  const taskMoving = phase === "moving" || phase === "shifted" || phase === "hold";
+  const taskArrived = phase === "shifted" || phase === "hold";
+  const otherShifted = phase === "shifted" || phase === "hold";
 
   return (
     <div className="kanban-move-demo" key={cycle}>
-      {/* The dragging card - positioned absolutely, hidden in idle */}
-      {!isIdle && (
-        <div
-          className={`km-drag-card ${isLifted ? "lifted" : ""} ${isMoving ? "moving" : ""} ${hasLanded ? "landed" : ""}`}
-        >
-          <span className="km-card-title">Weekly summary</span>
-          <span className="km-card-tag agent">Agent</span>
-        </div>
-      )}
-
       {/* In Progress Column */}
       <div className="km-column">
         <div className="km-column-header">
           <span className="km-column-title">In Progress</span>
-          <span className="km-column-count">{cardHasMoved ? 1 : 2}</span>
+          <span className="km-column-count">{taskMoving ? 1 : 2}</span>
         </div>
         <div className="km-column-cards">
-          {/* Ghost placeholder - visible only in idle, hidden once lifting starts */}
-          <div className={`km-card km-card-ghost ${!isIdle ? "hidden" : ""}`}>
+          <div className={`km-card ${taskMoving ? "fading-out" : ""}`}>
             <span className="km-card-title">Weekly summary</span>
             <span className="km-card-tag agent">Agent</span>
           </div>
-          {/* Review quotes - shifts up when card is dragged */}
-          <div className={`km-card km-card-shifter ${cardHasMoved ? "shifted" : ""}`}>
+          <div className={`km-card ${otherShifted ? "shifted-up" : ""}`}>
             <span className="km-card-title">Review quotes</span>
             <span className="km-card-tag">Ops</span>
           </div>
@@ -81,12 +65,13 @@ export function KanbanMoveDemo() {
       <div className="km-column">
         <div className="km-column-header">
           <span className="km-column-title">Done</span>
-          <span className="km-column-count">{hasLanded ? 2 : 1}</span>
+          <span className="km-column-count">{taskArrived ? 2 : 1}</span>
         </div>
         <div className="km-column-cards">
-          {/* Space for landed card */}
-          <div className={`km-card-landing ${hasLanded ? "visible" : ""}`} />
-          {/* Existing done task */}
+          <div className={`km-card done ${taskArrived ? "fading-in" : "hidden"}`}>
+            <span className="km-card-title">Weekly summary</span>
+            <span className="km-card-tag">Agent</span>
+          </div>
           <div className="km-card done">
             <span className="km-card-title">Send invoices</span>
             <span className="km-card-tag">Finance</span>

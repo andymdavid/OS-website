@@ -1,24 +1,23 @@
-/* Kanban Move Demo - Dark themed */
+/* Kanban Move Demo - Simple, clean version */
 
 .kanban-move-demo {
   display: flex;
-  gap: 12px;
+  gap: 16px;
   width: 100%;
   height: 100%;
   min-height: 240px;
-  padding: 16px;
+  padding: 20px;
   align-items: flex-start;
   justify-content: center;
-  position: relative;
 }
 
 /* Column */
 .km-column {
   flex: 1;
-  max-width: 160px;
+  max-width: 140px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .km-column-header {
@@ -26,7 +25,7 @@
   justify-content: space-between;
   align-items: center;
   padding-bottom: 8px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
 .km-column-title {
@@ -34,39 +33,40 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.6);
 }
 
 .km-column-count {
   font-size: 10px;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.4);
-  background: rgba(255, 255, 255, 0.1);
-  padding: 2px 6px;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 2px 7px;
   border-radius: 8px;
   min-width: 20px;
   text-align: center;
-  transition: all 0.3s ease;
 }
 
 .km-column-cards {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  position: relative;
+  gap: 8px;
 }
 
-/* Base task card */
+/* Base card */
 .km-card {
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.08);
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.07);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 6px;
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .km-card.done {
-  background: rgba(46, 167, 130, 0.12);
-  border-color: rgba(46, 167, 130, 0.25);
+  background: rgba(46, 167, 130, 0.1);
+  border-color: rgba(46, 167, 130, 0.2);
 }
 
 .km-card-title {
@@ -86,7 +86,7 @@
   text-transform: uppercase;
   letter-spacing: 0.02em;
   background: rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.5);
   border-radius: 3px;
 }
 
@@ -100,92 +100,42 @@
   color: #2ea782;
 }
 
-/* The dragging card - positioned absolutely */
-.km-drag-card {
-  position: absolute;
-  top: 53px; /* Below header */
-  left: calc(50% - 160px - 6px); /* Start in left column */
-  width: 160px;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 6px;
-  z-index: 100;
-  opacity: 1;
-  transform: scale(1);
-  transition: none;
-}
-
-.km-drag-card.lifted {
-  transform: scale(1.03);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(46, 167, 130, 0.3);
-  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out, background 0.2s ease;
-}
-
-.km-drag-card.moving {
-  left: calc(50% + 6px); /* Move to right column */
-  transform: scale(1.03);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(46, 167, 130, 0.3);
-  transition: left 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s ease-out;
-}
-
-.km-drag-card.landed {
-  left: calc(50% + 6px);
-  transform: scale(1);
-  box-shadow: none;
-  background: rgba(46, 167, 130, 0.12);
-  border-color: rgba(46, 167, 130, 0.25);
-  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out, background 0.2s ease;
-}
-
-/* Ghost card - the original position placeholder */
-.km-card-ghost {
-  opacity: 1;
-  transition: opacity 0.15s ease;
-}
-
-.km-card-ghost.hidden {
+/* Animation states */
+.km-card.fading-out {
   opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* Card that shifts up */
-.km-card-shifter {
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+.km-card.shifted-up {
+  transform: translateY(-100%) translateY(-8px);
+  transition: transform 0.4s ease;
 }
 
-.km-card-shifter.shifted {
-  transform: translateY(calc(-100% - 6px));
+.km-card.hidden {
+  opacity: 0;
+  transform: translateX(-10px);
 }
 
-/* Landing space in done column */
-.km-card-landing {
-  height: 0;
-  transition: height 0.3s ease-out;
-}
-
-.km-card-landing.visible {
-  height: 58px; /* Match card height */
+.km-card.fading-in {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 /* Responsive */
 @media (max-width: 900px) {
   .kanban-move-demo {
     min-height: 200px;
-    padding: 12px;
-    gap: 10px;
+    padding: 16px;
+    gap: 12px;
   }
 
   .km-column {
-    max-width: 130px;
+    max-width: 120px;
   }
 
-  .km-card,
-  .km-drag-card {
-    padding: 8px;
+  .km-card {
+    padding: 8px 10px;
   }
 
   .km-card-title {
@@ -202,41 +152,33 @@
     font-size: 10px;
   }
 
-  .km-drag-card {
-    width: 130px;
-    left: calc(50% - 130px - 5px);
-    top: 49px;
-  }
-
-  .km-drag-card.moving,
-  .km-drag-card.landed {
-    left: calc(50% + 5px);
-  }
-
-  .km-card-landing.visible {
-    height: 52px;
+  .km-card.shifted-up {
+    transform: translateY(-100%) translateY(-8px);
   }
 }
 
 @media (max-width: 600px) {
   .kanban-move-demo {
     min-height: 180px;
-    padding: 10px;
-    gap: 8px;
+    padding: 12px;
+    gap: 10px;
   }
 
   .km-column {
-    max-width: 110px;
-    gap: 6px;
+    max-width: 105px;
+    gap: 8px;
   }
 
   .km-column-header {
     padding-bottom: 6px;
   }
 
-  .km-card,
-  .km-drag-card {
-    padding: 7px;
+  .km-column-cards {
+    gap: 6px;
+  }
+
+  .km-card {
+    padding: 7px 8px;
     border-radius: 5px;
   }
 
@@ -259,42 +201,25 @@
     padding: 1px 5px;
   }
 
-  .km-column-cards {
-    gap: 5px;
-  }
-
-  .km-drag-card {
-    width: 110px;
-    left: calc(50% - 110px - 4px);
-    top: 45px;
-  }
-
-  .km-drag-card.moving,
-  .km-drag-card.landed {
-    left: calc(50% + 4px);
-  }
-
-  .km-card-landing.visible {
-    height: 46px;
-  }
-
-  .km-card-shifter.shifted {
-    transform: translateY(calc(-100% - 5px));
+  .km-card.shifted-up {
+    transform: translateY(-100%) translateY(-6px);
   }
 }
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
-  .km-drag-card,
-  .km-card-shifter,
-  .km-card-ghost,
-  .km-card-landing {
-    transition: none;
+  .km-card {
+    transition: none !important;
+    animation: none !important;
   }
 
-  .km-drag-card.lifted,
-  .km-drag-card.moving {
-    transform: scale(1);
-    box-shadow: none;
+  .km-card.fading-out {
+    opacity: 0;
+    transform: none;
+  }
+
+  .km-card.fading-in {
+    opacity: 1;
+    transform: none;
   }
 }
