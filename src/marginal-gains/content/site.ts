@@ -111,7 +111,7 @@ export const siteContent: SiteContent = {
       props: {
         title: "Internal AI capability doesn’t form in a single workshop.",
         body:
-          "Most businesses know they should be doing more with AI and automation, but they don’t know where to start, what to connect, or how to turn ideas into something real. Progress often remains stuck at research, demos, or random experiments.\n\nSpeedrun exists to help people move from wanting to use AI in their business to actually building with it and compresses that gap into short, focused workshops. In a few hours, participants work hands-on with AI agents to build practical tools and workflows that reflect how their business operates.",
+          "Marginal Gains takes its name from the approach popularised by Sir Dave Brailsford, who focused on improving many small things by 1% rather than chasing dramatic change all at once.\n\nThe same principle applies to AI capability. Instead of attempting a large rollout on day one, we help you develop your AI champions inside the business who continue building and applying agents to real work over time.\n\nAs that capability strengthens inside your team, decisions about where AI should be use, how and why, are shaped by the people who understand your business intimately, not by third parties working from the outside.\n\nMarginal Gains provides the structure and ongoing guidance required to build that capability deliberately and sustain it over time.",
         singleColumn: true,
         maxWidth: "wide",
         fullHeight: true,
