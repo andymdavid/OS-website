@@ -292,49 +292,49 @@ export const siteContent: SiteContent = {
       id: "twoColumn-6",
       props: {
         title: "Frequently asked questions.",
-        body: "Here are answers to some of the common practical questions teams ask when considering Speedrun.",
+        body: "Here are answers to some of the common practical questions teams ask when considering Marginal Gains membership.",
         anchorId: "faq",
         singleColumn: true,
         faqItems: [
           {
-            question: "Do we need a technical background to take part?",
+            question: "Who is Marginal Gains for?",
             answer:
-              "No. Speedrun is designed for founders, operators, and team leads without a technical background. You’ll work with AI coding agents in a guided environment, focusing on understanding how the tools behave rather than writing code yourself.",
+              "Marginal Gains is designed for key people inside SMEs who are responsible for shaping how AI is used in the business. These may be leaders, operational managers, or technical staff. The focus is on developing internal AI champions who can build, test, and guide AI adoption over time.",
           },
           {
-            question: "What exactly do we build during the session?",
+            question: "Do participants need to be technical?",
             answer:
-              "In Speedrun, participants build a working Kanban-style task application using AI coding agents. In Speedrun Applied, that same tool is extended into a simple operational workflow where an AI agent begins carrying out tasks such as summaries, planning, and coordination.",
+              "No. Marginal Gains is built for mixed-capability teams. Participants work hands-on with agents and workflows, but the emphasis is on practical application, not coding expertise. What matters is curiosity and responsibility inside the business.",
           },
           {
-            question: "Is this just another AI presentation or demo?",
+            question: "How much time does it require each month?",
             answer:
-              "No. There are no slide-heavy sessions or abstract case studies. The workshop is structured around building and modifying a real tool, so understanding comes from direct interaction rather than observation.",
+              "Members participate in a monthly online working session and periodic in-person gatherings. Between sessions, they apply what they are building to real work inside the business. The rhythm is designed to fit alongside day-to-day operations rather than disrupt them.",
           },
           {
-            question: "How many people should attend?",
+            question: "Is what we build shared publicly?",
             answer:
-              "Speedrun is designed as a small-group working session. The value comes from having cross-functional perspectives in the room and beginning to build shared internal capability, rather than training a single individual.",
+              "No. Work done inside Wingman and within your business remains private. While there is a community environment for shared learning and discussion, sensitive workflows and business processes do not need to be exposed.",
           },
           {
-            question: "Will this replace the need for consultants or developers?",
+            question: "How is this different from a workshop?",
             answer:
-              "No. Speedrun is not about replacing expertise. It is about helping your team build enough lived experience with AI to make informed decisions about when external support is needed and when it isn’t.",
+              "A workshop creates momentum and shared experience. Marginal Gains develops capability over time. It provides the structure, support, and continuity needed for internal AI champions to form and for usage to spread naturally inside the business.",
           },
           {
-            question: "Is the app we build intended to be production software?",
+            question: "What kind of things do members build?",
             answer:
-              "No. The app is treated as a working artefact — a practical learning vehicle. The purpose is to understand how AI behaves and how systems are structured, not to deploy a finished enterprise system on day one.",
+              "Members build practical agents and workflows that support day-to-day work. This might include internal tools, automation of repetitive processes, summaries, coordination flows, or task management systems. The focus is always on real operational use.",
           },
           {
-            question: "What happens after Speedrun?",
+            question: "How does this relate to Speedrun?",
             answer:
-              "Teams can extend the work through Speedrun Applied, where AI agents begin operating across workflows. For organisations wanting to deepen internal capability over time, Marginal Gains provides ongoing support and structured experimentation.",
+              "Speedrun is often the starting point. It creates the initial hands-on experience. Marginal Gains builds on that foundation, providing ongoing support and structure so capability continues to strengthen and compound.",
           },
           {
-            question: "How is this different from using tools like ChatGPT?",
+            question: "What does success look like?",
             answer:
-              "Speedrun goes beyond prompting a chatbot. Participants work with coding and task-based AI agents to build and run structured systems, which creates a deeper understanding of how AI behaves inside operational workflows.",
+              "Success looks like AI capability sitting inside your business. Your team understands how to build with agents, evaluate where they add value, and continue improving systems over time without relying entirely on external providers.",
           },
         ],
       },
