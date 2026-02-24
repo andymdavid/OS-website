@@ -125,7 +125,7 @@ export const siteContent: SiteContent = {
       props: {
         title: "A structured environment for ongoing AI capability development.",
         body:
-          "Marginal Gains runs as a guided, ongoing program designed to support internal AI champions as they build, apply, and refine AI systems inside their business. Each month combines hands-on building, shared problem-solving, and access to practical tools that can be deployed directly into day-to-day work.",
+          "Marginal Gains is a guided, ongoing program designed to support internal AI champions as they build, apply, and refine AI systems inside their business. Each month combines hands-on building, shared problem-solving, and access to practical tools that can be deployed directly into day-to-day work.",
         singleColumn: true,
         maxWidth: "wide",
         blocksVariant: "expandable",
