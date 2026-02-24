@@ -229,11 +229,15 @@
 }
 
 /* Two-column layout alignment for intro section */
-.marginal-gains-page #twoColumn-2 .two-column-split-left h2 {
+.marginal-gains-page #twoColumn-2 .two-column-split-left h2,
+.marginal-gains-page #twoColumn-4 .two-column-split-left h2,
+.marginal-gains-page #mg-blank-2 .two-column-split-left h2 {
   max-width: 34rem;
 }
 
-.marginal-gains-page #twoColumn-2 .two-column-split-left p {
+.marginal-gains-page #twoColumn-2 .two-column-split-left p,
+.marginal-gains-page #twoColumn-4 .two-column-split-left p,
+.marginal-gains-page #mg-blank-2 .two-column-split-left p {
   max-width: 44rem;
 }
 
