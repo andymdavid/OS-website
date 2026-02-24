@@ -5,6 +5,7 @@ import Company from './routes/Company';
 import LevelUp from './routes/LevelUp';
 import Speedrun from './routes/Speedrun';
 import MarginalGains from './routes/MarginalGains';
+import TheGoodStuff from './routes/TheGoodStuff';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
   {
     path: '/marginal-gains',
     element: <MarginalGains />,
+  },
+  {
+    path: '/the-good-stuff',
+    element: <TheGoodStuff />,
   },
 ]);
 
