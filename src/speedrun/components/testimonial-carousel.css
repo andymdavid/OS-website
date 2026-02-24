@@ -10,23 +10,8 @@
   display: flex;
   gap: 24px;
   width: max-content;
-  animation: scroll 40s linear infinite;
   will-change: transform;
-  backface-visibility: hidden;
-  transform: translateZ(0);
-}
-
-.testimonial-carousel:hover .testimonial-track {
-  animation-play-state: paused;
-}
-
-@keyframes scroll {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    transform: translate3d(-50%, 0, 0);
-  }
+  transform: translate3d(0, 0, 0);
 }
 
 /* Card styles - wider format */
@@ -131,7 +116,6 @@
 
   .testimonial-track {
     gap: 16px;
-    animation-duration: 30s;
   }
 
   .testimonial-card {
