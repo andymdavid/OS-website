@@ -76,7 +76,7 @@ export const siteContent: SiteContent = {
       variant: "homeStyle",
       props: {
         variant: "homeStyle",
-        title: "Develop internal AI Champions inside your business.",
+        title: "Develop AI Champions\ninside your business.",
         subtitle:
           "Marginal Gains is a community for teams who want to build practical AI capability inside their business. Members work hands-on with agents that support day-to-day work, with structured guidance, shared learning, and ongoing support to help that capability compound over time.",
         subtitleMaxWidth: "72ch",
