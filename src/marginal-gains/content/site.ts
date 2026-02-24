@@ -185,7 +185,7 @@ export const siteContent: SiteContent = {
       enabled: true,
       id: "twoColumn-5",
       props: {
-        title: "Marginal Gains is designed for teams committed to\nbuilding internal AI capability.",
+        title: "Marginal Gains is designed for teams committed\nto building internal AI capability.",
         body:
           "This community is suited to businesses who want to develop internal AI champions rather than outsource capability. It works best when a small, cross-functional group is willing to apply agents to real work each month and gradually strengthen capability from within.",
         singleColumn: true,
@@ -198,9 +198,9 @@ export const siteContent: SiteContent = {
           {
             id: "p1",
             number: "01",
-            title: "An App You've Built",
+            title: "Committed to Building",
             description:
-              "Participants builds an app and understand how it was created, how it works, and how to adapt that approach to their own tools.",
+              "Marginal Gains works best for teams prepared to apply agents and workflows to real business problems each month, not just observe new tools or discuss ideas.",
             primaryTag: "Outcome",
             secondaryTag: "App",
             summaryItems: [],
@@ -208,9 +208,9 @@ export const siteContent: SiteContent = {
           {
             id: "p2",
             number: "02",
-            title: "Hands-on with AI",
+            title: "Developing AI Champions",
             description:
-              "Participants use AI coding agents to build and modify their app, seeing how clear instructions translate into working features.",
+              "A small, cross-functional group commits to building experience over time so practical AI capability strengthens inside the organisation rather than relying on external providers.",
             primaryTag: "Outcome",
             secondaryTag: "Agents",
             summaryItems: [],
@@ -218,9 +218,9 @@ export const siteContent: SiteContent = {
           {
             id: "p3",
             number: "03",
-            title: "Growing Capability",
+            title: "Focused on Compounding",
             description:
-              "Team members develop the confidence and judgement to test ideas and extend AI use within the business without defaulting to external providers.",
+              "This is not a one-off initiative. Progress comes from consistent use, refinement, and steady improvements that build internal capability month after month.",
             primaryTag: "Outcome",
             secondaryTag: "Capability",
             summaryItems: [],
@@ -228,9 +228,9 @@ export const siteContent: SiteContent = {
           {
             id: "p4",
             number: "04",
-            title: "Clearer Decisions About AI",
+            title: "Applying AI to Work",
             description:
-              "Discussions on strategy, governance, and investment are anchored in lived experience rather than theory, assumptions, or vendor claims.",
+              "Members bring live business challenges into the community and work on tools that can be deployed directly back into day-to-day operations.",
             primaryTag: "Outcome",
             secondaryTag: "Strategy",
             summaryItems: [],
