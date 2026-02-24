@@ -67,6 +67,11 @@
   --feature-panel-image-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
 }
 
+.speedrun-page #how-speedrun-works .feature-panel-body {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
 .speedrun-page .showcase-header {
   margin-left: auto;
   margin-right: auto;

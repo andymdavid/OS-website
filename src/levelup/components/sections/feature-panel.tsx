@@ -187,7 +187,10 @@ export function FeaturePanel({
                 className="flex flex-col h-full"
               >
                 <div>
-                  <p className="text-sm" style={{ color: tokens.panelMuted, lineHeight: "1.6" }}>
+                  <p
+                    className="text-sm feature-panel-body"
+                    style={{ color: tokens.panelMuted, lineHeight: "1.6" }}
+                  >
                     {body}
                   </p>
                   <div className="mt-6">
