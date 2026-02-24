@@ -116,6 +116,7 @@ export const siteContent: SiteContent = {
         maxWidth: "wide",
         fullHeight: true,
         textAlign: "left",
+        splitModalCta: { label: "Talk to Us", href: "mailto:info@otherstuff.studio" },
         splitRightEmpty: true,
       },
     },
