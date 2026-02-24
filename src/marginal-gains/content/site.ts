@@ -170,9 +170,9 @@ export const siteContent: SiteContent = {
       enabled: true,
       id: "mg-blank",
       props: {
-        title: "",
-        body: "",
-        hideTitle: true,
+        title: "What happens inside the business when internal capability compounds.",
+        body:
+          "When internal AI capability develops inside your business, your team builds firsthand experience applying agents to real work.\n\nYou and your team have tested the tools yourselves and understand how they perform in practice. Decisions about investment, risk, and next steps are shaped by lived experience.\n\nOver time, capability compounds and spreads through the organisation in a deliberate and internally led way.",
         layout: "split",
         maxWidth: "wide",
         fullHeight: true,
