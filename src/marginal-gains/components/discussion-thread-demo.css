@@ -10,17 +10,6 @@
   gap: 12px;
 }
 
-.thread-header {
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.thread-channel {
-  font-size: 13px;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.9);
-}
-
 .thread-messages {
   flex: 1;
   display: flex;
@@ -105,10 +94,6 @@
     gap: 10px;
   }
 
-  .thread-channel {
-    font-size: 12px;
-  }
-
   .thread-message {
     gap: 8px;
     padding: 6px 0;
@@ -148,14 +133,6 @@
   .discussion-thread-demo {
     height: 200px;
     padding: 12px 14px;
-  }
-
-  .thread-header {
-    padding-bottom: 8px;
-  }
-
-  .thread-channel {
-    font-size: 11px;
   }
 
   .thread-messages {

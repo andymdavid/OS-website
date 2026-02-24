@@ -74,9 +74,6 @@ export function DiscussionThreadDemo() {
 
   return (
     <div className="discussion-thread-demo" key={cycle}>
-      <div className="thread-header">
-        <span className="thread-channel"># learnings</span>
-      </div>
       <div className="thread-messages">
         {messages.slice(0, visibleCount).map((msg) => (
           <div
