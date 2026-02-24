@@ -4,6 +4,69 @@ import "@/components/Hero.css";
 import "@/routes/TheGoodStuff.css";
 
 export default function TheGoodStuff() {
+  const episodes = [
+    {
+      id: "01",
+      title: "Episode Title",
+      description: "Short description of the episode goes here.",
+      thumbnail: "/Hero-Background.png",
+    },
+    {
+      id: "02",
+      title: "Episode Title",
+      description: "Short description of the episode goes here.",
+      thumbnail: "/Hero-Background.png",
+    },
+    {
+      id: "03",
+      title: "Episode Title",
+      description: "Short description of the episode goes here.",
+      thumbnail: "/Hero-Background.png",
+    },
+    {
+      id: "04",
+      title: "Episode Title",
+      description: "Short description of the episode goes here.",
+      thumbnail: "/Hero-Background.png",
+    },
+    {
+      id: "05",
+      title: "Episode Title",
+      description: "Short description of the episode goes here.",
+      thumbnail: "/Hero-Background.png",
+    },
+    {
+      id: "06",
+      title: "Episode Title",
+      description: "Short description of the episode goes here.",
+      thumbnail: "/Hero-Background.png",
+    },
+    {
+      id: "07",
+      title: "Episode Title",
+      description: "Short description of the episode goes here.",
+      thumbnail: "/Hero-Background.png",
+    },
+    {
+      id: "08",
+      title: "Episode Title",
+      description: "Short description of the episode goes here.",
+      thumbnail: "/Hero-Background.png",
+    },
+    {
+      id: "09",
+      title: "Episode Title",
+      description: "Short description of the episode goes here.",
+      thumbnail: "/Hero-Background.png",
+    },
+    {
+      id: "10",
+      title: "Episode Title",
+      description: "Short description of the episode goes here.",
+      thumbnail: "/Hero-Background.png",
+    },
+  ];
+
   return (
     <div className="os-theme os-draft min-h-screen the-good-stuff-page">
       <NavigationDraft titleOverride="OTHER STUFF" />
@@ -35,7 +98,22 @@ export default function TheGoodStuff() {
           </div>
         </section>
         <section className="section good-stuff-blank">
-          <div className="section-container-wide" />
+          <div className="good-stuff-portfolio">
+            {episodes.map((episode) => (
+              <article key={episode.id} className="good-stuff-episode">
+                <div className="good-stuff-episode-header">
+                  <span className="good-stuff-episode-id">[{episode.id}]</span>
+                  <div>
+                    <div className="good-stuff-episode-title">{episode.title}</div>
+                    <div className="good-stuff-episode-description">{episode.description}</div>
+                  </div>
+                </div>
+                <div className="good-stuff-episode-media">
+                  <img src={episode.thumbnail} alt={episode.title} loading="lazy" />
+                </div>
+              </article>
+            ))}
+          </div>
         </section>
       </main>
     </div>

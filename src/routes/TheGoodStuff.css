@@ -40,3 +40,54 @@
 .the-good-stuff-page .hero-cta {
   margin-top: 24px;
 }
+
+.the-good-stuff-page .good-stuff-portfolio {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px 28px;
+  padding: 24px clamp(32px, 6vw, 120px) 80px;
+}
+
+.the-good-stuff-page .good-stuff-episode {
+  display: grid;
+  gap: 16px;
+}
+
+.the-good-stuff-page .good-stuff-episode-header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+  align-items: start;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 11px;
+  color: rgba(240, 240, 240, 0.6);
+}
+
+.the-good-stuff-page .good-stuff-episode-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(240, 240, 240, 0.9);
+}
+
+.the-good-stuff-page .good-stuff-episode-description {
+  margin-top: 6px;
+  font-size: 11px;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  color: rgba(240, 240, 240, 0.45);
+}
+
+.the-good-stuff-page .good-stuff-episode-media {
+  border-radius: 4px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.the-good-stuff-page .good-stuff-episode-media img {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
