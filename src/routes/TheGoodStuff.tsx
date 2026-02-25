@@ -113,7 +113,7 @@ export default function TheGoodStuff() {
 
   const visibleEpisodes = displayedEpisodes.slice(0, visibleCount);
   const extractEpisodeNumber = (title: string) => {
-    const match = title.match(/Good Stuff\\s+(\\d+)/i);
+    const match = title.match(/\bGood Stuff\s+(\d+)/i);
     return match ? match[1] : null;
   };
 
