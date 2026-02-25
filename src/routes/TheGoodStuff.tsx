@@ -1,5 +1,7 @@
 import { NavigationDraft } from "@/components/NavigationDraft";
 import { Button } from "@/components/Button";
+import { CTASection } from "@/components/CTASection";
+import { Footer } from "@/components/Footer";
 import "@/components/Hero.css";
 import "@/routes/TheGoodStuff.css";
 
@@ -115,7 +117,9 @@ export default function TheGoodStuff() {
             ))}
           </div>
         </section>
+        <CTASection />
       </main>
+      <Footer />
     </div>
   );
 }
