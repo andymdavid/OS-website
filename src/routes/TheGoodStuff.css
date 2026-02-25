@@ -27,7 +27,7 @@
 }
 
 .the-good-stuff-page .good-stuff-blank {
-  min-height: 100vh;
+  min-height: auto;
 }
 
 .the-good-stuff-page .good-stuff-blank.section {
