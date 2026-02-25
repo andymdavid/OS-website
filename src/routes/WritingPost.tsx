@@ -33,29 +33,34 @@ export default function WritingPost() {
     <div className="os-theme os-draft min-h-screen writing-post-page">
       <NavigationDraft titleOverride="OTHER STUFF" />
       <main>
-        <section className="section writing-post-hero">
+        <section
+          className="section writing-post-hero"
+          style={{ paddingTop: "48px", paddingBottom: "24px" }}
+        >
           <div className="section-container-wide writing-post-hero-inner">
             <a href="/writing" className="writing-post-back">
               Back to Writing
             </a>
 
-            <h1 className="writing-post-title">Post Title Goes Here</h1>
+            <h1 className="writing-post-title" style={{ marginTop: "16px" }}>
+              Post Title Goes Here
+            </h1>
 
-            <div className="writing-post-meta">
+            <div className="writing-post-meta" style={{ marginTop: "12px" }}>
               <span className="writing-post-author">Author Name</span>
               <span className="writing-post-date">Feb 20, 2026</span>
             </div>
 
-            <div className="writing-post-feature">
+            <div className="writing-post-feature" style={{ marginTop: "20px" }}>
               <img src="/Hero-Background.png" alt="Post featured" loading="lazy" />
             </div>
 
-            <p className="writing-post-subheader">
+            <p className="writing-post-subheader" style={{ marginTop: "20px" }}>
               Subheader or lead-in summary of the post goes here. Keep it short and
               punchy so readers know what they will get from the piece.
             </p>
 
-            <div className="writing-post-share">
+            <div className="writing-post-share" style={{ marginTop: "12px" }}>
               <span>Share</span>
               <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
                 LinkedIn
@@ -70,7 +75,10 @@ export default function WritingPost() {
           </div>
         </section>
 
-        <section className="section writing-post-body">
+        <section
+          className="section writing-post-body"
+          style={{ paddingTop: "32px", paddingBottom: "32px" }}
+        >
           <div className="section-container-wide writing-post-body-inner">
             <div className="writing-post-content">
               <p>
