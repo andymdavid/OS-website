@@ -10,6 +10,8 @@
 .writing-post-page .writing-post-hero-inner {
   max-width: 900px;
   margin: 0 auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
 }
 
 .writing-post-page .writing-post-back {
@@ -81,6 +83,8 @@
 .writing-post-page .writing-post-body-inner {
   max-width: 780px;
   margin: 0 auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
 }
 
 .writing-post-page .writing-post-content p {
@@ -102,6 +106,8 @@
   gap: 16px;
   max-width: 1200px;
   margin: 0 auto 24px;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
 }
 
 .writing-post-page .writing-post-keep-header h2 {
@@ -114,6 +120,8 @@
   gap: 24px;
   max-width: 1200px;
   margin: 0 auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
 }
 
 .writing-post-page .writing-post-keep-card {
