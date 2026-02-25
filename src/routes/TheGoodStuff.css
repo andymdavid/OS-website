@@ -56,12 +56,24 @@
 .the-good-stuff-page .good-stuff-portfolio {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  max-width: 1320px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  max-width: 1400px;
   margin-left: auto;
   margin-right: auto;
   gap: 32px 28px;
   padding: 24px clamp(32px, 6vw, 120px) 80px;
+}
+
+@media (max-width: 1200px) {
+  .the-good-stuff-page .good-stuff-portfolio {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .the-good-stuff-page .good-stuff-portfolio {
+    grid-template-columns: 1fr;
+  }
 }
 
 .the-good-stuff-page .good-stuff-episode {
