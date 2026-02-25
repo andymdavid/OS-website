@@ -69,6 +69,7 @@ const main = async () => {
   const entries = parseEntries(xml)
     .map(parseEntry)
     .filter((entry) => entry.title && entry.link)
+    .filter((entry) => /^Good Stuff\\s*#\\d+/i.test(entry.title))
     .slice(0, MAX_ITEMS);
 
   const payload = {
