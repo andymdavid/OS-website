@@ -63,7 +63,7 @@
   margin-left: auto;
   margin-right: auto;
   gap: 32px 28px;
-  padding: 24px clamp(32px, 6vw, 120px) 80px;
+  padding: 24px clamp(32px, 6vw, 120px) 24px;
 }
 
 @media (max-width: 1200px) {
