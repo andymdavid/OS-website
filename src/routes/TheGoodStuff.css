@@ -36,8 +36,8 @@
 }
 
 .the-good-stuff-page .section::after {
-  left: 0;
-  right: 0;
+  left: 0 !important;
+  right: 0 !important;
 }
 
 .the-good-stuff-page .hero-title-block h1 {
