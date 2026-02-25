@@ -11,8 +11,8 @@
 .writing-post-page .writing-post-hero-inner {
   max-width: 900px;
   margin: 0 auto;
-  padding-left: var(--container-padding);
-  padding-right: var(--container-padding);
+  padding-left: calc(var(--container-padding) * 2);
+  padding-right: calc(var(--container-padding) * 2);
 }
 
 .writing-post-page .writing-post-back {
