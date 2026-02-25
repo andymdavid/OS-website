@@ -142,11 +142,11 @@ export default function TheGoodStuff() {
         </section>
         <section className="section good-stuff-blank">
           <div className="good-stuff-portfolio">
-            {displayedEpisodes.map((episode) => (
+            {displayedEpisodes.map((episode, index) => (
               <article key={episode.id ?? episode.title} className="good-stuff-episode">
                 <div className="good-stuff-episode-header">
                   <span className="good-stuff-episode-id">
-                    [{episode.id ?? String(displayedEpisodes.indexOf(episode) + 1).padStart(2, "0")}]
+                    [{String(index + 1).padStart(2, "0")}]
                   </span>
                   <div>
                     <div className="good-stuff-episode-title">{episode.title}</div>
