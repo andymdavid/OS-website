@@ -1,6 +1,6 @@
 import { writeFile } from "node:fs/promises";
 
-const CHANNEL_ID = "UUGVpiP_odkzPHkX0x1GMX1w";
+const CHANNEL_ID = "UCGVpiP_odkzPHkX0x1GMX1w";
 const FEED_URL = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
 const OUTPUT_PATH = "public/podcast-episodes.json";
 const MAX_ITEMS = 12;
