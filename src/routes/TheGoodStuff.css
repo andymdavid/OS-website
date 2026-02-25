@@ -57,6 +57,9 @@
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  max-width: 1320px;
+  margin-left: auto;
+  margin-right: auto;
   gap: 32px 28px;
   padding: 24px clamp(32px, 6vw, 120px) 80px;
 }
