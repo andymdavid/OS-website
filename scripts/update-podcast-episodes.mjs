@@ -66,20 +66,29 @@ const parseEntry = (entry) => {
 
 const main = async () => {
   const xml = await fetchFeed();
-  const entries = parseEntries(xml)
+  const parsedEntries = parseEntries(xml)
     .map(parseEntry)
     .filter((entry) => entry.title && entry.link)
-    .filter((entry) => /^Good Stuff\\s+\\d+\\s*-/i.test(entry.title))
+    .filter((entry) => /Good Stuff\\s+\\d+\\s*[\\-–]/i.test(entry.title))
     .slice(0, MAX_ITEMS);
+
+  if (parsedEntries.length === 0) {
+    const titles = parseEntries(xml)
+      .map(parseEntry)
+      .map((entry) => entry.title)
+      .filter(Boolean);
+    console.warn("No matching episodes found. Feed titles:");
+    titles.forEach((title) => console.warn(`- ${title}`));
+  }
 
   const payload = {
     channelId: CHANNEL_ID,
     updatedAt: new Date().toISOString(),
-    items: entries,
+    items: parsedEntries,
   };
 
   await writeFile(OUTPUT_PATH, JSON.stringify(payload, null, 2));
-  console.log(`Wrote ${entries.length} episodes to ${OUTPUT_PATH}`);
+  console.log(`Wrote ${parsedEntries.length} episodes to ${OUTPUT_PATH}`);
 };
 
 main().catch((error) => {
