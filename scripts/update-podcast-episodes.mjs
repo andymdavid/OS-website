@@ -20,8 +20,16 @@ const attrValue = (source, tagName, attr) => {
   return attrMatch ? attrMatch[1] : "";
 };
 
+const decodeEntities = (value) =>
+  value
+    .replace(/&quot;/g, "\"")
+    .replace(/&#39;/g, "'")
+    .replace(/&amp;/g, "&")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">");
+
 const normalizeDescription = (value) => {
-  const cleaned = value.replace(/\s+/g, " ").trim();
+  const cleaned = decodeEntities(value).replace(/\s+/g, " ").trim();
   if (cleaned.length <= 180) return cleaned;
   return `${cleaned.slice(0, 177)}...`;
 };
