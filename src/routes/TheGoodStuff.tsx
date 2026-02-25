@@ -16,6 +16,7 @@ export default function TheGoodStuff() {
       link: string;
     }>
   >([]);
+  const [visibleCount, setVisibleCount] = useState(10);
 
   useEffect(() => {
     const loadEpisodes = async () => {
@@ -110,6 +111,8 @@ export default function TheGoodStuff() {
           },
         ];
 
+  const visibleEpisodes = displayedEpisodes.slice(0, visibleCount);
+
   return (
     <div className="os-theme os-draft min-h-screen the-good-stuff-page">
       <NavigationDraft titleOverride="OTHER STUFF" />
@@ -142,7 +145,7 @@ export default function TheGoodStuff() {
         </section>
         <section className="section good-stuff-blank">
           <div className="good-stuff-portfolio">
-            {displayedEpisodes.map((episode, index) => (
+            {visibleEpisodes.map((episode, index) => (
               <article key={episode.id ?? episode.title} className="good-stuff-episode">
                 <div className="good-stuff-episode-header">
                   <span className="good-stuff-episode-id">
@@ -164,6 +167,17 @@ export default function TheGoodStuff() {
               </article>
             ))}
           </div>
+          {displayedEpisodes.length > visibleCount && (
+            <div className="good-stuff-show-more">
+              <button
+                type="button"
+                className="good-stuff-show-more-btn"
+                onClick={() => setVisibleCount((count) => Math.min(count + 10, displayedEpisodes.length))}
+              >
+                Show more
+              </button>
+            </div>
+          )}
         </section>
         <CTASection />
       </main>

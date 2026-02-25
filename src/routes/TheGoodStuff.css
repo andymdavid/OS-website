@@ -104,3 +104,27 @@
   height: auto;
   object-fit: cover;
 }
+
+.the-good-stuff-page .good-stuff-show-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.the-good-stuff-page .good-stuff-show-more-btn {
+  background: transparent;
+  border: 1px solid rgba(240, 240, 240, 0.2);
+  color: rgba(240, 240, 240, 0.7);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 10px 24px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.the-good-stuff-page .good-stuff-show-more-btn:hover {
+  border-color: rgba(240, 240, 240, 0.45);
+  color: rgba(240, 240, 240, 0.95);
+}
