@@ -33,10 +33,7 @@ export default function WritingPost() {
     <div className="os-theme os-draft min-h-screen writing-post-page">
       <NavigationDraft titleOverride="OTHER STUFF" />
       <main>
-        <section
-          className="section writing-post-hero"
-          style={{ paddingTop: "40px", paddingBottom: "40px" }}
-        >
+        <section className="section writing-post-hero">
           <div className="section-container-wide writing-post-hero-inner">
             <a href="/writing" className="writing-post-back">
               Back to Writing
@@ -73,10 +70,7 @@ export default function WritingPost() {
           </div>
         </section>
 
-        <section
-          className="section writing-post-body"
-          style={{ paddingTop: "40px", paddingBottom: "40px" }}
-        >
+        <section className="section writing-post-body">
           <div className="section-container-wide writing-post-body-inner">
             <div className="writing-post-content">
               <p>
