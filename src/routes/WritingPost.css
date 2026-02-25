@@ -4,7 +4,8 @@
 }
 
 .writing-post-page .writing-post-hero.section {
-  padding-top: 80px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .writing-post-page .writing-post-hero-inner {
@@ -76,8 +77,8 @@
 }
 
 .writing-post-page .writing-post-body.section {
-  padding-top: 48px;
-  padding-bottom: 48px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .writing-post-page .writing-post-body-inner {
