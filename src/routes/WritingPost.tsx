@@ -35,7 +35,7 @@ export default function WritingPost() {
       <main>
         <section
           className="section writing-post-hero"
-          style={{ paddingTop: "48px", paddingBottom: "24px" }}
+          style={{ paddingTop: "96px", paddingBottom: "24px" }}
         >
           <div className="section-container-wide writing-post-hero-inner">
             <a href="/writing" className="writing-post-back">

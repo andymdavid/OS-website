@@ -84,8 +84,12 @@
 .writing-post-page .writing-post-body-inner {
   max-width: 780px;
   margin: 0 auto;
-  padding-left: var(--container-padding);
-  padding-right: var(--container-padding);
+  padding-left: calc(var(--container-padding) * 4);
+  padding-right: calc(var(--container-padding) * 4);
+}
+
+.writing-post-page .writing-post-hero.section::after {
+  display: none;
 }
 
 .writing-post-page .writing-post-content p {
