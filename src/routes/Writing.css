@@ -1,0 +1,111 @@
+.writing-page .writing-hero {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+}
+
+.writing-page .writing-hero.section {
+  min-height: 60vh;
+  height: 60vh;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.writing-page .writing-hero-inner {
+  display: flex;
+  justify-content: center;
+}
+
+.writing-page .hero-title-block {
+  text-align: center;
+  margin-top: 0;
+  align-items: center;
+}
+
+.writing-page .hero-title-block h1 {
+  margin-bottom: 16px;
+  font-size: 42px !important;
+}
+
+.writing-page .hero-title-block .hero-bridge {
+  margin-top: 8px;
+}
+
+.writing-page .hero-cta {
+  margin-top: 24px;
+}
+
+.writing-page .writing-posts.section {
+  padding-top: 32px !important;
+  padding-bottom: 32px !important;
+  min-height: auto !important;
+  height: auto !important;
+}
+
+.writing-page .writing-posts-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 32px 28px;
+  padding: 24px clamp(32px, 6vw, 120px) 24px;
+}
+
+.writing-page .writing-post {
+  display: grid;
+  gap: 12px;
+}
+
+.writing-page .writing-post-header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+  align-items: start;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 11px;
+  color: rgba(240, 240, 240, 0.6);
+}
+
+.writing-page .writing-post-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(240, 240, 240, 0.9);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.writing-page .writing-post-description {
+  margin-top: 6px;
+  font-size: 11px;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  color: rgba(240, 240, 240, 0.45);
+}
+
+.writing-page .writing-post-date {
+  margin-top: 8px;
+  font-size: 11px;
+  color: rgba(240, 240, 240, 0.35);
+}
+
+.writing-page .section::after {
+  left: 0 !important;
+  right: 0 !important;
+}
+
+@media (max-width: 1200px) {
+  .writing-page .writing-posts-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .writing-page .writing-posts-grid {
+    grid-template-columns: 1fr;
+  }
+}

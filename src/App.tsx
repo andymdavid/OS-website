@@ -6,6 +6,7 @@ import LevelUp from './routes/LevelUp';
 import Speedrun from './routes/Speedrun';
 import MarginalGains from './routes/MarginalGains';
 import TheGoodStuff from './routes/TheGoodStuff';
+import Writing from './routes/Writing';
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
   {
     path: '/the-good-stuff',
     element: <TheGoodStuff />,
+  },
+  {
+    path: '/writing',
+    element: <Writing />,
   },
 ]);
 
