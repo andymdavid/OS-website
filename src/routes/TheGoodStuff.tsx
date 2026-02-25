@@ -112,6 +112,10 @@ export default function TheGoodStuff() {
         ];
 
   const visibleEpisodes = displayedEpisodes.slice(0, visibleCount);
+  const extractEpisodeNumber = (title: string) => {
+    const match = title.match(/Good Stuff\\s+(\\d+)/i);
+    return match ? match[1] : null;
+  };
 
   return (
     <div className="os-theme os-draft min-h-screen the-good-stuff-page">
@@ -145,11 +149,16 @@ export default function TheGoodStuff() {
         </section>
         <section className="section good-stuff-blank">
           <div className="good-stuff-portfolio">
-            {visibleEpisodes.map((episode, index) => (
+            {visibleEpisodes.map((episode, index) => {
+              const episodeNumber = extractEpisodeNumber(episode.title);
+              const label = episodeNumber
+                ? episodeNumber
+                : String(index + 1).padStart(2, "0");
+              return (
               <article key={episode.id ?? episode.title} className="good-stuff-episode">
                 <div className="good-stuff-episode-header">
                   <span className="good-stuff-episode-id">
-                    [{String(index + 1).padStart(2, "0")}]
+                    [{label}]
                   </span>
                   <div>
                     <div className="good-stuff-episode-title">{episode.title}</div>
@@ -165,7 +174,8 @@ export default function TheGoodStuff() {
                   <img src={episode.thumbnail} alt={episode.title} loading="lazy" />
                 </a>
               </article>
-            ))}
+            );
+            })}
           </div>
           {displayedEpisodes.length > visibleCount && (
             <div className="good-stuff-show-more">
