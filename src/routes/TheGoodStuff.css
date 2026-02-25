@@ -33,6 +33,8 @@
 .the-good-stuff-page .good-stuff-blank.section {
   padding-top: 32px !important;
   padding-bottom: 64px !important;
+  min-height: auto !important;
+  height: auto !important;
 }
 
 .the-good-stuff-page .section::after {
