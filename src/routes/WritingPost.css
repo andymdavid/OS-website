@@ -1,0 +1,158 @@
+.writing-post-page .section::after {
+  left: 0 !important;
+  right: 0 !important;
+}
+
+.writing-post-page .writing-post-hero.section {
+  padding-top: 80px;
+}
+
+.writing-post-page .writing-post-hero-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.writing-post-page .writing-post-back {
+  display: inline-flex;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(240, 240, 240, 0.6);
+  text-decoration: none;
+}
+
+.writing-post-page .writing-post-title {
+  margin-top: 16px;
+  font-size: clamp(34px, 5vw, 62px);
+  line-height: 1.05;
+}
+
+.writing-post-page .writing-post-meta {
+  margin-top: 16px;
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(240, 240, 240, 0.6);
+}
+
+.writing-post-page .writing-post-feature {
+  margin-top: 24px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.writing-post-page .writing-post-feature img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.writing-post-page .writing-post-subheader {
+  margin-top: 24px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: rgba(240, 240, 240, 0.8);
+}
+
+.writing-post-page .writing-post-share {
+  margin-top: 20px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgba(240, 240, 240, 0.6);
+}
+
+.writing-post-page .writing-post-share a {
+  color: rgba(240, 240, 240, 0.85);
+  text-decoration: none;
+}
+
+.writing-post-page .writing-post-body.section {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.writing-post-page .writing-post-body-inner {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.writing-post-page .writing-post-content p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(240, 240, 240, 0.8);
+}
+
+.writing-post-page .writing-post-keep-reading.section {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.writing-post-page .writing-post-keep-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto 24px;
+}
+
+.writing-post-page .writing-post-keep-header h2 {
+  font-size: 28px;
+}
+
+.writing-post-page .writing-post-keep-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.writing-post-page .writing-post-keep-card {
+  display: grid;
+  gap: 12px;
+}
+
+.writing-post-page .writing-post-keep-media {
+  border-radius: 4px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.writing-post-page .writing-post-keep-media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.writing-post-page .writing-post-keep-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(240, 240, 240, 0.9);
+}
+
+.writing-post-page .writing-post-keep-description {
+  font-size: 12px;
+  color: rgba(240, 240, 240, 0.5);
+}
+
+.writing-post-page .writing-post-keep-date {
+  margin-top: 6px;
+  font-size: 11px;
+  color: rgba(240, 240, 240, 0.35);
+}
+
+@media (max-width: 900px) {
+  .writing-post-page .writing-post-keep-grid {
+    grid-template-columns: 1fr;
+  }
+}
