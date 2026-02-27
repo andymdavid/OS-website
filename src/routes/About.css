@@ -1,0 +1,46 @@
+.about-page .about-hero {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+}
+
+.about-page .about-hero.section {
+  min-height: 60vh;
+  height: 60vh;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.about-page .about-hero-inner {
+  display: flex;
+  justify-content: center;
+}
+
+.about-page .hero-title-block {
+  text-align: center;
+  margin-top: 0;
+  align-items: center;
+}
+
+.about-page .hero-title-block h1 {
+  margin-bottom: 16px;
+  font-size: 42px !important;
+}
+
+.about-page .hero-title-block .hero-bridge {
+  margin-top: 8px;
+}
+
+.about-page .hero-cta {
+  margin-top: 24px;
+}
+
+.about-page .about-blank.section {
+  min-height: auto !important;
+  height: auto !important;
+}
+
+.about-page .section::after {
+  left: 0 !important;
+  right: 0 !important;
+}

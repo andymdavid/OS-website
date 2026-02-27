@@ -8,6 +8,7 @@ import MarginalGains from './routes/MarginalGains';
 import TheGoodStuff from './routes/TheGoodStuff';
 import Writing from './routes/Writing';
 import WritingPost from './routes/WritingPost';
+import About from './routes/About';
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
   {
     path: '/writing/post',
     element: <WritingPost />,
+  },
+  {
+    path: '/about',
+    element: <About />,
   },
 ]);
 
