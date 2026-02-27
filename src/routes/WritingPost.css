@@ -104,6 +104,8 @@
 .writing-post-page .writing-post-keep-reading.section {
   padding-top: 40px;
   padding-bottom: 40px;
+  min-height: auto !important;
+  height: auto !important;
 }
 
 .writing-post-page .writing-post-keep-header {

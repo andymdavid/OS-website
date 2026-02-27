@@ -96,9 +96,6 @@ export default function WritingPost() {
           <div className="section-container-wide">
             <div className="writing-post-keep-header">
               <h2>Keep reading</h2>
-              <Button variant="primary" onClick={() => (window.location.href = "/writing")}>
-                View all
-              </Button>
             </div>
             <div className="writing-post-keep-grid">
               {keepReading.map((post) => (
