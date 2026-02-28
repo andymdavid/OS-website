@@ -1,0 +1,46 @@
+.contact-page .contact-hero {
+  height: 60vh;
+  display: flex;
+  align-items: center;
+}
+
+.contact-page .contact-hero.section {
+  min-height: 60vh;
+  height: 60vh;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.contact-page .contact-hero-inner {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-page .hero-title-block {
+  text-align: center;
+  margin-top: 0;
+  align-items: center;
+}
+
+.contact-page .hero-title-block h1 {
+  margin-bottom: 16px;
+  font-size: 42px !important;
+}
+
+.contact-page .hero-title-block .hero-bridge {
+  margin-top: 8px;
+}
+
+.contact-page .hero-cta {
+  margin-top: 24px;
+}
+
+.contact-page .contact-blank.section {
+  min-height: auto !important;
+  height: auto !important;
+}
+
+.contact-page .section::after {
+  left: 0 !important;
+  right: 0 !important;
+}

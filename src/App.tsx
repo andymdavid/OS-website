@@ -9,6 +9,7 @@ import TheGoodStuff from './routes/TheGoodStuff';
 import Writing from './routes/Writing';
 import WritingPost from './routes/WritingPost';
 import About from './routes/About';
+import Contact from './routes/Contact';
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
   {
     path: '/about',
     element: <About />,
+  },
+  {
+    path: '/contact',
+    element: <Contact />,
   },
 ]);
 
