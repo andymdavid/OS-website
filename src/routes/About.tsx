@@ -30,10 +30,27 @@ export default function About() {
         <section className="section about-split">
           <div className="about-split-grid">
             <div className="about-split-left">
-              <h2>Section title goes here.</h2>
-              <p>
-                Placeholder text for this section. This will be replaced with actual content describing the topic in more detail.
-              </p>
+              <h2>We believe AI capability inside a business develops through many small improvements that compound over time.</h2>
+              <div className="about-split-body">
+                <p>
+                  The phrase 'marginal gains' was popularised by Sir Dave Brailsford during his time leading British Cycling. His philosophy was simple - if you improve many small things by 1%, the combined effect becomes transformational over time.
+                </p>
+                <p>
+                  We think the same principle applies to AI inside businesses.
+                </p>
+                <p>
+                  Many organisations approach AI as if it requires a large strategy, a major rollout, or a sudden transformation. In reality, most businesses benefit more from small, practical improvements that compound over time.
+                </p>
+                <p>
+                  That might mean automating a repetitive task, introducing an AI assistant into part of a workflow, or building a small internal tool that removes friction from daily work.
+                </p>
+                <p>
+                  Each change on its own may seem modest. But as teams gain experience and confidence using AI, those improvements begin to compound.
+                </p>
+                <p>
+                  Over time, the organisation develops something far more valuable than a single tool - internal capability.
+                </p>
+              </div>
               <div className="about-split-cta">
                 <Button
                   variant="primary"

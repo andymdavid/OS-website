@@ -71,10 +71,17 @@
   margin-bottom: 24px;
 }
 
-.about-page .about-split-left p {
+.about-page .about-split-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.about-page .about-split-body p {
   font-size: 14px;
   line-height: 1.7;
   color: rgba(240, 240, 240, 0.75);
+  margin: 0;
 }
 
 .about-page .about-split-cta {
