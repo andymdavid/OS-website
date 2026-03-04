@@ -27,8 +27,24 @@ export default function About() {
           </div>
         </section>
 
-        <section className="section about-blank">
-          <div className="section-container-wide" />
+        <section className="section about-split">
+          <div className="about-split-grid">
+            <div className="about-split-left">
+              <h2>Section title goes here.</h2>
+              <p>
+                Placeholder text for this section. This will be replaced with actual content describing the topic in more detail.
+              </p>
+              <div className="about-split-cta">
+                <Button
+                  variant="primary"
+                  onClick={() => (window.location.href = "mailto:info@otherstuff.studio")}
+                >
+                  Talk to Us
+                </Button>
+              </div>
+            </div>
+            <div className="about-split-right" />
+          </div>
         </section>
 
         <CTASection />
