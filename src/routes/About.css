@@ -76,8 +76,9 @@
 .about-page .about-split-body p {
   font-size: 14px;
   line-height: 1.7;
-  color: rgba(240, 240, 240, 0.75);
+  color: var(--color-text);
   margin: 0;
+  max-width: 65ch;
 }
 
 .about-page .about-split-cta {
