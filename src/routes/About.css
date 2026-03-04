@@ -61,17 +61,15 @@
   }
 }
 
-.about-page .about-split-left {
-  max-width: 560px;
-}
-
 .about-page .about-split-left h2 {
   font-size: clamp(26px, 4.2vw, 42px);
   line-height: 0.95;
   margin-bottom: 24px;
+  max-width: 38rem;
 }
 
 .about-page .about-split-body {
+  max-width: 41rem;
   display: flex;
   flex-direction: column;
   gap: 16px;
