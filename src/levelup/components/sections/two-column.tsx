@@ -56,6 +56,7 @@ interface TwoColumnProps {
     imageAlt?: string;
     body: string;
   }>;
+  splitRightBlocksVariant?: "default" | "card";
   splitBlocks?: Array<{
     title: string;
     body: string;
@@ -129,6 +130,7 @@ export function TwoColumn({
   splitRightDemo,
   splitModalCta,
   splitRightBlocks,
+  splitRightBlocksVariant = "default",
   splitBlocks,
   dualColumns,
   blocks,
@@ -363,16 +365,26 @@ export function TwoColumn({
             className={`flex items-center p-8 md:p-12 lg:p-16 two-column-split-right ${splitReverse ? "md:order-1" : "md:order-2"}`}
           >
             {splitRightBlocks && splitRightBlocks.length > 0 ? (
-              <div className="w-full flex flex-col gap-6">
-                {splitRightBlocks.map((block, index) => (
-                  <div
-                    key={`${block.title}-${index}`}
-                    className="border-t border-neutral-300/70 py-6 last:border-b md:border-b"
-                  >
-                    <div className="grid gap-6 md:grid-cols-[180px_1fr] md:gap-8">
+              splitRightBlocksVariant === "card" ? (
+                <div className="w-full flex flex-row gap-4 items-start justify-center md:justify-start flex-wrap">
+                  {splitRightBlocks.map((block, index) => (
+                    <div
+                      key={`${block.title}-${index}`}
+                      className="bio-card p-5 flex flex-col"
+                      style={{
+                        borderRadius: "4px",
+                        background: "rgba(240, 240, 240, 0.05)",
+                        border: "1px solid rgba(255, 255, 255, 0.08)",
+                        boxShadow: "0 0 30px rgba(255, 255, 255, 0.06)",
+                        width: "260px",
+                      }}
+                    >
                       <div className="flex items-start gap-4">
                         {block.image ? (
-                          <div className="relative h-16 w-16 overflow-hidden rounded-full bg-neutral-200">
+                          <div
+                            className="relative h-16 w-16 overflow-hidden flex-shrink-0"
+                            style={{ borderRadius: "4px" }}
+                          >
                             <img
                               src={block.image}
                               alt={block.imageAlt || block.title}
@@ -382,19 +394,63 @@ export function TwoColumn({
                           </div>
                         ) : null}
                         <div>
-                          <h3 className="text-base font-semibold text-[#201d1d]">
+                          <h3
+                            className="text-white"
+                            style={{
+                              fontFamily: "'Figtree', sans-serif",
+                              fontSize: "20px",
+                              fontWeight: 700,
+                              lineHeight: 1.2,
+                              textTransform: "none",
+                            }}
+                          >
                             {block.title}
                           </h3>
                           {block.role ? (
-                            <p className="text-xs text-neutral-500 mt-1">{block.role}</p>
+                            <p className="text-neutral-400 mt-1 font-jersey text-sm">
+                              {block.role}
+                            </p>
                           ) : null}
                         </div>
                       </div>
-                      <p className="text-sm text-neutral-600">{block.body}</p>
+                      <p className="mt-4 text-sm text-white/70 leading-relaxed">{block.body}</p>
                     </div>
-                  </div>
-                ))}
-              </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="w-full flex flex-col gap-6">
+                  {splitRightBlocks.map((block, index) => (
+                    <div
+                      key={`${block.title}-${index}`}
+                      className="border-t border-neutral-300/70 py-6 last:border-b md:border-b"
+                    >
+                      <div className="grid gap-6 md:grid-cols-[180px_1fr] md:gap-8">
+                        <div className="flex items-start gap-4">
+                          {block.image ? (
+                            <div className="relative h-16 w-16 overflow-hidden rounded-full bg-neutral-200">
+                              <img
+                                src={block.image}
+                                alt={block.imageAlt || block.title}
+                                className="h-full w-full object-cover"
+                                loading="lazy"
+                              />
+                            </div>
+                          ) : null}
+                          <div>
+                            <h3 className="text-base font-semibold text-[#201d1d]">
+                              {block.title}
+                            </h3>
+                            {block.role ? (
+                              <p className="text-xs text-neutral-500 mt-1">{block.role}</p>
+                            ) : null}
+                          </div>
+                        </div>
+                        <p className="text-sm text-neutral-600">{block.body}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )
             ) : splitRightDemo ? (
               <div
                 className="w-full overflow-hidden"

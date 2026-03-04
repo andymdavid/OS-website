@@ -364,6 +364,7 @@ export const siteContent: SiteContent = {
         textAlign: "left",
         maxWidth: "wide",
         fullHeight: true,
+        splitRightBlocksVariant: "card",
         splitRightBlocks: [
           {
             title: "Pete Winn",
