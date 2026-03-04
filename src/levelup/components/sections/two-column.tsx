@@ -370,7 +370,7 @@ export function TwoColumn({
                   {splitRightBlocks.map((block, index) => (
                     <div
                       key={`${block.title}-${index}`}
-                      className="bio-card p-5 flex flex-col"
+                      className="bio-card p-5 flex flex-col transition-all duration-300 ease-out md:hover:-translate-y-1.5 md:hover:shadow-[0_20px_40px_rgba(0,0,0,0.3),0_0_30px_rgba(161,255,98,0.1)]"
                       style={{
                         borderRadius: "4px",
                         background: "rgba(240, 240, 240, 0.05)",
