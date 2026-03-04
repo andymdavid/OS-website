@@ -13,8 +13,8 @@ export default function About() {
         <section className="section about-hero">
           <div className="section-container-wide about-hero-inner">
             <div className="hero-title-block">
-              <h1>About</h1>
-              <p className="hero-bridge">Placeholder subpara for the About page.</p>
+              <h1>We are an AI-first product studio that helps organisations build practical internal AI capability.</h1>
+              <p className="hero-bridge">Other Stuff works with businesses to help their teams understand and apply AI, developing practical internal capability over time.</p>
               <div className="hero-cta">
                 <Button
                   variant="primary"
