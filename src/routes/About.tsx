@@ -103,6 +103,65 @@ export default function About() {
           </div>
         </section>
 
+        <section className="section about-who">
+          <div className="about-who-grid">
+            <div className="about-who-left">
+              <h2>Our work is grounded in lived experience with AI systems.</h2>
+              <div className="about-who-body">
+                <p>
+                  We help business leaders understand how AI works by building practical tools with it, not by talking about it in theory.
+                </p>
+                <p>
+                  We've worked with Stakwork, a Silicon Valley company building agent-based systems, and our experience shapes how we approach building internal AI capability for organisations. Understanding comes fastest when teams move from observing AI to working with it directly.
+                </p>
+                <p>
+                  We operate as an AI-first business ourselves, using these tools across our own operations and building systems like Wingman, our open-source agent management platform.
+                </p>
+              </div>
+              <div className="about-who-cta">
+                <Button
+                  variant="primary"
+                  onClick={() => (window.location.href = "https://otherstuff.ai")}
+                >
+                  Learn more
+                </Button>
+              </div>
+            </div>
+            <div className="about-who-right">
+              <div className="about-bio-cards">
+                <div className="about-bio-card">
+                  <div className="about-bio-card-header">
+                    <div className="about-bio-card-image">
+                      <img src="/Pete.png" alt="Pete Winn" />
+                    </div>
+                    <div>
+                      <h3>Pete Winn</h3>
+                      <span className="about-bio-card-role">Co-Founder</span>
+                    </div>
+                  </div>
+                  <p>
+                    Pete has a long track record in process redesign, deep tech and large enterprise and programme deployments from Rolls Royce to Rio Tinto.
+                  </p>
+                </div>
+                <div className="about-bio-card">
+                  <div className="about-bio-card-header">
+                    <div className="about-bio-card-image">
+                      <img src="/Andy.png" alt="Andy David" />
+                    </div>
+                    <div>
+                      <h3>Andy David</h3>
+                      <span className="about-bio-card-role">Co-Founder</span>
+                    </div>
+                  </div>
+                  <p>
+                    Andy's background is in venture design, management consulting and technology startups, including process improvement for enterprise and SMEs.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <CTASection />
       </main>
       <Footer />
