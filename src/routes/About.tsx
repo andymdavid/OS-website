@@ -130,7 +130,10 @@ export default function About() {
                       </svg>
                     </button>
                     <button type="button" aria-label="Pete Winn Nostr">
-                      <span className="about-bio-card-social-nostr">N</span>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M7 5.5H12.5C15.5376 5.5 18 7.96243 18 11C18 14.0376 15.5376 16.5 12.5 16.5H10V19H7V5.5Z" fill="currentColor"/>
+                        <path d="M10 8.5V13.5H12.3C13.6807 13.5 14.8 12.3807 14.8 11C14.8 9.61929 13.6807 8.5 12.3 8.5H10Z" fill="#0f0e0d"/>
+                      </svg>
                     </button>
                   </div>
                 </div>
@@ -154,7 +157,10 @@ export default function About() {
                       </svg>
                     </button>
                     <button type="button" aria-label="Andy David Nostr">
-                      <span className="about-bio-card-social-nostr">N</span>
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M7 5.5H12.5C15.5376 5.5 18 7.96243 18 11C18 14.0376 15.5376 16.5 12.5 16.5H10V19H7V5.5Z" fill="currentColor"/>
+                        <path d="M10 8.5V13.5H12.3C13.6807 13.5 14.8 12.3807 14.8 11C14.8 9.61929 13.6807 8.5 12.3 8.5H10Z" fill="#0f0e0d"/>
+                      </svg>
                     </button>
                   </div>
                 </div>
