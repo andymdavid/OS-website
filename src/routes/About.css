@@ -243,8 +243,8 @@
   display: flex;
   flex-direction: row;
   gap: 16px;
-  flex-wrap: wrap;
   justify-content: flex-start;
+  width: 100%;
 }
 
 .about-page .about-bio-card {
@@ -253,10 +253,17 @@
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.06);
   border-radius: 4px;
   padding: 20px;
-  width: 260px;
+  flex: 1;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   transition: all 0.3s ease-out;
+}
+
+@media (max-width: 768px) {
+  .about-page .about-bio-cards {
+    flex-direction: column;
+  }
 }
 
 .about-page .about-bio-card:hover {
