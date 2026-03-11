@@ -48,14 +48,6 @@ export default function About() {
                   Each change on its own may seem modest. But as teams gain experience and confidence using AI, those improvements begin to compound.
                 </p>
               </div>
-              <div className="about-split-cta">
-                <Button
-                  variant="primary"
-                  onClick={() => (window.location.href = "mailto:info@otherstuff.studio")}
-                >
-                  Talk to Us
-                </Button>
-              </div>
             </div>
             <div className="about-split-right" />
           </div>
@@ -114,14 +106,6 @@ export default function About() {
                 <p>
                   We operate as an AI-first business ourselves, using these tools across our own operations and building systems like Wingman, our open-source agent management platform.
                 </p>
-              </div>
-              <div className="about-who-cta">
-                <Button
-                  variant="primary"
-                  onClick={() => (window.location.href = "https://otherstuff.ai")}
-                >
-                  Learn more
-                </Button>
               </div>
             </div>
             <div className="about-who-right">
