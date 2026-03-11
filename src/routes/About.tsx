@@ -47,9 +47,6 @@ export default function About() {
                 <p>
                   Each change on its own may seem modest. But as teams gain experience and confidence using AI, those improvements begin to compound.
                 </p>
-                <p>
-                  Over time, the organisation develops something far more valuable than a single tool - internal capability.
-                </p>
               </div>
               <div className="about-split-cta">
                 <Button
