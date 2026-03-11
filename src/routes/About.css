@@ -150,13 +150,7 @@
   padding: 24px;
   display: flex;
   flex-direction: column;
-  transition: all var(--duration-base) var(--ease-out);
-}
-
-.about-page .about-system-card:hover {
-  transform: translateY(-4px);
-  background: rgba(240, 240, 240, 0.02);
-  border-color: rgba(240, 240, 240, 0.1);
+  transition: all 0.3s ease-out;
 }
 
 .about-page .about-system-card-number {
@@ -182,6 +176,13 @@
   line-height: 1.6;
   color: rgba(240, 240, 240, 0.7);
   max-width: none;
+}
+
+@media (min-width: 768px) {
+  .about-page .about-system-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(161, 255, 98, 0.1);
+  }
 }
 
 /* Who we are section */
