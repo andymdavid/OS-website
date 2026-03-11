@@ -32,11 +32,10 @@ export function Footer() {
           {/* Column 2: Solutions */}
           <div className="footer-column">
             <h4>Solutions</h4>
+            <a href="#wingman">Wingman</a>
             <a href="#speedrun-workshop">Speedrun Workshop</a>
-            <a href="#speedrun-applied">Speedrun Applied Workshop</a>
             <a href="#level-up">Level-Up Workshop</a>
             <a href="#marginal-gains">Marginal Gains Club</a>
-            <a href="#wingman">Wingman</a>
           </div>
 
           {/* Column 3: Media */}
