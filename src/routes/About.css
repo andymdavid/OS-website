@@ -150,6 +150,13 @@
   padding: 24px;
   display: flex;
   flex-direction: column;
+  transition: all var(--duration-base) var(--ease-out);
+}
+
+.about-page .about-system-card:hover {
+  transform: translateY(-4px);
+  background: rgba(240, 240, 240, 0.02);
+  border-color: rgba(240, 240, 240, 0.1);
 }
 
 .about-page .about-system-card-number {
