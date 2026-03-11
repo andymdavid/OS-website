@@ -189,13 +189,17 @@
   min-height: 100vh;
   gap: 40px;
   align-items: center;
-  padding: 0 clamp(32px, 6vw, 120px);
+  padding: 0 var(--container-padding);
+}
+
+.about-page .about-who-left {
+  align-items: flex-start;
 }
 
 @media (max-width: 768px) {
   .about-page .about-who-grid {
     grid-template-columns: 1fr;
-    padding: 64px clamp(24px, 5vw, 48px);
+    padding: 64px var(--container-padding);
   }
 }
 
