@@ -125,12 +125,9 @@
 .about-page .about-system-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
+  gap: 16px;
   max-width: 1200px;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 4px;
-  overflow: hidden;
 }
 
 @media (max-width: 1024px) {
@@ -146,8 +143,11 @@
 }
 
 .about-page .about-system-card {
-  background: rgba(240, 240, 240, 0.03);
-  padding: 32px;
+  background: rgba(240, 240, 240, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
 }
