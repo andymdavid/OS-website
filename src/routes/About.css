@@ -353,6 +353,12 @@
   height: 14px;
 }
 
+.about-page .about-bio-card-social-primal {
+  width: 14px;
+  height: 14px;
+  display: block;
+}
+
 .about-page .about-bio-card-social button:hover {
   background: rgba(240, 240, 240, 0.1);
   transform: translateY(-2px);
