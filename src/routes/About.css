@@ -180,7 +180,7 @@
 /* Who we are section */
 .about-page .about-who.section {
   min-height: 100vh;
-  padding: 0 !important;
+  padding: 0 var(--container-padding) !important;
 }
 
 .about-page .about-who-grid {
@@ -189,17 +189,28 @@
   min-height: 100vh;
   gap: 40px;
   align-items: center;
-  padding: 0 var(--container-padding);
 }
 
 .about-page .about-who-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: flex-start;
 }
 
+.about-page .about-who-right {
+  display: flex;
+  align-items: center;
+}
+
 @media (max-width: 768px) {
+  .about-page .about-who.section {
+    padding: 64px var(--container-padding) !important;
+  }
+
   .about-page .about-who-grid {
     grid-template-columns: 1fr;
-    padding: 64px var(--container-padding);
+    min-height: auto;
   }
 }
 
