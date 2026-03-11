@@ -93,3 +93,86 @@
   left: 0 !important;
   right: 0 !important;
 }
+
+/* System section */
+.about-page .about-system.section {
+  min-height: 100vh;
+  padding: clamp(64px, 10vw, 120px) clamp(32px, 6vw, 120px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-page .about-system-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 48px;
+}
+
+.about-page .about-system-header h2 {
+  font-size: clamp(26px, 4.2vw, 42px);
+  line-height: 0.95;
+  margin-bottom: 24px;
+}
+
+.about-page .about-system-header p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--color-text);
+  max-width: none;
+}
+
+.about-page .about-system-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+  .about-page .about-system-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .about-page .about-system-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about-page .about-system-card {
+  background: rgba(240, 240, 240, 0.03);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-page .about-system-card-number {
+  font-family: 'Jersey 10', monospace;
+  font-size: 14px;
+  color: rgba(240, 240, 240, 0.4);
+  margin-bottom: 16px;
+}
+
+.about-page .about-system-card h3 {
+  font-family: 'Figtree', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-text);
+  text-transform: none;
+  letter-spacing: 0;
+  margin-bottom: 12px;
+}
+
+.about-page .about-system-card p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: rgba(240, 240, 240, 0.7);
+  max-width: none;
+}

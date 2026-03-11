@@ -64,6 +64,45 @@ export default function About() {
           </div>
         </section>
 
+        <section className="section about-system">
+          <div className="about-system-header">
+            <h2>We build the tools, then help teams build the capability to use them well.</h2>
+            <p>
+              Other Stuff is an AI-first product studio. AI is embedded in how we operate, build products, and make decisions ourselves. That practical experience shapes how we work with businesses, starting with the tools and then building the internal capability required to use them confidently.
+            </p>
+          </div>
+          <div className="about-system-grid">
+            <div className="about-system-card">
+              <span className="about-system-card-number">01</span>
+              <h3>AI-first by design</h3>
+              <p>
+                We use AI across our own operations, product development, and decision-making. It is central to how the business runs, which means our work with others is grounded in lived experience.
+              </p>
+            </div>
+            <div className="about-system-card">
+              <span className="about-system-card-number">02</span>
+              <h3>Wingman at the centre</h3>
+              <p>
+                Wingman is our AI agent management system. It gives businesses a practical way to use agents inside real work, and it sits at the centre of the capability we help teams develop.
+              </p>
+            </div>
+            <div className="about-system-card">
+              <span className="about-system-card-number">03</span>
+              <h3>Capability through building</h3>
+              <p>
+                Speedrun helps teams learn how to work with AI by building with it directly. It creates the initial hands-on experience that makes tools like Wingman easier to understand, adopt, and apply inside the business. Speedrun Applied extends that capability for existing users who want more support using agents in practice.
+              </p>
+            </div>
+            <div className="about-system-card">
+              <span className="about-system-card-number">04</span>
+              <h3>Ongoing support and shared learning</h3>
+              <p>
+                Marginal Gains supports continued capability development through in-person events, guided sessions, and practical support. We also share what we're learning publicly through The Good Stuff, so the work stays connected to what is actually changing.
+              </p>
+            </div>
+          </div>
+        </section>
+
         <CTASection />
       </main>
       <Footer />
