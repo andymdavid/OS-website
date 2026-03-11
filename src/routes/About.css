@@ -325,3 +325,41 @@
   margin: 16px 0 0;
   max-width: none;
 }
+
+.about-page .about-bio-card-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.about-page .about-bio-card-social button {
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  background: rgba(240, 240, 240, 0.05);
+  border: 1px solid rgba(240, 240, 240, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: all var(--duration-base) var(--ease-out);
+  padding: 0;
+  cursor: pointer;
+}
+
+.about-page .about-bio-card-social button svg {
+  width: 14px;
+  height: 14px;
+}
+
+.about-page .about-bio-card-social button:hover {
+  background: rgba(240, 240, 240, 0.1);
+  transform: translateY(-2px);
+}
+
+.about-page .about-bio-card-social-nostr {
+  font-family: 'Jersey 10', monospace;
+  font-size: 16px;
+  line-height: 1;
+}
