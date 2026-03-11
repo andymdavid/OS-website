@@ -218,12 +218,14 @@
   font-size: clamp(26px, 4.2vw, 42px);
   line-height: 0.95;
   margin-bottom: 24px;
+  max-width: 38rem;
 }
 
 .about-page .about-who-body {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  max-width: 41rem;
 }
 
 .about-page .about-who-body p {
@@ -231,7 +233,6 @@
   line-height: 1.7;
   color: var(--color-text);
   margin: 0;
-  max-width: none;
 }
 
 .about-page .about-who-cta {
