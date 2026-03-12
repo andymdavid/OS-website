@@ -26,7 +26,7 @@ interface TwoColumnProps {
   id?: string;
   title: string;
   body: string;
-  contentLayout?: "default" | "introLeftBlocksRight";
+  bodyParagraphs?: string[];
   bodyLinks?: Array<{
     text: string;
     href: string;
@@ -119,7 +119,7 @@ export function TwoColumn({
   id,
   title,
   body,
-  contentLayout = "default",
+  bodyParagraphs,
   singleColumn = false,
   fullHeight = false,
   layout = "default",
@@ -239,6 +239,18 @@ export function TwoColumn({
   };
 
   const renderDefaultBody = (className: string) => {
+    if (bodyParagraphs && bodyParagraphs.length > 0) {
+      return (
+        <div className={className}>
+          {bodyParagraphs.map((paragraph, index) => (
+            <p key={index} style={{ whiteSpace: "pre-line" }}>
+              {renderBodyWithLinks(paragraph)}
+            </p>
+          ))}
+        </div>
+      );
+    }
+
     if (bodyMobileSplitParas && bodyMobileSplitParas.length > 0) {
       const text = body;
       const sortedSplits = [...bodyMobileSplitParas].sort(
@@ -311,17 +323,17 @@ export function TwoColumn({
       </span>
     ));
 
-  const renderFeatureBlocks = (className: string, compact = false) => (
+  const renderFeatureBlocks = (className: string) => (
     <div className={className}>
       {blocks?.map((block) => (
         <div
           key={block.number ?? block.title}
           className="border-t border-neutral-300/70 pt-4"
         >
-          <div className={`overflow-hidden rounded-xl bg-neutral-200/70 ${compact ? "mt-3" : "mt-4"}`}>
+          <div className="mt-4 overflow-hidden rounded-xl bg-neutral-200/70">
             {block.video ? (
               <video
-                className={`${compact ? "aspect-[16/8.5]" : "aspect-[16/10]"} w-full object-contain bg-white`}
+                className="aspect-[16/10] w-full object-contain bg-white"
                 src={block.video}
                 autoPlay
                 loop
@@ -329,7 +341,7 @@ export function TwoColumn({
                 playsInline
               />
             ) : block.image ? (
-              <div className={`relative w-full bg-white ${compact ? "aspect-[16/8.5] p-6" : "aspect-[16/10] p-10"}`}>
+              <div className="relative aspect-[16/10] w-full bg-white p-10">
                 <img
                   src={block.image}
                   alt={block.imageAlt || block.title}
@@ -338,15 +350,13 @@ export function TwoColumn({
                 />
               </div>
             ) : (
-              <div className={`${compact ? "aspect-[16/8.5]" : "aspect-[16/10]"} w-full bg-neutral-300/70`} />
+              <div className="aspect-[16/10] w-full bg-neutral-300/70" />
             )}
           </div>
-          <h3 className={`${compact ? "mt-3 text-[15px]" : "mt-4 text-base"} font-semibold text-[#201d1d]`}>
+          <h3 className="mt-4 text-base font-semibold text-[#201d1d]">
             {block.title}
           </h3>
-          <p className={`${compact ? "mt-1.5 text-[13px] leading-relaxed" : "mt-2 text-sm"} text-neutral-600`}>
-            {block.body}
-          </p>
+          <p className="mt-2 text-sm text-neutral-600">{block.body}</p>
         </div>
       ))}
     </div>
@@ -719,43 +729,6 @@ export function TwoColumn({
                   )}
                 </div>
               </div>
-            </div>
-          </motion.div>
-        </Container>
-      </Section>
-    );
-  }
-
-  if (contentLayout === "introLeftBlocksRight" && blocksVariant === "feature" && blocks?.length) {
-    return (
-      <Section id={anchorId || id} className={`${fullHeight ? "min-h-screen" : "min-h-[75vh]"} flex items-center`}>
-        <Container>
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="max-w-6xl mx-auto"
-          >
-            <div className="grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,0.85fr)] lg:items-start">
-              <div className="max-w-[42rem]">
-                {!hideTitle ? (
-                  <h2 className="font-anton text-[40px] tracking-tight leading-tight text-left">
-                    {renderTitle()}
-                  </h2>
-                ) : null}
-                {(() => {
-                  const bodyElement = renderDefaultBody("mt-8 text-sm md:text-base text-[#201d1d] text-left mb-0");
-
-                  if (bodyMaxWidth && React.isValidElement(bodyElement)) {
-                    return React.cloneElement(bodyElement, {
-                      style: { ...(bodyElement.props.style || {}), maxWidth: bodyMaxWidth },
-                    });
-                  }
-
-                  return bodyElement;
-                })()}
-              </div>
-              {renderFeatureBlocks("grid gap-5 max-w-[24rem] w-full lg:ml-auto", true)}
             </div>
           </motion.div>
         </Container>
