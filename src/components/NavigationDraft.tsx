@@ -22,7 +22,7 @@ const solutions = [
     href: '/levelup',
   },
   {
-    title: 'Marginal Gains Club',
+    title: 'Marginal Gains',
     description: 'Ongoing community access with weekly AI implementation support and resources.',
     href: '/marginal-gains',
   },
