@@ -3,31 +3,46 @@ import React, { useEffect, useState, useRef } from 'react';
 import { NewsletterModal } from './NewsletterModal';
 import './Navigation.css';
 
+type NavDropdownKey = 'solutions' | 'media';
+
 const solutions = [
+  {
+    title: 'Wingman',
+    description: 'Your AI agent system for automating real work inside your business.',
+    href: '/#system',
+  },
   {
     title: 'Speedrun Workshop',
     description: 'Get your team building with AI in a single high-energy session. Perfect for first exposure.',
-    href: '#speedrun-workshop',
-  },
-  {
-    title: 'Speedrun Applied',
-    description: 'Take what you learned and apply it to a real business challenge with guided support.',
-    href: '#speedrun-applied',
+    href: '/speedrun',
   },
   {
     title: 'Level-Up Workshop',
     description: 'Structured capability building over multiple sessions for deeper AI integration.',
-    href: '#level-up',
+    href: '/levelup',
   },
   {
     title: 'Marginal Gains Club',
     description: 'Ongoing community access with weekly AI implementation support and resources.',
-    href: '#marginal-gains',
+    href: '/marginal-gains',
+  },
+];
+
+const mediaLinks = [
+  {
+    title: 'The Good Stuff',
+    description: 'Conversations, episodes, and field notes from building with AI.',
+    href: '/the-good-stuff',
   },
   {
-    title: 'Wingman',
-    description: 'Your AI agent system for automating real work inside your business.',
-    href: '#wingman',
+    title: 'Writing',
+    description: 'Notes, essays, and practical thinking from the work.',
+    href: '/writing',
+  },
+  {
+    title: 'Games',
+    description: 'Playable examples built through our hands-on work with AI.',
+    href: '/games',
   },
 ];
 
@@ -43,25 +58,34 @@ interface NavigationDraftProps {
 export function NavigationDraft({ titleOverride, titleSwapOnScroll }: NavigationDraftProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isSolutionsOpen, setIsSolutionsOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState<NavDropdownKey | null>(null);
   const [isPastTarget, setIsPastTarget] = useState(false);
-  const solutionsTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const dropdownTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleSolutionsEnter = () => {
-    if (solutionsTimeoutRef.current) {
-      clearTimeout(solutionsTimeoutRef.current);
+  const handleDropdownEnter = (key: NavDropdownKey) => {
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current);
     }
-    setIsSolutionsOpen(true);
+    setOpenDropdown(key);
   };
 
-  const handleSolutionsLeave = () => {
-    solutionsTimeoutRef.current = setTimeout(() => {
-      setIsSolutionsOpen(false);
+  const handleDropdownLeave = () => {
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setOpenDropdown(null);
     }, 150);
+  };
+
+  const toggleDropdown = (key: NavDropdownKey) => {
+    setOpenDropdown((current) => (current === key ? null : key));
+  };
+
+  const closeMenus = () => {
+    setIsMenuOpen(false);
+    setOpenDropdown(null);
   };
 
   useEffect(() => {
@@ -103,53 +127,69 @@ export function NavigationDraft({ titleOverride, titleSwapOnScroll }: Navigation
     };
   }, [titleSwapOnScroll]);
 
-  const handleScrollTo = (event: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
-    event.preventDefault();
-    const target = document.getElementById(targetId);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-    window.history.replaceState(null, '', window.location.pathname);
-  };
-
   const navTitle = titleOverride ?? 'OTHER STUFF';
+  const activeDropdownItems = openDropdown === 'media' ? mediaLinks : solutions;
+  const isMegaOpen = openDropdown !== null;
 
   return (
-    <nav className={`nav ${isSolutionsOpen ? 'mega-open' : ''}`}>
-      <div className={`nav-container ${isSolutionsOpen ? 'mega-open' : ''}`}>
+    <nav className={`nav ${isMegaOpen ? 'mega-open' : ''}`}>
+      <div className={`nav-container ${isMegaOpen ? 'mega-open' : ''}`}>
         {/* Main Nav Row */}
         <div className="nav-row">
           {/* Left Section: Logo Icon + Menu */}
           <div className="nav-left">
-            <div
-              className="nav-logo-icon"
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              style={{ cursor: 'pointer' }}
-            >
+            <a className="nav-logo-icon" href="/" onClick={closeMenus}>
               <img src="/Logo-Main-Icon.png" alt="Other Stuff Logo" width="46" height="31" />
-            </div>
+            </a>
 
             <div className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
               <div
                 className="nav-link-wrapper"
-                onMouseEnter={handleSolutionsEnter}
-                onMouseLeave={handleSolutionsLeave}
+                onMouseEnter={() => handleDropdownEnter('solutions')}
+                onMouseLeave={handleDropdownLeave}
               >
-                <button className={`nav-link nav-link-dropdown ${isSolutionsOpen ? 'active' : ''}`}>
+                <button
+                  className={`nav-link nav-link-dropdown ${openDropdown === 'solutions' ? 'active' : ''}`}
+                  onClick={() => toggleDropdown('solutions')}
+                  type="button"
+                >
                   Solutions
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </button>
+                <div className={`nav-inline-links ${openDropdown === 'solutions' ? 'visible' : ''}`}>
+                  {solutions.map((item) => (
+                    <a key={item.title} href={item.href} className="nav-inline-link" onClick={closeMenus}>
+                      {item.title}
+                    </a>
+                  ))}
+                </div>
               </div>
-              <a href="#media" className="nav-link">
-                Media
-              </a>
-              <a
-                href="#approach"
-                className="nav-link"
-                onClick={(event) => handleScrollTo(event, 'approach')}
+              <div
+                className="nav-link-wrapper"
+                onMouseEnter={() => handleDropdownEnter('media')}
+                onMouseLeave={handleDropdownLeave}
               >
+                <button
+                  className={`nav-link nav-link-dropdown ${openDropdown === 'media' ? 'active' : ''}`}
+                  onClick={() => toggleDropdown('media')}
+                  type="button"
+                >
+                  Media
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </button>
+                <div className={`nav-inline-links ${openDropdown === 'media' ? 'visible' : ''}`}>
+                  {mediaLinks.map((item) => (
+                    <a key={item.title} href={item.href} className="nav-inline-link" onClick={closeMenus}>
+                      {item.title}
+                    </a>
+                  ))}
+                </div>
+              </div>
+              <a href="/about" className="nav-link" onClick={closeMenus}>
                 Company
               </a>
             </div>
@@ -157,11 +197,7 @@ export function NavigationDraft({ titleOverride, titleSwapOnScroll }: Navigation
 
           {/* Center Section: Logo Text */}
           <div className="nav-center">
-            <div
-              className="nav-logo"
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              style={{ cursor: 'pointer' }}
-            >
+            <a className="nav-logo" href="/" onClick={closeMenus}>
               {titleSwapOnScroll ? (
                 <span className="nav-logo-swap" aria-label={isPastTarget ? titleSwapOnScroll.after : titleSwapOnScroll.before}>
                   <span className="nav-logo-measure" aria-hidden="true">
@@ -179,17 +215,18 @@ export function NavigationDraft({ titleOverride, titleSwapOnScroll }: Navigation
               ) : (
                 navTitle
               )}
-            </div>
+            </a>
           </div>
 
           {/* Right Section: Buttons */}
           <div className="nav-right">
-            <a href="https://welcome.otherstuff.ai/" className="nav-link nav-contact-link">
+            <a href="https://welcome.otherstuff.ai/" className="nav-link nav-contact-link" onClick={closeMenus}>
               Sign In
             </a>
             <a
               href="mailto:info@otherstuff.studio"
               className="nav-join-btn"
+              onClick={closeMenus}
             >
               Talk to Us
             </a>
@@ -210,15 +247,19 @@ export function NavigationDraft({ titleOverride, titleSwapOnScroll }: Navigation
 
         {/* Mega Menu - Below nav-row */}
         <div
-          className={`mega-menu ${isSolutionsOpen ? 'visible' : ''}`}
-          onMouseEnter={handleSolutionsEnter}
-          onMouseLeave={handleSolutionsLeave}
+          className={`mega-menu ${isMegaOpen ? 'visible' : ''} ${openDropdown === 'media' ? 'media-menu' : ''}`}
+          onMouseEnter={() => {
+            if (openDropdown) {
+              handleDropdownEnter(openDropdown);
+            }
+          }}
+          onMouseLeave={handleDropdownLeave}
         >
-          <div className="mega-menu-grid">
-            {solutions.map((solution) => (
-              <a key={solution.title} href={solution.href} className="mega-menu-card">
-                <h4>{solution.title}</h4>
-                <p>{solution.description}</p>
+          <div className={`mega-menu-grid ${openDropdown === 'media' ? 'media-grid' : 'solutions-grid'}`}>
+            {activeDropdownItems.map((item) => (
+              <a key={item.title} href={item.href} className="mega-menu-card" onClick={closeMenus}>
+                <h4>{item.title}</h4>
+                <p>{item.description}</p>
               </a>
             ))}
           </div>
