@@ -32,25 +32,25 @@ export function Footer() {
           {/* Column 2: Solutions */}
           <div className="footer-column">
             <h4>Solutions</h4>
-            <a href="#wingman">Wingman</a>
-            <a href="#speedrun-workshop">Speedrun Workshop</a>
-            <a href="#level-up">Level-Up Workshop</a>
-            <a href="#marginal-gains">Marginal Gains Club</a>
+            <a href="#">Wingman</a>
+            <a href="/speedrun">Speedrun Workshop</a>
+            <a href="/levelup">Level-Up Workshop</a>
+            <a href="/marginal-gains">Marginal Gains Club</a>
           </div>
 
           {/* Column 3: Media */}
           <div className="footer-column">
             <h4>Media</h4>
-            <a href="#writing">Writing</a>
-            <a href="#podcast">Podcast</a>
-            <a href="#newsletter">Newsletter</a>
+            <a href="/writing">Writing</a>
+            <a href="/the-good-stuff">The Good Stuff</a>
+            <a href="#">Newsletter</a>
           </div>
 
           {/* Column 4: Company */}
           <div className="footer-column">
             <h4>Company</h4>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+            <a href="/about">About</a>
+            <a href="mailto:info@otherstuff.studio">Contact</a>
           </div>
         </div>
 
