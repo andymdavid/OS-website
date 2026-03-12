@@ -140,6 +140,8 @@
 
 /* Inactive card - center title vertically */
 .showcase-card.inactive .showcase-card-inner {
+  position: absolute;
+  inset: 0;
   justify-content: center;
   align-items: center;
   padding: 0 16px;
@@ -147,10 +149,8 @@
 
 .showcase-card.inactive .showcase-card-text {
   width: auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100%;
+  display: block;
+  min-height: 0;
 }
 
 /* Top section */
@@ -1375,9 +1375,12 @@ h3.showcase-card-title {
   }
 
   .showcase-card.inactive .showcase-card-inner {
+    position: absolute;
+    inset: 0;
     flex-direction: row;
     justify-content: center;
-    padding: 20px 24px;
+    align-items: center;
+    padding: 0 24px;
   }
 
   .showcase-card.inactive .showcase-card-title {
