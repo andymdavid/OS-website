@@ -43,7 +43,7 @@ export function Footer() {
             <h4>Media</h4>
             <a href="/writing">Writing</a>
             <a href="/the-good-stuff">The Good Stuff</a>
-            <a href="#">Newsletter</a>
+            <a href="/games">Games</a>
           </div>
 
           {/* Column 4: Company */}
