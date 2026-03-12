@@ -70,8 +70,27 @@
 }
 
 @media (max-width: 768px) {
-  .good-stuff-header {
-    margin-bottom: 48px;
+  .good-stuff-section {
+    min-height: auto;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    padding-top: 64px !important;
+    padding-bottom: 64px !important;
+  }
+
+  .good-stuff-top {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .good-stuff-cta {
+    width: 100%;
+  }
+
+  .good-stuff-cta .email-capture-form,
+  .good-stuff-cta .email-capture-form.inline {
+    width: 100%;
+    max-width: 600px;
   }
 
   .good-stuff-cta button {
