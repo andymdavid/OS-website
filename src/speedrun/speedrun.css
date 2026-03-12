@@ -61,6 +61,33 @@
   margin-top: 32px;
 }
 
+@media (max-width: 768px) {
+  .speedrun-page .speedrun-hero {
+    min-height: 100svh !important;
+    background-position: center top, center top;
+    background-size: cover, cover;
+  }
+
+  .speedrun-page .speedrun-hero-stack {
+    width: 100%;
+  }
+
+  .speedrun-page .speedrun-hero-title-block h1 {
+    max-width: 12ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .speedrun-page .speedrun-hero-cta {
+    width: 100%;
+  }
+
+  .speedrun-page .speedrun-hero-cta .btn-primary {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
 .speedrun-page #how-speedrun-works {
   --feature-panel-radius: 4px;
   --feature-panel-image-radius: 3px;
