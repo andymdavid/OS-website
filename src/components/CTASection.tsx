@@ -10,6 +10,7 @@ interface CTASectionProps {
   intro?: string;
   buttonLabel?: string;
   className?: string;
+  pillHasDot?: boolean;
 }
 
 export function CTASection({
@@ -18,11 +19,15 @@ export function CTASection({
   intro = "If you're ready to start building your internal AI capability in a practical way, lets chat.",
   buttonLabel = 'Talk to Us',
   className,
+  pillHasDot = false,
 }: CTASectionProps) {
   return (
     <section className={`section cta-section ${className ?? ''}`.trim()}>
       <div className="section-container-wide cta-content">
-        <div className="intro-pill">{pillLabel}</div>
+        <div className={`intro-pill ${pillHasDot ? 'intro-pill-status' : ''}`.trim()}>
+          {pillHasDot ? <span className="intro-pill-dot" aria-hidden="true" /> : null}
+          <span>{pillLabel}</span>
+        </div>
 
         <h2 className="section-heading">{heading}</h2>
 
