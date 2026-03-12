@@ -50,6 +50,11 @@ export function Hero({
     typeof ctaPrimary === "string"
       ? { label: ctaPrimary, href: "#pricing" }
       : ctaPrimary;
+  const heroStackStyle = !centerContent
+    ? { marginTop: "-22vh" }
+    : variant === "homeStyle"
+      ? { marginTop: "clamp(-88px, -6vh, -32px)" }
+      : undefined;
 
   return (
     <Section
@@ -66,7 +71,7 @@ export function Hero({
           className={`flex flex-col items-center text-center max-w-5xl mx-auto ${
             variant === "homeStyle" ? "speedrun-hero-stack" : "space-y-6"
           }`}
-          style={centerContent ? undefined : { marginTop: "-22vh" }}
+          style={heroStackStyle}
         >
           {/* Optional Badge */}
           {badge && (
