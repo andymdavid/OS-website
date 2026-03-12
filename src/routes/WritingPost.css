@@ -8,6 +8,16 @@
   padding-bottom: 24px !important;
 }
 
+.legal-page .writing-post-hero.section {
+  min-height: auto !important;
+  height: auto !important;
+  padding-bottom: 12px !important;
+}
+
+.legal-page .writing-post-body.section {
+  padding-top: 0 !important;
+}
+
 .writing-post-page .writing-post-hero-inner {
   max-width: 900px;
   margin: 0 auto;
