@@ -17,7 +17,10 @@ export default function LevelUp() {
         }}
       />
       <SiteShell />
-      <CTASection />
+      <CTASection
+        pillLabel="LET'S TALK"
+        intro="Let's talk about bringing Level-Up to your school."
+      />
       <Footer />
     </div>
   );
