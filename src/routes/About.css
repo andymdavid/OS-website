@@ -87,8 +87,12 @@
 
 .about-page .about-split-right {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: stretch;
+  justify-content: stretch;
+}
+
+.about-page .about-split-right > * {
+  flex: 1;
 }
 
 .about-page .section::after {
