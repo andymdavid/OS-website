@@ -65,17 +65,20 @@ export function FunnelSection() {
                 </div>
               <div className="funnel-card-footer">
                 <div className="funnel-card-title-block">
-                  <h4>{card.title}</h4>
-                  <a
-                    className={`funnel-card-button ${index > 0 ? 'funnel-card-button-dark' : ''}`}
-                    href={card.buttonHref}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {card.buttonText}
-                  </a>
+                  <div className="funnel-card-title-row">
+                    <h4>{card.title}</h4>
+                  </div>
+                  <div className="funnel-card-title-divider" aria-hidden="true" />
                 </div>
                 <p className="funnel-card-description">{card.description}</p>
+                <a
+                  className={`funnel-card-button ${index > 0 ? 'funnel-card-button-dark' : ''}`}
+                  href={card.buttonHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {card.buttonText}
+                </a>
               </div>
             </div>
           </div>
