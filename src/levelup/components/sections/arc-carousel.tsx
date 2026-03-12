@@ -50,14 +50,14 @@ function resolveResponsiveOverlapTop(overlapTop: string, width: number) {
   }
 
   if (width < 640) {
-    return `${baseValue + 100}px`;
+    return `${baseValue + 120}px`;
   }
 
   if (width < 1024) {
-    return `${baseValue + 60}px`;
+    return `${baseValue + 80}px`;
   }
 
-  return `${baseValue + 40}px`;
+  return `${baseValue + 56}px`;
 }
 
 export function ArcCarousel({
