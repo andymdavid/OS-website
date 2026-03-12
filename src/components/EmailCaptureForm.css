@@ -154,10 +154,19 @@
   .email-submit-btn {
     width: 100%;
     height: 40px;
+    min-height: 40px;
+    box-sizing: border-box;
+  }
+
+  .email-input {
+    padding: 0 16px;
+    line-height: 40px;
   }
 
   .email-submit-btn {
     min-width: auto;
+    padding: 0 20px;
+    line-height: 1;
   }
 }
 
