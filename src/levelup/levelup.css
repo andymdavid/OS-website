@@ -191,6 +191,42 @@
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.06);
 }
 
+.levelup-page .levelup-bio-card-social {
+  display: flex;
+  gap: 10px;
+}
+
+.levelup-page .levelup-bio-card-social button {
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  background: rgba(240, 240, 240, 0.05);
+  border: 1px solid rgba(240, 240, 240, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition: all var(--duration-base) var(--ease-out);
+  padding: 0;
+  cursor: pointer;
+}
+
+.levelup-page .levelup-bio-card-social button svg {
+  width: 14px;
+  height: 14px;
+}
+
+.levelup-page .levelup-bio-card-social-primal {
+  width: 14px;
+  height: 14px;
+  display: block;
+}
+
+.levelup-page .levelup-bio-card-social button:hover {
+  background: rgba(240, 240, 240, 0.1);
+  transform: translateY(-2px);
+}
+
 /* Split modal */
 .levelup-page .split-modal-shell {
   border-radius: 4px !important;
