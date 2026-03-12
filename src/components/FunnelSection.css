@@ -254,6 +254,11 @@
 
 /* Mobile: Stack vertically */
 @media (max-width: 768px) {
+  .funnel-card.fade-in,
+  .funnel-card.fade-in.visible {
+    transform: none;
+  }
+
   .funnel-cards {
     grid-template-columns: 1fr;
     gap: 16px;
