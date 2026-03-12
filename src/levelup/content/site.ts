@@ -117,6 +117,7 @@ export const siteContent: SiteContent = {
           "The workshop is facilitated step by step in a classroom setting, with students working through the process together alongside their teachers and making progress as they go. Level Up is designed to fit naturally into real school environments, focusing on practical experience and understanding of AI, rather than abstract explanation.",
         ],
         blocksVariant: "feature",
+        featureCardsAsCard: true,
         minHeightClass: "min-h-[90vh]",
         singleColumn: true,
         textAlign: "left",

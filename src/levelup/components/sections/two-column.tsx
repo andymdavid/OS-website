@@ -98,6 +98,7 @@ interface TwoColumnProps {
   hideTitle?: boolean;
   bodyVariant?: "default" | "display";
   blocksVariant?: "numbered" | "feature" | "profile" | "expandable";
+  featureCardsAsCard?: boolean;
   textAlign?: "center" | "left";
   maxWidth?: "default" | "wide";
   expandableCardSize?: "default" | "large" | "uniform";
@@ -150,6 +151,7 @@ export function TwoColumn({
   hideTitle = false,
   bodyVariant = "default",
   blocksVariant = "numbered",
+  featureCardsAsCard = false,
   textAlign = "center",
   maxWidth = "default",
   expandableCardSize = "default",
@@ -328,12 +330,26 @@ export function TwoColumn({
       {blocks?.map((block) => (
         <div
           key={block.number ?? block.title}
-          className="border-t border-neutral-300/70 pt-4"
+          className={
+            featureCardsAsCard
+              ? "levelup-card p-1.5"
+              : "border-t border-neutral-300/70 pt-4"
+          }
         >
-          <div className="mt-4 overflow-hidden rounded-xl bg-neutral-200/70">
+          <div
+            className={
+              featureCardsAsCard
+                ? "overflow-hidden rounded-lg bg-[#141312]"
+                : "mt-4 overflow-hidden rounded-xl bg-neutral-200/70"
+            }
+          >
             {block.video ? (
               <video
-                className="aspect-[16/10] w-full object-contain bg-white"
+                className={
+                  featureCardsAsCard
+                    ? "aspect-[16/10] w-full object-contain bg-[#141312] p-4 md:p-5"
+                    : "aspect-[16/10] w-full object-contain bg-white"
+                }
                 src={block.video}
                 autoPlay
                 loop
@@ -341,7 +357,13 @@ export function TwoColumn({
                 playsInline
               />
             ) : block.image ? (
-              <div className="relative aspect-[16/10] w-full bg-white p-10">
+              <div
+                className={
+                  featureCardsAsCard
+                    ? "relative aspect-[16/10] w-full bg-[#141312] p-4 md:p-5"
+                    : "relative aspect-[16/10] w-full bg-white p-10"
+                }
+              >
                 <img
                   src={block.image}
                   alt={block.imageAlt || block.title}
@@ -350,13 +372,33 @@ export function TwoColumn({
                 />
               </div>
             ) : (
-              <div className="aspect-[16/10] w-full bg-neutral-300/70" />
+              <div
+                className={
+                  featureCardsAsCard
+                    ? "aspect-[16/10] w-full rounded-lg bg-gradient-to-br from-neutral-800 to-neutral-900"
+                    : "aspect-[16/10] w-full bg-neutral-300/70"
+                }
+              />
             )}
           </div>
-          <h3 className="mt-4 text-base font-semibold text-[#201d1d]">
+          <h3
+            className={
+              featureCardsAsCard
+                ? "mt-3 px-2 text-base font-semibold text-white"
+                : "mt-4 text-base font-semibold text-[#201d1d]"
+            }
+          >
             {block.title}
           </h3>
-          <p className="mt-2 text-sm text-neutral-600">{block.body}</p>
+          <p
+            className={
+              featureCardsAsCard
+                ? "mt-1 px-2 pb-2 text-sm leading-relaxed text-neutral-400"
+                : "mt-2 text-sm text-neutral-600"
+            }
+          >
+            {block.body}
+          </p>
         </div>
       ))}
     </div>
