@@ -371,12 +371,22 @@ export const siteContent: SiteContent = {
             role: "Co-Founder",
             image: "/Pete.png",
             body: "Pete has a long track record in process redesign, deep tech and large enterprise and programme deployments from Rolls Royce to Rio Tinto.",
+            showSocialButtons: true,
+            socialLinks: {
+              linkedin: "https://www.linkedin.com/in/pete-winn-otherstuff/",
+              primal: "https://primal.net/pw",
+            },
           },
           {
             title: "Andy David",
             role: "Co-Founder",
             image: "/Andy.png",
             body: "Andy's background is in venture design, management consulting and technology startups, including process improvement for enterprise and SMEs.",
+            showSocialButtons: true,
+            socialLinks: {
+              linkedin: "https://www.linkedin.com/in/andymdavid/",
+              primal: "https://primal.net/andydavid",
+            },
           },
         ],
       },

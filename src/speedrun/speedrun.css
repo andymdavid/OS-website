@@ -312,6 +312,61 @@
   align-items: flex-start;
 }
 
+.speedrun-page .bio-card {
+  background: rgba(240, 240, 240, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.06) !important;
+  border-radius: 4px !important;
+  padding: 20px !important;
+  flex: 1 1 0;
+  width: auto !important;
+  min-width: 0;
+}
+
+.speedrun-page .levelup-bio-card-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.speedrun-page .levelup-bio-card-social a {
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  background: rgba(240, 240, 240, 0.05);
+  border: 1px solid rgba(240, 240, 240, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-decoration: none;
+  transition: all var(--duration-base) var(--ease-out);
+  padding: 0;
+  cursor: pointer;
+}
+
+.speedrun-page .levelup-bio-card-social a svg {
+  width: 14px;
+  height: 14px;
+}
+
+.speedrun-page .levelup-bio-card-social-primal {
+  width: 14px;
+  height: 14px;
+  display: block;
+}
+
+.speedrun-page .levelup-bio-card-social a:hover {
+  background: rgba(240, 240, 240, 0.1);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .speedrun-page .bio-card {
+    flex-basis: 100%;
+  }
+}
+
 .speedrun-page section {
   position: relative;
   min-height: 100vh;
