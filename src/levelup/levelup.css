@@ -87,9 +87,6 @@
 /* Hero section */
 .levelup-page .speedrun-hero {
   background: #0f0e0d;
-  align-items: flex-start;
-  padding-top: clamp(96px, 12vh, 152px);
-  padding-bottom: clamp(168px, 22vh, 240px);
 }
 
 .levelup-page .speedrun-hero .levelup-container {
@@ -102,7 +99,7 @@
   width: min(100%, 54rem);
   margin: 0 auto;
   padding-inline: clamp(0px, 2vw, 16px);
-  transform: translateY(clamp(-120px, -8vh, -48px));
+  transform: translateY(clamp(-40px, -3vh, -16px));
 }
 
 .levelup-page .speedrun-hero-title-block {
@@ -121,14 +118,9 @@
 }
 
 @media (max-width: 768px) {
-  .levelup-page .speedrun-hero {
-    padding-top: 88px;
-    padding-bottom: 136px;
-  }
-
   .levelup-page .speedrun-hero-stack {
     width: 100%;
-    transform: translateY(-32px);
+    transform: translateY(-16px);
   }
 }
 
