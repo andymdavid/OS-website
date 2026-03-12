@@ -99,7 +99,7 @@
   width: min(100%, 54rem);
   margin: 0 auto;
   padding-inline: clamp(0px, 2vw, 16px);
-  transform: translateY(clamp(-40px, -3vh, -16px));
+  transform: translateY(clamp(-72px, -5vh, -28px));
 }
 
 .levelup-page .speedrun-hero-title-block {
@@ -120,7 +120,7 @@
 @media (max-width: 768px) {
   .levelup-page .speedrun-hero-stack {
     width: 100%;
-    transform: translateY(-16px);
+    transform: translateY(-24px);
   }
 }
 
