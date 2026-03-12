@@ -72,16 +72,14 @@ export const siteContent: SiteContent = {
       key: "hero",
       enabled: true,
       id: "hero",
-      variant: "default",
+      variant: "homeStyle",
       props: {
-        badge: "🚀 For schools interested in exploring applied AI",
+        variant: "homeStyle",
         title: "Where students learn AI by building games.",
         subtitle:
           "Level Up is a hands-on workshop where students learn how AI works in practice by building their very own game, gaining a practical understanding of how AI systems behave by actually using them.",
-        ctaPrimary: { label: "Get Started", href: "#pricing" },
-        socialProof: "Designed by Other Stuff, drawing on real-world AI work with teams in Australia and Silicon Valley",
-        socialProofLogo: "/logo-other-stuff.png",
-        socialProofLink: { text: "Other Stuff", href: "https://otherstuff.ai" },
+        centerContent: true,
+        ctaPrimary: { label: "Talk to Us", href: "mailto:info@otherstuff.studio" },
       },
     },
     {

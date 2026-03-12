@@ -85,12 +85,20 @@
 }
 
 /* Hero section */
-.levelup-page .levelup-hero {
+.levelup-page .speedrun-hero {
   background: #0f0e0d;
 }
 
-.levelup-page .levelup-hero-subtitle {
+.levelup-page .speedrun-hero-title-block {
+  margin-top: 0;
+}
+
+.levelup-page .speedrun-hero-subtitle {
   color: rgba(240, 240, 240, 0.8);
+}
+
+.levelup-page .speedrun-hero-cta {
+  margin-top: 32px;
 }
 
 /* Cards styling */
