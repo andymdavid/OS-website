@@ -26,6 +26,7 @@ interface TwoColumnProps {
   id?: string;
   title: string;
   body: string;
+  contentLayout?: "default" | "introLeftBlocksRight";
   bodyLinks?: Array<{
     text: string;
     href: string;
@@ -118,6 +119,7 @@ export function TwoColumn({
   id,
   title,
   body,
+  contentLayout = "default",
   singleColumn = false,
   fullHeight = false,
   layout = "default",
@@ -308,6 +310,45 @@ export function TwoColumn({
         {line}
       </span>
     ));
+
+  const renderFeatureBlocks = (className: string) => (
+    <div className={className}>
+      {blocks?.map((block) => (
+        <div
+          key={block.number ?? block.title}
+          className="border-t border-neutral-300/70 pt-4"
+        >
+          <div className="mt-4 overflow-hidden rounded-xl bg-neutral-200/70">
+            {block.video ? (
+              <video
+                className="aspect-[16/10] w-full object-contain bg-white"
+                src={block.video}
+                autoPlay
+                loop
+                muted
+                playsInline
+              />
+            ) : block.image ? (
+              <div className="relative aspect-[16/10] w-full bg-white p-10">
+                <img
+                  src={block.image}
+                  alt={block.imageAlt || block.title}
+                  className="h-full w-full object-contain"
+                  loading="lazy"
+                />
+              </div>
+            ) : (
+              <div className="aspect-[16/10] w-full bg-neutral-300/70" />
+            )}
+          </div>
+          <h3 className="mt-4 text-base font-semibold text-[#201d1d]">
+            {block.title}
+          </h3>
+          <p className="mt-2 text-sm text-neutral-600">{block.body}</p>
+        </div>
+      ))}
+    </div>
+  );
 
   // Split layout: 50/50 with content left, image right
   if (layout === "split") {
@@ -683,6 +724,43 @@ export function TwoColumn({
     );
   }
 
+  if (contentLayout === "introLeftBlocksRight" && blocksVariant === "feature" && blocks?.length) {
+    return (
+      <Section id={anchorId || id} className={`${fullHeight ? "min-h-screen" : "min-h-[75vh]"} flex items-center`}>
+        <Container>
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="max-w-6xl mx-auto"
+          >
+            <div className="grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
+              <div className="max-w-[42rem]">
+                {!hideTitle ? (
+                  <h2 className="font-anton text-[40px] tracking-tight leading-tight text-left">
+                    {renderTitle()}
+                  </h2>
+                ) : null}
+                {(() => {
+                  const bodyElement = renderDefaultBody("mt-8 text-sm md:text-base text-[#201d1d] text-left mb-0");
+
+                  if (bodyMaxWidth && React.isValidElement(bodyElement)) {
+                    return React.cloneElement(bodyElement, {
+                      style: { ...(bodyElement.props.style || {}), maxWidth: bodyMaxWidth },
+                    });
+                  }
+
+                  return bodyElement;
+                })()}
+              </div>
+              {renderFeatureBlocks("grid gap-8")}
+            </div>
+          </motion.div>
+        </Container>
+      </Section>
+    );
+  }
+
   return (
     <Section id={anchorId || id} className={`${fullHeight ? "min-h-screen" : "min-h-[75vh]"} flex items-center`}>
       <div className={`w-full ${testimonials && testimonials.length > 0 ? "flex flex-col justify-center" : ""}`}>
@@ -763,39 +841,7 @@ export function TwoColumn({
           )}
           {blocks && blocks.length > 0 ? (
             blocksVariant === "feature" ? (
-              <div className="mt-10 pt-6 grid gap-x-10 gap-y-12 md:grid-cols-3">
-                {blocks.map((block) => (
-                  <div key={block.number ?? block.title} className="border-t border-neutral-300/70 pt-4">
-                    <div className="mt-4 overflow-hidden rounded-xl bg-neutral-200/70">
-                      {block.video ? (
-                        <video
-                          className="aspect-[16/10] w-full object-contain bg-white"
-                          src={block.video}
-                          autoPlay
-                          loop
-                          muted
-                          playsInline
-                        />
-                      ) : block.image ? (
-                        <div className="relative aspect-[16/10] w-full bg-white p-10">
-                          <img
-                            src={block.image}
-                            alt={block.imageAlt || block.title}
-                            className="h-full w-full object-contain"
-                            loading="lazy"
-                          />
-                        </div>
-                      ) : (
-                        <div className="aspect-[16/10] w-full bg-neutral-300/70" />
-                      )}
-                    </div>
-                    <h3 className="mt-4 text-base font-semibold text-[#201d1d]">
-                      {block.title}
-                    </h3>
-                    <p className="mt-2 text-sm text-neutral-600">{block.body}</p>
-                  </div>
-                ))}
-              </div>
+              renderFeatureBlocks("mt-10 pt-6 grid gap-x-10 gap-y-12 md:grid-cols-3")
             ) : blocksVariant === "expandable" ? (
               <div
                 className={

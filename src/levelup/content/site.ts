@@ -112,9 +112,11 @@ export const siteContent: SiteContent = {
         title: "What is Level-Up?",
         body:
           "Level Up is a guided, hands-on workshop designed for school students to learn how AI works by actually using it. During the session, students build their own games with AI coding agents, experimenting, iterating, and seeing how instructions turn into behaviour on screen. The workshop is facilitated step by step in a classroom setting, with students working through the process together alongside their teachers and making progress as they go. Level Up is designed to fit naturally into real school environments, focusing on practical experience and understanding of AI, rather than abstract explanation.",
-        bodyMobileSplitOn: "The workshop is facilitated",
+        contentLayout: "introLeftBlocksRight",
         blocksVariant: "feature",
         minHeightClass: "min-h-[90vh]",
+        textAlign: "left",
+        bodyMaxWidth: "38rem",
         blocks: [
           {
             number: "01",
