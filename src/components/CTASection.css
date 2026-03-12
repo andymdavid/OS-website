@@ -31,9 +31,3 @@
 .cta-button {
   margin-top: 8px;
 }
-
-@media (max-width: 768px) {
-  .cta-section .section-heading {
-    max-width: 13ch;
-  }
-}
