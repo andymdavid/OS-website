@@ -247,6 +247,7 @@ export const siteContent: SiteContent = {
         title: "What Students Walk Away With",
         body: "By the end of the workshop, students have more than a finished game. They leave with a practical understanding of AI and the confidence that comes from having built something themselves.",
         splitVideo: "/SatsGarden.mp4",
+        splitBlocksColumns: "thirdTwoThirds",
         splitBlocks: [
           {
             title: "A practical understanding of how AI works",
@@ -273,6 +274,7 @@ export const siteContent: SiteContent = {
         title: "Support for Teachers and Schools",
         body: "Level Up is designed to fit comfortably into real classroom environments, with facilitation and support built in from the start.",
         splitVideo: "/SkiSats.mp4",
+        splitBlocksColumns: "thirdTwoThirds",
         splitBlocks: [
           {
             title: "Facilitated and supported delivery",

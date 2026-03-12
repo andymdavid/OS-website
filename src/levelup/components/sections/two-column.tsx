@@ -62,6 +62,7 @@ interface TwoColumnProps {
     title: string;
     body: string;
   }>;
+  splitBlocksColumns?: "half" | "thirdTwoThirds";
   dualColumns?: Array<{
     title: string;
     metaTags?: string[];
@@ -135,6 +136,7 @@ export function TwoColumn({
   splitRightBlocks,
   splitRightBlocksVariant = "default",
   splitBlocks,
+  splitBlocksColumns = "half",
   dualColumns,
   blocks,
   levelUpCards,
@@ -174,6 +176,10 @@ export function TwoColumn({
   const isFlatCards = levelUpCardsLayout === "flat";
   const cardsMaxWidth = levelUpCardsMaxWidth === "wide" ? "max-w-[90rem]" : "max-w-7xl";
   const isUniformCards = levelUpCardsSize === "uniform";
+  const splitBlocksGridClass =
+    splitBlocksColumns === "thirdTwoThirds"
+      ? "grid gap-4 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.7fr)] md:gap-8"
+      : "grid md:grid-cols-2 gap-4 md:gap-8";
 
   const bodyClassName =
     bodyVariant === "display"
@@ -442,7 +448,7 @@ export function TwoColumn({
               <div className="mt-10">
                 {splitBlocks.map((block, index) => (
                   <div key={index} className="border-t border-neutral-300 pt-6 pb-8">
-                    <div className="grid md:grid-cols-2 gap-4 md:gap-8">
+                    <div className={splitBlocksGridClass}>
                       <h3 className="text-base font-semibold text-[#201d1d]">
                         {block.title}
                       </h3>
