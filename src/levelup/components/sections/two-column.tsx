@@ -332,7 +332,7 @@ export function TwoColumn({
           key={block.number ?? block.title}
           className={
             featureCardsAsCard
-              ? "levelup-card levelup-intro-card p-1.5"
+              ? "levelup-card levelup-intro-card p-1.5 transition-all duration-300 ease-out md:hover:-translate-y-1.5 md:hover:shadow-[0_20px_40px_rgba(0,0,0,0.3),0_0_30px_rgba(161,255,98,0.1)]"
               : "border-t border-neutral-300/70 pt-4"
           }
         >
