@@ -86,7 +86,9 @@
 }
 
 .about-page .about-split-right {
-  /* Empty for now */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .about-page .section::after {

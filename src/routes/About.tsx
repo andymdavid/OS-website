@@ -2,6 +2,7 @@ import { NavigationDraft } from "@/components/NavigationDraft";
 import { Button } from "@/components/Button";
 import { CTASection } from "@/components/CTASection";
 import { Footer } from "@/components/Footer";
+import { FormProcessingDemo } from "@/components/FormProcessingDemo";
 import "@/components/Hero.css";
 import "@/routes/About.css";
 
@@ -49,7 +50,9 @@ export default function About() {
                 </p>
               </div>
             </div>
-            <div className="about-split-right" />
+            <div className="about-split-right">
+              <FormProcessingDemo />
+            </div>
           </div>
         </section>
 
