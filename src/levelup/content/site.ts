@@ -345,6 +345,10 @@ export const siteContent: SiteContent = {
         textAlign: "left",
         maxWidth: "wide",
         fullHeight: true,
+        splitModalCta: {
+          label: "Talk to Us",
+          href: "mailto:info@otherstuff.studio",
+        },
         splitRightBlocksVariant: "card",
         splitRightBlocks: [
           {
