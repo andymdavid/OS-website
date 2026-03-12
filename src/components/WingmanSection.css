@@ -177,6 +177,10 @@
     align-items: flex-start;
   }
 
+  .wingman-top .followup-cta {
+    align-self: flex-start;
+  }
+
   .wingman-bottom {
     grid-template-columns: repeat(1, minmax(0, 1fr));
     display: flex;
