@@ -168,11 +168,53 @@
 /* Responsive adjustments for podcast card */
 @media (max-width: 768px) {
   .podcast-card {
-    position: static;
+    display: none;
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+
+  .hero-extended,
+  .hero-sticky {
+    height: 100svh;
+    min-height: 100svh;
+  }
+
+  .hero-inner {
+    justify-content: center;
+    padding: 104px 24px 32px;
+  }
+
+  .hero-title-block {
+    max-width: 100%;
+    margin-top: 0;
+  }
+
+  .hero-logo {
+    margin-bottom: 10px;
+  }
+
+  .hero-title-block h1 {
+    margin-bottom: 18px;
+  }
+
+  .hero-title-block p {
+    max-width: 26ch;
+    text-wrap: balance;
+  }
+
+  .hero-title-block p br {
+    display: none;
+  }
+
+  .hero-title-block .hero-bridge {
+    margin-top: 14px;
+  }
+
+  .hero-cta {
     width: 100%;
-    max-width: 420px;
-    margin: 24px auto 0;
-    align-self: center;
+    margin-top: 24px;
   }
 }
 
@@ -186,4 +228,17 @@
       rgba(15, 14, 13, 1) 100%
     ),
     url('/hero-background-1.png?v=2') center 0% / 105% auto no-repeat;
+}
+
+@media (max-width: 768px) {
+  .os-draft .hero-sticky {
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.25) 0%,
+        rgba(0, 0, 0, 0.3) 42%,
+        rgba(15, 14, 13, 1) 100%
+      ),
+      url('/hero-background-1.png?v=2') center top / cover no-repeat;
+  }
 }
