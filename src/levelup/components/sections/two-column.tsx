@@ -347,7 +347,7 @@ export function TwoColumn({
               <video
                 className={
                   featureCardsAsCard
-                    ? "levelup-intro-card-video aspect-[4/3] w-full bg-[#141312]"
+                    ? "levelup-intro-card-video aspect-[4/3] w-full object-cover bg-[#141312]"
                     : "aspect-[16/10] w-full object-contain bg-white"
                 }
                 src={block.video}
