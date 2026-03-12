@@ -130,6 +130,27 @@
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.06);
 }
 
+.levelup-page .levelup-intro-card-media {
+  border-radius: 3px;
+}
+
+.levelup-page .levelup-intro-card-video,
+.levelup-page .levelup-intro-card-image {
+  transform: scale(1.28);
+  transform-origin: center;
+}
+
+.levelup-page .levelup-intro-card-image-wrap {
+  padding: 12px;
+}
+
+@media (max-width: 768px) {
+  .levelup-page .levelup-intro-card-video,
+  .levelup-page .levelup-intro-card-image {
+    transform: scale(1.18);
+  }
+}
+
 .levelup-page .levelup-card h3 {
   font-family: 'Figtree', sans-serif;
   font-size: 22px;

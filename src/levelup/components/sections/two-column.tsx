@@ -332,14 +332,14 @@ export function TwoColumn({
           key={block.number ?? block.title}
           className={
             featureCardsAsCard
-              ? "levelup-card p-1.5"
+              ? "levelup-card levelup-intro-card p-1.5"
               : "border-t border-neutral-300/70 pt-4"
           }
         >
           <div
             className={
               featureCardsAsCard
-                ? "overflow-hidden rounded-lg bg-[#141312]"
+                ? "levelup-intro-card-media overflow-hidden bg-[#141312]"
                 : "mt-4 overflow-hidden rounded-xl bg-neutral-200/70"
             }
           >
@@ -347,7 +347,7 @@ export function TwoColumn({
               <video
                 className={
                   featureCardsAsCard
-                    ? "aspect-[16/10] w-full object-contain bg-[#141312] p-4 md:p-5"
+                    ? "levelup-intro-card-video aspect-[16/10] w-full bg-[#141312]"
                     : "aspect-[16/10] w-full object-contain bg-white"
                 }
                 src={block.video}
@@ -360,14 +360,18 @@ export function TwoColumn({
               <div
                 className={
                   featureCardsAsCard
-                    ? "relative aspect-[16/10] w-full bg-[#141312] p-4 md:p-5"
+                    ? "levelup-intro-card-image-wrap relative aspect-[16/10] w-full bg-[#141312]"
                     : "relative aspect-[16/10] w-full bg-white p-10"
                 }
               >
                 <img
                   src={block.image}
                   alt={block.imageAlt || block.title}
-                  className="h-full w-full object-contain"
+                  className={
+                    featureCardsAsCard
+                      ? "levelup-intro-card-image h-full w-full object-contain"
+                      : "h-full w-full object-contain"
+                  }
                   loading="lazy"
                 />
               </div>
