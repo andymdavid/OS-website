@@ -66,7 +66,7 @@ export function Footer() {
 
           <div className="footer-social">
             <a
-              href="https://youtube.com"
+              href="https://otherstuff.studio/thegoodstuff"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="YouTube"
@@ -76,7 +76,7 @@ export function Footer() {
               </svg>
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/otherstuffvs/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -86,7 +86,7 @@ export function Footer() {
               </svg>
             </a>
             <a
-              href="https://x.com"
+              href="https://x.com/OtherStuffAU"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="X"
