@@ -13,6 +13,7 @@ interface FinalCtaProps {
 
 export function FinalCta({
   title,
+  subtitle,
   ctaPrimary,
   onGetStarted,
 }: FinalCtaProps) {
@@ -28,6 +29,11 @@ export function FinalCta({
             <span className="block">{lineOne}</span>
             {lineTwo ? <span className="block">{lineTwo}</span> : null}
           </h2>
+          {subtitle ? (
+            <p className="max-w-2xl mx-auto text-sm md:text-base text-white/80">
+              {subtitle}
+            </p>
+          ) : null}
           <div className="flex flex-wrap items-center justify-center gap-3 pt-4">
             <Button
               size="lg"

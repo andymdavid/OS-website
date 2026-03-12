@@ -604,6 +604,7 @@ export const siteContent: SiteContent = {
       id: "finalCta",
       props: {
         title: "Let's talk about bringing Level-Up to your school",
+        subtitle: "Let’s talk about bringing Level-Up to your school.",
         ctaPrimary: "Get Started",
         ctaSecondary: "Mail ons direct",
       },
