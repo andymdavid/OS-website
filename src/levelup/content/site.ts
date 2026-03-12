@@ -79,7 +79,7 @@ export const siteContent: SiteContent = {
         subtitle:
           "Level Up is a hands-on workshop where students learn how AI works in practice by building their very own game, gaining a practical understanding of how AI systems behave by actually using them.",
         centerContent: true,
-        contentOffset: "clamp(-104px, -7vh, -40px)",
+        contentOffset: "clamp(-208px, -14vh, -80px)",
         ctaPrimary: { label: "Talk to Us", href: "mailto:info@otherstuff.studio" },
       },
     },
