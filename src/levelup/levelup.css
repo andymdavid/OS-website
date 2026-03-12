@@ -138,6 +138,10 @@
 }
 
 @media (max-width: 768px) {
+  .levelup-page h2 {
+    font-size: 32px !important;
+  }
+
   .levelup-page .speedrun-hero-stack {
     width: 100%;
   }

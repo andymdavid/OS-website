@@ -201,3 +201,10 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 768px) {
+  .writing-post-page .writing-post-content h2,
+  .writing-post-page .writing-post-keep-header h2 {
+    font-size: 32px;
+  }
+}

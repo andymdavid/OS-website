@@ -61,6 +61,12 @@
   margin-top: 32px;
 }
 
+@media (max-width: 768px) {
+  .marginal-gains-page h2 {
+    font-size: 32px !important;
+  }
+}
+
 .marginal-gains-page #how-speedrun-works {
   --feature-panel-radius: 4px;
   --feature-panel-image-radius: 3px;

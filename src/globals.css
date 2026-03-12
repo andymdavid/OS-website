@@ -429,6 +429,11 @@ h2 {
 
 /* Mobile: 375px - 767px */
 @media (max-width: 767px) {
+  .os-theme h2,
+  .os-draft h2 {
+    font-size: 32px;
+  }
+
   .os-theme .section {
     padding: var(--section-spacing-mobile) 0;
   }

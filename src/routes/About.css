@@ -59,6 +59,12 @@
     grid-template-columns: 1fr;
     padding: 64px clamp(24px, 5vw, 48px);
   }
+
+  .about-page .about-split-left h2,
+  .about-page .about-system-header h2,
+  .about-page .about-who-left h2 {
+    font-size: 32px;
+  }
 }
 
 .about-page .about-split-left h2 {
