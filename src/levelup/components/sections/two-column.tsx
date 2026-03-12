@@ -1057,7 +1057,7 @@ export function TwoColumn({
                   return (
                     <div
                       key={card.id}
-                      className={`rounded-2xl bg-[#2a2a2a] flex-shrink-0 md:flex-shrink flex flex-col transition-all duration-300 ease-out md:hover:-translate-y-1.5 md:hover:shadow-[0_20px_40px_rgba(0,0,0,0.3),0_0_30px_rgba(161,255,98,0.1)] ${levelUpCardClassName ?? ""} ${
+                      className={`levelup-card flex-shrink-0 md:flex-shrink flex flex-col transition-all duration-300 ease-out md:hover:-translate-y-1.5 md:hover:shadow-[0_20px_40px_rgba(0,0,0,0.3),0_0_30px_rgba(161,255,98,0.1)] ${levelUpCardClassName ?? ""} ${
                         isUniformCards
                           ? "p-6 h-auto w-[280px] sm:w-[300px] md:w-full"
                           : "p-5 h-[420px] w-[260px] sm:w-[280px] md:w-full"
@@ -1095,7 +1095,7 @@ export function TwoColumn({
 
                       {/* Summary box */}
                       {card.summaryItems.length > 0 ? (
-                        <div className="mt-4 flex-1 rounded-xl bg-[#1a1a1a] px-4 flex flex-col">
+                        <div className="mt-4 flex-1 rounded-[3px] bg-[rgba(15,14,13,0.72)] px-4 flex flex-col border border-white/5">
                           {card.summaryItems.map((item) => (
                             <div
                               key={item.number}
