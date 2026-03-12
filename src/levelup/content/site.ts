@@ -359,6 +359,10 @@ export const siteContent: SiteContent = {
             image: "/Pete.png",
             body: "Pete has a long track record in process redesign, deep tech and large enterprise and programme deployments from Rolls Royce to Rio Tinto.",
             showSocialButtons: true,
+            socialLinks: {
+              linkedin: "https://www.linkedin.com/in/pete-winn-otherstuff/",
+              primal: "https://primal.net/pw",
+            },
           },
           {
             title: "Andy David",
@@ -366,6 +370,10 @@ export const siteContent: SiteContent = {
             image: "/Andy.png",
             body: "Andy's background is in venture design, management consulting and technology startups, including process improvement for enterprise and SMEs.",
             showSocialButtons: true,
+            socialLinks: {
+              linkedin: "https://www.linkedin.com/in/andymdavid/",
+              primal: "https://primal.net/andydavid",
+            },
           },
         ],
       },
@@ -618,8 +626,9 @@ export const siteContent: SiteContent = {
         logoText: "LEVEL-UP",
         links: [],
         social: [
+          { platform: "X", href: "https://x.com/OtherStuffAU" },
           { platform: "LinkedIn", href: "https://www.linkedin.com/company/otherstuffvs/" },
-          { platform: "YouTube", href: "https://www.youtube.com/@OtherStuffAI" },
+          { platform: "YouTube", href: "https://otherstuff.studio/thegoodstuff" },
         ],
         contact: {
           email: "info@otherstuff.studio",

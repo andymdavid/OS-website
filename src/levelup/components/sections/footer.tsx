@@ -3,6 +3,7 @@ import {
   Instagram,
   Linkedin,
   Youtube,
+  Twitter,
 } from "lucide-react";
 
 // Custom TikTok icon since lucide doesn't have one
@@ -35,6 +36,7 @@ interface FooterProps {
 }
 
 const socialIcons: Record<string, React.ComponentType<{ className?: string }>> = {
+  x: Twitter,
   linkedin: Linkedin,
   tiktok: TikTokIcon,
   instagram: Instagram,
