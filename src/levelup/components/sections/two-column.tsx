@@ -347,7 +347,7 @@ export function TwoColumn({
               <video
                 className={
                   featureCardsAsCard
-                    ? "levelup-intro-card-video aspect-square w-full bg-[#141312]"
+                    ? "levelup-intro-card-video aspect-[4/3] w-full bg-[#141312]"
                     : "aspect-[16/10] w-full object-contain bg-white"
                 }
                 src={block.video}
@@ -360,7 +360,7 @@ export function TwoColumn({
               <div
                 className={
                   featureCardsAsCard
-                    ? "levelup-intro-card-image-wrap relative aspect-square w-full bg-[#141312]"
+                    ? "levelup-intro-card-image-wrap relative aspect-[4/3] w-full bg-[#141312]"
                     : "relative aspect-[16/10] w-full bg-white p-10"
                 }
               >
@@ -379,7 +379,7 @@ export function TwoColumn({
               <div
                 className={
                   featureCardsAsCard
-                    ? "aspect-square w-full rounded-[3px] bg-gradient-to-br from-neutral-800 to-neutral-900"
+                    ? "aspect-[4/3] w-full rounded-[3px] bg-gradient-to-br from-neutral-800 to-neutral-900"
                     : "aspect-[16/10] w-full bg-neutral-300/70"
                 }
               />
@@ -388,7 +388,7 @@ export function TwoColumn({
           <h3
             className={
               featureCardsAsCard
-                ? "mt-3 px-2 text-base font-semibold text-white"
+                ? "mt-4 px-3 text-base font-semibold text-white"
                 : "mt-4 text-base font-semibold text-[#201d1d]"
             }
           >
@@ -397,7 +397,7 @@ export function TwoColumn({
           <p
             className={
               featureCardsAsCard
-                ? "mt-1 px-2 pb-2 text-sm leading-relaxed text-neutral-400"
+                ? "mt-2 px-3 pb-4 text-sm leading-relaxed text-neutral-400"
                 : "mt-2 text-sm text-neutral-600"
             }
           >
