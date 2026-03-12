@@ -136,7 +136,7 @@
 
 .levelup-page .levelup-intro-card-video,
 .levelup-page .levelup-intro-card-image {
-  transform: scale(1.42);
+  transform: scale(1.14);
   transform-origin: center;
 }
 
@@ -147,7 +147,7 @@
 @media (max-width: 768px) {
   .levelup-page .levelup-intro-card-video,
   .levelup-page .levelup-intro-card-image {
-    transform: scale(1.28);
+    transform: scale(1.08);
   }
 }
 
