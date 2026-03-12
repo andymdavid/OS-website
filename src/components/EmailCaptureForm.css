@@ -161,8 +161,17 @@
   .email-input {
     padding: 0 16px;
     line-height: 40px;
-    font-size: 13px;
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: var(--weight-regular);
+    letter-spacing: 0.2px;
     text-align: center;
+  }
+
+  .email-input::placeholder {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    letter-spacing: 0.2px;
   }
 
   .email-submit-btn {
@@ -178,6 +187,10 @@
     font-size: 16px; /* Prevents zoom on iOS */
     padding: 0 16px;
     text-align: center;
+  }
+
+  .email-input::placeholder {
+    font-size: 16px;
   }
 
   .email-submit-btn {
