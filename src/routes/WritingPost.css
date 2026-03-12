@@ -101,6 +101,24 @@
   color: rgba(240, 240, 240, 0.8);
 }
 
+.writing-post-page .writing-post-content h2 {
+  margin: 40px 0 16px;
+  font-size: 26px;
+  line-height: 1.2;
+}
+
+.writing-post-page .writing-post-content ul {
+  margin: 0 0 20px 20px;
+  padding: 0;
+  color: rgba(240, 240, 240, 0.8);
+}
+
+.writing-post-page .writing-post-content li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
 .writing-post-page .writing-post-keep-reading.section {
   padding-top: 40px;
   padding-bottom: 40px;

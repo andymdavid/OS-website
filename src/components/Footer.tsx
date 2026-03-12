@@ -63,9 +63,9 @@ export function Footer() {
           <div className="footer-legal">
             <span>© 2025 Other Stuff Pty Ltd. All rights reserved.</span>
             <span className="footer-separator">•</span>
-            <a href="#terms">Terms of Service</a>
+            <a href="/terms">Terms of Service</a>
             <span className="footer-separator">•</span>
-            <a href="#privacy">Privacy Policy</a>
+            <a href="/privacy">Privacy Policy</a>
           </div>
 
           <div className="footer-social">

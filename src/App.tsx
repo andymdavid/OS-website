@@ -10,6 +10,8 @@ import Writing from './routes/Writing';
 import WritingPost from './routes/WritingPost';
 import About from './routes/About';
 import Games from './routes/Games';
+import Terms from './routes/Terms';
+import Privacy from './routes/Privacy';
 
 const router = createBrowserRouter([
   {
@@ -47,6 +49,14 @@ const router = createBrowserRouter([
   {
     path: '/about',
     element: <About />,
+  },
+  {
+    path: '/terms',
+    element: <Terms />,
+  },
+  {
+    path: '/privacy',
+    element: <Privacy />,
   },
   // Archived pages (noindex)
   {
