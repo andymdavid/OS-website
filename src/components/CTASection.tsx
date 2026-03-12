@@ -9,6 +9,7 @@ interface CTASectionProps {
   heading?: string;
   intro?: string;
   buttonLabel?: string;
+  className?: string;
 }
 
 export function CTASection({
@@ -16,9 +17,10 @@ export function CTASection({
   heading = "Ready to get started? Here's where to begin.",
   intro = "If you're ready to start building your internal AI capability in a practical way, lets chat.",
   buttonLabel = 'Talk to Us',
+  className,
 }: CTASectionProps) {
   return (
-    <section className="section cta-section">
+    <section className={`section cta-section ${className ?? ''}`.trim()}>
       <div className="section-container-wide cta-content">
         <div className="intro-pill">{pillLabel}</div>
 
