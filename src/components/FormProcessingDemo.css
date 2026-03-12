@@ -23,7 +23,7 @@
   right: 0;
   bottom: 0;
   background:
-    rgba(15, 14, 13, 0.7),
+    linear-gradient(rgba(15, 14, 13, 0.7), rgba(15, 14, 13, 0.7)),
     url('/mg-background.png') center / cover no-repeat;
 }
 
