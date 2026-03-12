@@ -133,8 +133,7 @@
   gap: 12px;
   min-height: 88px;
   transition: transform var(--duration-base) var(--ease-out);
-  justify-content: flex-end;
-  height: 100%;
+  margin-top: auto;
 }
 
 .funnel-card:hover .funnel-card-footer {
@@ -297,10 +296,7 @@
   }
 
   .funnel-card-header {
-    position: absolute;
-    top: 24px;
-    left: 24px;
-    right: 24px;
+    position: static;
   }
 
   .funnel-card-footer {
@@ -312,7 +308,6 @@
     gap: 16px;
     justify-content: flex-end;
     margin-top: auto;
-    padding-top: 156px;
   }
 
   .funnel-card:hover .funnel-card-footer {
