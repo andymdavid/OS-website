@@ -265,6 +265,12 @@
     overflow: hidden;
   }
 
+  .funnel-card:hover {
+    transform: none;
+    background: rgba(240, 240, 240, 0.05);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
   .funnel-card-image {
     position: absolute;
     inset: 0;
@@ -282,6 +288,14 @@
     filter: brightness(0.7);
   }
 
+  .funnel-card:hover .funnel-card-image {
+    opacity: 0.22;
+  }
+
+  .funnel-card:hover .funnel-card-image img {
+    transform: none;
+  }
+
   .funnel-card-overlay {
     position: relative;
     padding: 24px;
@@ -293,6 +307,15 @@
       rgba(0, 0, 0, 0.72) 100%
     );
     gap: 16px;
+  }
+
+  .funnel-card:hover .funnel-card-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.32) 0%,
+      rgba(0, 0, 0, 0.48) 45%,
+      rgba(0, 0, 0, 0.72) 100%
+    );
   }
 
   .funnel-card-header {
