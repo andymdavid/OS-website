@@ -142,11 +142,15 @@
 .showcase-card.inactive .showcase-card-inner {
   justify-content: center;
   align-items: center;
-  padding: 24px 16px;
+  padding: 0 16px;
 }
 
 .showcase-card.inactive .showcase-card-text {
   width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
 }
 
 /* Top section */
