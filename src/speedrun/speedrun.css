@@ -392,6 +392,16 @@
   .speedrun-page .bio-card {
     flex-basis: 100%;
   }
+
+  .speedrun-page .showcase-section {
+    align-items: center;
+  }
+
+  .speedrun-page .speedrun-card {
+    width: min(100%, 320px);
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .speedrun-page section {
