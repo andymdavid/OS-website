@@ -15,9 +15,9 @@ export default function Games() {
         <section className="section writing-hero">
           <div className="section-container-wide writing-hero-inner">
             <div className="hero-title-block">
-              <h1>Games</h1>
+              <h1>We became an accidental games studio, built as part of our hands-on work with AI.</h1>
               <p className="hero-bridge">
-                Playable games built through Level-Up.
+                They’re simple, playable examples of what’s possible when you use these tools to build quickly, experiment freely, and turn ideas into working software.
               </p>
               <div className="hero-cta">
                 <Button
