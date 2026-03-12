@@ -271,6 +271,12 @@
     border-color: rgba(255, 255, 255, 0.08);
   }
 
+  .funnel-card:active {
+    transform: none;
+    background: rgba(240, 240, 240, 0.05);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+
   .funnel-card-image {
     position: absolute;
     inset: 0;
