@@ -63,6 +63,15 @@
   line-height: 1.6;
 }
 
+.footer-email-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer-email-link:hover {
+  text-decoration: underline;
+}
+
 /* Columns 2-4: Menus */
 .footer-column {
   display: flex;

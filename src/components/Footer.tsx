@@ -25,7 +25,11 @@ export function Footer() {
               <p>Other Stuff Pty Ltd</p>
               <p>ABN 20 682 110 970</p>
               <p>City Beach WA 6015</p>
-              <p>info@otherstuff.studio</p>
+              <p>
+                <a href="mailto:info@otherstuff.studio" className="footer-email-link">
+                  info@otherstuff.studio
+                </a>
+              </p>
             </div>
           </div>
 
