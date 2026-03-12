@@ -19,7 +19,7 @@ export function CTASection({
   intro = "If you're ready to start building your internal AI capability in a practical way, lets chat.",
   buttonLabel = 'Talk to Us',
   className,
-  pillHasDot = false,
+  pillHasDot = true,
 }: CTASectionProps) {
   return (
     <section className={`section cta-section ${className ?? ''}`.trim()}>
