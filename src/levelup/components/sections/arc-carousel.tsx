@@ -38,6 +38,28 @@ function calculateArcTransform(
   return { yOffset, scale, rotateY, zIndex };
 }
 
+function resolveResponsiveOverlapTop(overlapTop: string, width: number) {
+  if (!overlapTop.endsWith("px")) {
+    return overlapTop;
+  }
+
+  const baseValue = Number.parseFloat(overlapTop);
+
+  if (Number.isNaN(baseValue)) {
+    return overlapTop;
+  }
+
+  if (width < 640) {
+    return `${baseValue + 100}px`;
+  }
+
+  if (width < 1024) {
+    return `${baseValue + 60}px`;
+  }
+
+  return `${baseValue + 40}px`;
+}
+
 export function ArcCarousel({
   cards,
   speed = 60,
@@ -87,6 +109,10 @@ export function ArcCarousel({
   const displayCards = useMemo(() => [...cards, ...cards], [cards]);
   const cardGap = 60;
   const totalWidth = displayCards.length * (dimensions.cardWidth + cardGap);
+  const responsiveOverlapTop = useMemo(
+    () => resolveResponsiveOverlapTop(overlapTop, dimensions.width),
+    [overlapTop, dimensions.width]
+  );
 
   // Animation loop
   useAnimationFrame((time, delta) => {
@@ -129,7 +155,7 @@ export function ArcCarousel({
       ref={containerRef}
       className={cn("relative w-full", className)}
       style={{
-        marginTop: overlapTop,
+        marginTop: responsiveOverlapTop,
         marginBottom: overlapBottom,
         zIndex: 10,
       }}
