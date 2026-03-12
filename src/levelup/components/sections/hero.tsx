@@ -15,6 +15,7 @@ interface HeroProps {
   subtitle: string;
   subtitleMaxWidth?: string;
   centerContent?: boolean;
+  contentOffset?: string;
   variant?: "default" | "homeStyle";
   ctaPrimary:
     | string
@@ -38,6 +39,7 @@ export function Hero({
   subtitle,
   subtitleMaxWidth = "50.4rem",
   centerContent = false,
+  contentOffset,
   variant = "default",
   ctaPrimary,
   socialProof,
@@ -52,8 +54,8 @@ export function Hero({
       : ctaPrimary;
   const heroStackStyle = !centerContent
     ? { marginTop: "-22vh" }
-    : variant === "homeStyle"
-      ? { marginTop: "clamp(-88px, -6vh, -32px)" }
+    : contentOffset
+      ? { marginTop: contentOffset }
       : undefined;
 
   return (
