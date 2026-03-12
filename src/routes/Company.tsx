@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Navigation } from '../components/Navigation';
 import { Section } from '../components/Section';
 import { Footer } from '../components/Footer';
@@ -6,6 +7,17 @@ import { useScrollAnimation } from '../hooks/useScrollAnimation';
 export default function Company() {
   // Initialize scroll animations
   useScrollAnimation();
+
+  // Add noindex meta tag for archived page
+  useEffect(() => {
+    const meta = document.createElement('meta');
+    meta.name = 'robots';
+    meta.content = 'noindex, nofollow';
+    document.head.appendChild(meta);
+    return () => {
+      document.head.removeChild(meta);
+    };
+  }, []);
 
   return (
     <div className="os-theme">

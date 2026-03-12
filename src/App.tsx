@@ -9,20 +9,11 @@ import TheGoodStuff from './routes/TheGoodStuff';
 import Writing from './routes/Writing';
 import WritingPost from './routes/WritingPost';
 import About from './routes/About';
-import Contact from './routes/Contact';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Home />,
-  },
-  {
-    path: '/home-duplicate',
     element: <HomeDuplicate />,
-  },
-  {
-    path: '/company',
-    element: <Company />,
   },
   {
     path: '/levelup',
@@ -52,9 +43,14 @@ const router = createBrowserRouter([
     path: '/about',
     element: <About />,
   },
+  // Archived pages (noindex)
   {
-    path: '/contact',
-    element: <Contact />,
+    path: '/archive/home',
+    element: <Home />,
+  },
+  {
+    path: '/archive/company',
+    element: <Company />,
   },
 ]);
 
