@@ -132,6 +132,22 @@
   }
 }
 
+.levelup-page .intro-pill {
+  background: #0c0b0a;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.levelup-page .intro-pill::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2ea782;
+  animation: pill-pulse 1.5s infinite;
+}
+
 /* Cards styling */
 .levelup-page .levelup-card {
   border-radius: 4px !important;

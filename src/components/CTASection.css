@@ -31,33 +31,3 @@
 .cta-button {
   margin-top: 8px;
 }
-
-.intro-pill-status {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 12px 18px;
-  background: rgba(8, 8, 8, 0.9);
-  border: 1px solid rgba(240, 240, 240, 0.18);
-}
-
-.intro-pill-dot {
-  width: 16px;
-  height: 16px;
-  border-radius: 999px;
-  background: #2ea782;
-  box-shadow: 0 0 0 0 rgba(46, 167, 130, 0.45);
-  animation: cta-pill-pulse 1.8s infinite;
-}
-
-@keyframes cta-pill-pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(46, 167, 130, 0.45);
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(46, 167, 130, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(46, 167, 130, 0);
-  }
-}
