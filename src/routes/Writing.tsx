@@ -5,64 +5,13 @@ import { Footer } from "@/components/Footer";
 import "@/components/Hero.css";
 import "@/routes/Writing.css";
 
-const posts = [
-  {
-    id: "01",
-    title: "Post Title",
-    description: "Short description of the post goes here.",
-    date: "2026-02-01",
-    thumbnail: "/Hero-Background.png",
-  },
-  {
-    id: "02",
-    title: "Post Title",
-    description: "Short description of the post goes here.",
-    date: "2026-01-18",
-    thumbnail: "/Hero-Background.png",
-  },
-  {
-    id: "03",
-    title: "Post Title",
-    description: "Short description of the post goes here.",
-    date: "2026-01-04",
-    thumbnail: "/Hero-Background.png",
-  },
-  {
-    id: "04",
-    title: "Post Title",
-    description: "Short description of the post goes here.",
-    date: "2025-12-20",
-    thumbnail: "/Hero-Background.png",
-  },
-  {
-    id: "05",
-    title: "Post Title",
-    description: "Short description of the post goes here.",
-    date: "2025-12-06",
-    thumbnail: "/Hero-Background.png",
-  },
-  {
-    id: "06",
-    title: "Post Title",
-    description: "Short description of the post goes here.",
-    date: "2025-11-22",
-    thumbnail: "/Hero-Background.png",
-  },
-  {
-    id: "07",
-    title: "Post Title",
-    description: "Short description of the post goes here.",
-    date: "2025-11-08",
-    thumbnail: "/Hero-Background.png",
-  },
-  {
-    id: "08",
-    title: "Post Title",
-    description: "Short description of the post goes here.",
-    date: "2025-10-25",
-    thumbnail: "/Hero-Background.png",
-  },
-];
+const posts: Array<{
+  id: string;
+  title: string;
+  description: string;
+  date: string;
+  thumbnail: string;
+}> = [];
 
 export default function Writing() {
   return (
@@ -88,25 +37,27 @@ export default function Writing() {
           </div>
         </section>
 
-        <section className="section writing-posts">
-          <div className="writing-posts-grid">
-            {posts.slice(0, 4).map((post) => (
-              <article key={post.id} className="writing-post">
-                <div className="writing-post-header">
-                  <span className="writing-post-id">[{post.id}]</span>
-                  <div className="writing-post-meta">
-                    <div className="writing-post-title">{post.title}</div>
-                    <div className="writing-post-description">{post.description}</div>
-                    <div className="writing-post-date">{post.date}</div>
+        {posts.length > 0 ? (
+          <section className="section writing-posts">
+            <div className="writing-posts-grid">
+              {posts.slice(0, 4).map((post) => (
+                <article key={post.id} className="writing-post">
+                  <div className="writing-post-header">
+                    <span className="writing-post-id">[{post.id}]</span>
+                    <div className="writing-post-meta">
+                      <div className="writing-post-title">{post.title}</div>
+                      <div className="writing-post-description">{post.description}</div>
+                      <div className="writing-post-date">{post.date}</div>
+                    </div>
                   </div>
-                </div>
-                <div className="writing-post-media">
-                  <img src={post.thumbnail} alt={post.title} loading="lazy" />
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
+                  <div className="writing-post-media">
+                    <img src={post.thumbnail} alt={post.title} loading="lazy" />
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+        ) : null}
 
         <CTASection />
       </main>
