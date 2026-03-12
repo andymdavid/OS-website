@@ -402,6 +402,14 @@
     margin-left: auto;
     margin-right: auto;
   }
+
+  .speedrun-page .speedrun-card .expandable-card-media {
+    min-height: 220px;
+  }
+
+  .speedrun-page .speedrun-card .expandable-card-body {
+    margin-top: 0;
+  }
 }
 
 .speedrun-page section {
