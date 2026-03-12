@@ -127,9 +127,9 @@
 }
 
 .funnel-card-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
   gap: 12px;
   min-height: 88px;
   transition: transform var(--duration-base) var(--ease-out);
@@ -146,6 +146,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  grid-column: 1;
 }
 
 .funnel-card-title-row {
@@ -178,6 +179,9 @@
 }
 
 .funnel-card-button {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: end;
   flex-shrink: 0;
   height: 35px;
   min-width: 120px;
@@ -199,6 +203,7 @@
 }
 
 .funnel-card-description {
+  grid-column: 1 / -1;
   font-size: 14px;
   color: rgba(240, 240, 240, 0.75);
   line-height: 1.5;
@@ -284,14 +289,17 @@
     min-height: 100%;
     background: linear-gradient(
       to bottom,
-      rgba(0, 0, 0, 0.55) 0%,
-      rgba(0, 0, 0, 0.72) 45%,
-      rgba(0, 0, 0, 0.88) 100%
+      rgba(0, 0, 0, 0.32) 0%,
+      rgba(0, 0, 0, 0.48) 45%,
+      rgba(0, 0, 0, 0.72) 100%
     );
     gap: 16px;
   }
 
   .funnel-card-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     min-height: 100%;
     transform: none;
     gap: 16px;
@@ -312,6 +320,9 @@
   }
 
   .funnel-card-button {
+    grid-column: auto;
+    grid-row: auto;
+    align-self: stretch;
     padding: 10px 20px;
     font-size: 13px;
     width: 100%;
