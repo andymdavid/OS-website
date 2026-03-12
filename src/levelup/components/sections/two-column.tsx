@@ -347,7 +347,7 @@ export function TwoColumn({
               <video
                 className={
                   featureCardsAsCard
-                    ? "levelup-intro-card-video aspect-[16/10] w-full bg-[#141312]"
+                    ? "levelup-intro-card-video aspect-square w-full bg-[#141312]"
                     : "aspect-[16/10] w-full object-contain bg-white"
                 }
                 src={block.video}
@@ -360,7 +360,7 @@ export function TwoColumn({
               <div
                 className={
                   featureCardsAsCard
-                    ? "levelup-intro-card-image-wrap relative aspect-[16/10] w-full bg-[#141312]"
+                    ? "levelup-intro-card-image-wrap relative aspect-square w-full bg-[#141312]"
                     : "relative aspect-[16/10] w-full bg-white p-10"
                 }
               >
@@ -379,7 +379,7 @@ export function TwoColumn({
               <div
                 className={
                   featureCardsAsCard
-                    ? "aspect-[16/10] w-full rounded-lg bg-gradient-to-br from-neutral-800 to-neutral-900"
+                    ? "aspect-square w-full rounded-[3px] bg-gradient-to-br from-neutral-800 to-neutral-900"
                     : "aspect-[16/10] w-full bg-neutral-300/70"
                 }
               />
