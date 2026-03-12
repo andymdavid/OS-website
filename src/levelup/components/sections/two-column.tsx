@@ -243,7 +243,7 @@ export function TwoColumn({
   const renderDefaultBody = (className: string) => {
     if (bodyParagraphs && bodyParagraphs.length > 0) {
       return (
-        <div className={className}>
+        <div className={`${className} space-y-4`}>
           {bodyParagraphs.map((paragraph, index) => (
             <p key={index} style={{ whiteSpace: "pre-line" }}>
               {renderBodyWithLinks(paragraph)}
