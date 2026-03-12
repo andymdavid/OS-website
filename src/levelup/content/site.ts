@@ -51,7 +51,7 @@ export const siteContent: SiteContent = {
   sections: [
     {
       key: "navbar",
-      enabled: true,
+      enabled: false,
       props: {
         links: [
           { label: "What is Level-Up", href: "#twoColumn" },
@@ -320,13 +320,12 @@ export const siteContent: SiteContent = {
       enabled: true,
       id: "twoColumn-7",
       props: {
-        title: "Who we are",
+        title: "Who we are.",
         body:
-          "Level Up is delivered by Other Stuff, a Perth-based team that works hands-on with AI systems in the real-world. Our work focuses on helping people understand how AI actually behaves by building and running things that are practical, not by talking about them in theory. We’ve also worked with Stakwork, a Silicon Valley AI company on agent-based systems, and that lived experience shapes how we teach, advise, and support others - always grounded in what works in practice, not just in theory. We’ve seen that confidence and understanding come fastest when people are able to build something themselves and observe how it works in practice. Level Up is an extension of that approach, adapted for schools. It brings the same build-first, practical way of learning AI into the classroom, designed to be accessible, supportive, and grounded in real experience.",
+          "Level Up is delivered by Other Stuff, a Perth-based team that works hands-on with AI systems in the real-world. Our work focuses on helping people understand how AI actually behaves by building and running things that are practical, not by talking about them in theory.\n\nWe've also worked with Stakwork, a Silicon Valley AI company on agent-based systems, and that lived experience shapes how we teach, advise, and support others - always grounded in what works in practice, not just in theory.\n\nWe've seen that confidence and understanding come fastest when people are able to build something themselves and observe how it works in practice. Level Up is an extension of that approach, adapted for schools.",
         bodyMobileSplitParas: [
-          "We’ve also worked with Stakwork",
-          "We’ve seen that confidence",
-          "Level Up is an extension",
+          "We've also worked with Stakwork",
+          "We've seen that confidence",
         ],
         bodyLinks: [
           {
@@ -335,10 +334,12 @@ export const siteContent: SiteContent = {
             newTab: true,
           },
         ],
-        profileLogo: "/logo-other-stuff.png",
+        layout: "split",
+        textAlign: "left",
+        maxWidth: "wide",
         fullHeight: true,
-        blocksVariant: "profile",
-        blocks: [
+        splitRightBlocksVariant: "card",
+        splitRightBlocks: [
           {
             title: "Pete Winn",
             role: "Co-Founder",
@@ -584,17 +585,17 @@ export const siteContent: SiteContent = {
     },
     {
       key: "finalCta",
-      enabled: true,
+      enabled: false,
       id: "finalCta",
       props: {
-        title: "Let’s talk about bringing Level-Up to your school",
+        title: "Let's talk about bringing Level-Up to your school",
         ctaPrimary: "Get Started",
         ctaSecondary: "Mail ons direct",
       },
     },
     {
       key: "footer",
-      enabled: true,
+      enabled: false,
       id: "footer",
       props: {
         logo: "Level-Up",
