@@ -311,17 +311,17 @@ export function TwoColumn({
       </span>
     ));
 
-  const renderFeatureBlocks = (className: string) => (
+  const renderFeatureBlocks = (className: string, compact = false) => (
     <div className={className}>
       {blocks?.map((block) => (
         <div
           key={block.number ?? block.title}
           className="border-t border-neutral-300/70 pt-4"
         >
-          <div className="mt-4 overflow-hidden rounded-xl bg-neutral-200/70">
+          <div className={`overflow-hidden rounded-xl bg-neutral-200/70 ${compact ? "mt-3" : "mt-4"}`}>
             {block.video ? (
               <video
-                className="aspect-[16/10] w-full object-contain bg-white"
+                className={`${compact ? "aspect-[16/8.5]" : "aspect-[16/10]"} w-full object-contain bg-white`}
                 src={block.video}
                 autoPlay
                 loop
@@ -329,7 +329,7 @@ export function TwoColumn({
                 playsInline
               />
             ) : block.image ? (
-              <div className="relative aspect-[16/10] w-full bg-white p-10">
+              <div className={`relative w-full bg-white ${compact ? "aspect-[16/8.5] p-6" : "aspect-[16/10] p-10"}`}>
                 <img
                   src={block.image}
                   alt={block.imageAlt || block.title}
@@ -338,13 +338,15 @@ export function TwoColumn({
                 />
               </div>
             ) : (
-              <div className="aspect-[16/10] w-full bg-neutral-300/70" />
+              <div className={`${compact ? "aspect-[16/8.5]" : "aspect-[16/10]"} w-full bg-neutral-300/70`} />
             )}
           </div>
-          <h3 className="mt-4 text-base font-semibold text-[#201d1d]">
+          <h3 className={`${compact ? "mt-3 text-[15px]" : "mt-4 text-base"} font-semibold text-[#201d1d]`}>
             {block.title}
           </h3>
-          <p className="mt-2 text-sm text-neutral-600">{block.body}</p>
+          <p className={`${compact ? "mt-1.5 text-[13px] leading-relaxed" : "mt-2 text-sm"} text-neutral-600`}>
+            {block.body}
+          </p>
         </div>
       ))}
     </div>
@@ -734,7 +736,7 @@ export function TwoColumn({
             transition={{ duration: 0.5 }}
             className="max-w-6xl mx-auto"
           >
-            <div className="grid gap-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
+            <div className="grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,0.85fr)] lg:items-start">
               <div className="max-w-[42rem]">
                 {!hideTitle ? (
                   <h2 className="font-anton text-[40px] tracking-tight leading-tight text-left">
@@ -753,7 +755,7 @@ export function TwoColumn({
                   return bodyElement;
                 })()}
               </div>
-              {renderFeatureBlocks("grid gap-8")}
+              {renderFeatureBlocks("grid gap-5 max-w-[24rem] w-full lg:ml-auto", true)}
             </div>
           </motion.div>
         </Container>
