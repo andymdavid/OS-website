@@ -132,11 +132,6 @@
   }
 }
 
-.levelup-page .levelup-cta-section .intro-pill {
-  background: rgba(240, 240, 240, 0.1);
-  border: 1px solid rgba(240, 240, 240, 0.2);
-}
-
 /* Cards styling */
 .levelup-page .levelup-card {
   border-radius: 4px !important;

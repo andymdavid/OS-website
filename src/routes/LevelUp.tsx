@@ -18,9 +18,6 @@ export default function LevelUp() {
       />
       <SiteShell />
       <CTASection
-        className="levelup-cta-section"
-        pillLabel="GET STARTED"
-        pillHasDot
         intro="Let's talk about bringing Level-Up to your school."
       />
       <Footer />
