@@ -8,10 +8,10 @@ export function Footer() {
       <div className="footer-container">
         {/* Logo/Icon - Outside Grid */}
         <div className="footer-brand">
-          <div className="footer-logo-icon">
+          <a href="/" className="footer-logo-icon" aria-label="Other Stuff home">
             <img src="/Logo-Main-Icon.png" alt="Other Stuff Logo" width="46" height="31" />
-          </div>
-          <div className="footer-logo">OTHER STUFF</div>
+          </a>
+          <a href="/" className="footer-logo">OTHER STUFF</a>
         </div>
 
         {/* Main Grid - 4 Columns */}
