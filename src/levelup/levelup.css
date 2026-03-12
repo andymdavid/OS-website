@@ -131,23 +131,25 @@
 }
 
 .levelup-page .levelup-intro-card-media {
+  width: calc(100% - 24px);
+  margin: 10px auto 0;
   border-radius: 3px;
 }
 
 .levelup-page .levelup-intro-card-video,
 .levelup-page .levelup-intro-card-image {
-  transform: scale(1.14);
+  transform: scale(0.94);
   transform-origin: center;
 }
 
 .levelup-page .levelup-intro-card-image-wrap {
-  padding: 12px;
+  padding: 8px;
 }
 
 @media (max-width: 768px) {
   .levelup-page .levelup-intro-card-video,
   .levelup-page .levelup-intro-card-image {
-    transform: scale(1.08);
+    transform: scale(0.92);
   }
 }
 

@@ -332,7 +332,7 @@ export function TwoColumn({
           key={block.number ?? block.title}
           className={
             featureCardsAsCard
-              ? "levelup-card levelup-intro-card p-1.5"
+              ? "levelup-card levelup-intro-card mx-auto w-full max-w-[320px] p-1.5"
               : "border-t border-neutral-300/70 pt-4"
           }
         >
@@ -862,7 +862,11 @@ export function TwoColumn({
           )}
           {blocks && blocks.length > 0 ? (
             blocksVariant === "feature" ? (
-              renderFeatureBlocks("mt-10 pt-6 grid gap-x-10 gap-y-12 md:grid-cols-3")
+              renderFeatureBlocks(
+                featureCardsAsCard
+                  ? "mt-10 pt-6 grid gap-6 md:grid-cols-3 items-start"
+                  : "mt-10 pt-6 grid gap-x-10 gap-y-12 md:grid-cols-3"
+              )
             ) : blocksVariant === "expandable" ? (
               <div
                 className={
