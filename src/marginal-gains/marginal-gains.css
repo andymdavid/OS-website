@@ -65,6 +65,25 @@
   .marginal-gains-page h2 {
     font-size: 32px !important;
   }
+
+  .marginal-gains-page .speedrun-hero {
+    min-height: 100svh !important;
+    background-position: center top, center top;
+    background-size: cover, cover;
+  }
+
+  .marginal-gains-page .speedrun-hero-stack {
+    width: 100%;
+  }
+
+  .marginal-gains-page .speedrun-hero-cta {
+    width: 100%;
+  }
+
+  .marginal-gains-page .speedrun-hero-cta .btn-primary {
+    width: 100%;
+    max-width: 300px;
+  }
 }
 
 .marginal-gains-page #how-speedrun-works {
