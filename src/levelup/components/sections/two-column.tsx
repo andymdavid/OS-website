@@ -486,7 +486,6 @@ export function TwoColumn({
                         background: "rgba(240, 240, 240, 0.05)",
                         border: "1px solid rgba(255, 255, 255, 0.08)",
                         boxShadow: "0 0 30px rgba(255, 255, 255, 0.06)",
-                        width: "260px",
                       }}
                     >
                       <div className="flex items-start gap-4">
