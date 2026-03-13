@@ -80,14 +80,11 @@
     width: 100%;
   }
 
-  .marginal-gains-page .speedrun-hero-cta .btn-primary {
-    width: 100%;
-    max-width: 300px;
-  }
-
-  .marginal-gains-page .btn-primary {
-    width: 100%;
-    max-width: 300px;
+  .marginal-gains-page .btn-primary,
+  .marginal-gains-page .btn-secondary {
+    width: min(100%, 300px) !important;
+    max-width: none !important;
+    min-width: 0 !important;
   }
 
   .marginal-gains-page #twoColumn .speedrun-card {
