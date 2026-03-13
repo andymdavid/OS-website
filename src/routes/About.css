@@ -31,6 +31,11 @@
   margin-right: auto;
 }
 
+.about-page h2 {
+  font-size: clamp(26px, 4.2vw, 42px) !important;
+  line-height: 0.9 !important;
+}
+
 .about-page .hero-title-block .hero-bridge {
   margin-top: 8px;
 }
@@ -86,7 +91,6 @@
 }
 
 .about-page .about-split-left h2 {
-  font-size: clamp(26px, 4.2vw, 42px);
   line-height: 0.95;
   margin-bottom: 24px;
 }
@@ -140,7 +144,6 @@
 }
 
 .about-page .about-system-header h2 {
-  font-size: clamp(26px, 4.2vw, 42px);
   line-height: 0.95;
   margin-bottom: 24px;
 }
@@ -253,7 +256,6 @@
 }
 
 .about-page .about-who-left h2 {
-  font-size: clamp(26px, 4.2vw, 42px);
   line-height: 0.95;
   margin-bottom: 24px;
   max-width: 38rem;
