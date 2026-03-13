@@ -429,6 +429,38 @@
     gap: 32px;
   }
 
+  .mobile-menu-header {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .mobile-menu-close {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .mobile-menu-close span {
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    top: 19px;
+    height: 2px;
+    background: var(--color-text);
+  }
+
+  .mobile-menu-close span:first-child {
+    transform: rotate(45deg);
+  }
+
+  .mobile-menu-close span:last-child {
+    transform: rotate(-45deg);
+  }
+
   .mobile-menu-groups {
     display: flex;
     flex-direction: column;
