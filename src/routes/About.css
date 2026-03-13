@@ -55,6 +55,12 @@
 }
 
 @media (max-width: 768px) {
+  .about-page .about-hero,
+  .about-page .about-hero.section {
+    min-height: 74svh;
+    height: 74svh;
+  }
+
   .about-page .hero-title-block {
     transform: translateY(40px);
   }
