@@ -291,17 +291,15 @@ export function NavigationDraft({ titleOverride, titleSwapOnScroll }: Navigation
 
       <div className={`mobile-menu-overlay ${isMenuOpen ? 'active' : ''}`}>
         <div className="mobile-menu-panel">
-          <div className="mobile-menu-header">
-            <button
-              type="button"
-              className="mobile-menu-close"
-              onClick={closeMenus}
-              aria-label="Close menu"
-            >
-              <span></span>
-              <span></span>
-            </button>
-          </div>
+          <button
+            type="button"
+            className="mobile-menu-close"
+            onClick={closeMenus}
+            aria-label="Close menu"
+          >
+            <span></span>
+            <span></span>
+          </button>
 
           <div className="mobile-menu-groups">
             <div className="mobile-menu-group">
