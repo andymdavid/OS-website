@@ -436,7 +436,7 @@ export function TwoColumn({
             </h2>
             {renderSplitParagraphs()}
             {splitModalCta ? (
-              <div className="mt-6">
+              <div className="section-cta mt-6">
                 <OsButton
                   variant="primary"
                   onClick={() => {
@@ -768,7 +768,7 @@ export function TwoColumn({
                 {renderBody()}
               </p>
               {splitModalCta ? (
-                <div className="mt-6">
+                <div className="section-cta mt-6">
                   <OsButton
                     variant="primary"
                     onClick={() => {

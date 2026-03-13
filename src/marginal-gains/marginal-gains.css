@@ -80,11 +80,17 @@
     width: 100%;
   }
 
-  .marginal-gains-page .btn-primary,
-  .marginal-gains-page .btn-secondary {
-    width: min(100%, 300px) !important;
-    max-width: none !important;
-    min-width: 0 !important;
+  .marginal-gains-page .section-cta {
+    width: 100%;
+  }
+
+  .marginal-gains-page .section-cta .btn-primary,
+  .marginal-gains-page .section-cta .btn-secondary,
+  .marginal-gains-page .speedrun-hero-cta .btn-primary,
+  .marginal-gains-page .speedrun-hero-cta .btn-secondary {
+    width: 100% !important;
+    max-width: 300px !important;
+    min-width: 170px !important;
   }
 
   .marginal-gains-page #twoColumn .speedrun-card {
