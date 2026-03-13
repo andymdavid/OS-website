@@ -34,10 +34,10 @@
 
 .intro-heading {
   font-family: var(--font-heading);
-  font-size: clamp(28px, 4vw, 42px);
+  font-size: clamp(26px, 4.2vw, 42px);
   font-weight: var(--weight-bold);
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
   color: var(--color-text);
   margin-bottom: 32px;
   max-width: 100%;
@@ -71,6 +71,7 @@
 
   .intro-heading {
     margin-bottom: 24px;
+    font-size: 32px;
   }
 
   .intro-text {
