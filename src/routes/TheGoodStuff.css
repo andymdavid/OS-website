@@ -153,12 +153,12 @@
 @media (max-width: 768px) {
   .the-good-stuff-page .good-stuff-hero,
   .the-good-stuff-page .good-stuff-hero.section {
-    min-height: 72svh;
-    height: 72svh;
+    min-height: 74svh;
+    height: 74svh;
   }
 
   .the-good-stuff-page .hero-title-block {
-    transform: translateY(40px);
+    transform: translateY(44px);
   }
 
   .the-good-stuff-page .hero-title-block h1 {

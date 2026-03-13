@@ -125,7 +125,7 @@ export default function TheGoodStuff() {
           <div className="section-container-wide good-stuff-hero-inner">
             <div className="hero-title-block">
               <h1>
-                {"The Good Stuff is a low-fi dialogue\nwith Pete Winn and Andy David."
+                {"The Good Stuff is a low-fi dialogue with Pete Winn and Andy David."
                   .split("\n")
                   .map((line) => (
                     <span key={line} className="block">
