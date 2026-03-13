@@ -20,6 +20,8 @@
 .cta-section .section-heading {
   margin-bottom: 20px;
   max-width: 800px;
+  font-size: clamp(26px, 4.2vw, 42px) !important;
+  line-height: 0.9 !important;
 }
 
 .cta-intro {
@@ -30,4 +32,10 @@
 
 .cta-button {
   margin-top: 8px;
+}
+
+@media (max-width: 767px) {
+  .cta-section .section-heading {
+    font-size: 32px !important;
+  }
 }
