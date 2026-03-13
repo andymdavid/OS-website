@@ -142,6 +142,12 @@
     font-size: 32px !important;
   }
 
+  .levelup-page .speedrun-hero {
+    min-height: 100svh !important;
+    background-position: center top, center top, center top;
+    background-size: cover, cover, cover;
+  }
+
   .levelup-page .speedrun-hero-stack {
     width: 100%;
   }
