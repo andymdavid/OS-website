@@ -96,6 +96,29 @@ export function NavigationDraft({ titleOverride, titleSwapOnScroll }: Navigation
   }, []);
 
   useEffect(() => {
+    if (!isMenuOpen) {
+      document.body.style.overflow = '';
+      return undefined;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        closeMenus();
+      }
+    };
+
+    window.addEventListener('keydown', handleEscape);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener('keydown', handleEscape);
+    };
+  }, [isMenuOpen]);
+
+  useEffect(() => {
     if (!titleSwapOnScroll) {
       return undefined;
     }
@@ -262,6 +285,71 @@ export function NavigationDraft({ titleOverride, titleSwapOnScroll }: Navigation
                 <p>{item.description}</p>
               </a>
             ))}
+          </div>
+        </div>
+      </div>
+
+      <div className={`mobile-menu-overlay ${isMenuOpen ? 'active' : ''}`}>
+        <div className="mobile-menu-panel">
+          <div className="mobile-menu-groups">
+            <div className="mobile-menu-group">
+              <button
+                className={`mobile-menu-primary mobile-menu-toggle ${openDropdown === 'solutions' ? 'active' : ''}`}
+                onClick={() => toggleDropdown('solutions')}
+                type="button"
+                aria-expanded={openDropdown === 'solutions'}
+              >
+                <span>Solutions</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+              <div className={`mobile-menu-submenu ${openDropdown === 'solutions' ? 'visible' : ''}`}>
+                {solutions.map((item) => (
+                  <a key={item.title} href={item.href} className="mobile-menu-subitem" onClick={closeMenus}>
+                    {item.title}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <div className="mobile-menu-group">
+              <button
+                className={`mobile-menu-primary mobile-menu-toggle ${openDropdown === 'media' ? 'active' : ''}`}
+                onClick={() => toggleDropdown('media')}
+                type="button"
+                aria-expanded={openDropdown === 'media'}
+              >
+                <span>Media</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+              <div className={`mobile-menu-submenu ${openDropdown === 'media' ? 'visible' : ''}`}>
+                {mediaLinks.map((item) => (
+                  <a key={item.title} href={item.href} className="mobile-menu-subitem" onClick={closeMenus}>
+                    {item.title}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <a href="/about" className="mobile-menu-primary mobile-menu-link" onClick={closeMenus}>
+              Company
+            </a>
+          </div>
+
+          <div className="mobile-menu-actions">
+            <a href="https://welcome.otherstuff.ai/" className="mobile-menu-secondary" onClick={closeMenus}>
+              Sign In
+            </a>
+            <a
+              href="mailto:info@otherstuff.studio"
+              className="nav-join-btn mobile-menu-cta"
+              onClick={closeMenus}
+            >
+              Talk to Us
+            </a>
           </div>
         </div>
       </div>
