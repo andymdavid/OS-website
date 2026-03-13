@@ -547,7 +547,7 @@
 /* Responsive */
 @media (max-width: 768px) {
   .form-demo-container {
-    min-height: 520px;
+    min-height: 620px;
     padding: 16px;
   }
 
