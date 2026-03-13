@@ -65,8 +65,16 @@
     transform: translateY(40px);
   }
 
+  .about-page .about-split.section {
+    min-height: auto;
+    height: auto;
+    padding: 64px 0 !important;
+  }
+
   .about-page .about-split-grid {
     grid-template-columns: 1fr;
+    min-height: auto;
+    align-items: start;
     padding: 64px clamp(24px, 5vw, 48px);
   }
 
