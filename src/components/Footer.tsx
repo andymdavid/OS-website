@@ -36,7 +36,7 @@ export function Footer() {
           {/* Column 2: Solutions */}
           <div className="footer-column">
             <h4>Solutions</h4>
-            <a href="#">Wingman</a>
+            <a href="/#system">Wingman</a>
             <a href="/speedrun">Speedrun Workshop</a>
             <a href="/levelup">Level-Up Workshop</a>
             <a href="/marginal-gains">Marginal Gains Club</a>
