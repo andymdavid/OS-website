@@ -84,6 +84,25 @@
     width: 100%;
     max-width: 300px;
   }
+
+  .marginal-gains-page .btn-primary {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .marginal-gains-page #twoColumn .speedrun-card {
+    width: min(100%, 320px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .marginal-gains-page #twoColumn .expandable-card-media {
+    min-height: 220px;
+  }
+
+  .marginal-gains-page #twoColumn .expandable-card-body {
+    margin-top: 0;
+  }
 }
 
 .marginal-gains-page #how-speedrun-works {
