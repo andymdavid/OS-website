@@ -78,7 +78,7 @@ export const siteContent: SiteContent = {
         variant: "homeStyle",
         title: "Develop AI Champions\ninside your business.",
         subtitle:
-          "Marginal Gains is a community for teams who want to build practical AI capability inside their business. Members work hands-on with agents that support day-to-day work, with structured guidance, shared learning, and ongoing support to help that capability compound over time.",
+          "Marginal Gains is an ongoing AI capability program for Perth small business teams and SMEs that want to build practical AI capability inside the business. Members work hands-on with agents that support day-to-day work, with structured guidance, shared learning, and ongoing support that helps capability compound over time.",
         subtitleMaxWidth: "72ch",
         centerContent: true,
         ctaPrimary: { label: "Talk to Us", href: "mailto:info@otherstuff.studio" },
@@ -89,14 +89,14 @@ export const siteContent: SiteContent = {
       enabled: false,
       props: {
         cards: [
-          { id: "1", title: "Bullrun", description: "Dodge the bulls", image: "/bullrun.png", href: "https://bullrun.otherstuff.ai" },
-          { id: "2", title: "Cowkey Kong", description: "Keep climbing", image: "/cowkey.png", href: "https://cowkong.otherstuff.ai" },
-          { id: "3", title: "Frogger", description: "Avoid the cards", image: "/frogger.png", href: "https://frogger.otherstuff.ai" },
-          { id: "4", title: "Lemmings", description: "Classic lemmings", image: "/lemmings.png", href: "https://lemmings.otherstuff.ai" },
-          { id: "5", title: "Pong", description: "Classic Pong", image: "/pong.png", href: "https://pong.otherstuff.ai" },
-          { id: "6", title: "Satoshi's Garden", description: "Stack sats", image: "/satsgarden.png", href: "https://satsgarden.otherstuff.ai" },
-          { id: "7", title: "Chesstr", description: "Play chess", image: "/chesstr.png", href: "https://chesstr.otherstuff.ai" },
-          { id: "8", title: "Scramble", description: "Navigate the cave", image: "/scramble.png", href: "https://scramble.otherstuff.ai" },
+          { id: "1", title: "Bullrun", description: "Dodge the bulls", image: "/bullrun.webp", href: "https://bullrun.otherstuff.ai" },
+          { id: "2", title: "Cowkey Kong", description: "Keep climbing", image: "/cowkey.webp", href: "https://cowkong.otherstuff.ai" },
+          { id: "3", title: "Frogger", description: "Avoid the cards", image: "/frogger.webp", href: "https://frogger.otherstuff.ai" },
+          { id: "4", title: "Lemmings", description: "Classic lemmings", image: "/lemmings.webp", href: "https://lemmings.otherstuff.ai" },
+          { id: "5", title: "Pong", description: "Classic Pong", image: "/pong.webp", href: "https://pong.otherstuff.ai" },
+          { id: "6", title: "Satoshi's Garden", description: "Stack sats", image: "/satsgarden.webp", href: "https://satsgarden.otherstuff.ai" },
+          { id: "7", title: "Chesstr", description: "Play chess", image: "/chesstr.webp", href: "https://chesstr.otherstuff.ai" },
+          { id: "8", title: "Scramble", description: "Navigate the cave", image: "/scramble.webp", href: "https://scramble.otherstuff.ai" },
         ],
         speed: 50,
         arcDepth: 60,
@@ -127,7 +127,7 @@ export const siteContent: SiteContent = {
       props: {
         title: "A structured environment for ongoing AI capability development.",
         body:
-          "Marginal Gains is a guided, ongoing program designed to support internal AI champions as they build, apply, and refine AI systems inside their business. Each month combines hands-on building, shared problem-solving, and access to practical tools that can be deployed directly into day-to-day work.",
+          "Marginal Gains is a guided ongoing AI capability program for Perth small businesses, designed to help internal AI champions build, apply, and refine AI systems inside the business. Each month combines hands-on building, shared problem-solving, and access to practical tools that can be deployed directly into day-to-day work.",
         singleColumn: true,
         maxWidth: "wide",
         blocksVariant: "expandable",
@@ -188,7 +188,7 @@ export const siteContent: SiteContent = {
       props: {
         title: "Marginal Gains is designed for teams committed\nto building internal AI capability.",
         body:
-          "This community is suited to businesses who want to develop internal AI champions rather than outsource capability. It works best when a small, cross-functional group is willing to apply agents to real work each month and gradually strengthen capability from within.",
+          "Marginal Gains is suited to Perth small businesses and SMEs that want to develop internal AI champions rather than outsource AI capability. It works best when a small cross-functional group is willing to apply agents to real work each month and strengthen capability from within over time.",
         singleColumn: true,
         fullHeight: true,
         levelUpCardsLayout: "flat",
@@ -369,7 +369,7 @@ export const siteContent: SiteContent = {
           {
             title: "Pete Winn",
             role: "Co-Founder",
-            image: "/Pete.png",
+            image: "/Pete.webp",
             body: "Pete has a long track record in process redesign, deep tech and large enterprise and programme deployments from Rolls Royce to Rio Tinto.",
             showSocialButtons: true,
             socialLinks: {
@@ -380,7 +380,7 @@ export const siteContent: SiteContent = {
           {
             title: "Andy David",
             role: "Co-Founder",
-            image: "/Andy.png",
+            image: "/Andy.webp",
             body: "Andy's background is in venture design, management consulting and technology startups, including process improvement for enterprise and SMEs.",
             showSocialButtons: true,
             socialLinks: {

@@ -24,7 +24,7 @@
   bottom: 0;
   background:
     linear-gradient(rgba(15, 14, 13, 0.7), rgba(15, 14, 13, 0.7)),
-    url('/mg-background.png') center / cover no-repeat;
+    url('/mg-background.webp') center / cover no-repeat;
 }
 
 .form-demo {
@@ -542,6 +542,130 @@
   font-family: var(--font-ui);
   font-size: 13px;
   color: #1a1a1a;
+}
+
+/* Outreach Column */
+.fp-outreach {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.95);
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px 24px;
+  width: 90%;
+  max-width: 100%;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+}
+
+.fp-outreach.visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  pointer-events: auto;
+}
+
+.fp-outreach-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a1a;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  margin-bottom: 4px;
+}
+
+.fp-outreach-header svg {
+  color: #2ea782;
+}
+
+.fp-outreach-count {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 500;
+  color: #2ea782;
+  background: rgba(46, 167, 130, 0.12);
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.fp-outreach-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.fp-outreach-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.fp-outreach-row:last-child {
+  border-bottom: none;
+}
+
+.fp-outreach-row.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fp-outreach-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2ea782 0%, #1e7a5e 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.fp-outreach-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.fp-outreach-name {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.fp-outreach-company {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: #888;
+}
+
+.fp-outreach-action {
+  margin-left: auto;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: #666;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.fp-outreach-check {
+  color: #2ea782;
+  flex-shrink: 0;
 }
 
 /* Responsive */

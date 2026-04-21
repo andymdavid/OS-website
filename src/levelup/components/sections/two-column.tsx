@@ -24,7 +24,9 @@ interface LevelUpCard {
 
 interface TwoColumnProps {
   id?: string;
+  label?: string;
   title: string;
+  titleMaxWidth?: string;
   body: string;
   bodyParagraphs?: string[];
   bodyLinks?: Array<{
@@ -90,7 +92,7 @@ interface TwoColumnProps {
     image?: string;
     imageAlt?: string;
     video?: string;
-    demoKey?: "teamRoles" | "timeline" | "kanban" | "outcomes" | "workflowBuilder" | "agentActivity" | "discussionThread" | "productGraph";
+    demoKey?: "teamRoles" | "timeline" | "kanban" | "outcomes" | "workflowBuilder" | "agentActivity" | "discussionThread" | "productGraph" | "capabilityDepth" | "capabilitySpread" | "monthlyRhythm";
   }>;
   levelUpCards?: LevelUpCard[];
   levelUpCardsLayout?: "staggered" | "flat";
@@ -104,6 +106,9 @@ interface TwoColumnProps {
   hideTitle?: boolean;
   bodyVariant?: "default" | "display";
   blocksVariant?: "numbered" | "feature" | "profile" | "expandable";
+  sectionMinHeightClass?: string;
+  sectionContentClassName?: string;
+  blocksWrapperClassName?: string;
   featureCardsAsCard?: boolean;
   textAlign?: "center" | "left";
   maxWidth?: "default" | "wide";
@@ -124,7 +129,9 @@ interface TwoColumnProps {
 
 export function TwoColumn({
   id,
+  label,
   title,
+  titleMaxWidth,
   body,
   bodyParagraphs,
   singleColumn = false,
@@ -158,6 +165,9 @@ export function TwoColumn({
   hideTitle = false,
   bodyVariant = "default",
   blocksVariant = "numbered",
+  sectionMinHeightClass,
+  sectionContentClassName,
+  blocksWrapperClassName,
   featureCardsAsCard = false,
   textAlign = "center",
   maxWidth = "default",
@@ -822,21 +832,29 @@ export function TwoColumn({
     );
   }
 
+  const sectionMinHeight = sectionMinHeightClass || (fullHeight ? "min-h-screen" : "min-h-[75vh]");
+
   return (
-    <Section id={anchorId || id} className={`${fullHeight ? "min-h-screen" : "min-h-[75vh]"} flex items-center`}>
+    <Section id={anchorId || id} className={`${sectionMinHeight} flex items-center`}>
       <div className={`w-full ${testimonials && testimonials.length > 0 ? "flex flex-col justify-center" : ""}`}>
       <Container>
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className={isWide ? "max-w-6xl mx-auto" : "max-w-5xl mx-auto"}
+          className={`${isWide ? "max-w-6xl" : "max-w-5xl"} mx-auto ${sectionContentClassName ?? ""}`}
         >
+          {label ? (
+            <div className={`intro-pill mb-5 ${isCentered ? "mx-auto" : ""}`}>
+              {label}
+            </div>
+          ) : null}
           {!hideTitle ? (
             <h2
               className={`font-anton text-[40px] tracking-tight leading-tight ${
                 isCentered ? "text-center" : "text-left"
               }`}
+              style={titleMaxWidth ? { maxWidth: titleMaxWidth, marginInline: isCentered ? "auto" : undefined } : undefined}
             >
               {renderTitle()}
             </h2>
@@ -906,9 +924,9 @@ export function TwoColumn({
             ) : blocksVariant === "expandable" ? (
               <div
                 className={
-                  isFullBleedExpandable
+                  `${isFullBleedExpandable
                     ? "mt-6 relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen px-4 sm:px-6 md:px-16 lg:px-24"
-                    : "mt-6"
+                    : "mt-6"} ${blocksWrapperClassName ?? ""}`
                 }
               >
                 <div

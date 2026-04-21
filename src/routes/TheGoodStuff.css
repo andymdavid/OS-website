@@ -45,6 +45,9 @@
 .the-good-stuff-page .hero-title-block h1 {
   margin-bottom: 16px;
   font-size: 42px !important;
+  max-width: 30ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .the-good-stuff-page .hero-title-block .hero-bridge {

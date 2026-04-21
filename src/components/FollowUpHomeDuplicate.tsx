@@ -1,0 +1,83 @@
+import React from 'react';
+import { Button } from './Button';
+import { DataAnalysisDemo } from './DataAnalysisDemo';
+import './FollowUpSection.css';
+
+const STEPS = [
+  {
+    week: 'Principle 1',
+    title: 'Hands-on from the start',
+    description:
+      'We teach by building together, not by presenting. You get practical experience immediately so AI feels usable, not abstract.',
+  },
+  {
+    week: 'Principle 2',
+    title: 'Grounded in real work',
+    description:
+      'Everything happens inside the context of your actual operations — the systems, tasks, and workflows your team already uses.',
+  },
+  {
+    week: 'Principle 3',
+    title: 'People + AI, side by side',
+    description:
+      'We focus on ways AI can support your team’s strengths, not replace them. The goal is better decisions, clearer work, and less friction.',
+  },
+  {
+    week: 'Principle 4',
+    title: 'Momentum, not theory',
+    description:
+      'We move quickly in small, achievable steps so your team sees progress straight away. No overthinking, no overhauls — just steady capability building.',
+  },
+];
+
+export function FollowUpHomeDuplicate() {
+  return (
+    <section id="approach" className="followup-approach">
+      <div className="followup-top">
+        <div className="followup-top-grid">
+          <div className="followup-top-left">
+            <div className="intro-pill">OUR APPROACH</div>
+
+            <h2 className="intro-heading">
+              The best way to learn AI is to build with it - inside your business, with your people.
+            </h2>
+
+            <p className="intro-text">
+              You don&apos;t learn AI by watching someone talk about it — you learn it by building with it on the real work your team already does.
+            </p>
+
+            <p className="intro-text">
+              We are a delivery and ecosystem partner for small and medium sized businesses, offering hands-on technical workshops, access to an applied AI community, and an agent management system, designed to develop AI capability organically inside the business.
+            </p>
+
+            <Button className="followup-cta">
+              About Us
+            </Button>
+          </div>
+
+          <div className="followup-top-right">
+            <DataAnalysisDemo />
+          </div>
+        </div>
+      </div>
+
+      <div className="followup-bottom">
+        <div className="followup-image-panel">
+          <img src="/OurApproach.webp" alt="Other Stuff AI workshop session in Perth" />
+        </div>
+
+        <div className="followup-steps">
+          {STEPS.map((step) => (
+            <div className="followup-step" key={step.title}>
+              <div className="followup-step-meta">{step.week}</div>
+              <div>
+                <h4>{step.title}</h4>
+                <p>{step.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

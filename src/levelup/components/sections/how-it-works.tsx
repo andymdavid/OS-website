@@ -7,8 +7,25 @@ import {
   CardHeader,
   CardTitle,
 } from "@/levelup/components/ui/card";
-import * as LucideIcons from "lucide-react";
-import { LucideIcon, ArrowRight } from "lucide-react";
+import {
+  type LucideIcon,
+  ArrowRight,
+  ArrowRightCircle,
+  FileText,
+  Smartphone,
+  Shield,
+  Zap,
+  CheckCircle,
+  Palette,
+  FileEdit,
+  Rocket,
+  Sparkles,
+} from "lucide-react";
+
+const iconMap: Record<string, LucideIcon> = {
+  ArrowRightCircle, FileText, Smartphone, Shield, Zap,
+  CheckCircle, Palette, FileEdit, Rocket, Sparkles,
+};
 
 interface Step {
   title: string;
@@ -24,14 +41,9 @@ interface HowItWorksProps {
   note?: string;
 }
 
-// Helper to get icon component from string name
 function getIconComponent(iconName?: string): LucideIcon {
-  if (!iconName) {
-    return LucideIcons.ArrowRightCircle;
-  }
-
-  const IconComponent = (LucideIcons as any)[iconName];
-  return IconComponent || LucideIcons.ArrowRightCircle;
+  if (!iconName) return ArrowRightCircle;
+  return iconMap[iconName] || ArrowRightCircle;
 }
 
 export function HowItWorks({ title, subtitle, steps, note }: HowItWorksProps) {

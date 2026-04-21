@@ -1,0 +1,10 @@
+2026-04-09 10:22:53: time=2026-04-09T10:22:53.857Z level=INFO msg="Running: codex -c mcp_servers.wingman.command=\"bun\" -c mcp_servers.wingman.args=[\"run\",\"/home/pw21/code/wingman/src/mcp/stdio-server.ts\"] -c mcp_servers.wingman.env={ WINGMAN_URL = \"http://localhost:3021\", SESSION_ID = \"ccf9c580-a670-47ef-bdf3-cbb750d67bf2\", BOT_PUBKEY_HEX = \"ef7dd16da39491e066e31d2403a2ee51dca07d4e2a58bd1ce98c1c848193b992\", BOT_NPUB = \"npub1aa7azmdrjjg7qehrr5jq8ghw28w2ql2w9fvt688f3swgfqvnhxfqfu9jrr\", USER_NPUB = \"npub1qkntvygrrxkc3ynfzw56aq8far9wnxcfjd8d4lfwhnnlnctn4k5sa2d05s\", AGENT_NSEC = \"db2063e0a8f829ef9f0cfdf60b9e1adcee1feb61d1a663a4b125d1627686c7a9\" }"
+2026-04-09 10:22:53: time=2026-04-09T10:22:53.865Z level=INFO msg="Allowed hosts: localhost, 127.0.0.1, ::1, dev.otherstuff.studio, dev.otherstuff.ai"
+2026-04-09 10:22:53: time=2026-04-09T10:22:53.865Z level=INFO msg="Allowed origins: *"
+2026-04-09 10:22:53: time=2026-04-09T10:22:53.865Z level=INFO msg="Created temporary directory for uploads" tempDir=/tmp/agentapi-uploads-3406022882
+2026-04-09 10:22:53: time=2026-04-09T10:22:53.880Z level=INFO msg="Starting server on port" port=3702
+2026-04-09 10:22:56: time=2026-04-09T10:22:56.902Z level=INFO msg="New subscriber" subscriberId=0
+2026-04-09 10:31:14: time=2026-04-09T10:31:14.838Z level=INFO msg="Received shutdown signal" signal=interrupt
+2026-04-09 10:31:14: time=2026-04-09T10:31:14.839Z level=INFO msg="State persistence is disabled"
+2026-04-09 10:31:14: time=2026-04-09T10:31:14.839Z level=INFO msg="Server stop initiated, unsubscribing." subscriberId=0
+2026-04-09 10:31:14: time=2026-04-09T10:31:14.839Z level=INFO msg="Cleaned up temporary directory" tempDir=/tmp/agentapi-uploads-3406022882

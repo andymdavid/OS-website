@@ -1,0 +1,10 @@
+2026-03-26 12:11:54: agent exited with error:
+2026-03-26 12:11:54:     github.com/coder/agentapi/cmd/server.runServer
+2026-03-26 12:11:54:         /home/runner/work/agentapi/agentapi/cmd/server/server.go:160
+2026-03-26 12:11:54:   - failed to wait for process:
+2026-03-26 12:11:54:     github.com/coder/agentapi/cmd/server.runServer.func1
+2026-03-26 12:11:54:         /home/runner/work/agentapi/agentapi/cmd/server/server.go:148
+2026-03-26 12:11:54:   - process exited with error:
+2026-03-26 12:11:54:     github.com/coder/agentapi/lib/termexec.(*Process).Wait
+2026-03-26 12:11:54:         /home/runner/work/agentapi/agentapi/lib/termexec/termexec.go:175
+2026-03-26 12:11:54:   - waitid: no child processes

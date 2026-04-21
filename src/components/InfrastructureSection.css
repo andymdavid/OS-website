@@ -1,0 +1,282 @@
+/* ==========================================================================
+   INFRASTRUCTURE SECTION
+   ========================================================================== */
+
+.os-theme .section.infrastructure-section {
+  min-height: auto;
+  padding: clamp(112px, 12vw, 168px) var(--container-padding) clamp(72px, 8vw, 112px);
+}
+
+.os-theme .section.infrastructure-section::after {
+  left: 0;
+  right: 0;
+}
+
+.infrastructure-container {
+  max-width: 100%;
+  text-align: center;
+}
+
+.infrastructure-container .intro-pill {
+  margin-bottom: 32px;
+}
+
+.infrastructure-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  color: #ffffff;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 24px;
+  line-height: 1.1;
+}
+
+.infrastructure-body {
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: clamp(64px, 6vw, 96px);
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(240, 240, 240, 0.7);
+}
+
+/* ==========================================================================
+   GRAPH LAYOUT (desktop/tablet)
+   ========================================================================== */
+
+.infra-graph {
+  position: relative;
+  width: 100%;
+  /* Tall enough for the staggered positions to breathe */
+  min-height: max(75vh, 700px);
+}
+
+/* SVG connector lines — fills the graph area */
+.infra-connectors {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Each node is absolutely positioned via inline style */
+.infra-graph-node {
+  position: absolute;
+  width: 26%;
+  z-index: 1;
+}
+
+.infra-hub-node {
+  width: 26%;
+}
+
+/* --- Centre hub card --- */
+.infra-centre-card {
+  position: relative;
+  background: rgba(15, 14, 13, 0.96);
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.06);
+  padding: 36px 28px;
+  text-align: center;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.infra-centre-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--card-angle),
+    transparent 0%,
+    transparent 30%,
+    rgba(46, 167, 130, 0.22) 45%,
+    rgba(46, 167, 130, 0.38) 50%,
+    rgba(46, 167, 130, 0.22) 55%,
+    transparent 70%,
+    transparent 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: rotate-border 6s linear infinite;
+  z-index: -1;
+}
+
+.os-theme .infra-centre-name {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: var(--weight-bold);
+  color: var(--color-text);
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-transform: none;
+  margin-bottom: 12px;
+}
+
+.infra-centre-role {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(240, 240, 240, 0.65);
+}
+
+/* --- Outer node cards --- */
+.infrastructure-card {
+  position: relative;
+  background: rgba(15, 14, 13, 0.96);
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.06);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.infrastructure-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--card-angle),
+    transparent 0%,
+    transparent 30%,
+    rgba(240, 240, 240, 0.22) 45%,
+    rgba(240, 240, 240, 0.38) 50%,
+    rgba(240, 240, 240, 0.22) 55%,
+    transparent 70%,
+    transparent 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: rotate-border 6s linear infinite;
+  z-index: -1;
+}
+
+/* Stagger rotation per node */
+.infra-node:nth-child(2) .infrastructure-card::before {
+  animation-delay: -1.2s;
+}
+
+.infra-node:nth-child(4) .infrastructure-card::before {
+  animation-delay: -2.4s;
+}
+
+.infra-node:nth-child(5) .infrastructure-card::before {
+  animation-delay: -3.6s;
+}
+
+.infra-node:nth-child(6) .infrastructure-card::before {
+  animation-delay: -4.8s;
+}
+
+.os-theme .infrastructure-card-name {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: var(--weight-bold);
+  color: var(--color-text);
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.infrastructure-card-role {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(240, 240, 240, 0.65);
+}
+
+/* ==========================================================================
+   STACKED LAYOUT (mobile)
+   ========================================================================== */
+
+.infra-stack {
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+  position: relative;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .infra-graph-node {
+    width: 30%;
+  }
+
+  .infra-hub-node {
+    width: 30%;
+  }
+}
+
+@media (max-width: 768px) {
+  .infrastructure-body {
+    font-size: 15px !important;
+    line-height: 1.72;
+    max-width: 34ch;
+  }
+
+  /* Hide graph, show stack */
+  .infra-graph {
+    display: none;
+  }
+
+  .infra-stack {
+    display: flex;
+    padding: 0;
+  }
+
+  .infra-stack::before {
+    content: '';
+    position: absolute;
+    top: 36px;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    background: rgba(46, 167, 130, 0.32);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .infra-stack > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .infrastructure-card {
+    padding: 24px;
+  }
+
+  .infra-centre-card {
+    padding: 28px 24px;
+  }
+}

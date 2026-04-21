@@ -1,0 +1,54 @@
+2026-04-15 14:54:16: time=2026-04-15T14:54:16.770Z level=INFO msg="Running: codex -c mcp_servers.wingman.command=\"bun\" -c mcp_servers.wingman.args=[\"run\",\"/home/pw21/code/wingman/src/mcp/stdio-server.ts\"] -c mcp_servers.wingman.env={ WINGMAN_URL = \"http://localhost:3021\", SESSION_ID = \"fcec61b5-43ed-49a6-97ff-c0afc876ff9a\", BOT_PUBKEY_HEX = \"ef7dd16da39491e066e31d2403a2ee51dca07d4e2a58bd1ce98c1c848193b992\", BOT_NPUB = \"npub1aa7azmdrjjg7qehrr5jq8ghw28w2ql2w9fvt688f3swgfqvnhxfqfu9jrr\", USER_NPUB = \"npub1qkntvygrrxkc3ynfzw56aq8far9wnxcfjd8d4lfwhnnlnctn4k5sa2d05s\", AGENT_NSEC = \"db2063e0a8f829ef9f0cfdf60b9e1adcee1feb61d1a663a4b125d1627686c7a9\" }"
+2026-04-15 14:54:16: time=2026-04-15T14:54:16.783Z level=INFO msg="Allowed hosts: localhost, 127.0.0.1, ::1, dev.otherstuff.studio, dev.otherstuff.ai"
+2026-04-15 14:54:16: time=2026-04-15T14:54:16.783Z level=INFO msg="Allowed origins: *"
+2026-04-15 14:54:16: time=2026-04-15T14:54:16.783Z level=INFO msg="Created temporary directory for uploads" tempDir=/tmp/agentapi-uploads-3268122629
+2026-04-15 14:54:16: time=2026-04-15T14:54:16.805Z level=INFO msg="Starting server on port" port=3704
+2026-04-15 14:54:17: time=2026-04-15T14:54:17.109Z level=INFO msg="New subscriber" subscriberId=0
+2026-04-15 15:04:43: time=2026-04-15T15:04:43.337Z level=INFO msg="Context done" subscriberId=0
+2026-04-15 15:04:44: time=2026-04-15T15:04:44.343Z level=INFO msg="New subscriber" subscriberId=1
+2026-04-15 15:09:43: time=2026-04-15T15:09:43.337Z level=INFO msg="Context done" subscriberId=1
+2026-04-15 15:09:44: time=2026-04-15T15:09:44.340Z level=INFO msg="New subscriber" subscriberId=2
+2026-04-15 15:11:17: time=2026-04-15T15:11:17.239Z level=INFO msg="Context done" subscriberId=2
+2026-04-15 16:32:58: time=2026-04-15T16:32:58.779Z level=INFO msg="New subscriber" subscriberId=3
+2026-04-15 16:34:28: time=2026-04-15T16:34:28.848Z level=INFO msg="Context done" subscriberId=3
+2026-04-15 17:42:21: time=2026-04-15T17:42:21.119Z level=INFO msg="New subscriber" subscriberId=4
+2026-04-15 17:43:21: time=2026-04-15T17:43:21.187Z level=INFO msg="Context done" subscriberId=4
+2026-04-15 18:49:13: time=2026-04-15T18:49:13.581Z level=INFO msg="New subscriber" subscriberId=5
+2026-04-15 18:50:13: time=2026-04-15T18:50:13.645Z level=INFO msg="Context done" subscriberId=5
+2026-04-15 19:54:17: time=2026-04-15T19:54:17.574Z level=INFO msg="New subscriber" subscriberId=6
+2026-04-15 19:55:47: time=2026-04-15T19:55:47.718Z level=INFO msg="Context done" subscriberId=6
+2026-04-15 21:03:59: time=2026-04-15T21:03:59.139Z level=INFO msg="New subscriber" subscriberId=7
+2026-04-15 21:05:29: time=2026-04-15T21:05:29.209Z level=INFO msg="Context done" subscriberId=7
+2026-04-15 21:50:04: time=2026-04-15T21:50:04.883Z level=INFO msg="New subscriber" subscriberId=8
+2026-04-15 21:51:04: time=2026-04-15T21:51:04.948Z level=INFO msg="Context done" subscriberId=8
+2026-04-15 22:08:21: time=2026-04-15T22:08:21.733Z level=INFO msg="New subscriber" subscriberId=9
+2026-04-15 22:10:51: time=2026-04-15T22:10:51.799Z level=INFO msg="Context done" subscriberId=9
+2026-04-15 23:28:09: time=2026-04-15T23:28:09.962Z level=INFO msg="New subscriber" subscriberId=10
+2026-04-15 23:31:10: time=2026-04-15T23:31:10.039Z level=INFO msg="Context done" subscriberId=10
+2026-04-16 00:43:29: time=2026-04-16T00:43:29.084Z level=INFO msg="New subscriber" subscriberId=11
+2026-04-16 00:46:29: time=2026-04-16T00:46:29.165Z level=INFO msg="Context done" subscriberId=11
+2026-04-16 01:46:50: time=2026-04-16T01:46:50.561Z level=INFO msg="New subscriber" subscriberId=12
+2026-04-16 01:49:50: time=2026-04-16T01:49:50.636Z level=INFO msg="Context done" subscriberId=12
+2026-04-16 02:28:03: time=2026-04-16T02:28:03.312Z level=INFO msg="New subscriber" subscriberId=13
+2026-04-16 02:32:43: time=2026-04-16T02:32:43.337Z level=INFO msg="Context done" subscriberId=13
+2026-04-16 02:32:44: time=2026-04-16T02:32:44.343Z level=INFO msg="New subscriber" subscriberId=14
+2026-04-16 02:37:43: time=2026-04-16T02:37:43.337Z level=INFO msg="Context done" subscriberId=14
+2026-04-16 02:37:44: time=2026-04-16T02:37:44.344Z level=INFO msg="New subscriber" subscriberId=15
+2026-04-16 02:42:43: time=2026-04-16T02:42:43.337Z level=INFO msg="Context done" subscriberId=15
+2026-04-16 02:42:44: time=2026-04-16T02:42:44.342Z level=INFO msg="New subscriber" subscriberId=16
+2026-04-16 02:47:43: time=2026-04-16T02:47:43.337Z level=INFO msg="Context done" subscriberId=16
+2026-04-16 02:47:44: time=2026-04-16T02:47:44.343Z level=INFO msg="New subscriber" subscriberId=17
+2026-04-16 02:52:43: time=2026-04-16T02:52:43.337Z level=INFO msg="Context done" subscriberId=17
+2026-04-16 02:52:44: time=2026-04-16T02:52:44.341Z level=INFO msg="New subscriber" subscriberId=18
+2026-04-16 02:59:43: time=2026-04-16T02:59:43.337Z level=INFO msg="Context done" subscriberId=18
+2026-04-16 02:59:44: time=2026-04-16T02:59:44.348Z level=INFO msg="New subscriber" subscriberId=19
+2026-04-16 03:02:33: time=2026-04-16T03:02:33.690Z level=INFO msg="Context done" subscriberId=19
+2026-04-16 03:49:34: time=2026-04-16T03:49:34.763Z level=INFO msg="Received shutdown signal" signal=terminated
+2026-04-16 03:49:34: time=2026-04-16T03:49:34.780Z level=INFO msg="State persistence is disabled"
+2026-04-16 03:49:34: time=2026-04-16T03:49:34.780Z level=INFO msg="Cleaned up temporary directory" tempDir=/tmp/agentapi-uploads-3268122629
+2026-04-16 03:49:34: time=2026-04-16T03:49:34.781Z level=INFO msg="Closing process"
+2026-04-16 03:50:10: time=2026-04-16T03:50:10.830Z level=INFO msg="Running: codex -c mcp_servers.wingman.command=\"bun\" -c mcp_servers.wingman.args=[\"run\",\"/home/pw21/code/wingman/src/mcp/stdio-server.ts\"] -c mcp_servers.wingman.env={ WINGMAN_URL = \"http://localhost:3021\", SESSION_ID = \"fcec61b5-43ed-49a6-97ff-c0afc876ff9a\", BOT_PUBKEY_HEX = \"ef7dd16da39491e066e31d2403a2ee51dca07d4e2a58bd1ce98c1c848193b992\", BOT_NPUB = \"npub1aa7azmdrjjg7qehrr5jq8ghw28w2ql2w9fvt688f3swgfqvnhxfqfu9jrr\", USER_NPUB = \"npub1qkntvygrrxkc3ynfzw56aq8far9wnxcfjd8d4lfwhnnlnctn4k5sa2d05s\", AGENT_NSEC = \"db2063e0a8f829ef9f0cfdf60b9e1adcee1feb61d1a663a4b125d1627686c7a9\" }"
+2026-04-16 03:50:10: time=2026-04-16T03:50:10.843Z level=INFO msg="Allowed hosts: localhost, 127.0.0.1, ::1, dev.otherstuff.studio, dev.otherstuff.ai"
+2026-04-16 03:50:10: time=2026-04-16T03:50:10.843Z level=INFO msg="Allowed origins: *"
+2026-04-16 03:50:10: time=2026-04-16T03:50:10.843Z level=INFO msg="Created temporary directory for uploads" tempDir=/tmp/agentapi-uploads-3788599682
+2026-04-16 03:50:10: time=2026-04-16T03:50:10.876Z level=INFO msg="Starting server on port" port=3704

@@ -10,7 +10,7 @@
   top: 0;
   height: 100vh;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)),
-    url('/Hero-Background.png') center center / cover no-repeat;
+    url('/Hero-Background.webp') center center / cover no-repeat;
   overflow: hidden;
 }
 
@@ -50,7 +50,7 @@
 
 .hero-title-block h1 {
   font-family: var(--font-heading);
-  font-size: clamp(36px, 6vw, 72px);
+  font-size: clamp(29.16px, 4.86vw, 58.32px);
   line-height: 1;
   margin-bottom: 24px;
 }
@@ -58,6 +58,10 @@
 .hero-title-block p {
   font-size: clamp(16px, 2vw, 20px);
   line-height: 1.4;
+}
+
+.hero-title-block > p:not(.hero-bridge) {
+  max-width: 42ch;
 }
 
 .hero-title-block .hero-bridge {
@@ -72,6 +76,50 @@
   gap: 16px;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.hero-cta .btn-primary,
+.hero-cta .hero-cta-dark {
+  height: 35px;
+  min-width: 137px;
+  padding: 0 21px;
+  font-size: 14px;
+}
+
+.hero-cta .hero-cta-book:hover {
+  background: #ff751f;
+  color: #ffffff;
+  border-color: #ff751f;
+}
+
+.hero-cta .hero-cta-book:active {
+  background: var(--color-text);
+  color: var(--color-background);
+  border-color: var(--color-text);
+}
+
+.hero-cta .hero-cta-dark {
+  height: 35px;
+  min-width: 137px;
+  padding: 0 21px;
+  font-size: 14px;
+}
+
+.hero-cta .hero-cta-dark {
+  background: #17181d;
+  color: var(--color-text);
+  border: 1px solid transparent;
+}
+
+.hero-cta .hero-cta-dark:hover {
+  background: var(--color-text);
+  color: #050505;
+  border-color: var(--color-text);
+}
+
+.hero-cta .hero-cta-dark:active {
+  background: #17181d;
+  color: var(--color-text);
 }
 
 .scroll-indicator {
@@ -183,7 +231,7 @@
 
   .hero-inner {
     justify-content: center;
-    padding: 104px 24px 32px;
+    padding: 104px 16px 32px;
   }
 
   .hero-title-block {
@@ -196,12 +244,18 @@
   }
 
   .hero-title-block h1 {
+    font-size: clamp(38px, 11vw, 52px);
     margin-bottom: 18px;
+    text-wrap: balance;
   }
 
-  .hero-title-block p {
-    max-width: 26ch;
-    text-wrap: balance;
+  .hero-title-block h1 br {
+    display: none;
+  }
+
+  .hero-title-block > p:not(.hero-bridge) {
+    max-width: none;
+    width: 100%;
   }
 
   .hero-title-block p br {
@@ -227,7 +281,7 @@
       rgba(0, 0, 0, 0.35) 85%,
       rgba(15, 14, 13, 1) 100%
     ),
-    url('/hero-background-1.png?v=2') center 0% / 105% auto no-repeat;
+    url('/hero-background-1.webp?v=2') center 0% / 105% auto no-repeat;
 }
 
 @media (max-width: 768px) {
@@ -239,6 +293,6 @@
         rgba(0, 0, 0, 0.3) 42%,
         rgba(15, 14, 13, 1) 100%
       ),
-      url('/hero-background-1.png?v=2') center top / cover no-repeat;
+      url('/hero-background-1.webp?v=2') center top / cover no-repeat;
   }
 }

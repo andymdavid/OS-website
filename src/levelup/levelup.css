@@ -14,7 +14,7 @@
 }
 
 .levelup-page .hero-title-block h1 {
-  font-size: clamp(41px, 7vw, 83px) !important;
+  font-size: clamp(29.16px, 4.86vw, 58.32px) !important;
   line-height: 1 !important;
   text-transform: none !important;
 }
@@ -100,7 +100,7 @@
       rgba(0, 0, 0, 0.42) 58%,
       rgba(15, 14, 13, 1) 100%
     ),
-    url('/level-up-background.png');
+    url('/level-up-background.webp');
   background-position: center 0%, center 0%, center 0%;
   background-size: 105% auto, 105% auto, 105% auto;
   background-repeat: no-repeat, no-repeat, no-repeat;
@@ -226,6 +226,23 @@
   background: rgba(240, 240, 240, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 0 30px rgba(255, 255, 255, 0.06);
+}
+
+.levelup-page .bio-card {
+  background: rgba(240, 240, 240, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.06) !important;
+  border-radius: 4px !important;
+  padding: 20px !important;
+  flex: 1 1 0;
+  width: auto !important;
+  min-width: 0;
+}
+
+@media (max-width: 768px) {
+  .levelup-page .bio-card {
+    flex-basis: 100%;
+  }
 }
 
 .levelup-page .levelup-bio-card-social {

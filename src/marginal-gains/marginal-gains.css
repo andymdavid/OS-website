@@ -13,7 +13,7 @@
       rgba(0, 0, 0, 0.5) 85%,
       rgba(15, 14, 13, 1) 100%
     ),
-    url('/mg-background.png');
+    url('/mg-background.webp');
   background-position: center 0%, center 0%;
   background-size: 110% auto, 110% auto;
   background-repeat: no-repeat, no-repeat;
@@ -29,7 +29,7 @@
 }
 
 .marginal-gains-page .hero-title-block h1 {
-  font-size: clamp(41px, 7vw, 83px) !important;
+  font-size: clamp(29.16px, 4.86vw, 58.32px) !important;
   line-height: 1 !important;
 }
 
@@ -52,6 +52,13 @@
   margin-top: 0;
 }
 
+/* Duplicate page overrides */
+.mg-duplicate .speedrun-hero-cta .btn-primary:hover {
+  background: #ff751f !important;
+  color: #ffffff !important;
+  border-color: #ff751f !important;
+}
+
 
 .marginal-gains-page .speedrun-hero-subtitle {
   color: #ffffff;
@@ -64,6 +71,28 @@
 @media (max-width: 768px) {
   .marginal-gains-page h2 {
     font-size: 32px !important;
+  }
+
+  .marginal-gains-page .hero-inner {
+    padding: 104px 8px 32px;
+  }
+
+  .marginal-gains-page .hero-title-block {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .marginal-gains-page .hero-title-block h1 {
+    font-size: clamp(36px, 10.4vw, 48px) !important;
+    width: 100%;
+    max-width: none;
+    margin-left: auto;
+    margin-right: auto;
+    text-wrap: normal;
+  }
+
+  .marginal-gains-page .hero-title-block h1 br {
+    display: none;
   }
 
   .marginal-gains-page .speedrun-hero {
@@ -105,6 +134,44 @@
 
   .marginal-gains-page #twoColumn .expandable-card-body {
     margin-top: 0;
+  }
+
+  .mg-duplicate .home-duplicate-grid-visual .inventory-demo-shell,
+  .mg-duplicate .home-duplicate-grid-visual .proposal-builder-shell,
+  .mg-duplicate .home-duplicate-grid-visual .briefings-demo-shell,
+  .mg-duplicate .home-duplicate-grid-visual .status-demo-shell {
+    padding: 8px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mg-duplicate .home-duplicate-grid-visual .inventory-demo-panel,
+  .mg-duplicate .home-duplicate-grid-visual .proposal-builder-panel,
+  .mg-duplicate .home-duplicate-grid-visual .briefings-demo-panel,
+  .mg-duplicate .home-duplicate-grid-visual .status-demo-panel {
+    padding: 8px;
+    width: 100%;
+    margin: auto 0;
+  }
+
+  .mg-duplicate .home-duplicate-grid-visual .proposal-stage-stack,
+  .mg-duplicate .home-duplicate-grid-visual .briefings-stage-stack,
+  .mg-duplicate .home-duplicate-grid-visual .status-stage-stack {
+    height: calc(100% - 62px);
+  }
+
+  .mg-duplicate .home-duplicate-grid-visual .proposal-terminal-body,
+  .mg-duplicate .home-duplicate-grid-visual .proposal-pricing-screen-card,
+  .mg-duplicate .home-duplicate-grid-visual .proposal-document-card,
+  .mg-duplicate .home-duplicate-grid-visual .briefings-terminal-body,
+  .mg-duplicate .home-duplicate-grid-visual .briefings-document-card,
+  .mg-duplicate .home-duplicate-grid-visual .briefings-delivery-card,
+  .mg-duplicate .home-duplicate-grid-visual .status-terminal-body,
+  .mg-duplicate .home-duplicate-grid-visual .status-report-card,
+  .mg-duplicate .home-duplicate-grid-visual .status-delivery-card {
+    padding: 10px;
   }
 }
 
@@ -338,6 +405,92 @@
   border-radius: 50%;
   background: #2ea782;
   animation: pill-pulse 1.5s infinite;
+}
+
+.marginal-gains-page .mg-philosophy-section {
+  max-width: 760px;
+  text-align: center;
+}
+
+.marginal-gains-page .mg-philosophy-section .intro-pill {
+  margin-bottom: 20px;
+}
+
+.marginal-gains-page .mg-philosophy-section .section-heading,
+.marginal-gains-page .mg-philosophy-section h2 {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 24px;
+}
+
+.marginal-gains-page .mg-philosophy-section > p {
+  max-width: 62ch;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: clamp(72px, 8vw, 112px);
+  opacity: 0.82;
+}
+
+.marginal-gains-page .mg-philosophy-blocks {
+  margin-top: 0 !important;
+}
+
+.marginal-gains-page .mg-philosophy-blocks .mg-philosophy-card {
+  height: 448px !important;
+}
+
+.marginal-gains-page .mg-philosophy-blocks .speedrun-card,
+.marginal-gains-page .mg-philosophy-blocks .speedrun-card .expandable-card-body,
+.marginal-gains-page .mg-philosophy-blocks .speedrun-card .expandable-card-body h3,
+.marginal-gains-page .mg-philosophy-blocks .speedrun-card .expandable-card-body p {
+  text-align: left;
+}
+
+.marginal-gains-page .mg-philosophy-blocks .mg-philosophy-card .expandable-card-media {
+  height: 250px;
+  min-height: 250px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.marginal-gains-page .mg-philosophy-blocks .mg-philosophy-card .expandable-card-media > * {
+  width: 100%;
+  height: 100%;
+}
+
+.marginal-gains-page .mg-philosophy-blocks .mg-philosophy-card .expandable-card-body {
+  padding-top: 14px !important;
+  padding-bottom: 10px !important;
+  margin-top: 0 !important;
+}
+
+@media (max-width: 1279px) {
+  .marginal-gains-page .mg-philosophy-blocks > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .marginal-gains-page .mg-philosophy-blocks {
+    padding-left: var(--container-padding) !important;
+    padding-right: var(--container-padding) !important;
+  }
+
+  .marginal-gains-page .mg-philosophy-blocks > div {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 20px !important;
+  }
+
+  .marginal-gains-page .mg-philosophy-blocks .mg-philosophy-card {
+    width: 100% !important;
+    height: 448px !important;
+  }
 }
 
 .marginal-gains-page .mega-menu-card h4 {

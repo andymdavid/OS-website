@@ -13,7 +13,7 @@
       rgba(0, 0, 0, 0.5) 85%,
       rgba(15, 14, 13, 1) 100%
     ),
-    url('/speedrun-background.png?v=2');
+    url('/speedrun-background.webp?v=2');
   background-position: center 0%, center 0%;
   background-size: 105% auto, 105% auto;
   background-repeat: no-repeat, no-repeat;
@@ -29,7 +29,7 @@
 }
 
 .speedrun-page .hero-title-block h1 {
-  font-size: clamp(41px, 7vw, 83px) !important;
+  font-size: clamp(29.16px, 4.86vw, 58.32px) !important;
   line-height: 1 !important;
 }
 

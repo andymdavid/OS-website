@@ -9,7 +9,7 @@ export function Hero() {
         <div className="hero-inner">
           <div className="hero-title-block">
             <div className="hero-logo">
-              <img src="/Logo-Main-Icon.png" alt="Logo" />
+              <img src="/Logo-Main-Icon.webp" alt="Other Stuff — AI product studio in Perth, Western Australia" />
             </div>
             <h1>You can just build with AI</h1>
             <p>

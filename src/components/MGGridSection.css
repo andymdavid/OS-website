@@ -1,0 +1,50 @@
+/* MG Grid Section — tag and title overrides */
+
+.mg-grid-tag {
+  font-family: var(--font-eyebrow);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  opacity: 0.9;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.mg-duplicate .home-duplicate-grid-copy {
+  max-width: 100%;
+}
+
+.mg-duplicate .home-duplicate-grid-copy p {
+  max-width: 100%;
+}
+
+.mg-duplicate .home-duplicate-grid-copy h3 {
+  font-family: 'Figtree', sans-serif !important;
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-transform: none;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 768px) {
+  .mg-duplicate .home-duplicate-grid-visual {
+    height: 446px;
+    padding: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mg-duplicate .home-duplicate-grid-visual > * {
+    transform: scale(0.86);
+    transform-origin: center center;
+    width: 100%;
+  }
+
+  .mg-duplicate .home-duplicate-grid-intro {
+    margin-bottom: 64px;
+  }
+}

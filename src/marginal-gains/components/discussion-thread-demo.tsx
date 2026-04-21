@@ -1,97 +1,66 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./discussion-thread-demo.css";
 
-interface Message {
-  id: number;
-  author: string;
-  initials: string;
-  color: string;
-  text: string;
-  isReply?: boolean;
-}
-
-const messages: Message[] = [
-  {
-    id: 1,
-    author: "Sarah",
-    initials: "SC",
-    color: "#2ea782",
-    text: "Just automated our inventory alerts with Wingman - it's live!",
-  },
-  {
-    id: 2,
-    author: "Marcus",
-    initials: "MW",
-    color: "#4a90d9",
-    text: "Amazing! How long did it take to set up?",
-    isReply: true,
-  },
-  {
-    id: 3,
-    author: "Sarah",
-    initials: "SC",
-    color: "#2ea782",
-    text: "About 2 hours. Happy to walk you through it.",
-    isReply: true,
-  },
-  {
-    id: 4,
-    author: "Priya",
-    initials: "PS",
-    color: "#d4a574",
-    text: "This is exactly what we need. Count me in!",
-    isReply: true,
-  },
-];
+type Status = "open" | "reviewing" | "resolved";
 
 export function DiscussionThreadDemo() {
-  const [visibleCount, setVisibleCount] = useState(0);
+  const [status, setStatus] = useState<Status>("open");
   const [cycle, setCycle] = useState(0);
 
   useEffect(() => {
+    const timeline: Array<{ status: Status; duration: number }> = [
+      { status: "open", duration: 1400 },
+      { status: "reviewing", duration: 1400 },
+      { status: "resolved", duration: 2200 },
+    ];
+
     let timeoutId: ReturnType<typeof setTimeout>;
+    let step = 0;
 
-    const showNext = () => {
-      setVisibleCount((prev) => {
-        if (prev >= messages.length) {
-          timeoutId = setTimeout(() => {
-            setVisibleCount(0);
-            setCycle((c) => c + 1);
-          }, 2500);
-          return prev;
+    const run = () => {
+      const current = timeline[step];
+      setStatus(current.status);
+
+      timeoutId = setTimeout(() => {
+        step += 1;
+        if (step >= timeline.length) {
+          step = 0;
+          setCycle(value => value + 1);
         }
-        return prev + 1;
-      });
-
-      if (visibleCount < messages.length) {
-        timeoutId = setTimeout(showNext, 1000);
-      }
+        run();
+      }, current.duration);
     };
 
-    timeoutId = setTimeout(showNext, 800);
+    timeoutId = setTimeout(run, 600);
     return () => clearTimeout(timeoutId);
-  }, [cycle, visibleCount]);
+  }, []);
 
   return (
     <div className="discussion-thread-demo" key={cycle}>
-      <div className="thread-messages">
-        {messages.slice(0, visibleCount).map((msg) => (
-          <div
-            key={`${msg.id}-${cycle}`}
-            className={`thread-message ${msg.isReply ? "reply" : ""}`}
-          >
-            <div
-              className="thread-avatar"
-              style={{ background: msg.color }}
-            >
-              {msg.initials}
-            </div>
-            <div className="thread-content">
-              <span className="thread-author">{msg.author}</span>
-              <span className="thread-text">{msg.text}</span>
-            </div>
+      <div className="support-ticket">
+        <div className="support-ticket-header">
+          <span className="support-ticket-title">Proposal pricing logic</span>
+          <span className={`support-status support-status-${status}`}>
+            {status === "open" ? "Open" : status === "reviewing" ? "Reviewing" : "Resolved"}
+          </span>
+        </div>
+
+        <div className="support-ticket-body">
+          <div className="support-line">
+            <span className="support-line-label">Issue</span>
+            <strong>Wrong rate card</strong>
           </div>
-        ))}
+
+          <div className={`support-line ${status === "reviewing" || status === "resolved" ? "is-visible" : ""}`}>
+            <span className="support-line-label">Action</span>
+            <strong>Reviewing rule in context</strong>
+          </div>
+
+          <div className={`support-line ${status === "resolved" ? "is-visible support-line-resolved" : ""}`}>
+            <span className="support-line-label">Outcome</span>
+            <strong>Rule updated</strong>
+          </div>
+        </div>
       </div>
     </div>
   );

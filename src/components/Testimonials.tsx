@@ -24,7 +24,7 @@ export function Testimonials() {
       title: 'Strategy Lead',
       company: 'Forerunner',
       tag: 'Customer Story',
-      image: '/Hero-Background.png',
+      image: '/Hero-Background.webp',
     },
     {
       type: 'quote',
@@ -33,7 +33,7 @@ export function Testimonials() {
       company: 'Evermind',
       quote:
         "They didn't just clarify our messaging — they clarified our business. Our onboarding, pricing, and content all finally speak the same language.",
-      image: '/Hero-Background.png',
+      image: '/Hero-Background.webp',
       avatar: 'https://placehold.co/160x160/1e1e1e/f7f7f7?text=ML',
     },
     {
@@ -43,7 +43,7 @@ export function Testimonials() {
       company: 'InnovateLabs',
       quote:
         'Working with Other Stuff felt less like hiring a consultancy and more like gaining a thought partner. They helped us redefine our entire service flow — and say less while meaning more.',
-      image: '/Hero-Background.png',
+      image: '/Hero-Background.webp',
       avatar: 'https://placehold.co/160x160/111111/f0f0f0?text=SJ',
     },
     {
@@ -52,7 +52,7 @@ export function Testimonials() {
       title: 'Founder',
       company: 'StartupCo',
       tag: 'In Their Words',
-      image: '/Hero-Background.png',
+      image: '/Hero-Background.webp',
     },
     {
       type: 'quote',
@@ -61,7 +61,7 @@ export function Testimonials() {
       company: 'GrowthHub',
       quote:
         'We learned faster in one week with their team than an entire quarter of internal experimentation. Everything we shipped together made it into production.',
-      image: '/Hero-Background.png',
+      image: '/Hero-Background.webp',
       avatar: 'https://placehold.co/160x160/2b2b2b/ededed?text=EW',
     },
   ];

@@ -1,0 +1,181 @@
+/* ==========================================================================
+   EXAMPLES SECTION
+   ========================================================================== */
+
+.os-theme .section.examples-section {
+  min-height: auto;
+  padding: clamp(112px, 12vw, 168px) var(--container-padding) clamp(72px, 8vw, 112px);
+}
+
+.os-theme .section.examples-section::after {
+  left: 0;
+  right: 0;
+}
+
+.examples-container {
+  max-width: 100%;
+  text-align: center;
+}
+
+.examples-container .intro-pill {
+  margin-bottom: 32px;
+}
+
+.examples-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  color: #ffffff;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 24px;
+  line-height: 1.1;
+}
+
+.examples-subpara {
+  max-width: 620px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: clamp(64px, 6vw, 96px);
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(240, 240, 240, 0.7);
+}
+
+/* Card grid */
+.examples-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  text-align: left;
+}
+
+@property --card-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes rotate-border {
+  from { --card-angle: 0deg; }
+  to { --card-angle: 360deg; }
+}
+
+.examples-card {
+  position: relative;
+  background: rgba(240, 240, 240, 0.05);
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.06);
+  padding: 24px 32px 32px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* Rotating conic gradient border */
+.examples-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+  padding: 1px;
+  background: conic-gradient(
+    from var(--card-angle),
+    transparent 0%,
+    transparent 30%,
+    rgba(240, 240, 240, 0.22) 45%,
+    rgba(240, 240, 240, 0.38) 50%,
+    rgba(240, 240, 240, 0.22) 55%,
+    transparent 70%,
+    transparent 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: rotate-border 6s linear infinite;
+  z-index: -1;
+}
+
+.examples-card-tag {
+  font-family: var(--font-eyebrow);
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text);
+  opacity: 0.9;
+  margin-bottom: auto;
+}
+
+.os-theme .examples-card-title {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: var(--weight-bold);
+  color: var(--color-text);
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-transform: none;
+  margin-bottom: 12px;
+}
+
+.examples-card-description {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(240, 240, 240, 0.75);
+}
+
+/* Stagger the rotation per card */
+.examples-card:nth-child(2)::before {
+  animation-delay: -1.5s;
+}
+
+.examples-card:nth-child(3)::before {
+  animation-delay: -3s;
+}
+
+.examples-card:nth-child(4)::before {
+  animation-delay: -4.5s;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .examples-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .examples-subpara {
+    font-size: 15px !important;
+    line-height: 1.72;
+    max-width: 34ch;
+  }
+
+  .examples-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .examples-card {
+    aspect-ratio: auto;
+    min-height: 292px;
+    padding: 24px;
+  }
+
+  .examples-card-tag {
+    margin-bottom: 0;
+  }
+
+  .os-theme .examples-card-title {
+    margin-top: auto;
+  }
+}

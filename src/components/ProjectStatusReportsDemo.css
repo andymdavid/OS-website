@@ -1,0 +1,489 @@
+/* ==========================================================================
+   PROJECT STATUS REPORTS DEMO
+   ========================================================================== */
+
+.status-demo-shell {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status-demo-panel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    radial-gradient(circle at top left, rgba(46, 167, 130, 0.12), transparent 36%),
+    rgba(12, 12, 11, 0.94);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+}
+
+.status-demo-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.status-demo-header h4 {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.status-demo-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.74);
+  white-space: nowrap;
+}
+
+.status-demo-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #2ea782;
+  box-shadow: 0 0 0 0 rgba(46, 167, 130, 0.45);
+  animation: status-pulse 1.8s infinite;
+}
+
+@keyframes status-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(46, 167, 130, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 0 8px rgba(46, 167, 130, 0);
+  }
+}
+
+.status-stage-stack {
+  height: calc(100% - 42px);
+}
+
+.status-stage-screen {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.status-stage-screen.visible {
+  animation: status-stage-enter 0.32s ease;
+}
+
+@keyframes status-stage-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.status-screen-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.status-screen-label,
+.status-screen-state,
+.status-block-label,
+.status-terminal-pill,
+.status-report-badge {
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 8px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.status-screen-label {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.status-screen-state {
+  color: rgba(255, 255, 255, 0.42);
+}
+
+.status-dashboard-card,
+.status-report-card,
+.status-delivery-card {
+  flex: 1;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.03);
+  overflow: hidden;
+}
+
+.status-dashboard-card,
+.status-report-card,
+.status-delivery-card {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.status-dashboard-top,
+.status-report-top,
+.status-delivery-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.status-dashboard-badge,
+.status-report-badge,
+.status-delivery-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 8px;
+  border-radius: 999px;
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 8px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.58);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  white-space: nowrap;
+}
+
+.status-block-label {
+  color: rgba(255, 255, 255, 0.46);
+}
+
+.status-project-name,
+.status-delivery-title {
+  margin-top: 6px;
+  font-family: var(--font-ui);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.15;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.status-period-name {
+  margin-top: 4px;
+  font-family: var(--font-body);
+  font-size: 10px;
+  line-height: 1.2;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.status-dashboard-badge.ready,
+.status-report-badge.ready,
+.status-delivery-badge.ready {
+  color: #8ad3bd;
+  background: rgba(46, 167, 130, 0.14);
+  border: 1px solid rgba(46, 167, 130, 0.22);
+}
+
+.status-dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.status-metric-card,
+.status-dashboard-panel,
+.status-section-card,
+.status-delivery-item {
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity 0.32s ease,
+    transform 0.32s ease;
+}
+
+.status-metric-card.visible,
+.status-dashboard-panel.visible,
+.status-section-card.visible,
+.status-delivery-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.status-metric-card {
+  padding: 8px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.status-metric-card span {
+  display: block;
+  margin-bottom: 5px;
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 8px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.46);
+}
+
+.status-metric-card strong {
+  font-family: var(--font-ui);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.status-dashboard-lower {
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.status-dashboard-panel {
+  padding: 8px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.status-dashboard-panel-title {
+  margin-bottom: 6px;
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 8px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.46);
+}
+
+.status-dashboard-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.status-dashboard-list span,
+.status-dashboard-next,
+.status-dashboard-sub {
+  font-family: var(--font-body);
+  font-size: 10px;
+  line-height: 1.3;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.status-dashboard-next {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.status-dashboard-sub {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.status-health-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.status-health-card {
+  padding: 8px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.status-health-card span {
+  display: block;
+  margin-bottom: 6px;
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.46);
+}
+
+.status-health-card strong {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.status-sections-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.status-section-card {
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.status-section-card.active {
+  border-color: rgba(46, 167, 130, 0.26);
+  background: rgba(46, 167, 130, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(46, 167, 130, 0.06);
+}
+
+.status-section-title {
+  margin-bottom: 8px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.status-section-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.status-section-bullet {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 10px;
+  line-height: 1.3;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.status-section-bullet span:first-child {
+  color: #8ad3bd;
+}
+
+.status-delivery-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.status-delivery-item {
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr) 70px;
+  gap: 8px;
+  align-items: center;
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.status-delivery-channel,
+.status-delivery-state {
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.status-delivery-channel {
+  color: #8ad3bd;
+}
+
+.status-delivery-copy {
+  font-family: var(--font-body);
+  font-size: 10px;
+  line-height: 1.3;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.status-delivery-state {
+  justify-self: end;
+  color: rgba(255, 255, 255, 0.56);
+}
+
+@media (max-width: 1024px) {
+  .status-demo-shell {
+    padding: 20px;
+  }
+
+  .status-demo-panel {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .status-demo-shell {
+    padding: 14px;
+  }
+
+  .status-demo-panel {
+    padding: 14px;
+  }
+
+  .status-demo-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .status-demo-header h4 {
+    font-size: 16px;
+  }
+
+  .status-stage-stack {
+    height: calc(100% - 70px);
+  }
+
+  .status-terminal-body,
+  .status-report-card,
+  .status-delivery-card {
+    padding: 14px;
+  }
+
+  .status-project-name,
+  .status-delivery-title {
+    font-size: 18px;
+  }
+
+  .status-period-name {
+    font-size: 12px;
+  }
+
+  .status-dashboard-grid,
+  .status-dashboard-lower,
+  .status-health-row {
+    grid-template-columns: 1fr;
+  }
+
+  .status-delivery-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .status-delivery-state {
+    justify-self: start;
+  }
+}

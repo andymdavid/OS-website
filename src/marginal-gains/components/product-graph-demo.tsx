@@ -16,23 +16,22 @@ interface Edge {
 }
 
 const nodes: Node[] = [
-  { id: "orders", label: "Orders", x: 25, y: 35 },
-  { id: "inventory", label: "Inventory", x: 50, y: 20 },
-  { id: "crm", label: "CRM", x: 75, y: 35 },
-  { id: "reports", label: "Reports", x: 38, y: 70 },
-  { id: "alerts", label: "Alerts", x: 65, y: 75, isNew: true },
+  { id: "flight-deck", label: "Flight Deck", x: 25, y: 35 },
+  { id: "tower", label: "Tower", x: 50, y: 20 },
+  { id: "airspace", label: "Airspace", x: 75, y: 35 },
+  { id: "agents", label: "Agents", x: 38, y: 70 },
+  { id: "workflows", label: "Workflows", x: 65, y: 75, isNew: true },
 ];
 
 const edges: Edge[] = [
-  { from: "orders", to: "inventory" },
-  { from: "inventory", to: "crm" },
-  { from: "orders", to: "reports" },
-  { from: "crm", to: "reports" },
-  { from: "orders", to: "crm" },
-  { from: "inventory", to: "reports" },
-  { from: "reports", to: "alerts", isNew: true },
-  { from: "crm", to: "alerts", isNew: true },
-  { from: "inventory", to: "alerts", isNew: true },
+  { from: "flight-deck", to: "tower" },
+  { from: "tower", to: "airspace" },
+  { from: "flight-deck", to: "agents" },
+  { from: "tower", to: "agents" },
+  { from: "airspace", to: "agents" },
+  { from: "agents", to: "workflows", isNew: true },
+  { from: "tower", to: "workflows", isNew: true },
+  { from: "airspace", to: "workflows", isNew: true },
 ];
 
 export function ProductGraphDemo() {
@@ -102,7 +101,7 @@ export function ProductGraphDemo() {
       {/* New badge */}
       {showNewNode && (
         <div className="graph-new-badge" style={{ left: "65%", top: "60%" }}>
-          New
+          Live
         </div>
       )}
     </div>

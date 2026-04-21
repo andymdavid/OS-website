@@ -30,7 +30,7 @@ export function LegalPage({
       <NavigationDraft titleOverride="OTHER STUFF" />
       <main>
         <section className="section writing-post-hero">
-          <div className="section-container-wide writing-post-hero-inner">
+          <div className="section-container-wide writing-post-hero-inner legal-page-hero-inner">
             <a href={backHref} className="writing-post-back">
               {backLabel}
             </a>
@@ -47,8 +47,8 @@ export function LegalPage({
         </section>
 
         <section className="section writing-post-body">
-          <div className="section-container-wide writing-post-body-inner">
-            <div className="writing-post-content">
+          <div className="section-container-wide writing-post-body-inner legal-page-body-inner">
+            <div className="writing-post-content legal-page-content">
               {sections.map((section) => (
                 <section key={section.title} className="legal-section">
                   <h2>{section.title}</h2>

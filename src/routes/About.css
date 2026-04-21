@@ -1,12 +1,12 @@
 .about-page .about-hero {
-  height: 60vh;
+  height: 72vh;
   display: flex;
   align-items: center;
 }
 
 .about-page .about-hero.section {
-  min-height: 60vh;
-  height: 60vh;
+  min-height: 72vh;
+  height: 72vh;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
 }
@@ -57,8 +57,8 @@
 @media (max-width: 768px) {
   .about-page .about-hero,
   .about-page .about-hero.section {
-    min-height: 74svh;
-    height: 74svh;
+    min-height: 82svh;
+    height: 82svh;
   }
 
   .about-page .hero-title-block {
@@ -314,6 +314,7 @@
   border-radius: 4px;
   overflow: hidden;
   flex-shrink: 0;
+  background: #000000;
 }
 
 .about-page .about-bio-card-image img {
@@ -354,7 +355,7 @@
   margin-top: 16px;
 }
 
-.about-page .about-bio-card-social button {
+.about-page .about-bio-card-social a {
   width: 30px;
   height: 30px;
   border-radius: 4px;
@@ -370,7 +371,7 @@
   cursor: pointer;
 }
 
-.about-page .about-bio-card-social button svg {
+.about-page .about-bio-card-social a svg {
   width: 14px;
   height: 14px;
 }
@@ -381,7 +382,7 @@
   display: block;
 }
 
-.about-page .about-bio-card-social button:hover {
+.about-page .about-bio-card-social a:hover {
   background: rgba(240, 240, 240, 0.1);
   transform: translateY(-2px);
 }

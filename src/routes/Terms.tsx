@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import { LegalPage } from "@/components/LegalPage";
 
 const sections = [
@@ -93,6 +94,12 @@ const sections = [
 
 export default function Terms() {
   return (
+    <>
+    <SEO
+      title="Terms of Service"
+      description="Terms of Service for the Other Stuff website. Rules, limitations, and legal framework for using otherstuff.ai."
+      path="/terms"
+    />
     <LegalPage
       backHref="/"
       backLabel="Back to Home"
@@ -101,5 +108,6 @@ export default function Terms() {
       summary="These terms govern use of the Other Stuff website and explain the basic rules, limitations, and legal framework that apply when you browse or use this site."
       sections={sections}
     />
+    </>
   );
 }

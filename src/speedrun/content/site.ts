@@ -78,7 +78,7 @@ export const siteContent: SiteContent = {
         variant: "homeStyle",
         title: "Learn how to work with AI by building with it.",
         subtitle:
-          "Speedrun is a hands-on workshop where teams learn how to use AI effectively by building practical tools with AI agents. No coding experience required.",
+          "Speedrun is a private hands-on AI workshop for Perth businesses and teams. In one focused session, your team builds practical tools and workflows with AI agents, with no technical background required.",
         subtitleMaxWidth: "65ch",
         centerContent: true,
         ctaPrimary: { label: "Talk to Us", href: "mailto:info@otherstuff.studio" },
@@ -89,14 +89,14 @@ export const siteContent: SiteContent = {
       enabled: false,
       props: {
         cards: [
-          { id: "1", title: "Bullrun", description: "Dodge the bulls", image: "/bullrun.png", href: "https://bullrun.otherstuff.ai" },
-          { id: "2", title: "Cowkey Kong", description: "Keep climbing", image: "/cowkey.png", href: "https://cowkong.otherstuff.ai" },
-          { id: "3", title: "Frogger", description: "Avoid the cards", image: "/frogger.png", href: "https://frogger.otherstuff.ai" },
-          { id: "4", title: "Lemmings", description: "Classic lemmings", image: "/lemmings.png", href: "https://lemmings.otherstuff.ai" },
-          { id: "5", title: "Pong", description: "Classic Pong", image: "/pong.png", href: "https://pong.otherstuff.ai" },
-          { id: "6", title: "Satoshi's Garden", description: "Stack sats", image: "/satsgarden.png", href: "https://satsgarden.otherstuff.ai" },
-          { id: "7", title: "Chesstr", description: "Play chess", image: "/chesstr.png", href: "https://chesstr.otherstuff.ai" },
-          { id: "8", title: "Scramble", description: "Navigate the cave", image: "/scramble.png", href: "https://scramble.otherstuff.ai" },
+          { id: "1", title: "Bullrun", description: "Dodge the bulls", image: "/bullrun.webp", href: "https://bullrun.otherstuff.ai" },
+          { id: "2", title: "Cowkey Kong", description: "Keep climbing", image: "/cowkey.webp", href: "https://cowkong.otherstuff.ai" },
+          { id: "3", title: "Frogger", description: "Avoid the cards", image: "/frogger.webp", href: "https://frogger.otherstuff.ai" },
+          { id: "4", title: "Lemmings", description: "Classic lemmings", image: "/lemmings.webp", href: "https://lemmings.otherstuff.ai" },
+          { id: "5", title: "Pong", description: "Classic Pong", image: "/pong.webp", href: "https://pong.otherstuff.ai" },
+          { id: "6", title: "Satoshi's Garden", description: "Stack sats", image: "/satsgarden.webp", href: "https://satsgarden.otherstuff.ai" },
+          { id: "7", title: "Chesstr", description: "Play chess", image: "/chesstr.webp", href: "https://chesstr.otherstuff.ai" },
+          { id: "8", title: "Scramble", description: "Navigate the cave", image: "/scramble.webp", href: "https://scramble.otherstuff.ai" },
         ],
         speed: 50,
         arcDepth: 60,
@@ -126,13 +126,13 @@ export const siteContent: SiteContent = {
           {
             number: "01",
             title: "Who should attend",
-            body: "Speedrun is for SME operators and team leads who need to understand what AI can do for their business - no technical background required.",
+            body: "Speedrun is for Perth businesses, SME teams, founders, and team leads who want practical hands-on experience applying AI to real business work, without needing a technical background.",
             demoKey: "teamRoles",
           },
           {
             number: "02",
             title: "Session structure",
-            body: "Speedrun is a 3-hour, guided, hands-on workshop, delivered in small groups with facilitation and support provided throughout.",
+            body: "Speedrun is a private 3-hour AI workshop for business teams, delivered in Perth for small groups with guided facilitation and support throughout.",
             demoKey: "timeline",
           },
           {
@@ -157,43 +157,12 @@ export const siteContent: SiteContent = {
       props: {
         title: "Why Speedrun exists.",
         body:
-          "Most businesses know they should be doing more with AI and automation, but they don't know where to start, what to connect, or how to turn ideas into something real. Progress often remains stuck at research, demos, or random experiments.\n\nSpeedrun exists to help people move from wanting to use AI in their business to actually building with it and compresses that gap into short, focused workshops. In a few hours, participants work hands-on with AI agents to build practical tools and workflows that reflect how their business operates.",
+          "Most businesses know they should be doing more with AI, but they are often stuck between interest and implementation. Progress stays trapped in research, demos, and disconnected experiments.\n\nSpeedrun closes that gap with a private hands-on AI workshop for business teams. In a few hours, participants build practical tools and workflows with AI agents that reflect how their business actually operates.",
         singleColumn: true,
         fullHeight: true,
         textAlign: "center",
         maxWidth: "wide",
-        testimonials: [
-          {
-            quote: "I'd been reading about AI for months. In three hours, I actually built something that works for our team.",
-            author: "Sarah Chen",
-            role: "Operations Lead",
-            company: "Meridian Logistics",
-          },
-          {
-            quote: "We left with a working tool and, more importantly, the confidence to keep building. That's rare from a workshop.",
-            author: "Marcus Webb",
-            role: "Founder",
-            company: "Threadline Studio",
-          },
-          {
-            quote: "The hands-on approach made all the difference. No slides, no theory - just building something real with guidance.",
-            author: "Priya Sharma",
-            role: "Team Lead",
-            company: "Coastal Partners",
-          },
-          {
-            quote: "Finally understood what AI agents can actually do for our workflows. Seeing it work in real-time was the breakthrough.",
-            author: "James Okonkwo",
-            role: "Director of Operations",
-            company: "Summit Advisory",
-          },
-          {
-            quote: "Worth more than months of research. We went from curious to capable in a single session.",
-            author: "Elena Ruiz",
-            role: "COO",
-            company: "Brightpath Consulting",
-          },
-        ],
+        testimonials: [],
       },
     },
     {
@@ -242,28 +211,28 @@ export const siteContent: SiteContent = {
             label: "Setup the foundation",
             body:
               "We start by cloning a structured open-source repo and get a working starting point immediately. You begin with something real.",
-            imageSrc: "/WingmanScreen1.png",
+            imageSrc: "/WingmanScreen1.webp",
             imageAlt: "Setup the foundation",
           },
           {
             label: "Make small changes",
             body:
               "Change the title. Adjust colours. Modify simple elements. You see instantly how instructions become working features.",
-            imageSrc: "/WingmanScreen2.png",
+            imageSrc: "/WingmanScreen2.webp",
             imageAlt: "Make small changes",
           },
           {
             label: "Build your version",
             body:
               "Extend the app into a Kanban board. Replace Trello. Gamify it. Shape it into the productivity tool you actually want to use.",
-            imageSrc: "/WingmanScreen1.png",
+            imageSrc: "/WingmanScreen1.webp",
             imageAlt: "Build your version",
           },
           {
             label: "Put Wingman to work",
             body:
               "An agent produces daily summaries, plans your workload, and carries tasks forward like a capable assistant.",
-            imageSrc: "/WingmanScreen2.png",
+            imageSrc: "/WingmanScreen2.webp",
             imageAlt: "Put Wingman to work",
           },
         ],
@@ -387,9 +356,9 @@ export const siteContent: SiteContent = {
               "Teams can extend the work through Speedrun Applied, where AI agents begin operating across workflows. For organisations wanting to deepen internal capability over time, Marginal Gains provides ongoing support and structured experimentation.",
           },
           {
-            question: "How is this different from using tools like ChatGPT?",
+            question: "How is this different from a standard AI workshop or training session?",
             answer:
-              "Speedrun goes beyond prompting a chatbot. Participants work with coding and task-based AI agents to build and run structured systems, which creates a deeper understanding of how AI behaves inside operational workflows.",
+              "Speedrun is not a presentation or generic AI training course. It is a private hands-on workshop for business teams, where participants build and run structured systems with AI agents so understanding comes from direct use rather than passive instruction.",
           },
         ],
       },
@@ -424,7 +393,7 @@ export const siteContent: SiteContent = {
           {
             title: "Pete Winn",
             role: "Co-Founder",
-            image: "/Pete.png",
+            image: "/Pete.webp",
             body: "Pete has a long track record in process redesign, deep tech and large enterprise and programme deployments from Rolls Royce to Rio Tinto.",
             showSocialButtons: true,
             socialLinks: {
@@ -435,7 +404,7 @@ export const siteContent: SiteContent = {
           {
             title: "Andy David",
             role: "Co-Founder",
-            image: "/Andy.png",
+            image: "/Andy.webp",
             body: "Andy's background is in venture design, management consulting and technology startups, including process improvement for enterprise and SMEs.",
             showSocialButtons: true,
             socialLinks: {

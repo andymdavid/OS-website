@@ -74,7 +74,7 @@ export function FinalCta({
           </svg>
           <div className="absolute inset-0 flex items-center justify-center">
             <img
-              src="/OS-logo-icon-black.png"
+              src="/OS-logo-icon-black.webp"
               alt="Other Stuff logo"
               width={28}
               height={28}

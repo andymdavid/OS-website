@@ -1,0 +1,537 @@
+/* ==========================================================================
+   INVENTORY INTELLIGENCE DEMO
+   ========================================================================== */
+
+.inventory-demo-shell {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inventory-demo-panel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at top right, rgba(46, 167, 130, 0.12), transparent 34%),
+    rgba(12, 12, 11, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 18px;
+  overflow: hidden;
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+}
+
+.inventory-demo-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.inventory-demo-header h4 {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-size: 18px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.inventory-demo-agent-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.74);
+  white-space: nowrap;
+}
+
+.inventory-agent-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #2ea782;
+  box-shadow: 0 0 0 0 rgba(46, 167, 130, 0.5);
+  animation: inventory-agent-pulse 1.8s infinite;
+}
+
+@keyframes inventory-agent-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(46, 167, 130, 0.35);
+  }
+
+  50% {
+    box-shadow: 0 0 0 8px rgba(46, 167, 130, 0);
+  }
+}
+
+.inventory-table-card {
+  position: relative;
+  z-index: 1;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.03);
+  overflow: hidden;
+}
+
+.inventory-table-head,
+.inventory-row {
+  display: grid;
+  grid-template-columns: minmax(0, 2.15fr) minmax(0, 1fr) minmax(0, 1.3fr) minmax(0, 1fr);
+  align-items: center;
+  column-gap: 14px;
+}
+
+.inventory-table-head {
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.44);
+}
+
+.inventory-table-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.inventory-row {
+  position: relative;
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition:
+    background 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.inventory-row:last-child {
+  border-bottom: none;
+}
+
+.inventory-row::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-left: 2px solid transparent;
+  opacity: 0;
+  transition: opacity 0.3s ease, border-color 0.3s ease;
+}
+
+.inventory-row.is-active {
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateX(4px);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+}
+
+.inventory-row.is-active::after {
+  opacity: 1;
+  border-color: rgba(46, 167, 130, 0.85);
+}
+
+.inventory-row-low-stock {
+  background: rgba(214, 140, 54, 0.08);
+}
+
+.inventory-row-clearance {
+  background: rgba(99, 151, 255, 0.08);
+}
+
+.inventory-product-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.inventory-product-name {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.92);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.inventory-product-sku {
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  color: rgba(255, 255, 255, 0.42);
+}
+
+.inventory-stock-cell,
+.inventory-velocity-cell span {
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.inventory-velocity-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.inventory-velocity-track {
+  width: 100%;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.inventory-velocity-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, rgba(46, 167, 130, 0.75), rgba(129, 214, 157, 0.95));
+  transition: width 0.5s ease;
+}
+
+.inventory-row-clearance .inventory-velocity-fill {
+  background: linear-gradient(90deg, rgba(77, 126, 255, 0.7), rgba(116, 165, 255, 0.92));
+}
+
+.inventory-row-low-stock .inventory-velocity-fill {
+  background: linear-gradient(90deg, rgba(221, 142, 47, 0.72), rgba(250, 187, 103, 0.95));
+}
+
+.inventory-status-cell {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.inventory-status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 86px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  transition:
+    background 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.35s ease;
+}
+
+.inventory-status-ok {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.inventory-status-low-stock {
+  background: rgba(214, 140, 54, 0.18);
+  border-color: rgba(221, 142, 47, 0.38);
+  color: #ffcc88;
+  transform: translateX(2px);
+}
+
+.inventory-status-clearance {
+  background: rgba(77, 126, 255, 0.18);
+  border-color: rgba(116, 165, 255, 0.34);
+  color: #b6d4ff;
+  transform: translateX(2px);
+}
+
+.inventory-status-incoming {
+  background: rgba(46, 167, 130, 0.14);
+  border-color: rgba(46, 167, 130, 0.3);
+  color: #8ad3bd;
+}
+
+.inventory-reorder-card,
+.inventory-toast,
+.inventory-summary-card {
+  position: absolute;
+  z-index: 2;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+.inventory-reorder-card {
+  top: 124px;
+  right: 22px;
+  width: 230px;
+  padding: 14px;
+  border-radius: 10px;
+  background: rgba(18, 18, 17, 0.98);
+  border: 1px solid rgba(221, 142, 47, 0.3);
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.32);
+  transform: translateX(18px);
+}
+
+.inventory-reorder-card.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.inventory-overlay-label {
+  margin-bottom: 8px;
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffcc88;
+}
+
+.inventory-overlay-title {
+  margin-bottom: 10px;
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.inventory-overlay-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.inventory-toast {
+  top: 244px;
+  right: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 220px;
+  padding: 14px;
+  border-radius: 10px;
+  background: rgba(15, 18, 28, 0.96);
+  border: 1px solid rgba(116, 165, 255, 0.28);
+  box-shadow: 0 18px 34px rgba(0, 0, 0, 0.28);
+  transform: translateY(14px);
+}
+
+.inventory-toast.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.inventory-toast-badge {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: rgba(116, 165, 255, 0.16);
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #b6d4ff;
+}
+
+.inventory-toast-text {
+  font-family: var(--font-body);
+  font-size: 12px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.inventory-summary-card {
+  right: 18px;
+  bottom: 18px;
+  width: 272px;
+  padding: 16px;
+  border-radius: 12px;
+  background: rgba(15, 15, 14, 0.98);
+  border: 1px solid rgba(46, 167, 130, 0.28);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.34);
+  transform: translateY(18px);
+}
+
+.inventory-summary-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.inventory-summary-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.inventory-summary-label,
+.inventory-summary-period {
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.inventory-summary-label {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.inventory-summary-period {
+  color: rgba(255, 255, 255, 0.38);
+}
+
+.inventory-summary-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.inventory-summary-metric {
+  padding: 12px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.inventory-summary-value {
+  display: block;
+  margin-bottom: 6px;
+  font-family: var(--font-ui);
+  font-size: 24px;
+  font-weight: 700;
+  color: #2ea782;
+}
+
+.inventory-summary-copy {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 12px;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.inventory-summary-checks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inventory-summary-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.inventory-summary-check span {
+  color: #2ea782;
+  font-weight: 700;
+}
+
+@media (max-width: 1024px) {
+  .inventory-demo-shell {
+    padding: 20px;
+  }
+
+  .inventory-demo-panel {
+    padding: 16px;
+  }
+
+  .inventory-table-head,
+  .inventory-row {
+    grid-template-columns: minmax(0, 1.9fr) minmax(0, 0.95fr) minmax(0, 1.15fr) minmax(0, 0.95fr);
+    column-gap: 10px;
+  }
+
+  .inventory-reorder-card,
+  .inventory-toast,
+  .inventory-summary-card {
+    width: 214px;
+  }
+}
+
+@media (max-width: 768px) {
+  .inventory-demo-shell {
+    padding: 14px;
+  }
+
+  .inventory-demo-panel {
+    padding: 14px;
+  }
+
+  .inventory-demo-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .inventory-demo-header h4 {
+    font-size: 16px;
+  }
+
+  .inventory-table-head,
+  .inventory-row {
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.9fr) minmax(0, 1fr);
+  }
+
+  .inventory-table-head span:last-child,
+  .inventory-status-cell {
+    display: none;
+  }
+
+  .inventory-row {
+    padding: 12px;
+  }
+
+  .inventory-product-name {
+    font-size: 12px;
+  }
+
+  .inventory-stock-cell,
+  .inventory-velocity-cell span {
+    font-size: 10px;
+  }
+
+  .inventory-reorder-card {
+    top: auto;
+    right: 14px;
+    bottom: 120px;
+    width: calc(100% - 28px);
+    max-width: 220px;
+  }
+
+  .inventory-toast {
+    top: auto;
+    right: 14px;
+    bottom: 58px;
+    width: calc(100% - 28px);
+    max-width: 220px;
+  }
+
+  .inventory-summary-card {
+    right: 14px;
+    bottom: 14px;
+    width: calc(100% - 28px);
+  }
+}

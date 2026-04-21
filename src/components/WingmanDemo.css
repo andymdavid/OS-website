@@ -37,83 +37,6 @@
   margin-top: 12px;
 }
 
-/* Spreadsheet Preview */
-.wm-spreadsheet {
-  background: #1a1a1a;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  overflow: hidden;
-  width: 100%;
-  max-height: 0;
-  opacity: 0;
-  border-width: 0;
-  transition: opacity 0.4s ease, max-height 0.3s ease, border-width 0.3s ease;
-  flex-shrink: 0;
-}
-
-.wm-spreadsheet.visible {
-  max-height: 300px;
-  opacity: 1;
-  border-width: 1px;
-}
-
-.wm-spreadsheet-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 14px;
-  background: rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.wm-spreadsheet-dots {
-  display: flex;
-  gap: 6px;
-}
-
-.wm-spreadsheet-dots span {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.15);
-}
-
-.wm-spreadsheet-title {
-  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.wm-spreadsheet-content {
-  padding: 0;
-  overflow-x: auto;
-}
-
-.wm-spreadsheet-content table {
-  width: 100%;
-  border-collapse: collapse;
-  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
-  font-size: 11px;
-}
-
-.wm-spreadsheet-content tr.header-row td {
-  background: rgba(255, 255, 255, 0.08);
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.wm-spreadsheet-content td {
-  padding: 8px 12px;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  color: rgba(255, 255, 255, 0.6);
-  white-space: nowrap;
-}
-
-.wm-spreadsheet-content td.messy {
-  color: #f87171;
-  background: rgba(248, 113, 113, 0.1);
-}
-
 /* Terminal Panel */
 .wm-terminal-panel {
   background: #0a0a0a;
@@ -345,7 +268,7 @@
   background: #000;
 }
 
-/* App Result */
+/* Handover Brief Result */
 .wm-app-result {
   position: absolute;
   top: 50%;
@@ -372,7 +295,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   padding-bottom: 12px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   opacity: 0;
@@ -390,7 +313,7 @@
   align-items: center;
   gap: 10px;
   font-family: var(--font-ui);
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   color: #1a1a1a;
 }
@@ -411,55 +334,55 @@
   color: #2ea782;
 }
 
-.wm-app-search {
+/* Brief Summary */
+.wm-brief-summary {
   display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 14px;
+  gap: 16px;
+  padding: 12px 14px;
   background: #f5f5f5;
   border-radius: 8px;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   opacity: 0;
   transform: translateY(10px);
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.wm-app-search.visible {
+.wm-brief-summary.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.wm-app-search svg {
-  color: #999;
-}
-
-.wm-app-search span {
-  font-family: var(--font-body);
-  font-size: 13px;
-  color: #999;
-}
-
-.wm-app-section-title {
-  font-family: var(--font-ui);
-  font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #666;
-  margin-bottom: 10px;
-}
-
-.wm-app-inventory {
+.wm-brief-summary-row {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 2px;
 }
 
-.wm-inventory-row {
+.wm-brief-label {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #999;
+}
+
+.wm-brief-value {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+/* Brief Account Rows */
+.wm-brief-accounts {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 14px;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.wm-brief-account {
+  padding: 10px 14px;
   background: #fafafa;
   border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.06);
@@ -468,75 +391,54 @@
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.wm-inventory-row.visible {
+.wm-brief-account.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.wm-inventory-info {
+.wm-brief-account-top {
   display: flex;
-  flex-direction: column;
-  gap: 2px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
 }
 
-.wm-inventory-sku {
-  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
-  font-size: 10px;
-  color: #999;
-}
-
-.wm-inventory-name {
+.wm-brief-account-name {
   font-family: var(--font-ui);
   font-size: 13px;
-  font-weight: 500;
-  color: #1a1a1a;
-}
-
-.wm-inventory-right {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.wm-inventory-qty {
-  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
-  font-size: 13px;
-  display: flex;
-  align-items: center;
-  gap: 2px;
-}
-
-.wm-qty-current {
   font-weight: 600;
   color: #1a1a1a;
 }
 
-.wm-qty-divider {
-  color: #ccc;
-}
-
-.wm-qty-reorder {
-  color: #999;
-}
-
-.wm-status-badge {
+.wm-brief-account-status {
   font-family: var(--font-ui);
   font-size: 10px;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.03em;
-  padding: 4px 8px;
+  padding: 3px 8px;
   border-radius: 4px;
+  background: rgba(46, 167, 130, 0.12);
+  color: #2ea782;
 }
 
-.wm-status-badge.low {
-  background: rgba(245, 158, 11, 0.15);
-  color: #d97706;
+.wm-brief-account-detail {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.wm-status-badge.critical {
-  background: rgba(239, 68, 68, 0.15);
-  color: #dc2626;
+.wm-brief-account-deadline {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 500;
+  color: #666;
+}
+
+.wm-brief-account-note {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  color: #999;
 }
 
 /* Responsive */
@@ -552,10 +454,17 @@
 
   .wm-chat-text {
     font-size: 14px;
+    height: 44px;
   }
 
-  .wm-spreadsheet-content td {
-    padding: 6px 8px;
-    font-size: 10px;
+  .wm-brief-summary {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .wm-brief-account-detail {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
   }
 }

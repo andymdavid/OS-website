@@ -41,6 +41,15 @@ const crmContact = {
   status: 'New Lead',
 };
 
+const outreachContacts = [
+  { name: 'Sarah Chen', company: 'Meridian Logistics', action: 'Intro email sent' },
+  { name: 'James Harlow', company: 'Birch & Co', action: 'Follow-up #2 sent' },
+  { name: 'Priya Desai', company: 'Vantage Group', action: 'Proposal follow-up sent' },
+  { name: 'Tom Buckley', company: 'Redline Services', action: 'Intro email sent' },
+  { name: 'Nina Ekberg', company: 'Coastline Freight', action: 'Meeting recap sent' },
+  { name: 'Liam Oakes', company: 'Fieldwork Digital', action: 'Follow-up #1 sent' },
+];
+
 type Phase =
   | 'waiting'
   | 'form'
@@ -51,6 +60,7 @@ type Phase =
   | 'terminal-close'
   | 'crm-reveal'
   | 'crm-build'
+  | 'outreach'
   | 'hold'
   | 'fade-out';
 
@@ -64,6 +74,8 @@ export function FormProcessingDemo() {
   const [terminalLines, setTerminalLines] = useState<TerminalStep[]>([]);
   const [currentCodeText, setCurrentCodeText] = useState('');
   const [crmBuildStep, setCrmBuildStep] = useState(0);
+  const [showOutreach, setShowOutreach] = useState(false);
+  const [outreachStep, setOutreachStep] = useState(0);
   const [hasStarted, setHasStarted] = useState(false);
 
   const charIndexRef = useRef(0);
@@ -172,12 +184,28 @@ export function FormProcessingDemo() {
           setCrmBuildStep(prev => prev + 1);
         }, 200);
       } else {
-        timeout = setTimeout(() => setPhase('hold'), 2500);
+        timeout = setTimeout(() => {
+          setShowCRM(false);
+          setTimeout(() => {
+            setShowOutreach(true);
+            setOutreachStep(1);
+            setPhase('outreach');
+          }, 400);
+        }, 2000);
+      }
+    } else if (phase === 'outreach') {
+      if (outreachStep < outreachContacts.length) {
+        timeout = setTimeout(() => {
+          setOutreachStep(prev => prev + 1);
+        }, 350);
+      } else {
+        timeout = setTimeout(() => setPhase('hold'), 2000);
       }
     } else if (phase === 'hold') {
       timeout = setTimeout(() => setPhase('fade-out'), 2000);
     } else if (phase === 'fade-out') {
       setShowCRM(false);
+      setShowOutreach(false);
       timeout = setTimeout(() => {
         // Reset everything
         setShowForm(false);
@@ -187,6 +215,7 @@ export function FormProcessingDemo() {
         setDisplayedText('');
         setCurrentCodeText('');
         setCrmBuildStep(0);
+        setOutreachStep(0);
         charIndexRef.current = 0;
         stepIndexRef.current = 0;
         codeCharIndexRef.current = 0;
@@ -195,7 +224,7 @@ export function FormProcessingDemo() {
     }
 
     return () => clearTimeout(timeout);
-  }, [phase, displayedText, terminalLines, currentCodeText, crmBuildStep]);
+  }, [phase, displayedText, terminalLines, currentCodeText, crmBuildStep, outreachStep]);
 
   return (
     <div className="form-demo-container" ref={containerRef}>
@@ -273,6 +302,32 @@ export function FormProcessingDemo() {
                 </svg>
               </button>
             </div>
+          </div>
+        </div>
+
+        {/* Outreach Column */}
+        <div className={`fp-outreach ${showOutreach ? 'visible' : ''}`}>
+          <div className="fp-outreach-header">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            <span>Outreach in progress</span>
+            <span className="fp-outreach-count">{outreachStep}/{outreachContacts.length}</span>
+          </div>
+          <div className="fp-outreach-list">
+            {outreachContacts.map((contact, index) => (
+              <div key={index} className={`fp-outreach-row ${outreachStep > index ? 'visible' : ''}`}>
+                <div className="fp-outreach-avatar">{contact.name.split(' ').map(n => n[0]).join('')}</div>
+                <div className="fp-outreach-info">
+                  <span className="fp-outreach-name">{contact.name}</span>
+                  <span className="fp-outreach-company">{contact.company}</span>
+                </div>
+                <span className="fp-outreach-action">{contact.action}</span>
+                <svg className="fp-outreach-check" width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 6L9 17l-5-5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+            ))}
           </div>
         </div>
 

@@ -1,0 +1,9 @@
+2026-03-13 04:23:37: time=2026-03-13T04:23:37.857Z level=INFO msg="Running: claude "
+2026-03-13 04:23:37: time=2026-03-13T04:23:37.863Z level=INFO msg="Allowed hosts: localhost, 127.0.0.1, ::1, dev.otherstuff.studio, dev.otherstuff.ai"
+2026-03-13 04:23:37: time=2026-03-13T04:23:37.863Z level=INFO msg="Allowed origins: *"
+2026-03-13 04:23:37: time=2026-03-13T04:23:37.864Z level=INFO msg="Created temporary directory for uploads" tempDir=/tmp/agentapi-uploads-3628617576
+2026-03-13 04:23:37: time=2026-03-13T04:23:37.881Z level=INFO msg="Starting server on port" port=3706
+2026-03-13 04:23:38: time=2026-03-13T04:23:38.514Z level=INFO msg="New subscriber" subscriberId=0
+2026-03-13 04:23:38: time=2026-03-13T04:23:38.523Z level=INFO msg="New subscriber" subscriberId=1
+2026-03-13 04:32:06: time=2026-03-13T04:32:06.529Z level=INFO msg="Closing process"
+2026-03-13 04:32:06: time=2026-03-13T04:32:06.606Z level=INFO msg="Cleaned up temporary directory" tempDir=/tmp/agentapi-uploads-3628617576

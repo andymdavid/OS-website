@@ -37,7 +37,7 @@ export function Navigation() {
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             style={{ cursor: 'pointer' }}
           >
-            <img src="/Logo-Main-Icon.png" alt="Other Stuff Logo" width="46" height="31" />
+            <img src="/Logo-Main-Icon.webp" alt="Other Stuff Logo" width="46" height="31" />
           </div>
 
           <div className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>

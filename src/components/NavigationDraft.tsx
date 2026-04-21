@@ -7,8 +7,13 @@ type NavDropdownKey = 'solutions' | 'media';
 
 const solutions = [
   {
-    title: 'Wingman',
-    description: 'Your AI agent system for automating real work inside your business.',
+    title: 'Custom AI Systems',
+    description: 'Built to grow your margins, free up capital, and reduce risk across the workflows that matter most.',
+    href: '/marginal-gains',
+  },
+  {
+    title: 'Wingmen',
+    description: 'The operating environment for running, monitoring, and managing the AI systems in your business.',
     href: '/#system',
   },
   {
@@ -20,11 +25,6 @@ const solutions = [
     title: 'Level-Up Workshop',
     description: 'Structured capability building over multiple sessions for deeper AI integration.',
     href: '/levelup',
-  },
-  {
-    title: 'Marginal Gains',
-    description: 'Ongoing community access with weekly AI implementation support and resources.',
-    href: '/marginal-gains',
   },
 ];
 
@@ -162,7 +162,7 @@ export function NavigationDraft({ titleOverride, titleSwapOnScroll }: Navigation
           {/* Left Section: Logo Icon + Menu */}
           <div className="nav-left">
             <a className="nav-logo-icon" href="/" onClick={closeMenus}>
-              <img src="/Logo-Main-Icon.png" alt="Other Stuff Logo" width="46" height="31" />
+              <img src="/Logo-Main-Icon.webp" alt="Other Stuff Logo" width="46" height="31" />
             </a>
 
             <div className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
@@ -251,7 +251,7 @@ export function NavigationDraft({ titleOverride, titleSwapOnScroll }: Navigation
               className="nav-join-btn"
               onClick={closeMenus}
             >
-              Talk to Us
+              Book a Free AI Audit
             </a>
           </div>
 
@@ -358,7 +358,7 @@ export function NavigationDraft({ titleOverride, titleSwapOnScroll }: Navigation
               className="nav-join-btn mobile-menu-cta"
               onClick={closeMenus}
             >
-              Talk to Us
+              Book a Free AI Audit
             </a>
           </div>
         </div>

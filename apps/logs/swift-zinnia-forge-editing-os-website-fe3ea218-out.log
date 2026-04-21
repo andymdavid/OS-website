@@ -1,0 +1,35 @@
+2026-03-26 11:15:58: time=2026-03-26T11:15:58.229Z level=INFO msg="Running: claude "
+2026-03-26 11:15:58: time=2026-03-26T11:15:58.239Z level=INFO msg="Allowed hosts: localhost, 127.0.0.1, ::1, dev.otherstuff.studio, dev.otherstuff.ai"
+2026-03-26 11:15:58: time=2026-03-26T11:15:58.239Z level=INFO msg="Allowed origins: *"
+2026-03-26 11:15:58: time=2026-03-26T11:15:58.241Z level=INFO msg="Created temporary directory for uploads" tempDir=/tmp/agentapi-uploads-679465448
+2026-03-26 11:15:58: time=2026-03-26T11:15:58.253Z level=INFO msg="Starting server on port" port=3702
+2026-03-26 11:15:58: time=2026-03-26T11:15:58.361Z level=INFO msg="New subscriber" subscriberId=0
+2026-03-26 11:15:59: time=2026-03-26T11:15:59.357Z level=INFO msg="New subscriber" subscriberId=1
+2026-03-26 11:16:15: time=2026-03-26T11:16:15.937Z level=INFO msg="Context done" subscriberId=1
+2026-03-26 11:20:46: time=2026-03-26T11:20:46.061Z level=INFO msg="Context done" subscriberId=0
+2026-03-26 11:20:47: time=2026-03-26T11:20:47.067Z level=INFO msg="New subscriber" subscriberId=2
+2026-03-26 11:25:46: time=2026-03-26T11:25:46.061Z level=INFO msg="Context done" subscriberId=2
+2026-03-26 11:25:47: time=2026-03-26T11:25:47.063Z level=INFO msg="New subscriber" subscriberId=3
+2026-03-26 11:30:46: time=2026-03-26T11:30:46.061Z level=INFO msg="Context done" subscriberId=3
+2026-03-26 11:30:47: time=2026-03-26T11:30:47.068Z level=INFO msg="New subscriber" subscriberId=4
+2026-03-26 11:35:46: time=2026-03-26T11:35:46.061Z level=INFO msg="Context done" subscriberId=4
+2026-03-26 11:35:47: time=2026-03-26T11:35:47.073Z level=INFO msg="New subscriber" subscriberId=5
+2026-03-26 11:40:46: time=2026-03-26T11:40:46.062Z level=INFO msg="Context done" subscriberId=5
+2026-03-26 11:40:47: time=2026-03-26T11:40:47.071Z level=INFO msg="New subscriber" subscriberId=6
+2026-03-26 11:41:02: time=2026-03-26T11:41:02.231Z level=INFO msg="New subscriber" subscriberId=7
+2026-03-26 11:41:28: time=2026-03-26T11:41:28.532Z level=INFO msg="Context done" subscriberId=6
+2026-03-26 11:45:46: time=2026-03-26T11:45:46.061Z level=INFO msg="Context done" subscriberId=7
+2026-03-26 11:45:47: time=2026-03-26T11:45:47.064Z level=INFO msg="New subscriber" subscriberId=8
+2026-03-26 11:50:46: time=2026-03-26T11:50:46.062Z level=INFO msg="Context done" subscriberId=8
+2026-03-26 11:50:47: time=2026-03-26T11:50:47.067Z level=INFO msg="New subscriber" subscriberId=9
+2026-03-26 11:55:46: time=2026-03-26T11:55:46.061Z level=INFO msg="Context done" subscriberId=9
+2026-03-26 11:55:47: time=2026-03-26T11:55:47.070Z level=INFO msg="New subscriber" subscriberId=10
+2026-03-26 12:00:46: time=2026-03-26T12:00:46.062Z level=INFO msg="Context done" subscriberId=10
+2026-03-26 12:00:47: time=2026-03-26T12:00:47.064Z level=INFO msg="New subscriber" subscriberId=11
+2026-03-26 12:05:46: time=2026-03-26T12:05:46.061Z level=INFO msg="Context done" subscriberId=11
+2026-03-26 12:05:47: time=2026-03-26T12:05:47.069Z level=INFO msg="New subscriber" subscriberId=12
+2026-03-26 12:09:06: time=2026-03-26T12:09:06.380Z level=INFO msg="New subscriber" subscriberId=13
+2026-03-26 12:09:32: time=2026-03-26T12:09:32.441Z level=INFO msg="Context done" subscriberId=12
+2026-03-26 12:11:52: time=2026-03-26T12:11:52.148Z level=INFO msg="New subscriber" subscriberId=14
+2026-03-26 12:11:54: time=2026-03-26T12:11:54.134Z level=INFO msg="Closing process"
+2026-03-26 12:11:54: time=2026-03-26T12:11:54.279Z level=INFO msg="Cleaned up temporary directory" tempDir=/tmp/agentapi-uploads-679465448

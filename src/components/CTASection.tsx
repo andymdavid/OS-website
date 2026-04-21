@@ -1,8 +1,5 @@
-
 import React from 'react';
-import { Button } from './Button';
-import './IntroSection.css';
-import './CTASection.css';
+import { CTAHomeDuplicate } from './CTAHomeDuplicate';
 
 interface CTASectionProps {
   pillLabel?: string;
@@ -14,39 +11,18 @@ interface CTASectionProps {
 
 export function CTASection({
   pillLabel = 'Get Started',
-  heading = "Ready to get started? Here's where to begin.",
-  intro = "If you're ready to start building your internal AI capability in a practical way, lets chat.",
-  buttonLabel = 'Talk to Us',
+  heading = "Let's talk about what's slowing your business down.",
+  intro = "Book a free intro call. We'll look at where time is going and whether a custom AI system makes sense for your business.",
+  buttonLabel = 'Book a Free AI Audit',
   className,
 }: CTASectionProps) {
-  const renderedHeading = heading === "Ready to get started? Here's where to begin."
-    ? "Ready to get started?\nHere's where to begin."
-    : heading;
-
   return (
-    <section className={`section cta-section ${className ?? ''}`.trim()}>
-      <div className="section-container-wide cta-content">
-        <div className="intro-pill">{pillLabel}</div>
-
-        <h2 className="section-heading cta-heading">
-          {renderedHeading.split('\n').map((line, index) => (
-            <React.Fragment key={line}>
-              {index > 0 ? <br /> : null}
-              {line}
-            </React.Fragment>
-          ))}
-        </h2>
-
-        <p className="cta-intro">{intro}</p>
-
-        <Button
-          className="cta-button"
-          variant="primary"
-          onClick={() => (window.location.href = 'mailto:info@otherstuff.studio')}
-        >
-          {buttonLabel}
-        </Button>
-      </div>
-    </section>
+    <CTAHomeDuplicate
+      pillLabel={pillLabel}
+      heading={heading}
+      intro={intro}
+      buttonLabel={buttonLabel}
+      className={className}
+    />
   );
 }

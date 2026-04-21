@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { SEO } from "@/components/SEO";
 import { NavigationDraft } from "@/components/NavigationDraft";
 import { Button } from "@/components/Button";
 import { CTASection } from "@/components/CTASection";
@@ -43,70 +44,70 @@ export default function TheGoodStuff() {
             id: "01",
             title: "Episode Title",
             description: "Short description of the episode goes here.",
-            thumbnail: "/Hero-Background.png",
+            thumbnail: "/Hero-Background.webp",
             link: "https://www.youtube.com/@OtherStuffAI",
           },
           {
             id: "02",
             title: "Episode Title",
             description: "Short description of the episode goes here.",
-            thumbnail: "/Hero-Background.png",
+            thumbnail: "/Hero-Background.webp",
             link: "https://www.youtube.com/@OtherStuffAI",
           },
           {
             id: "03",
             title: "Episode Title",
             description: "Short description of the episode goes here.",
-            thumbnail: "/Hero-Background.png",
+            thumbnail: "/Hero-Background.webp",
             link: "https://www.youtube.com/@OtherStuffAI",
           },
           {
             id: "04",
             title: "Episode Title",
             description: "Short description of the episode goes here.",
-            thumbnail: "/Hero-Background.png",
+            thumbnail: "/Hero-Background.webp",
             link: "https://www.youtube.com/@OtherStuffAI",
           },
           {
             id: "05",
             title: "Episode Title",
             description: "Short description of the episode goes here.",
-            thumbnail: "/Hero-Background.png",
+            thumbnail: "/Hero-Background.webp",
             link: "https://www.youtube.com/@OtherStuffAI",
           },
           {
             id: "06",
             title: "Episode Title",
             description: "Short description of the episode goes here.",
-            thumbnail: "/Hero-Background.png",
+            thumbnail: "/Hero-Background.webp",
             link: "https://www.youtube.com/@OtherStuffAI",
           },
           {
             id: "07",
             title: "Episode Title",
             description: "Short description of the episode goes here.",
-            thumbnail: "/Hero-Background.png",
+            thumbnail: "/Hero-Background.webp",
             link: "https://www.youtube.com/@OtherStuffAI",
           },
           {
             id: "08",
             title: "Episode Title",
             description: "Short description of the episode goes here.",
-            thumbnail: "/Hero-Background.png",
+            thumbnail: "/Hero-Background.webp",
             link: "https://www.youtube.com/@OtherStuffAI",
           },
           {
             id: "09",
             title: "Episode Title",
             description: "Short description of the episode goes here.",
-            thumbnail: "/Hero-Background.png",
+            thumbnail: "/Hero-Background.webp",
             link: "https://www.youtube.com/@OtherStuffAI",
           },
           {
             id: "10",
             title: "Episode Title",
             description: "Short description of the episode goes here.",
-            thumbnail: "/Hero-Background.png",
+            thumbnail: "/Hero-Background.webp",
             link: "https://www.youtube.com/@OtherStuffAI",
           },
         ];
@@ -119,6 +120,29 @@ export default function TheGoodStuff() {
 
   return (
     <div className="os-theme os-draft min-h-screen the-good-stuff-page">
+      <SEO
+        title="The Good Stuff — AI Podcast from Perth"
+        description="An Australian AI podcast with Pete Winn and Andy David exploring everyday experiences working with AI and how it's changing work, business, and human potential."
+        path="/the-good-stuff"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "PodcastSeries",
+          "name": "The Good Stuff",
+          "description": "A low-fi dialogue with Pete Winn and Andy David exploring everyday experiences working with AI and how it's changing work, business, and human potential.",
+          "url": "https://otherstuff.ai/the-good-stuff",
+          "webFeed": "https://www.youtube.com/feeds/videos.xml?channel_id=UC_OtherStuffAI",
+          "author": [
+            { "@type": "Person", "name": "Pete Winn" },
+            { "@type": "Person", "name": "Andy David" }
+          ],
+          "publisher": {
+            "@type": "Organization",
+            "name": "Other Stuff",
+            "url": "https://otherstuff.ai"
+          },
+          "inLanguage": "en-AU"
+        }}
+      />
       <NavigationDraft titleOverride="OTHER STUFF" />
       <main>
         <section className="section good-stuff-hero">

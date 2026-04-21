@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import { NavigationDraft } from "@/components/NavigationDraft";
 import { Button } from "@/components/Button";
 import { CTASection } from "@/components/CTASection";
@@ -10,6 +11,23 @@ import "@/routes/Games.css";
 export default function Games() {
   return (
     <div className="os-theme os-draft min-h-screen writing-page games-page">
+      <SEO
+        title="Games Built with AI"
+        description="Playable games built with AI by Other Stuff in Perth — examples of what's possible when you use AI tools to build quickly and experiment freely."
+        path="/games"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": "Games Built with AI",
+          "description": "Playable games built with AI by Other Stuff in Perth — examples of what's possible when you use AI tools to build quickly and experiment freely.",
+          "url": "https://otherstuff.ai/games",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Other Stuff",
+            "url": "https://otherstuff.ai"
+          }
+        }}
+      />
       <NavigationDraft titleOverride="OTHER STUFF" />
       <main>
         <section className="section writing-hero">

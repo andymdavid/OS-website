@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import { LegalPage } from "@/components/LegalPage";
 
 const sections = [
@@ -104,6 +105,12 @@ const sections = [
 
 export default function Privacy() {
   return (
+    <>
+    <SEO
+      title="Privacy Policy"
+      description="Privacy Policy for Other Stuff. How we collect, use, and protect personal information on otherstuff.ai."
+      path="/privacy"
+    />
     <LegalPage
       backHref="/"
       backLabel="Back to Home"
@@ -112,5 +119,6 @@ export default function Privacy() {
       summary="This policy explains what personal information we collect through the Other Stuff website, how we use it, and how you can contact us about privacy matters."
       sections={sections}
     />
+    </>
   );
 }

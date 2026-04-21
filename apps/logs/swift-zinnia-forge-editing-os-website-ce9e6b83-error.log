@@ -1,0 +1,68 @@
+2026-04-18 08:55:39: 2026/04/18 08:55:39 http: panic serving 127.0.0.1:51178: runtime error: index out of range [16] with length 16
+2026-04-18 08:55:39: goroutine 31738549 [running]:
+2026-04-18 08:55:39: net/http.(*conn).serve.func1()
+2026-04-18 08:55:39: 	/opt/hostedtoolcache/go/1.26.0/x64/src/net/http/server.go:1907 +0xbd
+2026-04-18 08:55:39: panic({0x903b60?, 0x9514e8e6360?})
+2026-04-18 08:55:39: 	/opt/hostedtoolcache/go/1.26.0/x64/src/runtime/panic.go:860 +0x13a
+2026-04-18 08:55:39: github.com/coder/agentapi/lib/httpapi.(*Server).getMessages(0x9514e96c2d0, {0x199?, 0x8932e0?}, 0xeda8c0?)
+2026-04-18 08:55:39: 	/home/runner/work/agentapi/agentapi/lib/httpapi/server.go:462 +0x2cb
+2026-04-18 08:55:39: github.com/danielgtaylor/huma/v2.Register[...].func1()
+2026-04-18 08:55:39: 	/home/runner/go/pkg/mod/github.com/danielgtaylor/huma/v2@v2.32.0/huma.go:919 +0xd22
+2026-04-18 08:55:39: github.com/danielgtaylor/huma/v2/adapters/humachi.(*chiAdapter).Handle.func1({0xa9a960, 0x9514e96c4b0}, 0x9514ebd8f00)
+2026-04-18 08:55:39: 	/home/runner/go/pkg/mod/github.com/danielgtaylor/huma/v2@v2.32.0/adapters/humachi/humachi.go:146 +0xa2
+2026-04-18 08:55:39: net/http.HandlerFunc.ServeHTTP(0x9514e96c5a0?, {0xa9a960?, 0x9514e96c4b0?}, 0x9514e8e6184?)
+2026-04-18 08:55:39: 	/opt/hostedtoolcache/go/1.26.0/x64/src/net/http/server.go:2286 +0x29
+2026-04-18 08:55:39: github.com/go-chi/chi/v5.(*Mux).routeHTTP(0x9514e8b85a0, {0xa9a960, 0x9514e96c4b0}, 0x9514ebd8f00)
+2026-04-18 08:55:39: 	/home/runner/go/pkg/mod/github.com/go-chi/chi/v5@v5.2.2/mux.go:478 +0x2d0
+2026-04-18 08:55:39: net/http.HandlerFunc.ServeHTTP(0x9514e97afa0?, {0xa9a960?, 0x9514e96c4b0?}, 0x9514ebd8f00?)
+2026-04-18 08:55:39: 	/opt/hostedtoolcache/go/1.26.0/x64/src/net/http/server.go:2286 +0x29
+2026-04-18 08:55:39: github.com/go-chi/cors.(*Cors).Handler-fm.(*Cors).Handler.func1({0xa9a960, 0x9514e96c4b0}, 0x9514ebd8f00)
+2026-04-18 08:55:39: 	/home/runner/go/pkg/mod/github.com/go-chi/cors@v1.2.1/cors.go:228 +0x164
+2026-04-18 08:55:39: net/http.HandlerFunc.ServeHTTP(0x9514e8e62a7?, {0xa9a960?, 0x9514e96c4b0?}, 0x9514e8a4370?)
+2026-04-18 08:55:39: 	/opt/hostedtoolcache/go/1.26.0/x64/src/net/http/server.go:2286 +0x29
+2026-04-18 08:55:39: github.com/coder/agentapi/lib/httpapi.hostAuthorizationMiddleware.func1.1({0xa9a960, 0x9514e96c4b0}, 0x9514ebd8f00)
+2026-04-18 08:55:39: 	/home/runner/work/agentapi/agentapi/lib/httpapi/server.go:363 +0x10d
+2026-04-18 08:55:39: net/http.HandlerFunc.ServeHTTP(0xa9b7b0?, {0xa9a960?, 0x9514e96c4b0?}, 0xea2b60?)
+2026-04-18 08:55:39: 	/opt/hostedtoolcache/go/1.26.0/x64/src/net/http/server.go:2286 +0x29
+2026-04-18 08:55:39: github.com/go-chi/chi/v5.(*Mux).ServeHTTP(0x9514e8b85a0, {0xa9a960, 0x9514e96c4b0}, 0x9514ebd8dc0)
+2026-04-18 08:55:39: 	/home/runner/go/pkg/mod/github.com/go-chi/chi/v5@v5.2.2/mux.go:90 +0x322
+2026-04-18 08:55:39: net/http.serverHandler.ServeHTTP({0x9514e8ba500?}, {0xa9a960?, 0x9514e96c4b0?}, 0x1?)
+2026-04-18 08:55:39: 	/opt/hostedtoolcache/go/1.26.0/x64/src/net/http/server.go:3311 +0x8e
+2026-04-18 08:55:39: net/http.(*conn).serve(0x9514ef4c2d0, {0xa9b778, 0x9514ec14990})
+2026-04-18 08:55:39: 	/opt/hostedtoolcache/go/1.26.0/x64/src/net/http/server.go:2073 +0x650
+2026-04-18 08:55:39: created by net/http.(*Server).Serve in goroutine 67
+2026-04-18 08:55:39: 	/opt/hostedtoolcache/go/1.26.0/x64/src/net/http/server.go:3464 +0x485
+2026-04-19 12:34:07: 2026/04/19 12:34:07 http: panic serving 127.0.0.1:54092: runtime error: index out of range [110] with length 110
+2026-04-19 12:34:07: goroutine 75097276 [running]:
+2026-04-19 12:34:07: net/http.(*conn).serve.func1()
+2026-04-19 12:34:07: 	/opt/hostedtoolcache/go/1.26.0/x64/src/net/http/server.go:1907 +0xbd
+2026-04-19 12:34:07: panic({0x903b60?, 0x9514ec12030?})
+2026-04-19 12:34:07: 	/opt/hostedtoolcache/go/1.26.0/x64/src/runtime/panic.go:860 +0x13a
+2026-04-19 12:34:07: github.com/coder/agentapi/lib/httpapi.(*Server).getMessages(0x9514e96c2d0, {0x199?, 0x8932e0?}, 0xeda8c0?)
+2026-04-19 12:34:07: 	/home/runner/work/agentapi/agentapi/lib/httpapi/server.go:462 +0x2cb
+2026-04-19 12:34:07: github.com/danielgtaylor/huma/v2.Register[...].func1()
+2026-04-19 12:34:07: 	/home/runner/go/pkg/mod/github.com/danielgtaylor/huma/v2@v2.32.0/huma.go:919 +0xd22
+2026-04-19 12:34:07: github.com/danielgtaylor/huma/v2/adapters/humachi.(*chiAdapter).Handle.func1({0xa9a960, 0x9514ed18960}, 0x9514ebd8280)
+2026-04-19 12:34:07: 	/home/runner/go/pkg/mod/github.com/danielgtaylor/huma/v2@v2.32.0/adapters/humachi/humachi.go:146 +0xa2
+2026-04-19 12:34:07: net/http.HandlerFunc.ServeHTTP(0x9514ed18a50?, {0xa9a960?, 0x9514ed18960?}, 0x9514e8e610c?)
+2026-04-19 12:34:07: 	/opt/hostedtoolcache/go/1.26.0/x64/src/net/http/server.go:2286 +0x29
+2026-04-19 12:34:07: github.com/go-chi/chi/v5.(*Mux).routeHTTP(0x9514e8b85a0, {0xa9a960, 0x9514ed18960}, 0x9514ebd8280)
+2026-04-19 12:34:07: 	/home/runner/go/pkg/mod/github.com/go-chi/chi/v5@v5.2.2/mux.go:478 +0x2d0
+2026-04-19 12:34:07: net/http.HandlerFunc.ServeHTTP(0x9514e97afa0?, {0xa9a960?, 0x9514ed18960?}, 0x9514ebd8280?)
+2026-04-19 12:34:07: 	/opt/hostedtoolcache/go/1.26.0/x64/src/net/http/server.go:2286 +0x29
+2026-04-19 12:34:07: github.com/go-chi/cors.(*Cors).Handler-fm.(*Cors).Handler.func1({0xa9a960, 0x9514ed18960}, 0x9514ebd8280)
+2026-04-19 12:34:07: 	/home/runner/go/pkg/mod/github.com/go-chi/cors@v1.2.1/cors.go:228 +0x164
+2026-04-19 12:34:07: net/http.HandlerFunc.ServeHTTP(0x9514ec1201f?, {0xa9a960?, 0x9514ed18960?}, 0x9514ee80020?)
+2026-04-19 12:34:07: 	/opt/hostedtoolcache/go/1.26.0/x64/src/net/http/server.go:2286 +0x29
+2026-04-19 12:34:07: github.com/coder/agentapi/lib/httpapi.hostAuthorizationMiddleware.func1.1({0xa9a960, 0x9514ed18960}, 0x9514ebd8280)
+2026-04-19 12:34:07: 	/home/runner/work/agentapi/agentapi/lib/httpapi/server.go:363 +0x10d
+2026-04-19 12:34:07: net/http.HandlerFunc.ServeHTTP(0xa9b7b0?, {0xa9a960?, 0x9514ed18960?}, 0xea2b60?)
+2026-04-19 12:34:07: 	/opt/hostedtoolcache/go/1.26.0/x64/src/net/http/server.go:2286 +0x29
+2026-04-19 12:34:07: github.com/go-chi/chi/v5.(*Mux).ServeHTTP(0x9514e8b85a0, {0xa9a960, 0x9514ed18960}, 0x9514e952c80)
+2026-04-19 12:34:07: 	/home/runner/go/pkg/mod/github.com/go-chi/chi/v5@v5.2.2/mux.go:90 +0x322
+2026-04-19 12:34:07: net/http.serverHandler.ServeHTTP({0x9514ec110c0?}, {0xa9a960?, 0x9514ed18960?}, 0x1?)
+2026-04-19 12:34:07: 	/opt/hostedtoolcache/go/1.26.0/x64/src/net/http/server.go:3311 +0x8e
+2026-04-19 12:34:07: net/http.(*conn).serve(0x9514ec16090, {0xa9b778, 0x9514ec14990})
+2026-04-19 12:34:07: 	/opt/hostedtoolcache/go/1.26.0/x64/src/net/http/server.go:2073 +0x650
+2026-04-19 12:34:07: created by net/http.(*Server).Serve in goroutine 67
+2026-04-19 12:34:07: 	/opt/hostedtoolcache/go/1.26.0/x64/src/net/http/server.go:3464 +0x485

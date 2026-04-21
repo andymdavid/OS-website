@@ -1,63 +1,40 @@
-import { useEffect } from 'react';
-import { Navigation } from '../components/Navigation';
-import { Hero } from '../components/Hero';
-import { IntroSection } from '../components/IntroSection';
-import { FunnelSection } from '../components/FunnelSection';
-import { FollowUpSection } from '../components/FollowUpSection';
-import { WingmanSection } from '../components/WingmanSection';
-import { Testimonials } from '../components/Testimonials';
-import { GoodStuff } from '../components/GoodStuff';
-import { CTASection } from '../components/CTASection';
-import { Footer } from '../components/Footer';
+import { SEO } from '../components/SEO';
+import { NavigationHomeDuplicate } from '../components/NavigationHomeDuplicate';
+import { HeroHomeDuplicate } from '../components/HeroHomeDuplicate';
+import { HomeDuplicateGridSection } from '../components/HomeDuplicateGridSection';
+import { FunnelHomeDuplicate } from '../components/FunnelHomeDuplicate';
+import { ProcessTimeline } from '../components/ProcessTimeline';
+import { ExamplesSection } from '../components/ExamplesSection';
+import { InfrastructureSection } from '../components/InfrastructureSection';
+import { FAQHomeDuplicate } from '../components/FAQHomeDuplicate';
+import { GoodStuffHomeDuplicate } from '../components/GoodStuffHomeDuplicate';
+import { CTAHomeDuplicate } from '../components/CTAHomeDuplicate';
+import { FooterHomeDuplicate } from '../components/FooterHomeDuplicate';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export default function Home() {
-  // Initialize scroll animations
   useScrollAnimation();
 
-  // Add noindex meta tag for archived page
-  useEffect(() => {
-    const meta = document.createElement('meta');
-    meta.name = 'robots';
-    meta.content = 'noindex, nofollow';
-    document.head.appendChild(meta);
-    return () => {
-      document.head.removeChild(meta);
-    };
-  }, []);
-
   return (
-    <div className="os-theme">
-      <Navigation />
+    <div className="os-theme os-draft">
+      <SEO
+        title="Custom AI Systems for SMEs"
+        description="Custom AI systems for SMEs — purpose-built around your workflows, delivered as working systems, and built on infrastructure you own."
+        path="/"
+      />
+      <NavigationHomeDuplicate />
       <main>
-        {/* Hero Section */}
-        <Hero />
-
-        {/* Intro Section: The Problem */}
-        <IntroSection />
-
-        {/* Funnel Section: How We Can Help */}
-        <FunnelSection />
-
-        {/* Follow Up Section (mirrors The Problem) */}
-        <FollowUpSection />
-
-        {/* Follow-up Problem Section */}
-        <WingmanSection />
-
-        {/* Testimonials Section - Hidden until testimonials are available */}
-        {/* Uncomment the line below when you're ready to show testimonials */}
-        {/* <Testimonials /> */}
-
-        {/* The Good Stuff Section */}
-        <GoodStuff />
-
-        {/* CTA Section */}
-        <CTASection />
+        <HeroHomeDuplicate />
+        <HomeDuplicateGridSection />
+        <FunnelHomeDuplicate />
+        <ProcessTimeline />
+        <ExamplesSection />
+        <InfrastructureSection />
+        <FAQHomeDuplicate />
+        <GoodStuffHomeDuplicate />
+        <CTAHomeDuplicate />
       </main>
-
-      {/* Footer */}
-      <Footer />
+      <FooterHomeDuplicate />
     </div>
   );
 }

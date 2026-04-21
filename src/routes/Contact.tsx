@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import { NavigationDraft } from "@/components/NavigationDraft";
 import { Button } from "@/components/Button";
 import { CTASection } from "@/components/CTASection";
@@ -8,6 +9,12 @@ import "@/routes/Contact.css";
 export default function Contact() {
   return (
     <div className="os-theme os-draft min-h-screen contact-page">
+      <SEO
+        title="Contact"
+        description="Get in touch with Other Stuff, a Perth-based AI product studio helping Australian businesses build practical AI capability."
+        path="/contact"
+        noindex
+      />
       <NavigationDraft titleOverride="OTHER STUFF" />
       <main>
         <section className="section contact-hero">

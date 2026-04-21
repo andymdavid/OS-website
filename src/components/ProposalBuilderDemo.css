@@ -1,0 +1,587 @@
+/* ==========================================================================
+   PROPOSAL BUILDER DEMO
+   ========================================================================== */
+
+.proposal-builder-shell {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.proposal-builder-panel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    radial-gradient(circle at top left, rgba(46, 167, 130, 0.12), transparent 36%),
+    rgba(12, 12, 11, 0.94);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+}
+
+.proposal-builder-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.proposal-builder-header h4 {
+  margin: 0;
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.94);
+}
+
+.proposal-builder-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.74);
+  white-space: nowrap;
+}
+
+.proposal-builder-status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #2ea782;
+  box-shadow: 0 0 0 0 rgba(46, 167, 130, 0.45);
+  animation: proposal-builder-pulse 1.8s infinite;
+}
+
+@keyframes proposal-builder-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(46, 167, 130, 0.3);
+  }
+
+  50% {
+    box-shadow: 0 0 0 8px rgba(46, 167, 130, 0);
+  }
+}
+
+.proposal-stage-stack {
+  height: calc(100% - 42px);
+}
+
+.proposal-stage-screen {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.proposal-stage-screen.visible {
+  animation: proposal-stage-enter 0.32s ease;
+}
+
+@keyframes proposal-stage-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.proposal-screen-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.proposal-screen-label,
+.proposal-screen-state,
+.proposal-block-label,
+.proposal-terminal-pill,
+.proposal-document-heading span,
+.proposal-document-badge {
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 8px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.proposal-screen-label {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.proposal-screen-state {
+  color: rgba(255, 255, 255, 0.42);
+}
+
+.proposal-terminal-panel,
+.proposal-pricing-screen-card,
+.proposal-document-card {
+  flex: 1;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.03);
+  overflow: hidden;
+}
+
+.proposal-terminal-panel {
+  display: flex;
+  flex-direction: column;
+  background:
+    linear-gradient(180deg, rgba(10, 10, 10, 0.94), rgba(17, 17, 16, 0.97));
+  border-color: rgba(46, 167, 130, 0.22);
+  box-shadow: 0 0 30px rgba(46, 167, 130, 0.08);
+}
+
+.proposal-terminal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 10px;
+  border-bottom: 1px solid rgba(46, 167, 130, 0.18);
+  background: rgba(46, 167, 130, 0.08);
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.proposal-terminal-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: rgba(46, 167, 130, 0.12);
+  border: 1px solid rgba(46, 167, 130, 0.22);
+  color: #8ad3bd;
+}
+
+.proposal-terminal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px;
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 10px;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.proposal-terminal-line,
+.proposal-terminal-cursor-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  animation: proposal-terminal-enter 0.24s ease;
+}
+
+.proposal-terminal-line.command {
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.proposal-terminal-line.status {
+  color: #8ad3bd;
+}
+
+.proposal-terminal-prefix {
+  width: 12px;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.proposal-terminal-line.command .proposal-terminal-prefix {
+  color: #8ad3bd;
+}
+
+.proposal-terminal-line.status .proposal-terminal-prefix {
+  color: #2ea782;
+}
+
+.proposal-terminal-cursor {
+  color: #2ea782;
+  animation: proposal-terminal-blink 0.9s infinite;
+}
+
+@keyframes proposal-terminal-enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes proposal-terminal-blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.proposal-pricing-screen-card,
+.proposal-document-card {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.proposal-pricing-head,
+.proposal-document-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.proposal-block-label {
+  color: rgba(255, 255, 255, 0.46);
+}
+
+.proposal-pricing-title,
+.proposal-client-name {
+  margin-top: 6px;
+  font-family: var(--font-ui);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.15;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.proposal-pricing-status,
+.proposal-document-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.proposal-pricing-status {
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 8px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.58);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.proposal-pricing-status.ready,
+.proposal-document-badge.ready {
+  color: #8ad3bd;
+  background: rgba(46, 167, 130, 0.14);
+  border: 1px solid rgba(46, 167, 130, 0.22);
+}
+
+.proposal-pricing-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.proposal-pricing-line,
+.proposal-total-row,
+.proposal-timeline-chip,
+.proposal-proof-inline,
+.proposal-document-item,
+.proposal-document-footer {
+  opacity: 0;
+  transform: translateY(8px);
+  transition:
+    opacity 0.32s ease,
+    transform 0.32s ease;
+}
+
+.proposal-pricing-line.visible,
+.proposal-total-row.visible,
+.proposal-timeline-chip.visible,
+.proposal-proof-inline.visible,
+.proposal-document-item.visible,
+.proposal-document-footer.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.proposal-pricing-line {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  font-family: var(--font-body);
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.proposal-pricing-line span:last-child {
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.proposal-timeline-chip {
+  display: inline-flex;
+  align-self: flex-start;
+  margin-top: 8px;
+  padding: 5px 7px;
+  border-radius: 999px;
+  background: rgba(46, 167, 130, 0.12);
+  border: 1px solid rgba(46, 167, 130, 0.22);
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 8px;
+  color: #8ad3bd;
+}
+
+.proposal-proof-inline {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 8px;
+  padding: 8px;
+  border-radius: 10px;
+  background: rgba(46, 167, 130, 0.08);
+  border: 1px solid rgba(46, 167, 130, 0.16);
+}
+
+.proposal-proof-label {
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 8px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #8ad3bd;
+}
+
+.proposal-proof-copy {
+  font-family: var(--font-body);
+  font-size: 10px;
+  line-height: 1.3;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.proposal-total-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-family: var(--font-body);
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.proposal-total-row strong {
+  font-family: var(--font-ui);
+  font-size: 20px;
+  font-weight: 700;
+  color: #2ea782;
+}
+
+.proposal-project-name {
+  margin-top: 4px;
+  max-width: 42ch;
+  font-family: var(--font-body);
+  font-size: 10px;
+  line-height: 1.2;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.proposal-document-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.proposal-document-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.proposal-document-heading span {
+  color: rgba(255, 255, 255, 0.52);
+}
+
+.proposal-document-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.proposal-document-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.8fr);
+  gap: 8px;
+  align-items: flex-start;
+  padding: 8px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.proposal-document-item.active {
+  border-color: rgba(46, 167, 130, 0.26);
+  background: rgba(46, 167, 130, 0.08);
+  box-shadow: inset 0 0 0 1px rgba(46, 167, 130, 0.06);
+}
+
+.proposal-document-copy {
+  min-width: 0;
+}
+
+.proposal-document-item-title {
+  margin-bottom: 5px;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.proposal-document-item-detail {
+  font-family: var(--font-body);
+  font-size: 10px;
+  line-height: 1.3;
+  color: rgba(255, 255, 255, 0.66);
+}
+
+.proposal-document-meta {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.proposal-document-source {
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 8px;
+  color: rgba(255, 255, 255, 0.46);
+  text-align: right;
+}
+
+.proposal-document-footer {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.proposal-document-footer-item {
+  padding: 8px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.proposal-document-footer-item span {
+  display: block;
+  margin-bottom: 6px;
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 8px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.46);
+}
+
+.proposal-document-footer-item strong {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+@media (max-width: 1024px) {
+  .proposal-builder-shell {
+    padding: 20px;
+  }
+
+  .proposal-builder-panel {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .proposal-builder-shell {
+    padding: 14px;
+  }
+
+  .proposal-builder-panel {
+    padding: 14px;
+  }
+
+  .proposal-builder-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .proposal-builder-header h4 {
+    font-size: 16px;
+  }
+
+  .proposal-stage-stack {
+    height: calc(100% - 70px);
+  }
+
+  .proposal-terminal-body,
+  .proposal-pricing-screen-card,
+  .proposal-document-card {
+    padding: 14px;
+  }
+
+  .proposal-pricing-title,
+  .proposal-client-name {
+    font-size: 18px;
+  }
+
+  .proposal-project-name {
+    font-size: 12px;
+  }
+
+  .proposal-document-item {
+    grid-template-columns: 1fr;
+  }
+
+  .proposal-document-meta {
+    justify-content: flex-start;
+  }
+
+  .proposal-document-source {
+    text-align: left;
+  }
+
+  .proposal-document-footer {
+    grid-template-columns: 1fr;
+  }
+}

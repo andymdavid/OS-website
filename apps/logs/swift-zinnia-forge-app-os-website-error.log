@@ -1,0 +1,31 @@
+2026-03-13 04:20:39: sh: 1: vite: not found
+2026-03-13 04:29:20: [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+2026-03-13 04:39:45: [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+2026-03-13 05:01:13: 
+2026-03-13 05:01:13: (!) Some chunks are larger than 500 kB after minification. Consider:
+2026-03-13 05:01:13: - Using dynamic import() to code-split the application
+2026-03-13 05:01:13: - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+2026-03-13 05:01:13: - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+2026-03-13 05:05:38: 
+2026-03-13 05:05:38: (!) Some chunks are larger than 500 kB after minification. Consider:
+2026-03-13 05:05:38: - Using dynamic import() to code-split the application
+2026-03-13 05:05:38: - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+2026-03-13 05:05:38: - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+2026-03-13 05:08:25: 
+2026-03-13 05:08:25: (!) Some chunks are larger than 500 kB after minification. Consider:
+2026-03-13 05:08:25: - Using dynamic import() to code-split the application
+2026-03-13 05:08:25: - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+2026-03-13 05:08:25: - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+2026-03-13 05:10:25: 
+2026-03-13 05:10:25: (!) Some chunks are larger than 500 kB after minification. Consider:
+2026-03-13 05:10:25: - Using dynamic import() to code-split the application
+2026-03-13 05:10:25: - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+2026-03-13 05:10:25: - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+2026-03-20 10:06:25: Terminated
+2026-04-12 10:13:54: [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+2026-04-12 11:03:45: [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+2026-04-12 11:24:23: [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+2026-04-13 06:22:08: [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+2026-04-16 04:52:47: [baseline-browser-mapping] The data in this module is over two months old.  To ensure accurate Baseline data, please update: `npm i baseline-browser-mapping@latest -D`
+2026-04-18 06:27:53: 6:27:53 AM [vite] (client) Pre-transform error: Failed to load url /src/components/ProposalBuilderDemo.tsx (resolved id: /home/pw21/wingman/swift-zinnia-forge/OS-website/src/components/ProposalBuilderDemo.tsx) in /home/pw21/wingman/swift-zinnia-forge/OS-website/src/globals.css. Does the file exist?
+2026-04-18 08:50:02: 8:50:02 AM [vite] (client) Pre-transform error: Failed to load url /src/components/ProposalBuilderDemo.css (resolved id: /home/pw21/wingman/swift-zinnia-forge/OS-website/src/components/ProposalBuilderDemo.css) in /home/pw21/wingman/swift-zinnia-forge/OS-website/src/components/ProposalBuilderDemo.tsx. Does the file exist?

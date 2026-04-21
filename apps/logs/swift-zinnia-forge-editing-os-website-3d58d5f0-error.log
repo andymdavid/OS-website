@@ -1,0 +1,44 @@
+2026-03-13 09:13:42: 2026/03/13 09:13:42 http: panic serving 127.0.0.1:37668: runtime error: index out of range [88] with length 88
+2026-03-13 09:13:42: goroutine 39736265 [running]:
+2026-03-13 09:13:42: net/http.(*conn).serve.func1()
+2026-03-13 09:13:42: 	/opt/hostedtoolcache/go/1.25.5/x64/src/net/http/server.go:1943 +0xd3
+2026-03-13 09:13:42: panic({0x8bb8a0?, 0xc000510000?})
+2026-03-13 09:13:42: 	/opt/hostedtoolcache/go/1.25.5/x64/src/runtime/panic.go:783 +0x132
+2026-03-13 09:13:42: github.com/coder/agentapi/lib/httpapi.(*Server).getMessages(0xc00048c8c0, {0x199?, 0x856680?}, 0xe4b220?)
+2026-03-13 09:13:42: 	/home/runner/work/agentapi/agentapi/lib/httpapi/server.go:434 +0x2f6
+2026-03-13 09:13:42: github.com/danielgtaylor/huma/v2.Register[...].func1()
+2026-03-13 09:13:42: 	/home/runner/go/pkg/mod/github.com/danielgtaylor/huma/v2@v2.32.0/huma.go:919 +0xca2
+2026-03-13 09:13:42: github.com/danielgtaylor/huma/v2/adapters/humachi.(*chiAdapter).Handle.func1({0xacab60, 0xc0005320f0}, 0xc00049a280)
+2026-03-13 09:13:42: 	/home/runner/go/pkg/mod/github.com/danielgtaylor/huma/v2@v2.32.0/adapters/humachi/humachi.go:146 +0xa2
+2026-03-13 09:13:42: net/http.HandlerFunc.ServeHTTP(0xc0005323c0?, {0xacab60?, 0xc0005320f0?}, 0xc0004920ac?)
+2026-03-13 09:13:42: 	/opt/hostedtoolcache/go/1.25.5/x64/src/net/http/server.go:2322 +0x29
+2026-03-13 09:13:42: github.com/go-chi/chi/v5.(*Mux).routeHTTP(0xc0005180c0, {0xacab60, 0xc0005320f0}, 0xc00049a280)
+2026-03-13 09:13:42: 	/home/runner/go/pkg/mod/github.com/go-chi/chi/v5@v5.2.2/mux.go:478 +0x2e2
+2026-03-13 09:13:42: net/http.HandlerFunc.ServeHTTP(0xc00048c140?, {0xacab60?, 0xc0005320f0?}, 0xc00049a280?)
+2026-03-13 09:13:42: 	/opt/hostedtoolcache/go/1.25.5/x64/src/net/http/server.go:2322 +0x29
+2026-03-13 09:13:42: github.com/go-chi/cors.(*Cors).Handler-fm.(*Cors).Handler.func1({0xacab60, 0xc0005320f0}, 0xc00049a280)
+2026-03-13 09:13:42: 	/home/runner/go/pkg/mod/github.com/go-chi/cors@v1.2.1/cors.go:228 +0x164
+2026-03-13 09:13:42: net/http.HandlerFunc.ServeHTTP(0xc0004920df?, {0xacab60?, 0xc0005320f0?}, 0xc000012870?)
+2026-03-13 09:13:42: 	/opt/hostedtoolcache/go/1.25.5/x64/src/net/http/server.go:2322 +0x29
+2026-03-13 09:13:42: github.com/coder/agentapi/lib/httpapi.hostAuthorizationMiddleware.func1.1({0xacab60, 0xc0005320f0}, 0xc00049a280)
+2026-03-13 09:13:42: 	/home/runner/work/agentapi/agentapi/lib/httpapi/server.go:311 +0x10d
+2026-03-13 09:13:42: net/http.HandlerFunc.ServeHTTP(0xacb718?, {0xacab60?, 0xc0005320f0?}, 0xe140c0?)
+2026-03-13 09:13:42: 	/opt/hostedtoolcache/go/1.25.5/x64/src/net/http/server.go:2322 +0x29
+2026-03-13 09:13:42: github.com/go-chi/chi/v5.(*Mux).ServeHTTP(0xc0005180c0, {0xacab60, 0xc0005320f0}, 0xc00049a140)
+2026-03-13 09:13:42: 	/home/runner/go/pkg/mod/github.com/go-chi/chi/v5@v5.2.2/mux.go:90 +0x2ee
+2026-03-13 09:13:42: net/http.serverHandler.ServeHTTP({0xc00013e200?}, {0xacab60?, 0xc0005320f0?}, 0x1?)
+2026-03-13 09:13:42: 	/opt/hostedtoolcache/go/1.25.5/x64/src/net/http/server.go:3340 +0x8e
+2026-03-13 09:13:42: net/http.(*conn).serve(0xc0013b6120, {0xacb6e0, 0xc000494d80})
+2026-03-13 09:13:42: 	/opt/hostedtoolcache/go/1.25.5/x64/src/net/http/server.go:2109 +0x665
+2026-03-13 09:13:42: created by net/http.(*Server).Serve in goroutine 1
+2026-03-13 09:13:42: 	/opt/hostedtoolcache/go/1.25.5/x64/src/net/http/server.go:3493 +0x485
+2026-03-20 07:28:51: agent exited with error:
+2026-03-20 07:28:51:     github.com/coder/agentapi/cmd/server.runServer
+2026-03-20 07:28:51:         /home/runner/work/agentapi/agentapi/cmd/server/server.go:160
+2026-03-20 07:28:51:   - failed to wait for process:
+2026-03-20 07:28:51:     github.com/coder/agentapi/cmd/server.runServer.func1
+2026-03-20 07:28:51:         /home/runner/work/agentapi/agentapi/cmd/server/server.go:148
+2026-03-20 07:28:51:   - process exited with error:
+2026-03-20 07:28:51:     github.com/coder/agentapi/lib/termexec.(*Process).Wait
+2026-03-20 07:28:51:         /home/runner/work/agentapi/agentapi/lib/termexec/termexec.go:175
+2026-03-20 07:28:51:   - waitid: no child processes

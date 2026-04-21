@@ -1,0 +1,53 @@
+/* ==========================================================================
+   PAIN RECOGNITION SECTION — SCROLL REVEAL
+   ========================================================================== */
+
+.os-theme .section.pain-recognition-section {
+  min-height: auto;
+  padding: clamp(120px, 14vw, 200px) var(--container-padding);
+}
+
+.os-theme .section.pain-recognition-section::after {
+  left: 0;
+  right: 0;
+}
+
+.pain-recognition-container {
+  max-width: 648px;
+  margin: 0 auto;
+}
+
+.pain-recognition-text {
+  font-family: 'Figtree', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 22px !important;
+  line-height: 1.35;
+  letter-spacing: 0;
+  margin-bottom: 40px;
+}
+
+.pain-recognition-text:last-child {
+  margin-bottom: 0;
+}
+
+/* Words start muted */
+.pr-word {
+  color: rgba(240, 240, 240, 0.15);
+  transition: color 0.3s ease;
+}
+
+/* Words illuminate on scroll */
+.pr-word.revealed {
+  color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pain-recognition-container {
+    max-width: 100%;
+  }
+
+  .pain-recognition-text {
+    margin-bottom: 32px;
+  }
+}

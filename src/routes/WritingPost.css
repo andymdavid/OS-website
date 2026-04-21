@@ -18,6 +18,26 @@
   padding-top: 0 !important;
 }
 
+.writing-post-page.legal-page .writing-post-hero-inner,
+.writing-post-page.legal-page .legal-page-hero-inner {
+  max-width: 1040px;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.writing-post-page.legal-page .writing-post-body-inner,
+.writing-post-page.legal-page .legal-page-body-inner {
+  max-width: 1040px;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.writing-post-page.legal-page .writing-post-content,
+.writing-post-page.legal-page .legal-page-content {
+  width: 100%;
+  max-width: 920px;
+}
+
 .writing-post-page .writing-post-hero-inner {
   max-width: 900px;
   margin: 0 auto;
@@ -203,6 +223,11 @@
 }
 
 @media (max-width: 768px) {
+  .writing-post-page.legal-page .writing-post-content,
+  .writing-post-page.legal-page .legal-page-content {
+    max-width: none;
+  }
+
   .writing-post-page .writing-post-content h2,
   .writing-post-page .writing-post-keep-header h2 {
     font-size: 32px;

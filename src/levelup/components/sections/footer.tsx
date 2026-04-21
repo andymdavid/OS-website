@@ -55,7 +55,7 @@ export function Footer({ logo, logoText, links, social, contact, privacyLink }: 
           {/* Other Stuff logo + label */}
           <div className="absolute top-6 left-6 sm:left-8 md:left-10 flex items-center gap-3 text-white">
             <img
-              src="/OS-Logo-Icon.png"
+              src="/OS-Logo-Icon.webp"
               alt="Other Stuff logo"
               width={36}
               height={36}

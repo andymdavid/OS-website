@@ -1,0 +1,825 @@
+2026-03-13 04:20:39: 
+2026-03-13 04:20:39: > website@0.1.0 dev
+2026-03-13 04:20:39: > vite
+2026-03-13 04:20:39: 
+2026-03-13 04:26:18: 
+2026-03-13 04:26:18: > website@0.1.0 dev
+2026-03-13 04:26:18: > vite
+2026-03-13 04:26:18: 
+2026-03-13 04:26:18: Port 5173 is in use, trying another one...
+2026-03-13 04:26:18: 
+2026-03-13 04:26:18:   VITE v6.4.1  ready in 456 ms
+2026-03-13 04:26:18: 
+2026-03-13 04:26:18:   ➜  Local:   http://localhost:5174/
+2026-03-13 04:26:18:   ➜  Network: use --host to expose
+2026-03-13 04:26:57: 4:26:57 AM [vite] vite.config.ts changed, restarting server...
+2026-03-13 04:26:57: 4:26:57 AM [vite] server restarted.
+2026-03-13 04:26:57: 
+2026-03-13 04:26:57:   ➜  Local:   http://localhost:41012/
+2026-03-13 04:26:57:   ➜  Network: http://10.56.3.135:41012/
+2026-03-13 04:26:57:   ➜  Network: http://172.18.0.1:41012/
+2026-03-13 04:26:57:   ➜  Network: http://172.19.0.1:41012/
+2026-03-13 04:26:57:   ➜  Network: http://100.104.179.62:41012/
+2026-03-13 04:27:36: 
+2026-03-13 04:27:36: > website@0.1.0 dev
+2026-03-13 04:27:36: > vite
+2026-03-13 04:27:36: 
+2026-03-13 04:27:36: 
+2026-03-13 04:27:36:   VITE v6.4.1  ready in 340 ms
+2026-03-13 04:27:36: 
+2026-03-13 04:27:36:   ➜  Local:   http://localhost:41012/
+2026-03-13 04:27:36:   ➜  Network: http://10.56.3.135:41012/
+2026-03-13 04:27:36:   ➜  Network: http://172.18.0.1:41012/
+2026-03-13 04:27:36:   ➜  Network: http://172.19.0.1:41012/
+2026-03-13 04:27:36:   ➜  Network: http://100.104.179.62:41012/
+2026-03-13 04:27:40: 
+2026-03-13 04:27:40: > website@0.1.0 dev
+2026-03-13 04:27:40: > vite
+2026-03-13 04:27:40: 
+2026-03-13 04:27:40: 
+2026-03-13 04:27:40:   VITE v6.4.1  ready in 299 ms
+2026-03-13 04:27:40: 
+2026-03-13 04:27:40:   ➜  Local:   http://localhost:41012/
+2026-03-13 04:27:40:   ➜  Network: http://10.56.3.135:41012/
+2026-03-13 04:27:40:   ➜  Network: http://172.18.0.1:41012/
+2026-03-13 04:27:40:   ➜  Network: http://172.19.0.1:41012/
+2026-03-13 04:27:40:   ➜  Network: http://100.104.179.62:41012/
+2026-03-13 04:28:40: 4:28:40 AM [vite] vite.config.ts changed, restarting server...
+2026-03-13 04:28:40: 4:28:40 AM [vite] server restarted.
+2026-03-13 04:29:15: 
+2026-03-13 04:29:15: > website@0.1.0 dev
+2026-03-13 04:29:15: > vite
+2026-03-13 04:29:15: 
+2026-03-13 04:29:15: 
+2026-03-13 04:29:15:   VITE v6.4.1  ready in 294 ms
+2026-03-13 04:29:15: 
+2026-03-13 04:29:15:   ➜  Local:   http://localhost:41012/
+2026-03-13 04:29:15:   ➜  Network: http://10.56.3.135:41012/
+2026-03-13 04:29:15:   ➜  Network: http://172.18.0.1:41012/
+2026-03-13 04:29:15:   ➜  Network: http://172.19.0.1:41012/
+2026-03-13 04:29:15:   ➜  Network: http://100.104.179.62:41012/
+2026-03-13 04:32:06: 4:32:06 AM [vite] (client) page reload ecosystem.config.cjs
+2026-03-13 04:32:06: 4:32:06 AM [vite] (client) page reload .mcp.json
+2026-03-13 04:32:33: 4:32:33 AM [vite] (client) page reload .mcp.json
+2026-03-13 04:32:33: 4:32:33 AM [vite] (client) page reload ecosystem.config.cjs
+2026-03-13 04:38:55: 4:38:55 AM [vite] (client) hmr update /src/components/Navigation.css, /src/globals.css
+2026-03-13 04:39:41: 
+2026-03-13 04:39:41: > website@0.1.0 dev
+2026-03-13 04:39:41: > vite
+2026-03-13 04:39:41: 
+2026-03-13 04:39:41: 
+2026-03-13 04:39:41:   VITE v6.4.1  ready in 309 ms
+2026-03-13 04:39:41: 
+2026-03-13 04:39:41:   ➜  Local:   http://localhost:41012/
+2026-03-13 04:39:41:   ➜  Network: http://10.56.3.135:41012/
+2026-03-13 04:39:41:   ➜  Network: http://172.18.0.1:41012/
+2026-03-13 04:39:41:   ➜  Network: http://172.19.0.1:41012/
+2026-03-13 04:39:41:   ➜  Network: http://100.104.179.62:41012/
+2026-03-13 04:54:54: 
+2026-03-13 04:54:54: > website@0.1.0 dev
+2026-03-13 04:54:54: > vite
+2026-03-13 04:54:54: 
+2026-03-13 04:54:54: 
+2026-03-13 04:54:54:   VITE v6.4.1  ready in 324 ms
+2026-03-13 04:54:54: 
+2026-03-13 04:54:54:   ➜  Local:   http://localhost:41012/
+2026-03-13 04:54:54:   ➜  Network: http://10.56.3.135:41012/
+2026-03-13 04:54:54:   ➜  Network: http://172.18.0.1:41012/
+2026-03-13 04:54:54:   ➜  Network: http://172.19.0.1:41012/
+2026-03-13 04:54:54:   ➜  Network: http://100.104.179.62:41012/
+2026-03-13 04:56:39: 
+2026-03-13 04:56:39: > website@0.1.0 dev
+2026-03-13 04:56:39: > vite
+2026-03-13 04:56:39: 
+2026-03-13 04:56:40: 
+2026-03-13 04:56:40:   VITE v6.4.1  ready in 305 ms
+2026-03-13 04:56:40: 
+2026-03-13 04:56:40:   ➜  Local:   http://localhost:41012/
+2026-03-13 04:56:40:   ➜  Network: http://10.56.3.135:41012/
+2026-03-13 04:56:40:   ➜  Network: http://172.18.0.1:41012/
+2026-03-13 04:56:40:   ➜  Network: http://172.19.0.1:41012/
+2026-03-13 04:56:40:   ➜  Network: http://100.104.179.62:41012/
+2026-03-13 04:57:12: 4:57:12 AM [vite] vite.config.ts changed, restarting server...
+2026-03-13 04:57:12: 4:57:12 AM [vite] server restarted.
+2026-03-13 05:00:51: 
+2026-03-13 05:00:51: > website@0.1.0 dev
+2026-03-13 05:00:51: > vite
+2026-03-13 05:00:51: 
+2026-03-13 05:00:52: 
+2026-03-13 05:00:52:   VITE v6.4.1  ready in 292 ms
+2026-03-13 05:00:52: 
+2026-03-13 05:00:52:   ➜  Local:   http://localhost:41012/
+2026-03-13 05:00:52:   ➜  Network: http://10.56.3.135:41012/
+2026-03-13 05:00:52:   ➜  Network: http://172.18.0.1:41012/
+2026-03-13 05:00:52:   ➜  Network: http://172.19.0.1:41012/
+2026-03-13 05:00:52:   ➜  Network: http://100.104.179.62:41012/
+2026-03-13 05:01:04: 
+2026-03-13 05:01:04: > website@0.1.0 build
+2026-03-13 05:01:04: > vite build
+2026-03-13 05:01:04: 
+2026-03-13 05:01:05: vite v6.4.1 building for production...
+2026-03-13 05:01:05: transforming...
+2026-03-13 05:01:11: ✓ 2277 modules transformed.
+2026-03-13 05:01:13: rendering chunks...
+2026-03-13 05:01:13: computing gzip size...
+2026-03-13 05:01:13: dist/index.html                     0.85 kB │ gzip:   0.44 kB
+2026-03-13 05:01:13: dist/assets/index-CjAzGfkR.css    230.18 kB │ gzip:  37.86 kB
+2026-03-13 05:01:13: dist/assets/index-Ch3jOe6-.js   1,572.70 kB │ gzip: 367.88 kB
+2026-03-13 05:01:13: ✓ built in 8.74s
+2026-03-13 05:01:14: 
+2026-03-13 05:01:14: > website@0.1.0 preview
+2026-03-13 05:01:14: > vite preview --host 0.0.0.0 --port 41012
+2026-03-13 05:01:14: 
+2026-03-13 05:01:14:   ➜  Local:   http://localhost:41012/
+2026-03-13 05:01:14:   ➜  Network: http://10.56.3.135:41012/
+2026-03-13 05:01:14:   ➜  Network: http://172.18.0.1:41012/
+2026-03-13 05:01:14:   ➜  Network: http://172.19.0.1:41012/
+2026-03-13 05:01:14:   ➜  Network: http://100.104.179.62:41012/
+2026-03-13 05:05:29: 
+2026-03-13 05:05:29: > website@0.1.0 build
+2026-03-13 05:05:29: > vite build
+2026-03-13 05:05:29: 
+2026-03-13 05:05:30: vite v6.4.1 building for production...
+2026-03-13 05:05:30: transforming...
+2026-03-13 05:05:36: ✓ 2277 modules transformed.
+2026-03-13 05:05:38: rendering chunks...
+2026-03-13 05:05:38: computing gzip size...
+2026-03-13 05:05:38: dist/index.html                     0.85 kB │ gzip:   0.44 kB
+2026-03-13 05:05:38: dist/assets/index-CjAzGfkR.css    230.18 kB │ gzip:  37.86 kB
+2026-03-13 05:05:38: dist/assets/index-Ch3jOe6-.js   1,572.70 kB │ gzip: 367.88 kB
+2026-03-13 05:05:38: ✓ built in 8.67s
+2026-03-13 05:05:39: 
+2026-03-13 05:05:39: > website@0.1.0 preview
+2026-03-13 05:05:39: > vite preview --host 0.0.0.0 --port 41012
+2026-03-13 05:05:39: 
+2026-03-13 05:05:39:   ➜  Local:   http://localhost:41012/
+2026-03-13 05:05:39:   ➜  Network: http://10.56.3.135:41012/
+2026-03-13 05:05:39:   ➜  Network: http://172.18.0.1:41012/
+2026-03-13 05:05:39:   ➜  Network: http://172.19.0.1:41012/
+2026-03-13 05:05:39:   ➜  Network: http://100.104.179.62:41012/
+2026-03-13 05:08:16: 
+2026-03-13 05:08:16: > website@0.1.0 build
+2026-03-13 05:08:16: > vite build
+2026-03-13 05:08:16: 
+2026-03-13 05:08:17: vite v6.4.1 building for production...
+2026-03-13 05:08:17: transforming...
+2026-03-13 05:08:23: ✓ 2277 modules transformed.
+2026-03-13 05:08:25: rendering chunks...
+2026-03-13 05:08:25: computing gzip size...
+2026-03-13 05:08:25: dist/index.html                     0.85 kB │ gzip:   0.44 kB
+2026-03-13 05:08:25: dist/assets/index-CjAzGfkR.css    230.18 kB │ gzip:  37.86 kB
+2026-03-13 05:08:25: dist/assets/index-Ch3jOe6-.js   1,572.70 kB │ gzip: 367.88 kB
+2026-03-13 05:08:25: ✓ built in 8.75s
+2026-03-13 05:08:26: 
+2026-03-13 05:08:26: > website@0.1.0 preview
+2026-03-13 05:08:26: > vite preview --host 0.0.0.0 --port 41012
+2026-03-13 05:08:26: 
+2026-03-13 05:08:26:   ➜  Local:   http://localhost:41012/
+2026-03-13 05:08:26:   ➜  Network: http://10.56.3.135:41012/
+2026-03-13 05:08:26:   ➜  Network: http://172.18.0.1:41012/
+2026-03-13 05:08:26:   ➜  Network: http://172.19.0.1:41012/
+2026-03-13 05:08:26:   ➜  Network: http://100.104.179.62:41012/
+2026-03-13 05:10:16: 
+2026-03-13 05:10:16: > website@0.1.0 build
+2026-03-13 05:10:16: > vite build
+2026-03-13 05:10:16: 
+2026-03-13 05:10:16: vite v6.4.1 building for production...
+2026-03-13 05:10:17: transforming...
+2026-03-13 05:10:23: ✓ 2277 modules transformed.
+2026-03-13 05:10:25: rendering chunks...
+2026-03-13 05:10:25: computing gzip size...
+2026-03-13 05:10:25: dist/index.html                     0.85 kB │ gzip:   0.44 kB
+2026-03-13 05:10:25: dist/assets/index-CjAzGfkR.css    230.18 kB │ gzip:  37.86 kB
+2026-03-13 05:10:25: dist/assets/index-Ch3jOe6-.js   1,572.70 kB │ gzip: 367.88 kB
+2026-03-13 05:10:25: ✓ built in 8.74s
+2026-03-13 05:10:26: 
+2026-03-13 05:10:26: > website@0.1.0 preview
+2026-03-13 05:10:26: > vite preview --host 0.0.0.0 --port 41012
+2026-03-13 05:10:26: 
+2026-03-13 05:10:26:   ➜  Local:   http://localhost:41012/
+2026-03-13 05:10:26:   ➜  Network: http://10.56.3.135:41012/
+2026-03-13 05:10:26:   ➜  Network: http://172.18.0.1:41012/
+2026-03-13 05:10:26:   ➜  Network: http://172.19.0.1:41012/
+2026-03-13 05:10:26:   ➜  Network: http://100.104.179.62:41012/
+2026-03-13 09:03:20: 
+2026-03-13 09:03:20: > website@0.1.0 build
+2026-03-13 09:03:20: > vite build && node scripts/prerender-meta.js
+2026-03-13 09:03:20: 
+2026-03-13 09:03:20: vite v6.4.1 building for production...
+2026-03-13 09:03:20: transforming...
+2026-03-13 09:03:27: ✓ 2287 modules transformed.
+2026-03-13 09:03:27: rendering chunks...
+2026-03-13 09:03:27: computing gzip size...
+2026-03-13 09:03:27: dist/index.html                               1.20 kB │ gzip:  0.61 kB
+2026-03-13 09:03:27: dist/assets/Games-CYV6vcap.css                0.58 kB │ gzip:  0.30 kB
+2026-03-13 09:03:27: dist/assets/Company-DTKXhQr1.css              0.82 kB │ gzip:  0.40 kB
+2026-03-13 09:03:27: dist/assets/CTASection-D1m5DU1t.css           1.80 kB │ gzip:  0.64 kB
+2026-03-13 09:03:27: dist/assets/Writing-Bv2AlGf1.css              1.93 kB │ gzip:  0.65 kB
+2026-03-13 09:03:27: dist/assets/TheGoodStuff-Lw1Vthb7.css         2.94 kB │ gzip:  0.86 kB
+2026-03-13 09:03:27: dist/assets/Hero-DnT42TNc.css                 3.30 kB │ gzip:  1.07 kB
+2026-03-13 09:03:27: dist/assets/WritingPost-CyUibKvp.css          3.67 kB │ gzip:  0.84 kB
+2026-03-13 09:03:27: dist/assets/Home-D5eTsitE.css                 4.19 kB │ gzip:  1.29 kB
+2026-03-13 09:03:27: dist/assets/LevelUp-3y_oB5tT.css              4.60 kB │ gzip:  1.29 kB
+2026-03-13 09:03:27: dist/assets/Speedrun-B9HL58Fr.css             8.05 kB │ gzip:  1.83 kB
+2026-03-13 09:03:27: dist/assets/MarginalGains-DplUinFT.css        9.23 kB │ gzip:  1.94 kB
+2026-03-13 09:03:27: dist/assets/About-kW-1BU4R.css               13.68 kB │ gzip:  3.00 kB
+2026-03-13 09:03:27: dist/assets/Footer-CymHTr_1.css              16.67 kB │ gzip:  3.68 kB
+2026-03-13 09:03:27: dist/assets/GoodStuff-B2eFdm6J.css           27.72 kB │ gzip:  4.82 kB
+2026-03-13 09:03:27: dist/assets/index-BvxM_pFQ.css               50.28 kB │ gzip:  9.91 kB
+2026-03-13 09:03:27: dist/assets/levelup-DHERj0XR.css             80.73 kB │ gzip: 14.42 kB
+2026-03-13 09:03:27: dist/assets/Button-CFcS8EmQ.js                0.29 kB │ gzip:  0.22 kB
+2026-03-13 09:03:27: dist/assets/useScrollAnimation-Cn8z3x-B.js    0.37 kB │ gzip:  0.28 kB
+2026-03-13 09:03:27: dist/assets/games-BdWT0WBg.js                 0.94 kB │ gzip:  0.35 kB
+2026-03-13 09:03:27: dist/assets/CTASection-BA2eG-o1.js            0.98 kB │ gzip:  0.53 kB
+2026-03-13 09:03:27: dist/assets/NotFound-19wPgm1k.js              1.04 kB │ gzip:  0.56 kB
+2026-03-13 09:03:27: dist/assets/LegalPage-CnXHr1-i.js             1.48 kB │ gzip:  0.61 kB
+2026-03-13 09:03:27: dist/assets/Writing-D0xHoLfi.js               1.90 kB │ gzip:  0.78 kB
+2026-03-13 09:03:27: dist/assets/Navigation-BZ-EezLm.js            1.93 kB │ gzip:  0.79 kB
+2026-03-13 09:03:27: dist/assets/Games-BbEdxALz.js                 2.54 kB │ gzip:  1.03 kB
+2026-03-13 09:03:27: dist/assets/ArchiveHome-EYQGb1Do.js           3.73 kB │ gzip:  1.57 kB
+2026-03-13 09:03:27: dist/assets/WritingPost-BHjK5mLS.js           3.77 kB │ gzip:  1.27 kB
+2026-03-13 09:03:27: dist/assets/Company-n0GNw-0V.js               4.13 kB │ gzip:  1.87 kB
+2026-03-13 09:03:27: dist/assets/Terms--aqf_dRn.js                 4.68 kB │ gzip:  2.05 kB
+2026-03-13 09:03:27: dist/assets/TheGoodStuff-ezfekswI.js          5.04 kB │ gzip:  1.51 kB
+2026-03-13 09:03:27: dist/assets/Privacy-DDFTxOxJ.js               5.21 kB │ gzip:  2.09 kB
+2026-03-13 09:03:27: dist/assets/NavigationDraft-Cn3V3eje.js       7.64 kB │ gzip:  2.17 kB
+2026-03-13 09:03:27: dist/assets/Footer-DV3zTd3x.js                8.25 kB │ gzip:  3.11 kB
+2026-03-13 09:03:27: dist/assets/Home-DxiNkxvv.js                 11.44 kB │ gzip:  3.92 kB
+2026-03-13 09:03:27: dist/assets/About-BlUlH_Ii.js                17.39 kB │ gzip:  5.17 kB
+2026-03-13 09:03:27: dist/assets/LevelUp-CNqqpWnI.js              19.59 kB │ gzip:  6.78 kB
+2026-03-13 09:03:27: dist/assets/MarginalGains-C8uxqSJ4.js        22.13 kB │ gzip:  7.48 kB
+2026-03-13 09:03:27: dist/assets/Speedrun-Cp8lt1IC.js             22.66 kB │ gzip:  7.59 kB
+2026-03-13 09:03:27: dist/assets/GoodStuff-CN_a2n64.js            25.38 kB │ gzip:  7.55 kB
+2026-03-13 09:03:27: dist/assets/navbar-dsjtDYHr.js               38.38 kB │ gzip: 12.79 kB
+2026-03-13 09:03:27: dist/assets/levelup.generated-R5KTaY2K.js   255.06 kB │ gzip: 76.16 kB
+2026-03-13 09:03:27: dist/assets/index-BWFR5xtj.js               277.85 kB │ gzip: 89.14 kB
+2026-03-13 09:03:27: ✓ built in 7.21s
+2026-03-13 09:03:28:   ✓ /
+2026-03-13 09:03:28:   ✓ /speedrun
+2026-03-13 09:03:28:   ✓ /levelup
+2026-03-13 09:03:28:   ✓ /marginal-gains
+2026-03-13 09:03:28:   ✓ /about
+2026-03-13 09:03:28:   ✓ /the-good-stuff
+2026-03-13 09:03:28:   ✓ /games
+2026-03-13 09:03:28:   ✓ /terms
+2026-03-13 09:03:28:   ✓ /privacy
+2026-03-13 09:03:28: 
+2026-03-13 09:03:28: Prerendered meta tags for 9 pages.
+2026-03-13 09:03:28: 
+2026-03-13 09:03:28: > website@0.1.0 preview
+2026-03-13 09:03:28: > vite preview --host 0.0.0.0 --port 41012
+2026-03-13 09:03:28: 
+2026-03-13 09:03:28:   ➜  Local:   http://localhost:41012/
+2026-03-13 09:03:28:   ➜  Network: http://10.56.3.135:41012/
+2026-03-13 09:03:28:   ➜  Network: http://172.18.0.1:41012/
+2026-03-13 09:03:28:   ➜  Network: http://172.19.0.1:41012/
+2026-03-13 09:03:28:   ➜  Network: http://100.104.179.62:41012/
+2026-04-12 05:53:37: 
+2026-04-12 05:53:37: > website@0.1.0 dev
+2026-04-12 05:53:37: > vite
+2026-04-12 05:53:37: 
+2026-04-12 05:53:37: 5:53:37 AM [vite] (client) Re-optimizing dependencies because lockfile has changed
+2026-04-12 05:53:38: 
+2026-04-12 05:53:38:   VITE v6.4.1  ready in 825 ms
+2026-04-12 05:53:38: 
+2026-04-12 05:53:38:   ➜  Local:   http://localhost:41013/
+2026-04-12 05:53:38:   ➜  Network: http://10.56.3.135:41013/
+2026-04-12 05:53:38:   ➜  Network: http://100.104.179.62:41013/
+2026-04-12 05:53:38:   ➜  Network: http://172.18.0.1:41013/
+2026-04-12 05:53:38:   ➜  Network: http://172.19.0.1:41013/
+2026-04-12 10:56:41: 10:56:41 AM [vite] (client) page reload scripts/prerender-meta.js
+2026-04-12 11:03:41: 
+2026-04-12 11:03:41: > website@0.1.0 dev
+2026-04-12 11:03:41: > vite
+2026-04-12 11:03:41: 
+2026-04-12 11:03:42: 
+2026-04-12 11:03:42:   VITE v6.4.1  ready in 301 ms
+2026-04-12 11:03:42: 
+2026-04-12 11:03:42:   ➜  Local:   http://localhost:41013/
+2026-04-12 11:03:42:   ➜  Network: http://10.56.3.135:41013/
+2026-04-12 11:03:42:   ➜  Network: http://100.104.179.62:41013/
+2026-04-12 11:03:42:   ➜  Network: http://172.18.0.1:41013/
+2026-04-12 11:03:42:   ➜  Network: http://172.19.0.1:41013/
+2026-04-12 11:23:35: 
+2026-04-12 11:23:35: > website@0.1.0 dev
+2026-04-12 11:23:35: > vite
+2026-04-12 11:23:35: 
+2026-04-12 11:23:35: 
+2026-04-12 11:23:35:   VITE v6.4.1  ready in 318 ms
+2026-04-12 11:23:35: 
+2026-04-12 11:23:35:   ➜  Local:   http://localhost:41013/
+2026-04-12 11:23:35:   ➜  Network: http://10.56.3.135:41013/
+2026-04-12 11:23:35:   ➜  Network: http://100.104.179.62:41013/
+2026-04-12 11:23:35:   ➜  Network: http://172.18.0.1:41013/
+2026-04-12 11:23:35:   ➜  Network: http://172.19.0.1:41013/
+2026-04-12 11:24:02: 
+2026-04-12 11:24:02: > website@0.1.0 dev
+2026-04-12 11:24:02: > vite
+2026-04-12 11:24:02: 
+2026-04-12 11:24:03: 
+2026-04-12 11:24:03:   VITE v6.4.1  ready in 275 ms
+2026-04-12 11:24:03: 
+2026-04-12 11:24:03:   ➜  Local:   http://localhost:41013/
+2026-04-12 11:24:03:   ➜  Network: http://10.56.3.135:41013/
+2026-04-12 11:24:03:   ➜  Network: http://100.104.179.62:41013/
+2026-04-12 11:24:03:   ➜  Network: http://172.18.0.1:41013/
+2026-04-12 11:24:03:   ➜  Network: http://172.19.0.1:41013/
+2026-04-13 06:22:04: 
+2026-04-13 06:22:04: > website@0.1.0 dev
+2026-04-13 06:22:04: > vite
+2026-04-13 06:22:04: 
+2026-04-13 06:22:04: 
+2026-04-13 06:22:04:   VITE v6.4.1  ready in 341 ms
+2026-04-13 06:22:04: 
+2026-04-13 06:22:04:   ➜  Local:   http://localhost:41013/
+2026-04-13 06:22:04:   ➜  Network: http://10.56.3.135:41013/
+2026-04-13 06:22:04:   ➜  Network: http://100.104.179.62:41013/
+2026-04-13 06:22:04:   ➜  Network: http://172.18.0.1:41013/
+2026-04-13 06:22:04:   ➜  Network: http://172.19.0.1:41013/
+2026-04-13 06:22:04:   ➜  Network: http://172.20.0.1:41013/
+2026-04-13 11:11:00: 11:11:00 AM [vite] (client) hmr update /src/components/HeroHomeDuplicate.tsx, /src/globals.css
+2026-04-13 11:21:40: 11:21:40 AM [vite] (client) hmr update /src/components/HeroHomeDuplicate.tsx, /src/globals.css
+2026-04-14 02:16:41: 2:16:41 AM [vite] (client) hmr update /src/components/HeroHomeDuplicate.tsx, /src/globals.css
+2026-04-14 02:21:43: 2:21:43 AM [vite] (client) hmr update /src/components/HeroHomeDuplicate.tsx, /src/globals.css
+2026-04-14 02:21:43: 2:21:43 AM [vite] (client) hmr update /src/globals.css, /src/components/Hero.css
+2026-04-14 06:02:01: 6:02:01 AM [vite] (client) hmr update /src/components/HeroHomeDuplicate.tsx, /src/globals.css
+2026-04-14 06:14:23: 6:14:23 AM [vite] (client) hmr update /src/globals.css, /src/components/Hero.css
+2026-04-14 06:24:40: 6:24:40 AM [vite] (client) hmr update /src/globals.css, /src/components/Hero.css
+2026-04-14 06:37:59: 6:37:59 AM [vite] (client) hmr update /src/components/HeroHomeDuplicate.tsx, /src/globals.css
+2026-04-14 06:37:59: 6:37:59 AM [vite] (client) hmr update /src/globals.css, /src/components/Hero.css
+2026-04-14 06:59:20: 6:59:20 AM [vite] (client) hmr update /src/globals.css, /src/components/Hero.css
+2026-04-14 07:16:07: 7:16:07 AM [vite] (client) hmr update /src/components/HeroHomeDuplicate.tsx, /src/globals.css
+2026-04-14 07:16:23: 7:16:23 AM [vite] (client) hmr update /src/globals.css, /src/components/Hero.css
+2026-04-14 07:18:00: 7:18:00 AM [vite] (client) hmr update /src/components/HeroHomeDuplicate.tsx, /src/globals.css
+2026-04-14 07:18:07: 7:18:07 AM [vite] (client) hmr update /src/globals.css, /src/components/Hero.css
+2026-04-14 07:24:27: 7:24:27 AM [vite] (client) hmr update /src/components/HeroHomeDuplicate.tsx, /src/globals.css
+2026-04-14 09:48:37: 9:48:37 AM [vite] (client) hmr update /src/routes/HomeDuplicate.tsx, /src/globals.css
+2026-04-14 09:49:07: 9:49:07 AM [vite] (client) hmr update /src/routes/HomeDuplicate.tsx, /src/globals.css
+2026-04-14 09:53:37: 9:53:37 AM [vite] (client) hmr update /src/globals.css, /src/components/HomeDuplicateGridSection.css
+2026-04-14 09:55:06: 9:55:06 AM [vite] (client) hmr update /src/globals.css, /src/components/HomeDuplicateGridSection.css
+2026-04-14 09:55:47: 9:55:47 AM [vite] (client) hmr update /src/globals.css, /src/components/HomeDuplicateGridSection.css
+2026-04-14 10:00:46: 10:00:46 AM [vite] (client) hmr update /src/globals.css, /src/components/HomeDuplicateGridSection.css
+2026-04-14 10:05:08: 10:05:08 AM [vite] (client) page reload ecosystem.config.cjs
+2026-04-14 10:05:16: 10:05:16 AM [vite] (client) page reload ecosystem.config.cjs
+2026-04-14 10:05:45: 10:05:45 AM [vite] (client) page reload ecosystem.config.cjs
+2026-04-14 10:06:00: 10:06:00 AM [vite] (client) page reload ecosystem.config.cjs
+2026-04-14 10:16:39: 10:16:39 AM [vite] (client) hmr update /src/globals.css, /src/components/HomeDuplicateGridSection.css
+2026-04-14 10:22:29: 10:22:29 AM [vite] (client) hmr update /src/globals.css, /src/components/HomeDuplicateGridSection.css
+2026-04-14 10:22:36: 10:22:36 AM [vite] (client) hmr update /src/globals.css, /src/components/HomeDuplicateGridSection.css
+2026-04-14 10:22:44: 10:22:44 AM [vite] (client) hmr update /src/globals.css, /src/components/HomeDuplicateGridSection.css
+2026-04-14 10:22:50: 10:22:50 AM [vite] (client) hmr update /src/globals.css, /src/components/HomeDuplicateGridSection.css
+2026-04-14 10:23:07: 10:23:07 AM [vite] (client) hmr update /src/globals.css, /src/components/HomeDuplicateGridSection.css
+2026-04-14 10:35:50: 10:35:50 AM [vite] (client) hmr update /src/globals.css, /src/components/HomeDuplicateGridSection.css
+2026-04-14 10:35:55: 10:35:55 AM [vite] (client) hmr update /src/globals.css, /src/components/HomeDuplicateGridSection.css
+2026-04-14 10:36:00: 10:36:00 AM [vite] (client) hmr update /src/globals.css, /src/components/HomeDuplicateGridSection.css
+2026-04-14 10:50:00: 10:50:00 AM [vite] (client) hmr update /src/globals.css, /src/components/HomeDuplicateGridSection.css
+2026-04-14 10:50:05: 10:50:05 AM [vite] (client) hmr update /src/globals.css, /src/components/HomeDuplicateGridSection.css
+2026-04-14 10:50:10: 10:50:10 AM [vite] (client) hmr update /src/globals.css, /src/components/HomeDuplicateGridSection.css
+2026-04-14 10:59:27: 10:59:27 AM [vite] (client) hmr update /src/globals.css, /src/components/HomeDuplicateGridSection.css
+2026-04-14 10:59:38: 10:59:38 AM [vite] (client) hmr update /src/globals.css, /src/components/HomeDuplicateGridSection.css
+2026-04-14 10:59:43: 10:59:43 AM [vite] (client) hmr update /src/globals.css, /src/components/HomeDuplicateGridSection.css
+2026-04-14 10:59:47: 10:59:47 AM [vite] (client) hmr update /src/globals.css, /src/components/HomeDuplicateGridSection.css
+2026-04-14 11:04:34: 11:04:34 AM [vite] (client) hmr update /src/globals.css, /src/components/HomeDuplicateGridSection.css
+2026-04-14 11:04:40: 11:04:40 AM [vite] (client) hmr update /src/globals.css, /src/components/HomeDuplicateGridSection.css
+2026-04-14 11:12:29: 11:12:29 AM [vite] (client) hmr update /src/globals.css, /src/components/HomeDuplicateGridSection.css
+2026-04-14 11:15:43: 11:15:43 AM [vite] (client) hmr update /src/globals.css, /src/components/HomeDuplicateGridSection.css
+2026-04-14 11:17:31: 11:17:31 AM [vite] (client) hmr update /src/globals.css, /src/components/HomeDuplicateGridSection.css
+2026-04-14 11:20:39: 11:20:39 AM [vite] (client) hmr update /src/components/HomeDuplicateGridSection.tsx, /src/globals.css
+2026-04-14 11:29:30: 11:29:30 AM [vite] (client) hmr update /src/components/HomeDuplicateGridSection.tsx, /src/globals.css
+2026-04-14 11:30:09: 11:30:09 AM [vite] (client) hmr update /src/globals.css
+2026-04-14 11:31:41: 11:31:41 AM [vite] (client) hmr update /src/components/HeroHomeDuplicate.tsx, /src/globals.css
+2026-04-14 11:32:29: 11:32:29 AM [vite] (client) hmr update /src/components/HeroHomeDuplicate.tsx, /src/globals.css
+2026-04-14 11:47:26: 11:47:26 AM [vite] (client) hmr update /src/components/HomeDuplicateGridSection.tsx, /src/globals.css
+2026-04-14 11:51:25: 11:51:25 AM [vite] (client) hmr update /src/components/FormProcessingDemo.tsx, /src/globals.css
+2026-04-14 11:51:31: 11:51:31 AM [vite] (client) hmr update /src/components/FormProcessingDemo.tsx, /src/globals.css
+2026-04-14 11:51:37: 11:51:37 AM [vite] (client) hmr update /src/components/FormProcessingDemo.tsx, /src/globals.css
+2026-04-14 11:51:49: 11:51:49 AM [vite] (client) hmr update /src/components/FormProcessingDemo.tsx, /src/globals.css
+2026-04-14 11:52:03: 11:52:03 AM [vite] (client) hmr update /src/components/FormProcessingDemo.tsx, /src/globals.css
+2026-04-14 11:52:23: 11:52:23 AM [vite] (client) hmr update /src/globals.css, /src/components/FormProcessingDemo.css
+2026-04-14 11:52:29: 11:52:29 AM [vite] (client) hmr update /src/components/FormProcessingDemo.tsx, /src/globals.css
+2026-04-14 11:54:53: 11:54:53 AM [vite] (client) hmr update /src/components/AIChatDemo.tsx, /src/globals.css
+2026-04-14 12:21:57: 12:21:57 PM [vite] (client) hmr update /src/globals.css, /src/components/AIChatDemo.css
+2026-04-14 12:22:21: 12:22:21 PM [vite] (client) hmr update /src/components/AIChatDemo.tsx, /src/globals.css
+2026-04-15 09:06:16: 9:06:16 AM [vite] (client) hmr update /src/components/WingmanDemo.tsx, /src/globals.css
+2026-04-15 09:07:04: 9:07:04 AM [vite] (client) hmr update /src/globals.css, /src/components/WingmanDemo.css
+2026-04-15 09:08:54: 9:08:54 AM [vite] (client) hmr update /src/components/HomeDuplicateGridSection.tsx, /src/globals.css
+2026-04-15 09:09:47: 9:09:47 AM [vite] (client) hmr update /src/routes/HomeDuplicate.tsx, /src/globals.css
+2026-04-15 09:29:27: 9:29:27 AM [vite] (client) hmr update /src/components/FunnelHomeDuplicate.tsx, /src/globals.css
+2026-04-15 09:30:51: 9:30:51 AM [vite] (client) hmr update /src/components/FunnelHomeDuplicate.tsx, /src/globals.css
+2026-04-15 09:32:50: 9:32:50 AM [vite] (client) hmr update /src/components/FunnelHomeDuplicate.tsx, /src/globals.css
+2026-04-15 09:42:00: 9:42:00 AM [vite] (client) hmr update /src/components/FunnelHomeDuplicate.tsx, /src/globals.css
+2026-04-15 09:49:11: 9:49:11 AM [vite] (client) hmr update /src/components/FunnelHomeDuplicate.tsx, /src/globals.css
+2026-04-15 09:49:22: 9:49:22 AM [vite] (client) hmr update /src/components/FunnelHomeDuplicate.tsx, /src/globals.css
+2026-04-15 09:52:01: 9:52:01 AM [vite] (client) hmr update /src/components/FunnelHomeDuplicate.tsx, /src/globals.css
+2026-04-15 09:52:07: 9:52:07 AM [vite] (client) hmr update /src/components/FunnelHomeDuplicate.tsx, /src/globals.css
+2026-04-15 09:52:54: 9:52:54 AM [vite] (client) hmr update /src/components/FunnelHomeDuplicate.tsx, /src/globals.css
+2026-04-15 09:55:52: 9:55:52 AM [vite] (client) hmr update /src/components/FunnelHomeDuplicate.tsx, /src/globals.css
+2026-04-15 09:56:02: 9:56:02 AM [vite] (client) hmr update /src/components/FunnelHomeDuplicate.tsx, /src/globals.css
+2026-04-15 10:03:01: 10:03:01 AM [vite] (client) hmr update /src/components/FunnelHomeDuplicate.tsx, /src/globals.css
+2026-04-15 10:03:09: 10:03:09 AM [vite] (client) hmr update /src/components/FunnelHomeDuplicate.tsx, /src/globals.css
+2026-04-15 10:03:21: 10:03:21 AM [vite] (client) hmr update /src/components/FunnelHomeDuplicate.tsx, /src/globals.css
+2026-04-15 10:09:55: 10:09:55 AM [vite] (client) hmr update /src/components/FunnelHomeDuplicate.tsx, /src/globals.css
+2026-04-15 10:10:05: 10:10:05 AM [vite] (client) hmr update /src/components/FunnelHomeDuplicate.tsx, /src/globals.css
+2026-04-15 10:10:14: 10:10:14 AM [vite] (client) hmr update /src/components/FunnelHomeDuplicate.tsx, /src/globals.css
+2026-04-15 10:15:24: 10:15:24 AM [vite] (client) hmr update /src/components/FunnelHomeDuplicate.tsx, /src/globals.css
+2026-04-15 10:24:35: 10:24:35 AM [vite] (client) hmr update /src/globals.css, /src/components/FunnelSection.css
+2026-04-15 10:28:31: 10:28:31 AM [vite] (client) hmr update /src/globals.css, /src/components/FunnelSection.css
+2026-04-15 10:28:38: 10:28:38 AM [vite] (client) hmr update /src/globals.css, /src/components/FunnelSection.css
+2026-04-15 10:36:55: 10:36:55 AM [vite] (client) hmr update /src/components/FunnelHomeDuplicate.tsx, /src/globals.css
+2026-04-15 10:37:00: 10:37:00 AM [vite] (client) hmr update /src/components/FunnelHomeDuplicate.tsx, /src/globals.css
+2026-04-15 10:45:44: 10:45:44 AM [vite] (client) hmr update /src/components/FunnelHomeDuplicate.tsx, /src/globals.css
+2026-04-15 10:45:50: 10:45:50 AM [vite] (client) hmr update /src/components/FunnelHomeDuplicate.tsx, /src/globals.css
+2026-04-15 10:46:01: 10:46:01 AM [vite] (client) hmr update /src/components/FunnelHomeDuplicate.tsx, /src/globals.css
+2026-04-15 10:46:06: 10:46:06 AM [vite] (client) hmr update /src/components/FunnelHomeDuplicate.tsx, /src/globals.css
+2026-04-15 10:46:13: 10:46:13 AM [vite] (client) hmr update /src/components/FunnelHomeDuplicate.tsx, /src/globals.css
+2026-04-15 10:46:19: 10:46:19 AM [vite] (client) hmr update /src/components/FunnelHomeDuplicate.tsx, /src/globals.css
+2026-04-15 10:46:42: 10:46:42 AM [vite] (client) hmr update /src/globals.css, /src/components/FunnelSection.css
+2026-04-15 11:04:38: 11:04:38 AM [vite] (client) hmr update /src/components/FunnelHomeDuplicate.tsx, /src/globals.css
+2026-04-15 11:05:10: 11:05:10 AM [vite] (client) hmr update /src/globals.css, /src/components/FunnelSection.css
+2026-04-15 11:05:17: 11:05:17 AM [vite] (client) hmr update /src/globals.css, /src/components/FunnelSection.css
+2026-04-15 11:05:33: 11:05:33 AM [vite] (client) hmr update /src/globals.css, /src/components/FunnelSection.css
+2026-04-15 11:07:15: 11:07:15 AM [vite] (client) hmr update /src/components/FunnelHomeDuplicate.tsx, /src/globals.css
+2026-04-15 11:21:21: 11:21:21 AM [vite] (client) hmr update /src/components/FunnelHomeDuplicate.tsx, /src/globals.css
+2026-04-15 11:24:22: 11:24:22 AM [vite] (client) hmr update /src/components/FunnelHomeDuplicate.tsx, /src/globals.css
+2026-04-15 11:27:14: 11:27:14 AM [vite] (client) hmr update /src/components/FunnelHomeDuplicate.tsx, /src/globals.css
+2026-04-15 11:29:47: 11:29:47 AM [vite] (client) hmr update /src/globals.css, /src/components/FunnelSection.css
+2026-04-15 11:30:01: 11:30:01 AM [vite] (client) hmr update /src/globals.css, /src/components/FunnelSection.css
+2026-04-15 11:34:32: 11:34:32 AM [vite] (client) hmr update /src/globals.css, /src/components/FunnelSection.css
+2026-04-15 11:34:47: 11:34:47 AM [vite] (client) hmr update /src/globals.css, /src/components/FunnelSection.css
+2026-04-15 11:36:34: 11:36:34 AM [vite] (client) hmr update /src/globals.css, /src/components/FunnelSection.css
+2026-04-15 11:43:02: 11:43:02 AM [vite] (client) hmr update /src/globals.css, /src/components/FunnelSection.css
+2026-04-15 11:43:08: 11:43:08 AM [vite] (client) hmr update /src/globals.css, /src/components/FunnelSection.css
+2026-04-15 14:24:01: 2:24:01 PM [vite] (client) hmr update /src/routes/HomeDuplicate.tsx, /src/globals.css
+2026-04-15 14:24:13: 2:24:13 PM [vite] (client) hmr update /src/routes/HomeDuplicate.tsx, /src/globals.css
+2026-04-15 14:54:16: 2:54:16 PM [vite] (client) page reload ecosystem.config.cjs
+2026-04-15 15:00:13: 3:00:13 PM [vite] (client) hmr update /src/routes/HomeDuplicate.tsx, /src/globals.css
+2026-04-16 02:55:04: 2:55:04 AM [vite] (client) hmr update /src/components/ProcessTimeline.tsx, /src/globals.css
+2026-04-16 03:00:42: 3:00:42 AM [vite] (client) hmr update /src/globals.css, /src/components/ProcessTimeline.css
+2026-04-16 03:09:49: 3:09:49 AM [vite] (client) hmr update /src/routes/HomeDuplicate.tsx, /src/globals.css
+2026-04-16 03:09:55: 3:09:55 AM [vite] (client) hmr update /src/routes/HomeDuplicate.tsx, /src/globals.css
+2026-04-16 03:12:44: 3:12:44 AM [vite] (client) hmr update /src/globals.css, /src/components/ExamplesSection.css
+2026-04-16 03:14:52: 3:14:52 AM [vite] (client) hmr update /src/globals.css, /src/components/ExamplesSection.css
+2026-04-16 03:16:12: 3:16:12 AM [vite] (client) hmr update /src/globals.css, /src/components/ExamplesSection.css
+2026-04-16 03:18:56: 3:18:56 AM [vite] (client) hmr update /src/globals.css, /src/components/ExamplesSection.css
+2026-04-16 03:22:07: 3:22:07 AM [vite] (client) hmr update /src/components/ExamplesSection.tsx, /src/globals.css
+2026-04-16 03:22:12: 3:22:12 AM [vite] (client) hmr update /src/components/ExamplesSection.tsx, /src/globals.css
+2026-04-16 03:22:55: 3:22:55 AM [vite] (client) hmr update /src/components/ExamplesSection.tsx, /src/globals.css
+2026-04-16 03:23:00: 3:23:00 AM [vite] (client) hmr update /src/components/ExamplesSection.tsx, /src/globals.css
+2026-04-16 03:25:07: 3:25:07 AM [vite] (client) hmr update /src/components/HomeDuplicateGridSection.tsx, /src/globals.css
+2026-04-16 03:25:19: 3:25:19 AM [vite] (client) hmr update /src/components/ProcessTimeline.tsx, /src/globals.css
+2026-04-16 03:25:35: 3:25:35 AM [vite] (client) hmr update /src/components/ExamplesSection.tsx, /src/globals.css
+2026-04-16 03:29:56: 3:29:56 AM [vite] (client) hmr update /src/components/ExamplesSection.tsx, /src/globals.css
+2026-04-16 03:33:57: 3:33:57 AM [vite] (client) hmr update /src/components/ExamplesSection.tsx, /src/globals.css
+2026-04-16 03:50:11: 
+2026-04-16 03:50:11: > website@0.1.0 dev
+2026-04-16 03:50:11: > vite
+2026-04-16 03:50:11: 
+2026-04-16 03:50:12: 
+2026-04-16 03:50:12:   VITE v6.4.1  ready in 758 ms
+2026-04-16 03:50:12: 
+2026-04-16 03:50:12:   ➜  Local:   http://localhost:41013/
+2026-04-16 03:50:12:   ➜  Network: http://10.56.3.135:41013/
+2026-04-16 04:55:22: 4:55:22 AM [vite] (client) hmr update /src/components/InfrastructureSection.tsx, /src/globals.css
+2026-04-16 04:55:49: 4:55:49 AM [vite] (client) hmr update /src/globals.css, /src/components/InfrastructureSection.css
+2026-04-16 04:56:16: 4:56:16 AM [vite] (client) page reload .claude/settings.local.json
+2026-04-16 05:01:09: 5:01:09 AM [vite] (client) hmr update /src/components/InfrastructureSection.tsx, /src/globals.css
+2026-04-16 05:01:28: 5:01:28 AM [vite] (client) hmr update /src/globals.css, /src/components/InfrastructureSection.css
+2026-04-16 05:03:36: 5:03:36 AM [vite] (client) hmr update /src/globals.css, /src/components/InfrastructureSection.css
+2026-04-16 05:03:41: 5:03:41 AM [vite] (client) hmr update /src/globals.css, /src/components/InfrastructureSection.css
+2026-04-16 05:33:01: 5:33:01 AM [vite] (client) hmr update /src/components/InfrastructureSection.tsx, /src/globals.css
+2026-04-16 05:33:05: 5:33:05 AM [vite] (client) hmr update /src/components/InfrastructureSection.tsx, /src/globals.css
+2026-04-16 05:44:06: 5:44:06 AM [vite] (client) hmr update /src/components/InfrastructureSection.tsx, /src/globals.css
+2026-04-16 05:44:10: 5:44:10 AM [vite] (client) hmr update /src/components/InfrastructureSection.tsx, /src/globals.css
+2026-04-16 05:56:08: 5:56:08 AM [vite] (client) hmr update /src/components/InfrastructureSection.tsx, /src/globals.css
+2026-04-16 06:45:34: 6:45:34 AM [vite] (client) hmr update /src/components/CTAHomeDuplicate.tsx, /src/globals.css
+2026-04-16 06:45:39: 6:45:39 AM [vite] (client) hmr update /src/components/CTAHomeDuplicate.tsx, /src/globals.css
+2026-04-16 06:50:49: 6:50:49 AM [vite] (client) hmr update /src/components/GoodStuffHomeDuplicate.tsx, /src/globals.css
+2026-04-16 07:01:39: 7:01:39 AM [vite] (client) hmr update /src/components/CTAHomeDuplicate.tsx, /src/globals.css
+2026-04-16 07:01:56: 7:01:56 AM [vite] (client) hmr update /src/globals.css, /src/components/CTASection.css
+2026-04-16 07:03:50: 7:03:50 AM [vite] (client) hmr update /src/components/CTAHomeDuplicate.tsx, /src/globals.css
+2026-04-16 07:04:15: 7:04:15 AM [vite] (client) hmr update /src/globals.css, /src/components/GoodStuff.css
+2026-04-16 07:04:21: 7:04:21 AM [vite] (client) hmr update /src/components/GoodStuffHomeDuplicate.tsx, /src/globals.css
+2026-04-16 07:06:33: 7:06:33 AM [vite] (client) hmr update /src/globals.css, /src/components/GoodStuff.css
+2026-04-16 07:06:40: 7:06:40 AM [vite] (client) hmr update /src/components/GoodStuffHomeDuplicate.tsx, /src/globals.css
+2026-04-16 07:06:54: 7:06:54 AM [vite] (client) hmr update /src/globals.css, /src/components/ProcessTimeline.css
+2026-04-16 07:25:55: 7:25:55 AM [vite] (client) hmr update /src/components/FooterHomeDuplicate.tsx, /src/globals.css
+2026-04-16 07:26:01: 7:26:01 AM [vite] (client) hmr update /src/components/GoodStuffHomeDuplicate.tsx, /src/globals.css
+2026-04-16 07:39:46: 7:39:46 AM [vite] (client) hmr update /src/components/HomeDuplicateGridSection.tsx, /src/globals.css
+2026-04-16 07:39:51: 7:39:51 AM [vite] (client) hmr update /src/components/HomeDuplicateGridSection.tsx, /src/globals.css
+2026-04-16 07:39:58: 7:39:58 AM [vite] (client) hmr update /src/globals.css, /src/components/HomeDuplicateGridSection.css
+2026-04-16 07:44:06: 7:44:06 AM [vite] (client) hmr update /src/globals.css, /src/components/Footer.css
+2026-04-16 08:44:32: 8:44:32 AM [vite] (client) hmr update /src/globals.css, /src/components/Navigation.css
+2026-04-16 08:44:38: 8:44:38 AM [vite] (client) hmr update /src/components/NavigationHomeDuplicate.tsx, /src/globals.css
+2026-04-16 08:44:54: 8:44:54 AM [vite] (client) hmr update /src/components/HeroHomeDuplicate.tsx, /src/globals.css
+2026-04-16 08:44:59: 8:44:59 AM [vite] (client) hmr update /src/components/CTAHomeDuplicate.tsx, /src/globals.css
+2026-04-16 08:54:23: 8:54:23 AM [vite] (client) hmr update /src/routes/HomeDuplicate.tsx, /src/globals.css
+2026-04-16 08:54:29: 8:54:29 AM [vite] (client) hmr update /src/routes/HomeDuplicate.tsx, /src/globals.css
+2026-04-16 09:01:29: 9:01:29 AM [vite] (client) hmr update /src/globals.css, /src/components/Navigation.css
+2026-04-16 09:01:47: 9:01:47 AM [vite] (client) hmr update /src/globals.css, /src/components/CTASection.css
+2026-04-16 09:06:23: 9:06:23 AM [vite] (client) hmr update /src/components/FAQHomeDuplicate.tsx, /src/globals.css
+2026-04-17 03:31:29: 3:31:29 AM [vite] (client) hmr update /src/components/ProcessTimeline.tsx, /src/globals.css
+2026-04-17 03:31:47: 3:31:47 AM [vite] (client) hmr update /src/globals.css, /src/components/ProcessTimeline.css
+2026-04-17 03:34:30: 3:34:30 AM [vite] (client) hmr update /src/globals.css, /src/components/Navigation.css
+2026-04-17 03:34:36: 3:34:36 AM [vite] (client) hmr update /src/globals.css, /src/components/Navigation.css
+2026-04-17 03:34:45: 3:34:45 AM [vite] (client) hmr update /src/globals.css, /src/components/Navigation.css
+2026-04-17 03:34:53: 3:34:53 AM [vite] (client) hmr update /src/globals.css, /src/components/Navigation.css
+2026-04-17 03:35:24: 3:35:24 AM [vite] (client) hmr update /src/globals.css, /src/components/Navigation.css
+2026-04-17 03:38:37: 3:38:37 AM [vite] (client) hmr update /src/globals.css, /src/components/Navigation.css
+2026-04-17 03:40:33: 3:40:33 AM [vite] (client) hmr update /src/globals.css, /src/components/ExamplesSection.css
+2026-04-17 03:40:42: 3:40:42 AM [vite] (client) hmr update /src/globals.css, /src/components/ExamplesSection.css
+2026-04-17 04:22:00: 4:22:00 AM [vite] (client) hmr update /src/globals.css, /src/components/InfrastructureSection.css
+2026-04-17 04:22:17: 4:22:17 AM [vite] (client) hmr update /src/globals.css, /src/components/InfrastructureSection.css
+2026-04-17 04:36:18: 4:36:18 AM [vite] (client) hmr update /src/globals.css, /src/components/ExamplesSection.css
+2026-04-17 04:36:23: 4:36:23 AM [vite] (client) hmr update /src/globals.css, /src/components/ExamplesSection.css
+2026-04-17 04:36:27: 4:36:27 AM [vite] (client) hmr update /src/globals.css, /src/components/ExamplesSection.css
+2026-04-17 04:36:33: 4:36:33 AM [vite] (client) hmr update /src/globals.css, /src/components/ExamplesSection.css
+2026-04-17 04:38:32: 4:38:32 AM [vite] (client) hmr update /src/globals.css, /src/components/InfrastructureSection.css
+2026-04-17 06:50:21: 6:50:21 AM [vite] (client) hmr update /src/App.tsx, /src/globals.css
+2026-04-17 06:50:27: 6:50:27 AM [vite] (client) hmr update /src/App.tsx, /src/globals.css
+2026-04-17 07:00:08: 7:00:08 AM [vite] (client) hmr update /src/routes/MarginalGainsDuplicate.tsx, /src/globals.css
+2026-04-17 07:02:03: 7:02:03 AM [vite] (client) hmr update /src/routes/MarginalGainsDuplicate.tsx, /src/globals.css
+2026-04-17 07:02:11: 7:02:11 AM [vite] (client) hmr update /src/routes/MarginalGainsDuplicate.tsx, /src/globals.css
+2026-04-17 07:51:09: 7:51:09 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/site-shell-duplicate.tsx
+2026-04-17 07:51:24: 7:51:24 AM [vite] (client) hmr update /src/routes/MarginalGainsDuplicate.tsx, /src/globals.css
+2026-04-17 07:51:34: 7:51:34 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/marginal-gains.css
+2026-04-17 07:52:00: 7:52:00 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/marginal-gains.css
+2026-04-17 07:53:01: 7:53:01 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/marginal-gains.css
+2026-04-17 07:53:08: 7:53:08 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/marginal-gains.css
+2026-04-17 07:53:44: 7:53:44 AM [vite] (client) hmr update /src/globals.css
+2026-04-17 07:53:53: 7:53:53 AM [vite] (client) hmr update /src/globals.css
+2026-04-17 07:55:13: 7:55:13 AM [vite] (client) hmr update /src/globals.css, /src/components/Hero.css
+2026-04-17 07:55:26: 7:55:26 AM [vite] (client) hmr update /src/globals.css
+2026-04-17 07:57:58: 7:57:58 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/site-shell-duplicate.tsx
+2026-04-17 07:58:20: 7:58:20 AM [vite] (client) hmr update /src/components/NavigationDraft.tsx, /src/globals.css
+2026-04-17 07:58:33: 7:58:33 AM [vite] (client) hmr update /src/globals.css, /src/components/Navigation.css
+2026-04-17 07:58:43: 7:58:43 AM [vite] (client) hmr update /src/globals.css, /src/components/Navigation.css
+2026-04-17 08:10:48: 8:10:48 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/site-shell-duplicate.tsx
+2026-04-17 08:13:23: 8:13:23 AM [vite] (client) page reload .claude/settings.local.json
+2026-04-17 08:13:24: 8:13:24 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/site-shell-duplicate.tsx
+2026-04-17 08:13:39: 8:13:39 AM [vite] (client) hmr update /src/routes/MarginalGainsDuplicate.tsx, /src/globals.css
+2026-04-17 08:39:09: 8:39:09 AM [vite] (client) hmr update /src/components/PainRecognition.tsx, /src/globals.css
+2026-04-17 08:39:18: 8:39:18 AM [vite] (client) hmr update /src/globals.css, /src/components/PainRecognition.css
+2026-04-17 09:00:10: 9:00:10 AM [vite] (client) hmr update /src/components/PainRecognition.tsx, /src/globals.css
+2026-04-17 09:00:18: 9:00:18 AM [vite] (client) hmr update /src/globals.css, /src/components/PainRecognition.css
+2026-04-17 09:02:23: 9:02:23 AM [vite] (client) hmr update /src/components/PainRecognition.tsx, /src/globals.css
+2026-04-17 09:02:32: 9:02:32 AM [vite] (client) hmr update /src/globals.css, /src/components/PainRecognition.css
+2026-04-17 09:04:04: 9:04:04 AM [vite] (client) page reload .claude/settings.local.json
+2026-04-17 09:04:05: 9:04:05 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/site-shell-duplicate.tsx
+2026-04-17 09:05:20: 9:05:20 AM [vite] (client) hmr update /src/globals.css, /src/components/PainRecognition.css
+2026-04-17 09:05:33: 9:05:33 AM [vite] (client) hmr update /src/marginal-gains/components/site-shell-duplicate.tsx, /src/globals.css
+2026-04-17 09:05:41: 9:05:41 AM [vite] (client) hmr update /src/routes/MarginalGainsDuplicate.tsx, /src/globals.css
+2026-04-17 09:09:55: 9:09:55 AM [vite] (client) hmr update /src/globals.css, /src/components/PainRecognition.css
+2026-04-17 09:12:03: 9:12:03 AM [vite] (client) hmr update /src/components/PainRecognition.tsx, /src/globals.css
+2026-04-17 09:13:36: 9:13:36 AM [vite] (client) hmr update /src/globals.css, /src/components/PainRecognition.css
+2026-04-17 09:13:50: 9:13:50 AM [vite] (client) hmr update /src/globals.css, /src/components/PainRecognition.css
+2026-04-17 09:14:02: 9:14:02 AM [vite] (client) hmr update /src/components/PainRecognition.tsx, /src/globals.css
+2026-04-17 09:17:09: 9:17:09 AM [vite] (client) hmr update /src/globals.css, /src/components/PainRecognition.css
+2026-04-17 09:19:17: 9:19:17 AM [vite] (client) hmr update /src/globals.css, /src/components/PainRecognition.css
+2026-04-17 09:21:58: 9:21:58 AM [vite] (client) hmr update /src/components/PainRecognition.tsx, /src/globals.css
+2026-04-17 09:22:29: 9:22:29 AM [vite] (client) hmr update /src/globals.css, /src/components/PainRecognition.css
+2026-04-17 09:23:39: 9:23:39 AM [vite] (client) hmr update /src/globals.css, /src/components/PainRecognition.css
+2026-04-17 09:23:56: 9:23:56 AM [vite] (client) hmr update /src/components/PainRecognition.tsx, /src/globals.css
+2026-04-17 09:24:45: 9:24:45 AM [vite] (client) hmr update /src/globals.css, /src/components/PainRecognition.css
+2026-04-17 10:53:42: 10:53:42 AM [vite] (client) hmr update /src/globals.css, /src/components/PainRecognition.css
+2026-04-17 11:04:16: 11:04:16 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/site-shell-duplicate.tsx
+2026-04-17 11:05:31: 11:05:31 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/site-shell-duplicate.tsx
+2026-04-17 11:06:34: 11:06:34 AM [vite] (client) hmr update /src/globals.css, /src/components/PainRecognition.css
+2026-04-17 11:07:55: 11:07:55 AM [vite] (client) hmr update /src/globals.css, /src/components/PainRecognition.css
+2026-04-17 11:10:07: 11:10:07 AM [vite] (client) hmr update /src/components/PainRecognition.tsx, /src/globals.css
+2026-04-17 11:10:13: 11:10:13 AM [vite] (client) hmr update /src/routes/MarginalGainsDuplicate.tsx, /src/globals.css
+2026-04-17 11:16:30: 11:16:30 AM [vite] (client) hmr update /src/routes/MarginalGainsDuplicate.tsx, /src/globals.css
+2026-04-17 11:16:57: 11:16:57 AM [vite] (client) hmr update /src/routes/MarginalGainsDuplicate.tsx, /src/globals.css
+2026-04-17 12:05:46: 12:05:46 PM [vite] (client) hmr update /src/components/MGGridSection.tsx, /src/globals.css
+2026-04-17 12:05:56: 12:05:56 PM [vite] (client) hmr update /src/components/MGGridSection.tsx, /src/globals.css
+2026-04-17 12:06:17: 12:06:17 PM [vite] (client) hmr update /src/components/MGGridSection.tsx, /src/globals.css
+2026-04-17 12:14:20: 12:14:20 PM [vite] (client) hmr update /src/globals.css, /src/components/MGGridSection.css
+2026-04-17 12:15:19: 12:15:19 PM [vite] (client) hmr update /src/components/MGGridSection.tsx, /src/globals.css
+2026-04-17 12:15:26: 12:15:26 PM [vite] (client) hmr update /src/components/MGGridSection.tsx, /src/globals.css
+2026-04-17 12:15:33: 12:15:33 PM [vite] (client) hmr update /src/components/MGGridSection.tsx, /src/globals.css
+2026-04-17 12:15:40: 12:15:40 PM [vite] (client) hmr update /src/components/MGGridSection.tsx, /src/globals.css
+2026-04-17 12:16:20: 12:16:20 PM [vite] (client) hmr update /src/components/MGGridSection.tsx, /src/globals.css
+2026-04-17 12:22:28: 12:22:28 PM [vite] (client) hmr update /src/components/MGGridSection.tsx, /src/globals.css
+2026-04-17 12:22:37: 12:22:37 PM [vite] (client) hmr update /src/components/MGGridSection.tsx, /src/globals.css
+2026-04-18 06:03:32: 6:03:32 AM [vite] (client) hmr update /src/components/InventoryDemo.tsx, /src/globals.css
+2026-04-18 06:05:00: 6:05:00 AM [vite] (client) hmr update /src/components/InventoryDemo.tsx, /src/globals.css
+2026-04-18 06:08:13: 6:08:13 AM [vite] (client) hmr update /src/globals.css, /src/components/InventoryDemo.css
+2026-04-18 06:10:18: 6:10:18 AM [vite] (client) hmr update /src/globals.css, /src/components/InventoryDemo.css
+2026-04-18 06:13:47: 6:13:47 AM [vite] (client) hmr update /src/components/InventoryDemo.tsx, /src/globals.css
+2026-04-18 06:19:33: 6:19:33 AM [vite] (client) hmr update /src/components/MGGridSection.tsx, /src/globals.css
+2026-04-18 06:27:33: 6:27:33 AM [vite] (client) hmr update /src/components/ProposalBuilderDemo.tsx, /src/globals.css
+2026-04-18 08:45:35: 8:45:35 AM [vite] (client) hmr update /src/components/ProposalBuilderDemo.tsx, /src/globals.css
+2026-04-18 08:48:56: 8:48:56 AM [vite] (client) hmr update /src/globals.css, /src/components/ProposalBuilderDemo.css
+2026-04-18 08:53:08: 8:53:08 AM [vite] (client) hmr update /src/globals.css, /src/components/ProposalBuilderDemo.css
+2026-04-18 08:56:26: 8:56:26 AM [vite] (client) hmr update /src/components/ProposalBuilderDemo.tsx, /src/globals.css
+2026-04-18 08:58:34: 8:58:34 AM [vite] (client) hmr update /src/components/ProposalBuilderDemo.tsx, /src/globals.css
+2026-04-18 08:58:43: 8:58:43 AM [vite] (client) hmr update /src/globals.css, /src/components/ProposalBuilderDemo.css
+2026-04-18 09:00:33: 9:00:33 AM [vite] (client) hmr update /src/globals.css, /src/components/ProposalBuilderDemo.css
+2026-04-18 09:09:32: 9:09:32 AM [vite] (client) hmr update /src/components/ProposalBuilderDemo.tsx, /src/globals.css
+2026-04-18 09:10:45: 9:10:45 AM [vite] (client) hmr update /src/components/ProposalBuilderDemo.tsx, /src/globals.css
+2026-04-18 09:10:59: 9:10:59 AM [vite] (client) hmr update /src/globals.css, /src/components/ProposalBuilderDemo.css
+2026-04-18 09:12:35: 9:12:35 AM [vite] (client) hmr update /src/globals.css, /src/components/ProposalBuilderDemo.css
+2026-04-18 09:15:06: 9:15:06 AM [vite] (client) hmr update /src/components/ProposalBuilderDemo.tsx, /src/globals.css
+2026-04-18 09:16:41: 9:16:41 AM [vite] (client) hmr update /src/globals.css, /src/components/ProposalBuilderDemo.css
+2026-04-18 09:19:40: 9:19:40 AM [vite] (client) hmr update /src/components/ProposalBuilderDemo.tsx, /src/globals.css
+2026-04-18 09:20:31: 9:20:31 AM [vite] (client) hmr update /src/globals.css, /src/components/ProposalBuilderDemo.css
+2026-04-18 10:19:25: 10:19:25 AM [vite] (client) hmr update /src/components/MGGridSection.tsx, /src/globals.css
+2026-04-18 10:42:08: 10:42:08 AM [vite] (client) hmr update /src/components/MGGridSection.tsx, /src/globals.css
+2026-04-18 10:59:03: 10:59:03 AM [vite] (client) hmr update /src/components/ProjectStatusReportsDemo.tsx, /src/globals.css
+2026-04-18 11:01:07: 11:01:07 AM [vite] (client) hmr update /src/components/ProjectStatusReportsDemo.tsx, /src/globals.css
+2026-04-18 11:04:27: 11:04:27 AM [vite] (client) hmr update /src/globals.css, /src/components/ProjectStatusReportsDemo.css
+2026-04-18 11:09:57: 11:09:57 AM [vite] (client) hmr update /src/components/InventoryDemo.tsx, /src/globals.css
+2026-04-18 11:09:57: 11:09:57 AM [vite] (client) hmr update /src/components/ProposalBuilderDemo.tsx, /src/globals.css
+2026-04-18 11:09:57: 11:09:57 AM [vite] (client) hmr update /src/components/PreMeetingBriefingsDemo.tsx, /src/globals.css
+2026-04-18 11:09:57: 11:09:57 AM [vite] (client) hmr update /src/components/ProjectStatusReportsDemo.tsx, /src/globals.css
+2026-04-18 11:09:57: 11:09:57 AM [vite] (client) hmr update /src/globals.css, /src/components/InventoryDemo.css
+2026-04-18 11:09:57: 11:09:57 AM [vite] (client) hmr update /src/globals.css, /src/components/ProposalBuilderDemo.css
+2026-04-18 11:09:57: 11:09:57 AM [vite] (client) hmr update /src/globals.css, /src/components/PreMeetingBriefingsDemo.css
+2026-04-18 11:09:57: 11:09:57 AM [vite] (client) hmr update /src/globals.css, /src/components/ProjectStatusReportsDemo.css
+2026-04-18 11:15:41: 11:15:41 AM [vite] (client) hmr update /src/components/InventoryDemo.tsx, /src/globals.css
+2026-04-18 11:15:41: 11:15:41 AM [vite] (client) hmr update /src/components/ProposalBuilderDemo.tsx, /src/globals.css
+2026-04-18 11:15:41: 11:15:41 AM [vite] (client) hmr update /src/components/PreMeetingBriefingsDemo.tsx, /src/globals.css
+2026-04-18 11:15:41: 11:15:41 AM [vite] (client) hmr update /src/components/ProjectStatusReportsDemo.tsx, /src/globals.css
+2026-04-18 11:21:05: 11:21:05 AM [vite] (client) hmr update /src/components/InventoryDemo.tsx, /src/globals.css
+2026-04-18 11:21:05: 11:21:05 AM [vite] (client) hmr update /src/components/ProposalBuilderDemo.tsx, /src/globals.css
+2026-04-18 11:21:05: 11:21:05 AM [vite] (client) hmr update /src/components/PreMeetingBriefingsDemo.tsx, /src/globals.css
+2026-04-18 11:21:05: 11:21:05 AM [vite] (client) hmr update /src/components/ProjectStatusReportsDemo.tsx, /src/globals.css
+2026-04-18 11:31:04: 11:31:04 AM [vite] (client) hmr update /src/globals.css, /src/components/ProposalBuilderDemo.css
+2026-04-18 11:31:04: 11:31:04 AM [vite] (client) hmr update /src/globals.css, /src/components/PreMeetingBriefingsDemo.css
+2026-04-18 11:31:04: 11:31:04 AM [vite] (client) hmr update /src/globals.css, /src/components/ProjectStatusReportsDemo.css
+2026-04-18 11:53:09: 11:53:09 AM [vite] (client) hmr update /src/routes/MarginalGainsDuplicate.tsx, /src/globals.css
+2026-04-19 08:34:00: 8:34:00 AM [vite] (client) hmr update /src/components/MGHowItWorksSection.tsx, /src/globals.css
+2026-04-19 08:36:57: 8:36:57 AM [vite] (client) hmr update /src/globals.css, /src/components/MGHowItWorksSection.css
+2026-04-19 09:03:33: 9:03:33 AM [vite] (client) hmr update /src/components/MGHowItWorksSection.tsx, /src/globals.css
+2026-04-19 09:06:24: 9:06:24 AM [vite] (client) hmr update /src/components/MGHowItWorksSection.tsx, /src/globals.css
+2026-04-19 09:07:21: 9:07:21 AM [vite] (client) hmr update /src/components/MGHowItWorksSection.tsx, /src/globals.css
+2026-04-19 09:08:37: 9:08:37 AM [vite] (client) hmr update /src/globals.css, /src/components/MGHowItWorksSection.css
+2026-04-19 09:10:01: 9:10:01 AM [vite] (client) hmr update /src/globals.css, /src/components/MGHowItWorksSection.css
+2026-04-19 09:15:34: 9:15:34 AM [vite] (client) hmr update /src/components/MGHowItWorksSection.tsx, /src/globals.css
+2026-04-19 09:15:51: 9:15:51 AM [vite] (client) hmr update /src/globals.css, /src/components/MGHowItWorksSection.css
+2026-04-19 09:24:01: 9:24:01 AM [vite] (client) hmr update /src/components/MGHowItWorksSection.tsx, /src/globals.css
+2026-04-19 09:33:57: 9:33:57 AM [vite] (client) hmr update /src/components/MGHowItWorksSection.tsx, /src/globals.css
+2026-04-19 09:35:04: 9:35:04 AM [vite] (client) hmr update /src/globals.css, /src/components/MGHowItWorksSection.css
+2026-04-19 09:43:09: 9:43:09 AM [vite] (client) hmr update /src/components/MGHowItWorksSection.tsx, /src/globals.css
+2026-04-19 09:43:09: 9:43:09 AM [vite] (client) hmr update /src/globals.css, /src/components/MGHowItWorksSection.css
+2026-04-19 09:43:46: 9:43:46 AM [vite] (client) hmr update /src/globals.css, /src/components/MGHowItWorksSection.css
+2026-04-19 09:45:46: 9:45:46 AM [vite] (client) hmr update /src/globals.css, /src/components/MGHowItWorksSection.css
+2026-04-19 09:50:21: 9:50:21 AM [vite] (client) hmr update /src/globals.css, /src/components/MGHowItWorksSection.css
+2026-04-19 09:54:29: 9:54:29 AM [vite] (client) hmr update /src/components/MGHowItWorksSection.tsx, /src/globals.css
+2026-04-19 09:55:23: 9:55:23 AM [vite] (client) hmr update /src/globals.css, /src/components/MGHowItWorksSection.css
+2026-04-19 09:56:51: 9:56:51 AM [vite] (client) hmr update /src/globals.css, /src/components/MGHowItWorksSection.css
+2026-04-19 09:58:28: 9:58:28 AM [vite] (client) hmr update /src/components/MGHowItWorksSection.tsx, /src/globals.css
+2026-04-19 09:58:41: 9:58:41 AM [vite] (client) hmr update /src/globals.css, /src/components/MGHowItWorksSection.css
+2026-04-19 10:09:38: 10:09:38 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/site-shell-duplicate.tsx
+2026-04-19 10:14:34: 10:14:34 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/site-shell-duplicate.tsx
+2026-04-19 10:29:35: 10:29:35 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/site-shell-duplicate.tsx
+2026-04-19 10:41:36: 10:41:36 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/site-shell-duplicate.tsx
+2026-04-19 10:47:21: 10:47:21 AM [vite] (client) hmr update /src/levelup/components/sections/two-column.tsx, /src/globals.css
+2026-04-19 10:47:49: 10:47:49 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/site-shell-duplicate.tsx
+2026-04-19 10:58:31: 10:58:31 AM [vite] (client) hmr update /src/levelup/components/sections/two-column.tsx, /src/globals.css
+2026-04-19 10:59:33: 10:59:33 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/site-shell-duplicate.tsx
+2026-04-19 11:09:49: 11:09:49 AM [vite] (client) hmr update /src/levelup/components/sections/two-column.tsx, /src/globals.css
+2026-04-19 11:10:02: 11:10:02 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/site-shell-duplicate.tsx
+2026-04-19 11:12:12: 11:12:12 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/marginal-gains.css
+2026-04-19 11:14:51: 11:14:51 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/marginal-gains.css
+2026-04-19 11:26:10: 11:26:10 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/site-shell-duplicate.tsx
+2026-04-19 11:30:06: 11:30:06 AM [vite] (client) hmr update /src/levelup/components/sections/two-column.tsx, /src/globals.css
+2026-04-19 11:30:48: 11:30:48 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/site-shell-duplicate.tsx
+2026-04-19 11:35:46: 11:35:46 AM [vite] (client) hmr update /src/marginal-gains/components/discussion-thread-demo.tsx, /src/globals.css
+2026-04-19 11:36:05: 11:36:05 AM [vite] (client) hmr update /src/marginal-gains/components/product-graph-demo.tsx, /src/globals.css
+2026-04-19 11:46:12: 11:46:12 AM [vite] (client) hmr update /src/marginal-gains/components/monthly-rhythm-demo.tsx, /src/globals.css
+2026-04-19 11:50:03: 11:50:03 AM [vite] (client) hmr update /src/marginal-gains/components/monthly-rhythm-demo.tsx, /src/globals.css
+2026-04-19 11:50:33: 11:50:33 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/monthly-rhythm-demo.css
+2026-04-19 12:00:44: 12:00:44 PM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/monthly-rhythm-demo.css
+2026-04-19 12:00:52: 12:00:52 PM [vite] (client) hmr update /src/marginal-gains/components/capability-depth-demo.tsx, /src/globals.css
+2026-04-19 12:01:16: 12:01:16 PM [vite] (client) hmr update /src/marginal-gains/components/capability-depth-demo.tsx, /src/globals.css
+2026-04-19 12:09:15: 12:09:15 PM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/capability-depth-demo.css
+2026-04-19 12:10:28: 12:10:28 PM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/capability-depth-demo.css
+2026-04-19 12:16:17: 12:16:17 PM [vite] (client) hmr update /src/marginal-gains/components/discussion-thread-demo.tsx, /src/globals.css
+2026-04-19 12:27:30: 12:27:30 PM [vite] (client) hmr update /src/marginal-gains/components/discussion-thread-demo.tsx, /src/globals.css
+2026-04-19 12:31:58: 12:31:58 PM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/discussion-thread-demo.css
+2026-04-19 12:32:28: 12:32:28 PM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/discussion-thread-demo.css
+2026-04-19 12:36:28: 12:36:28 PM [vite] (client) hmr update /src/marginal-gains/components/monthly-rhythm-demo.tsx, /src/globals.css
+2026-04-19 12:37:22: 12:37:22 PM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/monthly-rhythm-demo.css
+2026-04-19 12:43:25: 12:43:25 PM [vite] (client) hmr update /src/marginal-gains/components/capability-depth-demo.tsx, /src/globals.css
+2026-04-19 12:43:55: 12:43:55 PM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/capability-depth-demo.css
+2026-04-19 12:44:11: 12:44:11 PM [vite] (client) hmr update /src/marginal-gains/components/discussion-thread-demo.tsx, /src/globals.css
+2026-04-19 12:47:13: 12:47:13 PM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/discussion-thread-demo.css
+2026-04-19 12:51:20: 12:51:20 PM [vite] (client) hmr update /src/marginal-gains/components/monthly-rhythm-demo.tsx, /src/globals.css
+2026-04-19 12:51:34: 12:51:34 PM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/monthly-rhythm-demo.css
+2026-04-19 12:51:47: 12:51:47 PM [vite] (client) hmr update /src/marginal-gains/components/capability-depth-demo.tsx, /src/globals.css
+2026-04-19 13:04:24: 1:04:24 PM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/capability-depth-demo.css
+2026-04-19 13:08:10: 1:08:10 PM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/site-shell-duplicate.tsx
+2026-04-19 13:08:27: 1:08:27 PM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/marginal-gains.css
+2026-04-19 13:12:05: 1:12:05 PM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/marginal-gains.css
+2026-04-20 05:03:35: 5:03:35 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/monthly-rhythm-demo.css
+2026-04-20 05:05:50: 5:05:50 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/capability-depth-demo.css
+2026-04-20 05:06:27: 5:06:27 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/discussion-thread-demo.css
+2026-04-20 05:11:52: 5:11:52 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/marginal-gains.css
+2026-04-20 05:15:39: 5:15:39 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/site-shell-duplicate.tsx
+2026-04-20 05:58:14: 5:58:14 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/site-shell-duplicate.tsx
+2026-04-20 06:01:58: 6:01:58 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/marginal-gains.css
+2026-04-20 06:15:10: 6:15:10 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/marginal-gains.css
+2026-04-20 06:26:38: 6:26:38 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/marginal-gains.css
+2026-04-20 06:32:39: 6:32:39 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/marginal-gains.css
+2026-04-20 06:48:38: 6:48:38 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/marginal-gains.css
+2026-04-20 06:52:24: 6:52:24 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/marginal-gains.css
+2026-04-20 07:01:36: 7:01:36 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/site-shell-duplicate.tsx
+2026-04-20 07:29:11: 7:29:11 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/site-shell-duplicate.tsx
+2026-04-20 07:32:42: 7:32:42 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/site-shell-duplicate.tsx
+2026-04-20 07:35:10: 7:35:10 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/site-shell-duplicate.tsx
+2026-04-20 07:41:32: 7:41:32 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/site-shell-duplicate.tsx
+2026-04-20 07:42:54: 7:42:54 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/site-shell-duplicate.tsx
+2026-04-20 07:44:26: 7:44:26 AM [vite] (client) hmr update /src/components/MGGridSection.tsx, /src/globals.css
+2026-04-20 07:44:36: 7:44:36 AM [vite] (client) hmr update /src/components/MGHowItWorksSection.tsx, /src/globals.css
+2026-04-20 08:02:58: 8:02:58 AM [vite] (client) hmr update /src/components/MGHowItWorksSection.tsx, /src/globals.css
+2026-04-20 08:07:29: 8:07:29 AM [vite] (client) hmr update /src/components/PainRecognition.tsx, /src/globals.css
+2026-04-20 08:10:49: 8:10:49 AM [vite] (client) hmr update /src/globals.css, /src/components/MGHowItWorksSection.css
+2026-04-20 08:13:02: 8:13:02 AM [vite] (client) hmr update /src/globals.css, /src/components/MGHowItWorksSection.css
+2026-04-20 08:16:20: 8:16:20 AM [vite] (client) hmr update /src/routes/MarginalGains.tsx, /src/globals.css
+2026-04-20 08:16:53: 8:16:53 AM [vite] (client) hmr update /src/routes/MarginalGains.tsx, /src/globals.css
+2026-04-20 08:20:24: 8:20:24 AM [vite] (client) hmr update /src/App.tsx, /src/globals.css
+2026-04-20 08:21:02: 8:21:02 AM [vite] (client) hmr update /src/routes/MarginalGainsDuplicate.tsx, /src/globals.css
+2026-04-20 08:25:03: 8:25:03 AM [vite] (client) hmr update /src/routes/Home.tsx, /src/globals.css
+2026-04-20 08:25:25: 8:25:25 AM [vite] (client) hmr update /src/routes/Home.tsx, /src/globals.css
+2026-04-20 08:27:09: 8:27:09 AM [vite] (client) hmr update /src/routes/HomeDuplicate.tsx, /src/globals.css
+2026-04-20 08:28:32: 8:28:32 AM [vite] (client) hmr update /src/routes/HomeDuplicate.tsx, /src/globals.css
+2026-04-20 08:29:20: 8:29:20 AM [vite] (client) hmr update /src/App.tsx, /src/globals.css
+2026-04-20 08:33:33: 8:33:33 AM [vite] (client) page reload scripts/prerender-meta.js
+2026-04-20 08:33:33: 8:33:33 AM [vite] (client) hmr update /src/components/NavigationHomeDuplicate.tsx, /src/globals.css
+2026-04-20 08:33:33: 8:33:33 AM [vite] (client) hmr update /src/components/FooterHomeDuplicate.tsx, /src/globals.css
+2026-04-20 08:33:33: 8:33:33 AM [vite] (client) hmr update /src/components/InfrastructureSection.tsx, /src/globals.css
+2026-04-20 08:38:29: 8:38:29 AM [vite] (client) hmr update /src/globals.css, /src/components/ExamplesSection.css
+2026-04-20 08:41:39: 8:41:39 AM [vite] (client) hmr update /src/globals.css, /src/components/ExamplesSection.css
+2026-04-20 08:46:05: 8:46:05 AM [vite] (client) hmr update /src/globals.css, /src/components/ExamplesSection.css
+2026-04-20 08:49:05: 8:49:05 AM [vite] (client) hmr update /src/globals.css, /src/components/InfrastructureSection.css
+2026-04-20 08:50:46: 8:50:46 AM [vite] (client) hmr update /src/globals.css, /src/components/InfrastructureSection.css
+2026-04-20 08:55:23: 8:55:23 AM [vite] (client) hmr update /src/globals.css, /src/components/Hero.css
+2026-04-20 08:58:08: 8:58:08 AM [vite] (client) hmr update /src/globals.css, /src/components/Hero.css
+2026-04-20 09:00:55: 9:00:55 AM [vite] (client) hmr update /src/globals.css, /src/components/Hero.css
+2026-04-20 09:02:30: 9:02:30 AM [vite] (client) hmr update /src/components/HeroHomeDuplicate.tsx, /src/globals.css
+2026-04-20 09:03:50: 9:03:50 AM [vite] (client) hmr update /src/globals.css, /src/components/Hero.css
+2026-04-20 09:04:47: 9:04:47 AM [vite] (client) hmr update /src/globals.css, /src/components/Hero.css
+2026-04-20 09:05:54: 9:05:54 AM [vite] (client) hmr update /src/globals.css, /src/components/Hero.css
+2026-04-20 09:08:30: 9:08:30 AM [vite] (client) hmr update /src/globals.css, /src/components/HomeDuplicateGridSection.css
+2026-04-20 09:19:42: 9:19:42 AM [vite] (client) hmr update /src/globals.css, /src/components/HomeDuplicateGridSection.css
+2026-04-20 09:43:54: 9:43:54 AM [vite] (client) hmr update /src/globals.css, /src/components/HomeDuplicateGridSection.css
+2026-04-20 09:51:54: 9:51:54 AM [vite] (client) hmr update /src/components/FunnelHomeDuplicate.tsx, /src/globals.css
+2026-04-20 09:51:54: 9:51:54 AM [vite] (client) hmr update /src/globals.css, /src/components/FunnelSection.css
+2026-04-20 09:51:54: 9:51:54 AM [vite] (client) hmr update /src/globals.css, /src/components/HomeDuplicateGridSection.css
+2026-04-20 09:51:54: 9:51:54 AM [vite] (client) hmr update /src/globals.css, /src/components/ExamplesSection.css
+2026-04-20 09:51:54: 9:51:54 AM [vite] (client) hmr update /src/globals.css, /src/components/InfrastructureSection.css
+2026-04-20 09:52:39: 9:52:39 AM [vite] (client) hmr update /src/globals.css, /src/components/FunnelSection.css
+2026-04-20 09:56:52: 9:56:52 AM [vite] (client) hmr update /src/globals.css, /src/components/HomeDuplicateGridSection.css
+2026-04-20 09:56:52: 9:56:52 AM [vite] (client) hmr update /src/globals.css, /src/components/FunnelSection.css
+2026-04-20 09:56:52: 9:56:52 AM [vite] (client) hmr update /src/globals.css, /src/components/ExamplesSection.css
+2026-04-20 09:56:52: 9:56:52 AM [vite] (client) hmr update /src/globals.css, /src/components/InfrastructureSection.css
+2026-04-20 09:59:26: 9:59:26 AM [vite] (client) hmr update /src/globals.css, /src/components/FunnelSection.css
+2026-04-20 09:59:26: 9:59:26 AM [vite] (client) hmr update /src/globals.css, /src/components/HomeDuplicateGridSection.css
+2026-04-20 09:59:26: 9:59:26 AM [vite] (client) hmr update /src/globals.css, /src/components/ExamplesSection.css
+2026-04-20 10:00:52: 10:00:52 AM [vite] (client) hmr update /src/globals.css, /src/components/HomeDuplicateGridSection.css
+2026-04-20 10:00:52: 10:00:52 AM [vite] (client) hmr update /src/globals.css, /src/components/ExamplesSection.css
+2026-04-20 10:00:52: 10:00:52 AM [vite] (client) hmr update /src/globals.css, /src/components/InfrastructureSection.css
+2026-04-20 10:00:52: 10:00:52 AM [vite] (client) hmr update /src/globals.css, /src/components/FunnelSection.css
+2026-04-20 10:01:43: 10:01:43 AM [vite] (client) hmr update /src/globals.css, /src/components/HomeDuplicateGridSection.css
+2026-04-20 10:01:43: 10:01:43 AM [vite] (client) hmr update /src/globals.css, /src/components/ExamplesSection.css
+2026-04-20 10:01:43: 10:01:43 AM [vite] (client) hmr update /src/globals.css, /src/components/InfrastructureSection.css
+2026-04-20 10:01:43: 10:01:43 AM [vite] (client) hmr update /src/globals.css, /src/components/FunnelSection.css
+2026-04-20 10:04:05: 10:04:05 AM [vite] (client) hmr update /src/globals.css, /src/components/HomeDuplicateGridSection.css
+2026-04-20 10:07:12: 10:07:12 AM [vite] (client) hmr update /src/globals.css, /src/components/WingmanDemo.css
+2026-04-20 10:13:49: 10:13:49 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/marginal-gains.css
+2026-04-20 10:13:49: 10:13:49 AM [vite] (client) hmr update /src/globals.css, /src/components/MGHowItWorksSection.css
+2026-04-20 10:41:02: 10:41:02 AM [vite] (client) hmr update /src/components/HeroMarginalGainsDuplicate.tsx, /src/globals.css
+2026-04-20 10:41:02: 10:41:02 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/marginal-gains.css
+2026-04-20 10:41:02: 10:41:02 AM [vite] (client) hmr update /src/globals.css, /src/components/MGGridSection.css
+2026-04-20 10:49:01: 10:49:01 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/marginal-gains.css
+2026-04-20 10:49:01: 10:49:01 AM [vite] (client) hmr update /src/globals.css, /src/components/MGGridSection.css
+2026-04-20 10:57:24: 10:57:24 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/marginal-gains.css
+2026-04-20 10:58:35: 10:58:35 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/marginal-gains.css
+2026-04-20 11:01:26: 11:01:26 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/marginal-gains.css
+2026-04-20 11:04:09: 11:04:09 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/marginal-gains.css
+2026-04-20 11:07:27: 11:07:27 AM [vite] (client) hmr update /src/globals.css, /src/marginal-gains/components/site-shell-duplicate.tsx
+2026-04-20 11:10:17: 11:10:17 AM [vite] (client) hmr update /src/components/NavigationHomeDuplicate.tsx, /src/globals.css
+2026-04-20 11:10:17: 11:10:17 AM [vite] (client) hmr update /src/components/NavigationDraft.tsx, /src/globals.css
+2026-04-20 11:12:11: 11:12:11 AM [vite] (client) hmr update /src/components/NavigationHomeDuplicate.tsx, /src/globals.css
+2026-04-20 11:12:11: 11:12:11 AM [vite] (client) hmr update /src/components/NavigationDraft.tsx, /src/globals.css
+2026-04-20 11:15:14: 11:15:14 AM [vite] (client) hmr update /src/components/NavigationHomeDuplicate.tsx, /src/globals.css
+2026-04-20 11:15:14: 11:15:14 AM [vite] (client) hmr update /src/components/NavigationDraft.tsx, /src/globals.css
+2026-04-20 11:16:52: 11:16:52 AM [vite] (client) hmr update /src/components/FooterHomeDuplicate.tsx, /src/globals.css
+2026-04-20 11:16:52: 11:16:52 AM [vite] (client) hmr update /src/components/Footer.tsx, /src/globals.css
+2026-04-20 11:23:54: 11:23:54 AM [vite] (client) hmr update /src/components/CTASection.tsx, /src/globals.css
+2026-04-20 11:26:35: 11:26:35 AM [vite] (client) hmr update /src/routes/About.tsx, /src/globals.css
+2026-04-20 11:33:31: 11:33:31 AM [vite] (client) hmr update /src/routes/About.tsx, /src/globals.css
+2026-04-20 11:36:26: 11:36:26 AM [vite] (client) hmr update /src/routes/About.tsx, /src/globals.css
+2026-04-20 11:36:26: 11:36:26 AM [vite] (client) hmr update /src/globals.css, /src/routes/About.css
+2026-04-20 11:38:39: 11:38:39 AM [vite] (client) hmr update /src/routes/About.tsx, /src/globals.css
+2026-04-20 11:46:36: 11:46:36 AM [vite] (client) hmr update /src/globals.css, /src/routes/About.css
+2026-04-20 12:02:01: 12:02:01 PM [vite] (client) hmr update /src/globals.css, /src/routes/TheGoodStuff.css
+2026-04-20 12:02:01: 12:02:01 PM [vite] (client) page reload package.json
+2026-04-20 12:03:00: 12:03:00 PM [vite] (client) hmr update /src/globals.css, /src/routes/TheGoodStuff.css
+2026-04-20 12:03:13: 12:03:13 PM [vite] (client) page reload public/podcast-episodes.json
+2026-04-20 12:04:18: 12:04:18 PM [vite] (client) hmr update /src/globals.css, /src/routes/TheGoodStuff.css
+2026-04-20 12:11:16: 12:11:16 PM [vite] (client) hmr update /src/globals.css, /src/routes/WritingPost.css
+2026-04-20 12:13:01: 12:13:01 PM [vite] (client) hmr update /src/components/LegalPage.tsx, /src/globals.css
+2026-04-20 12:13:17: 12:13:17 PM [vite] (client) hmr update /src/globals.css, /src/routes/WritingPost.css
+2026-04-20 12:14:05: 12:14:05 PM [vite] (client) hmr update /src/globals.css, /src/routes/WritingPost.css
+2026-04-20 12:16:31: 12:16:31 PM [vite] (client) hmr update /src/components/FunnelHomeDuplicate.tsx, /src/globals.css

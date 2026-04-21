@@ -1,71 +1,83 @@
+import { lazy, Suspense } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Home from './routes/Home';
-import HomeDuplicate from './routes/HomeDuplicate';
-import Company from './routes/Company';
-import LevelUp from './routes/LevelUp';
-import Speedrun from './routes/Speedrun';
-import MarginalGains from './routes/MarginalGains';
-import TheGoodStuff from './routes/TheGoodStuff';
-import Writing from './routes/Writing';
-import WritingPost from './routes/WritingPost';
-import About from './routes/About';
-import Games from './routes/Games';
-import Terms from './routes/Terms';
-import Privacy from './routes/Privacy';
+
+const Home = lazy(() => import('./routes/Home'));
+const ArchiveHome = lazy(() => import('./routes/ArchiveHome'));
+const Company = lazy(() => import('./routes/Company'));
+const LevelUp = lazy(() => import('./routes/LevelUp'));
+const Speedrun = lazy(() => import('./routes/Speedrun'));
+const MarginalGains = lazy(() => import('./routes/MarginalGains'));
+const TheGoodStuff = lazy(() => import('./routes/TheGoodStuff'));
+const Writing = lazy(() => import('./routes/Writing'));
+const WritingPost = lazy(() => import('./routes/WritingPost'));
+const About = lazy(() => import('./routes/About'));
+const Games = lazy(() => import('./routes/Games'));
+const Terms = lazy(() => import('./routes/Terms'));
+const Privacy = lazy(() => import('./routes/Privacy'));
+const NotFound = lazy(() => import('./routes/NotFound'));
+
+function SuspenseWrapper({ children }: { children: React.ReactNode }) {
+  return <Suspense fallback={null}>{children}</Suspense>;
+}
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <HomeDuplicate />,
+    element: <SuspenseWrapper><Home /></SuspenseWrapper>,
   },
   {
     path: '/levelup',
-    element: <LevelUp />,
+    element: <SuspenseWrapper><LevelUp /></SuspenseWrapper>,
   },
   {
     path: '/speedrun',
-    element: <Speedrun />,
+    element: <SuspenseWrapper><Speedrun /></SuspenseWrapper>,
   },
   {
     path: '/marginal-gains',
-    element: <MarginalGains />,
+    element: <SuspenseWrapper><MarginalGains /></SuspenseWrapper>,
   },
   {
     path: '/the-good-stuff',
-    element: <TheGoodStuff />,
+    element: <SuspenseWrapper><TheGoodStuff /></SuspenseWrapper>,
   },
   {
     path: '/writing',
-    element: <Writing />,
+    element: <SuspenseWrapper><Writing /></SuspenseWrapper>,
   },
   {
     path: '/games',
-    element: <Games />,
+    element: <SuspenseWrapper><Games /></SuspenseWrapper>,
   },
   {
     path: '/writing/post',
-    element: <WritingPost />,
+    element: <SuspenseWrapper><WritingPost /></SuspenseWrapper>,
   },
   {
     path: '/about',
-    element: <About />,
+    element: <SuspenseWrapper><About /></SuspenseWrapper>,
   },
   {
     path: '/terms',
-    element: <Terms />,
+    element: <SuspenseWrapper><Terms /></SuspenseWrapper>,
   },
   {
     path: '/privacy',
-    element: <Privacy />,
+    element: <SuspenseWrapper><Privacy /></SuspenseWrapper>,
   },
   // Archived pages (noindex)
   {
     path: '/archive/home',
-    element: <Home />,
+    element: <SuspenseWrapper><ArchiveHome /></SuspenseWrapper>,
   },
   {
     path: '/archive/company',
-    element: <Company />,
+    element: <SuspenseWrapper><Company /></SuspenseWrapper>,
+  },
+  // Catch-all 404
+  {
+    path: '*',
+    element: <SuspenseWrapper><NotFound /></SuspenseWrapper>,
   },
 ]);
 

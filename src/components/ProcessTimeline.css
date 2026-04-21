@@ -1,0 +1,210 @@
+/* ==========================================================================
+   PROCESS TIMELINE
+   ========================================================================== */
+
+.os-theme .section.process-timeline-section {
+  min-height: auto;
+  padding: clamp(112px, 12vw, 168px) var(--container-padding) clamp(72px, 8vw, 112px);
+}
+
+.os-theme .section.process-timeline-section::after {
+  left: 0;
+  right: 0;
+}
+
+.process-timeline-container {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.process-timeline-container .intro-pill {
+  margin-bottom: 32px;
+}
+
+.process-timeline-heading {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  color: #ffffff;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: clamp(64px, 6vw, 96px);
+  line-height: 1.1;
+}
+
+/* Timeline */
+.process-timeline {
+  text-align: left;
+  position: relative;
+}
+
+/* Step */
+.process-step {
+  display: flex;
+  gap: 24px;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Marker column */
+.process-step-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 40px;
+}
+
+.process-step-dot {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(240, 240, 240, 0.15);
+  background: var(--color-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 12px;
+  color: rgba(240, 240, 240, 0.4);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.process-step.expanded .process-step-dot {
+  border-color: rgba(46, 167, 130, 0.6);
+  color: #2ea782;
+  box-shadow: 0 0 20px rgba(46, 167, 130, 0.15);
+}
+
+.process-step.completed .process-step-dot {
+  border-color: rgba(46, 167, 130, 0.3);
+  color: rgba(46, 167, 130, 0.5);
+}
+
+.process-step-line {
+  width: 1px;
+  flex: 1;
+  background: rgba(240, 240, 240, 0.08);
+  min-height: 24px;
+}
+
+.process-step.expanded .process-step-line {
+  background: rgba(46, 167, 130, 0.2);
+}
+
+/* Content */
+.process-step-content {
+  padding-bottom: 32px;
+  flex: 1;
+  min-width: 0;
+}
+
+.process-step:last-child .process-step-content {
+  padding-bottom: 0;
+}
+
+.os-theme .process-step-title {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: var(--weight-bold);
+  color: rgba(240, 240, 240, 0.5);
+  line-height: 40px; /* match dot height for alignment */
+  letter-spacing: 0;
+  text-transform: none;
+  transition: color 0.3s ease;
+}
+
+.process-step.expanded .process-step-title {
+  color: #ffffff;
+}
+
+.process-step.completed .process-step-title {
+  color: rgba(240, 240, 240, 0.5);
+}
+
+.process-step:hover .process-step-title {
+  color: rgba(240, 240, 240, 0.8);
+}
+
+.process-step.expanded:hover .process-step-title {
+  color: #ffffff;
+}
+
+.process-step-description {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease;
+  margin-top: 0;
+}
+
+.process-step-description.visible {
+  max-height: 200px;
+  opacity: 1;
+  margin-top: 12px;
+}
+
+.process-step-description p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(240, 240, 240, 0.65);
+  max-width: 520px;
+}
+
+.process-step-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  height: 32px;
+  padding: 0 20px;
+  background: #ff751f;
+  color: #ffffff;
+  border-radius: 4px;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: var(--weight-regular);
+  text-decoration: none;
+  letter-spacing: 0.2px;
+  transition: all var(--duration-base) var(--ease-in-out);
+}
+
+.process-step-cta:hover {
+  background: #ffffff;
+  color: #0a0908;
+  transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .process-timeline-container {
+    max-width: 100%;
+  }
+
+  .process-step {
+    gap: 16px;
+  }
+
+  .process-step-marker {
+    width: 32px;
+  }
+
+  .process-step-dot {
+    width: 32px;
+    height: 32px;
+    font-size: 11px;
+  }
+
+  .process-step-title {
+    font-size: 16px;
+    line-height: 32px;
+  }
+
+  .process-step-content {
+    padding-bottom: 24px;
+  }
+}

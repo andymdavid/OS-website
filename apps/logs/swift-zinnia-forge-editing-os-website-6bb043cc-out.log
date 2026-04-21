@@ -1,0 +1,17 @@
+2026-03-27 02:29:05: time=2026-03-27T02:29:05.527Z level=INFO msg="Running: claude "
+2026-03-27 02:29:05: time=2026-03-27T02:29:05.534Z level=INFO msg="Allowed hosts: localhost, 127.0.0.1, ::1, dev.otherstuff.studio, dev.otherstuff.ai"
+2026-03-27 02:29:05: time=2026-03-27T02:29:05.534Z level=INFO msg="Allowed origins: *"
+2026-03-27 02:29:05: time=2026-03-27T02:29:05.534Z level=INFO msg="Created temporary directory for uploads" tempDir=/tmp/agentapi-uploads-2015879804
+2026-03-27 02:29:05: time=2026-03-27T02:29:05.551Z level=INFO msg="Starting server on port" port=3700
+2026-03-27 02:29:05: time=2026-03-27T02:29:05.770Z level=INFO msg="New subscriber" subscriberId=0
+2026-03-27 02:29:06: time=2026-03-27T02:29:06.925Z level=INFO msg="New subscriber" subscriberId=1
+2026-03-27 02:31:07: time=2026-03-27T02:31:07.006Z level=INFO msg="Context done" subscriberId=1
+2026-03-27 02:31:16: time=2026-03-27T02:31:16.931Z level=INFO msg="New subscriber" subscriberId=2
+2026-03-27 02:33:47: time=2026-03-27T02:33:47.009Z level=INFO msg="Context done" subscriberId=2
+2026-03-27 02:36:25: time=2026-03-27T02:36:25.768Z level=INFO msg="Context done" subscriberId=0
+2026-03-27 02:36:26: time=2026-03-27T02:36:26.770Z level=INFO msg="New subscriber" subscriberId=3
+2026-03-27 02:36:33: time=2026-03-27T02:36:33.377Z level=INFO msg="Received shutdown signal" signal=interrupt
+2026-03-27 02:36:33: time=2026-03-27T02:36:33.378Z level=INFO msg="State persistence is disabled"
+2026-03-27 02:36:33: time=2026-03-27T02:36:33.378Z level=INFO msg="Cleaned up temporary directory" tempDir=/tmp/agentapi-uploads-2015879804
+2026-03-27 02:36:33: time=2026-03-27T02:36:33.378Z level=INFO msg="Server stop initiated, unsubscribing." subscriberId=3
+2026-03-27 02:36:33: time=2026-03-27T02:36:33.380Z level=INFO msg="Closing process"

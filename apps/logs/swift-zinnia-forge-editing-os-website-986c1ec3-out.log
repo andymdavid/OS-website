@@ -1,0 +1,39 @@
+2026-04-09 10:31:22: time=2026-04-09T10:31:22.356Z level=INFO msg="Running: codex -c mcp_servers.wingman.command=\"bun\" -c mcp_servers.wingman.args=[\"run\",\"/home/pw21/code/wingman/src/mcp/stdio-server.ts\"] -c mcp_servers.wingman.env={ WINGMAN_URL = \"http://localhost:3021\", SESSION_ID = \"986c1ec3-9a71-4f92-b50d-8f1a3e4d9408\", BOT_PUBKEY_HEX = \"ef7dd16da39491e066e31d2403a2ee51dca07d4e2a58bd1ce98c1c848193b992\", BOT_NPUB = \"npub1aa7azmdrjjg7qehrr5jq8ghw28w2ql2w9fvt688f3swgfqvnhxfqfu9jrr\", USER_NPUB = \"npub1qkntvygrrxkc3ynfzw56aq8far9wnxcfjd8d4lfwhnnlnctn4k5sa2d05s\", AGENT_NSEC = \"db2063e0a8f829ef9f0cfdf60b9e1adcee1feb61d1a663a4b125d1627686c7a9\" }"
+2026-04-09 10:31:22: time=2026-04-09T10:31:22.361Z level=INFO msg="Allowed hosts: localhost, 127.0.0.1, ::1, dev.otherstuff.studio, dev.otherstuff.ai"
+2026-04-09 10:31:22: time=2026-04-09T10:31:22.361Z level=INFO msg="Allowed origins: *"
+2026-04-09 10:31:22: time=2026-04-09T10:31:22.361Z level=INFO msg="Created temporary directory for uploads" tempDir=/tmp/agentapi-uploads-4253805676
+2026-04-09 10:31:22: time=2026-04-09T10:31:22.380Z level=INFO msg="Starting server on port" port=3702
+2026-04-09 10:31:22: time=2026-04-09T10:31:22.704Z level=INFO msg="New subscriber" subscriberId=0
+2026-04-09 10:37:52: time=2026-04-09T10:37:52.655Z level=INFO msg="Context done" subscriberId=0
+2026-04-09 10:37:53: time=2026-04-09T10:37:53.664Z level=INFO msg="New subscriber" subscriberId=1
+2026-04-09 10:45:52: time=2026-04-09T10:45:52.655Z level=INFO msg="Context done" subscriberId=1
+2026-04-09 10:45:53: time=2026-04-09T10:45:53.660Z level=INFO msg="New subscriber" subscriberId=2
+2026-04-09 10:50:52: time=2026-04-09T10:50:52.655Z level=INFO msg="Context done" subscriberId=2
+2026-04-09 10:50:53: time=2026-04-09T10:50:53.659Z level=INFO msg="New subscriber" subscriberId=3
+2026-04-09 10:55:52: time=2026-04-09T10:55:52.655Z level=INFO msg="Context done" subscriberId=3
+2026-04-09 10:55:53: time=2026-04-09T10:55:53.660Z level=INFO msg="New subscriber" subscriberId=4
+2026-04-09 11:00:52: time=2026-04-09T11:00:52.655Z level=INFO msg="Context done" subscriberId=4
+2026-04-09 11:00:53: time=2026-04-09T11:00:53.660Z level=INFO msg="New subscriber" subscriberId=5
+2026-04-09 11:05:52: time=2026-04-09T11:05:52.655Z level=INFO msg="Context done" subscriberId=5
+2026-04-09 11:05:53: time=2026-04-09T11:05:53.662Z level=INFO msg="New subscriber" subscriberId=6
+2026-04-09 11:10:52: time=2026-04-09T11:10:52.655Z level=INFO msg="Context done" subscriberId=6
+2026-04-09 11:10:53: time=2026-04-09T11:10:53.661Z level=INFO msg="New subscriber" subscriberId=7
+2026-04-09 11:15:52: time=2026-04-09T11:15:52.655Z level=INFO msg="Context done" subscriberId=7
+2026-04-09 11:15:53: time=2026-04-09T11:15:53.657Z level=INFO msg="New subscriber" subscriberId=8
+2026-04-09 11:20:52: time=2026-04-09T11:20:52.655Z level=INFO msg="Context done" subscriberId=8
+2026-04-09 11:20:53: time=2026-04-09T11:20:53.659Z level=INFO msg="New subscriber" subscriberId=9
+2026-04-09 11:23:22: time=2026-04-09T11:23:22.651Z level=INFO msg="Context done" subscriberId=9
+2026-04-09 11:23:23: time=2026-04-09T11:23:23.719Z level=INFO msg="New subscriber" subscriberId=10
+2026-04-09 11:27:52: time=2026-04-09T11:27:52.655Z level=INFO msg="Context done" subscriberId=10
+2026-04-09 11:27:53: time=2026-04-09T11:27:53.660Z level=INFO msg="New subscriber" subscriberId=11
+2026-04-09 11:31:12: time=2026-04-09T11:31:12.566Z level=INFO msg="New subscriber" subscriberId=12
+2026-04-09 11:31:23: time=2026-04-09T11:31:23.841Z level=INFO msg="Context done" subscriberId=11
+2026-04-09 11:35:52: time=2026-04-09T11:35:52.655Z level=INFO msg="Context done" subscriberId=12
+2026-04-09 11:35:53: time=2026-04-09T11:35:53.661Z level=INFO msg="New subscriber" subscriberId=13
+2026-04-09 11:40:52: time=2026-04-09T11:40:52.655Z level=INFO msg="Context done" subscriberId=13
+2026-04-09 11:40:53: time=2026-04-09T11:40:53.660Z level=INFO msg="New subscriber" subscriberId=14
+2026-04-09 11:41:57: time=2026-04-09T11:41:57.551Z level=INFO msg="Received shutdown signal" signal=interrupt
+2026-04-09 11:41:57: time=2026-04-09T11:41:57.551Z level=INFO msg="State persistence is disabled"
+2026-04-09 11:41:57: time=2026-04-09T11:41:57.552Z level=INFO msg="Server stop initiated, unsubscribing." subscriberId=14
+2026-04-09 11:41:57: time=2026-04-09T11:41:57.552Z level=INFO msg="Cleaned up temporary directory" tempDir=/tmp/agentapi-uploads-4253805676
+2026-04-09 11:41:57: time=2026-04-09T11:41:57.552Z level=INFO msg="Closing process"

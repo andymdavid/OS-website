@@ -79,7 +79,7 @@ export const siteContent: SiteContent = {
         variant: "homeStyle",
         title: "Where students learn AI by building games.",
         subtitle:
-          "Level Up is a hands-on workshop where students learn how AI works in practice by building their very own game, gaining a practical understanding of how AI systems behave by actually using them.",
+          "Level Up is a hands-on AI incursion for Perth and Western Australia schools, where students build their own game and learn how AI works through practical classroom experience.",
         subtitleMaxWidth: "42rem",
         centerContent: true,
         contentOffset: "clamp(-208px, -14vh, -80px)",
@@ -104,10 +104,10 @@ export const siteContent: SiteContent = {
       props: {
         title: "What is Level-Up?",
         body:
-          "Level Up is a guided, hands-on workshop designed for school students to learn how AI works by actually using it. During the session, students build their own games with AI coding agents, experimenting, iterating, and seeing how instructions turn into behaviour on screen.",
+          "Level Up is a guided AI incursion for school students, designed to teach how AI works through hands-on use. During the session, students build their own games with AI tools, experiment with ideas, and see how instructions turn into behaviour on screen.",
         bodyParagraphs: [
-          "Level Up is a guided, hands-on workshop designed for school students to learn how AI works by actually using it. During the session, students build their own games with AI coding agents, experimenting, iterating, and seeing how instructions turn into behaviour on screen.",
-          "The workshop is facilitated step by step in a classroom setting, with students working through the process together alongside their teachers and making progress as they go. Level Up is designed to fit naturally into real school environments, focusing on practical experience and understanding of AI, rather than abstract explanation.",
+          "Level Up is a guided AI incursion for school students, designed to teach how AI works through hands-on use. During the session, students build their own games with AI tools, experiment with ideas, and see how instructions turn into behaviour on screen.",
+          "The session is facilitated step by step in a classroom setting, with students working alongside their teachers and making progress as they go. Level Up is designed to fit naturally into school environments across Perth and Western Australia, focusing on practical experience and understanding rather than abstract explanation.",
         ],
         blocksVariant: "feature",
         featureCardsAsCard: true,
@@ -119,13 +119,13 @@ export const siteContent: SiteContent = {
           {
             number: "01",
             title: "Who it’s for",
-            body: "For high school students. Designed for mixed abilities, no prior coding required.",
+            body: "For Perth and WA high school students. Designed for mixed abilities, with no prior coding required.",
             video: "/Wizard.mp4",
           },
           {
             number: "02",
             title: "Session format",
-            body: "90-minute, facilitated workshop. Hands-on and guided from start to finish.",
+            body: "A 90-minute facilitated AI incursion and classroom workshop, guided from start to finish and designed to fit real school settings.",
             video: "/girl.mp4",
           },
           {
@@ -176,7 +176,7 @@ export const siteContent: SiteContent = {
       id: "twoColumn-3",
       props: {
         title: "What happens in a Level Up workshop",
-        body: "Each session is designed to get students building quickly, with clear guidance at the start and increasing independence as they go. Students learn by making changes, testing ideas, and seeing the results immediately in the game they're building.",
+        body: "Each Level Up session is designed to get students building quickly, with clear guidance at the start and increasing independence as they go. Students learn by making changes, testing ideas, and seeing the results immediately in the game they're building during this Perth school incursion.",
         singleColumn: true,
         fullHeight: true,
         levelUpCards: [
@@ -239,6 +239,7 @@ export const siteContent: SiteContent = {
         layout: "split",
         title: "What Students Walk Away With",
         body: "By the end of the workshop, students have more than a finished game. They leave with a practical understanding of AI and the confidence that comes from having built something themselves.",
+        
         splitVideo: "/SatsGarden.mp4",
         splitBlocksColumns: "thirdTwoThirds",
         splitBlocks: [
@@ -265,7 +266,7 @@ export const siteContent: SiteContent = {
         layout: "split",
         splitReverse: true,
         title: "Support for Teachers and Schools",
-        body: "Level Up is designed to fit comfortably into real classroom environments, with facilitation and support built in from the start.",
+        body: "Level Up is available as a school AI incursion across Perth and Western Australia. It is designed to fit comfortably into real classroom environments, with facilitation and support built in from the start.",
         splitVideo: "/SkiSats.mp4",
         splitBlocksColumns: "thirdTwoThirds",
         splitBlocks: [
@@ -349,7 +350,7 @@ export const siteContent: SiteContent = {
           {
             title: "Pete Winn",
             role: "Co-Founder",
-            image: "/Pete.png",
+            image: "/Pete.webp",
             body: "Pete has a long track record in process redesign, deep tech and large enterprise and programme deployments from Rolls Royce to Rio Tinto.",
             showSocialButtons: true,
             socialLinks: {
@@ -360,7 +361,7 @@ export const siteContent: SiteContent = {
           {
             title: "Andy David",
             role: "Co-Founder",
-            image: "/Andy.png",
+            image: "/Andy.webp",
             body: "Andy's background is in venture design, management consulting and technology startups, including process improvement for enterprise and SMEs.",
             showSocialButtons: true,
             socialLinks: {
@@ -621,7 +622,7 @@ export const siteContent: SiteContent = {
         social: [
           { platform: "X", href: "https://x.com/OtherStuffAU" },
           { platform: "LinkedIn", href: "https://www.linkedin.com/company/otherstuffvs/" },
-          { platform: "YouTube", href: "https://otherstuff.studio/thegoodstuff" },
+          { platform: "YouTube", href: "https://otherstuff.ai/the-good-stuff" },
         ],
         contact: {
           email: "info@otherstuff.studio",

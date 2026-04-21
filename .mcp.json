@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "wingman": {
+      "type": "stdio",
+      "command": "bun",
+      "args": [
+        "run",
+        "/home/pw21/code/wingman/src/mcp/stdio-server.ts"
+      ],
+      "env": {
+        "WINGMAN_URL": "http://localhost:3021",
+        "SESSION_ID": "867533ae-2bdf-4e96-adf9-d91feb3d86f6",
+        "BOT_PUBKEY_HEX": "ef7dd16da39491e066e31d2403a2ee51dca07d4e2a58bd1ce98c1c848193b992",
+        "BOT_NPUB": "npub1aa7azmdrjjg7qehrr5jq8ghw28w2ql2w9fvt688f3swgfqvnhxfqfu9jrr",
+        "USER_NPUB": "npub1qkntvygrrxkc3ynfzw56aq8far9wnxcfjd8d4lfwhnnlnctn4k5sa2d05s",
+        "AGENT_NSEC": "db2063e0a8f829ef9f0cfdf60b9e1adcee1feb61d1a663a4b125d1627686c7a9"
+      }
+    }
+  }
+}

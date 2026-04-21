@@ -1,0 +1,66 @@
+# Other Stuff
+
+> Other Stuff is an AI-first product studio based in Perth, Western Australia. We help Australian organisations build practical internal AI capability through hands-on experience.
+
+## What We Do
+
+Other Stuff works with Perth businesses, schools, and organisations across Western Australia to help their teams understand and apply AI through hands-on experience — not theory. We believe AI capability develops through many small improvements that compound over time.
+
+## Location
+
+- Based in City Beach, Perth, Western Australia 6015
+- Serving businesses across Perth, Western Australia, and Australia
+
+## Our Products and Services
+
+### Speedrun Workshop
+- URL: https://otherstuff.ai/speedrun
+- A 3-hour hands-on AI workshop delivered in Perth for teams and SMEs
+- Participants learn to use AI by building practical tools with AI agents
+- No coding experience required
+- For SME operators and team leads in Western Australia
+
+### Level Up Workshop
+- URL: https://otherstuff.ai/levelup
+- A 90-minute AI workshop for high school students in Western Australia
+- Students learn how AI works by building their own game
+- Designed for junior to middle high school students
+- No prior coding required, works with standard school devices
+
+### Marginal Gains
+- URL: https://otherstuff.ai/marginal-gains
+- Ongoing AI capability development for Australian SMEs
+- Monthly working sessions, shared learning, and hands-on support from Perth-based Other Stuff
+- Members work hands-on with AI agents that support day-to-day work
+- Designed to develop AI champions inside businesses
+
+### Wingman
+- Open-source AI agent management system
+- Central tool that enables practical AI capability across teams
+
+## Media
+
+### The Good Stuff (Podcast)
+- URL: https://otherstuff.ai/the-good-stuff
+- An Australian AI podcast with Pete Winn and Andy David from Perth
+- Exploring everyday experiences working with AI and how it's changing work, business, and human potential
+
+### Writing
+- URL: https://otherstuff.ai/writing
+- Notes, ideas, and fieldwork from building with AI in Perth
+
+### Games
+- URL: https://otherstuff.ai/games
+- Playable games built with AI by Other Stuff in Perth as examples of rapid AI-assisted development
+
+## Team
+
+- Pete Winn — Co-Founder. Background in process redesign, deep tech, and large enterprise deployments (Rolls Royce, Rio Tinto).
+- Andy David — Co-Founder. Background in venture design, management consulting, and technology startups.
+
+## Contact
+
+- Website: https://otherstuff.ai
+- Email: info@otherstuff.studio
+- Location: City Beach, Perth, Western Australia 6015
+- Company: Other Stuff Pty Ltd (ABN 20 682 110 970)

@@ -7,30 +7,30 @@ export function FunnelSection() {
     {
       category: 'Build Internal Capability',
       date: 'We Start Here',
-      title: 'Speedrun Workshops',
+      title: 'Build Internal AI Capability',
       description:
-        "Speedrun is a hands-on workshop format designed to help businesses learn how to work with AI by building practical business tools and workflows.\n\nIt is delivered in two formats - Speedrun and Speedrun Applied - which share the same approach but differ in scope and depth.\n\nAcross both formats, participants work hands-on with AI agents (including Wingman, Claude Code, Codex, and Goose) to build real, working business tools.",
-      image: '/Card1.png',
-      buttonText: 'Start Here',
+        "Speedrun is a private hands-on AI workshop for business teams that want to build practical business tools and workflows.\n\nIt is delivered in two formats - Speedrun and Speedrun Applied - which share the same approach but differ in scope and depth.\n\nAcross both formats, participants work hands-on with AI agents to build real working business tools inside a focused team workshop.",
+      image: '/Card1.webp',
+      buttonText: 'Explore Speedrun',
       buttonHref: '/speedrun',
     },
     {
       category: 'Develop Your AI Champions',
       date: 'Where We Go Next',
-      title: 'Marginal\nGains Club',
+      title: 'Develop Your AI Champions',
       description:
-        'Marginal Gains is a community for the key people in your business who we develop and support to become your AI Champions.\n\nWe guide them on how to use the tools, helping them adapt as the technology evolves, assist with rapid prototyping of new software and workflows for use in the business & we provide access to Wingman.\n\nMarginal Gains is designed so your AI Champions become the evangelists that help drive strategy, adoption and implementation from within.',
-      image: '/Card2.png',
-      buttonText: 'Learn More',
+        'Marginal Gains is an ongoing AI capability program for the key people in your business who we support to become your internal AI champions.\n\nWe guide them on how to use the tools, adapt as the technology evolves, prototype new software and workflows, and apply AI to real business work over time.\n\nMarginal Gains is designed so AI capability grows from within the business rather than being outsourced.',
+      image: '/Card2.webp',
+      buttonText: 'Explore Marginal Gains',
       buttonHref: '/marginal-gains',
     },
     {
       category: 'Automate Your Work',
       date: 'Infrastructure',
-      title: 'Wingman',
+      title: 'Automate Your Work with AI',
       description:
         "Wingman is our AI agent management system, designed to bring AI automation into SME's without adding technical complexity.\n\nWhere Speedrun and Marginal Gains focus on building understanding and internal capability, Wingman provides the infrastructure layer that allows that capability to become operational systems.\n\nIt moves beyond using AI as an assistive drafting tool and instead deploy agents into real world processes where work is coordinated, scheduled, and progressed with reduced manual oversight.",
-      image: '/Card3.png',
+      image: '/Card3.webp',
       buttonText: 'Learn More',
       buttonHref: '/#system',
     },
@@ -78,6 +78,7 @@ export function FunnelSection() {
                       href={card.buttonHref}
                       target={isExternal ? "_blank" : undefined}
                       rel={isExternal ? "noopener noreferrer" : undefined}
+                      aria-label={card.buttonText}
                     >
                       {card.buttonText}
                     </a>

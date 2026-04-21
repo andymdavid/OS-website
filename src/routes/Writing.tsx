@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import { NavigationDraft } from "@/components/NavigationDraft";
 import { Button } from "@/components/Button";
 import { CTASection } from "@/components/CTASection";
@@ -16,6 +17,12 @@ const posts: Array<{
 export default function Writing() {
   return (
     <div className="os-theme os-draft min-h-screen writing-page">
+      <SEO
+        title="Writing"
+        description="Notes, ideas, and fieldwork from building with AI. Insights from the Other Stuff team in Perth on practical AI capability."
+        path="/writing"
+        noindex
+      />
       <NavigationDraft titleOverride="OTHER STUFF" />
       <main>
         <section className="section writing-hero">

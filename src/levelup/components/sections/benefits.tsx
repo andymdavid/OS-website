@@ -7,8 +7,24 @@ import {
   CardHeader,
   CardTitle,
 } from "@/levelup/components/ui/card";
-import * as LucideIcons from "lucide-react";
-import { LucideIcon } from "lucide-react";
+import {
+  type LucideIcon,
+  Sparkles,
+  FileText,
+  Smartphone,
+  Shield,
+  Zap,
+  CheckCircle,
+  Palette,
+  FileEdit,
+  Rocket,
+  ArrowRightCircle,
+} from "lucide-react";
+
+const iconMap: Record<string, LucideIcon> = {
+  Sparkles, FileText, Smartphone, Shield, Zap,
+  CheckCircle, Palette, FileEdit, Rocket, ArrowRightCircle,
+};
 
 interface BenefitItem {
   title: string;
@@ -24,17 +40,9 @@ interface BenefitsProps {
   items: BenefitItem[];
 }
 
-// Helper to get icon component from string name
 function getIconComponent(iconName?: string): LucideIcon {
-  if (!iconName) {
-    return LucideIcons.Sparkles;
-  }
-
-  // Try to find the icon in lucide-react
-  const IconComponent = (LucideIcons as any)[iconName];
-
-  // Return the icon if found, otherwise return a default
-  return IconComponent || LucideIcons.Sparkles;
+  if (!iconName) return Sparkles;
+  return iconMap[iconName] || Sparkles;
 }
 
 export function Benefits({ title, subtitle, items }: BenefitsProps) {

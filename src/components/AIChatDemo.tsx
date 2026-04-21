@@ -14,70 +14,71 @@ interface Scenario {
 
 const scenarios: Scenario[] = [
   {
-    message: "Schedule a client check-in with Horizon Media for Thursday arvo and prep the talking points",
+    message: "Pull together a quote for Horizon Media based on the scope we discussed last week",
     agentSteps: [
       '● Thinking...',
-      '● Checking your calendar for Thursday',
-      '● Finding contact details for Horizon Media',
-      '● Creating meeting invite',
-      '● Generating talking points from recent activity',
-      '● Adding agenda to calendar event',
-      '✓ Meeting scheduled',
-    ],
-    notification: {
-      icon: 'calendar',
-      title: 'Client check-in with Horizon Media',
-      subtitle: 'Thursday at 2:30 PM · Agenda attached',
-    },
-  },
-  {
-    message: "Summarise the email thread with Northern Construction and draft a response confirming the timeline",
-    agentSteps: [
-      '● Thinking...',
-      '● Finding email thread',
-      '● Reading 12 messages in thread',
-      '● Extracting key dates and commitments',
-      '● Drafting confirmation response',
-      '✓ Draft ready for review',
-    ],
-    notification: {
-      icon: 'email',
-      title: 'Draft ready: Re: Project Timeline',
-      subtitle: 'Northern Construction · Ready to send',
-    },
-  },
-  {
-    message: "Create a project status update for the Mitchell account and share it with the team",
-    agentSteps: [
-      '● Thinking...',
-      '● Pulling project data for Mitchell account',
-      '● Reviewing activity from last 7 days',
-      '● Compiling status summary',
-      '● Formatting update',
-      '● Sending to team channel',
-      '✓ Update shared',
+      '● Finding meeting notes from Horizon Media',
+      '● Extracting scope items and quantities',
+      '● Pulling current pricing from rate card',
+      '● Calculating line items and totals',
+      '● Generating quote document',
+      '✓ Quote ready for review',
     ],
     notification: {
       icon: 'document',
-      title: 'Status update sent',
-      subtitle: 'Mitchell account · Shared with 4 team members',
+      title: 'Quote generated: Horizon Media',
+      subtitle: '$14,200 · 6 line items · Ready to send',
     },
   },
   {
-    message: "Help me plan how to add a customer feedback widget to the dashboard",
+    message: "Draft a proposal for Northern Construction covering the three phases we talked about",
     agentSteps: [
       '● Thinking...',
-      '● Analysing requirements',
-      '● Reviewing existing dashboard components',
-      '● Outlining implementation approach',
-      '● Identifying dependencies',
-      '● Breaking down into tasks',
-      '✓ Implementation plan created',
+      '● Reviewing CRM notes for Northern Construction',
+      '● Pulling scope from previous proposals',
+      '● Structuring three-phase delivery plan',
+      '● Adding pricing and timeline estimates',
+      '● Formatting proposal document',
+      '✓ Proposal draft ready',
     ],
     notification: {
-      icon: 'tasks',
-      title: '6 tasks created',
-      subtitle: 'Feedback widget · Added to backlog',
+      icon: 'document',
+      title: 'Proposal draft: Northern Construction',
+      subtitle: '3 phases · 12-week timeline · Ready to review',
+    },
+  },
+  {
+    message: "Check which quotes from this month haven't had a response and draft follow-ups",
+    agentSteps: [
+      '● Thinking...',
+      '● Scanning quotes sent in April',
+      '● Cross-referencing with reply activity',
+      '● Found 4 quotes without response',
+      '● Drafting personalised follow-ups',
+      '● Queuing emails for review',
+      '✓ 4 follow-ups drafted',
+    ],
+    notification: {
+      icon: 'email',
+      title: '4 follow-up emails drafted',
+      subtitle: 'Pending quotes · Ready to send',
+    },
+  },
+  {
+    message: "Update the Mitchell proposal with the revised pricing and send it through",
+    agentSteps: [
+      '● Thinking...',
+      '● Opening Mitchell proposal v2',
+      '● Applying revised rate card',
+      '● Recalculating totals across 4 line items',
+      '● Updating PDF document',
+      '● Sending to client via email',
+      '✓ Proposal sent',
+    ],
+    notification: {
+      icon: 'email',
+      title: 'Proposal sent: Mitchell & Co',
+      subtitle: 'Updated pricing · $9,800 · Delivered',
     },
   },
 ];
@@ -203,10 +204,10 @@ export function AIChatDemo() {
         {/* Terminal Panel */}
       <div className={`terminal-panel ${showTerminal ? 'visible' : ''}`}>
         <div className="terminal-header">
-          <span className="terminal-title">Agent Output</span>
+          <span className="terminal-title">Wingman</span>
           <span className="terminal-status">
             <span className="status-dot"></span>
-            Running
+            Processing
           </span>
         </div>
         <div className="terminal-content">

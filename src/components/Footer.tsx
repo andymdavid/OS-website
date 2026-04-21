@@ -9,7 +9,7 @@ export function Footer() {
         {/* Logo/Icon - Outside Grid */}
         <div className="footer-brand">
           <a href="/" className="footer-logo-icon" aria-label="Other Stuff home">
-            <img src="/Logo-Main-Icon.png" alt="Other Stuff Logo" width="46" height="31" />
+            <img src="/Logo-Main-Icon.webp" alt="Other Stuff Logo" width="46" height="31" />
           </a>
           <a href="/" className="footer-logo">OTHER STUFF</a>
         </div>
@@ -34,34 +34,34 @@ export function Footer() {
           </div>
 
           {/* Column 2: Solutions */}
-          <div className="footer-column">
+          <nav className="footer-column" aria-label="Solutions">
             <h4>Solutions</h4>
-            <a href="/#system">Wingman</a>
-            <a href="/speedrun">Speedrun Workshop</a>
-            <a href="/levelup">Level-Up Workshop</a>
-            <a href="/marginal-gains">Marginal Gains Club</a>
-          </div>
+            <a href="/marginal-gains">Custom AI Systems</a>
+            <a href="/#system">Wingmen</a>
+            <a href="/speedrun">AI Workshop for Business Teams</a>
+            <a href="/levelup">AI Incursion for Schools</a>
+          </nav>
 
           {/* Column 3: Media */}
-          <div className="footer-column">
+          <nav className="footer-column" aria-label="Media">
             <h4>Media</h4>
             <a href="/the-good-stuff">The Good Stuff</a>
             <a href="/writing">Writing</a>
             <a href="/games">Games</a>
-          </div>
+          </nav>
 
           {/* Column 4: Company */}
-          <div className="footer-column">
+          <nav className="footer-column" aria-label="Company">
             <h4>Company</h4>
             <a href="/about">About</a>
             <a href="mailto:info@otherstuff.studio">Contact</a>
-          </div>
+          </nav>
         </div>
 
         {/* Bottom Section */}
         <div className="footer-bottom">
           <div className="footer-legal">
-            <span>© 2025 Other Stuff Pty Ltd. All rights reserved.</span>
+            <span>© {new Date().getFullYear()} Other Stuff Pty Ltd. All rights reserved.</span>
             <span className="footer-separator">•</span>
             <a href="/terms">Terms of Service</a>
             <span className="footer-separator">•</span>
@@ -70,7 +70,7 @@ export function Footer() {
 
           <div className="footer-social">
             <a
-              href="https://otherstuff.studio/thegoodstuff"
+              href="https://otherstuff.ai/the-good-stuff"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="YouTube"

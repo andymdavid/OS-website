@@ -192,11 +192,13 @@
 }
 
 .nav-join-btn:hover {
-  background: #1f2026;
+  background: #ff751f;
+  color: #ffffff;
   transform: translateY(-1px);
 }
 
 .nav-join-btn:active {
+  background: #e5681b;
   transform: translateY(0);
 }
 
@@ -295,6 +297,7 @@
   opacity: 0.12;
   pointer-events: none;
   transition: opacity 0.2s ease;
+  display: none;
 }
 
 .mega-menu-card:hover::after {
@@ -565,3 +568,4 @@
     width: 1000px;
   }
 }
+

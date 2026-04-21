@@ -1,3 +1,4 @@
+import { SEO } from "@/components/SEO";
 import { NavigationDraft } from "@/components/NavigationDraft";
 import { Button } from "@/components/Button";
 import { CTASection } from "@/components/CTASection";
@@ -10,27 +11,33 @@ const keepReading = [
     title: "Post Title",
     description: "Short description of the post goes here.",
     date: "2026-02-01",
-    thumbnail: "/Hero-Background.png",
+    thumbnail: "/Hero-Background.webp",
   },
   {
     id: "02",
     title: "Post Title",
     description: "Short description of the post goes here.",
     date: "2026-01-18",
-    thumbnail: "/Hero-Background.png",
+    thumbnail: "/Hero-Background.webp",
   },
   {
     id: "03",
     title: "Post Title",
     description: "Short description of the post goes here.",
     date: "2026-01-04",
-    thumbnail: "/Hero-Background.png",
+    thumbnail: "/Hero-Background.webp",
   },
 ];
 
 export default function WritingPost() {
   return (
     <div className="os-theme os-draft min-h-screen writing-post-page">
+      <SEO
+        title="Writing"
+        description="Notes, ideas, and fieldwork from building with AI. Insights from the Other Stuff team in Perth on practical AI capability."
+        path="/writing/post"
+        noindex
+      />
       <NavigationDraft titleOverride="OTHER STUFF" />
       <main>
         <section
@@ -52,7 +59,7 @@ export default function WritingPost() {
             </div>
 
             <div className="writing-post-feature" style={{ marginTop: "20px" }}>
-              <img src="/Hero-Background.png" alt="Post featured" loading="lazy" />
+              <img src="/Hero-Background.webp" alt="Featured image for blog post" loading="lazy" />
             </div>
 
             <p className="writing-post-subheader" style={{ marginTop: "20px" }}>
@@ -68,7 +75,7 @@ export default function WritingPost() {
               <a href="https://x.com" target="_blank" rel="noopener noreferrer">
                 X
               </a>
-              <a href="mailto:?subject=The%20Good%20Stuff" target="_blank" rel="noopener noreferrer">
+              <a href="mailto:?subject=The%20Good%20Stuff" rel="noopener noreferrer">
                 Email
               </a>
             </div>
