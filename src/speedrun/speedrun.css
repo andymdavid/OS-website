@@ -52,6 +52,9 @@
   margin-top: 0;
 }
 
+.speedrun-page .speedrun-hero-stack {
+  width: min(100%, 45.9rem);
+}
 
 .speedrun-page .speedrun-hero-subtitle {
   color: #ffffff;

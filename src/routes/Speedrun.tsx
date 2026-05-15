@@ -12,8 +12,8 @@ export default function Speedrun() {
   return (
     <div className="os-theme levelup-theme levelup-theme-vars min-h-screen speedrun-page" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
       <SEO
-        title="Speedrun — AI Workshop for Business Teams | Perth"
-        description="A private 3-hour AI workshop for Perth businesses, teams, and small business operators. Build practical tools and workflows with AI agents in a hands-on session."
+        title="AI Training Workshop for Business Teams | Perth"
+        description="A private hands-on AI training workshop for Perth businesses, teams, and SME operators. Build practical tools and workflows with AI agents in a 3-hour session."
         path="/speedrun"
         ogImage="/og-speedrun.png"
         schema={[

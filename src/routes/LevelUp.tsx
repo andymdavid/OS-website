@@ -12,8 +12,8 @@ export default function LevelUp() {
   return (
     <div className="os-theme levelup-theme levelup-theme-vars min-h-screen levelup-page" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
       <SEO
-        title="Level Up — AI Incursion for Schools | Perth WA"
-        description="A 90-minute AI incursion for Perth and WA schools. Students build a game with AI in a practical school workshop and STEM learning session with no coding required."
+        title="AI Workshop & School Incursion | Perth WA"
+        description="A 90-minute AI workshop and school incursion for Perth and WA schools. Students build a game with AI in a practical STEM session with no coding required."
         path="/levelup"
         ogImage="/og-levelup.png"
         schema={[

@@ -84,6 +84,7 @@
 .the-good-stuff-page .good-stuff-episode {
   display: grid;
   gap: 16px;
+  align-content: start;
 }
 
 .the-good-stuff-page .good-stuff-episode-header {
@@ -119,13 +120,14 @@
   border-radius: 4px;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.06);
+  aspect-ratio: 16 / 9;
+  align-self: start;
 }
 
 .the-good-stuff-page .good-stuff-episode-media img {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
-  height: auto;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -158,6 +160,8 @@
   .the-good-stuff-page .good-stuff-hero.section {
     min-height: 74svh;
     height: 74svh;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
   }
 
   .the-good-stuff-page .hero-title-block {

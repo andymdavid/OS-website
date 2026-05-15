@@ -296,12 +296,15 @@ h2 {
 }
 
 .os-theme .btn-primary:hover {
-  background: var(--color-hover);
+  background: #ff751f;
+  color: #ffffff;
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(240, 240, 240, 0.2);
 }
 
 .os-theme .btn-primary:active {
+  background: var(--color-text);
+  color: var(--color-background);
   transform: translateY(0);
   box-shadow: 0 2px 4px rgba(240, 240, 240, 0.2);
 }

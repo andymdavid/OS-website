@@ -121,8 +121,8 @@ export default function TheGoodStuff() {
   return (
     <div className="os-theme os-draft min-h-screen the-good-stuff-page">
       <SEO
-        title="The Good Stuff — AI Podcast from Perth"
-        description="An Australian AI podcast with Pete Winn and Andy David exploring everyday experiences working with AI and how it's changing work, business, and human potential."
+        title="The Good Stuff | AI Podcast from Perth"
+        description="An Australian AI podcast from Pete Winn and Andy David on AI, business, operations, entrepreneurship, and the broader economic shift around these tools."
         path="/the-good-stuff"
         schema={{
           "@context": "https://schema.org",
@@ -143,9 +143,15 @@ export default function TheGoodStuff() {
           "inLanguage": "en-AU"
         }}
       />
-      <NavigationDraft titleOverride="OTHER STUFF" />
+      <NavigationDraft
+        titleSwapOnScroll={{
+          before: "OTHER STUFF",
+          after: "THE GOOD STUFF",
+          targetId: "good-stuff-hero",
+        }}
+      />
       <main>
-        <section className="section good-stuff-hero">
+        <section id="good-stuff-hero" className="section good-stuff-hero">
           <div className="section-container-wide good-stuff-hero-inner">
             <div className="hero-title-block">
               <h1>
@@ -180,6 +186,14 @@ export default function TheGoodStuff() {
                 : String(index + 1).padStart(2, "0");
               return (
               <article key={episode.id ?? episode.title} className="good-stuff-episode">
+                <a
+                  className="good-stuff-episode-media"
+                  href={episode.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={episode.thumbnail} alt={episode.title} loading="lazy" />
+                </a>
                 <div className="good-stuff-episode-header">
                   <span className="good-stuff-episode-id">
                     [{label}]
@@ -189,14 +203,6 @@ export default function TheGoodStuff() {
                     <div className="good-stuff-episode-description">{episode.description}</div>
                   </div>
                 </div>
-                <a
-                  className="good-stuff-episode-media"
-                  href={episode.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img src={episode.thumbnail} alt={episode.title} loading="lazy" />
-                </a>
               </article>
             );
             })}
