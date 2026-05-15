@@ -7,6 +7,7 @@ interface EmailCaptureFormProps {
   placeholder?: string;
   buttonText?: string;
   className?: string;
+  onSuccess?: () => void;
 }
 
 export function EmailCaptureForm({
@@ -14,6 +15,7 @@ export function EmailCaptureForm({
   placeholder = 'Enter your email',
   buttonText = 'Subscribe',
   className = '',
+  onSuccess,
 }: EmailCaptureFormProps) {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
@@ -61,6 +63,7 @@ export function EmailCaptureForm({
         setStatus('success');
         setMessage('Thanks! Check your inbox to confirm your subscription.');
         setEmail('');
+        onSuccess?.();
       } else {
         setStatus('error');
         setMessage(data.error || 'Something went wrong. Please try again.');

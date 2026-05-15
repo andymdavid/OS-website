@@ -8,10 +8,14 @@ const LevelUp = lazy(() => import('./routes/LevelUp'));
 const Speedrun = lazy(() => import('./routes/Speedrun'));
 const MarginalGains = lazy(() => import('./routes/MarginalGains'));
 const TheGoodStuff = lazy(() => import('./routes/TheGoodStuff'));
+const Newsletter = lazy(() => import('./routes/Newsletter'));
+const NewsletterPost = lazy(() => import('./routes/NewsletterPost'));
 const Writing = lazy(() => import('./routes/Writing'));
 const WritingPost = lazy(() => import('./routes/WritingPost'));
 const About = lazy(() => import('./routes/About'));
 const Games = lazy(() => import('./routes/Games'));
+const AIAudit = lazy(() => import('./routes/AIAudit'));
+const Contact = lazy(() => import('./routes/Contact'));
 const Terms = lazy(() => import('./routes/Terms'));
 const Privacy = lazy(() => import('./routes/Privacy'));
 const NotFound = lazy(() => import('./routes/NotFound'));
@@ -42,20 +46,36 @@ const router = createBrowserRouter([
     element: <SuspenseWrapper><TheGoodStuff /></SuspenseWrapper>,
   },
   {
+    path: '/newsletter',
+    element: <SuspenseWrapper><Newsletter /></SuspenseWrapper>,
+  },
+  {
+    path: '/newsletter/:slug',
+    element: <SuspenseWrapper><NewsletterPost /></SuspenseWrapper>,
+  },
+  {
     path: '/writing',
     element: <SuspenseWrapper><Writing /></SuspenseWrapper>,
+  },
+  {
+    path: '/writing/:slug',
+    element: <SuspenseWrapper><WritingPost /></SuspenseWrapper>,
   },
   {
     path: '/games',
     element: <SuspenseWrapper><Games /></SuspenseWrapper>,
   },
   {
-    path: '/writing/post',
-    element: <SuspenseWrapper><WritingPost /></SuspenseWrapper>,
-  },
-  {
     path: '/about',
     element: <SuspenseWrapper><About /></SuspenseWrapper>,
+  },
+  {
+    path: '/ai-audit',
+    element: <SuspenseWrapper><AIAudit /></SuspenseWrapper>,
+  },
+  {
+    path: '/contact',
+    element: <SuspenseWrapper><Contact /></SuspenseWrapper>,
   },
   {
     path: '/terms',

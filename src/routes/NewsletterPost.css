@@ -1,0 +1,91 @@
+.newsletter-post-page .newsletter-post-kicker {
+  margin-top: 18px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(240, 240, 240, 0.52);
+}
+
+.newsletter-post-page .writing-post-meta {
+  flex-wrap: wrap;
+}
+
+.newsletter-post-page .writing-post-subheader {
+  max-width: 52ch;
+}
+
+.newsletter-post-page .writing-post-content {
+  color: rgba(240, 240, 240, 0.82);
+}
+
+.newsletter-post-page .writing-post-content a {
+  color: rgba(240, 240, 240, 0.96);
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+}
+
+.newsletter-post-page .writing-post-content h1,
+.newsletter-post-page .writing-post-content h2,
+.newsletter-post-page .writing-post-content h3,
+.newsletter-post-page .writing-post-content h4,
+.newsletter-post-page .writing-post-content h5,
+.newsletter-post-page .writing-post-content h6 {
+  color: rgba(240, 240, 240, 0.96);
+}
+
+.newsletter-post-page .writing-post-content blockquote {
+  margin: 32px 0;
+  padding-left: 18px;
+  border-left: 2px solid rgba(240, 240, 240, 0.2);
+}
+
+.newsletter-post-page .writing-post-content figure {
+  margin: 28px 0;
+}
+
+.newsletter-post-page .writing-post-content img,
+.newsletter-post-page .writing-post-content video,
+.newsletter-post-page .writing-post-content iframe {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border: 0;
+  border-radius: 6px;
+}
+
+.newsletter-post-page .writing-post-content iframe {
+  aspect-ratio: 16 / 9;
+  min-height: 320px;
+}
+
+.newsletter-post-page .writing-post-content figcaption {
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: rgba(240, 240, 240, 0.45);
+}
+
+.newsletter-post-page .writing-post-content hr {
+  margin: 32px 0;
+  border: 0;
+  border-top: 1px solid rgba(240, 240, 240, 0.12);
+}
+
+.newsletter-post-page .writing-post-content p + p {
+  margin-top: 0;
+}
+
+.newsletter-post-page .writing-post-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 28px 0;
+  color: rgba(240, 240, 240, 0.8);
+}
+
+.newsletter-post-page .writing-post-content th,
+.newsletter-post-page .writing-post-content td {
+  padding: 12px 14px;
+  border: 1px solid rgba(240, 240, 240, 0.12);
+  text-align: left;
+}

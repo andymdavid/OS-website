@@ -1,0 +1,229 @@
+.value-trap-embed {
+  margin: 28px 0 32px;
+  padding: 20px;
+  border: 1px solid rgba(240, 240, 240, 0.12);
+  border-radius: 4px;
+  background:
+    radial-gradient(circle at top left, rgba(91, 241, 160, 0.1), transparent 38%),
+    linear-gradient(180deg, rgba(24, 24, 24, 0.98), rgba(15, 15, 15, 0.98));
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.28);
+}
+
+.value-trap-embed-header,
+.value-trap-chart-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.value-trap-embed-header {
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.value-trap-chart h3 {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.1;
+  color: rgba(240, 240, 240, 0.96);
+}
+
+.value-trap-expand-btn,
+.value-trap-close-btn,
+.value-trap-chart-controls button {
+  appearance: none;
+  border: 1px solid rgba(240, 240, 240, 0.12);
+  background: rgba(240, 240, 240, 0.04);
+  color: rgba(240, 240, 240, 0.88);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.value-trap-expand-btn,
+.value-trap-close-btn {
+  padding: 10px 16px;
+  font-size: 12px;
+}
+
+.value-trap-expand-btn:hover,
+.value-trap-close-btn:hover,
+.value-trap-chart-controls button:hover {
+  background: rgba(240, 240, 240, 0.09);
+  border-color: rgba(240, 240, 240, 0.18);
+}
+
+.value-trap-chart {
+  margin-top: 0;
+}
+
+.value-trap-chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.value-trap-chart-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: rgba(240, 240, 240, 0.68);
+}
+
+.value-trap-chart-legend span::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+}
+
+.value-trap-chart-legend .revenue::before {
+  background: rgba(91, 241, 160, 0.95);
+}
+
+.value-trap-chart-legend .expenses::before {
+  background: rgba(19, 142, 126, 0.98);
+}
+
+.value-trap-chart-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.value-trap-chart-controls button {
+  padding: 9px 14px;
+  font-size: 12px;
+}
+
+.value-trap-chart-controls button.is-active {
+  background: rgba(91, 241, 160, 0.16);
+  border-color: rgba(91, 241, 160, 0.42);
+  color: rgba(91, 241, 160, 0.98);
+}
+
+.value-trap-chart-shell {
+  margin-top: 18px;
+  padding: 18px 16px 8px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(240, 240, 240, 0.08);
+  position: relative;
+}
+
+.value-trap-chart svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.value-trap-chart text {
+  fill: rgba(240, 240, 240, 0.44);
+  font-size: 11px;
+}
+
+.value-trap-chart-here {
+  fill: rgba(255, 122, 122, 0.96) !important;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.value-trap-chart-note {
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-left: 2px solid rgba(91, 241, 160, 0.46);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 4px;
+}
+
+.value-trap-chart-tooltip {
+  position: absolute;
+  width: min(280px, calc(100% - 24px));
+  transform: translate(-50%, calc(-100% - 18px));
+  padding: 8px 12px;
+  border-radius: 4px;
+  background: rgba(10, 10, 10, 0.96);
+  border: 1px solid rgba(240, 240, 240, 0.12);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.value-trap-chart-tooltip h5 {
+  margin: 0 0 4px;
+  font-size: 13px !important;
+  line-height: 1.2 !important;
+  color: rgba(240, 240, 240, 0.96);
+  max-width: none !important;
+}
+
+.value-trap-chart-tooltip p {
+  margin: 0 !important;
+  font-size: 11px !important;
+  line-height: 1.35 !important;
+  color: rgba(240, 240, 240, 0.72) !important;
+  max-width: none !important;
+}
+
+.value-trap-chart-note p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(240, 240, 240, 0.78);
+}
+
+.value-trap-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+}
+
+.value-trap-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(10px);
+}
+
+.value-trap-modal-panel {
+  position: relative;
+  width: min(1200px, calc(100vw - 32px));
+  max-height: calc(100vh - 32px);
+  overflow: auto;
+  margin: 16px auto;
+  padding: 20px;
+  border-radius: 4px;
+  background: rgba(12, 12, 12, 0.98);
+  border: 1px solid rgba(240, 240, 240, 0.1);
+  box-shadow: 0 28px 100px rgba(0, 0, 0, 0.55);
+}
+
+.value-trap-close-btn {
+  display: inline-flex;
+  margin-left: auto;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 768px) {
+  .value-trap-embed {
+    padding: 16px;
+  }
+
+  .value-trap-embed-header,
+  .value-trap-chart-top {
+    flex-direction: column;
+  }
+
+  .value-trap-chart-shell {
+    padding: 14px 10px 6px;
+  }
+
+  .value-trap-modal-panel {
+    width: calc(100vw - 16px);
+    margin: 8px auto;
+    padding: 14px;
+  }
+}

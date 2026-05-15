@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { EmailCaptureForm } from './EmailCaptureForm';
 import './NewsletterModal.css';
@@ -6,9 +5,20 @@ import './NewsletterModal.css';
 interface NewsletterModalProps {
   isOpen: boolean;
   onClose: () => void;
+  pill?: string;
+  heading?: React.ReactNode;
+  description?: string;
+  buttonText?: string;
 }
 
-export function NewsletterModal({ isOpen, onClose }: NewsletterModalProps) {
+export function NewsletterModal({
+  isOpen,
+  onClose,
+  pill = 'THE GOOD STUFF',
+  heading = 'The Good Stuff is where we dig into how AI is changing the way we work, build businesses, and shape the broader economy.',
+  description = 'We publish essays, stories, and conversations about the way humans and AI work together — and what that means for small businesses. If you want to understand how we think, this is the best place to start.',
+  buttonText = 'Join the Good Stuff',
+}: NewsletterModalProps) {
   // Close modal on Escape key
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
@@ -53,24 +63,18 @@ export function NewsletterModal({ isOpen, onClose }: NewsletterModalProps) {
         </button>
 
         <div className="modal-body">
-          <div className="modal-pill">THE GOOD STUFF</div>
+          <div className="modal-pill">{pill}</div>
 
-          <h2 className="modal-heading">
-            The Good Stuff is where we dig into how AI is changing the way we work,
-            build businesses, and shape the broader economy.
-          </h2>
+          <h2 className="modal-heading">{heading}</h2>
 
-          <p className="modal-subpara">
-            We publish essays, stories, and conversations about the way humans and
-            AI work together — and what that means for small businesses. If you
-            want to understand how we think, this is the best place to start.
-          </p>
+          <p className="modal-subpara">{description}</p>
 
           <div className="modal-form">
             <EmailCaptureForm
               variant="standalone"
               placeholder="Enter your email"
-              buttonText="Join the Good Stuff"
+              buttonText={buttonText}
+              onSuccess={onClose}
             />
           </div>
         </div>

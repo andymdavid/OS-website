@@ -1,0 +1,121 @@
+.newsletter-page .newsletter-hero-copy h1 {
+  max-width: 34.5ch;
+}
+
+.newsletter-page .newsletter-hero-copy .hero-bridge {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.newsletter-page .newsletter-hero-signup {
+  width: 100%;
+  justify-content: center;
+}
+
+.newsletter-page .newsletter-hero-signup .email-capture-form,
+.newsletter-page .newsletter-hero-signup .email-capture-form.inline {
+  width: 100%;
+  max-width: 600px;
+}
+
+.newsletter-page .newsletter-issues.section {
+  padding-top: 56px !important;
+}
+
+.newsletter-page .newsletter-section-top {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(32px, 6vw, 120px);
+}
+
+.newsletter-page .newsletter-section-top .good-stuff-pill {
+  margin-bottom: 14px;
+}
+
+.newsletter-page .newsletter-section-note {
+  max-width: 40ch;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(240, 240, 240, 0.66);
+}
+
+.newsletter-page .newsletter-posts-grid {
+  padding-top: 28px;
+}
+
+.newsletter-page .newsletter-post-media {
+  position: relative;
+}
+
+.newsletter-page .newsletter-post-media-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.newsletter-page .newsletter-post-media-fallback span {
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(240, 240, 240, 0.52);
+}
+
+.newsletter-page .newsletter-empty {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 28px clamp(32px, 6vw, 120px) 0;
+}
+
+.newsletter-page .newsletter-empty p {
+  max-width: 46ch;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(240, 240, 240, 0.58);
+}
+
+.newsletter-page .newsletter-signup.section {
+  min-height: auto;
+  padding-top: 72px !important;
+  padding-bottom: 72px !important;
+}
+
+.newsletter-page .newsletter-signup-top {
+  max-width: 760px;
+  padding-top: 0;
+}
+
+.newsletter-page .newsletter-signup-subpara {
+  max-width: 720px;
+}
+
+.newsletter-page .newsletter-signup-cta {
+  width: 100%;
+}
+
+.newsletter-page .newsletter-signup-cta .email-capture-form,
+.newsletter-page .newsletter-signup-cta .email-capture-form.inline {
+  width: 100%;
+  max-width: 600px;
+}
+
+@media (max-width: 720px) {
+  .newsletter-page .newsletter-signup.section {
+    padding-top: 56px !important;
+    padding-bottom: 56px !important;
+  }
+
+  .newsletter-page .newsletter-section-top,
+  .newsletter-page .newsletter-empty {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .newsletter-page .newsletter-hero-copy h1 {
+    max-width: 34.5ch;
+  }
+}
