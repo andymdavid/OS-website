@@ -76,7 +76,7 @@ export function ProcessTimeline() {
                     <p>{step.description}</p>
                     {step.number === '01' && (
                       <a
-                        href="mailto:info@otherstuff.studio"
+                        href="/contact"
                         className="process-step-cta"
                       >
                         Book a Free AI Audit

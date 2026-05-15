@@ -5,6 +5,7 @@ import { MGGridSection } from "@/components/MGGridSection";
 import { MGHowItWorksSection } from "@/components/MGHowItWorksSection";
 import { CTAHomeDuplicate } from "@/components/CTAHomeDuplicate";
 import { FooterHomeDuplicate } from "@/components/FooterHomeDuplicate";
+import { RelatedNewsletterLinks } from "@/components/RelatedNewsletterLinks";
 import {
   MarginalGainsDuplicateBody,
   MarginalGainsDuplicateHero,
@@ -24,8 +25,8 @@ export default function MarginalGains() {
       style={{ fontFamily: "'Inter', system-ui, sans-serif" }}
     >
       <SEO
-        title="Custom AI Systems"
-        description="Custom AI systems for SMEs — scoped to your workflows, delivered as working systems, built on infrastructure you own."
+        title="Custom AI Systems for SMEs | Free AI Audit"
+        description="Custom AI systems for SMEs in Perth and across Australia. Start with a free AI audit, then scope and build a working AI system around the workflow where the impact is clearest."
         path="/marginal-gains"
         ogImage="/og-marginal-gains.png"
         schema={[
@@ -125,6 +126,14 @@ export default function MarginalGains() {
       <MGGridSection />
       <MGHowItWorksSection />
       <MarginalGainsDuplicateBody />
+      <RelatedNewsletterLinks
+        slugs={[
+          "is-ai-really-saving-you-time",
+          "building-rhinos-not-chasing-unicorns",
+        ]}
+        eyebrow="Field notes"
+        heading="More on AI, margin, and operating leverage"
+      />
       <CTAHomeDuplicate />
       <FooterHomeDuplicate />
     </div>

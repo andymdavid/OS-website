@@ -81,7 +81,7 @@ export const siteContent: SiteContent = {
           "Speedrun is a private hands-on AI workshop for Perth businesses and teams. In one focused session, your team builds practical tools and workflows with AI agents, with no technical background required.",
         subtitleMaxWidth: "65ch",
         centerContent: true,
-        ctaPrimary: { label: "Talk to Us", href: "mailto:info@otherstuff.studio" },
+        ctaPrimary: { label: "Talk to Us", href: "/contact" },
       },
     },
     {
@@ -89,14 +89,7 @@ export const siteContent: SiteContent = {
       enabled: false,
       props: {
         cards: [
-          { id: "1", title: "Bullrun", description: "Dodge the bulls", image: "/bullrun.webp", href: "https://bullrun.otherstuff.ai" },
-          { id: "2", title: "Cowkey Kong", description: "Keep climbing", image: "/cowkey.webp", href: "https://cowkong.otherstuff.ai" },
-          { id: "3", title: "Frogger", description: "Avoid the cards", image: "/frogger.webp", href: "https://frogger.otherstuff.ai" },
-          { id: "4", title: "Lemmings", description: "Classic lemmings", image: "/lemmings.webp", href: "https://lemmings.otherstuff.ai" },
-          { id: "5", title: "Pong", description: "Classic Pong", image: "/pong.webp", href: "https://pong.otherstuff.ai" },
-          { id: "6", title: "Satoshi's Garden", description: "Stack sats", image: "/satsgarden.webp", href: "https://satsgarden.otherstuff.ai" },
-          { id: "7", title: "Chesstr", description: "Play chess", image: "/chesstr.webp", href: "https://chesstr.otherstuff.ai" },
-          { id: "8", title: "Scramble", description: "Navigate the cave", image: "/scramble.webp", href: "https://scramble.otherstuff.ai" },
+          { id: "1", title: "Word5", description: "Guess the word", image: "/Card01.webp", href: "/word5" },
         ],
         speed: 50,
         arcDepth: 60,
@@ -182,7 +175,7 @@ export const siteContent: SiteContent = {
             metaTags: ["3 hours", "In-person", "Small groups"],
             description:
               "In this session, you build a simple Kanban-style task app from scratch using AI coding agents. You connect it to an AI agent yourself and see how your instructions become working features in real time.",
-            cta: { label: "Talk to Us", href: "mailto:info@otherstuff.studio" },
+            cta: { label: "Talk to Us", href: "/contact" },
           },
           {
             id: "speedrun-applied",
@@ -205,7 +198,7 @@ export const siteContent: SiteContent = {
         sectionTitle: "How Speedrun works.",
         body: "You begin with a blank project and leave with your own working app. During the session you use AI coding agents to build a simple Kanban-style to-do tool from scratch, change it, and watch it evolve on screen as you work.",
         ctaLabel: "Talk to Us",
-        ctaHref: "mailto:info@otherstuff.studio",
+        ctaHref: "/contact",
         steps: [
           {
             label: "Setup the foundation",
@@ -307,7 +300,7 @@ export const siteContent: SiteContent = {
         layout: "splitModal",
         textAlign: "left",
         splitModalVideoUrl: "https://www.youtube.com/embed/xVSldYWFxU8?start=3",
-        splitModalCta: { label: "Talk to Us", href: "mailto:info@otherstuff.studio" },
+        splitModalCta: { label: "Talk to Us", href: "/contact" },
       },
     },
     {

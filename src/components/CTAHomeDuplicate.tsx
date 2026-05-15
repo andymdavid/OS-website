@@ -39,7 +39,7 @@ export function CTAHomeDuplicate({
         <Button
           className="cta-button cta-button-orange"
           variant="primary"
-          onClick={() => (window.location.href = 'mailto:info@otherstuff.studio')}
+          onClick={() => (window.location.href = '/contact')}
         >
           {buttonLabel}
         </Button>

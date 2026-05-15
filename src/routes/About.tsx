@@ -12,8 +12,8 @@ export default function About() {
   return (
     <div className="os-theme os-draft min-h-screen about-page">
       <SEO
-        title="About — AI Product Studio in Perth, Western Australia"
-        description="Perth-based AI product studio founded by Pete Winn and Andy David. We help Australian organisations build practical AI capability through hands-on experience."
+        title="About Other Stuff | AI Product Studio in Perth"
+        description="Other Stuff is an AI-first product studio in Perth. We build custom AI systems for SMEs, run practical AI workshops, and support teams building capability around real operational work."
         path="/about"
         schema={{
           "@context": "https://schema.org",
@@ -37,7 +37,7 @@ export default function About() {
               <div className="hero-cta">
                 <Button
                   variant="primary"
-                  onClick={() => (window.location.href = "mailto:info@otherstuff.studio")}
+                  onClick={() => (window.location.href = "/contact")}
                 >
                   Talk to Us
                 </Button>

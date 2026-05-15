@@ -83,7 +83,7 @@ export const siteContent: SiteContent = {
         subtitleMaxWidth: "42rem",
         centerContent: true,
         contentOffset: "clamp(-208px, -14vh, -80px)",
-        ctaPrimary: { label: "Talk to Us", href: "mailto:info@otherstuff.studio" },
+        ctaPrimary: { label: "Talk to Us", href: "/contact" },
       },
     },
     {
@@ -343,7 +343,7 @@ export const siteContent: SiteContent = {
         fullHeight: true,
         splitModalCta: {
           label: "Talk to Us",
-          href: "mailto:info@otherstuff.studio",
+          href: "/contact",
         },
         splitRightBlocksVariant: "card",
         splitRightBlocks: [

@@ -11,6 +11,7 @@ import { GoodStuffHomeDuplicate } from '../components/GoodStuffHomeDuplicate';
 import { CTAHomeDuplicate } from '../components/CTAHomeDuplicate';
 import { FooterHomeDuplicate } from '../components/FooterHomeDuplicate';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { organizationSchema, websiteSchema } from '../lib/structured-data';
 
 export default function Home() {
   useScrollAnimation();
@@ -18,9 +19,17 @@ export default function Home() {
   return (
     <div className="os-theme os-draft">
       <SEO
-        title="Custom AI Systems for SMEs"
-        description="Custom AI systems for SMEs — purpose-built around your workflows, delivered as working systems, and built on infrastructure you own."
+        title="Custom AI Systems for SMEs | Perth & Australia"
+        description="Custom AI systems for SMEs in Perth and across Australia. Start with a free AI audit, then build working systems around the workflows that improve margins, free up capital, and reduce operational risk."
         path="/"
+        schema={[
+          {
+            ...organizationSchema,
+            description:
+              'AI-first product studio in Perth, Western Australia building custom AI systems for SMEs around real operational workflows.',
+          },
+          websiteSchema,
+        ]}
       />
       <NavigationHomeDuplicate />
       <main>

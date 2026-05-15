@@ -18,10 +18,13 @@ export function HeroHomeDuplicate() {
               <Button
                 variant="primary"
                 className="hero-cta-book"
-                onClick={() => (window.location.href = 'mailto:info@otherstuff.studio')}
+                onClick={() => (window.location.href = '/contact')}
               >
                 Book a Free AI Audit
               </Button>
+              <a href="/ai-audit" className="btn-secondary hero-cta-dark">
+                Learn about the AI Audit
+              </a>
             </div>
           </div>
 

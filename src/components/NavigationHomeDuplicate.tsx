@@ -34,6 +34,11 @@ const mediaLinks = [
     href: '/the-good-stuff',
   },
   {
+    title: 'Newsletter',
+    description: 'The operating memo for SME leaders using AI to improve margin, capital efficiency, and risk.',
+    href: '/newsletter',
+  },
+  {
     title: 'Writing',
     description: 'Notes, essays, and practical thinking from the work.',
     href: '/writing',
@@ -245,7 +250,7 @@ export function NavigationHomeDuplicate({
               Sign In
             </a>
             <a
-              href="mailto:info@otherstuff.studio"
+              href="/contact"
               className="nav-join-btn"
               onClick={closeMenus}
             >
@@ -350,7 +355,7 @@ export function NavigationHomeDuplicate({
               Sign In
             </a>
             <a
-              href="mailto:info@otherstuff.studio"
+              href="/contact"
               className="nav-join-btn mobile-menu-cta"
               onClick={closeMenus}
             >

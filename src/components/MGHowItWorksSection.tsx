@@ -200,7 +200,7 @@ export function MGHowItWorksSection() {
                 </div>
 
                 {stage.title === 'Free AI Audit' && (
-                  <a href="mailto:info@otherstuff.studio" className="mg-flow-cta">
+                  <a href="/contact" className="mg-flow-cta">
                     Book a Free AI Audit
                   </a>
                 )}

@@ -77,7 +77,7 @@ export function Navigation() {
 
         {/* Right Section: Buttons */}
         <div className="nav-right">
-          <a href="mailto:info@otherstuff.studio" className="nav-link nav-contact-link">
+          <a href="/contact" className="nav-link nav-contact-link">
             Contact Us
           </a>
           <button
