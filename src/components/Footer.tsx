@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { EmailCaptureForm } from './EmailCaptureForm';
 import './Footer.css';
 
 export function Footer() {
@@ -21,21 +22,21 @@ export function Footer() {
             <div className="footer-tagline">
               Helping SMEs develop practical AI capability internally.
             </div>
-            <div className="footer-company-info">
-              <p>Other Stuff Pty Ltd</p>
-              <p>ABN 20 682 110 970</p>
-              <p>City Beach WA 6015</p>
-              <p>
-                <a href="mailto:info@otherstuff.studio" className="footer-email-link">
-                  info@otherstuff.studio
-                </a>
-              </p>
+            <div className="footer-newsletter">
+              <h4>Subscribe to The Good Stuff</h4>
+              <EmailCaptureForm
+                variant="inline"
+                placeholder="Email address"
+                buttonText="Join"
+                className="footer-newsletter-form"
+              />
             </div>
           </div>
 
           {/* Column 2: Solutions */}
           <nav className="footer-column" aria-label="Solutions">
             <h4>Solutions</h4>
+            <a href="/ai-audit">AI Audit</a>
             <a href="/marginal-gains">Custom AI Systems</a>
             <a href="/#system">Wingmen</a>
             <a href="/speedrun">AI Workshop for Business Teams</a>
@@ -45,6 +46,7 @@ export function Footer() {
           {/* Column 3: Media */}
           <nav className="footer-column" aria-label="Media">
             <h4>Media</h4>
+            <a href="/newsletter">Newsletter</a>
             <a href="/the-good-stuff">The Good Stuff</a>
             <a href="/writing">Writing</a>
             <a href="/games">Games</a>
@@ -54,21 +56,17 @@ export function Footer() {
           <nav className="footer-column" aria-label="Company">
             <h4>Company</h4>
             <a href="/about">About</a>
-            <a href="mailto:info@otherstuff.studio">Contact</a>
+            <a href="/contact">Contact</a>
           </nav>
         </div>
 
-        {/* Bottom Section */}
-        <div className="footer-bottom">
-          <div className="footer-legal">
-            <span>© {new Date().getFullYear()} Other Stuff Pty Ltd. All rights reserved.</span>
-            <span className="footer-separator">•</span>
-            <a href="/terms">Terms of Service</a>
-            <span className="footer-separator">•</span>
-            <a href="/privacy">Privacy Policy</a>
+        <div className="footer-meta">
+          <div className="footer-partner">
+            <span>Partner with us:</span>
+            <a href="mailto:info@otherstuff.studio">info@otherstuff.studio</a>
           </div>
 
-          <div className="footer-social">
+          <div className="footer-social" aria-label="Social links">
             <a
               href="https://otherstuff.ai/the-good-stuff"
               target="_blank"
@@ -100,7 +98,17 @@ export function Footer() {
               </svg>
             </a>
           </div>
+
+          <div className="footer-legal">
+            <span>© {new Date().getFullYear()} Other Stuff Pty Ltd. All rights reserved.</span>
+            <span className="footer-separator">•</span>
+            <a href="/terms">Terms of Service</a>
+            <span className="footer-separator">•</span>
+            <a href="/privacy">Privacy Policy</a>
+          </div>
         </div>
+
+        <div className="footer-wordmark" aria-hidden="true">OTHER STUFF</div>
       </div>
     </footer>
   );
