@@ -2,53 +2,43 @@ import React from 'react';
 import './InfrastructureSection.css';
 
 interface InfraComponent {
-  name: string;
+  tag: string;
+  title: string;
   role: string;
+  position: 'top-left' | 'top-right' | 'left' | 'right' | 'bottom';
 }
 
 const components: InfraComponent[] = [
   {
-    name: 'Flight Deck',
+    tag: 'Flight Deck',
+    title: 'Daily workspace',
     role: 'Where your team manages tasks, monitors agents, and stays in control of what\u2019s running \u2014 across desktop and mobile.',
+    position: 'top-left',
   },
   {
-    name: 'Control Tower',
+    tag: 'Tower',
+    title: 'Shared record',
     role: 'The encrypted data and record layer that sits underneath everything. Your business data stored securely and never shared with public models.',
+    position: 'top-right',
   },
   {
-    name: 'Airspace',
+    tag: 'Airspace',
+    title: 'Business context',
     role: 'The knowledge layer that gives your agents the context they need \u2014 built from your own business data, not generic information.',
+    position: 'left',
   },
   {
-    name: 'Autopilot',
+    tag: 'Autopilot',
+    title: 'Workflow engine',
     role: 'Runs your automated workflows, connects to existing systems, and keeps everything moving without constant manual input.',
+    position: 'bottom',
   },
   {
-    name: 'Wingman',
+    tag: 'Wingman Agents',
+    title: 'Review-gated help',
     role: 'The agent environment for running, managing and building on your AI systems, providing deeper control and the flexibility with your agents.',
+    position: 'right',
   },
-];
-
-/* Node positions as % of container — deliberately staggered for a graph feel */
-const nodeLayout = [
-  { left: 3, top: 2 },     /* Flight Deck — top-left */
-  { left: 70, top: 7 },    /* Control Tower — top-right, offset down */
-  { left: 0, top: 64 },    /* Airspace — left, below centre */
-  { left: 38, top: 80 },   /* Autopilot — bottom-centre */
-  { left: 74, top: 58 },   /* SuperBased — right, mid-low */
-];
-
-/* Centre hub position */
-const hub = { left: 37, top: 35 };
-const hubCentre = { x: hub.left + 13, y: hub.top + 10 };
-
-/* Approximate card centres for SVG lines */
-const nodeCentres = [
-  { x: nodeLayout[0].left + 13, y: nodeLayout[0].top + 12 },
-  { x: nodeLayout[1].left + 13, y: nodeLayout[1].top + 12 },
-  { x: nodeLayout[2].left + 13, y: nodeLayout[2].top + 12 },
-  { x: nodeLayout[3].left + 13, y: nodeLayout[3].top + 12 },
-  { x: nodeLayout[4].left + 13, y: nodeLayout[4].top + 12 },
 ];
 
 export function InfrastructureSection() {
@@ -65,62 +55,88 @@ export function InfrastructureSection() {
           We built our own agent infrastructure from the ground up &mdash; open source and purpose-designed for SMEs. Your systems aren&apos;t dependent on ChatGPT Enterprise, Claude, or any single provider. Your business can own and run it independently.
         </p>
 
-        {/* Desktop: positioned graph layout */}
-        <div className="infra-graph fade-in fade-in-stagger-3">
-          {/* SVG connector lines */}
-          <svg className="infra-connectors" viewBox="0 0 100 100" preserveAspectRatio="none">
-            {nodeCentres.map((node, i) => (
-              <line
-                key={i}
-                x1={hubCentre.x}
-                y1={hubCentre.y}
-                x2={node.x}
-                y2={node.y}
-                stroke="rgba(46, 167, 130, 0.18)"
-                strokeWidth="0.15"
-              />
-            ))}
-          </svg>
+        {/* Desktop: system diagram layout */}
+        <div className="infra-diagram fade-in fade-in-stagger-3">
+          <span className="infra-connector infra-connector-top-left" aria-hidden="true" />
+          <span className="infra-connector infra-connector-top-right" aria-hidden="true" />
+          <span className="infra-connector infra-connector-left" aria-hidden="true" />
+          <span className="infra-connector infra-connector-right" aria-hidden="true" />
+          <span className="infra-connector infra-connector-bottom" aria-hidden="true" />
 
-          {/* Centre hub */}
-          <div
-            className="infra-graph-node infra-hub-node"
-            style={{ left: `${hub.left}%`, top: `${hub.top}%` }}
-          >
+          <div className="infra-card-slot infra-card-slot-top-left">
+            {components.filter((comp) => comp.position === 'top-left').map((comp) => (
+              <div key={comp.tag} className="infrastructure-card">
+                <div className="infrastructure-card-tag">{comp.tag}</div>
+                <h3 className="infrastructure-card-name">{comp.title}</h3>
+                <p className="infrastructure-card-role">{comp.role}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="infra-card-slot infra-card-slot-top-right">
+            {components.filter((comp) => comp.position === 'top-right').map((comp) => (
+              <div key={comp.tag} className="infrastructure-card">
+                <div className="infrastructure-card-tag">{comp.tag}</div>
+                <h3 className="infrastructure-card-name">{comp.title}</h3>
+                <p className="infrastructure-card-role">{comp.role}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="infra-card-slot infra-card-slot-left">
+            {components.filter((comp) => comp.position === 'left').map((comp) => (
+              <div key={comp.tag} className="infrastructure-card">
+                <div className="infrastructure-card-tag">{comp.tag}</div>
+                <h3 className="infrastructure-card-name">{comp.title}</h3>
+                <p className="infrastructure-card-role">{comp.role}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="infra-card-slot infra-card-slot-centre">
             <div className="infra-centre-card">
-              <h3 className="infra-centre-name">Wingmen Suite</h3>
+              <div className="infrastructure-card-tag">Centre</div>
+              <h3 className="infra-centre-name">Your Operating Memory</h3>
               <p className="infra-centre-role">
                 The open-source agent infrastructure that powers everything we build. Five integrated components, one system.
               </p>
             </div>
           </div>
 
-          {/* Component nodes */}
-          {components.map((comp, i) => (
-            <div
-              key={comp.name}
-              className="infra-graph-node"
-              style={{ left: `${nodeLayout[i].left}%`, top: `${nodeLayout[i].top}%` }}
-            >
-              <div className="infrastructure-card">
-                <h3 className="infrastructure-card-name">{comp.name}</h3>
+          <div className="infra-card-slot infra-card-slot-right">
+            {components.filter((comp) => comp.position === 'right').map((comp) => (
+              <div key={comp.tag} className="infrastructure-card">
+                <div className="infrastructure-card-tag">{comp.tag}</div>
+                <h3 className="infrastructure-card-name">{comp.title}</h3>
                 <p className="infrastructure-card-role">{comp.role}</p>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          <div className="infra-card-slot infra-card-slot-bottom">
+            {components.filter((comp) => comp.position === 'bottom').map((comp) => (
+              <div key={comp.tag} className="infrastructure-card">
+                <div className="infrastructure-card-tag">{comp.tag}</div>
+                <h3 className="infrastructure-card-name">{comp.title}</h3>
+                <p className="infrastructure-card-role">{comp.role}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Mobile: stacked layout */}
         <div className="infra-stack fade-in fade-in-stagger-3">
           <div className="infra-centre-card">
-            <h3 className="infra-centre-name">Wingmen Suite</h3>
+            <div className="infrastructure-card-tag">Centre</div>
+            <h3 className="infra-centre-name">Your Operating Memory</h3>
             <p className="infra-centre-role">
               The open-source agent infrastructure that powers everything we build. Five integrated components, one system.
             </p>
           </div>
           {components.map((comp) => (
-            <div key={comp.name} className="infrastructure-card">
-              <h3 className="infrastructure-card-name">{comp.name}</h3>
+            <div key={comp.tag} className="infrastructure-card">
+              <div className="infrastructure-card-tag">{comp.tag}</div>
+              <h3 className="infrastructure-card-name">{comp.title}</h3>
               <p className="infrastructure-card-role">{comp.role}</p>
             </div>
           ))}
