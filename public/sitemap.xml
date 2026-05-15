@@ -6,6 +6,11 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://otherstuff.ai/marginal-gains</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://otherstuff.ai/speedrun</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -13,17 +18,32 @@
   <url>
     <loc>https://otherstuff.ai/levelup</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://otherstuff.ai/marginal-gains</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://otherstuff.ai/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://otherstuff.ai/ai-audit</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://otherstuff.ai/contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://otherstuff.ai/writing</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://otherstuff.ai/newsletter</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.72</priority>
   </url>
   <url>
     <loc>https://otherstuff.ai/the-good-stuff</loc>
@@ -33,12 +53,7 @@
   <url>
     <loc>https://otherstuff.ai/games</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://otherstuff.ai/word5/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://otherstuff.ai/terms</loc>
@@ -49,5 +64,69 @@
     <loc>https://otherstuff.ai/privacy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://otherstuff.ai/writing/where-custom-ai-systems-create-margin-first</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://otherstuff.ai/writing/navigating-the-ai-value-trap</loc>
+    <lastmod>2025-05-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://otherstuff.ai/writing/on-the-business-model-of-ai</loc>
+    <lastmod>2025-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+  <url>
+    <loc>https://otherstuff.ai/newsletter/personal-ai-you-can-trust</loc>
+    <lastmod>2026-05-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://otherstuff.ai/newsletter/unruggable-productivity</loc>
+    <lastmod>2026-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://otherstuff.ai/newsletter/is-ai-really-saving-you-time</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://otherstuff.ai/newsletter/building-ai-that-respects-you</loc>
+    <lastmod>2026-01-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://otherstuff.ai/newsletter/building-rhinos-not-chasing-unicorns</loc>
+    <lastmod>2024-08-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://otherstuff.ai/newsletter/tgs-01</loc>
+    <lastmod>2024-08-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://otherstuff.ai/llms.txt</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://otherstuff.ai/llms-full.txt</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
 </urlset>

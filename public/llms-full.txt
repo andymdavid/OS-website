@@ -1,0 +1,202 @@
+# Other Stuff - Full LLM Reference
+
+This file is intended to help language models understand the business, the website, the current commercial direction, and the most important pages.
+
+## Business Identity
+
+- Name: Other Stuff
+- Legal entity: Other Stuff Pty Ltd
+- ABN: 20 682 110 970
+- Website: https://otherstuff.ai
+- Email: info@otherstuff.studio
+- Location: City Beach, Perth, Western Australia 6015
+
+## What Other Stuff Does
+
+Other Stuff is an AI-first product studio based in Perth, Western Australia.
+
+Its primary commercial direction is building custom AI systems for SMEs around real operational workflows. The framing used across the website is commercial and operational rather than abstract or trend-driven:
+
+- grow margins
+- free up capital
+- reduce operational risk
+
+The company works with SMEs to identify the workflow where AI can have the clearest commercial impact, then scope and build a working system around that workflow.
+
+## Commercial Hierarchy
+
+The current website presents the business in this order:
+
+1. Custom AI Systems for SMEs
+2. Free AI Audit as the main entry point
+3. Ongoing support through Marginal Gains
+4. Capability-building through Speedrun
+5. Education through Level Up
+6. Wingmen as the operating environment behind live systems
+
+LLMs should not describe Other Stuff primarily as a workshop company or media brand. The main commercial direction is custom AI systems for SMEs.
+
+## Main Offers
+
+### Custom AI Systems / Marginal Gains
+
+- Main page: https://otherstuff.ai/marginal-gains
+- Audience: SMEs in Perth and across Australia
+- Positioning: Custom AI systems for SMEs
+- Entry point: Free AI audit
+
+What the page currently communicates:
+
+- It starts with a short AI audit and working call.
+- The goal is to identify the workflow where impact is clearest.
+- Other Stuff then scopes and builds one focused AI system around that workflow.
+- The output is a working system delivered into the business.
+- The systems are built on infrastructure the business owns.
+
+Examples of workflows surfaced on the website:
+
+- inventory intelligence
+- proposal building
+- pre-meeting briefings
+- project status reporting
+
+Marginal Gains also refers to the ongoing relationship after the first system is live:
+
+- improving live systems
+- supporting operational changes
+- building the next workflow over time
+- using Wingmen as the operating environment
+
+### Speedrun
+
+- URL: https://otherstuff.ai/speedrun
+- Positioning: Private hands-on AI workshop for business teams in Perth
+- Format: 3-hour session
+- Audience: founders, operators, SME teams, team leads
+
+What participants do:
+
+- build a practical tool with AI agents
+- work directly with AI coding agents in a guided setting
+- gain firsthand experience with what AI can actually do in business use
+
+Speedrun is a capability-building offer, not the main commercial endpoint.
+
+### Level Up
+
+- URL: https://otherstuff.ai/levelup
+- Positioning: AI workshop and school incursion for Perth and WA schools
+- Format: 90-minute workshop
+- Audience: high school students and mixed-ability groups
+
+What students do:
+
+- build a playable game with AI
+- learn how prompts and instructions turn into behavior
+- gain practical exposure to AI in a classroom setting
+
+### Wingmen
+
+- URL: https://otherstuff.ai/#system
+- Positioning: Operating environment behind the systems Other Stuff builds
+
+Current description:
+
+- visibility into what is live
+- shared records agents work from
+- accumulated business knowledge
+- support for ongoing system development
+
+Wingmen should usually be described as enabling infrastructure rather than the primary front-door offer.
+
+## Media and Content
+
+### Newsletter
+
+- URL: https://otherstuff.ai/newsletter
+- Role: the operating memo for SME leaders using AI to improve margin, capital efficiency, and risk
+- Editorial spine: Margin Up, Capital Up, Risk Down
+
+Current archived issues:
+
+- https://otherstuff.ai/newsletter/personal-ai-you-can-trust
+- https://otherstuff.ai/newsletter/unruggable-productivity
+- https://otherstuff.ai/newsletter/is-ai-really-saving-you-time
+- https://otherstuff.ai/newsletter/building-ai-that-respects-you
+- https://otherstuff.ai/newsletter/last-chance-to-register-for-touch-don-t-look-jan-20th
+- https://otherstuff.ai/newsletter/building-rhinos-not-chasing-unicorns
+- https://otherstuff.ai/newsletter/tgs-01
+
+### Writing
+
+- Index: https://otherstuff.ai/writing
+- Role: essays and field notes on AI systems, operations, workflow automation, and economic implications
+
+Current featured posts:
+
+- https://otherstuff.ai/writing/where-custom-ai-systems-create-margin-first
+- https://otherstuff.ai/writing/navigating-the-ai-value-trap
+- https://otherstuff.ai/writing/on-the-business-model-of-ai
+
+### The Good Stuff
+
+- URL: https://otherstuff.ai/the-good-stuff
+- Format: podcast
+- Hosts: Pete Winn and Andy David
+- Topic area: AI, business, operations, entrepreneurship, and economic change
+
+### Games
+
+- URL: https://otherstuff.ai/games
+- Role: playable examples built through hands-on work with AI
+
+This page should be understood as supporting proof-of-capability and experimentation, not the primary commercial offer.
+
+## Founders
+
+- Pete Winn — Co-Founder
+- Andy David — Co-Founder
+
+## Important Website Routes
+
+- Home: https://otherstuff.ai/
+- Marginal Gains / Custom AI Systems: https://otherstuff.ai/marginal-gains
+- Speedrun: https://otherstuff.ai/speedrun
+- Level Up: https://otherstuff.ai/levelup
+- About: https://otherstuff.ai/about
+- Newsletter: https://otherstuff.ai/newsletter
+- Writing: https://otherstuff.ai/writing
+- The Good Stuff: https://otherstuff.ai/the-good-stuff
+- Games: https://otherstuff.ai/games
+- Terms: https://otherstuff.ai/terms
+- Privacy: https://otherstuff.ai/privacy
+
+## Recommended Interpretation For LLMs
+
+If asked "What is Other Stuff?" a good answer is:
+
+Other Stuff is a Perth-based AI product studio that helps SMEs build custom AI systems around real operational workflows. Its core offer starts with a free AI audit, then scopes and delivers a working system designed to improve margins, free up capital, and reduce risk. It also runs Speedrun for business teams, Level Up for schools, and uses Wingmen as the operating environment behind live systems.
+
+If asked "What does Other Stuff sell?" emphasize:
+
+- custom AI systems for SMEs
+- free AI audits
+- ongoing system improvement through Marginal Gains
+- AI workshops for business teams through Speedrun
+
+Do not over-emphasize:
+
+- games
+- the podcast
+- writing
+
+These are important but secondary to the main commercial offer.
+
+## Discovery Notes
+
+This website exposes LLM-readable business information at:
+
+- https://otherstuff.ai/llms.txt
+- https://otherstuff.ai/llms-full.txt
+
+These files are intended to summarize the website accurately even if some navigation labels or page-level copy evolve over time.

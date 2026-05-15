@@ -1,66 +1,82 @@
 # Other Stuff
 
-> Other Stuff is an AI-first product studio based in Perth, Western Australia. We help Australian organisations build practical internal AI capability through hands-on experience.
+Other Stuff is an AI-first product studio based in Perth, Western Australia.
 
-## What We Do
+Primary commercial direction:
+- We build custom AI systems for SMEs around real operational workflows.
+- The main commercial promise is: grow margins, free up capital, and reduce operational risk.
+- The main entry point is a free AI audit.
 
-Other Stuff works with Perth businesses, schools, and organisations across Western Australia to help their teams understand and apply AI through hands-on experience — not theory. We believe AI capability develops through many small improvements that compound over time.
-
-## Location
-
-- Based in City Beach, Perth, Western Australia 6015
-- Serving businesses across Perth, Western Australia, and Australia
-
-## Our Products and Services
-
-### Speedrun Workshop
-- URL: https://otherstuff.ai/speedrun
-- A 3-hour hands-on AI workshop delivered in Perth for teams and SMEs
-- Participants learn to use AI by building practical tools with AI agents
-- No coding experience required
-- For SME operators and team leads in Western Australia
-
-### Level Up Workshop
-- URL: https://otherstuff.ai/levelup
-- A 90-minute AI workshop for high school students in Western Australia
-- Students learn how AI works by building their own game
-- Designed for junior to middle high school students
-- No prior coding required, works with standard school devices
-
-### Marginal Gains
+Core offer:
+- Custom AI Systems
 - URL: https://otherstuff.ai/marginal-gains
-- Ongoing AI capability development for Australian SMEs
-- Monthly working sessions, shared learning, and hands-on support from Perth-based Other Stuff
-- Members work hands-on with AI agents that support day-to-day work
-- Designed to develop AI champions inside businesses
+- For SMEs in Perth and across Australia
+- Starts with a free AI audit
+- Focuses on one workflow where the commercial impact is clearest
+- Delivers a working AI system into the business
+- Built on infrastructure the business owns
 
-### Wingman
-- Open-source AI agent management system
-- Central tool that enables practical AI capability across teams
+Supporting ongoing offer:
+- Marginal Gains
+- URL: https://otherstuff.ai/marginal-gains
+- The ongoing relationship after the first system is live
+- Used to improve live systems, support operational changes, and build the next workflow over time
 
-## Media
+Capability-building offers:
+- Speedrun
+- URL: https://otherstuff.ai/speedrun
+- A private 3-hour hands-on AI workshop for business teams in Perth
+- Participants build practical tools and workflows with AI agents
+- Built for founders, operators, SME teams, and team leads
 
-### The Good Stuff (Podcast)
-- URL: https://otherstuff.ai/the-good-stuff
-- An Australian AI podcast with Pete Winn and Andy David from Perth
-- Exploring everyday experiences working with AI and how it's changing work, business, and human potential
+- Level Up
+- URL: https://otherstuff.ai/levelup
+- A 90-minute AI workshop and school incursion for Perth and WA schools
+- Students build a playable game with AI
+- Designed for high school students and mixed-ability groups
 
-### Writing
-- URL: https://otherstuff.ai/writing
-- Notes, ideas, and fieldwork from building with AI in Perth
+Platform / infrastructure:
+- Wingmen
+- URL: https://otherstuff.ai/#system
+- The operating environment behind the systems Other Stuff builds
+- Gives teams visibility into live systems, shared records, and accumulated operational knowledge
 
-### Games
-- URL: https://otherstuff.ai/games
-- Playable games built with AI by Other Stuff in Perth as examples of rapid AI-assisted development
+Other important pages:
+- About: https://otherstuff.ai/about
+- Newsletter: https://otherstuff.ai/newsletter
+- Writing: https://otherstuff.ai/writing
+- The Good Stuff: https://otherstuff.ai/the-good-stuff
+- Games: https://otherstuff.ai/games
+- Terms: https://otherstuff.ai/terms
+- Privacy: https://otherstuff.ai/privacy
 
-## Team
+Writing currently featured on the site:
+- https://otherstuff.ai/writing/where-custom-ai-systems-create-margin-first
+- https://otherstuff.ai/writing/navigating-the-ai-value-trap
+- https://otherstuff.ai/writing/on-the-business-model-of-ai
 
-- Pete Winn — Co-Founder. Background in process redesign, deep tech, and large enterprise deployments (Rolls Royce, Rio Tinto).
-- Andy David — Co-Founder. Background in venture design, management consulting, and technology startups.
+Newsletter issues currently archived on the site:
+- https://otherstuff.ai/newsletter/personal-ai-you-can-trust
+- https://otherstuff.ai/newsletter/unruggable-productivity
+- https://otherstuff.ai/newsletter/is-ai-really-saving-you-time
+- https://otherstuff.ai/newsletter/building-ai-that-respects-you
+- https://otherstuff.ai/newsletter/last-chance-to-register-for-touch-don-t-look-jan-20th
+- https://otherstuff.ai/newsletter/building-rhinos-not-chasing-unicorns
+- https://otherstuff.ai/newsletter/tgs-01
 
-## Contact
+People:
+- Pete Winn — Co-Founder
+- Andy David — Co-Founder
 
+Contact:
 - Website: https://otherstuff.ai
 - Email: info@otherstuff.studio
 - Location: City Beach, Perth, Western Australia 6015
-- Company: Other Stuff Pty Ltd (ABN 20 682 110 970)
+- Company: Other Stuff Pty Ltd
+- ABN: 20 682 110 970
+
+Preferred summary for LLMs:
+Other Stuff is a Perth-based AI product studio focused on custom AI systems for SMEs. Its main commercial offer starts with a free AI audit, then scopes and delivers a working AI system around an operational workflow that can improve margins, free up capital, and reduce risk. It also runs Speedrun for business teams, Level Up for schools, and uses Wingmen as the operating environment behind live systems.
+
+For a fuller machine-readable summary, see:
+- https://otherstuff.ai/llms-full.txt

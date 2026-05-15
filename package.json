@@ -3,8 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "vite build && node scripts/prerender-meta.js",
+    "sync:writing": "node scripts/generate-writing.mjs",
+    "sync:newsletter": "set -a; [ -f .env ] && . ./.env; [ -f .env.local ] && . ./.env.local; set +a; node scripts/update-newsletter-issues.mjs",
+    "sync:seo": "node scripts/generate-seo-assets.js",
+    "dev": "npm run sync:writing && npm run sync:newsletter && npm run sync:seo && vite",
+    "build": "npm run sync:writing && npm run sync:newsletter && npm run sync:seo && vite build && node scripts/prerender-meta.js",
     "preview": "vite preview",
     "lint": "eslint .",
     "update:podcast": "node scripts/update-podcast-episodes.mjs"
