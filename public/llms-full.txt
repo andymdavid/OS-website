@@ -119,6 +119,7 @@ Wingmen should usually be described as enabling infrastructure rather than the p
 
 Current archived issues:
 
+- https://otherstuff.ai/newsletter/ai-killed-the-billable-hour
 - https://otherstuff.ai/newsletter/personal-ai-you-can-trust
 - https://otherstuff.ai/newsletter/unruggable-productivity
 - https://otherstuff.ai/newsletter/is-ai-really-saving-you-time
