@@ -258,18 +258,22 @@
   margin-bottom: clamp(-52px, -4vw, -24px);
   position: relative;
   left: 50%;
+  display: block;
   width: 100vw;
+  height: clamp(58px, 12vw, 210px);
   margin-left: -50vw;
-  font-family: 'Alfabet Black', var(--font-ui);
-  font-size: clamp(76px, 17.5vw, 264px);
-  font-weight: var(--weight-black);
-  line-height: 0.62;
-  color: var(--color-text);
-  letter-spacing: 0;
-  text-align: center;
-  text-transform: uppercase;
+  fill: var(--color-text);
   white-space: nowrap;
   pointer-events: none;
+}
+
+.footer-wordmark text {
+  font-family: 'Alfabet Black', var(--font-ui);
+  font-size: 118px;
+  font-weight: var(--weight-black);
+  fill: var(--color-text);
+  letter-spacing: 0;
+  text-transform: uppercase;
 }
 
 /* Mobile adjustments */
@@ -331,10 +335,9 @@
   .footer-wordmark {
     left: 50%;
     width: 100vw;
+    height: clamp(46px, 15vw, 74px);
     margin-left: -50vw;
     margin-bottom: -16px;
-    font-size: clamp(34px, 12.4vw, 58px);
-    line-height: 0.7;
   }
 }
 

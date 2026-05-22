@@ -108,7 +108,11 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="footer-wordmark" aria-hidden="true">OTHER STUFF</div>
+        <svg className="footer-wordmark" viewBox="0 0 1000 120" aria-hidden="true" preserveAspectRatio="none">
+          <text x="500" y="100" textAnchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">
+            OTHER STUFF
+          </text>
+        </svg>
       </div>
     </footer>
   );
