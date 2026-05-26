@@ -184,6 +184,7 @@
   gap: 6px;
   font-size: 12px;
   color: rgba(240, 240, 240, 0.5);
+  white-space: nowrap;
 }
 
 .footer-partner a {
@@ -202,7 +203,8 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  white-space: nowrap;
 }
 
 .footer-legal span,
@@ -255,7 +257,7 @@
 
 .footer-wordmark {
   margin-top: auto;
-  margin-bottom: clamp(-52px, -4vw, -24px);
+  margin-bottom: clamp(6px, 0.75vw, 12px);
   position: relative;
   left: 50%;
   display: block;
@@ -324,12 +326,27 @@
   }
 
   .footer-meta {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: max-content max-content max-content;
+    align-items: center;
     gap: 18px;
     padding: 0 0 28px;
     margin-bottom: 28px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .footer-meta::-webkit-scrollbar {
+    display: none;
+  }
+
+  .footer-legal,
+  .footer-partner,
+  .footer-social {
+    grid-column: auto;
+    grid-row: auto;
+    justify-self: start;
   }
 
   .footer-wordmark {
@@ -337,7 +354,7 @@
     width: 100vw;
     height: clamp(46px, 15vw, 74px);
     margin-left: -50vw;
-    margin-bottom: -16px;
+    margin-bottom: 8px;
   }
 }
 

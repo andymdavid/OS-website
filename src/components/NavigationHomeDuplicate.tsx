@@ -8,7 +8,7 @@ const solutions = [
   {
     title: 'Custom AI Systems',
     description: 'Built to grow your margins, free up capital, and reduce risk across the workflows that matter most.',
-    href: '/marginal-gains',
+    href: '/marginal-gains/',
   },
   {
     title: 'Wingmen',
@@ -18,12 +18,12 @@ const solutions = [
   {
     title: 'Speedrun Workshop',
     description: 'Get your team building with AI in a single high-energy session. Perfect for first exposure.',
-    href: '/speedrun',
+    href: '/speedrun/',
   },
   {
     title: 'Level-Up Workshop',
     description: 'Structured capability building over multiple sessions for deeper AI integration.',
-    href: '/levelup',
+    href: '/levelup/',
   },
 ];
 
@@ -31,22 +31,22 @@ const mediaLinks = [
   {
     title: 'The Good Stuff',
     description: 'Conversations, episodes, and field notes from building with AI.',
-    href: '/the-good-stuff',
+    href: '/the-good-stuff/',
   },
   {
     title: 'Newsletter',
     description: 'The operating memo for SME leaders using AI to improve margin, capital efficiency, and risk.',
-    href: '/newsletter',
+    href: '/newsletter/',
   },
   {
     title: 'Writing',
     description: 'Notes, essays, and practical thinking from the work.',
-    href: '/writing',
+    href: '/writing/',
   },
   {
     title: 'Games',
     description: 'Playable examples built through our hands-on work with AI.',
-    href: '/games',
+    href: '/games/',
   },
 ];
 
@@ -217,7 +217,7 @@ export function NavigationHomeDuplicate({
                   ))}
                 </div>
               </div>
-              <a href="/about" className="nav-link" onClick={closeMenus}>
+              <a href="/about/" className="nav-link" onClick={closeMenus}>
                 Company
               </a>
             </div>
@@ -250,7 +250,7 @@ export function NavigationHomeDuplicate({
               Sign In
             </a>
             <a
-              href="/contact"
+              href="/contact/"
               className="nav-join-btn"
               onClick={closeMenus}
             >
@@ -345,7 +345,7 @@ export function NavigationHomeDuplicate({
               </div>
             </div>
 
-            <a href="/about" className="mobile-menu-primary mobile-menu-link" onClick={closeMenus}>
+            <a href="/about/" className="mobile-menu-primary mobile-menu-link" onClick={closeMenus}>
               Company
             </a>
           </div>
@@ -355,7 +355,7 @@ export function NavigationHomeDuplicate({
               Sign In
             </a>
             <a
-              href="/contact"
+              href="/contact/"
               className="nav-join-btn mobile-menu-cta"
               onClick={closeMenus}
             >

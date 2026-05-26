@@ -7,13 +7,35 @@ const DEFAULT_OG_IMAGE = '/og-default.png';
 const WRITING_POSTS_PATH = path.join(__dirname, '..', 'src', 'generated', 'writing-posts.json');
 const NEWSLETTER_ISSUES_PATH = path.join(__dirname, '..', 'src', 'generated', 'newsletter-issues.json');
 
+function canonicalPath(pagePath) {
+  if (!pagePath || pagePath === '/') {
+    return '/';
+  }
+
+  if (/\.[^/]+$/.test(pagePath)) {
+    return pagePath;
+  }
+
+  return pagePath.endsWith('/') ? pagePath : `${pagePath}/`;
+}
+
+function absoluteUrl(pagePath) {
+  return `${SITE_URL}${canonicalPath(pagePath)}`;
+}
+
+function getIndexableNewsletterIssues(newsletterIssues) {
+  return newsletterIssues.filter((issue) => !issue.noindex);
+}
+
 function buildNewsletterArchiveSchema(newsletterIssues) {
+  const indexableIssues = getIndexableNewsletterIssues(newsletterIssues);
+
   return [
     {
       '@context': 'https://schema.org',
       '@type': 'CollectionPage',
-      '@id': `${SITE_URL}/newsletter#collection`,
-      url: `${SITE_URL}/newsletter`,
+      '@id': `${absoluteUrl('/newsletter')}#collection`,
+      url: absoluteUrl('/newsletter'),
       name: 'The Good Stuff Newsletter',
       description:
         'The Good Stuff is the operating memo for SME leaders using AI to improve margin, capital efficiency, and risk.',
@@ -27,11 +49,11 @@ function buildNewsletterArchiveSchema(newsletterIssues) {
     {
       '@context': 'https://schema.org',
       '@type': 'ItemList',
-      '@id': `${SITE_URL}/newsletter#issues`,
-      itemListElement: newsletterIssues.map((issue, index) => ({
+      '@id': `${absoluteUrl('/newsletter')}#issues`,
+      itemListElement: indexableIssues.map((issue, index) => ({
         '@type': 'ListItem',
         position: index + 1,
-        url: `${SITE_URL}${issue.path}`,
+        url: absoluteUrl(issue.path),
         name: issue.title,
         description: issue.seoDescription || issue.description,
       })),
@@ -40,7 +62,7 @@ function buildNewsletterArchiveSchema(newsletterIssues) {
 }
 
 function buildNewsletterArticleSchema(issue) {
-  const issueUrl = `${SITE_URL}${issue.path}`;
+  const issueUrl = absoluteUrl(issue.path);
   const schemaImage = issue.ogImage || issue.thumbnail || DEFAULT_OG_IMAGE;
   const author = issue.authors.length > 0
     ? issue.authors.map((name) => ({
@@ -75,7 +97,7 @@ function buildNewsletterArticleSchema(issue) {
       isPartOf: {
         '@type': 'CreativeWorkSeries',
         name: 'The Good Stuff',
-        url: `${SITE_URL}/newsletter`,
+        url: absoluteUrl('/newsletter'),
       },
       mainEntityOfPage: {
         '@type': 'WebPage',
@@ -100,7 +122,7 @@ function buildNewsletterArticleSchema(issue) {
           '@type': 'ListItem',
           position: 2,
           name: 'Newsletter',
-          item: `${SITE_URL}/newsletter`,
+          item: absoluteUrl('/newsletter'),
         },
         {
           '@type': 'ListItem',
@@ -111,46 +133,6 @@ function buildNewsletterArticleSchema(issue) {
       ],
     },
   ];
-}
-
-function findNewsletterIssue(newsletterIssues, slug) {
-  return newsletterIssues.find((issue) => issue.slug === slug);
-}
-
-function buildRelatedNewsletterBody(newsletterIssues, slugs, heading = 'Related Good Stuff issues') {
-  const issues = slugs
-    .map((slug) => findNewsletterIssue(newsletterIssues, slug))
-    .filter(Boolean);
-
-  if (issues.length === 0) {
-    return '';
-  }
-
-  return `
-        <h2>${heading}</h2>
-        <ul>
-          ${issues.map((issue) => `<li><a href="${issue.path}">${escapeXml(issue.title)}</a> — ${escapeXml(issue.seoDescription || issue.description || '')}</li>`).join('')}
-        </ul>
-      `;
-}
-
-function getRelatedNewsletterSlugsForWriting(slug) {
-  const related = {
-    'where-custom-ai-systems-create-margin-first': [
-      'is-ai-really-saving-you-time',
-      'building-rhinos-not-chasing-unicorns',
-    ],
-    'navigating-the-ai-value-trap': [
-      'building-rhinos-not-chasing-unicorns',
-      'tgs-01',
-    ],
-    'on-the-business-model-of-ai': [
-      'building-ai-that-respects-you',
-      'is-ai-really-saving-you-time',
-    ],
-  };
-
-  return related[slug] || [];
 }
 
 function loadWritingPosts() {
@@ -183,13 +165,13 @@ function getStaticPages() {
         <p>We build custom AI systems around the workflows in your business where repeated manual work is slowing decisions, draining margin, tying up capital, or creating operational risk.</p>
         <p>Start with a free AI audit, identify the workflow where the impact is clearest, and then build a working system on infrastructure your business owns.</p>
         <h2>Core offers</h2>
-        <h3><a href="/marginal-gains">Custom AI Systems</a></h3>
+        <h3><a href="/marginal-gains/">Custom AI Systems</a></h3>
         <p>Free AI audit, focused system build, and an optional ongoing relationship to keep improving live systems over time.</p>
-        <h3><a href="/speedrun">Speedrun</a></h3>
+        <h3><a href="/speedrun/">Speedrun</a></h3>
         <p>A private hands-on AI workshop for business teams in Perth. Build practical tools and workflows with AI agents.</p>
-        <h3><a href="/levelup">Level Up</a></h3>
+        <h3><a href="/levelup/">Level Up</a></h3>
         <p>An AI workshop and school incursion for Perth and WA schools where students build a game with AI.</p>
-        <h2><a href="/about">About Other Stuff</a></h2>
+        <h2><a href="/about/">About Other Stuff</a></h2>
         <p>Other Stuff is an AI-first product studio based in Perth, Western Australia.</p>
         <p>Other Stuff Pty Ltd — City Beach, Perth, Western Australia 6015</p>
         <p><a href="mailto:info@otherstuff.studio">info@otherstuff.studio</a></p>
@@ -372,29 +354,8 @@ function getPrerenderPages() {
   const newsletterIssues = Array.isArray(newsletterPayload.items)
     ? newsletterPayload.items
     : [];
+  const indexableNewsletterIssues = getIndexableNewsletterIssues(newsletterIssues);
   const staticPages = getStaticPages().map((page) => {
-    if (page.path === '/marginal-gains') {
-      return {
-        ...page,
-        body: `${page.body}
-          ${buildRelatedNewsletterBody(newsletterIssues, [
-            'is-ai-really-saving-you-time',
-            'building-rhinos-not-chasing-unicorns',
-          ], 'More on AI, margin, and operating leverage')}`,
-      };
-    }
-
-    if (page.path === '/ai-audit') {
-      return {
-        ...page,
-        body: `${page.body}
-          ${buildRelatedNewsletterBody(newsletterIssues, [
-            'is-ai-really-saving-you-time',
-            'building-rhinos-not-chasing-unicorns',
-          ], 'Thinking behind the audit')}`,
-      };
-    }
-
     if (page.path !== '/writing') {
       if (page.path !== '/newsletter') {
         return page;
@@ -402,12 +363,12 @@ function getPrerenderPages() {
 
       return {
         ...page,
-        schema: buildNewsletterArchiveSchema(newsletterIssues),
+        schema: buildNewsletterArchiveSchema(indexableNewsletterIssues),
         body: `
           <h1>The Good Stuff Newsletter</h1>
           <p>The Good Stuff helps SME owners and leaders turn AI from noise into operating advantage: Margin Up, Capital Up, Risk Down.</p>
           <p>Subscribe for practical notes on where AI can improve margin, free up capital, and reduce operational risk inside real businesses.</p>
-          ${newsletterIssues.length > 0 ? `<ul>${newsletterIssues.map((issue) => `<li><a href="${issue.path}">${issue.title}</a> — ${issue.description}</li>`).join('')}</ul>` : ''}
+          ${indexableNewsletterIssues.length > 0 ? `<ul>${indexableNewsletterIssues.map((issue) => `<li><a href="${canonicalPath(issue.path)}">${escapeXml(issue.title)}</a> — ${escapeXml(issue.description)}</li>`).join('')}</ul>` : ''}
         `,
       };
     }
@@ -417,7 +378,7 @@ function getPrerenderPages() {
       body: `
         <h1>Writing</h1>
         <p>Essays, ideas, and field notes from building with AI.</p>
-        ${writingPosts.length > 0 ? `<ul>${writingPosts.map((post) => `<li><a href="/writing/${post.slug}">${post.title}</a> — ${post.description}</li>`).join('')}</ul>` : ''}
+        ${writingPosts.length > 0 ? `<ul>${writingPosts.map((post) => `<li><a href="${canonicalPath(`/writing/${post.slug}`)}">${escapeXml(post.title)}</a> — ${escapeXml(post.description)}</li>`).join('')}</ul>` : ''}
       `,
     };
   });
@@ -440,11 +401,6 @@ function getPrerenderPages() {
         <h1>${post.title}</h1>
         <p>${post.intro}</p>
         ${post.html}
-        ${buildRelatedNewsletterBody(
-          newsletterIssues,
-          getRelatedNewsletterSlugsForWriting(post.slug),
-          'Related Good Stuff issues',
-        )}
       `,
     })),
     ...newsletterIssues.map((issue) => ({
@@ -470,6 +426,45 @@ function getPrerenderPages() {
       `,
     })),
   ];
+}
+
+function buildSeoFallbackLinks(currentPath = '/') {
+  const writingPosts = loadWritingPosts();
+  const newsletterPayload = loadNewsletterPayload();
+  const newsletterIssues = Array.isArray(newsletterPayload.items)
+    ? getIndexableNewsletterIssues(newsletterPayload.items)
+    : [];
+  const normalizedCurrent = canonicalPath(currentPath);
+  const links = [
+    { path: '/', label: 'Home' },
+    { path: '/marginal-gains', label: 'Custom AI Systems' },
+    { path: '/ai-audit', label: 'Free AI Audit' },
+    { path: '/speedrun', label: 'Speedrun AI Workshop' },
+    { path: '/levelup', label: 'Level Up School Incursion' },
+    { path: '/about', label: 'About' },
+    { path: '/contact', label: 'Contact' },
+    { path: '/newsletter', label: 'Newsletter' },
+    { path: '/writing', label: 'Writing' },
+    { path: '/the-good-stuff', label: 'The Good Stuff' },
+    { path: '/games', label: 'Games' },
+    ...writingPosts.map((post) => ({
+      path: `/writing/${post.slug}`,
+      label: post.title,
+    })),
+    ...newsletterIssues.map((issue) => ({
+      path: issue.path,
+      label: issue.title,
+    })),
+  ].filter((link) => canonicalPath(link.path) !== normalizedCurrent);
+
+  return `
+        <nav aria-label="Site links">
+          <h2>Explore Other Stuff</h2>
+          <ul>
+            ${links.map((link) => `<li><a href="${canonicalPath(link.path)}">${escapeXml(link.label)}</a></li>`).join('')}
+          </ul>
+        </nav>
+      `;
 }
 
 function escapeXml(value) {
@@ -504,7 +499,7 @@ function buildSitemapXml() {
     .map((page) => {
       const lines = [
         '  <url>',
-        `    <loc>${SITE_URL}${page.path}</loc>`,
+        `    <loc>${absoluteUrl(page.path)}</loc>`,
       ];
 
       if (page.sitemap.lastmod) {
@@ -531,10 +526,11 @@ function buildLlmsText() {
     ? newsletterPayload.items
     : [];
   const postList = writingPosts
-    .map((post) => `- https://otherstuff.ai/writing/${post.slug}`)
+    .map((post) => `- ${absoluteUrl(`/writing/${post.slug}`)}`)
     .join('\n');
   const newsletterList = newsletterIssues
-    .map((issue) => `- https://otherstuff.ai${issue.path}`)
+    .filter((issue) => !issue.noindex)
+    .map((issue) => `- ${absoluteUrl(issue.path)}`)
     .join('\n');
 
   return `# Other Stuff
@@ -618,13 +614,13 @@ function buildLlmsFullText() {
   const writingPosts = loadWritingPosts();
   const newsletterPayload = loadNewsletterPayload();
   const newsletterIssues = Array.isArray(newsletterPayload.items)
-    ? newsletterPayload.items
+    ? getIndexableNewsletterIssues(newsletterPayload.items)
     : [];
   const postList = writingPosts.length > 0
-    ? writingPosts.map((post) => `- https://otherstuff.ai/writing/${post.slug}`).join('\n')
+    ? writingPosts.map((post) => `- ${absoluteUrl(`/writing/${post.slug}`)}`).join('\n')
     : '- No writing posts published yet';
   const newsletterList = newsletterIssues.length > 0
-    ? newsletterIssues.map((issue) => `- https://otherstuff.ai${issue.path}`).join('\n')
+    ? newsletterIssues.map((issue) => `- ${absoluteUrl(issue.path)}`).join('\n')
     : '- No newsletter issues published yet';
 
   return `# Other Stuff - Full LLM Reference
@@ -828,8 +824,11 @@ module.exports = {
   SITE_NAME,
   SITE_URL,
   DEFAULT_OG_IMAGE,
+  canonicalPath,
+  absoluteUrl,
   escapeXml,
   getPrerenderPages,
+  buildSeoFallbackLinks,
   buildSitemapXml,
   buildLlmsText,
   buildLlmsFullText,

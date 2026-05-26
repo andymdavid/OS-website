@@ -2,6 +2,22 @@ export const SITE_URL = "https://otherstuff.ai";
 export const ORGANIZATION_ID = `${SITE_URL}/#organization`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
 
+export function canonicalPath(path: string) {
+  if (!path || path === "/") {
+    return "/";
+  }
+
+  if (/\.[^/]+$/.test(path)) {
+    return path;
+  }
+
+  return path.endsWith("/") ? path : `${path}/`;
+}
+
+export function absoluteUrl(path: string) {
+  return `${SITE_URL}${canonicalPath(path)}`;
+}
+
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
@@ -73,23 +89,23 @@ export function getServiceSchema({
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": `${SITE_URL}${path}#service`,
+    "@id": `${absoluteUrl(path)}#service`,
     name,
-    url: `${SITE_URL}${path}`,
+    url: absoluteUrl(path),
     description,
     serviceType,
     provider: getOrganizationRef(),
     brand: getOrganizationRef(),
-    mainEntityOfPage: `${SITE_URL}${path}`,
+    mainEntityOfPage: absoluteUrl(path),
     areaServed,
     audience,
     availableChannel: {
       "@type": "ServiceChannel",
-      serviceUrl: `${SITE_URL}${path}`,
+      serviceUrl: absoluteUrl(path),
     },
     offers: {
       "@type": "Offer",
-      url: `${SITE_URL}${path}`,
+      url: absoluteUrl(path),
       availability: "https://schema.org/InStock",
     },
   };

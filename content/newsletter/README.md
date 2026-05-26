@@ -6,7 +6,7 @@ The canonical search target for evergreen newsletter issues should be the on-sit
 
 - Use `noindex: true` in `src/content/newsletter-seo-overrides.json` for event reminders, time-sensitive promotions, launch notices, or issues that should not compete for organic search.
 - Keep evergreen essays indexable when they support a clear topic the site wants to own, such as AI systems for SMEs, workflow automation, operating leverage, privacy-first AI, margin, capital efficiency, or business resilience.
-- Noindexed issues use `noindex, follow` and are excluded from the sitemap, but can remain linked where they help readers.
+- Noindexed issues use `noindex, follow` and are excluded from the sitemap, archive pages, related links, previous/next navigation, and machine-readable discovery files.
 
 ## Beehiiv Duplication
 

@@ -6,7 +6,6 @@ import { CTASection } from "@/components/CTASection";
 import { Footer } from "@/components/Footer";
 import { AIAuditFitDemo } from "@/components/AIAuditFitDemo";
 import { AIAuditQuestionnaireDemo } from "@/components/AIAuditQuestionnaireDemo";
-import { RelatedNewsletterLinks } from "@/components/RelatedNewsletterLinks";
 import "@/components/Hero.css";
 import "@/components/IntroSection.css";
 import "@/components/FunnelSection.css";
@@ -420,15 +419,6 @@ export default function AIAudit() {
             </div>
           </div>
         </section>
-
-        <RelatedNewsletterLinks
-          slugs={[
-            "is-ai-really-saving-you-time",
-            "building-rhinos-not-chasing-unicorns",
-          ]}
-          eyebrow="Field notes"
-          heading="Thinking behind the audit"
-        />
 
         <CTASection
           pillLabel="Free AI Audit"

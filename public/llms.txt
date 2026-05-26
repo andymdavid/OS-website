@@ -51,19 +51,18 @@ Other important pages:
 - Privacy: https://otherstuff.ai/privacy
 
 Writing currently featured on the site:
-- https://otherstuff.ai/writing/where-custom-ai-systems-create-margin-first
-- https://otherstuff.ai/writing/navigating-the-ai-value-trap
-- https://otherstuff.ai/writing/on-the-business-model-of-ai
+- https://otherstuff.ai/writing/where-custom-ai-systems-create-margin-first/
+- https://otherstuff.ai/writing/navigating-the-ai-value-trap/
+- https://otherstuff.ai/writing/on-the-business-model-of-ai/
 
 Newsletter issues currently archived on the site:
-- https://otherstuff.ai/newsletter/ai-killed-the-billable-hour
-- https://otherstuff.ai/newsletter/personal-ai-you-can-trust
-- https://otherstuff.ai/newsletter/unruggable-productivity
-- https://otherstuff.ai/newsletter/is-ai-really-saving-you-time
-- https://otherstuff.ai/newsletter/building-ai-that-respects-you
-- https://otherstuff.ai/newsletter/last-chance-to-register-for-touch-don-t-look-jan-20th
-- https://otherstuff.ai/newsletter/building-rhinos-not-chasing-unicorns
-- https://otherstuff.ai/newsletter/tgs-01
+- https://otherstuff.ai/newsletter/ai-killed-the-billable-hour/
+- https://otherstuff.ai/newsletter/personal-ai-you-can-trust/
+- https://otherstuff.ai/newsletter/unruggable-productivity/
+- https://otherstuff.ai/newsletter/is-ai-really-saving-you-time/
+- https://otherstuff.ai/newsletter/building-ai-that-respects-you/
+- https://otherstuff.ai/newsletter/building-rhinos-not-chasing-unicorns/
+- https://otherstuff.ai/newsletter/tgs-01/
 
 People:
 - Pete Winn — Co-Founder

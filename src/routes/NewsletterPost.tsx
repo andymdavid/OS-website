@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { NewsletterModal } from "@/components/NewsletterModal";
 import newsletterPayload from "@/generated/newsletter-issues.json";
 import NotFound from "@/routes/NotFound";
+import { absoluteUrl, canonicalPath } from "@/lib/structured-data";
 import type { NewsletterIssue, NewsletterPayload } from "@/types/newsletter";
 import { useParams } from "react-router-dom";
 import "@/routes/WritingPost.css";
@@ -47,10 +48,17 @@ export default function NewsletterPost() {
   }
 
   const keepReading = payload.items
-    .filter((entry) => entry.slug !== issue.slug)
+    .filter((entry) => entry.slug !== issue.slug && !entry.noindex)
     .slice(0, 3);
+  const indexableIssues = payload.items.filter((entry) => !entry.noindex);
+  const issueIndex = indexableIssues.findIndex((entry) => entry.slug === issue.slug);
+  const newerIssue = issueIndex > 0 ? indexableIssues[issueIndex - 1] : null;
+  const olderIssue =
+    issueIndex >= 0 && issueIndex < indexableIssues.length - 1
+      ? indexableIssues[issueIndex + 1]
+      : null;
   const authorLine = issue.authors.length > 0 ? issue.authors.join(", ") : "Other Stuff";
-  const issueUrl = `https://otherstuff.ai${issue.path}`;
+  const issueUrl = absoluteUrl(issue.path);
   const schemaImage = issue.ogImage || issue.thumbnail || "/og-default.png";
   const seoTitle = issue.seoTitle || issue.title;
   const seoDescription = issue.seoDescription || issue.description;
@@ -138,7 +146,7 @@ export default function NewsletterPost() {
             isPartOf: {
               "@type": "CreativeWorkSeries",
               name: "The Good Stuff",
-              url: "https://otherstuff.ai/newsletter",
+              url: absoluteUrl("/newsletter"),
             },
             mainEntityOfPage: {
               "@type": "WebPage",
@@ -163,7 +171,7 @@ export default function NewsletterPost() {
                 "@type": "ListItem",
                 position: 2,
                 name: "Newsletter",
-                item: "https://otherstuff.ai/newsletter",
+                item: absoluteUrl("/newsletter"),
               },
               {
                 "@type": "ListItem",
@@ -179,7 +187,7 @@ export default function NewsletterPost() {
       <main>
         <section className="section writing-post-hero">
           <div className="section-container-wide writing-post-hero-inner">
-            <a href="/newsletter" className="writing-post-back">
+            <a href="/newsletter/" className="writing-post-back">
               Back to Newsletter
             </a>
 
@@ -252,6 +260,30 @@ export default function NewsletterPost() {
           </div>
         </section>
 
+        <section className="section newsletter-post-pagination-section">
+          <div className="section-container-wide newsletter-post-pagination">
+            <a className="newsletter-post-nav-link newsletter-post-archive-link" href="/newsletter/">
+              All newsletter issues
+            </a>
+            <div className="newsletter-post-pagination-grid">
+              {olderIssue ? (
+                <a className="newsletter-post-nav-link" href={canonicalPath(olderIssue.path)}>
+                  Previous issue
+                </a>
+              ) : (
+                <span className="newsletter-post-nav-link is-disabled">Previous issue</span>
+              )}
+              {newerIssue ? (
+                <a className="newsletter-post-nav-link" href={canonicalPath(newerIssue.path)}>
+                  Next issue
+                </a>
+              ) : (
+                <span className="newsletter-post-nav-link is-disabled">Next issue</span>
+              )}
+            </div>
+          </div>
+        </section>
+
         {keepReading.length > 0 ? (
           <section className="section writing-post-keep-reading">
             <div className="section-container-wide">
@@ -261,7 +293,7 @@ export default function NewsletterPost() {
               <div className="writing-post-keep-grid">
                 {keepReading.map((entry) => (
                   <article key={entry.slug} className="writing-post-keep-card">
-                    <a className="writing-post-keep-link" href={entry.path}>
+                    <a className="writing-post-keep-link" href={canonicalPath(entry.path)}>
                       {entry.thumbnail ? (
                         <div className="writing-post-keep-media">
                           <img src={entry.thumbnail} alt={entry.title} loading="lazy" />

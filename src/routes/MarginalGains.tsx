@@ -5,7 +5,6 @@ import { MGGridSection } from "@/components/MGGridSection";
 import { MGHowItWorksSection } from "@/components/MGHowItWorksSection";
 import { CTAHomeDuplicate } from "@/components/CTAHomeDuplicate";
 import { FooterHomeDuplicate } from "@/components/FooterHomeDuplicate";
-import { RelatedNewsletterLinks } from "@/components/RelatedNewsletterLinks";
 import {
   MarginalGainsDuplicateBody,
   MarginalGainsDuplicateHero,
@@ -126,14 +125,6 @@ export default function MarginalGains() {
       <MGGridSection />
       <MGHowItWorksSection />
       <MarginalGainsDuplicateBody />
-      <RelatedNewsletterLinks
-        slugs={[
-          "is-ai-really-saving-you-time",
-          "building-rhinos-not-chasing-unicorns",
-        ]}
-        eyebrow="Field notes"
-        heading="More on AI, margin, and operating leverage"
-      />
       <CTAHomeDuplicate />
       <FooterHomeDuplicate />
     </div>

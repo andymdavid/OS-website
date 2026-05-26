@@ -8,8 +8,10 @@ const {
   SITE_NAME,
   SITE_URL,
   DEFAULT_OG_IMAGE,
+  absoluteUrl,
   escapeXml,
   getPrerenderPages,
+  buildSeoFallbackLinks,
   buildSitemapXml,
   buildLlmsText,
 } = require('./seo-config.cjs');
@@ -37,7 +39,7 @@ for (const page of pages) {
   const fullTitle = page.path === '/'
     ? `${SITE_NAME} | ${page.title}`
     : `${page.title} | ${SITE_NAME}`;
-  const url = `${SITE_URL}${page.path}`;
+  const url = absoluteUrl(page.path);
   const imageUrl = resolveImageUrl(page.ogImage);
   const ogType = page.ogType || (
     page.path.startsWith('/writing/') || page.path.startsWith('/newsletter/')
@@ -75,7 +77,7 @@ for (const page of pages) {
   if (page.body) {
     html = html.replace(
       '<div id="root"></div>',
-      `<div id="root"></div>\n    <noscript><main>${page.body}\n    </main></noscript>`,
+      `<div id="root"></div>\n    <noscript><main>${page.body}\n${buildSeoFallbackLinks(page.path)}\n    </main></noscript>`,
     );
   }
 

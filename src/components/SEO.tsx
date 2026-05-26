@@ -4,6 +4,18 @@ const SITE_URL = 'https://otherstuff.ai';
 const SITE_NAME = 'Other Stuff';
 const DEFAULT_OG_IMAGE = '/og-default.png';
 
+function canonicalPath(path: string) {
+  if (!path || path === '/') {
+    return '/';
+  }
+
+  if (/\.[^/]+$/.test(path)) {
+    return path;
+  }
+
+  return path.endsWith('/') ? path : `${path}/`;
+}
+
 function resolveImageUrl(image?: string) {
   if (image && /^https?:\/\//.test(image)) {
     return image;
@@ -24,7 +36,7 @@ interface SEOProps {
 }
 
 export function SEO({ title, description, path, noindex, ogImage, ogType = 'website', publishedTime, schema }: SEOProps) {
-  const url = `${SITE_URL}${path}`;
+  const url = `${SITE_URL}${canonicalPath(path)}`;
   const fullTitle = path === '/' ? `${SITE_NAME} | ${title}` : `${title} | ${SITE_NAME}`;
   const imageUrl = resolveImageUrl(ogImage);
 

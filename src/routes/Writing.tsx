@@ -4,6 +4,7 @@ import { Button } from "@/components/Button";
 import { CTASection } from "@/components/CTASection";
 import { Footer } from "@/components/Footer";
 import writingPosts from "@/generated/writing-posts.json";
+import { canonicalPath } from "@/lib/structured-data";
 import "@/components/Hero.css";
 import "@/routes/Writing.css";
 
@@ -41,7 +42,7 @@ export default function Writing() {
             <div className="writing-posts-grid">
               {writingPosts.map((post, index) => (
                 <article key={post.slug} className="writing-post">
-                  <a className="writing-post-link" href={`/writing/${post.slug}`}>
+                  <a className="writing-post-link" href={canonicalPath(`/writing/${post.slug}`)}>
                     <div className="writing-post-media">
                       <img src={post.thumbnail} alt={post.title} loading="lazy" />
                     </div>

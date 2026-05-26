@@ -31,25 +31,25 @@ export function FooterHomeDuplicate() {
 
           <nav className="footer-column" aria-label="Solutions">
             <h4>Solutions</h4>
-            <a href="/ai-audit">AI Audit</a>
-            <a href="/marginal-gains">Custom AI Systems</a>
+            <a href="/ai-audit/">AI Audit</a>
+            <a href="/marginal-gains/">Custom AI Systems</a>
             <a href="/#system">Wingmen</a>
-            <a href="/speedrun">AI Workshop for Business Teams</a>
-            <a href="/levelup">AI Incursion for Schools</a>
+            <a href="/speedrun/">AI Workshop for Business Teams</a>
+            <a href="/levelup/">AI Incursion for Schools</a>
           </nav>
 
           <nav className="footer-column" aria-label="Media">
             <h4>Media</h4>
-            <a href="/newsletter">Newsletter</a>
-            <a href="/the-good-stuff">The Good Stuff</a>
-            <a href="/writing">Writing</a>
-            <a href="/games">Games</a>
+            <a href="/newsletter/">Newsletter</a>
+            <a href="/the-good-stuff/">The Good Stuff</a>
+            <a href="/writing/">Writing</a>
+            <a href="/games/">Games</a>
           </nav>
 
           <nav className="footer-column" aria-label="Company">
             <h4>Company</h4>
-            <a href="/about">About</a>
-            <a href="/contact">Contact</a>
+            <a href="/about/">About</a>
+            <a href="/contact/">Contact</a>
           </nav>
         </div>
 
@@ -95,9 +95,9 @@ export function FooterHomeDuplicate() {
           <div className="footer-legal">
             <span>© {new Date().getFullYear()} Other Stuff Pty Ltd. All rights reserved.</span>
             <span className="footer-separator">•</span>
-            <a href="/terms">Terms of Service</a>
+            <a href="/terms/">Terms of Service</a>
             <span className="footer-separator">•</span>
-            <a href="/privacy">Privacy Policy</a>
+            <a href="/privacy/">Privacy Policy</a>
           </div>
         </div>
 

@@ -20,7 +20,7 @@ export function Footer() {
           {/* Column 1: Tagline & Info (Wider) */}
           <div className="footer-brand-column">
             <div className="footer-tagline">
-              Helping SMEs develop practical AI capability internally.
+              We build custom AI systems that take repetitive work off your team's plate.
             </div>
             <div className="footer-newsletter">
               <h4>Subscribe to The Good Stuff</h4>
@@ -36,27 +36,27 @@ export function Footer() {
           {/* Column 2: Solutions */}
           <nav className="footer-column" aria-label="Solutions">
             <h4>Solutions</h4>
-            <a href="/ai-audit">AI Audit</a>
-            <a href="/marginal-gains">Custom AI Systems</a>
+            <a href="/ai-audit/">AI Audit</a>
+            <a href="/marginal-gains/">Custom AI Systems</a>
             <a href="/#system">Wingmen</a>
-            <a href="/speedrun">AI Workshop for Business Teams</a>
-            <a href="/levelup">AI Incursion for Schools</a>
+            <a href="/speedrun/">AI Workshop for Business Teams</a>
+            <a href="/levelup/">AI Incursion for Schools</a>
           </nav>
 
           {/* Column 3: Media */}
           <nav className="footer-column" aria-label="Media">
             <h4>Media</h4>
-            <a href="/newsletter">Newsletter</a>
-            <a href="/the-good-stuff">The Good Stuff</a>
-            <a href="/writing">Writing</a>
-            <a href="/games">Games</a>
+            <a href="/newsletter/">Newsletter</a>
+            <a href="/the-good-stuff/">The Good Stuff</a>
+            <a href="/writing/">Writing</a>
+            <a href="/games/">Games</a>
           </nav>
 
           {/* Column 4: Company */}
           <nav className="footer-column" aria-label="Company">
             <h4>Company</h4>
-            <a href="/about">About</a>
-            <a href="/contact">Contact</a>
+            <a href="/about/">About</a>
+            <a href="/contact/">Contact</a>
           </nav>
         </div>
 
@@ -102,9 +102,9 @@ export function Footer() {
           <div className="footer-legal">
             <span>© {new Date().getFullYear()} Other Stuff Pty Ltd. All rights reserved.</span>
             <span className="footer-separator">•</span>
-            <a href="/terms">Terms of Service</a>
+            <a href="/terms/">Terms of Service</a>
             <span className="footer-separator">•</span>
-            <a href="/privacy">Privacy Policy</a>
+            <a href="/privacy/">Privacy Policy</a>
           </div>
         </div>
 

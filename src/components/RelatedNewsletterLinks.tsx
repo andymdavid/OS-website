@@ -1,4 +1,5 @@
 import newsletterPayload from "@/generated/newsletter-issues.json";
+import { canonicalPath } from "@/lib/structured-data";
 import type { NewsletterIssue, NewsletterPayload } from "@/types/newsletter";
 import "@/components/RelatedNewsletterLinks.css";
 
@@ -13,7 +14,7 @@ interface RelatedNewsletterLinksProps {
 export function getNewsletterIssuesBySlug(slugs: string[]): NewsletterIssue[] {
   return slugs
     .map((slug) => payload.items.find((issue) => issue.slug === slug))
-    .filter((issue): issue is NewsletterIssue => Boolean(issue));
+    .filter((issue): issue is NewsletterIssue => Boolean(issue) && !issue.noindex);
 }
 
 export function RelatedNewsletterLinks({
@@ -37,7 +38,7 @@ export function RelatedNewsletterLinks({
         <div className="related-newsletter-grid">
           {issues.map((issue) => (
             <article key={issue.slug} className="related-newsletter-card">
-              <a href={issue.path} className="related-newsletter-link">
+              <a href={canonicalPath(issue.path)} className="related-newsletter-link">
                 <div className="related-newsletter-meta">
                   <span>The Good Stuff</span>
                   {issue.displayDate ? <span>{issue.displayDate}</span> : null}

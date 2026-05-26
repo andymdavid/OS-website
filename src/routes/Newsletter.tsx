@@ -4,6 +4,7 @@ import { EmailCaptureForm } from "@/components/EmailCaptureForm";
 import { CTASection } from "@/components/CTASection";
 import { Footer } from "@/components/Footer";
 import newsletterPayload from "@/generated/newsletter-issues.json";
+import { absoluteUrl, canonicalPath } from "@/lib/structured-data";
 import type { NewsletterPayload } from "@/types/newsletter";
 import "@/components/Hero.css";
 import "@/components/GoodStuff.css";
@@ -12,13 +13,14 @@ import "@/routes/Newsletter.css";
 
 export default function Newsletter() {
   const payload = newsletterPayload as NewsletterPayload;
-  const issues = payload.items.slice(0, 8);
+  const indexableIssues = payload.items.filter((issue) => !issue.noindex);
+  const issues = indexableIssues.slice(0, 8);
   const archiveSchema = [
     {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
       "@id": "https://otherstuff.ai/newsletter#collection",
-      url: "https://otherstuff.ai/newsletter",
+      url: absoluteUrl("/newsletter"),
       name: "The Good Stuff Newsletter",
       description:
         "The Good Stuff is the operating memo for SME leaders using AI to improve margin, capital efficiency, and risk.",
@@ -33,10 +35,10 @@ export default function Newsletter() {
       "@context": "https://schema.org",
       "@type": "ItemList",
       "@id": "https://otherstuff.ai/newsletter#issues",
-      itemListElement: payload.items.map((issue, index) => ({
+      itemListElement: indexableIssues.map((issue, index) => ({
         "@type": "ListItem",
         position: index + 1,
-        url: `https://otherstuff.ai${issue.path}`,
+        url: absoluteUrl(issue.path),
         name: issue.title,
         description: issue.seoDescription || issue.description,
       })),
@@ -96,7 +98,7 @@ export default function Newsletter() {
             <div className="writing-posts-grid newsletter-posts-grid">
               {issues.map((issue, index) => (
                 <article key={issue.id} className="writing-post">
-                  <a className="writing-post-link" href={issue.path}>
+                  <a className="writing-post-link" href={canonicalPath(issue.path)}>
                     <div className="writing-post-media newsletter-post-media">
                       {issue.thumbnail ? (
                         <img src={issue.thumbnail} alt={issue.title} loading="lazy" />

@@ -2,28 +2,14 @@ import { SEO } from "@/components/SEO";
 import { NavigationDraft } from "@/components/NavigationDraft";
 import { CTASection } from "@/components/CTASection";
 import { Footer } from "@/components/Footer";
-import { RelatedNewsletterLinks } from "@/components/RelatedNewsletterLinks";
 import { ValueTrapChart } from "@/components/ValueTrapChart";
 import writingPosts from "@/generated/writing-posts.json";
 import NotFound from "@/routes/NotFound";
+import { absoluteUrl, canonicalPath } from "@/lib/structured-data";
 import { useParams } from "react-router-dom";
 import "@/routes/WritingPost.css";
 
 const EMBED_MARKER = '<div data-embed="value-trap-chart"></div>';
-const relatedNewsletterByPost: Record<string, string[]> = {
-  "where-custom-ai-systems-create-margin-first": [
-    "is-ai-really-saving-you-time",
-    "building-rhinos-not-chasing-unicorns",
-  ],
-  "navigating-the-ai-value-trap": [
-    "building-rhinos-not-chasing-unicorns",
-    "tgs-01",
-  ],
-  "on-the-business-model-of-ai": [
-    "building-ai-that-respects-you",
-    "is-ai-really-saving-you-time",
-  ],
-};
 
 export default function WritingPost() {
   const { slug } = useParams();
@@ -35,6 +21,7 @@ export default function WritingPost() {
 
   const keepReading = writingPosts.filter((entry) => entry.slug !== post.slug).slice(0, 3);
   const bodyParts = post.html.split(EMBED_MARKER);
+  const postUrl = absoluteUrl(`/writing/${post.slug}`);
 
   return (
     <div className="os-theme os-draft min-h-screen writing-post-page">
@@ -48,8 +35,8 @@ export default function WritingPost() {
         schema={{
           "@context": "https://schema.org",
           "@type": "BlogPosting",
-          "@id": `https://otherstuff.ai/writing/${post.slug}#article`,
-          url: `https://otherstuff.ai/writing/${post.slug}`,
+          "@id": `${postUrl}#article`,
+          url: postUrl,
           headline: post.title,
           description: post.description,
           image: `https://otherstuff.ai${post.ogImage ?? post.thumbnail}`,
@@ -70,7 +57,7 @@ export default function WritingPost() {
           },
           mainEntityOfPage: {
             "@type": "WebPage",
-            "@id": `https://otherstuff.ai/writing/${post.slug}`,
+            "@id": postUrl,
           },
         }}
       />
@@ -78,7 +65,7 @@ export default function WritingPost() {
       <main>
         <section className="section writing-post-hero">
           <div className="section-container-wide writing-post-hero-inner">
-            <a href="/writing" className="writing-post-back">
+            <a href="/writing/" className="writing-post-back">
               Back to Writing
             </a>
 
@@ -100,13 +87,13 @@ export default function WritingPost() {
 
             <div className="writing-post-share">
               <span>Share</span>
-              <a href={`https://www.linkedin.com/sharing/share-offsite/?url=https://otherstuff.ai/writing/${post.slug}`} target="_blank" rel="noopener noreferrer">
+              <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(postUrl)}`} target="_blank" rel="noopener noreferrer">
                 LinkedIn
               </a>
-              <a href={`https://twitter.com/intent/tweet?url=https://otherstuff.ai/writing/${post.slug}&text=${encodeURIComponent(post.title)}`} target="_blank" rel="noopener noreferrer">
+              <a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(postUrl)}&text=${encodeURIComponent(post.title)}`} target="_blank" rel="noopener noreferrer">
                 X
               </a>
-              <a href={`mailto:?subject=${encodeURIComponent(post.title)}&body=${encodeURIComponent(`https://otherstuff.ai/writing/${post.slug}`)}`} rel="noopener noreferrer">
+              <a href={`mailto:?subject=${encodeURIComponent(post.title)}&body=${encodeURIComponent(postUrl)}`} rel="noopener noreferrer">
                 Email
               </a>
             </div>
@@ -128,11 +115,6 @@ export default function WritingPost() {
           </div>
         </section>
 
-        <RelatedNewsletterLinks
-          slugs={relatedNewsletterByPost[post.slug] || []}
-          heading="Related Good Stuff issues"
-        />
-
         {keepReading.length > 0 ? (
         <section className="section writing-post-keep-reading">
           <div className="section-container-wide">
@@ -142,7 +124,7 @@ export default function WritingPost() {
             <div className="writing-post-keep-grid">
               {keepReading.map((post) => (
                 <article key={post.slug} className="writing-post-keep-card">
-                  <a className="writing-post-keep-link" href={`/writing/${post.slug}`}>
+                  <a className="writing-post-keep-link" href={canonicalPath(`/writing/${post.slug}`)}>
                     <div className="writing-post-keep-media">
                       <img src={post.thumbnail} alt={post.title} loading="lazy" />
                     </div>
