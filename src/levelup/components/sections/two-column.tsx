@@ -1057,7 +1057,7 @@ export function TwoColumn({
                               >
                                 <img
                                   src={profileLogo}
-                                  alt="Logo"
+                                  alt="Other Stuff — Perth AI automation and product studio"
                                   width={16}
                                   height={16}
                                   className="object-contain rounded-[3px]"

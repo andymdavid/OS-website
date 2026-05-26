@@ -58,7 +58,7 @@ function buildOrganizationSchema() {
     image: `${SITE_URL}/og-default.png`,
     email: 'info@otherstuff.studio',
     description:
-      'Other Stuff is a Perth-based AI product studio that builds custom AI systems and AI automation for small and medium-sized businesses.',
+      'Other Stuff is a Perth AI automation and product studio helping small and medium-sized businesses turn AI consulting, workflow design, and product thinking into working systems.',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'City Beach',
@@ -533,33 +533,37 @@ function getStaticPages() {
     },
     {
       path: '/marginal-gains',
-      title: 'AI Automation Perth | Custom AI Systems for SMEs',
+      title: 'AI Automation & AI Consulting Perth',
       description:
-        'AI automation for Perth SMEs. Start with a free AI audit, then build working systems around the workflows that grow margins, free up capital, and reduce operational risk.',
+        'Other Stuff helps Perth SMEs identify, design, and deliver AI automation systems that grow margins, free up capital, and reduce operational risk. Practical AI consulting, delivered as working systems.',
       ogImage: '/og-marginal-gains.png',
       sitemap: { changefreq: 'weekly', priority: '0.95' },
       schema: withOrganization([
         buildServiceSchema({
           path: '/marginal-gains',
-          name: 'AI Automation and Custom AI Systems for SMEs',
+          name: 'AI Automation and AI Consulting Perth',
           description:
-            'AI automation, AI agents, and custom AI systems for SMEs in Perth and across Australia, built around real operational workflows.',
+            'AI automation and AI consulting for Perth SMEs, delivered by an AI product studio as working systems around real operational workflows.',
           serviceType: [
             'AI automation',
+            'AI consulting',
             'Custom AI systems',
             'AI workflow automation',
             'AI agent development',
             'Business process automation',
+            'AI product studio',
           ],
           audience: {
             '@type': 'BusinessAudience',
             audienceType: 'Small and medium-sized businesses',
           },
           category: [
-            'AI Automation',
-            'Custom AI Systems',
+            'AI Automation Perth',
+            'AI Consulting Perth',
+            'AI Workflow Automation',
             'AI Agents for Business',
-            'Workflow Automation',
+            'Free AI Audit',
+            'AI Product Studio',
           ],
           offers: {
             '@type': 'Offer',

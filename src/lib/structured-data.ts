@@ -29,6 +29,8 @@ export const organizationSchema = {
   logo: `${SITE_URL}/Logo-Main-Icon.webp`,
   image: `${SITE_URL}/og-default.png`,
   email: "info@otherstuff.studio",
+  description:
+    "Other Stuff is a Perth AI automation and product studio helping small and medium-sized businesses turn AI consulting, workflow design, and product thinking into working systems.",
   address: {
     "@type": "PostalAddress",
     addressLocality: "City Beach",

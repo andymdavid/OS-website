@@ -167,7 +167,7 @@ export function NavigationDraft({ titleOverride, titleSwapOnScroll }: Navigation
           {/* Left Section: Logo Icon + Menu */}
           <div className="nav-left">
             <a className="nav-logo-icon" href="/" onClick={closeMenus}>
-              <img src="/Logo-Main-Icon.webp" alt="Other Stuff Logo" width="46" height="31" />
+              <img src="/Logo-Main-Icon.webp" alt="Other Stuff — AI product studio" width="46" height="31" />
             </a>
 
             <div className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>

@@ -8,7 +8,7 @@ export function FooterHomeDuplicate() {
       <div className="footer-container">
         <div className="footer-brand">
           <a href="/" className="footer-logo-icon" aria-label="Other Stuff home">
-            <img src="/Logo-Main-Icon.webp" alt="Other Stuff Logo" width="46" height="31" />
+            <img src="/Logo-Main-Icon.webp" alt="Other Stuff — AI product studio" width="46" height="31" />
           </a>
           <a href="/" className="footer-logo">OTHER STUFF</a>
         </div>

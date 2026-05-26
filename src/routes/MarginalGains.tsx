@@ -24,8 +24,8 @@ export default function MarginalGains() {
       style={{ fontFamily: "'Inter', system-ui, sans-serif" }}
     >
       <SEO
-        title="AI Automation Perth | Custom AI Systems for SMEs"
-        description="AI automation for Perth SMEs. Start with a free AI audit, then build working systems around the workflows that grow margins, free up capital, and reduce operational risk."
+        title="AI Automation & AI Consulting Perth"
+        description="Other Stuff helps Perth SMEs identify, design, and deliver AI automation systems that grow margins, free up capital, and reduce operational risk. Practical AI consulting, delivered as working systems."
         path="/marginal-gains"
         ogImage="/og-marginal-gains.png"
         schema={[
@@ -110,10 +110,10 @@ export default function MarginalGains() {
           {
             ...getServiceSchema({
               path: "/marginal-gains",
-              name: "Custom AI Systems",
+              name: "AI Automation and AI Consulting Perth",
               description:
-                "Custom AI systems for SMEs — scoped to operational workflows, delivered as working systems, and built on infrastructure you own.",
-              serviceType: "Custom AI systems for small business teams",
+                "AI automation and AI consulting for Perth SMEs, delivered by an AI product studio as working systems around real operational workflows.",
+              serviceType: "AI automation and AI consulting for small business teams",
               audience: {
                 "@type": "BusinessAudience",
                 audienceType: "Small businesses and SMEs",
@@ -130,9 +130,12 @@ export default function MarginalGains() {
               ],
             }),
             category: [
-              "Custom AI systems",
-              "AI workflow automation",
-              "AI systems for SMEs",
+              "AI Automation Perth",
+              "AI Consulting Perth",
+              "AI Workflow Automation",
+              "AI Agents for Business",
+              "Free AI Audit",
+              "AI Product Studio",
             ],
           },
         ]}

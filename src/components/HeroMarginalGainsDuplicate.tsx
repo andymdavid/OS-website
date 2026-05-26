@@ -8,7 +8,7 @@ export function HeroMarginalGainsDuplicate() {
         <div className="hero-inner">
           <div className="hero-title-block">
             <div className="hero-logo">
-              <img src="/Logo-Main-Icon.webp" alt="Other Stuff — AI product studio in Perth, Western Australia" />
+              <img src="/Logo-Main-Icon.webp" alt="Other Stuff — Perth AI automation and product studio" />
             </div>
             <h1 className="hero-duplicate-heading">We build AI systems that take the{' '}<br />repetitive work off your team.</h1>
             <p>

@@ -229,7 +229,7 @@ export function Hero({
                   >
                     <img
                       src={socialProofLogo}
-                      alt="Logo"
+                      alt="Other Stuff — Perth AI automation and product studio"
                       width={20}
                       height={20}
                       className="object-contain rounded-[3px]"
