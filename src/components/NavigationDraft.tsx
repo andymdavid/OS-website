@@ -7,23 +7,23 @@ type NavDropdownKey = 'solutions' | 'media';
 
 const solutions = [
   {
-    title: 'Custom AI Systems',
+    title: 'AI Automation',
     description: 'Built to grow your margins, free up capital, and reduce risk across the workflows that matter most.',
     href: '/marginal-gains/',
   },
   {
-    title: 'Wingmen',
+    title: 'Wingman',
     description: 'The operating environment for running, monitoring, and managing the AI systems in your business.',
     href: '/#system',
   },
   {
-    title: 'Speedrun Workshop',
+    title: 'AI Training',
     description: 'Get your team building with AI in a single high-energy session. Perfect for first exposure.',
     href: '/speedrun/',
   },
   {
-    title: 'Level-Up Workshop',
-    description: 'Structured capability building over multiple sessions for deeper AI integration.',
+    title: 'AI School Training',
+    description: 'A hands-on AI workshop and school incursion for students in Perth and WA.',
     href: '/levelup/',
   },
 ];

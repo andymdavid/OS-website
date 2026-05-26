@@ -1,5 +1,5 @@
 import { SEO } from '../components/SEO';
-import { NavigationHomeDuplicate } from '../components/NavigationHomeDuplicate';
+import { NavigationDraft } from '../components/NavigationDraft';
 import { HeroHomeDuplicate } from '../components/HeroHomeDuplicate';
 import { HomeDuplicateGridSection } from '../components/HomeDuplicateGridSection';
 import { FunnelHomeDuplicate } from '../components/FunnelHomeDuplicate';
@@ -31,7 +31,7 @@ export default function Home() {
           websiteSchema,
         ]}
       />
-      <NavigationHomeDuplicate />
+      <NavigationDraft />
       <main>
         <HeroHomeDuplicate />
         <HomeDuplicateGridSection />

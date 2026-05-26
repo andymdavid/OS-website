@@ -437,10 +437,10 @@ function buildSeoFallbackLinks(currentPath = '/') {
   const normalizedCurrent = canonicalPath(currentPath);
   const links = [
     { path: '/', label: 'Home' },
-    { path: '/marginal-gains', label: 'Custom AI Systems' },
+    { path: '/marginal-gains', label: 'AI Automation' },
     { path: '/ai-audit', label: 'Free AI Audit' },
-    { path: '/speedrun', label: 'Speedrun AI Workshop' },
-    { path: '/levelup', label: 'Level Up School Incursion' },
+    { path: '/speedrun', label: 'AI Training' },
+    { path: '/levelup', label: 'AI School Training' },
     { path: '/about', label: 'About' },
     { path: '/contact', label: 'Contact' },
     { path: '/newsletter', label: 'Newsletter' },

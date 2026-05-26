@@ -32,10 +32,10 @@ export function FooterHomeDuplicate() {
           <nav className="footer-column" aria-label="Solutions">
             <h4>Solutions</h4>
             <a href="/ai-audit/">AI Audit</a>
-            <a href="/marginal-gains/">Custom AI Systems</a>
-            <a href="/#system">Wingmen</a>
-            <a href="/speedrun/">AI Workshop for Business Teams</a>
-            <a href="/levelup/">AI Incursion for Schools</a>
+            <a href="/marginal-gains/">AI Automation</a>
+            <a href="/#system">Wingman</a>
+            <a href="/speedrun/">AI Training</a>
+            <a href="/levelup/">AI School Training</a>
           </nav>
 
           <nav className="footer-column" aria-label="Media">
