@@ -48,10 +48,10 @@ export function MGGridSection() {
         <div className="home-duplicate-grid-intro">
           <div className="intro-pill fade-in">WHAT WE BUILD</div>
           <h2 className="section-heading fade-in fade-in-stagger-1">
-            Custom AI systems built around the workflows that cost your business the most time.
+            AI workflow automation built around the business processes costing your team the most time and money.
           </h2>
           <p className="home-duplicate-grid-subpara fade-in fade-in-stagger-2">
-            Every system is scoped to a specific operational workflow inside your business. Here are the kinds of problems we solve.
+            Every engagement is scoped around the workflow where automation can create the clearest commercial impact. Examples include:
           </p>
         </div>
 

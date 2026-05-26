@@ -408,7 +408,22 @@ const marginalGainsFaq = [
   {
     question: 'What does Wingman do?',
     answer:
-      'Wingman is the operating environment the systems run inside. It gives your team visibility, holds the shared records agents work from, and organises the accumulated knowledge in your business.',
+      'Wingman is the operating environment the systems run inside. It holds the shared records agents work from, organises the accumulated knowledge in your business, and connects the workspace and workflow engine behind live automation systems.',
+  },
+  {
+    question: 'Do you provide AI automation in Perth?',
+    answer:
+      'Yes. Other Stuff is based in Perth and works with SMEs and small business teams to build AI automation systems around real operational workflows.',
+  },
+  {
+    question: 'Is this AI consulting or a done-for-you build?',
+    answer:
+      'It starts with advisory work through the free AI audit, but the goal is a working AI automation system delivered into the business, not a strategy document.',
+  },
+  {
+    question: 'What is the difference between an AI agent and an AI automation system?',
+    answer:
+      'An AI agent carries out a defined part of the work. The automation system gives that agent the workflow, records, rules, and handover points it needs to operate reliably. Wingman is the operating environment those agents run inside, connecting the workspace, shared records, business context, and workflow engine behind the system.',
   },
 ];
 
@@ -518,9 +533,9 @@ function getStaticPages() {
     },
     {
       path: '/marginal-gains',
-      title: 'Custom AI Systems for SMEs | Free AI Audit',
+      title: 'AI Automation Perth | Custom AI Systems for SMEs',
       description:
-        'Custom AI systems for SMEs in Perth and across Australia. Start with a free AI audit, then scope and build a working AI system around the workflow where the impact is clearest.',
+        'AI automation for Perth SMEs. Start with a free AI audit, then build working systems around the workflows that grow margins, free up capital, and reduce operational risk.',
       ogImage: '/og-marginal-gains.png',
       sitemap: { changefreq: 'weekly', priority: '0.95' },
       schema: withOrganization([

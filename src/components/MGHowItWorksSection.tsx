@@ -16,7 +16,7 @@ const stages = [
   {
     number: '02',
     label: 'First project',
-    title: 'Develop Custom AI System',
+    title: 'Build the AI Automation System',
     description:
       'We scope and build one focused AI system around a workflow identified in the audit. The engagement has a defined start, a defined end, and a working system delivered into your business as the output, and built around how your business actually operates.',
     detailTitle: 'What comes out of it',
@@ -60,7 +60,7 @@ const stageVisualContent = {
     resultDetail: 'Clear priority workflow and a practical next step',
     visualClassName: 'mg-audit-visual',
   },
-  'Develop Custom AI System': {
+  'Build the AI Automation System': {
     header: 'Project Structure',
     status: 'Step 2',
     items: [

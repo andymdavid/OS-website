@@ -73,9 +73,9 @@ export const siteContent: SiteContent = {
       variant: "homeStyle",
       props: {
         variant: "homeStyle",
-        title: "We build AI systems that ▲ grow your margins, ▲ free up capital, and ▼ reduce risk.",
+        title: "We build AI automation systems that ▲ grow your margins, ▲ free up capital, and ▼ reduce risk.",
         subtitle:
-          "Purpose-built to your unique needs, delivered as a working system, and built on infrastructure you own.",
+          "For Perth SMEs, we identify repeated manual workflows, then design and deliver AI automation systems around the work that drives margin, capital, and risk.",
         subtitleMaxWidth: "48ch",
         centerContent: true,
         ctaPrimary: { label: "Book a Free AI Audit", href: "/contact" },
@@ -138,8 +138,8 @@ export const siteContent: SiteContent = {
           },
           {
             number: "04",
-            title: "Wingmen Suite",
-            body: "This is your operating environment. It gives your team visibility, holds the shared records agents work from, and organises the accumulated knowledge in your business.",
+            title: "Wingman",
+            body: "This is your operating environment. It holds the shared records agents work from, organises the accumulated knowledge in your business, and connects the workspace and workflow engine behind live automation systems.",
             demoKey: "productGraph",
           },
         ],
@@ -181,9 +181,24 @@ export const siteContent: SiteContent = {
               "For teams that want to keep going after the first system is live, Marginal Gains is the ongoing relationship. We keep improving the systems already running in your business, support them as your operations evolve, and build the next high-value workflows over time.",
           },
           {
-            question: "What does Wingmen Suite do?",
+            question: "Do you provide AI automation in Perth?",
             answer:
-              "Wingmen Suite is the operating environment the systems run inside. It gives your team visibility, holds the shared records agents work from, and organises the accumulated knowledge in your business.",
+              "Yes. Other Stuff is based in Perth and works with SMEs and small business teams to build AI automation systems around real operational workflows.",
+          },
+          {
+            question: "Is this AI consulting or a done-for-you build?",
+            answer:
+              "It starts with advisory work through the free AI audit, but the goal is a working AI automation system delivered into the business, not a strategy document.",
+          },
+          {
+            question: "What is the difference between an AI agent and an AI automation system?",
+            answer:
+              "An AI agent carries out a defined part of the work. The automation system gives that agent the workflow, records, rules, and handover points it needs to operate reliably. Wingman is the operating environment those agents run inside, connecting the workspace, shared records, business context, and workflow engine behind the system.",
+          },
+          {
+            question: "What does Wingman do?",
+            answer:
+              "Wingman is the operating environment the systems run inside. It holds the shared records agents work from, organises the accumulated knowledge in your business, and connects the workspace and workflow engine behind live automation systems.",
           },
         ],
       },

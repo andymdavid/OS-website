@@ -24,8 +24,8 @@ export default function MarginalGains() {
       style={{ fontFamily: "'Inter', system-ui, sans-serif" }}
     >
       <SEO
-        title="Custom AI Systems for SMEs | Free AI Audit"
-        description="Custom AI systems for SMEs in Perth and across Australia. Start with a free AI audit, then scope and build a working AI system around the workflow where the impact is clearest."
+        title="AI Automation Perth | Custom AI Systems for SMEs"
+        description="AI automation for Perth SMEs. Start with a free AI audit, then build working systems around the workflows that grow margins, free up capital, and reduce operational risk."
         path="/marginal-gains"
         ogImage="/og-marginal-gains.png"
         schema={[
@@ -75,10 +75,34 @@ export default function MarginalGains() {
               },
               {
                 "@type": "Question",
-                name: "What does Wingmen Suite do?",
+                name: "Do you provide AI automation in Perth?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Wingmen Suite is the operating environment the systems run inside. It gives your team visibility, holds the shared records agents work from, and organises the accumulated knowledge in your business.",
+                  text: "Yes. Other Stuff is based in Perth and works with SMEs and small business teams to build AI automation systems around real operational workflows.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Is this AI consulting or a done-for-you build?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "It starts with advisory work through the free AI audit, but the goal is a working AI automation system delivered into the business, not a strategy document.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What is the difference between an AI agent and an AI automation system?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "An AI agent carries out a defined part of the work. The automation system gives that agent the workflow, records, rules, and handover points it needs to operate reliably. Wingman is the operating environment those agents run inside, connecting the workspace, shared records, business context, and workflow engine behind the system.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "What does Wingman do?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "Wingman is the operating environment the systems run inside. It holds the shared records agents work from, organises the accumulated knowledge in your business, and connects the workspace and workflow engine behind live automation systems.",
                 },
               },
             ],

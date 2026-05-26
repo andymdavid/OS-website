@@ -4,7 +4,7 @@ import './PainRecognition.css';
 const paragraphs = [
   "Every week, someone in your business pulls together the same information they compiled last week. Quotes that need to be built from scratch. Invoices that need chasing. Reports that need writing.",
   "It's not complex work. It's just slow, manual, and it keeps landing on the people who should be spending their time with clients, delivering value, and growing the business.",
-  "We build AI systems around the workflows in your business where this is happening, purpose-built around how your business actually functions.",
+  "We build AI automation systems around the workflows in your business where repeated manual work is slowing decisions, draining margin, tying up capital, or creating operational risk.",
   "Your people get their time back for the work that actually matters. The business stops depending on any single person being available. And every system we deliver runs on infrastructure you own, so the value compounds inside your business over time.",
 ];
 
