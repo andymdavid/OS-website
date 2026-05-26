@@ -1,6 +1,7 @@
 export const SITE_URL = "https://otherstuff.ai";
 export const ORGANIZATION_ID = `${SITE_URL}/#organization`;
 export const WEBSITE_ID = `${SITE_URL}/#website`;
+export const GOOGLE_BUSINESS_PROFILE_URL = "https://maps.app.goo.gl/fQ4DiY5A8tBs6eM37";
 
 export function canonicalPath(path: string) {
   if (!path || path === "/") {
@@ -46,13 +47,46 @@ export const organizationSchema = {
     { "@type": "Country", name: "Australia" },
   ],
   founder: [
-    { "@type": "Person", name: "Pete Winn", jobTitle: "Co-Founder" },
-    { "@type": "Person", name: "Andy David", jobTitle: "Co-Founder" },
+    {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#pete-winn`,
+      name: "Pete Winn",
+      jobTitle: "Co-Founder / Director",
+      description:
+        "Co-Founder and Director of Other Stuff, with a background in process redesign, deep tech, and large enterprise deployments.",
+      sameAs: "https://www.linkedin.com/in/pete-winn-otherstuff/",
+    },
+    {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#andy-david`,
+      name: "Andy David",
+      jobTitle: "Co-Founder / Director",
+      description:
+        "Co-Founder and Director of Other Stuff, with a background in venture design, consulting, and technology startups.",
+      sameAs: "https://www.linkedin.com/in/andymdavid/",
+    },
   ],
   sameAs: [
     "https://www.linkedin.com/company/otherstuffvs/",
     "https://www.youtube.com/@OtherStuffAI",
     "https://x.com/OtherStuffAU",
+    GOOGLE_BUSINESS_PROFILE_URL,
+  ],
+  subjectOf: [
+    {
+      "@type": "PodcastSeries",
+      name: "The Good Stuff",
+      url: `${SITE_URL}/the-good-stuff/`,
+      description:
+        "An Australian AI podcast from Pete Winn and Andy David on AI, business, operations, entrepreneurship, and the broader economic shift around these tools.",
+      author: [
+        { "@id": `${SITE_URL}/#pete-winn` },
+        { "@id": `${SITE_URL}/#andy-david` },
+      ],
+      publisher: {
+        "@id": ORGANIZATION_ID,
+      },
+    },
   ],
 };
 

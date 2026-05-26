@@ -4,6 +4,9 @@ const path = require('path');
 const SITE_URL = 'https://otherstuff.ai';
 const SITE_NAME = 'Other Stuff';
 const DEFAULT_OG_IMAGE = '/og-default.png';
+const ORGANIZATION_ID = `${SITE_URL}/#organization`;
+const WEBSITE_ID = `${SITE_URL}/#website`;
+const GOOGLE_BUSINESS_PROFILE_URL = 'https://maps.app.goo.gl/fQ4DiY5A8tBs6eM37';
 const WRITING_POSTS_PATH = path.join(__dirname, '..', 'src', 'generated', 'writing-posts.json');
 const NEWSLETTER_ISSUES_PATH = path.join(__dirname, '..', 'src', 'generated', 'newsletter-issues.json');
 
@@ -21,6 +24,231 @@ function canonicalPath(pagePath) {
 
 function absoluteUrl(pagePath) {
   return `${SITE_URL}${canonicalPath(pagePath)}`;
+}
+
+function getOrganizationRef() {
+  return { '@id': ORGANIZATION_ID };
+}
+
+function getWebsiteRef() {
+  return { '@id': WEBSITE_ID };
+}
+
+function buildPersonSchema({ id, name, jobTitle, description, sameAs }) {
+  return {
+    '@type': 'Person',
+    '@id': `${SITE_URL}/#${id}`,
+    name,
+    jobTitle,
+    description,
+    worksFor: getOrganizationRef(),
+    sameAs,
+  };
+}
+
+function buildOrganizationSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ProfessionalService',
+    '@id': ORGANIZATION_ID,
+    name: SITE_NAME,
+    legalName: 'Other Stuff Pty Ltd',
+    url: SITE_URL,
+    logo: `${SITE_URL}/Logo-Main-Icon.webp`,
+    image: `${SITE_URL}/og-default.png`,
+    email: 'info@otherstuff.studio',
+    description:
+      'Other Stuff is a Perth-based AI product studio that builds custom AI systems and AI automation for small and medium-sized businesses.',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'City Beach',
+      addressRegion: 'WA',
+      postalCode: '6015',
+      addressCountry: 'AU',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: -31.9408,
+      longitude: 115.7556,
+    },
+    areaServed: [
+      { '@type': 'City', name: 'Perth' },
+      { '@type': 'State', name: 'Western Australia' },
+      { '@type': 'Country', name: 'Australia' },
+    ],
+    founder: [
+      buildPersonSchema({
+        id: 'pete-winn',
+        name: 'Pete Winn',
+        jobTitle: 'Co-Founder / Director',
+        description:
+          'Co-Founder and Director of Other Stuff, with a background in process redesign, deep tech, and large enterprise deployments.',
+        sameAs: 'https://www.linkedin.com/in/pete-winn-otherstuff/',
+      }),
+      buildPersonSchema({
+        id: 'andy-david',
+        name: 'Andy David',
+        jobTitle: 'Co-Founder / Director',
+        description:
+          'Co-Founder and Director of Other Stuff, with a background in venture design, consulting, and technology startups.',
+        sameAs: 'https://www.linkedin.com/in/andymdavid/',
+      }),
+    ],
+    sameAs: [
+      'https://www.linkedin.com/company/otherstuffvs/',
+      'https://www.youtube.com/@OtherStuffAI',
+      'https://x.com/OtherStuffAU',
+      GOOGLE_BUSINESS_PROFILE_URL,
+    ],
+    subjectOf: [
+      {
+        '@type': 'PodcastSeries',
+        name: 'The Good Stuff',
+        url: absoluteUrl('/the-good-stuff'),
+        description:
+          'An Australian AI podcast from Pete Winn and Andy David on AI, business, operations, entrepreneurship, and the broader economic shift around these tools.',
+        author: [
+          { '@id': `${SITE_URL}/#pete-winn` },
+          { '@id': `${SITE_URL}/#andy-david` },
+        ],
+        publisher: getOrganizationRef(),
+      },
+    ],
+  };
+}
+
+function buildWebsiteSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    '@id': WEBSITE_ID,
+    url: SITE_URL,
+    name: SITE_NAME,
+    publisher: getOrganizationRef(),
+    inLanguage: 'en-AU',
+  };
+}
+
+function buildServiceSchema({
+  path,
+  name,
+  description,
+  serviceType,
+  audience,
+  areaServed = [
+    { '@type': 'City', name: 'Perth' },
+    { '@type': 'State', name: 'Western Australia' },
+    { '@type': 'Country', name: 'Australia' },
+  ],
+  category,
+  offers,
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${absoluteUrl(path)}#service`,
+    name,
+    url: absoluteUrl(path),
+    description,
+    serviceType,
+    provider: getOrganizationRef(),
+    brand: getOrganizationRef(),
+    mainEntityOfPage: absoluteUrl(path),
+    areaServed,
+    audience,
+    category,
+    availableChannel: {
+      '@type': 'ServiceChannel',
+      serviceUrl: absoluteUrl(path),
+    },
+    offers: offers || {
+      '@type': 'Offer',
+      url: absoluteUrl(path),
+      availability: 'https://schema.org/InStock',
+    },
+  };
+}
+
+function buildFaqSchema(path, items) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    '@id': `${absoluteUrl(path)}#faq`,
+    mainEntity: items.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  };
+}
+
+function buildBreadcrumbSchema(path, name, parents = []) {
+  const itemListElement = [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: `${SITE_URL}/`,
+    },
+    ...parents.map((parent, index) => ({
+      '@type': 'ListItem',
+      position: index + 2,
+      name: parent.name,
+      item: absoluteUrl(parent.path),
+    })),
+    {
+      '@type': 'ListItem',
+      position: parents.length + 2,
+      name,
+      item: absoluteUrl(path),
+    },
+  ];
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    '@id': `${absoluteUrl(path)}#breadcrumb`,
+    itemListElement,
+  };
+}
+
+function buildAboutPageSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    '@id': `${absoluteUrl('/about')}#webpage`,
+    url: absoluteUrl('/about'),
+    name: 'About Other Stuff',
+    description:
+      'Other Stuff is an AI-first product studio in Perth building custom AI systems and AI automation for SMEs.',
+    about: getOrganizationRef(),
+    mainEntity: getOrganizationRef(),
+    isPartOf: getWebsiteRef(),
+    inLanguage: 'en-AU',
+  };
+}
+
+function buildContactPageSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    '@id': `${absoluteUrl('/contact')}#webpage`,
+    url: absoluteUrl('/contact'),
+    name: 'Contact Other Stuff',
+    description:
+      'Contact Other Stuff about a free AI audit, custom AI systems, AI automation, Speedrun workshops, or AI capability building.',
+    about: getOrganizationRef(),
+    mainEntity: getOrganizationRef(),
+    isPartOf: getWebsiteRef(),
+    inLanguage: 'en-AU',
+  };
+}
+
+function withOrganization(schema) {
+  return [buildOrganizationSchema(), ...(Array.isArray(schema) ? schema : [schema])];
 }
 
 function getIndexableNewsletterIssues(newsletterIssues) {
@@ -151,6 +379,113 @@ function loadNewsletterPayload() {
   return JSON.parse(fs.readFileSync(NEWSLETTER_ISSUES_PATH, 'utf-8'));
 }
 
+const marginalGainsFaq = [
+  {
+    question: 'What does the free AI audit involve?',
+    answer:
+      'It starts with a short questionnaire for your team, followed by a working call to review the findings, test where the opportunity is clearest, and identify what is most worth building first.',
+  },
+  {
+    question: 'What do we walk away with from the audit?',
+    answer:
+      'A clearer view of where time and money are being lost, a prioritised workflow to focus on, and a practical recommendation on what building the first system would involve.',
+  },
+  {
+    question: 'What happens after the audit?',
+    answer:
+      'If there is a clear fit, we scope and build one focused AI system around that workflow. The engagement has a defined start, a defined end, and a working system delivered into your business.',
+  },
+  {
+    question: 'Do we need to be technical?',
+    answer:
+      "No. These systems are built around operational workflows in your business, not around your team's ability to code. What matters most is that the people closest to the work can help define how the system should behave.",
+  },
+  {
+    question: 'What is Marginal Gains?',
+    answer:
+      'For teams that want to keep going after the first system is live, Marginal Gains is the ongoing relationship. We keep improving the systems already running in your business, support them as your operations evolve, and build the next high-value workflows over time.',
+  },
+  {
+    question: 'What does Wingman do?',
+    answer:
+      'Wingman is the operating environment the systems run inside. It gives your team visibility, holds the shared records agents work from, and organises the accumulated knowledge in your business.',
+  },
+];
+
+const aiAuditFaq = [
+  {
+    question: 'What happens after I book the audit?',
+    answer:
+      'We send through the questionnaire and use your responses to understand how the business runs, where time is being lost, and which workflows are most likely to justify automation. From there we analyse the strongest opportunities and bring the findings back to you in a discovery session.',
+  },
+  {
+    question: 'How long does the AI Audit take?',
+    answer:
+      'The questionnaire takes around 20 minutes to complete. After that we review your submission and schedule a follow-up session to walk through where the best opportunities sit and what acting on them would involve.',
+  },
+  {
+    question: 'Is this a generic AI strategy session?',
+    answer:
+      'No. The purpose of the audit is to identify a specific workflow in your business worth turning into a system first. It is designed to produce a practical starting point, not a broad ideas list.',
+  },
+  {
+    question: 'What kinds of businesses is it best suited to?',
+    answer:
+      'It is best suited to SME businesses with repeated workflows, meaningful team time tied up in manual work, and a clear commercial reason to improve how a process runs.',
+  },
+  {
+    question: 'What happens if there is a strong opportunity?',
+    answer:
+      'If the fit is clear, the next step is to scope the first system around that workflow in detail. That means defining what the build would do, what it would cost, and how it would integrate into the way your team already works.',
+  },
+];
+
+const speedrunFaq = [
+  {
+    question: 'Do we need a technical background to take part?',
+    answer:
+      "No. Speedrun is designed for founders, operators, and team leads without a technical background. You'll work with AI coding agents in a guided environment, focusing on understanding how the tools behave rather than writing code yourself.",
+  },
+  {
+    question: 'What exactly do we build during the session?',
+    answer:
+      'In Speedrun, participants build a working Kanban-style task application using AI coding agents. In Speedrun Applied, that same tool is extended into a simple operational workflow where an AI agent begins carrying out tasks such as summaries, planning, and coordination.',
+  },
+  {
+    question: 'How many people should attend?',
+    answer:
+      'Speedrun is designed as a small-group working session. The value comes from having cross-functional perspectives in the room and beginning to build shared internal capability, rather than training a single individual.',
+  },
+  {
+    question: 'How is this different from a standard AI workshop or training session?',
+    answer:
+      'Speedrun is not a presentation or generic AI training course. It is a private hands-on workshop for business teams, where participants build and run structured systems with AI agents so understanding comes from direct use rather than passive instruction.',
+  },
+];
+
+const levelUpFaq = [
+  {
+    question: 'What age range is Level Up designed for?',
+    answer:
+      'Level Up is designed for junior to middle high school students. The workshop supports mixed abilities and does not require any prior coding or technical experience.',
+  },
+  {
+    question: 'Do students need to know how to code?',
+    answer:
+      'No. Students use AI tools to build and modify a game through guided prompts and practical experimentation, so no prior coding experience is required.',
+  },
+  {
+    question: 'How many students can take part in a session?',
+    answer:
+      'Level Up works well with typical class sizes. We can adapt facilitation to suit different group sizes and classroom contexts.',
+  },
+  {
+    question: 'Where is Level Up available?',
+    answer:
+      'Level Up is available as an AI school training session and incursion for schools in Perth and across Western Australia.',
+  },
+];
+
 function getStaticPages() {
   return [
     {
@@ -160,6 +495,10 @@ function getStaticPages() {
         'Custom AI systems for SMEs in Perth and across Australia. Start with a free AI audit, then build working systems around the workflows that improve margins, free up capital, and reduce operational risk.',
       ogImage: DEFAULT_OG_IMAGE,
       sitemap: { changefreq: 'weekly', priority: '1.0' },
+      schema: [
+        buildOrganizationSchema(),
+        buildWebsiteSchema(),
+      ],
       body: `
         <h1>Custom AI systems for SMEs</h1>
         <p>We build custom AI systems around the workflows in your business where repeated manual work is slowing decisions, draining margin, tying up capital, or creating operational risk.</p>
@@ -184,6 +523,41 @@ function getStaticPages() {
         'Custom AI systems for SMEs in Perth and across Australia. Start with a free AI audit, then scope and build a working AI system around the workflow where the impact is clearest.',
       ogImage: '/og-marginal-gains.png',
       sitemap: { changefreq: 'weekly', priority: '0.95' },
+      schema: withOrganization([
+        buildServiceSchema({
+          path: '/marginal-gains',
+          name: 'AI Automation and Custom AI Systems for SMEs',
+          description:
+            'AI automation, AI agents, and custom AI systems for SMEs in Perth and across Australia, built around real operational workflows.',
+          serviceType: [
+            'AI automation',
+            'Custom AI systems',
+            'AI workflow automation',
+            'AI agent development',
+            'Business process automation',
+          ],
+          audience: {
+            '@type': 'BusinessAudience',
+            audienceType: 'Small and medium-sized businesses',
+          },
+          category: [
+            'AI Automation',
+            'Custom AI Systems',
+            'AI Agents for Business',
+            'Workflow Automation',
+          ],
+          offers: {
+            '@type': 'Offer',
+            name: 'Free AI Audit',
+            url: absoluteUrl('/ai-audit'),
+            availability: 'https://schema.org/InStock',
+            price: '0',
+            priceCurrency: 'AUD',
+          },
+        }),
+        buildFaqSchema('/marginal-gains', marginalGainsFaq),
+        buildBreadcrumbSchema('/marginal-gains', 'AI Automation'),
+      ]),
       body: `
         <h1>Custom AI Systems for SMEs</h1>
         <p>We start with a free AI audit of your business, identify where time, margin, capital, and risk are being lost, and scope one focused AI system around the workflow where the impact is clearest.</p>
@@ -200,6 +574,36 @@ function getStaticPages() {
         'A private hands-on AI training workshop for Perth businesses, teams, and SME operators. Build practical tools and workflows with AI agents in a 3-hour session.',
       ogImage: '/og-speedrun.png',
       sitemap: { changefreq: 'weekly', priority: '0.9' },
+      schema: withOrganization([
+        buildServiceSchema({
+          path: '/speedrun',
+          name: 'AI Training Workshop for Business Teams',
+          description:
+            'A private hands-on AI training workshop for Perth business teams, founders, operators, and SME leaders using AI agents and practical workflow building.',
+          serviceType: [
+            'AI training',
+            'AI workshop',
+            'ChatGPT training',
+            'Claude training',
+            'AI agents workshop',
+          ],
+          audience: {
+            '@type': 'BusinessAudience',
+            audienceType: 'Business teams, founders, operators, and SME leaders',
+          },
+          areaServed: [
+            { '@type': 'City', name: 'Perth' },
+            { '@type': 'State', name: 'Western Australia' },
+          ],
+          category: [
+            'AI Training',
+            'AI Workshop for Business Teams',
+            'AI Agents Training',
+          ],
+        }),
+        buildFaqSchema('/speedrun', speedrunFaq),
+        buildBreadcrumbSchema('/speedrun', 'AI Training'),
+      ]),
       body: `
         <h1>AI training workshop for business teams in Perth</h1>
         <p>Speedrun is a private hands-on AI training workshop for Perth businesses, teams, and SME operators. Your team builds practical tools and workflows with AI agents in a guided 3-hour session.</p>
@@ -216,6 +620,38 @@ function getStaticPages() {
         'A 90-minute AI workshop and school incursion for Perth and WA schools. Students build a game with AI in a practical STEM session with no coding required.',
       ogImage: '/og-levelup.png',
       sitemap: { changefreq: 'weekly', priority: '0.85' },
+      schema: withOrganization([
+        buildServiceSchema({
+          path: '/levelup',
+          name: 'AI School Training and AI Workshop for Schools',
+          description:
+            'A hands-on AI school training session and school incursion for Perth and Western Australia schools where students build a playable game with AI.',
+          serviceType: [
+            'AI school training',
+            'AI workshop for schools',
+            'AI school incursion',
+            'STEM workshop',
+            'AI education',
+          ],
+          audience: {
+            '@type': 'EducationalAudience',
+            educationalRole: 'student',
+            audienceType: 'Schools, teachers, and high school students',
+          },
+          areaServed: [
+            { '@type': 'City', name: 'Perth' },
+            { '@type': 'State', name: 'Western Australia' },
+          ],
+          category: [
+            'AI School Training',
+            'AI Workshop for Schools',
+            'School Incursion',
+            'STEM Education',
+          ],
+        }),
+        buildFaqSchema('/levelup', levelUpFaq),
+        buildBreadcrumbSchema('/levelup', 'AI School Training'),
+      ]),
       body: `
         <h1>AI workshop and school incursion for Perth and WA schools</h1>
         <p>Level Up is a 90-minute AI workshop and school incursion where students build a playable game with AI. It is designed for junior to middle high school students and works with standard school devices.</p>
@@ -230,6 +666,11 @@ function getStaticPages() {
         'Other Stuff is an AI-first product studio in Perth. We build custom AI systems for SMEs, run practical AI workshops, and support teams building capability around real operational work.',
       ogImage: DEFAULT_OG_IMAGE,
       sitemap: { changefreq: 'monthly', priority: '0.8' },
+      schema: [
+        buildOrganizationSchema(),
+        buildAboutPageSchema(),
+        buildBreadcrumbSchema('/about', 'About'),
+      ],
       body: `
         <h1>About Other Stuff</h1>
         <p>Other Stuff is an AI-first product studio based in Perth, Western Australia.</p>
@@ -248,6 +689,39 @@ function getStaticPages() {
         'Book a free AI audit with Other Stuff. We look at where time, margin, capital, and operational risk are being lost, then identify the workflow where a custom AI system can have the clearest impact.',
       ogImage: DEFAULT_OG_IMAGE,
       sitemap: { changefreq: 'weekly', priority: '0.85' },
+      schema: withOrganization([
+        buildServiceSchema({
+          path: '/ai-audit',
+          name: 'Free AI Audit for SMEs',
+          description:
+            'A free AI audit for SMEs that reviews operational workflows and identifies where AI automation can create the clearest commercial impact.',
+          serviceType: [
+            'Free AI audit',
+            'AI readiness assessment',
+            'AI automation audit',
+            'Workflow automation assessment',
+          ],
+          audience: {
+            '@type': 'BusinessAudience',
+            audienceType: 'Small and medium-sized businesses',
+          },
+          category: [
+            'AI Audit',
+            'AI Readiness Assessment',
+            'AI Automation Audit',
+          ],
+          offers: {
+            '@type': 'Offer',
+            name: 'Free AI Audit',
+            url: absoluteUrl('/ai-audit'),
+            availability: 'https://schema.org/InStock',
+            price: '0',
+            priceCurrency: 'AUD',
+          },
+        }),
+        buildFaqSchema('/ai-audit', aiAuditFaq),
+        buildBreadcrumbSchema('/ai-audit', 'Free AI Audit'),
+      ]),
       body: `
         <h1>Free AI Audit for SMEs</h1>
         <p>Start with a structured review of where time, margin, capital, and operational risk are being lost in the business.</p>
@@ -266,6 +740,11 @@ function getStaticPages() {
         'Get in touch with Other Stuff about a free AI audit, custom AI systems, Speedrun workshops, or practical AI capability building for your team.',
       ogImage: DEFAULT_OG_IMAGE,
       sitemap: { changefreq: 'monthly', priority: '0.65' },
+      schema: [
+        buildOrganizationSchema(),
+        buildContactPageSchema(),
+        buildBreadcrumbSchema('/contact', 'Contact'),
+      ],
       body: `
         <h1>Contact Other Stuff</h1>
         <p>Start the conversation about a free AI audit, custom AI systems, Speedrun workshops, or a general enquiry.</p>
@@ -303,6 +782,25 @@ function getStaticPages() {
         'An Australian AI podcast from Pete Winn and Andy David on AI, business, operations, entrepreneurship, and the broader economic shift around these tools.',
       ogImage: DEFAULT_OG_IMAGE,
       sitemap: { changefreq: 'weekly', priority: '0.7' },
+      schema: [
+        {
+          '@context': 'https://schema.org',
+          '@type': 'PodcastSeries',
+          '@id': `${absoluteUrl('/the-good-stuff')}#podcast`,
+          name: 'The Good Stuff',
+          url: absoluteUrl('/the-good-stuff'),
+          description:
+            'An Australian AI podcast from Pete Winn and Andy David on AI, business, operations, entrepreneurship, and the broader economic shift around these tools.',
+          author: [
+            { '@id': `${SITE_URL}/#pete-winn` },
+            { '@id': `${SITE_URL}/#andy-david` },
+          ],
+          publisher: getOrganizationRef(),
+          isPartOf: getWebsiteRef(),
+          inLanguage: 'en-AU',
+        },
+        buildBreadcrumbSchema('/the-good-stuff', 'The Good Stuff'),
+      ],
       body: `
         <h1>The Good Stuff</h1>
         <p>An AI podcast from Pete Winn and Andy David on work, business, entrepreneurship, and the economic changes created by AI.</p>
