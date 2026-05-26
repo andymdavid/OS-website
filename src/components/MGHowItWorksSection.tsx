@@ -5,20 +5,20 @@ import './MGHowItWorksSection.css';
 const stages = [
   {
     number: '01',
-    label: 'Free diagnostic',
+    label: 'AI consulting',
     title: 'Free AI Audit',
     description:
-      'A short questionnaire for your team followed by a working call to validate the findings and identify where the opportunity is clearest. You walk away with a prioritised view of where an AI system would have the biggest impact on your margins, capital, and risk and a clear picture of what building it would involve.',
+      'A short questionnaire for your team followed by a working call with our Perth-based AI specialists to validate the findings and identify where the opportunity is clearest. You walk away with a prioritised view of where an AI system would have the biggest impact on your margins, capital, and risk and a clear picture of what building it would involve.',
     detailTitle: 'What comes out of it',
     detail:
-      'A prioritised workflow, a clearer view of the commercial upside, and a practical recommendation on what to build first.',
+      'A prioritised workflow, a clearer view of the commercial upside, and practical AI consulting on what to build first.',
   },
   {
     number: '02',
     label: 'First project',
     title: 'Build the AI Automation System',
     description:
-      'We scope and build one focused AI system around a workflow identified in the audit. The engagement has a defined start, a defined end, and a working system delivered into your business as the output, and built around how your business actually operates.',
+      'We turn the consulting work into one focused AI automation system around a workflow identified in the audit. The engagement has a defined start, a defined end, and a working system delivered into your business as the output, and built around how your business actually operates.',
     detailTitle: 'What comes out of it',
     detail:
       'A working AI system delivered into your business, with clear scope, handover, and infrastructure your team can actually use.',
@@ -48,7 +48,7 @@ const stageVisualContent = {
       {
         number: '02',
         label: 'Working session',
-        detail: 'Review the findings and test where the opportunity is clearest',
+        detail: 'Review the findings with Perth-based AI specialists',
       },
       {
         number: '03',
@@ -57,7 +57,7 @@ const stageVisualContent = {
       },
     ],
     resultLabel: 'Output',
-    resultDetail: 'Clear priority workflow and a practical next step',
+    resultDetail: 'Clear priority workflow and a practical build recommendation',
     visualClassName: 'mg-audit-visual',
   },
   'Build the AI Automation System': {
@@ -171,12 +171,12 @@ export function MGHowItWorksSection() {
         <div className="mg-how-it-works-hero">
           <div className="intro-pill fade-in">HOW IT WORKS</div>
           <h2 className="section-heading fade-in fade-in-stagger-1">
-            Start with a free AI audit of your business.
+            Start with a free AI audit from Perth AI specialists who build.
           </h2>
           <p className="mg-how-it-works-subpara fade-in fade-in-stagger-2">
-            A structured look at how your business operates, where time and money are being lost,
-            and where an AI system would have the clearest impact on your margins, capital, and
-            risk.
+            A structured consulting process to understand how your business operates, where time
+            and money are being lost, and where AI automation would have the clearest impact on
+            your margins, capital, and risk.
           </p>
         </div>
 

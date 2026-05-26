@@ -560,6 +560,7 @@ function getStaticPages() {
           category: [
             'AI Automation Perth',
             'AI Consulting Perth',
+            'AI Specialists Perth',
             'AI Workflow Automation',
             'AI Agents for Business',
             'Free AI Audit',
@@ -581,8 +582,8 @@ function getStaticPages() {
         <h1>Custom AI Systems for SMEs</h1>
         <p>We start with a free AI audit of your business, identify where time, margin, capital, and risk are being lost, and scope one focused AI system around the workflow where the impact is clearest.</p>
         <p>The result is a working system delivered into your business and built on infrastructure you own.</p>
-        <h2>How it works</h2>
-        <p>The process starts with a free AI audit, moves into a focused system build, and can continue through an ongoing relationship for teams that want to keep improving and building over time.</p>
+        <h2>Start with a free AI audit from Perth AI specialists who build</h2>
+        <p>The process starts with practical AI consulting, moves into a focused AI automation system build, and can continue through an ongoing relationship for teams that want to keep improving and building over time.</p>
         <p><a href="mailto:info@otherstuff.studio">Book a Free AI Audit</a></p>
       `,
     },

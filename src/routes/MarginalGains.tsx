@@ -132,6 +132,7 @@ export default function MarginalGains() {
             category: [
               "AI Automation Perth",
               "AI Consulting Perth",
+              "AI Specialists Perth",
               "AI Workflow Automation",
               "AI Agents for Business",
               "Free AI Audit",
