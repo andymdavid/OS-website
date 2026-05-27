@@ -8,6 +8,7 @@ const LevelUp = lazy(() => import('./routes/LevelUp'));
 const Speedrun = lazy(() => import('./routes/Speedrun'));
 const MarginalGains = lazy(() => import('./routes/MarginalGains'));
 const TheGoodStuff = lazy(() => import('./routes/TheGoodStuff'));
+const PerthAIRoundtable = lazy(() => import('./routes/PerthAIRoundtable'));
 const Newsletter = lazy(() => import('./routes/Newsletter'));
 const NewsletterPost = lazy(() => import('./routes/NewsletterPost'));
 const Writing = lazy(() => import('./routes/Writing'));
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
   {
     path: '/the-good-stuff',
     element: <SuspenseWrapper><TheGoodStuff /></SuspenseWrapper>,
+  },
+  {
+    path: '/perth-ai-roundtable',
+    element: <SuspenseWrapper><PerthAIRoundtable /></SuspenseWrapper>,
   },
   {
     path: '/newsletter',

@@ -42,6 +42,7 @@ export function FooterHomeDuplicate() {
             <h4>Media</h4>
             <a href="/newsletter/">Newsletter</a>
             <a href="/the-good-stuff/">The Good Stuff</a>
+            <a href="/perth-ai-roundtable/">Perth AI Roundtable</a>
             <a href="/writing/">Writing</a>
             <a href="/games/">Games</a>
           </nav>

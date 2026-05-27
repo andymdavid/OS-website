@@ -684,7 +684,7 @@ function getStaticPages() {
       title: 'About Other Stuff | AI Product Studio in Perth',
       description:
         'Other Stuff is an AI-first product studio in Perth. We build custom AI systems for SMEs, run practical AI workshops, and support teams building capability around real operational work.',
-      ogImage: DEFAULT_OG_IMAGE,
+      ogImage: '/perth-ai-roundtable-poster.webp',
       sitemap: { changefreq: 'monthly', priority: '0.8' },
       schema: [
         buildOrganizationSchema(),
@@ -828,6 +828,75 @@ function getStaticPages() {
       `,
     },
     {
+      path: '/perth-ai-roundtable',
+      title: 'The Perth AI Roundtable',
+      description:
+        'A monthly Socratic seminar in Perth for people exploring AI, agents, automation, and the systems changing work and everyday life.',
+      ogImage: '/perth-ai-roundtable-poster.webp',
+      sitemap: { changefreq: 'weekly', priority: '0.72' },
+      schema: [
+        buildOrganizationSchema(),
+        {
+          '@context': 'https://schema.org',
+          '@type': 'WebPage',
+          '@id': `${absoluteUrl('/perth-ai-roundtable')}#webpage`,
+          url: absoluteUrl('/perth-ai-roundtable'),
+          name: 'The Perth AI Roundtable',
+          description:
+            'A monthly Socratic seminar in Perth for people exploring AI, agents, automation, and the systems changing work and everyday life.',
+          about: getOrganizationRef(),
+          inLanguage: 'en-AU',
+          sameAs: 'https://www.meetup.com/the-perth-ai-roundtable/',
+        },
+        {
+          '@context': 'https://schema.org',
+          '@type': 'EventSeries',
+          '@id': `${absoluteUrl('/perth-ai-roundtable')}#event-series`,
+          name: 'The Perth AI Roundtable',
+          url: absoluteUrl('/perth-ai-roundtable'),
+          description:
+            'A monthly Socratic seminar in Perth for open discussion about AI agents, automation, associated systems, and practical AI adoption.',
+          eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+          eventStatus: 'https://schema.org/EventScheduled',
+          location: {
+            '@type': 'Place',
+            name: 'Rocky Ridge Brewery',
+            address: {
+              '@type': 'PostalAddress',
+              addressLocality: 'Burswood',
+              addressRegion: 'WA',
+              addressCountry: 'AU',
+            },
+          },
+          organizer: getOrganizationRef(),
+          performer: getOrganizationRef(),
+          sameAs: 'https://www.meetup.com/the-perth-ai-roundtable/',
+        },
+        buildBreadcrumbSchema('/perth-ai-roundtable', 'The Perth AI Roundtable'),
+      ],
+      body: `
+        <h1>The Perth AI Roundtable</h1>
+        <p>A monthly Socratic seminar in Perth for people exploring AI, agents, automation, and the systems changing work and everyday life.</p>
+        <h2>A structured conversation, not another AI presentation</h2>
+        <p>The Roundtable is a facilitated conversation where the room collectively discusses and learns about AI and how to benefit from it.</p>
+        <p>Each month, the group works through a community-curated list of questions and topics. We pick out the threads worth focusing on, then discuss them openly with the people in the room.</p>
+        <h2>In the room</h2>
+        <p>The Roundtable is designed around the people who show up. The screen helps frame the questions, but the useful part is the conversation in the room.</p>
+        <p>We keep the format open enough for beginners and detailed enough for people already building with AI agents, automation, and associated systems.</p>
+        <p><img src="/perth-ai-roundtable-hosts.webp" alt="Pete Winn and Andy David hosting The Perth AI Roundtable in Perth" /></p>
+        <h2>How the evening works</h2>
+        <p>The Perth AI Roundtable runs on the third Thursday of each month in Burswood.</p>
+        <p>6:00-6:30: Arrive and connect. 6:30-7:45: Facilitated Socratic discussion. 7:45-8:00: Nominate next month's questions.</p>
+        <h2>How topics work</h2>
+        <p>Topics can be nominated on an open list before each session. The organisers curate that list with help from Wingman, then bring the strongest questions into the room.</p>
+        <p>On the night, the group chooses the threads with the most energy, slows them down, and works through them properly.</p>
+        <h2>Who it is for</h2>
+        <p>Anyone in Perth trying to make sense of AI is welcome, from seasoned AI professionals to curious beginners.</p>
+        <p><a href="https://www.meetup.com/the-perth-ai-roundtable/">Join the Meetup</a></p>
+        <p><a href="https://socratic.otherstuff.ai/">Nominate a topic</a></p>
+      `,
+    },
+    {
       path: '/games',
       title: 'Games Built with AI',
       description:
@@ -964,6 +1033,7 @@ function buildSeoFallbackLinks(currentPath = '/') {
     { path: '/newsletter', label: 'Newsletter' },
     { path: '/writing', label: 'Writing' },
     { path: '/the-good-stuff', label: 'The Good Stuff' },
+    { path: '/perth-ai-roundtable', label: 'Perth AI Roundtable' },
     { path: '/games', label: 'Games' },
     ...writingPosts.map((post) => ({
       path: `/writing/${post.slug}`,
