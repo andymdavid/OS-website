@@ -171,7 +171,7 @@ export function MGHowItWorksSection() {
         <div className="mg-how-it-works-hero">
           <div className="intro-pill fade-in">HOW IT WORKS</div>
           <h2 className="section-heading fade-in fade-in-stagger-1">
-            Start with a free AI audit from Perth AI specialists who build.
+            Start with a free AI audit from Perth AI specialists, focused on where automation can save time and money.
           </h2>
           <p className="mg-how-it-works-subpara fade-in fade-in-stagger-2">
             A structured consulting process to understand how your business operates, where time
