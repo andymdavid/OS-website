@@ -98,11 +98,13 @@
 }
 
 .footer-newsletter h4 {
-  font-family: var(--font-heading);
-  font-size: 14px;
-  font-weight: var(--weight-bold);
+  font-family: var(--font-eyebrow);
+  font-size: 12px;
+  font-weight: var(--weight-regular);
   color: var(--color-text);
   line-height: 1.2;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   margin-bottom: 12px;
 }
 
@@ -146,10 +148,12 @@
 }
 
 .footer-column h4 {
-  font-family: var(--font-heading);
-  font-size: 14px;
-  font-weight: var(--weight-bold);
+  font-family: var(--font-eyebrow);
+  font-size: 12px;
+  font-weight: var(--weight-regular);
   color: var(--color-text);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
   margin-bottom: 16px;
   line-height: 1.4;
 }
