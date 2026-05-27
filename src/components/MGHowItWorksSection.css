@@ -25,6 +25,7 @@
 }
 
 .mg-how-it-works-hero .section-heading {
+  max-width: 672px;
   margin-bottom: 24px;
 }
 
