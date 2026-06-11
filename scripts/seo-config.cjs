@@ -515,16 +515,20 @@ function getStaticPages() {
         buildWebsiteSchema(),
       ],
       body: `
-        <h1>Custom AI systems for SMEs</h1>
-        <p>We build custom AI systems around the workflows in your business where repeated manual work is slowing decisions, draining margin, tying up capital, or creating operational risk.</p>
-        <p>Start with a free AI audit, identify the workflow where the impact is clearest, and then build a working system on infrastructure your business owns.</p>
-        <h2>Core offers</h2>
+        <h1>Your business has more to give than your team has time for</h1>
+        <p>We help SMEs reduce the time spent on repetitive operational work with custom AI systems.</p>
+        <p>We build the systems, deliver the infrastructure, and train your team to build on what is running.</p>
+        <h2>How we help</h2>
         <h3><a href="/marginal-gains/">Custom AI Systems</a></h3>
-        <p>Free AI audit, focused system build, and an optional ongoing relationship to keep improving live systems over time.</p>
-        <h3><a href="/speedrun/">Speedrun</a></h3>
-        <p>A private hands-on AI workshop for business teams in Perth. Build practical tools and workflows with AI agents.</p>
-        <h3><a href="/levelup/">Level Up</a></h3>
-        <p>An AI workshop and school incursion for Perth and WA schools where students build a game with AI.</p>
+        <p>We identify the operational work costing your team the most time, build an AI system around it, and hand you something that runs. Every Sortie is scoped to a specific workflow in your business, built around how you actually work, and delivered as a running system.</p>
+        <h3><a href="/#system">Wingmen Suite</a></h3>
+        <p>Wingmen Suite is the operating environment your AI agents run inside. Flight Deck gives your team visibility and control. Tower holds the shared records and memory agents work from. Airspace structures the knowledge your business has built.</p>
+        <h3><a href="/speedrun/">AI Workshops</a></h3>
+        <p>Speedrun is a private hands-on AI workshop for business teams that want to build practical business tools and workflows with AI agents.</p>
+        <h2>Our process</h2>
+        <p>We start with an AI audit and discovery, map the workflow, design the system, build and deliver it, then operate and improve it over time.</p>
+        <h2 id="system">Our Infrastructure</h2>
+        <p>Every system we build is backed by infrastructure we designed and run ourselves. Wingmen Suite includes Flight Deck, Tower, Airspace, Autopilot, and Wingman Agents.</p>
         <h2><a href="/about/">About Other Stuff</a></h2>
         <p>Other Stuff is an AI-first product studio based in Perth, Western Australia.</p>
         <p>Other Stuff Pty Ltd — City Beach, Perth, Western Australia 6015</p>
@@ -579,11 +583,16 @@ function getStaticPages() {
         buildBreadcrumbSchema('/marginal-gains', 'AI Automation'),
       ]),
       body: `
-        <h1>Custom AI Systems for SMEs</h1>
-        <p>We start with a free AI audit of your business, identify where time, margin, capital, and risk are being lost, and scope one focused AI system around the workflow where the impact is clearest.</p>
-        <p>The result is a working system delivered into your business and built on infrastructure you own.</p>
-        <h2>Start with a free AI audit from Perth AI specialists who build</h2>
-        <p>The process starts with practical AI consulting, moves into a focused AI automation system build, and can continue through an ongoing relationship for teams that want to keep improving and building over time.</p>
+        <h1>We build AI automation systems that grow your margins, free up capital, and reduce risk.</h1>
+        <p>For Perth SMEs, we identify repeated manual workflows, then design and deliver AI automation systems around the work that drives margin, capital, and risk.</p>
+        <h2>Start with a free AI audit</h2>
+        <p>The audit reviews where time and money are being lost, identifies a prioritised workflow, and gives a practical recommendation on what building the first system would involve.</p>
+        <h2>What we build</h2>
+        <p>If there is a clear fit, we scope and build one focused AI system around that workflow. The engagement has a defined start, a defined end, and a working system delivered into your business.</p>
+        <h2>Marginal Gains</h2>
+        <p>Marginal Gains is the ongoing relationship after the first system is live. We keep improving the systems already running in your business, support them as your operations evolve, and build the next high-value workflows over time.</p>
+        <h2>Wingman</h2>
+        <p>Wingman is the operating environment the systems run inside. It holds the shared records agents work from, organises accumulated business knowledge, and connects the workspace and workflow engine behind live automation systems.</p>
         <p><a href="mailto:info@otherstuff.studio">Book a Free AI Audit</a></p>
       `,
     },
@@ -693,8 +702,12 @@ function getStaticPages() {
       ],
       body: `
         <h1>About Other Stuff</h1>
-        <p>Other Stuff is an AI-first product studio based in Perth, Western Australia.</p>
-        <p>We build custom AI systems for SMEs, run practical AI workshops, and help teams develop the capability to keep improving over time.</p>
+        <p>Other Stuff is an AI-first product studio that builds custom AI systems to improve margins, free up capital, and reduce operational risk.</p>
+        <p>We work with SMEs to identify where time, capital, and operational risk are being lost, then build AI systems around those workflows and help teams develop the capability to use them well.</p>
+        <h2>Commercial framework</h2>
+        <p>Our work is built around a simple framework: grow margins, free up capital, reduce risk, and build capability around real systems.</p>
+        <h2>How we work</h2>
+        <p>We run Speedrun Workshops, support longer-term development through Marginal Gains, and use Wingmen as the operating environment. That gives teams a practical way to learn, operate, and keep improving.</p>
         <h2>Founders</h2>
         <h3>Pete Winn</h3>
         <p>Co-Founder with a background in process redesign, deep tech, and large enterprise deployments.</p>

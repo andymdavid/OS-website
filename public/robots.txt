@@ -3,4 +3,22 @@ Allow: /
 Disallow: /archive/
 Disallow: /home-duplicate
 
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
 Sitemap: https://otherstuff.ai/sitemap.xml
