@@ -18,11 +18,13 @@ const routes = [
     path: '/',
     mustContain: [
       'Your business has more to give',
-      'Wingmen Suite',
+      'Wingman is the operating environment',
       'Our Infrastructure',
     ],
     mustNotContain: [
       '<h2>Core offers</h2>',
+      'Wingmen',
+      'Wingmen Suite',
     ],
   },
   {
@@ -30,11 +32,19 @@ const routes = [
     mustContain: [
       'Commercial framework',
     ],
+    mustNotContain: [
+      'Wingmen',
+      'Wingmen Suite',
+    ],
   },
   {
     path: '/marginal-gains/',
     mustContain: [
       'Wingman is the operating environment',
+    ],
+    mustNotContain: [
+      'Wingmen',
+      'Wingmen Suite',
     ],
   },
   {
@@ -61,7 +71,11 @@ const routes = [
     path: '/llms.txt',
     mustContain: [
       'Other Stuff',
+      'Wingman',
+    ],
+    mustNotContain: [
       'Wingmen',
+      'Wingmen Suite',
     ],
   },
 ];

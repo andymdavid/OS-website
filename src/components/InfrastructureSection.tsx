@@ -34,7 +34,7 @@ const components: InfraComponent[] = [
     position: 'bottom',
   },
   {
-    tag: 'Wingman Agents',
+    tag: 'Wingman agents',
     title: 'Review-gated help',
     role: 'The agent environment for running, managing and building on your AI systems, providing deeper control and the flexibility with your agents.',
     position: 'right',

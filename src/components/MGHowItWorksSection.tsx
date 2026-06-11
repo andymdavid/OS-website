@@ -31,7 +31,7 @@ const stages = [
       'For businesses that want to keep going after the first system is live, Marginal Gains is how the work compounds. Existing systems get sharper, new workflows get brought into scope, and AI transformation happens through steady operational gains over time rather than one massive project.',
     detailTitle: 'What supports it',
     detail:
-      'Ongoing system improvement, support as your operations evolve, and Wingmen Suite as the operating environment your systems run inside.',
+      'Ongoing system improvement, support as your operations evolve, and Wingman as the operating environment your systems run inside.',
   },
 ];
 
@@ -105,7 +105,7 @@ const stageVisualContent = {
       },
     ],
     resultLabel: 'Supported by',
-    resultDetail: 'Wingmen Suite for visibility, support, and ongoing system development',
+    resultDetail: 'Wingman for visibility, support, and ongoing system development',
     visualClassName: 'mg-retainer-visual',
   },
 } as const;

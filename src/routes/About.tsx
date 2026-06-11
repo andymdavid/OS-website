@@ -110,7 +110,7 @@ export default function About() {
               <span className="about-system-card-number">04</span>
               <h3>Build capability</h3>
               <p>
-                We run <a href="/speedrun">Speedrun Workshops</a>, support longer-term development through <a href="/marginal-gains">Marginal Gains</a>, and use <a href="/#system">Wingmen</a> as the operating environment. That gives teams a practical way to learn, operate, and keep improving.
+                We run <a href="/speedrun">Speedrun Workshops</a>, support longer-term development through <a href="/marginal-gains">Marginal Gains</a>, and use <a href="/#system">Wingman</a> as the operating environment. That gives teams a practical way to learn, operate, and keep improving.
               </p>
             </div>
           </div>
@@ -128,7 +128,7 @@ export default function About() {
                   We&apos;ve worked with Stakwork, a Silicon Valley company building agent-based systems, and that experience shapes how we approach operational AI inside organisations. We care about what runs in the business, not just what sounds impressive in a workshop deck.
                 </p>
                 <p>
-                  We operate as an AI-first business ourselves, using these tools across our own operations and building systems like Wingmen, our open-source agent operating environment. We also continue to run workshops and education programs, including <a href="/speedrun">Speedrun</a> for business teams and <a href="/levelup">Level Up</a> for schools, because capability develops fastest when people build with the tools directly.
+                  We operate as an AI-first business ourselves, using these tools across our own operations and building systems like Wingman, our open-source agent operating environment. We also continue to run workshops and education programs, including <a href="/speedrun">Speedrun</a> for business teams and <a href="/levelup">Level Up</a> for schools, because capability develops fastest when people build with the tools directly.
                 </p>
               </div>
             </div>

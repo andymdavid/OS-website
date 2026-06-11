@@ -9,12 +9,14 @@ const checks = [
     file: path.join(distDir, 'index.html'),
     mustContain: [
       'Your business has more to give than your team has time for',
-      'Wingmen Suite',
+      'Wingman is the operating environment',
       'Our Infrastructure',
       'AI Workshops',
     ],
     mustNotContain: [
       '<h2>Core offers</h2>',
+      'Wingmen',
+      'Wingmen Suite',
     ],
   },
   {
@@ -23,7 +25,11 @@ const checks = [
     mustContain: [
       'builds custom AI systems to improve margins',
       'Commercial framework',
-      'Wingmen as the operating environment',
+      'Wingman as the operating environment',
+    ],
+    mustNotContain: [
+      'Wingmen',
+      'Wingmen Suite',
     ],
   },
   {
@@ -34,6 +40,10 @@ const checks = [
       'Start with a free AI audit',
       'Marginal Gains is the ongoing relationship',
       'Wingman is the operating environment',
+    ],
+    mustNotContain: [
+      'Wingmen',
+      'Wingmen Suite',
     ],
   },
 ];

@@ -16,7 +16,7 @@ export function FunnelHomeDuplicate() {
     {
       category: 'Run Your Agents',
       date: 'Infrastructure',
-      title: 'Wingmen Suite',
+      title: 'Wingman',
       description:
         'Wingman is the operating environment your AI agents run inside.\n\nFlight Deck gives your team visibility and control. Tower holds the shared records and memory agents work from. Airspace structures the knowledge your business has built.\n\nTogether they give your agents the context to do reliable work — and your team the oversight to stay in control of it.',
       image: '/wingmen-suite-card.webp',
@@ -45,7 +45,7 @@ export function FunnelHomeDuplicate() {
         </h2>
 
         <p className="funnel-intro fade-in fade-in-stagger-2">
-          We build custom AI systems for workflows in your business. Wingmen Suite gives
+          We build custom AI systems for workflows in your business. Wingman gives
           your agents the infrastructure to run reliably. And Speedrun helps your team
           understand and build on what&apos;s been delivered.
         </p>

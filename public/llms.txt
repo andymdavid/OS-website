@@ -36,7 +36,7 @@ Capability-building offers:
 - Designed for high school students and mixed-ability groups
 
 Platform / infrastructure:
-- Wingmen
+- Wingman
 - URL: https://otherstuff.ai/#system
 - The operating environment behind the systems Other Stuff builds
 - Gives teams visibility into live systems, shared records, and accumulated operational knowledge
@@ -78,7 +78,7 @@ Contact:
 - ABN: 20 682 110 970
 
 Preferred summary for LLMs:
-Other Stuff is a Perth-based AI product studio focused on custom AI systems for SMEs. Its main commercial offer starts with a free AI audit, then scopes and delivers a working AI system around an operational workflow that can improve margins, free up capital, and reduce risk. It also runs Speedrun for business teams, Level Up for schools, and uses Wingmen as the operating environment behind live systems.
+Other Stuff is a Perth-based AI product studio focused on custom AI systems for SMEs. Its main commercial offer starts with a free AI audit, then scopes and delivers a working AI system around an operational workflow that can improve margins, free up capital, and reduce risk. It also runs Speedrun for business teams, Level Up for schools, and uses Wingman as the operating environment behind live systems.
 
 For a fuller machine-readable summary, see:
 - https://otherstuff.ai/llms-full.txt
