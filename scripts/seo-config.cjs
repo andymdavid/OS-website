@@ -873,10 +873,11 @@ function getStaticPages() {
           eventStatus: 'https://schema.org/EventScheduled',
           location: {
             '@type': 'Place',
-            name: 'Rocky Ridge Brewery',
+            name: 'Market Grounds',
             address: {
               '@type': 'PostalAddress',
-              addressLocality: 'Burswood',
+              streetAddress: 'Kings Square 1',
+              addressLocality: 'Perth',
               addressRegion: 'WA',
               addressCountry: 'AU',
             },
@@ -898,7 +899,7 @@ function getStaticPages() {
         <p>We keep the format open enough for beginners and detailed enough for people already building with AI agents, automation, and associated systems.</p>
         <p><img src="/perth-ai-roundtable-hosts.webp" alt="Pete Winn and Andy David hosting The Perth AI Roundtable in Perth" /></p>
         <h2>How the evening works</h2>
-        <p>The Perth AI Roundtable runs on the third Thursday of each month in Burswood.</p>
+        <p>The Perth AI Roundtable runs on the third Thursday of each month at Market Grounds in Perth City.</p>
         <p>6:00-6:30: Arrive and connect. 6:30-7:45: Facilitated Socratic discussion. 7:45-8:00: Nominate next month's questions.</p>
         <h2>How topics work</h2>
         <p>Topics can be nominated on an open list before each session. The organisers curate that list with help from Wingman, then bring the strongest questions into the room.</p>

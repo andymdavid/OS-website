@@ -45,10 +45,11 @@ export default function PerthAIRoundtable() {
             eventStatus: "https://schema.org/EventScheduled",
             location: {
               "@type": "Place",
-              name: "Rocky Ridge Brewery",
+              name: "Market Grounds",
               address: {
                 "@type": "PostalAddress",
-                addressLocality: "Burswood",
+                streetAddress: "Kings Square 1",
+                addressLocality: "Perth",
                 addressRegion: "WA",
                 addressCountry: "AU",
               },
@@ -98,7 +99,7 @@ export default function PerthAIRoundtable() {
             <figure className="roundtable-hero-poster">
               <img
                 src="/perth-ai-roundtable-poster.webp"
-                alt="The Perth AI Roundtable event poster showing the third Thursday monthly format"
+                alt="The Perth AI Roundtable event poster for Market Grounds in Perth CBD"
               />
             </figure>
           </div>
@@ -333,7 +334,7 @@ export default function PerthAIRoundtable() {
             <div className="intro-pill">Join the Roundtable</div>
             <h2>Come to the next Perth AI Roundtable.</h2>
             <p>
-              We meet on the third Thursday of each month in Burswood. RSVP on Meetup
+              We meet on the third Thursday of each month at Market Grounds in Perth City. RSVP on Meetup
               and add a topic if there is a question you want the room to explore.
             </p>
             <div className="roundtable-cta-row">
