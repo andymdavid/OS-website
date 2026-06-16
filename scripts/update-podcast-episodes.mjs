@@ -1,4 +1,4 @@
-import { writeFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 
 const CHANNEL_ID = "UCGVpiP_odkzPHkX0x1GMX1w";
 const FEED_URL = `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
@@ -77,6 +77,28 @@ const parseEntries = (xml) => {
   }
   return entries;
 };
+
+const readExistingEpisodes = async () => {
+  try {
+    const raw = await readFile(OUTPUT_PATH, "utf8");
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed.items) ? parsed.items : [];
+  } catch {
+    return [];
+  }
+};
+
+const episodeNumber = (episode) => {
+  const match = episode.title.match(/\bGood Stuff\s+(\d+)/i);
+  return match ? Number(match[1]) : 0;
+};
+
+const sortEpisodes = (episodes) =>
+  [...episodes].sort((a, b) => {
+    const byEpisodeNumber = episodeNumber(b) - episodeNumber(a);
+    if (byEpisodeNumber !== 0) return byEpisodeNumber;
+    return new Date(b.published || 0).getTime() - new Date(a.published || 0).getTime();
+  });
 
 const parseEntry = (entry) => {
   const title = textBetween(entry, "<title>", "</title>");
@@ -180,6 +202,7 @@ const fetchFallbackEpisodes = async () => {
 };
 
 const main = async () => {
+  const existingEpisodes = await readExistingEpisodes();
   let parsedEntries = [];
 
   try {
@@ -199,14 +222,19 @@ const main = async () => {
     console.warn("No matching episodes found.");
   }
 
+  const items = sortEpisodes(dedupeByEpisodeNumber([...parsedEntries, ...existingEpisodes])).slice(
+    0,
+    MAX_ITEMS,
+  );
+
   const payload = {
     channelId: CHANNEL_ID,
     updatedAt: new Date().toISOString(),
-    items: parsedEntries,
+    items,
   };
 
   await writeFile(OUTPUT_PATH, JSON.stringify(payload, null, 2));
-  console.log(`Wrote ${parsedEntries.length} episodes to ${OUTPUT_PATH}`);
+  console.log(`Wrote ${items.length} episodes to ${OUTPUT_PATH}`);
 };
 
 main().catch((error) => {
