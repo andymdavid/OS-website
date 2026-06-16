@@ -8,6 +8,15 @@ import { canonicalPath } from "@/lib/structured-data";
 import "@/components/Hero.css";
 import "@/routes/Writing.css";
 
+const writingImageSrcSet = (src: string) => {
+  const extensionIndex = src.lastIndexOf(".");
+  if (extensionIndex === -1) return undefined;
+
+  const base = src.slice(0, extensionIndex);
+  const extension = src.slice(extensionIndex);
+  return `${base}-480${extension} 480w, ${base}-960${extension} 960w, ${src} 1456w`;
+};
+
 export default function Writing() {
   return (
     <div className="os-theme os-draft min-h-screen writing-page">
@@ -44,7 +53,17 @@ export default function Writing() {
                 <article key={post.slug} className="writing-post">
                   <a className="writing-post-link" href={canonicalPath(`/writing/${post.slug}`)}>
                     <div className="writing-post-media">
-                      <img src={post.thumbnail} alt={post.title} loading="lazy" />
+                      <img
+                        src={post.thumbnail}
+                        srcSet={writingImageSrcSet(post.thumbnail)}
+                        sizes="(max-width: 720px) calc(100vw - 64px), (max-width: 1200px) calc((100vw - 92px) / 2), 300px"
+                        alt={post.title}
+                        width="480"
+                        height="270"
+                        loading={index < 2 ? "eager" : "lazy"}
+                        fetchPriority={index === 0 ? "high" : "auto"}
+                        decoding="async"
+                      />
                     </div>
                     <div className="writing-post-header">
                       <span className="writing-post-id">[{String(index + 1).padStart(2, "0")}]</span>

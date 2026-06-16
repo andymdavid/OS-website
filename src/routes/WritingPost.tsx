@@ -11,6 +11,15 @@ import "@/routes/WritingPost.css";
 
 const EMBED_MARKER = '<div data-embed="value-trap-chart"></div>';
 
+const writingImageSrcSet = (src: string) => {
+  const extensionIndex = src.lastIndexOf(".");
+  if (extensionIndex === -1) return undefined;
+
+  const base = src.slice(0, extensionIndex);
+  const extension = src.slice(extensionIndex);
+  return `${base}-480${extension} 480w, ${base}-960${extension} 960w, ${src} 1456w`;
+};
+
 export default function WritingPost() {
   const { slug } = useParams();
   const post = writingPosts.find((entry) => entry.slug === slug);
@@ -78,7 +87,17 @@ export default function WritingPost() {
             </div>
 
             <div className="writing-post-feature">
-              <img src={post.thumbnail} alt={post.title} loading="lazy" />
+              <img
+                src={post.thumbnail}
+                srcSet={writingImageSrcSet(post.thumbnail)}
+                sizes="(max-width: 1080px) calc(100vw - 48px), 1080px"
+                alt={post.title}
+                width="1456"
+                height="816"
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+              />
             </div>
 
             <p className="writing-post-subheader">
@@ -126,7 +145,16 @@ export default function WritingPost() {
                 <article key={post.slug} className="writing-post-keep-card">
                   <a className="writing-post-keep-link" href={canonicalPath(`/writing/${post.slug}`)}>
                     <div className="writing-post-keep-media">
-                      <img src={post.thumbnail} alt={post.title} loading="lazy" />
+                      <img
+                        src={post.thumbnail}
+                        srcSet={writingImageSrcSet(post.thumbnail)}
+                        sizes="(max-width: 900px) calc(100vw - 48px), 360px"
+                        alt={post.title}
+                        width="480"
+                        height="270"
+                        loading="lazy"
+                        decoding="async"
+                      />
                     </div>
                     <div className="writing-post-keep-meta">
                       <div className="writing-post-keep-title">{post.title}</div>

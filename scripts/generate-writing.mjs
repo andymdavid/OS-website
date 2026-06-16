@@ -15,7 +15,7 @@ function escapeHtml(value) {
 }
 
 function sanitizeUrl(rawUrl) {
-  const trimmed = rawUrl.trim();
+  const trimmed = rawUrl.trim().replaceAll("\\&", "&");
 
   if (!trimmed) {
     return "#";
@@ -147,7 +147,7 @@ function renderMarkdown(markdown) {
       const [, alt, src] = imageMatch;
       const caption = alt ? `<figcaption>${escapeHtml(alt)}</figcaption>` : "";
       blocks.push(
-        `<figure><img src="${sanitizeUrl(src)}" alt="${escapeHtml(alt)}" loading="lazy" />${caption}</figure>`,
+        `<figure><img src="${sanitizeUrl(src)}" alt="${escapeHtml(alt)}" loading="lazy" decoding="async" />${caption}</figure>`,
       );
       index += 1;
       continue;
