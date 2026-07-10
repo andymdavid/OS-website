@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap');
 
 @font-face {
   font-family: 'Alfabet Black';
@@ -12,6 +13,62 @@
   font-family: 'Alfabet Regular';
   src: url('/Alfabet_Regular.otf') format('opentype');
   font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OffBit Trial 101';
+  src: url('/fonts/OffBitTrial-101.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OffBit Trial 101';
+  src: url('/fonts/OffBitTrial-101Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OffBit Trial';
+  src: url('/fonts/OffBitTrial-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OffBit Trial';
+  src: url('/fonts/OffBitTrial-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OffBit Trial Dot';
+  src: url('/fonts/OffBitTrial-Dot.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OffBit Trial Dot';
+  src: url('/fonts/OffBitTrial-DotBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('/fonts/NeueMontreal-Medium.otf') format('opentype');
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
@@ -125,6 +182,14 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 75px;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+body,
+#root {
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .os-theme {

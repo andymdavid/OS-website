@@ -55,6 +55,10 @@
   margin-bottom: 24px;
 }
 
+.os-home-duplicate .hero-title-block > p:not(.hero-bridge) {
+  font-family: 'Geist', var(--font-body);
+}
+
 .hero-title-block p {
   font-size: clamp(16px, 1.7vw, 18px);
   line-height: 1.4;
@@ -295,4 +299,18 @@
       ),
       url('/hero-background-1.webp?v=2') center top / cover no-repeat;
   }
+}
+
+.os-theme.os-home-duplicate .hero-sticky {
+  background: var(--color-background);
+}
+
+.os-home-duplicate .hero-title-block {
+  margin-top: 0;
+}
+
+.os-home-duplicate .hero-duplicate-heading,
+.os-home-duplicate .hero-heading-metrics {
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }

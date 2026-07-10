@@ -536,6 +536,39 @@ function getStaticPages() {
       `,
     },
     {
+      path: '/home-duplicate',
+      title: 'Custom AI Systems for SMEs | Perth & Australia',
+      description:
+        'Custom AI systems for SMEs in Perth and across Australia. Start with a free AI audit, then build working systems around the workflows that improve margins, free up capital, and reduce operational risk.',
+      ogImage: DEFAULT_OG_IMAGE,
+      noindex: true,
+      sitemap: null,
+      schema: [
+        buildOrganizationSchema(),
+        buildWebsiteSchema(),
+      ],
+      body: `
+        <h1>Your business has more to give than your team has time for</h1>
+        <p>We help SMEs reduce the time spent on repetitive operational work with custom AI systems.</p>
+        <p>We build the systems, deliver the infrastructure, and train your team to build on what is running.</p>
+        <h2>How we help</h2>
+        <h3><a href="/marginal-gains/">Custom AI Systems</a></h3>
+        <p>We identify the operational work costing your team the most time, build an AI system around it, and hand you something that runs. Every Sortie is scoped to a specific workflow in your business, built around how you actually work, and delivered as a running system.</p>
+        <h3><a href="/#system">Wingman</a></h3>
+        <p>Wingman is the operating environment your AI agents run inside. Flight Deck gives your team visibility and control. Tower holds the shared records and memory agents work from. Airspace structures the knowledge your business has built.</p>
+        <h3><a href="/speedrun/">AI Workshops</a></h3>
+        <p>Speedrun is a private hands-on AI workshop for business teams that want to build practical business tools and workflows with AI agents.</p>
+        <h2>Our process</h2>
+        <p>We start with an AI audit and discovery, map the workflow, design the system, build and deliver it, then operate and improve it over time.</p>
+        <h2 id="system">Our Infrastructure</h2>
+        <p>Every system we build is backed by infrastructure we designed and run ourselves. Wingman includes Flight Deck, Tower, Airspace, Autopilot, and Wingman agents.</p>
+        <h2><a href="/about/">About Other Stuff</a></h2>
+        <p>Other Stuff is an AI-first product studio based in Perth, Western Australia.</p>
+        <p>Other Stuff Pty Ltd — City Beach, Perth, Western Australia 6015</p>
+        <p><a href="mailto:info@otherstuff.studio">info@otherstuff.studio</a></p>
+      `,
+    },
+    {
       path: '/marginal-gains',
       title: 'AI Automation & AI Consulting Perth',
       description:

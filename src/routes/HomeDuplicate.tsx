@@ -1,13 +1,15 @@
 import { SEO } from '../components/SEO';
 import { NavigationDraft } from '../components/NavigationDraft';
-import { HeroDraft } from '../components/HeroDraft';
-import { IntroSectionDraft } from '../components/IntroSectionDraft';
-import { FunnelSection } from '../components/FunnelSection';
-import { FollowUpSection } from '../components/FollowUpSection';
-import { WingmanSection } from '../components/WingmanSection';
-import { GoodStuff } from '../components/GoodStuff';
-import { CTASection } from '../components/CTASection';
-import { Footer } from '../components/Footer';
+import { HeroHomeDuplicateExperiment } from '../components/HeroHomeDuplicateExperiment';
+import { HomeDuplicateLogoCarousel } from '../components/HomeDuplicateLogoCarousel';
+import { HomeDuplicateCanvasSection } from '../components/HomeDuplicateCanvasSection';
+import { HomeDuplicateGridSection } from '../components/HomeDuplicateGridSection';
+import { FunnelHomeDuplicate } from '../components/FunnelHomeDuplicate';
+import { ProcessTimeline } from '../components/ProcessTimeline';
+import { FAQHomeDuplicate } from '../components/FAQHomeDuplicate';
+import { GoodStuffHomeDuplicate } from '../components/GoodStuffHomeDuplicate';
+import { CTAHomeDuplicate } from '../components/CTAHomeDuplicate';
+import { FooterHomeDuplicate } from '../components/FooterHomeDuplicate';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { organizationSchema, websiteSchema } from '../lib/structured-data';
 
@@ -15,32 +17,34 @@ export default function HomeDuplicate() {
   useScrollAnimation();
 
   return (
-    <div className="os-theme os-draft">
+    <div className="os-theme os-draft os-home-duplicate">
       <SEO
-        title="AI-First Product Studio — Perth, Australia"
-        description="Perth-based AI product studio helping Australian businesses build practical AI capability. Hands-on workshops, ongoing support, and open-source tools."
+        title="Custom AI Systems for SMEs | Perth & Australia"
+        description="Custom AI systems for SMEs in Perth and across Australia. Start with a free AI audit, then build working systems around the workflows that improve margins, free up capital, and reduce operational risk."
         path="/home-duplicate"
         noindex
         schema={[
           {
             ...organizationSchema,
             description:
-              'AI-first product studio in Perth, Western Australia helping organisations build practical internal AI capability through hands-on workshops and open-source tools.',
+              'AI-first product studio in Perth, Western Australia building custom AI systems for SMEs around real operational workflows.',
           },
           websiteSchema,
         ]}
       />
       <NavigationDraft />
       <main>
-        <HeroDraft />
-        <IntroSectionDraft />
-        <FunnelSection />
-        <FollowUpSection />
-        <WingmanSection />
-        <GoodStuff />
-        <CTASection />
+        <HeroHomeDuplicateExperiment />
+        <HomeDuplicateLogoCarousel />
+        <HomeDuplicateCanvasSection />
+        <HomeDuplicateGridSection />
+        <FunnelHomeDuplicate />
+        <ProcessTimeline />
+        <FAQHomeDuplicate />
+        <GoodStuffHomeDuplicate />
+        <CTAHomeDuplicate />
       </main>
-      <Footer />
+      <FooterHomeDuplicate />
     </div>
   );
 }

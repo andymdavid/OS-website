@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 const Home = lazy(() => import('./routes/Home'));
+const HomeDuplicate = lazy(() => import('./routes/HomeDuplicate'));
 const ArchiveHome = lazy(() => import('./routes/ArchiveHome'));
 const Company = lazy(() => import('./routes/Company'));
 const LevelUp = lazy(() => import('./routes/LevelUp'));
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <SuspenseWrapper><Home /></SuspenseWrapper>,
+  },
+  {
+    path: '/home-duplicate',
+    element: <SuspenseWrapper><HomeDuplicate /></SuspenseWrapper>,
   },
   {
     path: '/levelup',

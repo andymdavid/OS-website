@@ -54,6 +54,7 @@
   --infra-gap: 28px;
   position: relative;
   display: grid;
+  min-width: 0;
   grid-template-columns:
     minmax(210px, 0.86fr)
     var(--infra-gap)
@@ -75,6 +76,7 @@
 .infra-card-slot {
   position: relative;
   display: flex;
+  min-width: 0;
   align-self: stretch;
   z-index: 1;
 }
@@ -159,6 +161,7 @@
 .infra-centre-card {
   position: relative;
   width: 100%;
+  min-width: 0;
   height: 100%;
   box-sizing: border-box;
   background: var(--infra-panel);
@@ -201,6 +204,7 @@
 .infrastructure-card {
   position: relative;
   width: 100%;
+  min-width: 0;
   height: 100%;
   box-sizing: border-box;
   min-height: 214px;
@@ -272,7 +276,7 @@
    RESPONSIVE
    ========================================================================== */
 
-@media (max-width: 1024px) {
+@media (max-width: 1240px) {
   .infra-diagram {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto auto auto;
