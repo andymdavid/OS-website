@@ -89,6 +89,24 @@
     <priority>0.65</priority>
   </url>
   <url>
+    <loc>https://otherstuff.ai/newsletter/fable-s-back-now-what/</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://otherstuff.ai/newsletter/ai-is-great-for-small-businesses/</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://otherstuff.ai/newsletter/most-tasks-don-t-need-frontier-models/</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://otherstuff.ai/newsletter/what-is-loop-engineering/</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -133,18 +151,6 @@
   <url>
     <loc>https://otherstuff.ai/newsletter/building-ai-that-respects-you/</loc>
     <lastmod>2026-01-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://otherstuff.ai/newsletter/building-rhinos-not-chasing-unicorns/</loc>
-    <lastmod>2024-08-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://otherstuff.ai/newsletter/tgs-01/</loc>
-    <lastmod>2024-08-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
