@@ -1,10 +1,13 @@
 import { Button } from './Button';
+import { HeroShaderBackground } from './HeroShaderBackground';
+import { HomeDuplicateLogoCarousel } from './HomeDuplicateLogoCarousel';
 import './Hero.css';
 
 export function HeroHomeDuplicateExperiment() {
   return (
     <section className="hero-extended">
       <div className="hero-sticky">
+        <HeroShaderBackground />
         <div className="hero-inner">
           <div className="hero-title-block">
             <div className="hero-logo">
@@ -33,6 +36,7 @@ export function HeroHomeDuplicateExperiment() {
           </div>
 
         </div>
+        <HomeDuplicateLogoCarousel />
       </div>
     </section>
   );

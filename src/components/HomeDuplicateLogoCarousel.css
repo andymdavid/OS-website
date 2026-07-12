@@ -4,6 +4,16 @@
   overflow: hidden;
 }
 
+.hero-sticky > .home-duplicate-client-bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: clamp(18px, 3.4vh, 42px);
+  z-index: 4;
+  padding: 0;
+  background: transparent;
+}
+
 .home-duplicate-client-bar__inner {
   display: flex;
   align-items: center;
@@ -12,6 +22,11 @@
   min-width: 0;
   padding-left: clamp(0.9rem, 1.8vw, 1.4rem);
   padding-right: clamp(0.9rem, 1.8vw, 1.4rem);
+}
+
+.hero-sticky > .home-duplicate-client-bar .home-duplicate-client-bar__inner {
+  padding-left: clamp(1rem, 2.2vw, 2rem);
+  padding-right: clamp(1rem, 2.2vw, 2rem);
 }
 
 .home-duplicate-client-bar__track {

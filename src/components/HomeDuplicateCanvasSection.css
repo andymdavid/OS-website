@@ -2,6 +2,7 @@
   position: relative;
   min-height: auto;
   background: var(--color-background);
+  overflow: hidden;
 }
 
 .os-home-duplicate,

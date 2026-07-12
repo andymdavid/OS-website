@@ -1,7 +1,6 @@
 import { SEO } from '../components/SEO';
 import { NavigationDraft } from '../components/NavigationDraft';
 import { HeroHomeDuplicateExperiment } from '../components/HeroHomeDuplicateExperiment';
-import { HomeDuplicateLogoCarousel } from '../components/HomeDuplicateLogoCarousel';
 import { HomeDuplicateCanvasSection } from '../components/HomeDuplicateCanvasSection';
 import { HomeDuplicateGridSection } from '../components/HomeDuplicateGridSection';
 import { FunnelHomeDuplicate } from '../components/FunnelHomeDuplicate';
@@ -35,7 +34,6 @@ export default function HomeDuplicate() {
       <NavigationDraft />
       <main>
         <HeroHomeDuplicateExperiment />
-        <HomeDuplicateLogoCarousel />
         <HomeDuplicateCanvasSection />
         <HomeDuplicateGridSection />
         <FunnelHomeDuplicate />
