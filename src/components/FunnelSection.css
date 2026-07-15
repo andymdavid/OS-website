@@ -7,6 +7,16 @@
   padding-bottom: clamp(64px, 8vw, 120px) !important;
 }
 
+.os-home-duplicate .funnel-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(240, 240, 240, 0.08);
+}
+
 /* Pill-style label */
 .funnel-pill {
   display: inline-block;
@@ -112,8 +122,9 @@
 
 .funnel-card-header {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
 }
 
 .funnel-card-category,
@@ -127,6 +138,11 @@
   white-space: nowrap;
 }
 
+.funnel-card-date {
+  opacity: 0.62;
+  text-align: right;
+}
+
 .funnel-card-footer {
   display: flex;
   flex-direction: column;
@@ -136,7 +152,7 @@
 }
 
 .funnel-card:hover .funnel-card-footer {
-  transform: translateY(-16px);
+  transform: none;
 }
 
 .funnel-card-title-block {
@@ -164,17 +180,23 @@
 
 .funnel-card h4 {
   font-family: var(--font-heading);
-  font-size: 32px;
+  font-size: clamp(24px, 2.45vw, 30px);
   font-weight: var(--weight-bold);
   color: var(--color-text);
-  line-height: 1.2;
-  white-space: nowrap;
+  line-height: 1.06;
+  white-space: normal;
+  max-width: 12ch;
   transition: font-size var(--duration-base) var(--ease-out);
 }
 
+.funnel-card h4.funnel-card-title-wide {
+  max-width: 15ch;
+}
+
 .funnel-card:hover h4 {
-  font-size: 22px;
-  white-space: normal;
+  font-size: 21px;
+  max-width: none;
+  white-space: nowrap;
 }
 
 .funnel-card-button {
@@ -232,6 +254,874 @@
   background: #f0f0f0;
   color: #050505;
   border-color: #f0f0f0;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate {
+  padding-top: clamp(72px, 9vw, 120px) !important;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .funnel-offer-panel {
+  max-width: 1280px;
+  overflow: hidden;
+  border: 1px solid rgba(240, 240, 240, 0.1);
+  border-radius: 8px;
+  background: transparent;
+  text-align: left;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .funnel-offer-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+  gap: clamp(40px, 6vw, 96px);
+  align-items: end;
+  max-width: 1280px;
+  margin: 0 auto clamp(48px, 6vw, 72px);
+  text-align: left;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .section-heading,
+.os-home-duplicate .funnel-section-home-duplicate .funnel-intro {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .funnel-intro {
+  max-width: 58ch;
+  margin-bottom: 0;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .funnel-offer-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .funnel-offer-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  width: 170px;
+  min-width: 170px;
+  padding: 0 20px;
+  border-radius: 4px;
+  background: #f0f0f0;
+  color: #050505;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  white-space: nowrap;
+  transition: all var(--duration-base) var(--ease-in-out);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .funnel-offer-cta:hover {
+  background: #ff751f;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(240, 240, 240, 0.2);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .funnel-cards {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  max-width: none;
+  margin-top: 0;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .funnel-card {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  min-height: 580px;
+  aspect-ratio: auto;
+  padding: clamp(22px, 2.4vw, 32px);
+  border: 0;
+  border-right: 1px solid rgba(240, 240, 240, 0.1);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  cursor: default;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .funnel-card:last-child {
+  border-right: 0;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .funnel-card:hover {
+  transform: none;
+  background: rgba(240, 240, 240, 0.018);
+  border-color: rgba(240, 240, 240, 0.1);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .funnel-card-header {
+  min-height: 0;
+  margin-top: clamp(16px, 1.8vw, 24px);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .funnel-card-date {
+  max-width: 16ch;
+  line-height: 1.2;
+  white-space: normal;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .funnel-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding-top: clamp(22px, 2.6vw, 34px);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .funnel-card h4,
+.os-home-duplicate .funnel-section-home-duplicate .funnel-card:hover h4 {
+  max-width: none;
+  font-size: clamp(20px, 1.72vw, 22px);
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .funnel-card h4.funnel-card-title-wide {
+  max-width: none;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .funnel-card-description,
+.os-home-duplicate .funnel-section-home-duplicate .funnel-card:hover .funnel-card-description {
+  opacity: 1;
+  max-height: none;
+  overflow: visible;
+  white-space: pre-line;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .funnel-card-image {
+  position: relative;
+  width: 100%;
+  height: clamp(210px, 20vw, 280px);
+  margin-top: 0;
+  border: 1px solid rgba(240, 240, 240, 0.08);
+  border-radius: 4px;
+  background: rgba(240, 240, 240, 0.04);
+  overflow: hidden;
+  opacity: 1;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .funnel-card-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: rgba(15, 14, 13, 0.54);
+  pointer-events: none;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .funnel-card-image img {
+  display: block;
+  border-radius: inherit;
+  filter: brightness(0.78);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .funnel-card:hover .funnel-card-image {
+  opacity: 1;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .funnel-card:hover .funnel-card-image img {
+  transform: none;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .people-overlay {
+  position: absolute;
+  inset: clamp(16px, 1.8vw, 24px);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  gap: clamp(10px, 1.1vw, 14px);
+  pointer-events: none;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .people-overlay,
+.os-home-duplicate .funnel-section-home-duplicate .wapps-window,
+.os-home-duplicate .funnel-section-home-duplicate .wingman-workflow-board {
+  font-family: 'Geist', var(--font-body);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .people-overlay-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0;
+  width: min(88%, 360px);
+  aspect-ratio: 1.78;
+  overflow: hidden;
+  border-radius: 2px;
+  border: 4px solid #ffffff;
+  background: #ffffff;
+  box-shadow:
+    0 30px 72px rgba(0, 0, 0, 0.46),
+    0 9px 20px rgba(0, 0, 0, 0.28),
+    0 0 0 1px rgba(255, 255, 255, 0.14);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .people-overlay-card {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 2px 0 0 2px;
+  background:
+    radial-gradient(circle at 26% 42%, rgba(86, 104, 69, 0.34), transparent 20%),
+    linear-gradient(135deg, #d9d2c3 0%, #f2eee6 46%, #cfd8dc 100%);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .people-overlay-card + .people-overlay-card {
+  border-radius: 0 2px 2px 0;
+  border-left: 4px solid #ffffff;
+  background:
+    linear-gradient(90deg, rgba(201, 215, 224, 0.98), rgba(241, 244, 245, 0.92)),
+    linear-gradient(135deg, #dae4ea 0%, #f2f5f5 48%, #bccbd4 100%);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .people-overlay-card::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 8%;
+  width: 62%;
+  height: 22%;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.46) 0 2px,
+      transparent 2px 8px
+    );
+  mask-image: linear-gradient(to top, transparent 0%, #000 26%, #000 78%, transparent 100%);
+  opacity: 0.82;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .people-overlay-name {
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  z-index: 2;
+  max-width: calc(100% - 18px);
+  padding: 4px 7px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #050505;
+  font-family: 'Geist', var(--font-body);
+  font-size: 8px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .people-overlay-card + .people-overlay-card .people-overlay-name {
+  right: 9px;
+  left: auto;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .people-overlay-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(0.82) contrast(1.02) brightness(0.94);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .people-overlay-photo-1 {
+  object-position: center;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .people-overlay-photo-2 {
+  object-position: center 38%;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .people-overlay-terminal {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: min(74%, 282px);
+  padding: 4px 0;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .people-overlay-terminal-row {
+  display: grid;
+  grid-template-columns: 16px minmax(0, 1fr);
+  gap: 8px;
+  opacity: 0.42;
+  animation: people-overlay-opacity-pulse 5.2s ease-in-out infinite;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .people-overlay-terminal-row:nth-child(2) {
+  animation-delay: 0.26s;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .people-overlay-terminal-row span {
+  font-family: 'Geist', var(--font-body);
+  font-size: 10px;
+  line-height: 1.2;
+  color: #69ffc2;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .people-overlay-terminal-row p {
+  overflow: hidden;
+  font-family: 'Geist', var(--font-body);
+  font-size: 10px;
+  line-height: 1.2;
+  color: rgba(240, 240, 240, 0.64);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .people-overlay-terminal b {
+  display: block;
+  margin-left: 24px;
+  color: rgba(105, 255, 194, 0.8);
+  font-family: 'Geist', var(--font-body);
+  font-size: 10px;
+  line-height: 1;
+  animation: people-overlay-cursor-blink 1s steps(2, start) infinite;
+}
+
+@keyframes people-overlay-opacity-pulse {
+  0%,
+  100% {
+    opacity: 0.42;
+  }
+  40%,
+  72% {
+    opacity: 0.92;
+  }
+}
+
+@keyframes people-overlay-cursor-blink {
+  0%,
+  46% {
+    opacity: 1;
+  }
+  47%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wapps-overlay {
+  position: absolute;
+  inset: clamp(14px, 1.7vw, 22px);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wapps-window {
+  width: min(86%, 342px);
+  padding: 9px 11px 10px;
+  border: 0;
+  border-radius: 2px;
+  background: #ffffff;
+  box-shadow:
+    0 28px 70px rgba(0, 0, 0, 0.45),
+    0 8px 18px rgba(0, 0, 0, 0.26);
+  color: #18181b;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wapps-window-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 20px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(24, 24, 27, 0.11);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wapps-window-header span {
+  color: #18181b;
+  font-family: 'Geist', var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wapps-window-header i,
+.os-home-duplicate .funnel-section-home-duplicate .wapps-window-header em {
+  color: #a1a1aa;
+  font-family: 'Geist', var(--font-body);
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wapps-window-icons {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-left: auto;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wapps-window-icons img {
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  background: #f8f8f8;
+  object-fit: contain;
+  padding: 2px;
+  box-shadow: inset 0 0 0 1px rgba(24, 24, 27, 0.06);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wapps-prospect-panel {
+  margin-top: 8px;
+  padding: 10px 11px 10px;
+  border-radius: 2px;
+  background: #050505;
+  color: #f0f0f0;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wapps-smart-notes > span {
+  display: block;
+  font-family: 'Geist', var(--font-body);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wapps-prospect-panel > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wapps-prospect-panel strong,
+.os-home-duplicate .funnel-section-home-duplicate .wapps-prospect-panel em {
+  overflow: hidden;
+  font-family: 'Geist', var(--font-body);
+  font-weight: 700;
+  font-style: normal;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wapps-prospect-panel strong {
+  color: #f0f0f0;
+  font-size: 14px;
+  line-height: 1.05;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wapps-prospect-panel em {
+  flex: 0 0 auto;
+  color: rgba(240, 240, 240, 0.7);
+  font-size: 12px;
+  line-height: 1;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wapps-prospect-panel p {
+  margin-top: 5px;
+  color: rgba(240, 240, 240, 0.74);
+  font-family: 'Geist', var(--font-body);
+  font-size: 10px;
+  line-height: 1.3;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wapps-contact-profiles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wapps-contact-profiles span {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  padding: 6px;
+  border: 1px solid rgba(240, 240, 240, 0.14);
+  border-radius: 2px;
+  background: rgba(240, 240, 240, 0.07);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wapps-contact-profiles img {
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(0.88) contrast(1.03) brightness(0.96);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wapps-contact-profiles i {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+  font-style: normal;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wapps-contact-profiles strong,
+.os-home-duplicate .funnel-section-home-duplicate .wapps-contact-profiles em {
+  overflow: hidden;
+  font-family: 'Geist', var(--font-body);
+  font-style: normal;
+  line-height: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wapps-contact-profiles strong {
+  color: #f0f0f0;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wapps-contact-profiles em {
+  color: rgba(240, 240, 240, 0.58);
+  font-size: 7px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wapps-smart-notes {
+  margin-top: 8px;
+  color: #18181b;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wapps-smart-notes > span {
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(24, 24, 27, 0.11);
+  color: #18181b;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wapps-smart-notes p {
+  margin-top: 6px;
+  color: #27272a;
+  font-family: 'Geist', var(--font-body);
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1.26;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wapps-note-lines {
+  display: grid;
+  gap: 4px;
+  margin-top: 6px;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wapps-note-lines i {
+  display: block;
+  height: 8px;
+  background: #f1f1f2;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wapps-note-lines i:nth-child(3) {
+  width: 36%;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wingman-control-overlay {
+  position: absolute;
+  inset: clamp(14px, 1.7vw, 22px);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wingman-workflow-board {
+  width: min(88%, 354px);
+  padding: 10px;
+  border-radius: 2px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98) 0%, rgba(247, 248, 249, 0.98) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow:
+    0 30px 72px rgba(0, 0, 0, 0.42),
+    0 10px 24px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  color: #18181b;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wingman-workflow-board *,
+.os-home-duplicate .funnel-section-home-duplicate .wingman-workflow-board *::before,
+.os-home-duplicate .funnel-section-home-duplicate .wingman-workflow-board *::after {
+  box-sizing: border-box;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wingman-workflow-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 20px;
+  padding: 1px 1px 8px;
+  border-bottom: 1px solid rgba(24, 24, 27, 0.08);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wingman-workflow-header span,
+.os-home-duplicate .funnel-section-home-duplicate .wingman-workflow-header em {
+  font-family: 'Geist', var(--font-body);
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wingman-workflow-header span {
+  color: #18181b;
+  letter-spacing: -0.01em;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wingman-workflow-header em {
+  display: inline-flex;
+  align-items: center;
+  min-height: 16px;
+  padding: 0 7px;
+  border-radius: 999px;
+  background: rgba(37, 139, 103, 0.08);
+  border: 1px solid rgba(37, 139, 103, 0.11);
+  overflow: hidden;
+  color: rgba(37, 139, 103, 0.82);
+  text-overflow: ellipsis;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wingman-workflow-columns {
+  --workflow-gap: 6px;
+  --workflow-pad: 7px;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--workflow-gap);
+  margin-top: 10px;
+  min-height: 132px;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wingman-workflow-column {
+  display: grid;
+  align-content: start;
+  gap: 7px;
+  min-width: 0;
+  min-height: 132px;
+  padding: var(--workflow-pad);
+  border: 1px solid rgba(24, 24, 27, 0.07);
+  border-radius: 2px;
+  background:
+    linear-gradient(180deg, #f7f8f9 0%, #f2f3f5 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.78);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wingman-workflow-column-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid rgba(24, 24, 27, 0.06);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wingman-workflow-column-header span,
+.os-home-duplicate .funnel-section-home-duplicate .wingman-workflow-column-header b {
+  overflow: hidden;
+  font-family: 'Geist', var(--font-body);
+  font-size: 6.5px;
+  font-weight: 700;
+  line-height: 1;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wingman-workflow-column-header span {
+  min-width: 0;
+  color: rgba(24, 24, 27, 0.58);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wingman-workflow-column-header b {
+  display: grid;
+  flex: 0 0 13px;
+  min-width: 13px;
+  height: 13px;
+  place-items: center;
+  border-radius: 50%;
+  background: #ffffff;
+  color: rgba(24, 24, 27, 0.54);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.05),
+    inset 0 0 0 1px rgba(24, 24, 27, 0.06);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wingman-moving-task,
+.os-home-duplicate .funnel-section-home-duplicate .wingman-approval-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2px;
+  font-family: 'Geist', var(--font-body);
+  box-shadow:
+    0 12px 22px rgba(0, 0, 0, 0.12),
+    0 2px 5px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wingman-moving-task::before,
+.os-home-duplicate .funnel-section-home-duplicate .wingman-approval-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 3px;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wingman-moving-task::after,
+.os-home-duplicate .funnel-section-home-duplicate .wingman-approval-card::after {
+  content: '';
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wingman-moving-task {
+  position: absolute;
+  left: var(--workflow-pad);
+  top: 42px;
+  z-index: 2;
+  width: calc((100% - (var(--workflow-gap) * 2)) / 3 - (var(--workflow-pad) * 2));
+  min-height: 43px;
+  padding: 8px 13px 8px 8px;
+  border: 1px solid rgba(37, 139, 103, 0.18);
+  background:
+    linear-gradient(180deg, #ffffff 0%, #f7fcfa 100%);
+  animation: wingman-task-travel 6.4s ease-in-out infinite;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wingman-moving-task::before {
+  background: #258b67;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wingman-moving-task::after {
+  background: #258b67;
+  box-shadow: 0 0 10px rgba(37, 139, 103, 0.42);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wingman-moving-task strong,
+.os-home-duplicate .funnel-section-home-duplicate .wingman-moving-task span,
+.os-home-duplicate .funnel-section-home-duplicate .wingman-approval-card strong,
+.os-home-duplicate .funnel-section-home-duplicate .wingman-approval-card p {
+  display: block;
+  overflow: hidden;
+  line-height: 1.08;
+  overflow-wrap: normal;
+  word-break: normal;
+  white-space: normal;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wingman-moving-task strong,
+.os-home-duplicate .funnel-section-home-duplicate .wingman-approval-card strong {
+  color: #18181b;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wingman-moving-task span,
+.os-home-duplicate .funnel-section-home-duplicate .wingman-approval-card p {
+  margin-top: 4px;
+  color: rgba(24, 24, 27, 0.58);
+  font-size: 6.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wingman-approval-card {
+  margin-top: 72px;
+  width: 100%;
+  min-width: 0;
+  min-height: 41px;
+  padding: 8px 13px 8px 8px;
+  border: 1px solid rgba(255, 117, 31, 0.18);
+  background:
+    linear-gradient(180deg, #ffffff 0%, #fff9f4 100%);
+  opacity: 0;
+  transform: translateY(4px);
+  animation: wingman-approval-reveal 6.4s ease-in-out infinite;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wingman-approval-card::before {
+  background: #ff751f;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .wingman-approval-card::after {
+  background: #ff751f;
+  box-shadow: 0 0 10px rgba(255, 117, 31, 0.36);
+}
+
+@keyframes wingman-task-travel {
+  0%,
+  18% {
+    left: var(--workflow-pad);
+    border-color: rgba(37, 139, 103, 0.2);
+    background: linear-gradient(180deg, #ffffff 0%, #f7fcfa 100%);
+  }
+  34%,
+  58% {
+    left: calc((100% - (var(--workflow-gap) * 2)) / 3 + var(--workflow-gap) + var(--workflow-pad));
+    border-color: rgba(37, 139, 103, 0.32);
+    background: linear-gradient(180deg, #ffffff 0%, #eff9f5 100%);
+  }
+  76%,
+  100% {
+    left: calc(((100% - (var(--workflow-gap) * 2)) / 3 + var(--workflow-gap)) * 2 + var(--workflow-pad));
+    border-color: rgba(37, 139, 103, 0.42);
+    background: linear-gradient(180deg, #ffffff 0%, #e8f6f0 100%);
+  }
+}
+
+@keyframes wingman-approval-reveal {
+  0%,
+  28% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  38%,
+  60% {
+    opacity: 0.96;
+    transform: translateY(0);
+  }
+  72%,
+  100% {
+    opacity: 0;
+    transform: translateY(-3px);
+  }
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .funnel-card-button {
+  align-self: start;
+  width: 170px;
+  min-width: 170px;
+  margin-top: clamp(20px, 2vw, 28px);
+  background: #f0f0f0;
+  color: #050505;
+  border-color: #f0f0f0;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .funnel-card-button:hover {
+  background: #ff751f;
+  color: #ffffff;
+  border-color: #ff751f;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(240, 240, 240, 0.2);
 }
 
 /* Tablet: 2 columns and button moves below title */
@@ -414,5 +1304,226 @@
 
   .funnel-card-title-divider {
     display: block;
+  }
+}
+
+@media (max-width: 1024px) {
+  .os-home-duplicate .funnel-section-home-duplicate .funnel-offer-header {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .funnel-offer-cta {
+    width: 170px;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .funnel-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .funnel-card {
+    min-height: 0;
+    border-right: 0;
+    border-bottom: 1px solid rgba(240, 240, 240, 0.1);
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .funnel-card:last-child {
+    border-bottom: 0;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .funnel-card-image {
+    position: relative;
+    inset: auto;
+    height: clamp(132px, 28vw, 220px);
+    opacity: 1;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .people-overlay-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .wapps-window {
+    width: min(86%, 326px);
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .wingman-workflow-board {
+    width: min(86%, 326px);
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .funnel-card-button {
+    width: 170px;
+  }
+}
+
+@media (max-width: 768px) {
+  .os-home-duplicate .funnel-section-home-duplicate .funnel-offer-panel {
+    padding: 0;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .funnel-offer-header {
+    margin-bottom: 48px;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .funnel-card {
+    padding: 22px 20px;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .funnel-card-image {
+    height: clamp(250px, 68vw, 340px);
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .funnel-card-header {
+    gap: 12px;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .people-overlay {
+    inset: 12px;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .people-overlay-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .wapps-overlay {
+    inset: 12px;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .wapps-window {
+    width: min(92%, 292px);
+    padding: 8px 9px;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .wingman-control-overlay {
+    inset: 12px;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .wingman-workflow-board {
+    width: min(92%, 292px);
+    padding: 8px 9px 9px;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .wingman-workflow-header {
+    min-height: 16px;
+    padding-bottom: 5px;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .wingman-workflow-header span,
+  .os-home-duplicate .funnel-section-home-duplicate .wingman-workflow-header em {
+    font-size: 8px;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .wingman-workflow-columns {
+    --workflow-gap: 5px;
+    --workflow-pad: 6px;
+    gap: 5px;
+    margin-top: 7px;
+    min-height: 116px;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .wingman-workflow-column {
+    min-height: 116px;
+    padding: 6px;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .wingman-workflow-column-header span,
+  .os-home-duplicate .funnel-section-home-duplicate .wingman-workflow-column-header b {
+    font-size: 6px;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .wingman-moving-task span,
+  .os-home-duplicate .funnel-section-home-duplicate .wingman-approval-card p {
+    font-size: 7px;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .wingman-moving-task strong,
+  .os-home-duplicate .funnel-section-home-duplicate .wingman-approval-card strong {
+    font-size: 9px;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .wingman-moving-task {
+    top: 36px;
+    padding: 7px 12px 7px 7px;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .wingman-approval-card {
+    margin-top: 62px;
+    padding: 7px 11px 7px 7px;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .wingman-moving-task::after,
+  .os-home-duplicate .funnel-section-home-duplicate .wingman-approval-card::after {
+    top: 6px;
+    right: 6px;
+    width: 4px;
+    height: 4px;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .wapps-window-header {
+    min-height: 20px;
+    padding-bottom: 6px;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .wapps-window-header span,
+  .os-home-duplicate .funnel-section-home-duplicate .wapps-window-header i,
+  .os-home-duplicate .funnel-section-home-duplicate .wapps-window-header em {
+    font-size: 9px;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .wapps-window-icons {
+    gap: 5px;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .wapps-window-icons img {
+    width: 14px;
+    height: 14px;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .wapps-prospect-panel {
+    margin-top: 8px;
+    padding: 9px 10px 10px;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .wapps-prospect-panel strong {
+    font-size: 14px;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .wapps-smart-notes {
+    margin-top: 8px;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .wapps-smart-notes p {
+    margin-top: 6px;
+    font-size: 9px;
+    line-height: 1.28;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .wapps-note-lines {
+    gap: 4px;
+    margin-top: 6px;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .wapps-note-lines i {
+    height: 8px;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .funnel-card-date {
+    max-width: 14ch;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .funnel-card h4,
+  .os-home-duplicate .funnel-section-home-duplicate .funnel-card:hover h4 {
+    font-size: 20px;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .funnel-card-button {
+    width: 170px;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .funnel-card-button:hover,
+  .os-home-duplicate .funnel-section-home-duplicate .funnel-card-button:active {
+    background: #ff751f;
+    color: #ffffff !important;
+    border-color: #ff751f;
   }
 }
