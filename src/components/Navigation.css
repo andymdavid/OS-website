@@ -3,7 +3,7 @@
 .nav {
   /* Position */
   position: fixed;
-  top: 0;
+  top: 22px;
   left: 0;
   right: 0;
   z-index: var(--z-nav);
@@ -12,12 +12,15 @@
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding-top: 22px;
 
   /* No background on outer nav */
   background: transparent;
   padding-left: var(--container-padding);
   padding-right: var(--container-padding);
+}
+
+.os-home-duplicate .nav {
+  top: 50px;
 }
 
 /* Glass Header Container */

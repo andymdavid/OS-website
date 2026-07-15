@@ -369,5 +369,5 @@
 .os-home-duplicate .hero-duplicate-heading,
 .os-home-duplicate .hero-heading-metrics {
   max-width: 100%;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }

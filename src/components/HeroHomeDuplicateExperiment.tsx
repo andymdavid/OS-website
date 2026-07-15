@@ -16,6 +16,7 @@ export function HeroHomeDuplicateExperiment() {
             <h1 className="hero-duplicate-heading">
               An AI Partner for SME’s that want to
               <br />
+              {' '}
               <span className="hero-heading-metrics">▲ margins, ▲ capital, and ▼ risk.</span>
             </h1>
             <p>
