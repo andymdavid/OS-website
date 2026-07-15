@@ -41,14 +41,23 @@ export function HomeDuplicateGridSection() {
     <section className="section home-duplicate-grid-section">
       <div className="section-container-wide">
         <div className="home-duplicate-grid-intro">
-          <div className="intro-pill fade-in">WHERE WE HELP</div>
-          <h2 className="section-heading fade-in fade-in-stagger-1">
-            Practical AI systems for the parts of your business where time goes to waste.
-          </h2>
-          <p className="home-duplicate-grid-subpara fade-in fade-in-stagger-2">
-            We build custom AI systems around recurring business functions where manual work, slow handoffs,
-            and fragmented information keep good people tied up for longer than they should be.
-          </p>
+          <div className="home-duplicate-grid-heading">
+            <div className="intro-pill fade-in">USE CASES</div>
+            <h2 className="section-heading fade-in fade-in-stagger-1">
+              Some practical examples for how to start using AI inside your business.
+            </h2>
+          </div>
+
+          <div className="home-duplicate-grid-intro-copy">
+            <p className="home-duplicate-grid-subpara fade-in fade-in-stagger-2">
+              These are the workflows where better agents, records, approvals, and custom apps can turn manual
+              effort into repeatable operating leverage.
+            </p>
+
+            <a className="home-duplicate-grid-cta fade-in fade-in-stagger-3" href="/contact">
+              Book a Call
+            </a>
+          </div>
         </div>
 
         <div className="home-duplicate-grid">

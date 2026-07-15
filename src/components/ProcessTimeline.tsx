@@ -10,9 +10,9 @@ interface ProcessStep {
 const steps: ProcessStep[] = [
   {
     number: '01',
-    title: 'AI Audit & Discovery',
+    title: 'Discovery Session',
     description:
-      'We start with the people, workflows, and decisions behind the problem. The goal is to find where time gets lost, where manual work is slowing the business down, and where a custom AI system could create a clear operational advantage.',
+      'We start with the people, workflows, and decisions behind the problem. The goal is to find where time gets lost, what work is worth systemising, and whether there is a clear business case for using AI.',
   },
   {
     number: '02',
@@ -22,18 +22,12 @@ const steps: ProcessStep[] = [
   },
   {
     number: '03',
-    title: 'Design the System',
+    title: 'Build the System',
     description:
-      'We design the AI system around the workflow as it actually operates, not a theoretical version of it. This includes the agent architecture, the data it needs, the decisions it will make, and how your team will interact with it.',
+      'We design and build around the workflow as it actually operates, not a theoretical version of it. That includes the data, agents, approvals, interfaces, and handoffs your team needs to make the system useful.',
   },
   {
     number: '04',
-    title: 'Build & Deliver',
-    description:
-      'We build the system in a focused sprint, scoped to a specific deliverable. At the end you have a working AI system deployed into your business, not a prototype or a set of recommendations.',
-  },
-  {
-    number: '05',
     title: 'Operate & Improve',
     description:
       'Your system runs on Wingman with full visibility through Flight Deck. Over time it learns from the knowledge in your business, improves through use, and compounds in value as your team builds on what is already working.',
@@ -79,7 +73,7 @@ export function ProcessTimeline() {
                         href="/contact"
                         className="process-step-cta"
                       >
-                        Book a Free AI Audit
+                        Book a Call
                       </a>
                     )}
                   </div>
