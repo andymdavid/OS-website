@@ -9,7 +9,10 @@ export function HomeDuplicateGoodStuffStrip() {
     <>
       <section className="home-duplicate-good-stuff-strip" aria-label="The Good Stuff newsletter">
         <button type="button" onClick={() => setIsOpen(true)}>
-          <span>The Good Stuff: practical notes on how AI helps SMEs.</span>
+          <span className="home-duplicate-good-stuff-strip-message">
+            <span>The Good Stuff: practical notes</span>
+            <span className="home-duplicate-good-stuff-strip-mobile-line"> on how AI helps SMEs.</span>
+          </span>
           <strong>Join the newsletter →</strong>
         </button>
       </section>

@@ -36,6 +36,10 @@
   transition: color var(--duration-base) var(--ease-out);
 }
 
+.home-duplicate-good-stuff-strip-message {
+  min-width: 0;
+}
+
 .home-duplicate-good-stuff-strip button:hover strong {
   color: #ff751f;
 }
@@ -48,5 +52,9 @@
     font-size: 11px;
     justify-content: flex-start;
     text-align: left;
+  }
+
+  .home-duplicate-good-stuff-strip-mobile-line {
+    display: block;
   }
 }
