@@ -1,0 +1,477 @@
+.home-duplicate-wingman-benefits {
+  --wingman-benefit-edge-space: clamp(88px, 9vw, 128px);
+  position: relative;
+  overflow: hidden;
+  background: var(--color-background);
+}
+
+.home-duplicate-wingman-benefits::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  height: 1px;
+  background: rgba(240, 240, 240, 0.08);
+}
+
+.home-duplicate-wingman-benefits::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  height: 1px;
+  background: rgba(240, 240, 240, 0.08);
+}
+
+.wingman-benefits-screen {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: var(--wingman-benefit-edge-space) var(--container-padding);
+  overflow: hidden;
+}
+
+.wingman-benefits-screen + .wingman-benefits-screen::before {
+  display: none;
+}
+
+.wingman-benefits-screen + .wingman-benefits-screen {
+  min-height: 100vh;
+  padding-top: clamp(40px, 5vw, 72px);
+  padding-bottom: var(--wingman-benefit-edge-space);
+}
+
+.wingman-benefits-screen .section-container-wide {
+  width: 100%;
+}
+
+.wingman-benefits-section-intro {
+  max-width: 760px;
+  margin: 0 auto clamp(64px, 7vw, 96px);
+  text-align: center;
+}
+
+.wingman-benefits-section-intro .intro-pill {
+  width: fit-content;
+  margin: 0 auto 24px;
+}
+
+.wingman-benefits-section-intro .section-heading {
+  max-width: 760px;
+  margin: 0 auto 20px;
+}
+
+.wingman-benefits-section-intro p {
+  max-width: 62ch;
+  margin: 0 auto;
+  color: rgba(240, 240, 240, 0.72);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.wingman-benefits-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.06fr) minmax(360px, 0.94fr);
+  gap: clamp(44px, 6vw, 96px);
+  align-items: center;
+}
+
+.wingman-benefits-layout-reversed .wingman-benefits-visual-frame {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.wingman-benefits-layout-reversed .wingman-benefits-copy {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.wingman-benefits-visual-frame {
+  position: relative;
+  height: min(58vh, 560px);
+  min-height: 440px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 4px;
+  background-color: #0f0e0d;
+}
+
+.wingman-benefits-visual-frame::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(15, 14, 13, 0.7), rgba(15, 14, 13, 0.7)),
+    var(--benefit-bg) center / cover no-repeat;
+}
+
+.wingman-benefits-visual-frame > * {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  transform: scale(0.82);
+  transform-origin: center center;
+}
+
+.wingman-benefits-visual-frame .data-analysis-demo-modal,
+.wingman-benefits-visual-frame .wingman-demo-modal {
+  height: 100%;
+  min-height: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.wingman-benefits-visual-frame .control-resilience-demo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: clamp(22px, 3vw, 40px);
+  box-sizing: border-box;
+  transform: none;
+}
+
+.control-existing-demo {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  width: min(100%, 560px);
+  min-height: 360px;
+}
+
+.control-existing-demo .control-existing-terminal.visible {
+  height: 330px;
+}
+
+.control-existing-demo .control-existing-terminal-content {
+  height: 284px;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.control-existing-demo .control-existing-code-line {
+  color: rgba(255, 255, 255, 0.58);
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+}
+
+.control-existing-demo .terminal-line {
+  font-size: 11px;
+  line-height: 1.72;
+}
+
+.control-existing-demo .control-terminal-line {
+  color: rgba(255, 255, 255, 0.78);
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+}
+
+.control-existing-demo .control-terminal-line-human {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.control-existing-demo .control-terminal-line-agent {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.control-existing-demo .control-terminal-line-code {
+  color: rgba(255, 255, 255, 0.54);
+}
+
+.control-existing-demo .control-terminal-line-output {
+  color: rgba(255, 255, 255, 0.48);
+}
+
+.control-existing-demo .control-terminal-line-success {
+  color: #2ea782;
+}
+
+.wingman-work-result {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: min(100%, 500px);
+  overflow: hidden;
+  border: 1px solid rgba(240, 240, 240, 0.1);
+  border-radius: 4px;
+  background: #0a0a0a;
+  box-shadow: 0 0 30px rgba(46, 167, 130, 0.1);
+  color: #f0f0f0;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, calc(-50% + 18px));
+  transition:
+    opacity 420ms var(--ease-out),
+    transform 420ms var(--ease-out);
+}
+
+.wingman-work-result.visible {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+.quote-pack-result {
+  font-family: 'Geist', var(--font-body);
+}
+
+.quote-pack-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 42px;
+  padding: 0 16px;
+  border-bottom: 1px solid rgba(46, 167, 130, 0.2);
+  background: rgba(46, 167, 130, 0.1);
+}
+
+.quote-pack-header span,
+.quote-pack-header em {
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  line-height: 1;
+}
+
+.quote-pack-header span {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.quote-pack-header em {
+  color: #2ea782;
+  font-size: 11px;
+  font-style: normal;
+}
+
+.quote-pack-title {
+  padding: 20px 20px 18px;
+}
+
+.quote-pack-title strong {
+  display: block;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 650;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
+}
+
+.quote-pack-title p {
+  max-width: 42ch;
+  margin: 10px 0 0;
+  color: rgba(240, 240, 240, 0.62);
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.quote-pack-lines {
+  display: grid;
+  gap: 0;
+  padding: 0 20px;
+}
+
+.quote-pack-lines div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 42px;
+  border-top: 1px solid rgba(240, 240, 240, 0.08);
+}
+
+.quote-pack-lines span,
+.quote-pack-lines b,
+.quote-pack-footer span,
+.quote-pack-footer b {
+  overflow: hidden;
+  font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-size: 11px;
+  line-height: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.quote-pack-lines span,
+.quote-pack-footer span {
+  color: rgba(240, 240, 240, 0.64);
+}
+
+.quote-pack-lines b {
+  color: #2ea782;
+  font-weight: 500;
+}
+
+.quote-pack-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 48px;
+  margin-top: 16px;
+  padding: 0 20px;
+  border-top: 1px solid rgba(46, 167, 130, 0.18);
+  background: rgba(46, 167, 130, 0.055);
+}
+
+.quote-pack-footer b {
+  flex: 0 0 auto;
+  color: #2ea782;
+  font-weight: 500;
+}
+
+.wingman-benefits-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 540px;
+}
+
+.wingman-benefits-copy h3 {
+  max-width: none;
+  margin: 0 0 14px;
+  color: var(--color-text);
+  font-family: var(--font-ui);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.12;
+  text-transform: none;
+  white-space: nowrap;
+}
+
+.wingman-benefits-copy > p {
+  max-width: 46ch;
+  margin: 0 0 clamp(26px, 3vw, 40px);
+  color: rgba(240, 240, 240, 0.72);
+  font-size: 14px;
+  line-height: 1.58;
+}
+
+.wingman-benefits-list {
+  display: grid;
+  width: 100%;
+  gap: 0;
+  border-top: 1px solid rgba(240, 240, 240, 0.08);
+}
+
+.wingman-benefit-row {
+  display: grid;
+  grid-template-columns: 17px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(240, 240, 240, 0.08);
+}
+
+.wingman-benefit-row-icon {
+  display: flex;
+  width: 17px;
+  height: 17px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+  color: rgba(240, 240, 240, 0.58);
+}
+
+.wingman-benefit-row-icon svg {
+  width: 17px;
+  height: 17px;
+  stroke-width: 1.7;
+}
+
+.wingman-benefit-row h4 {
+  margin: 0;
+  color: var(--color-text);
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.15;
+}
+
+.wingman-benefit-row p {
+  margin: 4px 0 0;
+  color: rgba(240, 240, 240, 0.64);
+  font-size: 13px;
+  line-height: 1.42;
+}
+
+@media (max-width: 1024px) {
+  .wingman-benefits-screen {
+    min-height: auto;
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+
+  .wingman-benefits-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .wingman-benefits-layout-reversed .wingman-benefits-visual-frame,
+  .wingman-benefits-layout-reversed .wingman-benefits-copy {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .wingman-benefits-layout-reversed .wingman-benefits-copy {
+    order: 2;
+  }
+
+  .wingman-benefits-layout-reversed .wingman-benefits-visual-frame {
+    order: 1;
+  }
+
+  .wingman-benefits-copy {
+    max-width: 680px;
+  }
+
+  .wingman-benefits-visual-frame {
+    height: 448px;
+    min-height: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .wingman-benefits-screen {
+    padding-top: 72px;
+    padding-bottom: 72px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .wingman-benefits-screen .section-container-wide {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .wingman-benefits-section-intro {
+    margin-bottom: 56px;
+  }
+
+  .wingman-benefits-copy h3 {
+    font-size: 22px;
+    white-space: normal;
+  }
+
+  .wingman-benefits-visual-frame {
+    height: 428px;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+
+  .wingman-benefits-visual-frame > * {
+    transform: scale(0.84);
+    transform-origin: top center;
+  }
+
+  .wingman-benefits-visual-frame .data-analysis-demo-modal,
+  .wingman-benefits-visual-frame .wingman-demo-modal {
+    height: 468px;
+    min-height: 468px;
+  }
+}
