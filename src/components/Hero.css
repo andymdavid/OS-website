@@ -163,6 +163,7 @@
   background: #17181d;
   color: var(--color-text);
   border: 1px solid transparent;
+  cursor: pointer;
 }
 
 .hero-cta .hero-cta-dark:hover {
