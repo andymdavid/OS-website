@@ -179,7 +179,7 @@ export function HomeDuplicateCanvasSection() {
     <section className="home-duplicate-canvas-section">
       <div className="home-duplicate-canvas-inner">
         <div className="home-duplicate-canvas-copy">
-          <div className="intro-pill">OPERATING MAP</div>
+          <div className="intro-pill">AI THAT FITS YOUR BUSINESS</div>
           <h2 className="section-heading">Your business already has the structure AI needs.</h2>
           <p>
             We start with your existing teams, workflows, and tools, then use Wingman to turn
