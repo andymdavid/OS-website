@@ -3,11 +3,12 @@ import { NavigationDraft } from '../components/NavigationDraft';
 import { HeroHomeDuplicateExperiment } from '../components/HeroHomeDuplicateExperiment';
 import { HomeDuplicateCanvasSection } from '../components/HomeDuplicateCanvasSection';
 import { HomeDuplicateGridSection } from '../components/HomeDuplicateGridSection';
+import { HomeDuplicateWingmanBenefits } from '../components/HomeDuplicateWingmanBenefits';
 import { FunnelHomeDuplicate } from '../components/FunnelHomeDuplicate';
-import { ProcessTimeline } from '../components/ProcessTimeline';
 import { FAQHomeDuplicate } from '../components/FAQHomeDuplicate';
-import { GoodStuffHomeDuplicate } from '../components/GoodStuffHomeDuplicate';
 import { CTAHomeDuplicate } from '../components/CTAHomeDuplicate';
+import { HomeDuplicateGoodStuffStrip } from '../components/HomeDuplicateGoodStuffStrip';
+import { HomeDuplicateExitNewsletter } from '../components/HomeDuplicateExitNewsletter';
 import { FooterHomeDuplicate } from '../components/FooterHomeDuplicate';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { organizationSchema, websiteSchema } from '../lib/structured-data';
@@ -31,17 +32,21 @@ export default function HomeDuplicate() {
           websiteSchema,
         ]}
       />
+      <HomeDuplicateGoodStuffStrip />
       <NavigationDraft />
       <main>
         <HeroHomeDuplicateExperiment />
         <HomeDuplicateCanvasSection />
-        <HomeDuplicateGridSection />
         <FunnelHomeDuplicate />
-        <ProcessTimeline />
+        <HomeDuplicateWingmanBenefits />
+        <HomeDuplicateGridSection />
         <FAQHomeDuplicate />
-        <GoodStuffHomeDuplicate />
-        <CTAHomeDuplicate />
+        <CTAHomeDuplicate
+          heading="Let’s find where AI can improve margin, free up capital, and reduce risk."
+          intro="Book a free intro call. We’ll look at the work that matters most in your business and find the clearest path to improve it with AI."
+        />
       </main>
+      <HomeDuplicateExitNewsletter />
       <FooterHomeDuplicate />
     </div>
   );
