@@ -1,14 +1,14 @@
 import { SEO } from '../components/SEO';
 import { NavigationDraft } from '../components/NavigationDraft';
-import { HeroHomeDuplicateExperiment } from '../components/HeroHomeDuplicateExperiment';
-import { HomeDuplicateCanvasSection } from '../components/HomeDuplicateCanvasSection';
+import { HeroHomeDuplicate } from '../components/HeroHomeDuplicate';
 import { HomeDuplicateGridSection } from '../components/HomeDuplicateGridSection';
-import { HomeDuplicateWingmanBenefits } from '../components/HomeDuplicateWingmanBenefits';
 import { FunnelHomeDuplicate } from '../components/FunnelHomeDuplicate';
+import { ProcessTimeline } from '../components/ProcessTimeline';
+import { ExamplesSection } from '../components/ExamplesSection';
+import { InfrastructureSection } from '../components/InfrastructureSection';
 import { FAQHomeDuplicate } from '../components/FAQHomeDuplicate';
+import { GoodStuffHomeDuplicate } from '../components/GoodStuffHomeDuplicate';
 import { CTAHomeDuplicate } from '../components/CTAHomeDuplicate';
-import { HomeDuplicateGoodStuffStrip } from '../components/HomeDuplicateGoodStuffStrip';
-import { HomeDuplicateExitNewsletter } from '../components/HomeDuplicateExitNewsletter';
 import { FooterHomeDuplicate } from '../components/FooterHomeDuplicate';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { organizationSchema, websiteSchema } from '../lib/structured-data';
@@ -17,9 +17,9 @@ export default function HomeDuplicate() {
   useScrollAnimation();
 
   return (
-    <div className="os-theme os-draft os-home-duplicate">
+    <div className="os-theme os-draft">
       <SEO
-        title="Custom AI Systems for SMEs | Perth & Australia"
+        title="Home (Archived)"
         description="Custom AI systems for SMEs in Perth and across Australia. Start with a free AI audit, then build working systems around the workflows that improve margins, free up capital, and reduce operational risk."
         path="/home-duplicate"
         noindex
@@ -32,21 +32,18 @@ export default function HomeDuplicate() {
           websiteSchema,
         ]}
       />
-      <HomeDuplicateGoodStuffStrip />
       <NavigationDraft />
       <main>
-        <HeroHomeDuplicateExperiment />
-        <HomeDuplicateCanvasSection />
-        <FunnelHomeDuplicate />
-        <HomeDuplicateWingmanBenefits />
+        <HeroHomeDuplicate />
         <HomeDuplicateGridSection />
+        <FunnelHomeDuplicate />
+        <ProcessTimeline />
+        <ExamplesSection />
+        <InfrastructureSection />
         <FAQHomeDuplicate />
-        <CTAHomeDuplicate
-          heading="Let’s find where AI can improve margin, free up capital, and reduce risk."
-          intro="Book a free intro call. We’ll look at the work that matters most in your business and find the clearest path to improve it with AI."
-        />
+        <GoodStuffHomeDuplicate />
+        <CTAHomeDuplicate />
       </main>
-      <HomeDuplicateExitNewsletter />
       <FooterHomeDuplicate />
     </div>
   );

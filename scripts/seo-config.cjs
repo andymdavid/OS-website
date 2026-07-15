@@ -507,7 +507,7 @@ function getStaticPages() {
       path: '/',
       title: 'Custom AI Systems for SMEs | Perth & Australia',
       description:
-        'Custom AI systems for SMEs in Perth and across Australia. Start with a free AI audit, then build working systems around the workflows that improve margins, free up capital, and reduce operational risk.',
+        'Other Stuff helps SMEs use AI to improve margin, free up capital, and reduce risk with Wingman, practical agents, and highly personalised AI-native software.',
       ogImage: DEFAULT_OG_IMAGE,
       sitemap: { changefreq: 'weekly', priority: '1.0' },
       schema: [
@@ -515,20 +515,21 @@ function getStaticPages() {
         buildWebsiteSchema(),
       ],
       body: `
-        <h1>Your business has more to give than your team has time for</h1>
-        <p>We help SMEs reduce the time spent on repetitive operational work with custom AI systems.</p>
-        <p>We build the systems, deliver the infrastructure, and train your team to build on what is running.</p>
-        <h2>How we help</h2>
-        <h3><a href="/marginal-gains/">Custom AI Systems</a></h3>
-        <p>We identify the operational work costing your team the most time, build an AI system around it, and hand you something that runs. Every Sortie is scoped to a specific workflow in your business, built around how you actually work, and delivered as a running system.</p>
-        <h3><a href="/#system">Wingman</a></h3>
-        <p>Wingman is the operating environment your AI agents run inside. Flight Deck gives your team visibility and control. Tower holds the shared records and memory agents work from. Airspace structures the knowledge your business has built.</p>
-        <h3><a href="/speedrun/">AI Workshops</a></h3>
-        <p>Speedrun is a private hands-on AI workshop for business teams that want to build practical business tools and workflows with AI agents.</p>
-        <h2>Our process</h2>
-        <p>We start with an AI audit and discovery, map the workflow, design the system, build and deliver it, then operate and improve it over time.</p>
-        <h2 id="system">Our Infrastructure</h2>
-        <p>Every system we build is backed by infrastructure we designed and run ourselves. Wingman includes Flight Deck, Tower, Airspace, Autopilot, and Wingman agents.</p>
+        <h1>An AI Partner for SMEs that want to improve margins, free up capital, and reduce risk.</h1>
+        <p>We turn your core workflows into practical AI systems that compound team output and drive growth.</p>
+        <h2>Your business already has the structure AI needs.</h2>
+        <p>We start with your existing teams, workflows, and tools, then use Wingman to turn high-value work into practical AI systems, agents, and custom apps.</p>
+        <h2>Three practical ways to start using AI inside your business.</h2>
+        <h3><a href="/speedrun/">AI Workshops for Teams</a></h3>
+        <p>Hands-on AI workshops for teams that need confidence, capability, and better ways of working with AI.</p>
+        <h3><a href="/marginal-gains/">AI-Native Business Software</a></h3>
+        <p>A Wingman App turns a high-value workflow into highly personalised software the business can actually use.</p>
+        <h3><a href="/#system">Control Layer for AI Work</a></h3>
+        <p>Wingman gives your agents, records, approvals, files, permissions, and memory one operating environment so AI works reliably inside your business.</p>
+        <h2>Why Wingman</h2>
+        <p>Wingman gives your business a stable foundation for using AI safely, reliably, and repeatedly across the work that matters.</p>
+        <h2>Use cases</h2>
+        <p>These are the workflows where better agents, records, approvals, and custom apps can turn manual effort into repeatable operating leverage.</p>
         <h2><a href="/about/">About Other Stuff</a></h2>
         <p>Other Stuff is an AI-first product studio based in Perth, Western Australia.</p>
         <p>Other Stuff Pty Ltd — City Beach, Perth, Western Australia 6015</p>
@@ -537,7 +538,7 @@ function getStaticPages() {
     },
     {
       path: '/home-duplicate',
-      title: 'Custom AI Systems for SMEs | Perth & Australia',
+      title: 'Home (Archived)',
       description:
         'Custom AI systems for SMEs in Perth and across Australia. Start with a free AI audit, then build working systems around the workflows that improve margins, free up capital, and reduce operational risk.',
       ogImage: DEFAULT_OG_IMAGE,

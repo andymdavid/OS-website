@@ -8,10 +8,10 @@ const checks = [
     route: '/',
     file: path.join(distDir, 'index.html'),
     mustContain: [
-      'Your business has more to give than your team has time for',
-      'Wingman is the operating environment',
-      'Our Infrastructure',
-      'AI Workshops',
+      'An AI Partner for SMEs',
+      'Your business already has the structure AI needs',
+      'AI-Native Business Software',
+      'Why Wingman',
     ],
     mustNotContain: [
       '<h2>Core offers</h2>',

@@ -1,14 +1,14 @@
 import { SEO } from '../components/SEO';
 import { NavigationDraft } from '../components/NavigationDraft';
-import { HeroHomeDuplicate } from '../components/HeroHomeDuplicate';
+import { HeroHomeDuplicateExperiment } from '../components/HeroHomeDuplicateExperiment';
+import { HomeDuplicateCanvasSection } from '../components/HomeDuplicateCanvasSection';
 import { HomeDuplicateGridSection } from '../components/HomeDuplicateGridSection';
+import { HomeDuplicateWingmanBenefits } from '../components/HomeDuplicateWingmanBenefits';
 import { FunnelHomeDuplicate } from '../components/FunnelHomeDuplicate';
-import { ProcessTimeline } from '../components/ProcessTimeline';
-import { ExamplesSection } from '../components/ExamplesSection';
-import { InfrastructureSection } from '../components/InfrastructureSection';
 import { FAQHomeDuplicate } from '../components/FAQHomeDuplicate';
-import { GoodStuffHomeDuplicate } from '../components/GoodStuffHomeDuplicate';
 import { CTAHomeDuplicate } from '../components/CTAHomeDuplicate';
+import { HomeDuplicateGoodStuffStrip } from '../components/HomeDuplicateGoodStuffStrip';
+import { HomeDuplicateExitNewsletter } from '../components/HomeDuplicateExitNewsletter';
 import { FooterHomeDuplicate } from '../components/FooterHomeDuplicate';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { organizationSchema, websiteSchema } from '../lib/structured-data';
@@ -17,10 +17,10 @@ export default function Home() {
   useScrollAnimation();
 
   return (
-    <div className="os-theme os-draft">
+    <div className="os-theme os-draft os-home-duplicate">
       <SEO
         title="Custom AI Systems for SMEs | Perth & Australia"
-        description="Custom AI systems for SMEs in Perth and across Australia. Start with a free AI audit, then build working systems around the workflows that improve margins, free up capital, and reduce operational risk."
+        description="Other Stuff helps SMEs use AI to improve margin, free up capital, and reduce risk with Wingman, practical agents, and highly personalised AI-native software."
         path="/"
         schema={[
           {
@@ -31,18 +31,21 @@ export default function Home() {
           websiteSchema,
         ]}
       />
+      <HomeDuplicateGoodStuffStrip />
       <NavigationDraft />
       <main>
-        <HeroHomeDuplicate />
-        <HomeDuplicateGridSection />
+        <HeroHomeDuplicateExperiment />
+        <HomeDuplicateCanvasSection />
         <FunnelHomeDuplicate />
-        <ProcessTimeline />
-        <ExamplesSection />
-        <InfrastructureSection />
+        <HomeDuplicateWingmanBenefits />
+        <HomeDuplicateGridSection />
         <FAQHomeDuplicate />
-        <GoodStuffHomeDuplicate />
-        <CTAHomeDuplicate />
+        <CTAHomeDuplicate
+          heading="Let’s find where AI can improve margin, free up capital, and reduce risk."
+          intro="Book a free intro call. We’ll look at the work that matters most in your business and find the clearest path to improve it with AI."
+        />
       </main>
+      <HomeDuplicateExitNewsletter />
       <FooterHomeDuplicate />
     </div>
   );
