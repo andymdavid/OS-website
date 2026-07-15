@@ -8,13 +8,12 @@ export function GoodStuffHomeDuplicate() {
       <div className="good-stuff-top">
         <div className="good-stuff-pill fade-in">THE GOOD STUFF</div>
         <h2 className="good-stuff-heading fade-in fade-in-stagger-1">
-          Want to understand how we think about AI? Start here.
+          Learn more about how AI can improve margin, free up capital, and reduce risk.
         </h2>
 
         <p className="good-stuff-subpara fade-in fade-in-stagger-2">
-          The Good Stuff is our podcast where we dig into how AI is actually
-          changing the way SMEs work, what&apos;s practical, and
-          how we approach the problems we solve.
+          The Good Stuff is our newsletter on how AI is changing the way SMEs
+          work, what&apos;s practical, and how we approach the problems we solve.
         </p>
 
         <div className="good-stuff-cta fade-in fade-in-stagger-3">
