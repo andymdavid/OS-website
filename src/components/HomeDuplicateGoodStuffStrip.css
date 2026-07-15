@@ -47,14 +47,22 @@
 @media (max-width: 640px) {
   .home-duplicate-good-stuff-strip button {
     min-height: 34px;
-    padding: 7px 20px;
-    gap: 6px;
-    font-size: 11px;
-    justify-content: flex-start;
+    padding: 7px 14px;
+    gap: 10px;
+    font-size: 10.5px;
+    justify-content: space-between;
     text-align: left;
   }
 
-  .home-duplicate-good-stuff-strip-mobile-line {
-    display: block;
+  .home-duplicate-good-stuff-strip-message {
+    flex: 1 1 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .home-duplicate-good-stuff-strip strong {
+    flex: 0 0 auto;
+    text-align: right;
   }
 }

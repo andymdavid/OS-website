@@ -6,6 +6,7 @@ interface NewsletterModalProps {
   isOpen: boolean;
   onClose: () => void;
   pill?: string;
+  profileImageSrc?: string | null;
   heading?: React.ReactNode;
   description?: string;
   buttonText?: string;
@@ -15,6 +16,7 @@ export function NewsletterModal({
   isOpen,
   onClose,
   pill = 'THE GOOD STUFF',
+  profileImageSrc = '/good-stuff-profile.webp',
   heading = 'The Good Stuff is where we dig into how AI is changing the way we work, build businesses, and shape the broader economy.',
   description = 'We publish essays, stories, and conversations about the way humans and AI work together — and what that means for small businesses. If you want to understand how we think, this is the best place to start.',
   buttonText = 'Join the Good Stuff',
@@ -63,7 +65,11 @@ export function NewsletterModal({
         </button>
 
         <div className="modal-body">
-          <div className="modal-pill">{pill}</div>
+          {profileImageSrc ? (
+            <img className="modal-profile-image" src={profileImageSrc} alt={pill} />
+          ) : (
+            <div className="modal-pill">{pill}</div>
+          )}
 
           <h2 className="modal-heading">{heading}</h2>
 
