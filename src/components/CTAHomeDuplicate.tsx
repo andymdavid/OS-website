@@ -15,7 +15,7 @@ export function CTAHomeDuplicate({
   pillLabel = 'Get Started',
   heading = "Let's talk about what's slowing your business down.",
   intro = "Book a free intro call. We'll look at where time is going and whether a custom AI system makes sense for your business.",
-  buttonLabel = 'Book a Free AI Audit',
+  buttonLabel = 'Book a Call',
   className,
 }: CTAHomeDuplicateProps) {
   const renderedHeading = heading;

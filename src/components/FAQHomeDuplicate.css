@@ -18,6 +18,10 @@
   text-align: center;
 }
 
+.os-home-duplicate .faq-home-container {
+  max-width: 1280px;
+}
+
 .faq-home-container .intro-pill {
   margin-bottom: 32px;
 }
@@ -33,6 +37,10 @@
 /* List */
 .faq-home-list {
   text-align: left;
+}
+
+.os-home-duplicate .faq-home-list {
+  width: 100%;
 }
 
 /* Item */
@@ -103,6 +111,10 @@
   line-height: 1.6;
   color: rgba(240, 240, 240, 0.6);
   max-width: 600px;
+}
+
+.os-home-duplicate .faq-home-answer p {
+  max-width: 720px;
 }
 
 /* Responsive */

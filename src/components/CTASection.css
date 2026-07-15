@@ -44,7 +44,7 @@
 }
 
 .cta-card {
-  max-width: 720px;
+  max-width: 860px;
   margin: 0 auto;
   padding: clamp(48px, 6vw, 72px) clamp(32px, 5vw, 64px);
   background: #0f0e0d;
@@ -65,7 +65,7 @@
 
 .cta-card .section-heading {
   margin-bottom: 20px;
-  max-width: 560px;
+  max-width: 720px;
   font-size: clamp(26px, 4.2vw, 42px) !important;
   line-height: 0.9 !important;
 }

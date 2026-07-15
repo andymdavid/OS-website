@@ -8,34 +8,44 @@ interface FAQItem {
 
 const faqs: FAQItem[] = [
   {
-    question: 'What kinds of businesses do you work with?',
+    question: 'Who is this for?',
     answer:
-      'We work with SMEs and business teams that have real operational workflows — quoting, onboarding, follow-up, internal coordination, reporting. If your team is spending time on repetitive manual work that follows a pattern, there is usually a system we can build around it.',
+      'We work with SMEs and business teams where important work still depends on manual handoffs, fragmented information, repeated admin, or people holding too much operational knowledge in their heads.',
   },
   {
-    question: 'What does a first engagement look like?',
+    question: 'What happens on the first call?',
     answer:
-      'It starts with a free AI audit where we look at where your team is losing time and whether a custom AI system makes sense. If there is a fit, we scope a focused build around a specific workflow and deliver a working system — not a strategy deck.',
+      'We look at how your business works, where time and margin are being lost, and whether AI can improve margin, free up capital, or reduce risk. If there is a clear fit, we talk through the best next step.',
   },
   {
-    question: 'What does an AI audit actually involve?',
+    question: 'Do you build software, agents, or provide advice?',
     answer:
-      'We look at how your team works day to day — where time goes, where handoffs slow things down, and where the same work gets repeated. From there we identify which workflows would benefit most from a custom AI system and what a first build would look like. It\u2019s a practical conversation, not a sales pitch.',
+      'Usually it is a mix. We build Wingman Apps around high-value workflows, use Wingman to run agents, records, approvals, and tools reliably, and run Speedrun workshops when your team needs to build capability alongside the software.',
+  },
+  {
+    question: 'How is this different from ChatGPT or off-the-shelf AI tools?',
+    answer:
+      'ChatGPT and other AI tools are useful, but they do not know how your business works by default. Wingman gives AI the operating context, records, approvals, and workflow structure it needs to do useful work inside your business.',
+  },
+  {
+    question: 'How does Wingman work with our existing tools?',
+    answer:
+      'Wingman is designed to work around the tools your team already uses. Sometimes that means connecting to existing systems, and sometimes it means building a Wingman App that replaces a manual or awkward part of the workflow.',
   },
   {
     question: 'Do we need technical expertise on our end?',
     answer:
-      'No. We handle the build. Your team needs to understand the workflow and be available to validate that the system fits how you actually work. The systems we deliver are managed through Flight Deck, which is designed for non-technical operators.',
+      'No. We handle the technical build. Your team needs to understand the workflow, make decisions about how the work should run, and validate that what we build fits the way your business actually operates.',
   },
   {
-    question: 'How is this different from using ChatGPT or hiring an AI consultant?',
+    question: 'What happens after something goes live?',
     answer:
-      'ChatGPT is a general-purpose tool — you still need someone to figure out how to apply it to your business. Most AI consultants deliver recommendations. We deliver running systems built around your actual workflows, on infrastructure we built and maintain.',
+      'We keep improving the workflow with you, support the system in production, and tailor it around your team’s needs as the work evolves. Wingman is open-source infrastructure, so the goal is capability inside your business rather than dependency on us.',
   },
   {
-    question: 'What happens after the system is delivered?',
+    question: 'How much does it cost?',
     answer:
-      'Your system runs on our open-source infrastructure, so you are not locked in. We offer ongoing support and optimisation, but you can also run and extend the system independently. The goal is to build capability inside your business, not dependency on us.',
+      'It depends on what we are building. A focused Wingman App, a broader Wingman deployment, and a team workshop are different scopes. The first call helps us understand the business case and give you a realistic view of what it is likely to cost.',
   },
 ];
 
