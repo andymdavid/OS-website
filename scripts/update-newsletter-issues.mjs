@@ -316,6 +316,43 @@ const sanitizeContentHtml = (html) => {
   return cleaned.trim();
 };
 
+const splitContentSections = (html) =>
+  html
+    .split(/<hr\s*\/?>/i)
+    .map((section) => section.trim())
+    .filter(Boolean);
+
+const sectionText = (section) => stripHtml(section).toLowerCase();
+
+const isNonEssaySection = (section) => {
+  const text = sectionText(section);
+
+  return (
+    /^three(?:\s*\(ish\))?\s+things\b/.test(text) ||
+    /^three\s+things\s+in\s+ai\b/.test(text) ||
+    text.startsWith("that's all") ||
+    text.startsWith("that’s all") ||
+    text.startsWith("see you next week") ||
+    text.startsWith("have a great weekend")
+  );
+};
+
+const looksLikeEssaySection = (section) => {
+  const text = sectionText(section);
+  if (!text || isNonEssaySection(section)) return false;
+
+  if (/<h[1-3]\b/i.test(section)) return true;
+
+  return text.split(/\s+/).length >= 250;
+};
+
+const extractEssayHtml = (html) => {
+  const sections = splitContentSections(html);
+  if (sections.length < 2) return "";
+
+  return sections.slice(1).find(looksLikeEssaySection) || "";
+};
+
 const formatReadTime = (html, fallbackText = "") => {
   const text = stripHtml(html || fallbackText);
   const wordCount = text ? text.split(/\s+/).length : 0;
@@ -365,15 +402,15 @@ const normalizePost = (post, override = {}) => {
   const published = normalizeTimestamp(
     post.displayed_date || post.publish_date || post.created,
   );
-  const html = sanitizeContentHtml(extractContentHtml(post));
+  const cleanedHtml = sanitizeContentHtml(extractContentHtml(post));
+  const essayHtml = extractEssayHtml(cleanedHtml);
+  const html = essayHtml || cleanedHtml;
   const slug = deriveSlug(post);
   const description =
     normalizeOverrideText(override.description) || normalizeExcerpt(post);
   const seoDescription =
     normalizeOverrideText(override.seoDescription) || description;
-  const intro =
-    normalizeOverrideText(override.intro) ||
-    (post.subtitle || description || "").replace(/\s+/g, " ").trim();
+  const intro = normalizeOverrideText(override.intro);
   const seoTitle =
     normalizeOverrideText(override.seoTitle) ||
     normalizeOverrideText(override.title) ||
@@ -386,7 +423,7 @@ const normalizePost = (post, override = {}) => {
     title: post.title,
     seoTitle,
     subtitle: post.subtitle || "",
-    intro: intro || description,
+    intro,
     description,
     seoDescription,
     thumbnail: post.thumbnail_url || "",
