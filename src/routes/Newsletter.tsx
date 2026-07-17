@@ -25,7 +25,7 @@ export default function Newsletter() {
   const payload = newsletterPayload as NewsletterPayload;
   const indexableIssues = payload.items
     .filter((issue) => !issue.noindex)
-    .sort((a, b) => getPublishedTime(a.published) - getPublishedTime(b.published));
+    .sort((a, b) => getPublishedTime(b.published) - getPublishedTime(a.published));
   const issues = indexableIssues.slice(0, visibleCount);
   const archiveSchema = [
     {
