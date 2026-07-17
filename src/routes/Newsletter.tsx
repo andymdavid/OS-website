@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { SEO } from "@/components/SEO";
 import { NavigationDraft } from "@/components/NavigationDraft";
 import { EmailCaptureForm } from "@/components/EmailCaptureForm";
@@ -11,10 +12,21 @@ import "@/components/GoodStuff.css";
 import "@/routes/Writing.css";
 import "@/routes/Newsletter.css";
 
+const INITIAL_VISIBLE_ISSUES = 6;
+const ISSUE_INCREMENT = 6;
+
+const getPublishedTime = (published: string) => {
+  const date = new Date(published);
+  return Number.isNaN(date.getTime()) ? 0 : date.getTime();
+};
+
 export default function Newsletter() {
+  const [visibleCount, setVisibleCount] = useState(INITIAL_VISIBLE_ISSUES);
   const payload = newsletterPayload as NewsletterPayload;
-  const indexableIssues = payload.items.filter((issue) => !issue.noindex);
-  const issues = indexableIssues.slice(0, 8);
+  const indexableIssues = payload.items
+    .filter((issue) => !issue.noindex)
+    .sort((a, b) => getPublishedTime(a.published) - getPublishedTime(b.published));
+  const issues = indexableIssues.slice(0, visibleCount);
   const archiveSchema = [
     {
       "@context": "https://schema.org",
@@ -95,41 +107,58 @@ export default function Newsletter() {
           </div>
 
           {issues.length > 0 ? (
-            <div className="writing-posts-grid newsletter-posts-grid">
-              {issues.map((issue, index) => (
-                <article key={issue.id} className="writing-post">
-                  <a className="writing-post-link" href={canonicalPath(issue.path)}>
-                    <div className="writing-post-media newsletter-post-media">
-                      {issue.thumbnail ? (
-                        <img src={issue.thumbnail} alt={issue.title} loading="lazy" />
-                      ) : (
-                        <div className="newsletter-post-media-fallback">
-                          <span>The Good Stuff</span>
-                        </div>
-                      )}
-                    </div>
-                    <div className="writing-post-header">
-                      <span className="writing-post-id">
-                        [{String(index + 1).padStart(2, "0")}]
-                      </span>
-                      <div className="writing-post-meta">
-                        <div className="writing-post-title">{issue.title}</div>
-                        <div className="writing-post-description">
-                          {issue.description ||
-                            issue.subtitle ||
-                            "Read the full issue on-site."}
-                        </div>
-                        {issue.displayDate ? (
-                          <div className="writing-post-date">
-                            {issue.displayDate}
+            <>
+              <div className="writing-posts-grid newsletter-posts-grid">
+                {issues.map((issue, index) => (
+                  <article key={issue.id} className="writing-post">
+                    <a className="writing-post-link" href={canonicalPath(issue.path)}>
+                      <div className="writing-post-media newsletter-post-media">
+                        {issue.thumbnail ? (
+                          <img src={issue.thumbnail} alt={issue.title} loading="lazy" />
+                        ) : (
+                          <div className="newsletter-post-media-fallback">
+                            <span>The Good Stuff</span>
                           </div>
-                        ) : null}
+                        )}
                       </div>
-                    </div>
-                  </a>
-                </article>
-              ))}
-            </div>
+                      <div className="writing-post-header">
+                        <span className="writing-post-id">
+                          [{String(index + 1).padStart(2, "0")}]
+                        </span>
+                        <div className="writing-post-meta">
+                          <div className="writing-post-title">{issue.title}</div>
+                          <div className="writing-post-description">
+                            {issue.description ||
+                              issue.subtitle ||
+                              "Read the full issue on-site."}
+                          </div>
+                          {issue.displayDate ? (
+                            <div className="writing-post-date">
+                              {issue.displayDate}
+                            </div>
+                          ) : null}
+                        </div>
+                      </div>
+                    </a>
+                  </article>
+                ))}
+              </div>
+              {indexableIssues.length > visibleCount ? (
+                <div className="newsletter-show-more">
+                  <button
+                    type="button"
+                    className="newsletter-show-more-btn"
+                    onClick={() =>
+                      setVisibleCount((count) =>
+                        Math.min(count + ISSUE_INCREMENT, indexableIssues.length),
+                      )
+                    }
+                  >
+                    Show more
+                  </button>
+                </div>
+              ) : null}
+            </>
           ) : (
             <div className="newsletter-empty">
               <p>

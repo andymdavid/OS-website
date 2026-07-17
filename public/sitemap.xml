@@ -89,12 +89,6 @@
     <priority>0.65</priority>
   </url>
   <url>
-    <loc>https://otherstuff.ai/newsletter/fable-s-back-now-what/</loc>
-    <lastmod>2026-07-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://otherstuff.ai/newsletter/ai-is-great-for-small-businesses/</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
@@ -139,18 +133,6 @@
   <url>
     <loc>https://otherstuff.ai/newsletter/unruggable-productivity/</loc>
     <lastmod>2026-05-08</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://otherstuff.ai/newsletter/is-ai-really-saving-you-time/</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://otherstuff.ai/newsletter/building-ai-that-respects-you/</loc>
-    <lastmod>2026-01-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

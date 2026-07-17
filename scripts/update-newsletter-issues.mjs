@@ -3,7 +3,8 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 const PUBLIC_OUTPUT_PATH = "public/newsletter-issues.json";
 const GENERATED_OUTPUT_PATH = "src/generated/newsletter-issues.json";
 const SEO_OVERRIDES_PATH = "src/content/newsletter-seo-overrides.json";
-const MAX_ITEMS = 12;
+const MAX_ITEMS = 100;
+const MIN_ESSAY_PUBLISHED_AT = new Date("2026-05-08T00:00:00.000Z").getTime();
 
 const publicationId = process.env.BEEHIIV_PUBLICATION_ID;
 const apiKey = process.env.BEEHIIV_API_KEY;
@@ -443,6 +444,7 @@ const normalizePost = (post, override = {}) => {
         : [],
     readTime: formatReadTime(html, description),
     noindex: Boolean(override.noindex),
+    hasEssay: Boolean(essayHtml),
     html,
   };
 };
@@ -469,6 +471,11 @@ const main = async () => {
         .map((post) => normalizePost(post, seoOverrides[deriveSlug(post)] || {}))
         .filter((post) => post.title && post.webUrl)
         .filter((post) => !post.published || new Date(post.published).getTime() <= Date.now())
+        .filter((post) => post.hasEssay)
+        .filter((post) => {
+          const publishedTime = post.published ? new Date(post.published).getTime() : 0;
+          return publishedTime >= MIN_ESSAY_PUBLISHED_AT;
+        })
     : [];
 
   const payload = {

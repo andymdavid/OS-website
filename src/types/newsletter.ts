@@ -17,6 +17,7 @@ export type NewsletterIssue = {
   tags: string[];
   readTime: string;
   noindex: boolean;
+  hasEssay: boolean;
   html: string;
 };
 
