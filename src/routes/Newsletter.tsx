@@ -12,8 +12,8 @@ import "@/components/GoodStuff.css";
 import "@/routes/Writing.css";
 import "@/routes/Newsletter.css";
 
-const INITIAL_VISIBLE_ISSUES = 6;
-const ISSUE_INCREMENT = 6;
+const INITIAL_VISIBLE_ISSUES = 8;
+const ISSUE_INCREMENT = 8;
 
 const getPublishedTime = (published: string) => {
   const date = new Date(published);
