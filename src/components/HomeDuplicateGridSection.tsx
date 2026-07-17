@@ -3,6 +3,7 @@ import { AIChatDemo } from './AIChatDemo';
 import { FormProcessingDemo } from './FormProcessingDemo';
 import { DataAnalysisDemo } from './DataAnalysisDemo';
 import { WingmanDemo } from './WingmanDemo';
+import { CAL_DISCOVERY_URL } from '../lib/links';
 import './HomeDuplicateGridSection.css';
 
 const cards = [
@@ -54,7 +55,12 @@ export function HomeDuplicateGridSection() {
               effort into repeatable operating leverage.
             </p>
 
-            <a className="home-duplicate-grid-cta fade-in fade-in-stagger-3" href="/contact">
+            <a
+              className="home-duplicate-grid-cta fade-in fade-in-stagger-3"
+              href={CAL_DISCOVERY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Book a Call
             </a>
           </div>

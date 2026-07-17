@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from './Button';
+import { CAL_DISCOVERY_URL } from '../lib/links';
 import './IntroSection.css';
 import './CTASection.css';
 
@@ -39,7 +40,7 @@ export function CTAHomeDuplicate({
         <Button
           className="cta-button cta-button-orange"
           variant="primary"
-          onClick={() => (window.location.href = '/contact')}
+          onClick={() => window.open(CAL_DISCOVERY_URL, '_blank', 'noopener,noreferrer')}
         >
           {buttonLabel}
         </Button>

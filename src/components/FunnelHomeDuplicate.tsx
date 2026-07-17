@@ -1,4 +1,5 @@
 import React from 'react';
+import { CAL_DISCOVERY_URL } from '../lib/links';
 import './FunnelSection.css';
 
 export function FunnelHomeDuplicate() {
@@ -60,7 +61,12 @@ export function FunnelHomeDuplicate() {
               while Speedrun helps your team turn the tools and expertise into better ways of working with AI.
             </p>
 
-            <a className="funnel-offer-cta fade-in fade-in-stagger-3" href="/contact">
+            <a
+              className="funnel-offer-cta fade-in fade-in-stagger-3"
+              href={CAL_DISCOVERY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Book a Call
             </a>
           </div>

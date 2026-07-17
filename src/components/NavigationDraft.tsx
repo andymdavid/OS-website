@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState, useRef } from 'react';
 import { NewsletterModal } from './NewsletterModal';
+import { CAL_DISCOVERY_URL } from '../lib/links';
 import './Navigation.css';
 
 type NavDropdownKey = 'solutions' | 'media';
@@ -252,11 +253,13 @@ export function NavigationDraft({ titleOverride, titleSwapOnScroll }: Navigation
               Sign In
             </a>
             <a
-              href="/contact/"
+              href={CAL_DISCOVERY_URL}
               className="nav-join-btn"
               onClick={closeMenus}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Book a Free AI Audit
+              Book a Call
             </a>
           </div>
 
@@ -359,11 +362,13 @@ export function NavigationDraft({ titleOverride, titleSwapOnScroll }: Navigation
               Sign In
             </a>
             <a
-              href="/contact/"
+              href={CAL_DISCOVERY_URL}
               className="nav-join-btn mobile-menu-cta"
               onClick={closeMenus}
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Book a Free AI Audit
+              Book a Call
             </a>
           </div>
         </div>

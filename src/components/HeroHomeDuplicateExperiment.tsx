@@ -3,6 +3,7 @@ import { Button } from './Button';
 import { HeroShaderBackground } from './HeroShaderBackground';
 import { HomeDuplicateLogoCarousel } from './HomeDuplicateLogoCarousel';
 import { NewsletterModal } from './NewsletterModal';
+import { CAL_DISCOVERY_URL } from '../lib/links';
 import './Hero.css';
 
 export function HeroHomeDuplicateExperiment() {
@@ -31,7 +32,7 @@ export function HeroHomeDuplicateExperiment() {
                 <Button
                   variant="primary"
                   className="hero-cta-book"
-                  onClick={() => (window.location.href = '/contact')}
+                  onClick={() => window.open(CAL_DISCOVERY_URL, '_blank', 'noopener,noreferrer')}
                 >
                   Book a Call
                 </Button>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { CAL_DISCOVERY_URL } from '../lib/links';
 import './ProcessTimeline.css';
 
 interface ProcessStep {
@@ -70,8 +71,10 @@ export function ProcessTimeline() {
                     <p>{step.description}</p>
                     {step.number === '01' && (
                       <a
-                        href="/contact"
+                        href={CAL_DISCOVERY_URL}
                         className="process-step-cta"
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
                         Book a Call
                       </a>

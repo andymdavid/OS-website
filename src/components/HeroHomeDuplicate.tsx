@@ -1,4 +1,5 @@
 import { Button } from './Button';
+import { CAL_DISCOVERY_URL } from '../lib/links';
 import './Hero.css';
 
 export function HeroHomeDuplicate() {
@@ -18,9 +19,9 @@ export function HeroHomeDuplicate() {
               <Button
                 variant="primary"
                 className="hero-cta-book"
-                onClick={() => (window.location.href = '/contact')}
+                onClick={() => window.open(CAL_DISCOVERY_URL, '_blank', 'noopener,noreferrer')}
               >
-                Book a Free AI Audit
+                Book a Call
               </Button>
               <a href="/ai-audit" className="btn-secondary hero-cta-dark">
                 Learn about the AI Audit
