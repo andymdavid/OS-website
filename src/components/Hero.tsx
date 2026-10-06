@@ -24,7 +24,7 @@ export function Hero() {
               <EmailCaptureForm
                 variant="inline"
                 placeholder="Enter your email"
-                buttonText="Join The Good Stuff"
+                buttonText="Get Intelligence Snacks"
               />
             </div>
           </div>
@@ -59,7 +59,7 @@ export function Hero() {
               <div className="podcast-hosts">Pete & Andy with Bill Withers & Gabe Enslin</div>
             </div>
             <div className="podcast-card-footer">
-              <span>THE GOOD STUFF</span>
+              <span>INTELLIGENCE SNACKS</span>
               <svg
                 width="16"
                 height="16"
