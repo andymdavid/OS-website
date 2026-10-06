@@ -172,6 +172,43 @@ body:has(.os-home-duplicate) #root {
   font-weight: 500;
   line-height: 1.1;
   text-align: center;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+@media (hover: hover) {
+  .operating-map-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.16);
+    box-shadow:
+      0 6px 28px rgba(0, 0, 0, 0.42),
+      0 14px 52px rgba(0, 0, 0, 0.28);
+  }
+
+  .operating-map-company:hover {
+    transform: scale(0.88) translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.88);
+    box-shadow:
+      0 6px 28px rgba(0, 0, 0, 0.42),
+      0 14px 52px rgba(0, 0, 0, 0.28);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .operating-map-company,
+  .operating-map-card {
+    transition: none;
+  }
+
+  .operating-map-card:hover {
+    transform: none;
+  }
+
+  .operating-map-company:hover {
+    transform: scale(0.88);
+  }
 }
 
 .operating-map-feature-card {
@@ -337,6 +374,12 @@ body:has(.os-home-duplicate) #root {
 
 .operating-map-wingman-card .operating-map-feature-copy {
   gap: 10px;
+}
+
+.operating-map-wingman-card .operating-map-feature-copy p {
+  min-height: 2.9em;
+  max-width: none;
+  font-size: 12.5px;
 }
 
 .operating-map-wingman-card .operating-map-feature-title {
@@ -626,6 +669,11 @@ body:has(.os-home-duplicate) #root {
 @media (max-width: 900px) {
   .home-duplicate-canvas-inner {
     padding: clamp(84px, 8vw, 112px) var(--container-padding) clamp(64px, 7vw, 96px);
+  }
+
+  .operating-map-wingman-card .operating-map-feature-copy p {
+    min-height: 0;
+    font-size: 13px;
   }
 
   .operating-map {

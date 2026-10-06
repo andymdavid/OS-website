@@ -10,42 +10,47 @@ const faqs: FAQItem[] = [
   {
     question: 'Who is this for?',
     answer:
-      'We work with SMEs and business teams where important work still depends on manual handoffs, fragmented information, repeated admin, or people holding too much operational knowledge in their heads.',
+      "Australian businesses of around 10 to 200 people where too much work still runs on manual handoffs, spreadsheets and people's memory. We work most with professional services, project-based and operations-heavy businesses.",
   },
   {
     question: 'What happens on the first call?',
     answer:
-      'We look at how your business works, where time and margin are being lost, and whether AI can improve margin, free up capital, or reduce risk. If there is a clear fit, we talk through the best next step.',
+      "It's 45 minutes. We ask how work moves through your business and where your team's time goes. If there's a clear place to start, we'll tell you what we'd automate first and what it would cost. If there isn't, we'll say so.",
   },
   {
-    question: 'Do you build software, agents, or provide advice?',
+    question: 'What do you actually do?',
     answer:
-      'Usually it is a mix. We build Wingman Apps around high-value workflows, use Wingman to run agents, records, approvals, and tools reliably, and run Speedrun workshops when your team needs to build capability alongside the software.',
+      "Mostly, we set up AI agents and automate work inside your business. If you'd rather run it yourself, we set up Wingman and hand it over. If a job needs its own software, we build that too.",
   },
   {
-    question: 'How is this different from ChatGPT or off-the-shelf AI tools?',
+    question: 'How is this different from ChatGPT?',
     answer:
-      'ChatGPT and other AI tools are useful, but they do not know how your business works by default. Wingman gives AI the operating context, records, approvals, and workflow structure it needs to do useful work inside your business.',
+      "ChatGPT is good at answering questions. It doesn't know your clients, your pricing, or who needs to approve what. Wingman gives agents that context, connects them to your tools, and has a person check the work before anything goes out.",
   },
   {
-    question: 'How does Wingman work with our existing tools?',
+    question: 'Will it work with the tools we already use?',
     answer:
-      'Wingman is designed to work around the tools your team already uses. Sometimes that means connecting to existing systems, and sometimes it means building a Wingman App that replaces a manual or awkward part of the workflow.',
+      "Yes, in most cases. Wingman connects to the software your team already uses, so agents work from the same records your people do. If a tool can't be connected or keeps getting in the way, we can build something that fits better.",
   },
   {
-    question: 'Do we need technical expertise on our end?',
+    question: 'Do we need technical people?',
     answer:
-      'No. We handle the technical build. Your team needs to understand the workflow, make decisions about how the work should run, and validate that what we build fits the way your business actually operates.',
+      "No. You know the work and we handle the setup. We'll need someone who can explain how things should run and check what the agents produce.",
   },
   {
-    question: 'What happens after something goes live?',
+    question: 'What happens after the first month?',
     answer:
-      'We keep improving the workflow with you, support the system in production, and tailor it around your team’s needs as the work evolves. Wingman is open-source infrastructure, so the goal is capability inside your business rather than dependency on us.',
+      'Keep going month to month, add more time to move faster, or stop. There are no long contracts.',
+  },
+  {
+    question: 'Why is Wingman open source?',
+    answer:
+      "Because your business shouldn't depend on ours. Your data stays yours, and everything we set up runs on open source software. If you stop working with us, or we're not around one day, you still have everything you need to keep going.",
   },
   {
     question: 'How much does it cost?',
     answer:
-      'It depends on what we are building. A focused Wingman App, a broader Wingman deployment, and a team workshop are different scopes. The first call helps us understand the business case and give you a realistic view of what it is likely to cost.',
+      'Wingman on its own is $500 a month. Automation Partner starts at $5k a month with a one-month minimum. Want things done faster? Add more time in $5k blocks. Custom software is quoted per project once we understand the job.',
   },
 ];
 

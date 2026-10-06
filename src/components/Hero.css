@@ -98,6 +98,15 @@
   height: auto;
 }
 
+.hero-title-block .hero-eyebrow {
+  max-width: none;
+  margin-bottom: 24px;
+}
+
+.os-draft .hero-eyebrow {
+  margin-bottom: 24px;
+}
+
 .hero-title-block h1 {
   font-family: var(--font-heading);
   font-size: clamp(29.16px, 4.86vw, 58.32px);
@@ -118,6 +127,10 @@
   max-width: 42ch;
 }
 
+.hero-title-block > p.hero-description {
+  max-width: 57ch;
+}
+
 .hero-title-block .hero-bridge {
   margin-top: 16px;
   font-size: clamp(14px, 1.75vw, 18px);
@@ -132,6 +145,19 @@
   justify-content: center;
 }
 
+.os-home-duplicate .hero-cta {
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-cta-terms {
+  margin: 0;
+  color: rgba(240, 240, 240, 0.68);
+  font-family: 'Geist', var(--font-body);
+  font-size: 12px !important;
+  line-height: 1.4 !important;
+}
+
 .hero-cta .btn-primary,
 .hero-cta .hero-cta-dark {
   height: 35px;
@@ -144,6 +170,13 @@
   background: #ff751f;
   color: #ffffff;
   border-color: #ff751f;
+}
+
+.os-home-duplicate .hero-cta .hero-cta-book {
+  width: min(260px, 72vw);
+  height: 44px;
+  padding-inline: 32px;
+  font-size: 15px;
 }
 
 .hero-cta .hero-cta-book:active {

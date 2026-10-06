@@ -54,47 +54,41 @@ const operatingLayer = [
 const wingmanLayer = [
   {
     component: 'Flight Deck',
-    label: 'Control Surface',
     Icon: Plane,
-    description: 'Where your team manages tasks, coordinates agents, and approves work.',
+    description: 'Where your team hands out work, checks progress and approves what agents produce.',
     image: '/operating-map/control-surface-card.png',
     imageClassName: 'operating-map-control-surface-image',
   },
   {
     component: 'Tower',
-    label: 'Records',
     Icon: ShieldCheck,
-    description: 'The secure system of record for workspace data, permissions, files, and APIs.',
+    description: 'Your files, records and access rules, kept in one secure place.',
     visual: 'tower',
   },
   {
     component: 'Airspace',
-    label: 'Business Memory',
     Icon: Network,
-    description: 'Maps how people, companies, work, decisions, and context relate.',
+    description: 'What your agents know about your business. Clients, people, projects and how they connect.',
     image: '/operating-map/business-graph-card.png',
     imageClassName: 'operating-map-business-graph-image',
   },
   {
     component: 'Autopilot',
-    label: 'Automation Engine',
     Icon: Rocket,
-    description: 'The runtime for triggers, pipelines, sessions, agents, and managed apps.',
+    description: 'Runs the work. What starts a task, what happens next and who signs off.',
     visual: 'autopilot',
   },
   {
     component: 'Agents',
-    label: 'Workforce',
     Icon: Bot,
-    description: 'Specialised agents that carry out defined tasks across workflows and systems.',
+    description: 'Each agent does one defined job, like building a proposal or reviewing job margins.',
     image: '/operating-map/workforce-card.png',
     imageClassName: 'operating-map-workforce-image',
   },
   {
-    component: 'WApps',
-    label: 'Custom Apps',
+    component: 'Custom Apps',
     Icon: Layers3,
-    description: 'Agentic software built around specific business workflows, interfaces, and tools.',
+    description: "Small custom apps for jobs your current software doesn't handle well.",
     visual: 'wapps',
   },
 ];
@@ -179,11 +173,12 @@ export function HomeDuplicateCanvasSection() {
     <section className="home-duplicate-canvas-section">
       <div className="home-duplicate-canvas-inner">
         <div className="home-duplicate-canvas-copy">
-          <div className="intro-pill">AI THAT FITS YOUR BUSINESS</div>
+          <div className="intro-pill">HOW IT WORKS</div>
           <h2 className="section-heading">Your business already has the structure AI needs.</h2>
           <p>
-            We start with your existing teams, workflows, and tools, then use Wingman to turn
-            high-value work into practical AI systems, agents, and custom apps.
+            Your people, processes and tools already shape how work gets done. We work inside that,
+            find the jobs agents can take on, and run them in Wingman, the system we built for running
+            AI agents safely inside a business.
           </p>
         </div>
 
@@ -305,20 +300,19 @@ export function HomeDuplicateCanvasSection() {
                 <span>Wingman</span>
               </div>
               <p>
-                The AI operating layer for your people, processes, and systems.
+                Where your agents live and work.
               </p>
             </div>
             <div className="operating-map-row operating-map-row-wingman">
-              {wingmanLayer.map(({ component, label, Icon, description, image, imageClassName, visual }) => (
+              {wingmanLayer.map(({ component, Icon, description, image, imageClassName, visual }) => (
                 <div
                   key={component}
                   className="operating-map-card operating-map-feature-card operating-map-wingman-card"
                 >
                   <div className="operating-map-feature-copy">
-                    <div className="operating-map-component-label">{component}</div>
                     <div className="operating-map-feature-title">
                       <Icon aria-hidden="true" />
-                      <span>{label}</span>
+                      <span>{component}</span>
                     </div>
                     <p>{description}</p>
                   </div>

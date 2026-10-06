@@ -270,31 +270,35 @@
 }
 
 .os-home-duplicate .funnel-section-home-duplicate .funnel-offer-header {
-  display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
-  gap: clamp(40px, 6vw, 96px);
-  align-items: end;
-  max-width: 1280px;
-  margin: 0 auto clamp(48px, 6vw, 72px);
-  text-align: left;
+  display: block;
+  max-width: 760px;
+  margin: 0 auto clamp(72px, 8vw, 112px);
+  text-align: center;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .funnel-pill {
+  margin-bottom: 26px;
 }
 
 .os-home-duplicate .funnel-section-home-duplicate .section-heading,
 .os-home-duplicate .funnel-section-home-duplicate .funnel-intro {
-  margin-left: 0;
-  margin-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .section-heading {
+  margin-bottom: 20px;
 }
 
 .os-home-duplicate .funnel-section-home-duplicate .funnel-intro {
-  max-width: 58ch;
+  max-width: 66ch;
   margin-bottom: 0;
+  font-size: 14px;
+  line-height: 1.55;
 }
 
 .os-home-duplicate .funnel-section-home-duplicate .funnel-offer-copy {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 24px;
+  display: block;
 }
 
 .os-home-duplicate .funnel-section-home-duplicate .funnel-offer-cta {
@@ -312,6 +316,7 @@
   font-size: 13px;
   white-space: nowrap;
   transition: all var(--duration-base) var(--ease-in-out);
+  margin-top: 24px;
 }
 
 .os-home-duplicate .funnel-section-home-duplicate .funnel-offer-cta:hover {
@@ -363,23 +368,53 @@
   white-space: normal;
 }
 
+.os-home-duplicate .funnel-section-home-duplicate .funnel-card-recommended {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 4;
+  padding: 7px 11px;
+  border: 1px solid rgba(114, 255, 114, 0.72);
+  border-radius: 999px;
+  background: rgba(9, 24, 15, 0.92);
+  box-shadow: 0 0 18px rgba(114, 255, 114, 0.2);
+  color: #9cff9c;
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
 .os-home-duplicate .funnel-section-home-duplicate .funnel-card-body {
   display: flex;
   flex-direction: column;
+  min-width: 0;
   gap: 18px;
   padding-top: clamp(22px, 2.6vw, 34px);
 }
 
 .os-home-duplicate .funnel-section-home-duplicate .funnel-card h4,
 .os-home-duplicate .funnel-section-home-duplicate .funnel-card:hover h4 {
+  min-height: 2.2em;
   max-width: none;
   font-size: clamp(20px, 1.72vw, 22px);
   line-height: 1.1;
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: break-word;
+  text-wrap: balance;
 }
 
 .os-home-duplicate .funnel-section-home-duplicate .funnel-card h4.funnel-card-title-wide {
   max-width: none;
+}
+
+@media (max-width: 768px) {
+  .os-home-duplicate .funnel-section-home-duplicate .funnel-card-title-break {
+    display: none;
+  }
 }
 
 .os-home-duplicate .funnel-section-home-duplicate .funnel-card-description,
@@ -388,6 +423,14 @@
   max-height: none;
   overflow: visible;
   white-space: pre-line;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .funnel-card-price {
+  margin-top: auto;
+  color: rgba(240, 240, 240, 0.92);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  line-height: 1.45;
 }
 
 .os-home-duplicate .funnel-section-home-duplicate .funnel-card-image {
@@ -452,12 +495,13 @@
   aspect-ratio: 1.78;
   overflow: hidden;
   border-radius: 2px;
-  border: 4px solid #ffffff;
-  background: #ffffff;
+  border: 4px solid #181b1b;
+  background: #181b1b;
   box-shadow:
     0 30px 72px rgba(0, 0, 0, 0.46),
     0 9px 20px rgba(0, 0, 0, 0.28),
-    0 0 0 1px rgba(255, 255, 255, 0.14);
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .os-home-duplicate .funnel-section-home-duplicate .people-overlay-card {
@@ -472,7 +516,7 @@
 
 .os-home-duplicate .funnel-section-home-duplicate .people-overlay-card + .people-overlay-card {
   border-radius: 0 2px 2px 0;
-  border-left: 4px solid #ffffff;
+  border-left: 4px solid #181b1b;
   background:
     linear-gradient(90deg, rgba(201, 215, 224, 0.98), rgba(241, 244, 245, 0.92)),
     linear-gradient(135deg, #dae4ea 0%, #f2f5f5 48%, #bccbd4 100%);
@@ -1106,6 +1150,962 @@
   }
 }
 
+/* Partner card: an embedded product team moving an initiative from discovery to deployment. */
+.os-home-duplicate .funnel-section-home-duplicate .partner-product-overlay {
+  position: absolute;
+  inset: clamp(14px, 1.7vw, 22px);
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-product-board {
+  width: min(91%, 370px);
+  padding: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 7px;
+  background:
+    radial-gradient(circle at 88% -10%, rgba(46, 167, 130, 0.18), transparent 38%),
+    linear-gradient(145deg, rgba(20, 22, 23, 0.98), rgba(10, 11, 12, 0.98));
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.5),
+    0 8px 24px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  color: #f0f0f0;
+  font-family: 'Geist', var(--font-body);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-product-header,
+.os-home-duplicate .funnel-section-home-duplicate .partner-product-brand,
+.os-home-duplicate .funnel-section-home-duplicate .partner-product-header em,
+.os-home-duplicate .funnel-section-home-duplicate .partner-product-project,
+.os-home-duplicate .funnel-section-home-duplicate .partner-product-footer,
+.os-home-duplicate .funnel-section-home-duplicate .partner-product-activity {
+  display: flex;
+  align-items: center;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-product-header {
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 11px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-product-brand {
+  gap: 7px;
+  font-size: 9px;
+  font-weight: 650;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-product-brand img {
+  width: 15px;
+  height: 15px;
+  object-fit: contain;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-product-header em {
+  gap: 5px;
+  margin: 0;
+  padding: 4px 7px;
+  border: 1px solid rgba(105, 255, 194, 0.15);
+  border-radius: 999px;
+  background: rgba(105, 255, 194, 0.07);
+  color: rgba(190, 255, 225, 0.82);
+  font-size: 7px;
+  font-style: normal;
+  font-weight: 650;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-product-header em i,
+.os-home-duplicate .funnel-section-home-duplicate .partner-product-activity > i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #69ffc2;
+  box-shadow: 0 0 8px rgba(105, 255, 194, 0.65);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-product-project {
+  justify-content: space-between;
+  gap: 14px;
+  padding: 13px 1px 12px;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-product-project > div {
+  display: grid;
+  gap: 3px;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-product-project span {
+  color: rgba(240, 240, 240, 0.42);
+  font-size: 6px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-product-project strong {
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: -0.02em;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-product-project > b {
+  padding: 4px 7px;
+  border-radius: 3px;
+  background: rgba(255, 117, 31, 0.12);
+  color: rgba(255, 164, 108, 0.92);
+  font-size: 7px;
+  font-weight: 650;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-product-roadmap {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-product-track {
+  position: absolute;
+  top: 12px;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-product-track i {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #2ea782, #69ffc2);
+  box-shadow: 0 0 8px rgba(105, 255, 194, 0.52);
+  transform: scaleX(0.08);
+  transform-origin: left;
+  animation: partner-product-progress 8.4s ease-in-out infinite;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-product-stage {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  justify-items: center;
+  gap: 7px;
+  min-width: 0;
+  padding: 0 3px 9px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  text-align: center;
+  animation: partner-stage-build 8.4s ease-in-out infinite;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-product-stage-1 {
+  animation-name: partner-stage-discover;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-product-stage-3 {
+  animation-name: partner-stage-deploy;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-product-stage > span {
+  display: grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 50%;
+  background: #151718;
+  color: rgba(240, 240, 240, 0.6);
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-product-stage > div {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-product-stage strong {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 8px;
+  font-weight: 650;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-product-stage em {
+  overflow: hidden;
+  color: rgba(240, 240, 240, 0.38);
+  font-size: 6px;
+  font-style: normal;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-product-footer {
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 11px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-product-team {
+  display: flex;
+  padding-left: 3px;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-product-team span {
+  display: grid;
+  width: 19px;
+  height: 19px;
+  margin-left: -3px;
+  place-items: center;
+  border: 1.5px solid #111314;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #3d4447, #202426);
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 5.5px;
+  font-weight: 700;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-product-team span:nth-child(2) {
+  background: linear-gradient(145deg, #65402e, #35251e);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-product-team span:nth-child(3) {
+  background: linear-gradient(145deg, #245c4d, #18382f);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-product-team span:nth-child(4) {
+  background: linear-gradient(145deg, #403960, #28243c);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-product-activity {
+  gap: 6px;
+  color: rgba(240, 240, 240, 0.56);
+  font-size: 6.5px;
+  font-weight: 550;
+}
+
+@keyframes partner-product-progress {
+  0%, 18% { transform: scaleX(0.08); }
+  30%, 48% { transform: scaleX(0.5); }
+  64%, 88% { transform: scaleX(1); }
+  100% { transform: scaleX(0.08); }
+}
+
+@keyframes partner-stage-discover {
+  0%, 24%, 100% { border-color: rgba(105, 255, 194, 0.17); background: rgba(105, 255, 194, 0.06); }
+  31%, 94% { border-color: transparent; background: transparent; }
+}
+
+@keyframes partner-stage-build {
+  0%, 27%, 62%, 100% { border-color: transparent; background: transparent; }
+  34%, 56% { border-color: rgba(105, 255, 194, 0.17); background: rgba(105, 255, 194, 0.06); }
+}
+
+@keyframes partner-stage-deploy {
+  0%, 60%, 100% { border-color: transparent; background: transparent; }
+  68%, 92% { border-color: rgba(105, 255, 194, 0.17); background: rgba(105, 255, 194, 0.06); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .os-home-duplicate .funnel-section-home-duplicate .partner-product-track i,
+  .os-home-duplicate .funnel-section-home-duplicate .partner-product-stage {
+    animation: none;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .partner-product-track i {
+    transform: scaleX(1);
+  }
+}
+
+/* Partner card: workflows being absorbed into an expanding AI operating system. */
+.os-home-duplicate .funnel-section-home-duplicate .partner-system-overlay {
+  position: absolute;
+  inset: clamp(14px, 1.7vw, 22px);
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-system-scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 184px;
+  overflow: hidden;
+  border: 1px solid rgba(190, 255, 225, 0.13);
+  border-radius: 7px;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    radial-gradient(circle at 51% 51%, rgba(46, 167, 130, 0.11), transparent 23%),
+    linear-gradient(145deg, rgba(14, 17, 17, 0.98), rgba(7, 9, 9, 0.98));
+  background-size: 18px 18px, 18px 18px, auto, auto;
+  box-shadow:
+    0 28px 68px rgba(0, 0, 0, 0.52),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  color: #f0f0f0;
+  font-family: 'Geist', var(--font-body);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-system-glow {
+  position: absolute;
+  top: 50%;
+  left: 51%;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  background: rgba(105, 255, 194, 0.09);
+  filter: blur(22px);
+  transform: translate(-50%, -50%);
+  animation: partner-system-breathe 5s ease-in-out infinite;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-system-label {
+  position: absolute;
+  top: 13px;
+  color: rgba(240, 240, 240, 0.34);
+  font-family: var(--font-eyebrow);
+  font-size: 5.5px;
+  letter-spacing: 0.08em;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-system-label-business {
+  left: 4%;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-system-label-software {
+  left: 62%;
+  color: rgba(190, 255, 225, 0.52);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-workflows {
+  position: absolute;
+  top: 31px;
+  bottom: 12px;
+  left: 3.5%;
+  display: grid;
+  grid-template-rows: repeat(4, minmax(0, 1fr));
+  width: 28%;
+  gap: 6px;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-workflow {
+  display: grid;
+  grid-template-columns: 5px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+  padding: 7px 6px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.035);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.18);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-workflow > i {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(240, 240, 240, 0.28);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-workflow span {
+  overflow: hidden;
+  color: rgba(240, 240, 240, 0.76);
+  font-size: 6.5px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-workflow em {
+  color: rgba(240, 240, 240, 0.28);
+  font-size: 4.5px;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-workflow-1,
+.os-home-duplicate .funnel-section-home-duplicate .partner-workflow-2 {
+  border-color: rgba(105, 255, 194, 0.11);
+  background: rgba(105, 255, 194, 0.035);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-workflow-1 > i,
+.os-home-duplicate .funnel-section-home-duplicate .partner-workflow-2 > i {
+  background: #69ffc2;
+  box-shadow: 0 0 7px rgba(105, 255, 194, 0.56);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-workflow-1 em,
+.os-home-duplicate .funnel-section-home-duplicate .partner-workflow-2 em {
+  color: rgba(190, 255, 225, 0.48);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-workflow-3 {
+  animation: partner-workflow-connect 10s ease-in-out infinite;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-context-stream {
+  position: absolute;
+  top: 32px;
+  bottom: 13px;
+  left: 31.5%;
+  width: 24%;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-context-stream svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-context-stream path {
+  fill: none;
+  stroke: rgba(190, 255, 225, 0.14);
+  stroke-width: 0.7;
+  stroke-dasharray: 2 3;
+  vector-effect: non-scaling-stroke;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-path-pulse {
+  fill: #69ffc2;
+  filter: drop-shadow(0 0 3px rgba(105, 255, 194, 0.95));
+  vector-effect: non-scaling-stroke;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-context-chip {
+  position: absolute;
+  z-index: 2;
+  padding: 3px 5px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  background: #111515;
+  color: rgba(240, 240, 240, 0.43);
+  font-size: 4.5px;
+  font-weight: 650;
+  letter-spacing: 0.03em;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-context-rules {
+  top: 18%;
+  left: 25%;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-context-data {
+  top: 44%;
+  left: 8%;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-context-tools {
+  bottom: 17%;
+  left: 30%;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-ai-core {
+  position: absolute;
+  top: 50%;
+  left: 55.5%;
+  z-index: 3;
+  display: grid;
+  width: 42px;
+  height: 42px;
+  place-items: center;
+  border: 1px solid rgba(105, 255, 194, 0.22);
+  border-radius: 50%;
+  background: radial-gradient(circle, #192a25 0%, #0b1210 68%);
+  box-shadow:
+    0 0 28px rgba(105, 255, 194, 0.13),
+    inset 0 0 16px rgba(105, 255, 194, 0.08);
+  transform: translate(-50%, -50%);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-core-orbit {
+  position: absolute;
+  border: 1px solid rgba(105, 255, 194, 0.13);
+  border-radius: 50%;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-core-orbit-outer {
+  inset: -8px;
+  border-style: dashed;
+  animation: partner-core-spin 14s linear infinite;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-core-orbit-inner {
+  inset: -4px;
+  border-color: rgba(105, 255, 194, 0.08);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-core-mark {
+  display: grid;
+  justify-items: center;
+  gap: 3px;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-core-mark img {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-core-mark span {
+  color: rgba(190, 255, 225, 0.7);
+  font-family: var(--font-eyebrow);
+  font-size: 3.8px;
+  letter-spacing: 0.04em;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-software-surface {
+  position: absolute;
+  top: 31px;
+  right: 3.5%;
+  bottom: 12px;
+  z-index: 2;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  width: 39%;
+  padding: 9px;
+  overflow: hidden;
+  border: 1px solid rgba(105, 255, 194, 0.17);
+  border-radius: 6px;
+  background:
+    radial-gradient(circle at 90% 0%, rgba(105, 255, 194, 0.08), transparent 38%),
+    rgba(13, 17, 16, 0.96);
+  box-shadow:
+    0 18px 36px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  animation: partner-software-grow 10s ease-in-out infinite;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-software-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-software-header > div {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-software-header i,
+.os-home-duplicate .funnel-section-home-duplicate .partner-software-module > i {
+  width: 4px;
+  height: 4px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: #69ffc2;
+  box-shadow: 0 0 7px rgba(105, 255, 194, 0.64);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-software-header span,
+.os-home-duplicate .funnel-section-home-duplicate .partner-software-header em {
+  font-size: 4.5px;
+  font-style: normal;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-software-header span {
+  color: rgba(190, 255, 225, 0.64);
+  letter-spacing: 0.06em;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-software-header em {
+  color: rgba(240, 240, 240, 0.34);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-software-modules {
+  display: grid;
+  align-content: center;
+  gap: 5px;
+  min-height: 0;
+  padding: 6px 0;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-software-module {
+  display: grid;
+  grid-template-columns: 14px minmax(0, 1fr) 4px;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+  padding: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.065);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-software-module > b {
+  color: rgba(190, 255, 225, 0.34);
+  font-size: 5px;
+  font-weight: 700;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-software-module > div {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-software-module strong,
+.os-home-duplicate .funnel-section-home-duplicate .partner-software-module em {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-software-module strong {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 6px;
+  font-weight: 650;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-software-module em {
+  display: block;
+  color: rgba(240, 240, 240, 0.34);
+  font-size: 4.5px;
+  font-style: normal;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-module-status {
+  position: relative;
+  display: block;
+  height: 6px;
+  overflow: hidden;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-module-status em {
+  position: absolute;
+  inset: 0;
+  animation: partner-status-cycle 5s ease-in-out infinite;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-module-status em:last-child {
+  color: rgba(190, 255, 225, 0.62);
+  opacity: 0;
+  animation-name: partner-status-cycle-alt;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-software-module-3 {
+  opacity: 0.35;
+  transform: translateY(5px);
+  animation: partner-module-arrive 10s ease-in-out infinite;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-software-footer {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 6px;
+  padding-top: 7px;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-software-footer span,
+.os-home-duplicate .funnel-section-home-duplicate .partner-software-footer strong {
+  font-size: 4.5px;
+  white-space: nowrap;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-software-footer span {
+  color: rgba(240, 240, 240, 0.32);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-software-footer strong {
+  color: rgba(190, 255, 225, 0.58);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-software-footer > div {
+  height: 2px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .partner-software-footer > div i {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #2ea782, #69ffc2);
+  transform: scaleX(0.62);
+  transform-origin: left;
+  animation: partner-coverage-grow 10s ease-in-out infinite;
+}
+
+@keyframes partner-system-breathe {
+  0%, 100% { opacity: 0.55; transform: translate(-50%, -50%) scale(0.9); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.12); }
+}
+
+@keyframes partner-core-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes partner-workflow-connect {
+  0%, 42%, 100% { border-color: rgba(255, 255, 255, 0.07); background: rgba(255, 255, 255, 0.035); }
+  54%, 88% { border-color: rgba(105, 255, 194, 0.2); background: rgba(105, 255, 194, 0.055); }
+}
+
+@keyframes partner-module-arrive {
+  0%, 48%, 100% { opacity: 0.3; transform: translateY(5px); border-color: rgba(255, 255, 255, 0.065); }
+  62%, 90% { opacity: 1; transform: translateY(0); border-color: rgba(105, 255, 194, 0.16); }
+}
+
+@keyframes partner-software-grow {
+  0%, 48%, 100% { box-shadow: 0 18px 36px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.04); }
+  68%, 90% { box-shadow: 0 20px 44px rgba(0, 0, 0, 0.4), 0 0 24px rgba(105, 255, 194, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.05); }
+}
+
+@keyframes partner-coverage-grow {
+  0%, 48%, 100% { transform: scaleX(0.62); }
+  64%, 90% { transform: scaleX(0.84); }
+}
+
+@keyframes partner-status-cycle {
+  0%, 42% { opacity: 1; transform: translateY(0); }
+  52%, 88% { opacity: 0; transform: translateY(-5px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes partner-status-cycle-alt {
+  0%, 42% { opacity: 0; transform: translateY(5px); }
+  52%, 88% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(5px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .os-home-duplicate .funnel-section-home-duplicate .partner-system-glow,
+  .os-home-duplicate .funnel-section-home-duplicate .partner-workflow-3,
+  .os-home-duplicate .funnel-section-home-duplicate .partner-core-orbit-outer,
+  .os-home-duplicate .funnel-section-home-duplicate .partner-software-surface,
+  .os-home-duplicate .funnel-section-home-duplicate .partner-software-module-3,
+  .os-home-duplicate .funnel-section-home-duplicate .partner-module-status em,
+  .os-home-duplicate .funnel-section-home-duplicate .partner-software-footer > div i {
+    animation: none;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .partner-path-pulse {
+    display: none;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .partner-software-module-3 {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Build card: a finished personalised app in the same system language as Partner. */
+.os-home-duplicate .funnel-section-home-duplicate .build-system-scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 184px;
+  overflow: hidden;
+  border: 1px solid rgba(190, 255, 225, 0.13);
+  border-radius: 7px;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    radial-gradient(circle at 50% 56%, rgba(46, 167, 130, 0.12), transparent 35%),
+    linear-gradient(145deg, rgba(14, 17, 17, 0.98), rgba(7, 9, 9, 0.98));
+  background-size: 18px 18px, 18px 18px, auto, auto;
+  box-shadow:
+    0 28px 68px rgba(0, 0, 0, 0.52),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .build-system-orbit {
+  position: absolute;
+  top: 54%;
+  left: 50%;
+  border: 1px dashed rgba(105, 255, 194, 0.1);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .build-system-orbit-1 {
+  width: 88%;
+  aspect-ratio: 2.15;
+  animation: build-system-orbit 18s linear infinite;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .build-system-orbit-2 {
+  width: 70%;
+  aspect-ratio: 1.9;
+  border-color: rgba(255, 255, 255, 0.055);
+  animation: build-system-orbit-reverse 22s linear infinite;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .build-system-scene .wapps-window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  width: min(84%, 342px);
+  padding: 9px 10px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 6px;
+  background:
+    radial-gradient(circle at 92% 0%, rgba(105, 255, 194, 0.07), transparent 35%),
+    rgba(14, 17, 17, 0.97);
+  box-shadow:
+    0 24px 55px rgba(0, 0, 0, 0.5),
+    0 0 30px rgba(105, 255, 194, 0.035),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  color: #f0f0f0;
+  transform: translate(-50%, -50%);
+  animation: build-system-materialise 8s ease-in-out infinite;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .build-system-scene .wapps-window-header {
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .build-system-scene .wapps-window-header span {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 9px;
+  letter-spacing: 0.01em;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .build-system-scene .wapps-window-header i,
+.os-home-duplicate .funnel-section-home-duplicate .build-system-scene .wapps-window-header em {
+  color: rgba(190, 255, 225, 0.4);
+  font-size: 8px;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .build-system-scene .wapps-window-icons {
+  gap: 5px;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .build-system-scene .wapps-window-icons img {
+  width: 14px;
+  height: 14px;
+  padding: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: none;
+  filter: saturate(0.72) brightness(0.88);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .build-system-scene .wapps-prospect-panel {
+  border: 1px solid rgba(105, 255, 194, 0.1);
+  border-radius: 4px;
+  background: rgba(105, 255, 194, 0.035);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .build-system-scene .wapps-prospect-panel strong {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 12px;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .build-system-scene .wapps-prospect-panel em {
+  color: rgba(190, 255, 225, 0.68);
+  font-size: 9px;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .build-system-scene .wapps-prospect-panel p {
+  color: rgba(240, 240, 240, 0.5);
+  font-size: 8px;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .build-system-scene .wapps-contact-profiles span {
+  border-color: rgba(255, 255, 255, 0.075);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .build-system-scene .wapps-contact-profiles strong {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 8px;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .build-system-scene .wapps-contact-profiles em {
+  color: rgba(240, 240, 240, 0.36);
+  font-size: 6px;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .build-system-scene .wapps-smart-notes {
+  color: #f0f0f0;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .build-system-scene .wapps-smart-notes > span {
+  padding-bottom: 5px;
+  border-bottom-color: rgba(255, 255, 255, 0.08);
+  color: rgba(190, 255, 225, 0.55);
+  font-size: 7px;
+  letter-spacing: 0.06em;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .build-system-scene .wapps-smart-notes p {
+  color: rgba(240, 240, 240, 0.58);
+  font-size: 7px;
+  line-height: 1.2;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .build-system-scene .wapps-note-lines {
+  gap: 3px;
+  margin-top: 5px;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .build-system-scene .wapps-note-lines i {
+  height: 3px;
+  border-radius: 99px;
+  background: linear-gradient(90deg, rgba(105, 255, 194, 0.2), rgba(255, 255, 255, 0.045));
+  background-size: 180% 100%;
+  animation: build-system-scan 3.2s ease-in-out infinite;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .build-system-scene .wapps-note-lines i:last-child {
+  width: 72%;
+  animation-delay: 0.22s;
+}
+
+@keyframes build-system-orbit {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes build-system-orbit-reverse {
+  from { transform: translate(-50%, -50%) rotate(360deg); }
+  to { transform: translate(-50%, -50%) rotate(0deg); }
+}
+
+@keyframes build-system-materialise {
+  0%, 100% { border-color: rgba(255, 255, 255, 0.09); transform: translate(-50%, -50%) scale(0.985); }
+  48%, 72% { border-color: rgba(105, 255, 194, 0.18); transform: translate(-50%, -50%) scale(1); }
+}
+
+@keyframes build-system-scan {
+  0%, 100% { background-position: 100% 0; opacity: 0.45; }
+  50% { background-position: 0 0; opacity: 0.9; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .os-home-duplicate .funnel-section-home-duplicate .build-system-orbit,
+  .os-home-duplicate .funnel-section-home-duplicate .build-system-scene .wapps-window,
+  .os-home-duplicate .funnel-section-home-duplicate .build-system-scene .wapps-note-lines i {
+    animation: none;
+  }
+}
+
 .os-home-duplicate .funnel-section-home-duplicate .funnel-card-button {
   align-self: start;
   width: 170px;
@@ -1309,9 +2309,8 @@
 
 @media (max-width: 1024px) {
   .os-home-duplicate .funnel-section-home-duplicate .funnel-offer-header {
-    grid-template-columns: 1fr;
     gap: 24px;
-    align-items: start;
+    align-items: center;
   }
 
   .os-home-duplicate .funnel-section-home-duplicate .funnel-offer-cta {
@@ -1362,7 +2361,7 @@
   }
 
   .os-home-duplicate .funnel-section-home-duplicate .funnel-offer-header {
-    margin-bottom: 48px;
+    margin-bottom: 72px;
   }
 
   .os-home-duplicate .funnel-section-home-duplicate .funnel-card {
@@ -1386,6 +2385,10 @@
   }
 
   .os-home-duplicate .funnel-section-home-duplicate .wapps-overlay {
+    inset: 12px;
+  }
+
+  .os-home-duplicate .funnel-section-home-duplicate .partner-system-overlay {
     inset: 12px;
   }
 

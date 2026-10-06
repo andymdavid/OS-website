@@ -3,8 +3,8 @@ import { NavigationDraft } from '../components/NavigationDraft';
 import { HeroHomeDuplicateExperiment } from '../components/HeroHomeDuplicateExperiment';
 import { HomeDuplicateCanvasSection } from '../components/HomeDuplicateCanvasSection';
 import { HomeDuplicateGridSection } from '../components/HomeDuplicateGridSection';
-import { HomeDuplicateWingmanBenefits } from '../components/HomeDuplicateWingmanBenefits';
 import { FunnelHomeDuplicate } from '../components/FunnelHomeDuplicate';
+import { HomeDuplicateComparison } from '../components/HomeDuplicateComparison';
 import { FAQHomeDuplicate } from '../components/FAQHomeDuplicate';
 import { CTAHomeDuplicate } from '../components/CTAHomeDuplicate';
 import { HomeDuplicateGoodStuffStrip } from '../components/HomeDuplicateGoodStuffStrip';
@@ -19,14 +19,14 @@ export default function Home() {
   return (
     <div className="os-theme os-draft os-home-duplicate">
       <SEO
-        title="Custom AI Systems for SMEs | Perth & Australia"
-        description="Other Stuff helps SMEs use AI to improve margin, free up capital, and reduce risk with Wingman, practical agents, and highly personalised AI-native software."
+        title="Other Stuff | AI agents and automation for SMEs | Perth & Australia"
+        description="We set up AI agents inside your business and automate the repetitive work. From $5k a month, cancel anytime. Perth and across Australia."
         path="/"
         schema={[
           {
             ...organizationSchema,
             description:
-              'AI-first product studio in Perth, Western Australia building custom AI systems for SMEs around real operational workflows.',
+              'AI automation partner in Perth, Western Australia setting up agents and automating repetitive work for Australian SMEs.',
           },
           websiteSchema,
         ]}
@@ -35,14 +35,14 @@ export default function Home() {
       <NavigationDraft />
       <main>
         <HeroHomeDuplicateExperiment />
-        <HomeDuplicateCanvasSection />
         <FunnelHomeDuplicate />
-        <HomeDuplicateWingmanBenefits />
         <HomeDuplicateGridSection />
+        <HomeDuplicateCanvasSection />
+        <HomeDuplicateComparison />
         <FAQHomeDuplicate />
         <CTAHomeDuplicate
-          heading="Let’s find where AI can improve margin, free up capital, and reduce risk."
-          intro="Book a free intro call. We’ll look at the work that matters most in your business and find the clearest path to improve it with AI."
+          heading="What’s eating your team’s week?"
+          intro="Book a free 45-minute call. We’ll look at where your team’s time goes and tell you honestly whether AI can help."
         />
       </main>
       <HomeDuplicateExitNewsletter />
