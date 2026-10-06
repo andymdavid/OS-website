@@ -8,32 +8,36 @@ import './HomeDuplicateGridSection.css';
 
 const cards = [
   {
-    title: 'Customer Acquisition',
+    title: 'Marketing',
     description:
-      'Make follow-up faster, keep outreach consistent, and reduce the amount of manual effort it takes to turn interest into qualified opportunities.',
+      'Keep your marketing running consistently, even when the team is flat out on client work.',
+    tags: ['Lead capture', 'Outreach', 'Campaign reporting'],
     demo: <FormProcessingDemo />,
     image: '/grid-customer-acquisition.webp',
   },
   {
-    title: 'Sales, Quoting & Proposals',
+    title: 'Sales',
     description:
-      'Reduce the time it takes to pull information together, produce proposals, and move opportunities forward without rebuilding the same work each time.',
+      'Handle the prep, paperwork and follow-up around every deal, so your people spend their time with clients.',
+    tags: ['Prospect research', 'Proposals and quotes', 'Follow-up'],
     demo: <AIChatDemo />,
     image: '/grid-sales-quoting.webp',
   },
   {
-    title: 'Finance, Billing & Inventory',
+    title: 'Operations',
     description:
-      'Surface what needs attention sooner, reduce manual handling across finance workflows, and keep a clearer picture of what is moving through the business.',
-    demo: <DataAnalysisDemo />,
-    image: '/grid-finance-billing.webp',
-  },
-  {
-    title: 'Internal Knowledge',
-    description:
-      'Keep important process knowledge accessible, reduce dependency on a few key people, and give your agents the memory they need to do reliable work.',
+      "Take care of the updates, handoffs and chasing that keep jobs moving, so it doesn't all depend on a few key people.",
+    tags: ['Client onboarding', 'Project updates', 'Handovers'],
     demo: <WingmanDemo />,
     image: '/grid-internal-knowledge.webp',
+  },
+  {
+    title: 'Finance',
+    description:
+      "Keep billing, collections and reporting up to date, so you see cash and margin while there's still time to act.",
+    tags: ['Invoicing', 'Margin reviews', 'Month-end reporting'],
+    demo: <DataAnalysisDemo />,
+    image: '/grid-finance-billing.webp',
   },
 ];
 
@@ -45,14 +49,14 @@ export function HomeDuplicateGridSection() {
           <div className="home-duplicate-grid-heading">
             <div className="intro-pill fade-in">USE CASES</div>
             <h2 className="section-heading fade-in fade-in-stagger-1">
-              Some practical examples for how to start using AI inside your business.
+              AI that works across your business.
             </h2>
           </div>
 
           <div className="home-duplicate-grid-intro-copy">
             <p className="home-duplicate-grid-subpara fade-in fade-in-stagger-2">
-              These are the workflows where better agents, records, approvals, and custom apps can turn manual
-              effort into repeatable operating leverage.
+              Every part of a business has work that eats time and slows things down. These are some
+              of the areas where our clients feel it most.
             </p>
 
             <a
@@ -72,6 +76,9 @@ export function HomeDuplicateGridSection() {
               <div className="home-duplicate-grid-copy">
                 <h3>{card.title}</h3>
                 <p>{card.description}</p>
+                <div className="home-duplicate-grid-tags" aria-label={`${card.title} examples`}>
+                  {card.tags.map((tag) => <span key={tag}>{tag}</span>)}
+                </div>
               </div>
               <div
                 className="home-duplicate-grid-visual"
