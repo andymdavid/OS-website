@@ -15,11 +15,11 @@ interface NewsletterModalProps {
 export function NewsletterModal({
   isOpen,
   onClose,
-  pill = 'THE GOOD STUFF',
-  profileImageSrc = '/good-stuff-profile.webp',
-  heading = 'The Good Stuff is where we dig into how AI is changing the way we work, build businesses, and shape the broader economy.',
-  description = 'We publish essays, stories, and conversations about the way humans and AI work together — and what that means for small businesses. If you want to understand how we think, this is the best place to start.',
-  buttonText = 'Join the Good Stuff',
+  pill = 'INTELLIGENCE SNACKS',
+  profileImageSrc = '/intelligence-snacks-cassette-clean-v3.png',
+  heading = 'Get Intelligence Snacks in your inbox.',
+  description = 'For people building and running modern businesses, Intelligence Snacks helps you quickly digest the big ideas emerging from the world of AI, delivered to your inbox each week.',
+  buttonText = 'Send me snacks',
 }: NewsletterModalProps) {
   // Close modal on Escape key
   useEffect(() => {
@@ -66,7 +66,7 @@ export function NewsletterModal({
 
         <div className="modal-body">
           {profileImageSrc ? (
-            <img className="modal-profile-image" src={profileImageSrc} alt={pill} />
+            <img className="modal-profile-image" src={profileImageSrc} alt="Intelligence Snacks cassette" />
           ) : (
             <div className="modal-pill">{pill}</div>
           )}

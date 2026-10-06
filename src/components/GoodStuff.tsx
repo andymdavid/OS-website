@@ -7,23 +7,22 @@ export function GoodStuff() {
   return (
     <section id="media" className="section good-stuff-section">
       <div className="good-stuff-top">
-        <div className="good-stuff-pill fade-in">THE GOOD STUFF</div>
+        <div className="good-stuff-pill fade-in">INTELLIGENCE SNACKS</div>
         <h2 className="good-stuff-heading fade-in fade-in-stagger-1">
-          The Good Stuff is where we dig into how AI is changing the way we work,
-          build businesses, and shape the broader economy.
+          Big Ideas Compound.
         </h2>
 
         <p className="good-stuff-subpara fade-in fade-in-stagger-2">
-          We publish essays, stories, and conversations about the way humans and
-          AI work together — and what that means for small businesses. If you
-          want to understand how we think, this is the best place to start.
+          For people building and running modern businesses, Intelligence Snacks
+          helps you quickly digest the big ideas emerging from the world of AI,
+          delivered to your inbox each week.
         </p>
 
         <div className="good-stuff-cta fade-in fade-in-stagger-3">
           <EmailCaptureForm
             variant="inline"
             placeholder="Enter your email"
-            buttonText="Join the Good Stuff"
+            buttonText="Send me snacks"
           />
         </div>
       </div>

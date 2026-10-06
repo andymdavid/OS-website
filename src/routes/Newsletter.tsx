@@ -33,9 +33,9 @@ export default function Newsletter() {
       "@type": "CollectionPage",
       "@id": "https://otherstuff.ai/newsletter#collection",
       url: absoluteUrl("/newsletter"),
-      name: "The Good Stuff Newsletter",
+      name: "Intelligence Snacks Newsletter",
       description:
-        "The Good Stuff is the operating memo for SME leaders using AI to improve margin, capital efficiency, and risk.",
+        "Intelligence Snacks develops long conversations about AI, software and business into useful ideas.",
       inLanguage: "en-AU",
       isPartOf: {
         "@type": "WebSite",
@@ -60,15 +60,15 @@ export default function Newsletter() {
   return (
     <div className="os-theme os-draft min-h-screen writing-page newsletter-page">
       <SEO
-        title="The Good Stuff Newsletter | Margin Up, Capital Up, Risk Down"
-        description="The Good Stuff is the operating memo for SME leaders using AI to improve margin, capital efficiency, and risk."
+        title="Intelligence Snacks | Ideas for the age of AI"
+        description="Long conversations about AI, software and business, developed into useful ideas."
         path="/newsletter"
         schema={archiveSchema}
       />
       <NavigationDraft
         titleSwapOnScroll={{
           before: "OTHER STUFF",
-          after: "THE GOOD STUFF",
+          after: "INTELLIGENCE SNACKS",
           targetId: "newsletter-hero",
         }}
       />
@@ -76,21 +76,17 @@ export default function Newsletter() {
         <section id="newsletter-hero" className="section writing-hero newsletter-hero">
           <div className="section-container-wide writing-hero-inner">
             <div className="hero-title-block newsletter-hero-copy">
-              <h1>
-                The operating memo for SME leaders wanting to use AI to
-                increase margins, capital, and reduce risk.
-              </h1>
+              <h1>Big ideas compound.</h1>
               <p className="hero-bridge">
-                The Good Stuff newsletter helps SME owners and leaders turn AI
-                from noise into operating advantage, with short practical notes
-                on where AI can lift margin, free up capital, and reduce
-                operational risk inside the workflows that run the business.
+                For people building and running modern businesses, Intelligence
+                Snacks helps you quickly digest the big ideas emerging from AI,
+                software, business, work and technological change.
               </p>
               <div className="hero-cta newsletter-hero-signup">
                 <EmailCaptureForm
                   variant="inline"
                   placeholder="Enter your email"
-                  buttonText="Join the Good Stuff"
+                  buttonText="Send me snacks"
                 />
               </div>
             </div>
@@ -101,8 +97,8 @@ export default function Newsletter() {
           <div className="newsletter-section-top">
             <div className="good-stuff-pill">RECENT ISSUES</div>
             <p className="newsletter-section-note">
-              Practical essays and operating memos from the edge of AI
-              implementation.
+              The latest ideas from Intelligence Snacks on AI, software and
+              business.
             </p>
           </div>
 
@@ -117,7 +113,7 @@ export default function Newsletter() {
                           <img src={issue.thumbnail} alt={issue.title} loading="lazy" />
                         ) : (
                           <div className="newsletter-post-media-fallback">
-                            <span>The Good Stuff</span>
+                            <span>Intelligence Snacks</span>
                           </div>
                         )}
                       </div>
@@ -177,15 +173,14 @@ export default function Newsletter() {
               Get each issue direct.
             </h2>
             <p className="good-stuff-subpara newsletter-signup-subpara">
-              Practical notes on where AI can improve margin, free up capital,
-              and reduce operational risk inside SME workflows that actually
-              matter.
+              Quickly digest the big ideas emerging from the world of AI,
+              delivered to your inbox each week.
             </p>
             <div className="good-stuff-cta newsletter-signup-cta">
               <EmailCaptureForm
                 variant="inline"
                 placeholder="Enter your email"
-                buttonText="Join the Good Stuff"
+                buttonText="Send me snacks"
               />
             </div>
           </div>

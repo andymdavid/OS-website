@@ -145,14 +145,14 @@ export default function NewsletterPost() {
             },
             isPartOf: {
               "@type": "CreativeWorkSeries",
-              name: "The Good Stuff",
+              name: "Intelligence Snacks",
               url: absoluteUrl("/newsletter"),
             },
             mainEntityOfPage: {
               "@type": "WebPage",
               "@id": issueUrl,
             },
-            articleSection: "The Good Stuff Newsletter",
+            articleSection: "Intelligence Snacks Newsletter",
             inLanguage: "en-AU",
             keywords: issue.tags,
           },
@@ -183,7 +183,7 @@ export default function NewsletterPost() {
           },
         ]}
       />
-      <NavigationDraft titleOverride="THE GOOD STUFF" />
+      <NavigationDraft titleOverride="INTELLIGENCE SNACKS" />
       <main>
         <section className="section writing-post-hero">
           <div className="section-container-wide writing-post-hero-inner">
@@ -191,7 +191,7 @@ export default function NewsletterPost() {
               Back to Newsletter
             </a>
 
-            <div className="newsletter-post-kicker">The Good Stuff</div>
+            <div className="newsletter-post-kicker">Intelligence Snacks</div>
             <h1 className="writing-post-title">{issue.title}</h1>
 
             <div className="writing-post-meta">
@@ -321,9 +321,9 @@ export default function NewsletterPost() {
         isOpen={isSignupModalOpen}
         onClose={closeSignupModal}
         pill="KEEP READING"
-        heading={<>Enjoying the issue?<br />Get the next Good Stuff newsletter in your inbox.</>}
-        description="We publish practical notes for SME leaders using AI to improve margin, free up capital, and reduce operational risk. Subscribe to get each issue direct."
-        buttonText="Get The Good Stuff"
+        heading={<>Enjoying the issue?<br />Get the next Intelligence Snacks newsletter in your inbox.</>}
+        description="Quickly digest the big ideas emerging from the world of AI, delivered to your inbox each week."
+        buttonText="Send me snacks"
       />
     </div>
   );

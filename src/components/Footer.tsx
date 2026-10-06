@@ -23,11 +23,11 @@ export function Footer() {
               We build custom AI systems that take repetitive work off your team's plate.
             </div>
             <div className="footer-newsletter">
-              <h4>Subscribe to The Good Stuff</h4>
+              <h4>Get weekly Intelligence Snacks</h4>
               <EmailCaptureForm
                 variant="inline"
                 placeholder="Email address"
-                buttonText="Join"
+                buttonText="Send me snacks"
                 className="footer-newsletter-form"
               />
             </div>
@@ -38,7 +38,7 @@ export function Footer() {
             <h4>Solutions</h4>
             <a href="/ai-audit/">AI Audit</a>
             <a href="/marginal-gains/">AI Automation</a>
-            <a href="/#system">Wingman</a>
+            <a href="/wingman/">Wingman</a>
             <a href="/speedrun/">AI Training</a>
             <a href="/levelup/">AI School Training</a>
           </nav>
@@ -46,8 +46,7 @@ export function Footer() {
           {/* Column 3: Media */}
           <nav className="footer-column" aria-label="Media">
             <h4>Media</h4>
-            <a href="/newsletter/">Newsletter</a>
-            <a href="/the-good-stuff/">The Good Stuff</a>
+            <a href="https://intelligencesnacks.com/">Intelligence Snacks</a>
             <a href="/perth-ai-roundtable/">Perth AI Roundtable</a>
             <a href="/writing/">Writing</a>
             <a href="/games/">Games</a>
@@ -69,7 +68,7 @@ export function Footer() {
 
           <div className="footer-social" aria-label="Social links">
             <a
-              href="https://otherstuff.ai/the-good-stuff"
+              href="https://www.youtube.com/@IntelligenceSnacks"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="YouTube"

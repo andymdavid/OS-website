@@ -293,9 +293,9 @@ export default function PerthAIRoundtable() {
               <span className="roundtable-label">Between sessions</span>
               <div className="roundtable-card-bottom roundtable-connected-card-bottom">
                 <div>
-                  <h2>The conversation continues each week via The Good Stuff.</h2>
+                  <h2>The conversation continues each week via Intelligence Snacks.</h2>
                   <p>
-                    The Roundtable meets monthly, but The Good Stuff keeps the
+                    The Roundtable meets monthly, but Intelligence Snacks keeps the
                     conversation moving each week. It is our newsletter and podcast for
                     people tracking how AI is changing work, business models, tools, and
                     the broader economy.
@@ -321,8 +321,8 @@ export default function PerthAIRoundtable() {
                     and curious beginners to learn from the questions in the room.
                   </p>
                 </div>
-                <a href="/the-good-stuff/" className="btn-primary roundtable-button-link roundtable-inline-button">
-                  Explore The Good Stuff
+                <a href="https://intelligencesnacks.com/" className="btn-primary roundtable-button-link roundtable-inline-button">
+                  Explore Intelligence Snacks
                 </a>
               </div>
             </div>

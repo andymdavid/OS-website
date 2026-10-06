@@ -7,23 +7,23 @@ export function HomeDuplicateGoodStuffStrip() {
 
   return (
     <>
-      <section className="home-duplicate-good-stuff-strip" aria-label="The Good Stuff newsletter">
+      <section className="home-duplicate-good-stuff-strip" aria-label="Intelligence Snacks publication">
         <button type="button" onClick={() => setIsOpen(true)}>
+          <img src="/intelligence-snacks-cassette-clean-v3.png" alt="" aria-hidden="true" />
           <span className="home-duplicate-good-stuff-strip-message">
-            <span>For practical notes</span>
-            <span className="home-duplicate-good-stuff-strip-mobile-line"> on how AI helps SME&apos;s</span>
+            <span>Big ideas on AI, software and business, delivered weekly.</span>
           </span>
-          <strong>Join The Good Stuff →</strong>
+          <strong>Send me snacks →</strong>
         </button>
       </section>
 
       <NewsletterModal
         isOpen={isOpen}
         onClose={() => setIsOpen(false)}
-        pill="THE GOOD STUFF"
-        heading="Get our newsletter for businesses exploring how AI can improve margin, free up capital, and reduce risk."
-        description="The Good Stuff is our newsletter on how AI is changing the way SMEs work, what’s practical, and how we approach the problems we solve."
-        buttonText="Join The Good Stuff"
+        pill="INTELLIGENCE SNACKS"
+        heading="Get Intelligence Snacks in your inbox."
+        description="For people building and running modern businesses, Intelligence Snacks helps you quickly digest the big ideas emerging from the world of AI, delivered to your inbox each week."
+        buttonText="Send me snacks"
       />
     </>
   );

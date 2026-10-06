@@ -40,7 +40,7 @@ export default function ArchiveHome() {
         {/* Uncomment the line below when you're ready to show testimonials */}
         {/* <Testimonials /> */}
 
-        {/* The Good Stuff Section */}
+        {/* Intelligence Snacks Section */}
         <GoodStuff />
 
         {/* CTA Section */}

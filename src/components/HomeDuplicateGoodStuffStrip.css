@@ -29,6 +29,13 @@
   text-align: center;
 }
 
+.home-duplicate-good-stuff-strip button > img {
+  width: 28px;
+  height: 20px;
+  flex: 0 0 auto;
+  object-fit: contain;
+}
+
 .home-duplicate-good-stuff-strip strong {
   color: var(--color-text);
   font-weight: var(--weight-regular);
@@ -52,6 +59,11 @@
     font-size: 10.5px;
     justify-content: space-between;
     text-align: left;
+  }
+
+  .home-duplicate-good-stuff-strip button > img {
+    width: 24px;
+    height: 17px;
   }
 
   .home-duplicate-good-stuff-strip-message {

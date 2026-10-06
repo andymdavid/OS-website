@@ -84,7 +84,7 @@ export function Navigation() {
             className="nav-join-btn"
             onClick={() => setIsModalOpen(true)}
           >
-            Join the Good Stuff
+            Get Intelligence Snacks
           </button>
         </div>
 

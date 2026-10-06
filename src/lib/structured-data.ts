@@ -77,8 +77,8 @@ export const organizationSchema = {
   subjectOf: [
     {
       "@type": "PodcastSeries",
-      name: "The Good Stuff",
-      url: `${SITE_URL}/the-good-stuff/`,
+      name: "Intelligence Snacks",
+      url: "https://intelligencesnacks.com/episodes/",
       description:
         "An Australian AI podcast from Pete Winn and Andy David on AI, business, operations, entrepreneurship, and the broader economic shift around these tools.",
       author: [

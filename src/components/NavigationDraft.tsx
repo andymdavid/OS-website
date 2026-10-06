@@ -15,7 +15,7 @@ const solutions = [
   {
     title: 'Wingman',
     description: 'The operating environment for running, monitoring, and managing the AI systems in your business.',
-    href: '/#system',
+    href: '/wingman/',
   },
   {
     title: 'AI Training',
@@ -31,14 +31,9 @@ const solutions = [
 
 const mediaLinks = [
   {
-    title: 'The Good Stuff',
-    description: 'Conversations, episodes, and field notes from building with AI.',
-    href: '/the-good-stuff/',
-  },
-  {
-    title: 'Newsletter',
-    description: 'The operating memo for SME leaders using AI to improve margin, capital efficiency, and risk.',
-    href: '/newsletter/',
+    title: 'Intelligence Snacks',
+    description: 'Long conversations about AI, software and business, developed into useful ideas.',
+    href: 'https://intelligencesnacks.com/',
   },
   {
     title: 'Writing',

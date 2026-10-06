@@ -110,7 +110,7 @@ export default function About() {
               <span className="about-system-card-number">04</span>
               <h3>Build capability</h3>
               <p>
-                We run <a href="/speedrun">Speedrun Workshops</a>, support longer-term development through <a href="/marginal-gains">Marginal Gains</a>, and use <a href="/#system">Wingman</a> as the operating environment. That gives teams a practical way to learn, operate, and keep improving.
+                We run <a href="/speedrun">Speedrun Workshops</a>, support longer-term development through <a href="/marginal-gains">Marginal Gains</a>, and use <a href="/wingman">Wingman</a> as the operating environment. That gives teams a practical way to learn, operate, and keep improving.
               </p>
             </div>
           </div>

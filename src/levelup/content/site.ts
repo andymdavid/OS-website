@@ -622,7 +622,7 @@ export const siteContent: SiteContent = {
         social: [
           { platform: "X", href: "https://x.com/OtherStuffAU" },
           { platform: "LinkedIn", href: "https://www.linkedin.com/company/otherstuffvs/" },
-          { platform: "YouTube", href: "https://otherstuff.ai/the-good-stuff" },
+          { platform: "YouTube", href: "https://www.youtube.com/@IntelligenceSnacks" },
         ],
         contact: {
           email: "info@otherstuff.studio",

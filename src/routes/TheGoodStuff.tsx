@@ -45,91 +45,92 @@ export default function TheGoodStuff() {
             title: "Episode Title",
             description: "Short description of the episode goes here.",
             thumbnail: "/Hero-Background.webp",
-            link: "https://www.youtube.com/@OtherStuffAI",
+            link: "https://www.youtube.com/@IntelligenceSnacks",
           },
           {
             id: "02",
             title: "Episode Title",
             description: "Short description of the episode goes here.",
             thumbnail: "/Hero-Background.webp",
-            link: "https://www.youtube.com/@OtherStuffAI",
+            link: "https://www.youtube.com/@IntelligenceSnacks",
           },
           {
             id: "03",
             title: "Episode Title",
             description: "Short description of the episode goes here.",
             thumbnail: "/Hero-Background.webp",
-            link: "https://www.youtube.com/@OtherStuffAI",
+            link: "https://www.youtube.com/@IntelligenceSnacks",
           },
           {
             id: "04",
             title: "Episode Title",
             description: "Short description of the episode goes here.",
             thumbnail: "/Hero-Background.webp",
-            link: "https://www.youtube.com/@OtherStuffAI",
+            link: "https://www.youtube.com/@IntelligenceSnacks",
           },
           {
             id: "05",
             title: "Episode Title",
             description: "Short description of the episode goes here.",
             thumbnail: "/Hero-Background.webp",
-            link: "https://www.youtube.com/@OtherStuffAI",
+            link: "https://www.youtube.com/@IntelligenceSnacks",
           },
           {
             id: "06",
             title: "Episode Title",
             description: "Short description of the episode goes here.",
             thumbnail: "/Hero-Background.webp",
-            link: "https://www.youtube.com/@OtherStuffAI",
+            link: "https://www.youtube.com/@IntelligenceSnacks",
           },
           {
             id: "07",
             title: "Episode Title",
             description: "Short description of the episode goes here.",
             thumbnail: "/Hero-Background.webp",
-            link: "https://www.youtube.com/@OtherStuffAI",
+            link: "https://www.youtube.com/@IntelligenceSnacks",
           },
           {
             id: "08",
             title: "Episode Title",
             description: "Short description of the episode goes here.",
             thumbnail: "/Hero-Background.webp",
-            link: "https://www.youtube.com/@OtherStuffAI",
+            link: "https://www.youtube.com/@IntelligenceSnacks",
           },
           {
             id: "09",
             title: "Episode Title",
             description: "Short description of the episode goes here.",
             thumbnail: "/Hero-Background.webp",
-            link: "https://www.youtube.com/@OtherStuffAI",
+            link: "https://www.youtube.com/@IntelligenceSnacks",
           },
           {
             id: "10",
             title: "Episode Title",
             description: "Short description of the episode goes here.",
             thumbnail: "/Hero-Background.webp",
-            link: "https://www.youtube.com/@OtherStuffAI",
+            link: "https://www.youtube.com/@IntelligenceSnacks",
           },
         ];
 
   const visibleEpisodes = displayedEpisodes.slice(0, visibleCount);
   const extractEpisodeNumber = (title: string) => {
-    const match = title.match(/\bGood Stuff\s+(\d+)/i);
+    const match = title.match(/\b(?:Intelligence Snacks|Good Stuff)\s+(\d+)/i);
     return match ? match[1] : null;
   };
 
   return (
     <div className="os-theme os-draft min-h-screen the-good-stuff-page">
       <SEO
-        title="The Good Stuff | AI Podcast from Perth"
-        description="An Australian AI podcast from Pete Winn and Andy David on AI, business, operations, entrepreneurship, and the broader economic shift around these tools."
+        title="Intelligence Snacks | Ideas for the age of AI"
+        description="Long conversations about AI, software and business, developed into useful ideas."
         path="/the-good-stuff"
         schema={{
           "@context": "https://schema.org",
           "@type": "PodcastSeries",
-          "name": "The Good Stuff",
-          "description": "A low-fi dialogue with Pete Winn and Andy David exploring everyday experiences working with AI and how it's changing work, business, and human potential.",
-          "url": "https://otherstuff.ai/the-good-stuff",
+          "name": "Intelligence Snacks",
+          "alternateName": "The Good Stuff",
+          "description": "Long conversations about AI, software and business, developed into useful ideas.",
+          "url": "https://intelligencesnacks.com/episodes/",
           "webFeed": "https://www.youtube.com/feeds/videos.xml?channel_id=UC_OtherStuffAI",
           "author": [
             { "@type": "Person", "name": "Pete Winn" },
@@ -146,7 +147,7 @@ export default function TheGoodStuff() {
       <NavigationDraft
         titleSwapOnScroll={{
           before: "OTHER STUFF",
-          after: "THE GOOD STUFF",
+          after: "INTELLIGENCE SNACKS",
           targetId: "good-stuff-hero",
         }}
       />
@@ -155,7 +156,7 @@ export default function TheGoodStuff() {
           <div className="section-container-wide good-stuff-hero-inner">
             <div className="hero-title-block">
               <h1>
-                {"The Good Stuff is a low-fi dialogue with Pete Winn and Andy David."
+                {"Depth first. Clarity after."
                   .split("\n")
                   .map((line) => (
                     <span key={line} className="block">
@@ -164,14 +165,15 @@ export default function TheGoodStuff() {
                   ))}
               </h1>
               <p className="hero-bridge">
-                A podcast exploring our everyday experiences working with artificial intelligence, and how it's changing the rules of work, business, entrepreneurship, the economy and human potential.
+                Long conversations about AI, software and business, developed
+                into useful ideas.
               </p>
               <div className="hero-cta">
                 <Button
                   variant="primary"
-                  onClick={() => (window.location.href = "https://www.youtube.com/@OtherStuffAI")}
+                  onClick={() => (window.location.href = "https://intelligencesnacks.com/")}
                 >
-                  Explore the Pod
+                  Explore Intelligence Snacks
                 </Button>
               </div>
             </div>

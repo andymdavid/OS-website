@@ -79,10 +79,10 @@ export function HomeDuplicateExitNewsletter() {
     <NewsletterModal
       isOpen={isOpen}
       onClose={handleClose}
-      pill="THE GOOD STUFF"
-      heading="Before you go, get our newsletter for businesses exploring how AI can improve margin, free up capital, and reduce risk."
-      description="The Good Stuff is our newsletter on how AI is changing the way SMEs work, what’s practical, and how we approach the problems we solve."
-      buttonText="Join The Good Stuff"
+      pill="INTELLIGENCE SNACKS"
+      heading="Before you go, get Intelligence Snacks in your inbox."
+      description="Quickly digest the big ideas emerging from the world of AI, delivered to your inbox each week."
+      buttonText="Send me snacks"
     />
   );
 }

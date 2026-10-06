@@ -20,7 +20,7 @@ export function getNewsletterIssuesBySlug(slugs: string[]): NewsletterIssue[] {
 export function RelatedNewsletterLinks({
   slugs,
   eyebrow = "Related reading",
-  heading = "From The Good Stuff",
+  heading = "From Intelligence Snacks",
 }: RelatedNewsletterLinksProps) {
   const issues = getNewsletterIssuesBySlug(slugs);
 
@@ -40,7 +40,7 @@ export function RelatedNewsletterLinks({
             <article key={issue.slug} className="related-newsletter-card">
               <a href={canonicalPath(issue.path)} className="related-newsletter-link">
                 <div className="related-newsletter-meta">
-                  <span>The Good Stuff</span>
+                  <span>Intelligence Snacks</span>
                   {issue.displayDate ? <span>{issue.displayDate}</span> : null}
                 </div>
                 <h3>{issue.title}</h3>

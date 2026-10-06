@@ -89,7 +89,7 @@ const readExistingEpisodes = async () => {
 };
 
 const episodeNumber = (episode) => {
-  const match = episode.title.match(/\bGood Stuff\s+(\d+)/i);
+  const match = episode.title.match(/\b(?:Intelligence Snacks|Good Stuff)\s+(\d+)/i);
   return match ? Number(match[1]) : 0;
 };
 
@@ -155,7 +155,7 @@ const dedupeByEpisodeNumber = (episodes) => {
   const seen = new Set();
 
   return episodes.filter((episode) => {
-    const match = episode.title.match(/\bGood Stuff\s+(\d+)/i);
+    const match = episode.title.match(/\b(?:Intelligence Snacks|Good Stuff)\s+(\d+)/i);
     const key = match ? match[1] : episode.id;
 
     if (seen.has(key)) return false;
@@ -190,7 +190,7 @@ const fetchFallbackEpisodes = async () => {
   for (const videoId of videoIds) {
     try {
       const episode = await parseFallbackEpisode(videoId);
-      if (/Good Stuff\s+\d+\s*[\-–]/i.test(episode.title)) {
+      if (/(?:Intelligence Snacks|Good Stuff)\s+\d+\s*[\-–]/i.test(episode.title)) {
         episodes.push(episode);
       }
     } catch (error) {
@@ -210,7 +210,7 @@ const main = async () => {
     parsedEntries = parseEntries(xml)
       .map(parseEntry)
       .filter((entry) => entry.title && entry.link)
-      .filter((entry) => /Good Stuff\s+\d+\s*[\-–]/i.test(entry.title))
+      .filter((entry) => /(?:Intelligence Snacks|Good Stuff)\s+\d+\s*[\-–]/i.test(entry.title))
       .slice(0, MAX_ITEMS);
     parsedEntries = dedupeByEpisodeNumber(parsedEntries);
   } catch (error) {
