@@ -2,6 +2,7 @@ import { Button } from './Button';
 import { HeroShaderBackground } from './HeroShaderBackground';
 import { HomeDuplicateLogoCarousel } from './HomeDuplicateLogoCarousel';
 import { CAL_DISCOVERY_URL } from '../lib/links';
+import { BookCallContent } from './BookCallContent';
 import './IntroSection.css';
 import './Hero.css';
 
@@ -27,10 +28,10 @@ export function HeroHomeDuplicateExperiment() {
               <div className="hero-cta">
                 <Button
                   variant="primary"
-                  className="hero-cta-book"
+                  className="hero-cta-book book-call-button"
                   onClick={() => window.open(CAL_DISCOVERY_URL, '_blank', 'noopener,noreferrer')}
                 >
-                  Book a Call
+                  <BookCallContent />
                 </Button>
                 <p className="hero-cta-terms">From $5k a month. One-month minimum. Cancel anytime.</p>
               </div>

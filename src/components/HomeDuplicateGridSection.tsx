@@ -4,6 +4,7 @@ import { FormProcessingDemo } from './FormProcessingDemo';
 import { DataAnalysisDemo } from './DataAnalysisDemo';
 import { WingmanDemo } from './WingmanDemo';
 import { CAL_DISCOVERY_URL } from '../lib/links';
+import { BookCallContent } from './BookCallContent';
 import './HomeDuplicateGridSection.css';
 
 const cards = [
@@ -60,12 +61,12 @@ export function HomeDuplicateGridSection() {
             </p>
 
             <a
-              className="home-duplicate-grid-cta fade-in fade-in-stagger-3"
+              className="home-duplicate-grid-cta book-call-button fade-in fade-in-stagger-3"
               href={CAL_DISCOVERY_URL}
               target="_blank"
               rel="noopener noreferrer"
             >
-              Book a Call
+              <BookCallContent />
             </a>
           </div>
         </div>

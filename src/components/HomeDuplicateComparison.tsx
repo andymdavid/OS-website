@@ -1,5 +1,6 @@
 import './HomeDuplicateComparison.css';
 import { CAL_DISCOVERY_URL } from '../lib/links';
+import { BookCallContent } from './BookCallContent';
 import { useState } from 'react';
 
 type FitValue = 'yes' | 'partial' | 'no';
@@ -86,12 +87,12 @@ export function HomeDuplicateComparison() {
               small and show you results in the first month.
             </p>
             <a
-              className="home-comparison-cta fade-in fade-in-stagger-3"
+              className="home-comparison-cta book-call-button fade-in fade-in-stagger-3"
               href={CAL_DISCOVERY_URL}
               target="_blank"
               rel="noopener noreferrer"
             >
-              Book a Call
+              <BookCallContent />
             </a>
           </div>
         </div>

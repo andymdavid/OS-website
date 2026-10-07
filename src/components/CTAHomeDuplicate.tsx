@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from './Button';
 import { CAL_DISCOVERY_URL } from '../lib/links';
+import { BookCallContent } from './BookCallContent';
 import './IntroSection.css';
 import './CTASection.css';
 
@@ -38,11 +39,11 @@ export function CTAHomeDuplicate({
         <p className="cta-intro">{intro}</p>
 
         <Button
-          className="cta-button cta-button-orange"
+          className={`cta-button cta-button-orange ${buttonLabel === 'Book a Call' ? 'book-call-button' : ''}`}
           variant="primary"
           onClick={() => window.open(CAL_DISCOVERY_URL, '_blank', 'noopener,noreferrer')}
         >
-          {buttonLabel}
+          {buttonLabel === 'Book a Call' ? <BookCallContent /> : buttonLabel}
         </Button>
       </div>
     </section>

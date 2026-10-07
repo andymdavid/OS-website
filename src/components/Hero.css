@@ -172,13 +172,6 @@
   border-color: #ff751f;
 }
 
-.os-home-duplicate .hero-cta .hero-cta-book {
-  width: min(260px, 72vw);
-  height: 44px;
-  padding-inline: 32px;
-  font-size: 15px;
-}
-
 .hero-cta .hero-cta-book:active {
   background: var(--color-text);
   color: var(--color-background);

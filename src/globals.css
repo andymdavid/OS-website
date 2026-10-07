@@ -381,6 +381,56 @@ h2 {
   box-shadow: none;
 }
 
+.os-theme .book-call-button {
+  width: 132px !important;
+  min-width: 0 !important;
+  height: 40px !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 4px 5px 4px 14px !important;
+  border: 0;
+  border-radius: 4px !important;
+  background: var(--color-text);
+  color: var(--color-background);
+  font-family: 'Geist', var(--font-ui);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1;
+  text-transform: none;
+  white-space: nowrap;
+}
+
+.os-theme .book-call-button:hover {
+  background: #ff751f;
+  color: #ffffff;
+}
+
+.os-theme .book-call-button:hover .book-call-button-arrow {
+  transform: translate(1px, -1px);
+}
+
+.book-call-button-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  border-radius: 4px;
+  background: var(--color-background);
+  color: var(--color-text);
+  transition: transform var(--duration-base) var(--ease-out);
+}
+
+.book-call-button-arrow svg {
+  width: 15px;
+  height: 15px;
+  stroke-width: 2;
+}
+
 .os-theme .btn-secondary {
   /* Dimensions */
   width: auto;
