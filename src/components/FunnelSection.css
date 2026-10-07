@@ -8,13 +8,7 @@
 }
 
 .os-home-duplicate .funnel-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: rgba(240, 240, 240, 0.08);
+  content: none;
 }
 
 /* Pill-style label */
@@ -93,7 +87,7 @@
 }
 
 .funnel-card:hover .funnel-card-image img {
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .funnel-card-overlay {
@@ -370,22 +364,29 @@
 
 .os-home-duplicate .funnel-section-home-duplicate .funnel-card-recommended {
   position: absolute;
-  top: 14px;
-  right: 14px;
+  top: 0;
+  right: 0;
   z-index: 4;
-  padding: 7px 11px;
-  border: 1px solid rgba(114, 255, 114, 0.72);
-  border-radius: 999px;
-  background: rgba(9, 24, 15, 0.92);
-  box-shadow: 0 0 18px rgba(114, 255, 114, 0.2);
-  color: #9cff9c;
+  width: 26%;
+  height: auto;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .recommended-ribbon-band {
+  fill: none;
+  stroke: #ff751f;
+  stroke-width: 42;
+  stroke-linecap: round;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .recommended-ribbon-text {
+  fill: #0f0e0d;
   font-family: var(--font-ui);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  line-height: 1;
-  text-transform: uppercase;
-  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  dominant-baseline: central;
 }
 
 .os-home-duplicate .funnel-section-home-duplicate .funnel-card-body {
@@ -436,22 +437,18 @@
 .os-home-duplicate .funnel-section-home-duplicate .funnel-card-image {
   position: relative;
   width: 100%;
-  height: clamp(210px, 20vw, 280px);
+  height: auto;
+  aspect-ratio: 4 / 3;
   margin-top: 0;
-  border: 1px solid rgba(240, 240, 240, 0.08);
+  border: 0;
   border-radius: 4px;
-  background: rgba(240, 240, 240, 0.04);
+  background: transparent;
   overflow: hidden;
   opacity: 1;
 }
 
 .os-home-duplicate .funnel-section-home-duplicate .funnel-card-image::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: rgba(15, 14, 13, 0.54);
-  pointer-events: none;
+  content: none;
 }
 
 .os-home-duplicate .funnel-section-home-duplicate .funnel-card-image img {
@@ -460,12 +457,50 @@
   filter: brightness(0.78);
 }
 
+.os-home-duplicate .funnel-section-home-duplicate .funnel-card-image .static-help-image {
+  object-fit: cover;
+  object-position: center;
+  filter: none;
+  transition: transform 450ms var(--ease-out), filter 450ms var(--ease-out);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .funnel-card-image .static-help-image-interface-centred {
+  object-position: center 41%;
+}
+
 .os-home-duplicate .funnel-section-home-duplicate .funnel-card:hover .funnel-card-image {
   opacity: 1;
 }
 
 .os-home-duplicate .funnel-section-home-duplicate .funnel-card:hover .funnel-card-image img {
   transform: none;
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .funnel-card-image img.static-help-image-wingman {
+  transform: scale(1.05);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .funnel-card-image img.static-help-image-custom-software {
+  transform: scale(0.95);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .funnel-card:hover .funnel-card-image img.static-help-image {
+  transform: scale(1.02);
+  filter: brightness(1.025) saturate(1.025);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .funnel-card:hover .funnel-card-image img.static-help-image-wingman {
+  transform: scale(1.075);
+}
+
+.os-home-duplicate .funnel-section-home-duplicate .funnel-card:hover .funnel-card-image img.static-help-image-custom-software {
+  transform: scale(0.975);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .os-home-duplicate .funnel-section-home-duplicate .funnel-card-image .static-help-image {
+    transition: none;
+  }
 }
 
 .os-home-duplicate .funnel-section-home-duplicate .people-overlay {
@@ -2108,8 +2143,8 @@
 
 .os-home-duplicate .funnel-section-home-duplicate .funnel-card-button {
   align-self: start;
-  width: 170px;
-  min-width: 170px;
+  width: 132px;
+  min-width: 132px;
   margin-top: clamp(20px, 2vw, 28px);
   background: #f0f0f0;
   color: #050505;
@@ -2351,7 +2386,7 @@
   }
 
   .os-home-duplicate .funnel-section-home-duplicate .funnel-card-button {
-    width: 170px;
+    width: 132px;
   }
 }
 
@@ -2520,7 +2555,7 @@
   }
 
   .os-home-duplicate .funnel-section-home-duplicate .funnel-card-button {
-    width: 170px;
+    width: 132px;
   }
 
   .os-home-duplicate .funnel-section-home-duplicate .funnel-card-button:hover,

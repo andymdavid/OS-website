@@ -45,7 +45,7 @@ const leverageTerminalSequence: TerminalWorkflowStep[] = [
   { type: 'output', content: 'found 18 open opportunities' },
   { type: 'code', content: 'context = gather(records, notes, rate_cards, files)' },
   { type: 'output', content: 'Horizon Media: scope notes + current rate card attached' },
-  { type: 'output', content: 'Northern Group: discovery call + delivery assumptions attached' },
+  { type: 'output', content: 'Westland Group: discovery call + delivery assumptions attached' },
   { type: 'agent', content: 'Wingman drafting proposal packs' },
   { type: 'code', content: 'drafts = generate_quote_packs(context)' },
   { type: 'output', content: 'created /proposals/horizon-media/quote-pack-v1.pdf' },

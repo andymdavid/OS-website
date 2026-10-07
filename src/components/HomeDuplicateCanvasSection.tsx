@@ -157,7 +157,7 @@ function WingmanMicroVisual({ visual }: { visual: string }) {
             <strong>12</strong>
           </div>
         </div>
-        {['Mitchell & Co', 'Horizon Media', 'Northern Group'].map((item, index) => (
+        {['Mitchell & Co', 'Horizon Media', 'Pilbara Projects'].map((item, index) => (
           <div key={item} className="micro-app-row" style={{ '--delay': `${index * 0.24}s` } as CSSProperties}>
             <span>{item}</span>
             <i>{index === 0 ? 'Review' : index === 1 ? 'Send' : 'Approve'}</i>

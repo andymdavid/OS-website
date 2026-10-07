@@ -27,13 +27,13 @@ const terminalSequence: TerminalStep[] = [
 const accounts = [
   { name: 'Mitchell & Co', amount: 18400, days: 75, risk: 'high' },
   { name: 'Horizon Media', amount: 12200, days: 45, risk: 'medium' },
-  { name: 'Northern Group', amount: 8600, days: 32, risk: 'low' },
+  { name: 'Westland Group', amount: 8600, days: 32, risk: 'low' },
 ];
 
 const notifications = [
   { title: 'Payment reminder sent', subtitle: 'Mitchell & Co · $18,400 overdue' },
   { title: 'Follow-up email sent', subtitle: 'Horizon Media · $12,200 at 45 days' },
-  { title: 'Invoice resent', subtitle: 'Northern Group · $8,600 due' },
+  { title: 'Invoice resent', subtitle: 'Westland Group · $8,600 due' },
   { title: 'Statement sent', subtitle: 'Coastal Supplies · $4,200 at 38 days' },
   { title: 'Payment reminder sent', subtitle: 'Summit Partners · $3,100 at 31 days' },
 ];
