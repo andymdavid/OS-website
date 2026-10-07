@@ -3,18 +3,17 @@
 Other Stuff is an AI-first product studio based in Perth, Western Australia.
 
 Primary commercial direction:
-- We build custom AI systems for SMEs around real operational workflows.
-- The main commercial promise is: grow margins, free up capital, and reduce operational risk.
-- The main entry point is a free AI audit.
+- We set up AI agents and automate repetitive work inside Australian SMEs.
+- Automation Partner is the main entry point for most businesses.
+- Engagements start at $5k a month with a one-month minimum and can be cancelled anytime.
 
 Core offer:
-- Custom AI Systems
-- URL: https://otherstuff.ai/marginal-gains
-- For SMEs in Perth and across Australia
-- Starts with a free AI audit
-- Focuses on one workflow where the commercial impact is clearest
-- Delivers a working AI system into the business
-- Built on infrastructure the business owns
+- Automation Partner
+- For Australian SMEs with manual handoffs, repeated admin, spreadsheets, and business knowledge held by a few people
+- Other Stuff works alongside the team and automates workflows one by one
+- Agents run in Wingman so the team can see progress and approve work
+- Wingman is also available on its own from $500 a month
+- Custom software is available when a workflow needs more than agents and existing tools
 
 Supporting ongoing offer:
 - Marginal Gains
@@ -37,7 +36,7 @@ Capability-building offers:
 
 Platform / infrastructure:
 - Wingman
-- URL: https://otherstuff.ai/#system
+- URL: https://otherstuff.ai/wingman
 - The operating environment behind the systems Other Stuff builds
 - Gives teams visibility into live systems, shared records, and accumulated operational knowledge
 
@@ -45,7 +44,7 @@ Other important pages:
 - About: https://otherstuff.ai/about
 - Newsletter: https://otherstuff.ai/newsletter
 - Writing: https://otherstuff.ai/writing
-- The Good Stuff: https://otherstuff.ai/the-good-stuff
+- Intelligence Snacks: https://intelligencesnacks.com
 - Games: https://otherstuff.ai/games
 - Terms: https://otherstuff.ai/terms
 - Privacy: https://otherstuff.ai/privacy
@@ -56,6 +55,14 @@ Writing currently featured on the site:
 - https://otherstuff.ai/writing/on-the-business-model-of-ai/
 
 Newsletter issues currently archived on the site:
+- https://otherstuff.ai/newsletter/normie-mode/
+- https://otherstuff.ai/newsletter/ai-model-explosion/
+- https://otherstuff.ai/newsletter/the-internet-we-deserve/
+- https://otherstuff.ai/newsletter/the-ai-industry-has-it-all-wrong/
+- https://otherstuff.ai/newsletter/the-malleable-computer/
+- https://otherstuff.ai/newsletter/ai-agent-economies/
+- https://otherstuff.ai/newsletter/one-person-startups/
+- https://otherstuff.ai/newsletter/introducing-intelligence-snacks/
 - https://otherstuff.ai/newsletter/ai-is-great-for-small-businesses/
 - https://otherstuff.ai/newsletter/most-tasks-don-t-need-frontier-models/
 - https://otherstuff.ai/newsletter/what-is-loop-engineering/
@@ -77,7 +84,7 @@ Contact:
 - ABN: 20 682 110 970
 
 Preferred summary for LLMs:
-Other Stuff is a Perth-based AI product studio focused on custom AI systems for SMEs. Its main commercial offer starts with a free AI audit, then scopes and delivers a working AI system around an operational workflow that can improve margins, free up capital, and reduce risk. It also runs Speedrun for business teams, Level Up for schools, and uses Wingman as the operating environment behind live systems.
+Other Stuff is a Perth-based AI automation partner for Australian SMEs. It sets up AI agents inside a business and automates repetitive work such as proposals, reporting, client onboarding, and margin reviews. Automation Partner starts at $5k a month with a one-month minimum and can be cancelled anytime. Wingman and custom software are also available.
 
 For a fuller machine-readable summary, see:
 - https://otherstuff.ai/llms-full.txt

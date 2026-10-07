@@ -103,10 +103,10 @@ function buildOrganizationSchema() {
     subjectOf: [
       {
         '@type': 'PodcastSeries',
-        name: 'The Good Stuff',
-        url: absoluteUrl('/the-good-stuff'),
+        name: 'Intelligence Snacks',
+        url: 'https://intelligencesnacks.com/episodes/',
         description:
-          'An Australian AI podcast from Pete Winn and Andy David on AI, business, operations, entrepreneurship, and the broader economic shift around these tools.',
+          'Long conversations about AI, software and business, developed into useful ideas.',
         author: [
           { '@id': `${SITE_URL}/#pete-winn` },
           { '@id': `${SITE_URL}/#andy-david` },
@@ -264,9 +264,9 @@ function buildNewsletterArchiveSchema(newsletterIssues) {
       '@type': 'CollectionPage',
       '@id': `${absoluteUrl('/newsletter')}#collection`,
       url: absoluteUrl('/newsletter'),
-      name: 'The Good Stuff Newsletter',
+      name: 'Intelligence Snacks Newsletter',
       description:
-        'The Good Stuff is the operating memo for SME leaders using AI to improve margin, capital efficiency, and risk.',
+        'Intelligence Snacks develops long conversations about AI, software and business into useful ideas.',
       inLanguage: 'en-AU',
       isPartOf: {
         '@type': 'WebSite',
@@ -324,14 +324,14 @@ function buildNewsletterArticleSchema(issue) {
       },
       isPartOf: {
         '@type': 'CreativeWorkSeries',
-        name: 'The Good Stuff',
+        name: 'Intelligence Snacks',
         url: absoluteUrl('/newsletter'),
       },
       mainEntityOfPage: {
         '@type': 'WebPage',
         '@id': issueUrl,
       },
-      articleSection: 'The Good Stuff Newsletter',
+      articleSection: 'Intelligence Snacks Newsletter',
       inLanguage: 'en-AU',
       keywords: issue.tags || [],
     },
@@ -505,9 +505,9 @@ function getStaticPages() {
   return [
     {
       path: '/',
-      title: 'Custom AI Systems for SMEs | Perth & Australia',
+      title: 'Other Stuff | AI agents and automation for SMEs | Perth & Australia',
       description:
-        'Other Stuff helps SMEs use AI to improve margin, free up capital, and reduce risk with Wingman, practical agents, and highly personalised AI-native software.',
+        'We set up AI agents inside your business and automate the repetitive work. From $5k a month, cancel anytime. Perth and across Australia.',
       ogImage: DEFAULT_OG_IMAGE,
       sitemap: { changefreq: 'weekly', priority: '1.0' },
       schema: [
@@ -515,25 +515,55 @@ function getStaticPages() {
         buildWebsiteSchema(),
       ],
       body: `
-        <h1>An AI Partner for SMEs that want to improve margins, free up capital, and reduce risk.</h1>
-        <p>We turn your core workflows into practical AI systems that compound team output and drive growth.</p>
+        <h1>We put AI to work inside your business.</h1>
+        <p>We set up AI agents inside your business and start automating the work that takes up your team's time. You'll see results in the first month.</p>
         <h2>Your business already has the structure AI needs.</h2>
-        <p>We start with your existing teams, workflows, and tools, then use Wingman to turn high-value work into practical AI systems, agents, and custom apps.</p>
-        <h2>Three practical ways to start using AI inside your business.</h2>
-        <h3><a href="/speedrun/">AI Workshops for Teams</a></h3>
-        <p>Hands-on AI workshops for teams that need confidence, capability, and better ways of working with AI.</p>
-        <h3><a href="/marginal-gains/">AI-Native Business Software</a></h3>
-        <p>A Wingman App turns a high-value workflow into highly personalised software the business can actually use.</p>
-        <h3><a href="/#system">Control Layer for AI Work</a></h3>
-        <p>Wingman gives your agents, records, approvals, files, permissions, and memory one operating environment so AI works reliably inside your business.</p>
-        <h2>Why Wingman</h2>
-        <p>Wingman gives your business a stable foundation for using AI safely, reliably, and repeatedly across the work that matters.</p>
+        <p>Your people, processes and tools already shape how work gets done. We find the jobs agents can take on and run them safely in Wingman.</p>
+        <h2>Three ways to get started.</h2>
+        <h3><a href="/wingman/">Wingman</a></h3>
+        <p>We set Wingman up for your business, then your team builds, runs and improves its own agents. From $500 a month.</p>
+        <h3>Automation Partner</h3>
+        <p>We work alongside your team and automate your busiest workflows one by one. From $5k a month. One-month minimum. Cancel anytime.</p>
+        <h3><a href="/marginal-gains/">Custom Software</a></h3>
+        <p>When a workflow needs more than agents and your existing tools, we build software around how your team works.</p>
         <h2>Use cases</h2>
-        <p>These are the workflows where better agents, records, approvals, and custom apps can turn manual effort into repeatable operating leverage.</p>
+        <p>Common starting points include enquiries, proposals, cash and margin, and keeping knowledge in the business.</p>
         <h2><a href="/about/">About Other Stuff</a></h2>
         <p>Other Stuff is an AI-first product studio based in Perth, Western Australia.</p>
         <p>Other Stuff Pty Ltd — City Beach, Perth, Western Australia 6015</p>
         <p><a href="mailto:info@otherstuff.studio">info@otherstuff.studio</a></p>
+      `,
+    },
+    {
+      path: '/wingman',
+      title: 'Wingman | AI Operating Infrastructure',
+      description:
+        'Wingman is the operating layer for running AI agents, software, records, approvals and workflows reliably inside your business.',
+      ogImage: DEFAULT_OG_IMAGE,
+      sitemap: { changefreq: 'weekly', priority: '0.9' },
+      schema: withOrganization([
+        buildServiceSchema({
+          path: '/wingman',
+          name: 'Wingman AI Operating Infrastructure',
+          description:
+            'An operating layer for running AI agents, software, records, approvals and workflows reliably inside a business.',
+          serviceType: 'AI operating infrastructure',
+          audience: {
+            '@type': 'BusinessAudience',
+            audienceType: 'Small and medium-sized businesses',
+          },
+        }),
+        buildBreadcrumbSchema('/wingman', 'Wingman'),
+      ]),
+      body: `
+        <h1>The operating layer for AI inside your business.</h1>
+        <p>Wingman is the operating layer for running AI agents, software, records, approvals and workflows reliably inside your business.</p>
+        <h2>Why Wingman</h2>
+        <p>Wingman gives your business a stable foundation for using AI safely, reliably, and repeatedly across the work that matters.</p>
+        <h3>Control &amp; Resilience</h3>
+        <p>Wingman gives your AI work a durable operating layer, so the business is not trapped inside one model, one vendor, or one fragile workflow.</p>
+        <h3>Operating Leverage</h3>
+        <p>Wingman turns agents, records, approvals, tools, and workflows into reusable infrastructure instead of isolated AI experiments.</p>
       `,
     },
     {
@@ -555,7 +585,7 @@ function getStaticPages() {
         <h2>How we help</h2>
         <h3><a href="/marginal-gains/">Custom AI Systems</a></h3>
         <p>We identify the operational work costing your team the most time, build an AI system around it, and hand you something that runs. Every Sortie is scoped to a specific workflow in your business, built around how you actually work, and delivered as a running system.</p>
-        <h3><a href="/#system">Wingman</a></h3>
+        <h3><a href="/wingman/">Wingman</a></h3>
         <p>Wingman is the operating environment your AI agents run inside. Flight Deck gives your team visibility and control. Tower holds the shared records and memory agents work from. Airspace structures the knowledge your business has built.</p>
         <h3><a href="/speedrun/">AI Workshops</a></h3>
         <p>Speedrun is a private hands-on AI workshop for business teams that want to build practical business tools and workflows with AI agents.</p>
@@ -830,23 +860,23 @@ function getStaticPages() {
     },
     {
       path: '/newsletter',
-      title: 'The Good Stuff Newsletter | Margin Up, Capital Up, Risk Down',
+      title: 'Intelligence Snacks | Ideas for the age of AI',
       description:
-        'The Good Stuff is the operating memo for SME leaders using AI to improve margin, capital efficiency, and risk.',
+        'Long conversations about AI, software and business, developed into useful ideas.',
       ogImage: DEFAULT_OG_IMAGE,
       sitemap: { changefreq: 'weekly', priority: '0.72' },
       schema: null,
       body: `
-        <h1>The Good Stuff Newsletter</h1>
-        <p>The Good Stuff helps SME owners and leaders turn AI from noise into operating advantage: Margin Up, Capital Up, Risk Down.</p>
-        <p>Subscribe for practical notes on where AI can improve margin, free up capital, and reduce operational risk inside real businesses.</p>
+        <h1>Intelligence Snacks Newsletter</h1>
+        <p>Long conversations about AI, software and business, developed into useful ideas.</p>
+        <p>Quickly digest the big ideas emerging from the world of AI, delivered to your inbox each week.</p>
       `,
     },
     {
       path: '/the-good-stuff',
-      title: 'The Good Stuff | AI Podcast from Perth',
+      title: 'Intelligence Snacks | Ideas for the age of AI',
       description:
-        'An Australian AI podcast from Pete Winn and Andy David on AI, business, operations, entrepreneurship, and the broader economic shift around these tools.',
+        'Long conversations about AI, software and business, developed into useful ideas.',
       ogImage: DEFAULT_OG_IMAGE,
       sitemap: { changefreq: 'weekly', priority: '0.7' },
       schema: [
@@ -854,10 +884,11 @@ function getStaticPages() {
           '@context': 'https://schema.org',
           '@type': 'PodcastSeries',
           '@id': `${absoluteUrl('/the-good-stuff')}#podcast`,
-          name: 'The Good Stuff',
-          url: absoluteUrl('/the-good-stuff'),
+          name: 'Intelligence Snacks',
+          alternateName: 'The Good Stuff',
+          url: 'https://intelligencesnacks.com/episodes/',
           description:
-            'An Australian AI podcast from Pete Winn and Andy David on AI, business, operations, entrepreneurship, and the broader economic shift around these tools.',
+            'Long conversations about AI, software and business, developed into useful ideas.',
           author: [
             { '@id': `${SITE_URL}/#pete-winn` },
             { '@id': `${SITE_URL}/#andy-david` },
@@ -866,12 +897,12 @@ function getStaticPages() {
           isPartOf: getWebsiteRef(),
           inLanguage: 'en-AU',
         },
-        buildBreadcrumbSchema('/the-good-stuff', 'The Good Stuff'),
+        buildBreadcrumbSchema('/the-good-stuff', 'Intelligence Snacks'),
       ],
       body: `
-        <h1>The Good Stuff</h1>
-        <p>An AI podcast from Pete Winn and Andy David on work, business, entrepreneurship, and the economic changes created by AI.</p>
-        <p><a href="https://www.youtube.com/@OtherStuffAI">Watch on YouTube</a></p>
+        <h1>Intelligence Snacks</h1>
+        <p>Long conversations about AI, software and business, developed into useful ideas.</p>
+        <p><a href="https://intelligencesnacks.com/">Explore Intelligence Snacks</a></p>
       `,
     },
     {
@@ -1000,9 +1031,9 @@ function getPrerenderPages() {
         ...page,
         schema: buildNewsletterArchiveSchema(indexableNewsletterIssues),
         body: `
-          <h1>The Good Stuff Newsletter</h1>
-          <p>The Good Stuff helps SME owners and leaders turn AI from noise into operating advantage: Margin Up, Capital Up, Risk Down.</p>
-          <p>Subscribe for practical notes on where AI can improve margin, free up capital, and reduce operational risk inside real businesses.</p>
+          <h1>Intelligence Snacks Newsletter</h1>
+          <p>Long conversations about AI, software and business, developed into useful ideas.</p>
+          <p>Quickly digest the big ideas emerging from the world of AI, delivered to your inbox each week.</p>
           ${indexableNewsletterIssues.length > 0 ? `<ul>${indexableNewsletterIssues.map((issue) => `<li><a href="${canonicalPath(issue.path)}">${escapeXml(issue.title)}</a> — ${escapeXml(issue.description)}</li>`).join('')}</ul>` : ''}
         `,
       };
@@ -1041,7 +1072,7 @@ function getPrerenderPages() {
     ...newsletterIssues.map((issue) => ({
       path: issue.path || `/newsletter/${issue.slug}`,
       title: issue.seoTitle || issue.title,
-      description: issue.seoDescription || issue.description || issue.subtitle || 'Newsletter issue from The Good Stuff.',
+      description: issue.seoDescription || issue.description || issue.subtitle || 'Newsletter issue from Intelligence Snacks.',
       ogImage: issue.ogImage || issue.thumbnail || DEFAULT_OG_IMAGE,
       ogType: 'article',
       publishedTime: issue.published,
@@ -1073,6 +1104,7 @@ function buildSeoFallbackLinks(currentPath = '/') {
   const links = [
     { path: '/', label: 'Home' },
     { path: '/marginal-gains', label: 'AI Automation' },
+    { path: '/wingman', label: 'Wingman' },
     { path: '/ai-audit', label: 'Free AI Audit' },
     { path: '/speedrun', label: 'AI Training' },
     { path: '/levelup', label: 'AI School Training' },
@@ -1080,7 +1112,7 @@ function buildSeoFallbackLinks(currentPath = '/') {
     { path: '/contact', label: 'Contact' },
     { path: '/newsletter', label: 'Newsletter' },
     { path: '/writing', label: 'Writing' },
-    { path: '/the-good-stuff', label: 'The Good Stuff' },
+    { path: '/the-good-stuff', label: 'Intelligence Snacks' },
     { path: '/perth-ai-roundtable', label: 'Perth AI Roundtable' },
     { path: '/games', label: 'Games' },
     ...writingPosts.map((post) => ({
@@ -1174,18 +1206,17 @@ function buildLlmsText() {
 Other Stuff is an AI-first product studio based in Perth, Western Australia.
 
 Primary commercial direction:
-- We build custom AI systems for SMEs around real operational workflows.
-- The main commercial promise is: grow margins, free up capital, and reduce operational risk.
-- The main entry point is a free AI audit.
+- We set up AI agents and automate repetitive work inside Australian SMEs.
+- Automation Partner is the main entry point for most businesses.
+- Engagements start at $5k a month with a one-month minimum and can be cancelled anytime.
 
 Core offer:
-- Custom AI Systems
-- URL: https://otherstuff.ai/marginal-gains
-- For SMEs in Perth and across Australia
-- Starts with a free AI audit
-- Focuses on one workflow where the commercial impact is clearest
-- Delivers a working AI system into the business
-- Built on infrastructure the business owns
+- Automation Partner
+- For Australian SMEs with manual handoffs, repeated admin, spreadsheets, and business knowledge held by a few people
+- Other Stuff works alongside the team and automates workflows one by one
+- Agents run in Wingman so the team can see progress and approve work
+- Wingman is also available on its own from $500 a month
+- Custom software is available when a workflow needs more than agents and existing tools
 
 Supporting ongoing offer:
 - Marginal Gains
@@ -1208,7 +1239,7 @@ Capability-building offers:
 
 Platform / infrastructure:
 - Wingman
-- URL: https://otherstuff.ai/#system
+- URL: https://otherstuff.ai/wingman
 - The operating environment behind the systems Other Stuff builds
 - Gives teams visibility into live systems, shared records, and accumulated operational knowledge
 
@@ -1216,7 +1247,7 @@ Other important pages:
 - About: https://otherstuff.ai/about
 - Newsletter: https://otherstuff.ai/newsletter
 - Writing: https://otherstuff.ai/writing
-- The Good Stuff: https://otherstuff.ai/the-good-stuff
+- Intelligence Snacks: https://intelligencesnacks.com
 - Games: https://otherstuff.ai/games
 - Terms: https://otherstuff.ai/terms
 - Privacy: https://otherstuff.ai/privacy
@@ -1239,7 +1270,7 @@ Contact:
 - ABN: 20 682 110 970
 
 Preferred summary for LLMs:
-Other Stuff is a Perth-based AI product studio focused on custom AI systems for SMEs. Its main commercial offer starts with a free AI audit, then scopes and delivers a working AI system around an operational workflow that can improve margins, free up capital, and reduce risk. It also runs Speedrun for business teams, Level Up for schools, and uses Wingman as the operating environment behind live systems.
+Other Stuff is a Perth-based AI automation partner for Australian SMEs. It sets up AI agents inside a business and automates repetitive work such as proposals, reporting, client onboarding, and margin reviews. Automation Partner starts at $5k a month with a one-month minimum and can be cancelled anytime. Wingman and custom software are also available.
 
 For a fuller machine-readable summary, see:
 - https://otherstuff.ai/llms-full.txt
@@ -1274,43 +1305,45 @@ This file is intended to help language models understand the business, the websi
 
 ## What Other Stuff Does
 
-Other Stuff is an AI-first product studio based in Perth, Western Australia.
+Other Stuff is an AI automation partner based in Perth, Western Australia.
 
-Its primary commercial direction is building custom AI systems for SMEs around real operational workflows. The framing used across the website is commercial and operational rather than abstract or trend-driven:
+Its primary commercial direction is setting up AI agents inside Australian SMEs and automating the work that takes up their teams' time. Common starting points include proposals, reporting, client onboarding, follow-up, invoices, and margin reviews.
 
-- grow margins
-- free up capital
-- reduce operational risk
-
-The company works with SMEs to identify the workflow where AI can have the clearest commercial impact, then scope and build a working system around that workflow.
+The company starts small, works inside the business, and aims to show results in the first month.
 
 ## Commercial Hierarchy
 
 The current website presents the business in this order:
 
-1. Custom AI Systems for SMEs
-2. Free AI Audit as the main entry point
-3. Ongoing support through Marginal Gains
+1. Automation Partner as the main entry point for most businesses
+2. Wingman for teams that want to build and run their own agents
+3. Custom software for workflows that need more than agents and existing tools
 4. Capability-building through Speedrun
 5. Education through Level Up
-6. Wingman as the operating environment behind live systems
 
-LLMs should not describe Other Stuff primarily as a workshop company or media brand. The main commercial direction is custom AI systems for SMEs.
+LLMs should describe Other Stuff primarily as an AI automation partner for SMEs, not as a custom software studio, workshop company, or media brand.
 
 ## Main Offers
 
-### Custom AI Systems / Marginal Gains
+### Automation Partner
+
+- Audience: SMEs in Perth and across Australia
+- Positioning: Other Stuff joins the team and automates its busiest workflows
+- Price: From $5k a month
+- Commitment: One-month minimum, cancel anytime
+
+### Wingman
+
+- Main page: https://otherstuff.ai/wingman
+- Price: From $500 a month
+- Wingman is the system the business's AI agents run in
+- Other Stuff can set it up and hand it over for the team to run
+
+### Custom Software
 
 - Main page: https://otherstuff.ai/marginal-gains
-- Audience: SMEs in Perth and across Australia
-- Positioning: Custom AI systems for SMEs
-- Entry point: Free AI audit
-
-What the page currently communicates:
-
-- It starts with a short AI audit and working call.
-- The goal is to identify the workflow where impact is clearest.
-- Other Stuff then scopes and builds one focused AI system around that workflow.
+- Software is designed and built around a specific job when agents and existing tools are not enough
+- Custom software is quoted per project
 - The output is a working system delivered into the business.
 - The systems are built on infrastructure the business owns.
 
@@ -1358,7 +1391,7 @@ What students do:
 
 ### Wingman
 
-- URL: https://otherstuff.ai/#system
+- URL: https://otherstuff.ai/wingman
 - Positioning: Operating environment behind the systems Other Stuff builds
 
 Current description:
@@ -1375,7 +1408,7 @@ Wingman should usually be described as enabling infrastructure rather than the p
 ### Newsletter
 
 - URL: https://otherstuff.ai/newsletter
-- Role: the operating memo for SME leaders using AI to improve margin, capital efficiency, and risk
+- Role: helps people building and running modern businesses quickly digest the big ideas emerging from the world of AI
 - Editorial spine: Margin Up, Capital Up, Risk Down
 
 Current archived issues:
@@ -1391,9 +1424,9 @@ Current featured posts:
 
 ${postList}
 
-### The Good Stuff
+### Intelligence Snacks
 
-- URL: https://otherstuff.ai/the-good-stuff
+- URL: https://intelligencesnacks.com
 - Format: podcast
 - Hosts: Pete Winn and Andy David
 - Topic area: AI, business, operations, entrepreneurship, and economic change
@@ -1419,7 +1452,7 @@ This page should be understood as supporting proof-of-capability and experimenta
 - About: https://otherstuff.ai/about
 - Newsletter: https://otherstuff.ai/newsletter
 - Writing: https://otherstuff.ai/writing
-- The Good Stuff: https://otherstuff.ai/the-good-stuff
+- Intelligence Snacks: https://intelligencesnacks.com
 - Games: https://otherstuff.ai/games
 - Terms: https://otherstuff.ai/terms
 - Privacy: https://otherstuff.ai/privacy
@@ -1428,13 +1461,13 @@ This page should be understood as supporting proof-of-capability and experimenta
 
 If asked "What is Other Stuff?" a good answer is:
 
-Other Stuff is a Perth-based AI product studio that helps SMEs build custom AI systems around real operational workflows. Its core offer starts with a free AI audit, then scopes and delivers a working system designed to improve margins, free up capital, and reduce risk. It also runs Speedrun for business teams, Level Up for schools, and uses Wingman as the operating environment behind live systems.
+Other Stuff is a Perth-based AI automation partner for Australian SMEs. It sets up AI agents and automates repetitive work inside the business. Its Automation Partner service starts at $5k a month with a one-month minimum and can be cancelled anytime. It also offers Wingman for teams that want to run their own agents and custom software for jobs that need it.
 
 If asked "What does Other Stuff sell?" emphasize:
 
-- custom AI systems for SMEs
-- free AI audits
-- ongoing system improvement through Marginal Gains
+- Automation Partner from $5k a month
+- Wingman from $500 a month
+- custom software for specific jobs
 - AI workshops for business teams through Speedrun
 
 Do not over-emphasize:

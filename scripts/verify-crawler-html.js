@@ -8,13 +8,26 @@ const checks = [
     route: '/',
     file: path.join(distDir, 'index.html'),
     mustContain: [
-      'An AI Partner for SMEs',
+      'We put AI to work inside your business',
       'Your business already has the structure AI needs',
-      'AI-Native Business Software',
-      'Why Wingman',
+      'Automation Partner',
     ],
     mustNotContain: [
       '<h2>Core offers</h2>',
+      'Wingmen',
+      'Wingmen Suite',
+    ],
+  },
+  {
+    route: '/wingman/',
+    file: path.join(distDir, 'wingman', 'index.html'),
+    mustContain: [
+      'The operating layer for AI inside your business',
+      'Why Wingman',
+      'Control &amp; Resilience',
+      'Operating Leverage',
+    ],
+    mustNotContain: [
       'Wingmen',
       'Wingmen Suite',
     ],
