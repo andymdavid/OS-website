@@ -32,7 +32,7 @@ export function FunnelSection() {
         "Wingman is our AI agent management system, designed to bring AI automation into SME's without adding technical complexity.\n\nWhere Speedrun and Marginal Gains focus on building understanding and internal capability, Wingman provides the infrastructure layer that allows that capability to become operational systems.\n\nIt moves beyond using AI as an assistive drafting tool and instead deploy agents into real world processes where work is coordinated, scheduled, and progressed with reduced manual oversight.",
       image: '/Card3.webp',
       buttonText: 'Learn More',
-      buttonHref: '/#system',
+      buttonHref: '/wingman',
     },
   ];
 

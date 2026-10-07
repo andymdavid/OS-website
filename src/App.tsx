@@ -8,6 +8,7 @@ const Company = lazy(() => import('./routes/Company'));
 const LevelUp = lazy(() => import('./routes/LevelUp'));
 const Speedrun = lazy(() => import('./routes/Speedrun'));
 const MarginalGains = lazy(() => import('./routes/MarginalGains'));
+const Wingman = lazy(() => import('./routes/Wingman'));
 const TheGoodStuff = lazy(() => import('./routes/TheGoodStuff'));
 const PerthAIRoundtable = lazy(() => import('./routes/PerthAIRoundtable'));
 const Newsletter = lazy(() => import('./routes/Newsletter'));
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
   {
     path: '/marginal-gains',
     element: <SuspenseWrapper><MarginalGains /></SuspenseWrapper>,
+  },
+  {
+    path: '/wingman',
+    element: <SuspenseWrapper><Wingman /></SuspenseWrapper>,
   },
   {
     path: '/the-good-stuff',

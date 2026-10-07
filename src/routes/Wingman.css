@@ -1,0 +1,38 @@
+.os-wingman-page {
+  min-height: 100vh;
+  background: #0f0e0d;
+}
+
+.os-wingman-page .wingman-product-hero .hero-sticky {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.44) 0%,
+      rgba(0, 0, 0, 0.48) 78%,
+      #0f0e0d 100%
+    ),
+    url('/hero-background-1.webp?v=2') center top / cover no-repeat;
+}
+
+.os-wingman-page .wingman-product-hero .hero-title-block {
+  margin-top: 0;
+}
+
+.os-wingman-page .wingman-product-hero .hero-logo img {
+  width: clamp(62px, 8vw, 94px);
+}
+
+.os-wingman-page .wingman-product-hero .hero-title-block h1 {
+  max-width: 16ch;
+  text-wrap: balance;
+}
+
+.os-wingman-page .wingman-product-hero .hero-title-block > p {
+  color: rgba(240, 240, 240, 0.82);
+}
+
+@media (max-width: 768px) {
+  .os-wingman-page .wingman-product-hero .hero-sticky {
+    background-position: center top;
+  }
+}
