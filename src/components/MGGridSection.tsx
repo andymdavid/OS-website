@@ -11,7 +11,7 @@ const cards = [
     tag: 'FINANCE & INVENTORY',
     title: 'Inventory Intelligence',
     description:
-      'Stock levels, sales velocity, and reorder points monitored continuously and surfaced before they become urgent. Slow-moving stock gets flagged before it ties up capital. Reorder recommendations are based on actual demand, not spreadsheets. Less money sitting on shelves. Fewer stockouts on what actually sells.',
+      'Stock levels and sales are tracked continuously, so slow movers and low stock are flagged early. Reorders are based on actual demand, not a spreadsheet. Less cash on shelves, fewer stockouts.',
     demo: <InventoryDemo />,
     image: '/grid-finance-billing.webp',
   },
@@ -19,15 +19,15 @@ const cards = [
     tag: 'SALES & QUOTING',
     title: 'Proposal Builder',
     description:
-      'Pulls relevant past work, pricing, and capability evidence together into a structured draft when a new opportunity comes in. Your team shapes and sends it rather than building it from scratch. Proposals that reflect the full depth of what your business has delivered, without the hours of assembly.',
+      'When a new opportunity comes in, past work, pricing and case studies are pulled into a structured draft. Your team shapes and sends it instead of starting from scratch. Nothing useful gets forgotten.',
     demo: <ProposalBuilderDemo />,
     image: '/grid-sales-quoting.webp',
   },
   {
-    tag: 'INTERNAL KNOWLEDGE',
+    tag: 'CLIENT SERVICE',
     title: 'Pre-Meeting Briefings',
     description:
-      'Before every client meeting, the system pulls together recent interactions, open issues, and anything flagged since the last conversation into a structured briefing. Your team arrives prepared without spending time piecing it together from emails and notes.',
+      'Before each client meeting, recent conversations, open issues and new flags are pulled into one brief. Your team arrives prepared without digging through emails. Clients notice when you remember everything.',
     demo: <PreMeetingBriefingsDemo />,
     image: '/grid-internal-knowledge.webp',
   },
@@ -35,7 +35,7 @@ const cards = [
     tag: 'REPORTING',
     title: 'Project Status Reports',
     description:
-      'Pulls current job status, recent progress, and any issues requiring attention from across your project data into a structured report ready to review and send. Status updates that currently take hours to compile get done in minutes, and the picture is current every time.',
+      'Project status, progress and issues are pulled from your project data into a report ready to send. Your team reviews it instead of compiling it. Every update reflects where things stand today.',
     demo: <ProjectStatusReportsDemo />,
     image: '/grid-customer-acquisition.webp',
   },
@@ -46,12 +46,12 @@ export function MGGridSection() {
     <section id="what-we-build" className="section home-duplicate-grid-section">
       <div className="section-container-wide">
         <div className="home-duplicate-grid-intro">
-          <div className="intro-pill fade-in">WHAT WE BUILD</div>
+          <div className="intro-pill fade-in">WHAT WE AUTOMATE</div>
           <h2 className="section-heading fade-in fade-in-stagger-1">
-            AI workflow automation built around the business processes costing your team the most time and money.
+            Automation built around the processes costing your team the most time and money.
           </h2>
           <p className="home-duplicate-grid-subpara fade-in fade-in-stagger-2">
-            Every engagement is scoped around the workflow where automation can create the clearest commercial impact. Examples include:
+            Each month, we start with the work where automation will make the clearest commercial difference. Examples include:
           </p>
         </div>
 
