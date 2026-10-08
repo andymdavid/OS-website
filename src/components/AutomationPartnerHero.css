@@ -1,0 +1,125 @@
+.automation-partner-hero .hero-sticky {
+  min-height: 100vh;
+}
+
+.automation-partner-hero .hero-sticky::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(circle at 50% 51%, rgba(5, 5, 5, 0.24), transparent 34%),
+    linear-gradient(180deg, rgba(5, 5, 5, 0.2), transparent 42%, rgba(5, 5, 5, 0.24));
+  pointer-events: none;
+}
+
+.automation-partner-hero .hero-sticky::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  z-index: 1;
+  height: clamp(40px, 6vh, 76px);
+  background: linear-gradient(to bottom, transparent 0%, transparent 32%, rgba(15, 14, 13, 0.28) 78%, var(--color-background) 100%);
+  pointer-events: none;
+}
+
+.automation-partner-hero .hero-inner {
+  align-items: stretch;
+  padding-left: clamp(32px, 6vw, 120px);
+  padding-right: clamp(32px, 6vw, 120px);
+  text-align: left;
+}
+
+.automation-partner-hero-grid {
+  width: min(100%, 1440px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr);
+  align-items: center;
+  column-gap: clamp(48px, 7vw, 112px);
+  transform: translateY(clamp(24px, 4vh, 44px));
+}
+
+.automation-partner-hero .hero-title-block {
+  width: 100%;
+  max-width: 860px;
+  margin: 0;
+  align-items: flex-start;
+}
+
+.automation-partner-hero .hero-duplicate-heading,
+.marginal-gains-page .automation-partner-hero .hero-duplicate-heading {
+  width: 100%;
+  max-width: 100%;
+  font-family: 'Cormorant Garamond', serif !important;
+  font-size: clamp(29.16px, 4.86vw, 58.32px) !important;
+  font-weight: var(--weight-regular) !important;
+  line-height: 1 !important;
+  letter-spacing: normal !important;
+  text-wrap: balance;
+}
+
+.automation-partner-hero .hero-description {
+  max-width: 57ch !important;
+  font-family: 'Geist', var(--font-body) !important;
+}
+
+.automation-partner-hero .hero-cta {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.automation-partner-hero .hero-eyebrow,
+.marginal-gains-page .automation-partner-hero .hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: rgba(240, 240, 240, 0.72);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+.automation-partner-hero .hero-eyebrow::before,
+.marginal-gains-page .automation-partner-hero .hero-eyebrow::before {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 auto;
+  background: #72ff72;
+  box-shadow: 0 0 7px rgba(114, 255, 114, 0.9);
+}
+
+.automation-partner-hero .hero-cta-terms {
+  max-width: none;
+}
+
+@media (max-width: 900px) {
+  .automation-partner-hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .automation-partner-hero .hero-inner {
+    padding: 104px 16px 32px;
+  }
+
+  .marginal-gains-page .automation-partner-hero .hero-inner {
+    padding: 104px 16px 32px;
+  }
+
+  .automation-partner-hero .hero-duplicate-heading,
+  .marginal-gains-page .automation-partner-hero .hero-duplicate-heading {
+    font-size: clamp(38px, 11vw, 52px) !important;
+  }
+
+  .automation-partner-hero-grid {
+    transform: translateY(18px);
+  }
+}
