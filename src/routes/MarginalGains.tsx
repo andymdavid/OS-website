@@ -5,9 +5,9 @@ import { MGGridSection } from "@/components/MGGridSection";
 import { MGHowItWorksSection } from "@/components/MGHowItWorksSection";
 import { CTAHomeDuplicate } from "@/components/CTAHomeDuplicate";
 import { FooterHomeDuplicate } from "@/components/FooterHomeDuplicate";
+import { AutomationPartnerHero } from "@/components/AutomationPartnerHero";
 import {
   MarginalGainsDuplicateBody,
-  MarginalGainsDuplicateHero,
 } from "@/marginal-gains/components/site-shell-duplicate";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { getServiceSchema } from "@/lib/structured-data";
@@ -20,13 +20,13 @@ export default function MarginalGains() {
 
   return (
     <div
-      className="os-theme levelup-theme levelup-theme-vars min-h-screen marginal-gains-page mg-duplicate"
+      className="os-theme os-draft levelup-theme levelup-theme-vars min-h-screen marginal-gains-page mg-duplicate"
       style={{ fontFamily: "'Inter', system-ui, sans-serif" }}
     >
       <SEO
         title="AI Automation & AI Consulting Perth"
         description="Other Stuff helps Perth SMEs identify, design, and deliver AI automation systems that grow margins, free up capital, and reduce operational risk. Practical AI consulting, delivered as working systems."
-        path="/marginal-gains"
+        path="/ai-automation"
         ogImage="/og-marginal-gains.png"
         schema={[
           {
@@ -109,7 +109,7 @@ export default function MarginalGains() {
           },
           {
             ...getServiceSchema({
-              path: "/marginal-gains",
+              path: "/ai-automation",
               name: "AI Automation and AI Consulting Perth",
               description:
                 "AI automation and AI consulting for Perth SMEs, delivered by an AI product studio as working systems around real operational workflows.",
@@ -144,11 +144,11 @@ export default function MarginalGains() {
       <NavigationDraft
         titleSwapOnScroll={{
           before: "OTHER STUFF",
-          after: "MARGINAL GAINS",
+          after: "AUTOMATION PARTNER",
           targetId: "hero",
         }}
       />
-      <MarginalGainsDuplicateHero />
+      <AutomationPartnerHero />
       <PainRecognition />
       <MGGridSection />
       <MGHowItWorksSection />

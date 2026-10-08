@@ -22,7 +22,7 @@ export function FunnelSection() {
         'Marginal Gains is an ongoing AI capability program for the key people in your business who we support to become your internal AI champions.\n\nWe guide them on how to use the tools, adapt as the technology evolves, prototype new software and workflows, and apply AI to real business work over time.\n\nMarginal Gains is designed so AI capability grows from within the business rather than being outsourced.',
       image: '/Card2.webp',
       buttonText: 'Explore Marginal Gains',
-      buttonHref: '/marginal-gains',
+      buttonHref: '/ai-automation',
     },
     {
       category: 'Automate Your Work',

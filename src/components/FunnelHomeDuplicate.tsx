@@ -35,7 +35,7 @@ const cards = [
     image: '/how-we-help-custom-software.png',
     imageAlt: 'Northern Construction project software showing an estimate for Cottesloe Residence.',
     imageClassName: 'static-help-image-custom-software',
-    buttonHref: '/marginal-gains',
+    buttonHref: '/ai-automation',
   },
 ] as const;
 

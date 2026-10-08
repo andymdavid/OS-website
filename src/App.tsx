@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom';
 
 const Home = lazy(() => import('./routes/Home'));
 const HomeDuplicate = lazy(() => import('./routes/HomeDuplicate'));
@@ -45,8 +45,12 @@ const router = createBrowserRouter([
     element: <SuspenseWrapper><Speedrun /></SuspenseWrapper>,
   },
   {
-    path: '/marginal-gains',
+    path: '/ai-automation',
     element: <SuspenseWrapper><MarginalGains /></SuspenseWrapper>,
+  },
+  {
+    path: '/marginal-gains',
+    element: <Navigate to="/ai-automation" replace />,
   },
   {
     path: '/wingman',

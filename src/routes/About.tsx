@@ -67,7 +67,7 @@ export default function About() {
                   Each system on its own can seem contained. But once those systems are running, the effect compounds: margins improve, capital gets freed up, and operational risk starts to come down.
                 </p>
                 <p>
-                  That is the thinking behind our <a href="/marginal-gains">Custom AI Systems work</a>, <a href="/speedrun">Speedrun</a>, and the longer-term support relationships we run with businesses that want to keep building capability over time.
+                  That is the thinking behind our <a href="/ai-automation">Custom AI Systems work</a>, <a href="/speedrun">Speedrun</a>, and the longer-term support relationships we run with businesses that want to keep building capability over time.
                 </p>
               </div>
             </div>
@@ -110,7 +110,7 @@ export default function About() {
               <span className="about-system-card-number">04</span>
               <h3>Build capability</h3>
               <p>
-                We run <a href="/speedrun">Speedrun Workshops</a>, support longer-term development through <a href="/marginal-gains">Marginal Gains</a>, and use <a href="/wingman">Wingman</a> as the operating environment. That gives teams a practical way to learn, operate, and keep improving.
+                We run <a href="/speedrun">Speedrun Workshops</a>, support longer-term development through <a href="/ai-automation">Marginal Gains</a>, and use <a href="/wingman">Wingman</a> as the operating environment. That gives teams a practical way to learn, operate, and keep improving.
               </p>
             </div>
           </div>
