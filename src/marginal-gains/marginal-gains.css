@@ -392,19 +392,26 @@
 }
 
 .marginal-gains-page .intro-pill {
-  background: #0c0b0a;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 9px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: rgba(240, 240, 240, 0.72);
+  font-size: 11px;
+  letter-spacing: 0.08em;
 }
 
 .marginal-gains-page .intro-pill::before {
   content: '';
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  background: #2ea782;
-  animation: pill-pulse 1.5s infinite;
+  background: #72ff72;
+  box-shadow: 0 0 7px rgba(114, 255, 114, 0.9);
+  animation: pill-pulse 1.8s ease-in-out infinite;
 }
 
 .marginal-gains-page .mg-philosophy-section {
@@ -598,12 +605,12 @@
   }
 }
 
-.marginal-gains-page section {
+.marginal-gains-page section:not(.home-duplicate-good-stuff-strip):not(.home-duplicate-client-bar) {
   position: relative;
   min-height: 100vh;
 }
 
-.marginal-gains-page section::after {
+.marginal-gains-page section:not(.home-duplicate-good-stuff-strip):not(.home-duplicate-client-bar)::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -615,10 +622,11 @@
   background: rgba(240, 240, 240, 0.08);
 }
 
-.marginal-gains-page section.speedrun-hero::after {
+.marginal-gains-page section.speedrun-hero::after,
+.marginal-gains-page section.automation-partner-hero::after {
   display: none;
 }
 
-.marginal-gains-page section:last-of-type::after {
+.marginal-gains-page section:not(.home-duplicate-good-stuff-strip):not(.home-duplicate-client-bar):last-of-type::after {
   display: none;
 }
