@@ -41,6 +41,78 @@
   color: #ffffff;
 }
 
+.pain-recognition-signoff {
+  margin-top: 56px;
+}
+
+.pain-recognition-signature {
+  margin: 0 0 18px;
+  color: #ffffff;
+  font-family: 'Caveat', cursive !important;
+  font-size: clamp(34px, 4vw, 46px) !important;
+  font-weight: 500 !important;
+  line-height: 1 !important;
+  transform: rotate(-2deg);
+  transform-origin: left center;
+}
+
+.pain-recognition-founders {
+  display: flex;
+  align-items: center;
+}
+
+.pain-recognition-founders img {
+  width: 58px;
+  height: 58px;
+  display: block;
+  object-fit: cover;
+  border: 2px solid #0f0e0d;
+  border-radius: 50%;
+}
+
+.pain-recognition-founders img + img {
+  margin-left: -12px;
+}
+
+.pain-recognition-signoff-meta,
+.pain-recognition-company {
+  display: flex;
+  align-items: center;
+}
+
+.pain-recognition-signoff-meta {
+  gap: 22px;
+}
+
+.pain-recognition-company {
+  gap: 11px;
+}
+
+.pain-recognition-company > img {
+  width: 34px;
+  height: auto;
+  display: block;
+}
+
+.pain-recognition-role {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-family: 'Geist', var(--font-body) !important;
+  font-size: 14px !important;
+  line-height: 1.35 !important;
+}
+
+.pain-recognition-role strong {
+  color: rgba(240, 240, 240, 0.9);
+  font-weight: 500;
+}
+
+.pain-recognition-role span {
+  color: rgba(240, 240, 240, 0.55);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .pain-recognition-container {
