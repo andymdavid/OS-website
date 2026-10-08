@@ -7,7 +7,6 @@ import { FunnelHomeDuplicate } from '../components/FunnelHomeDuplicate';
 import { HomeDuplicateComparison } from '../components/HomeDuplicateComparison';
 import { FAQHomeDuplicate } from '../components/FAQHomeDuplicate';
 import { CTAHomeDuplicate } from '../components/CTAHomeDuplicate';
-import { HomeDuplicateGoodStuffStrip } from '../components/HomeDuplicateGoodStuffStrip';
 import { HomeDuplicateExitNewsletter } from '../components/HomeDuplicateExitNewsletter';
 import { FooterHomeDuplicate } from '../components/FooterHomeDuplicate';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
@@ -31,7 +30,6 @@ export default function Home() {
           websiteSchema,
         ]}
       />
-      <HomeDuplicateGoodStuffStrip />
       <NavigationDraft />
       <main>
         <HeroHomeDuplicateExperiment />

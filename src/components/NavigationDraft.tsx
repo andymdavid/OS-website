@@ -3,6 +3,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { NewsletterModal } from './NewsletterModal';
 import { CAL_DISCOVERY_URL } from '../lib/links';
 import { BookCallContent } from './BookCallContent';
+import { HomeDuplicateGoodStuffStrip } from './HomeDuplicateGoodStuffStrip';
 import './Navigation.css';
 
 type NavDropdownKey = 'solutions' | 'media';
@@ -11,7 +12,7 @@ const solutions = [
   {
     title: 'AI Automation',
     description: 'Built to grow your margins, free up capital, and reduce risk across the workflows that matter most.',
-    href: '/marginal-gains/',
+    href: '/ai-automation/',
   },
   {
     title: 'Wingman',
@@ -50,6 +51,7 @@ const mediaLinks = [
 
 interface NavigationDraftProps {
   titleOverride?: string;
+  showPromoStrip?: boolean;
   titleSwapOnScroll?: {
     before: string;
     after: string;
@@ -57,7 +59,7 @@ interface NavigationDraftProps {
   };
 }
 
-export function NavigationDraft({ titleOverride, titleSwapOnScroll }: NavigationDraftProps) {
+export function NavigationDraft({ titleOverride, showPromoStrip = true, titleSwapOnScroll }: NavigationDraftProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<NavDropdownKey | null>(null);
@@ -157,7 +159,9 @@ export function NavigationDraft({ titleOverride, titleSwapOnScroll }: Navigation
   const isMegaOpen = openDropdown !== null;
 
   return (
-    <nav className={`nav ${isMegaOpen ? 'mega-open' : ''}`}>
+    <>
+      {showPromoStrip && <HomeDuplicateGoodStuffStrip />}
+      <nav className={`nav ${isMegaOpen ? 'mega-open' : ''}`}>
       <div className={`nav-container ${isMegaOpen ? 'mega-open' : ''}`}>
         {/* Main Nav Row */}
         <div className="nav-row">
@@ -372,6 +376,7 @@ export function NavigationDraft({ titleOverride, titleSwapOnScroll }: Navigation
 
       {/* Newsletter Modal */}
       <NewsletterModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-    </nav>
+      </nav>
+    </>
   );
 }

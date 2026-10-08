@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { NewsletterModal } from './NewsletterModal';
+import { HomeDuplicateGoodStuffStrip } from './HomeDuplicateGoodStuffStrip';
 import './Navigation.css';
 
 export function Navigation() {
@@ -28,7 +29,9 @@ export function Navigation() {
   };
 
   return (
-    <nav className="nav">
+    <>
+      <HomeDuplicateGoodStuffStrip />
+      <nav className="nav">
       <div className="nav-container">
         {/* Left Section: Logo Icon + Menu */}
         <div className="nav-left">
@@ -103,6 +106,7 @@ export function Navigation() {
 
       {/* Newsletter Modal */}
       <NewsletterModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
-    </nav>
+      </nav>
+    </>
   );
 }
