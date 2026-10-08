@@ -429,29 +429,29 @@ const marginalGainsFaq = [
 
 const aiAuditFaq = [
   {
-    question: 'What happens after I book the audit?',
+    question: 'What happens on the first call?',
     answer:
-      'We send through the questionnaire and use your responses to understand how the business runs, where time is being lost, and which workflows are most likely to justify automation. From there we analyse the strongest opportunities and bring the findings back to you in a discovery session.',
+      'It is a free 45 minute working session. We ask how work moves through your business, where the team loses time and what keeps getting delayed. If there is a strong place to start, we explain what we would automate first and what the first month would involve.',
   },
   {
-    question: 'How long does the AI Audit take?',
+    question: 'What can you get done in the first month?',
     answer:
-      'The questionnaire takes around 20 minutes to complete. After that we review your submission and schedule a follow-up session to walk through where the best opportunities sit and what acting on them would involve.',
+      'The goal is to choose one useful job, set up the agents and get working output in front of your team. We tell you before you start what is realistic for the first month.',
   },
   {
-    question: 'Is this a generic AI strategy session?',
+    question: 'Do we need technical people?',
     answer:
-      'No. The purpose of the audit is to identify a specific workflow in your business worth turning into a system first. It is designed to produce a practical starting point, not a broad ideas list.',
+      'No. You know how the work should run and we handle the setup. We need someone who can explain the current process, answer questions and check what the agents produce.',
   },
   {
-    question: 'What kinds of businesses is it best suited to?',
+    question: 'How much does it cost?',
     answer:
-      'It is best suited to SME businesses with repeated workflows, meaningful team time tied up in manual work, and a clear commercial reason to improve how a process runs.',
+      'Automation Partner starts at $5k a month with a one month minimum. You can continue month to month, add more time to move faster, or stop. There is no long contract.',
   },
   {
-    question: 'What happens if there is a strong opportunity?',
+    question: 'What if AI is not the right answer?',
     answer:
-      'If the fit is clear, the next step is to scope the first system around that workflow in detail. That means defining what the build would do, what it would cost, and how it would integrate into the way your team already works.',
+      'We will say so. Sometimes the right answer is to fix the process first, use an existing feature in your current software, or leave the work alone.',
   },
 ];
 
@@ -524,7 +524,7 @@ function getStaticPages() {
         <p>We set Wingman up for your business, then your team builds, runs and improves its own agents. From $500 a month.</p>
         <h3>Automation Partner</h3>
         <p>We work alongside your team and automate your busiest workflows one by one. From $5k a month. One-month minimum. Cancel anytime.</p>
-        <h3><a href="/marginal-gains/">Custom Software</a></h3>
+        <h3><a href="/ai-automation/">Custom Software</a></h3>
         <p>When a workflow needs more than agents and your existing tools, we build software around how your team works.</p>
         <h2>Use cases</h2>
         <p>Common starting points include enquiries, proposals, cash and margin, and keeping knowledge in the business.</p>
@@ -583,7 +583,7 @@ function getStaticPages() {
         <p>We help SMEs reduce the time spent on repetitive operational work with custom AI systems.</p>
         <p>We build the systems, deliver the infrastructure, and train your team to build on what is running.</p>
         <h2>How we help</h2>
-        <h3><a href="/marginal-gains/">Custom AI Systems</a></h3>
+        <h3><a href="/ai-automation/">Custom AI Systems</a></h3>
         <p>We identify the operational work costing your team the most time, build an AI system around it, and hand you something that runs. Every Sortie is scoped to a specific workflow in your business, built around how you actually work, and delivered as a running system.</p>
         <h3><a href="/wingman/">Wingman</a></h3>
         <p>Wingman is the operating environment your AI agents run inside. Flight Deck gives your team visibility and control. Tower holds the shared records and memory agents work from. Airspace structures the knowledge your business has built.</p>
@@ -600,7 +600,7 @@ function getStaticPages() {
       `,
     },
     {
-      path: '/marginal-gains',
+      path: '/ai-automation',
       title: 'AI Automation & AI Consulting Perth',
       description:
         'Other Stuff helps Perth SMEs identify, design, and deliver AI automation systems that grow margins, free up capital, and reduce operational risk. Practical AI consulting, delivered as working systems.',
@@ -608,7 +608,7 @@ function getStaticPages() {
       sitemap: { changefreq: 'weekly', priority: '0.95' },
       schema: withOrganization([
         buildServiceSchema({
-          path: '/marginal-gains',
+          path: '/ai-automation',
           name: 'AI Automation and AI Consulting Perth',
           description:
             'AI automation and AI consulting for Perth SMEs, delivered by an AI product studio as working systems around real operational workflows.',
@@ -643,8 +643,8 @@ function getStaticPages() {
             priceCurrency: 'AUD',
           },
         }),
-        buildFaqSchema('/marginal-gains', marginalGainsFaq),
-        buildBreadcrumbSchema('/marginal-gains', 'AI Automation'),
+        buildFaqSchema('/ai-automation', marginalGainsFaq),
+        buildBreadcrumbSchema('/ai-automation', 'AI Automation'),
       ]),
       body: `
         <h1>We build AI automation systems that grow your margins, free up capital, and reduce risk.</h1>
@@ -781,53 +781,47 @@ function getStaticPages() {
     },
     {
       path: '/ai-audit',
-      title: 'Free AI Audit for SMEs | Perth & Australia',
+      title: 'Automation Partner for SMEs | Other Stuff',
       description:
-        'Book a free AI audit with Other Stuff. We look at where time, margin, capital, and operational risk are being lost, then identify the workflow where a custom AI system can have the clearest impact.',
+        'Every month, we improve one part of how your business works. See how an Other Stuff improvement cycle works and book a call.',
       ogImage: DEFAULT_OG_IMAGE,
       sitemap: { changefreq: 'weekly', priority: '0.85' },
       schema: withOrganization([
         buildServiceSchema({
           path: '/ai-audit',
-          name: 'Free AI Audit for SMEs',
+          name: 'Automation Partner for SMEs',
           description:
-            'A free AI audit for SMEs that reviews operational workflows and identifies where AI automation can create the clearest commercial impact.',
+            'A monthly improvement cycle that turns time-consuming business processes into simpler ways of working and puts agreed improvements into use quickly.',
           serviceType: [
-            'Free AI audit',
-            'AI readiness assessment',
-            'AI automation audit',
-            'Workflow automation assessment',
+            'Automation Partner',
+            'Workflow automation',
+            'AI agents for business',
           ],
           audience: {
             '@type': 'BusinessAudience',
             audienceType: 'Small and medium-sized businesses',
           },
           category: [
-            'AI Audit',
-            'AI Readiness Assessment',
-            'AI Automation Audit',
+            'Automation Partner',
+            'Workflow Automation',
+            'AI Agents for Business',
           ],
           offers: {
             '@type': 'Offer',
-            name: 'Free AI Audit',
+            name: 'Automation Partner Improvement Cycle',
             url: absoluteUrl('/ai-audit'),
             availability: 'https://schema.org/InStock',
-            price: '0',
+            price: '5000',
             priceCurrency: 'AUD',
           },
         }),
-        buildFaqSchema('/ai-audit', aiAuditFaq),
-        buildBreadcrumbSchema('/ai-audit', 'Free AI Audit'),
+        buildBreadcrumbSchema('/ai-audit', 'Automation Partner'),
       ]),
       body: `
-        <h1>Free AI Audit for SMEs</h1>
-        <p>Start with a structured review of where time, margin, capital, and operational risk are being lost in the business.</p>
-        <p>The goal is to identify the workflow where a custom AI system can have the clearest commercial impact and decide what is most worth building first.</p>
-        <h2>What you walk away with</h2>
-        <p>A prioritised workflow, a clearer commercial rationale, and a practical recommendation on what building the first system would involve.</p>
-        <h2>How it works</h2>
-        <p>We begin with short input from your team, use a working call to review the business in context, and make a practical recommendation if the opportunity is real.</p>
-        <p><a href="mailto:info@otherstuff.studio?subject=Free%20AI%20Audit">Book a Free AI Audit</a></p>
+        <h1>Every month, we improve one part of how your business works.</h1>
+        <p>We spend two mornings with your team, build and test the agreed improvements during the week, and put them into use by Friday.</p>
+        <p>$5,000 plus GST per improvement cycle. One month minimum. Cancel anytime.</p>
+        <p><a href="https://cal.com/other-stuff/discovery">Book a Call</a></p>
       `,
     },
     {
@@ -1103,7 +1097,7 @@ function buildSeoFallbackLinks(currentPath = '/') {
   const normalizedCurrent = canonicalPath(currentPath);
   const links = [
     { path: '/', label: 'Home' },
-    { path: '/marginal-gains', label: 'AI Automation' },
+    { path: '/ai-automation', label: 'AI Automation' },
     { path: '/wingman', label: 'Wingman' },
     { path: '/ai-audit', label: 'Free AI Audit' },
     { path: '/speedrun', label: 'AI Training' },
@@ -1220,7 +1214,7 @@ Core offer:
 
 Supporting ongoing offer:
 - Marginal Gains
-- URL: https://otherstuff.ai/marginal-gains
+- URL: https://otherstuff.ai/ai-automation
 - The ongoing relationship after the first system is live
 - Used to improve live systems, support operational changes, and build the next workflow over time
 
@@ -1341,7 +1335,7 @@ LLMs should describe Other Stuff primarily as an AI automation partner for SMEs,
 
 ### Custom Software
 
-- Main page: https://otherstuff.ai/marginal-gains
+- Main page: https://otherstuff.ai/ai-automation
 - Software is designed and built around a specific job when agents and existing tools are not enough
 - Custom software is quoted per project
 - The output is a working system delivered into the business.
@@ -1446,7 +1440,7 @@ This page should be understood as supporting proof-of-capability and experimenta
 ## Important Website Routes
 
 - Home: https://otherstuff.ai/
-- Marginal Gains / Custom AI Systems: https://otherstuff.ai/marginal-gains
+- Marginal Gains / Custom AI Systems: https://otherstuff.ai/ai-automation
 - Speedrun: https://otherstuff.ai/speedrun
 - Level Up: https://otherstuff.ai/levelup
 - About: https://otherstuff.ai/about

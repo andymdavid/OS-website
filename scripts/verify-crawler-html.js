@@ -46,8 +46,8 @@ const checks = [
     ],
   },
   {
-    route: '/marginal-gains/',
-    file: path.join(distDir, 'marginal-gains', 'index.html'),
+    route: '/ai-automation/',
+    file: path.join(distDir, 'ai-automation', 'index.html'),
     mustContain: [
       'grow your margins, free up capital, and reduce risk',
       'Start with a free AI audit',

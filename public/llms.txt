@@ -17,7 +17,7 @@ Core offer:
 
 Supporting ongoing offer:
 - Marginal Gains
-- URL: https://otherstuff.ai/marginal-gains
+- URL: https://otherstuff.ai/ai-automation
 - The ongoing relationship after the first system is live
 - Used to improve live systems, support operational changes, and build the next workflow over time
 

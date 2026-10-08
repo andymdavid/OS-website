@@ -38,7 +38,7 @@ const routes = [
     ],
   },
   {
-    path: '/marginal-gains/',
+    path: '/ai-automation/',
     mustContain: [
       'Wingman is the operating environment',
     ],
@@ -50,7 +50,8 @@ const routes = [
   {
     path: '/ai-audit/',
     mustContain: [
-      'Free AI Audit',
+      'Every month, we improve one part of how your business works',
+      '$5,000 plus GST per improvement cycle',
     ],
   },
   {
