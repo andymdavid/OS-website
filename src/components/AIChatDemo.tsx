@@ -204,7 +204,7 @@ export function AIChatDemo() {
         {/* Terminal Panel */}
       <div className={`terminal-panel ${showTerminal ? 'visible' : ''}`}>
         <div className="terminal-header">
-          <span className="terminal-title">Wingman</span>
+          <span className="terminal-title">Ambulando</span>
           <span className="terminal-status">
             <span className="status-dot"></span>
             Processing

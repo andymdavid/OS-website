@@ -177,7 +177,7 @@ export function HomeDuplicateCanvasSection() {
           <h2 className="section-heading">Your business already has the structure AI needs.</h2>
           <p>
             Your people, processes and tools already shape how work gets done. We work inside that,
-            find the jobs agents can take on, and run them in Wingman, the system we built for running
+            find the jobs agents can take on, and run them in Ambulando, the shared workspace we built for
             AI agents safely inside a business.
           </p>
         </div>
@@ -297,7 +297,7 @@ export function HomeDuplicateCanvasSection() {
             <div className="operating-map-wingman-copy">
               <div className="operating-map-wingman-label">
                 <img src="/wingman-mark-white.png" alt="" aria-hidden="true" />
-                <span>Wingman</span>
+                <span>Ambulando</span>
               </div>
               <p>
                 Where your agents live and work.

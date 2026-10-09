@@ -21,7 +21,7 @@ interface TerminalWorkflowStep {
 
 const controlTerminalSequence: TerminalWorkflowStep[] = [
   { type: 'human', content: 'Run proposal_margin_review for Horizon Media' },
-  { type: 'agent', content: 'Wingman received workflow request' },
+  { type: 'agent', content: 'Ambulando received workflow request' },
   { type: 'code', content: 'policy = load_policy("commercial_work")' },
   { type: 'output', content: 'policy.data_boundary = private' },
   { type: 'output', content: 'policy.approval_required = true' },
@@ -40,17 +40,17 @@ const controlTerminalSequence: TerminalWorkflowStep[] = [
 
 const leverageTerminalSequence: TerminalWorkflowStep[] = [
   { type: 'human', content: 'Prepare quote packs for open opportunities' },
-  { type: 'agent', content: 'Wingman loaded quote_pack_workflow' },
+  { type: 'agent', content: 'Ambulando loaded quote_pack_workflow' },
   { type: 'code', content: 'records = crm.opportunities(stage="proposal")' },
   { type: 'output', content: 'found 18 open opportunities' },
   { type: 'code', content: 'context = gather(records, notes, rate_cards, files)' },
   { type: 'output', content: 'Horizon Media: scope notes + current rate card attached' },
   { type: 'output', content: 'Westland Group: discovery call + delivery assumptions attached' },
-  { type: 'agent', content: 'Wingman drafting proposal packs' },
+  { type: 'agent', content: 'Ambulando drafting proposal packs' },
   { type: 'code', content: 'drafts = generate_quote_packs(context)' },
   { type: 'output', content: 'created /proposals/horizon-media/quote-pack-v1.pdf' },
   { type: 'output', content: 'created /proposals/northern-group/quote-pack-v1.pdf' },
-  { type: 'agent', content: 'Wingman checking margin and risk' },
+  { type: 'agent', content: 'Ambulando checking margin and risk' },
   { type: 'code', content: 'checks = margin_review(drafts, threshold=0.32)' },
   { type: 'output', content: '5 packs need commercial review before sending' },
   { type: 'code', content: 'approvals.queue(checks, owner="commercial")' },
@@ -194,7 +194,7 @@ function TerminalWorkflowDemo({
                 key={`${line.content}-${index}`}
               >
                 {line.type === 'code' && '$ '}
-                {line.type === 'agent' && 'wingman > '}
+                {line.type === 'agent' && 'ambulando > '}
                 {line.type === 'human' && 'user > '}
                 {line.type === 'output' && '  '}
                 {line.type === 'success' && '✓ '}
@@ -259,7 +259,7 @@ const sections = [
   {
     title: 'Control & Resilience',
     description:
-      'Wingman gives your AI work a durable operating layer, so the business is not trapped inside one model, one vendor, or one fragile workflow.',
+      'Ambulando gives your AI work a durable operating layer, so the business is not trapped inside one model, one vendor, or one fragile workflow.',
     variant: 'control',
     visual: <TerminalWorkflowDemo sequence={controlTerminalSequence} title="Autopilot" status="Routing" />,
     visualImage: '/grid-internal-knowledge.webp',
@@ -294,7 +294,7 @@ const sections = [
   {
     title: 'Operating Leverage',
     description:
-      'Wingman turns agents, records, approvals, tools, and workflows into reusable infrastructure instead of isolated AI experiments.',
+      'Ambulando turns agents, records, approvals, tools, and workflows into reusable infrastructure instead of isolated AI experiments.',
     variant: 'leverage',
     visual: (
       <TerminalWorkflowDemo
@@ -349,12 +349,12 @@ export function HomeDuplicateWingmanBenefits() {
             <div className="section-container-wide">
               {index === 0 && (
                 <div className="wingman-benefits-section-intro">
-                  <div className="intro-pill fade-in">WHY WINGMAN</div>
+                  <div className="intro-pill fade-in">WHY AMBULANDO</div>
                   <h2 className="section-heading fade-in fade-in-stagger-1">
                     The operating layer behind practical AI work.
                   </h2>
                   <p className="fade-in fade-in-stagger-2">
-                    Wingman gives your business a stable foundation for using AI safely, reliably, and
+                    Ambulando gives your business a stable foundation for using AI safely, reliably, and
                     repeatedly across the work that matters.
                   </p>
                 </div>

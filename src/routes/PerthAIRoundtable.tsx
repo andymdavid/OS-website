@@ -247,7 +247,7 @@ export default function PerthAIRoundtable() {
                 <div className="roundtable-copy-stack">
                   <p>
                     Topics can be nominated on an open list before each session. The
-                    organisers curate that list with help from Wingman, then bring the
+                    organisers curate that list with help from Ambulando, then bring the
                     strongest questions into the room.
                   </p>
                   <p>

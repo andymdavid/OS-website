@@ -188,7 +188,7 @@ export function WingmanDemo() {
         {/* Terminal Panel */}
         <div className={`wm-terminal-panel ${showTerminal ? 'visible' : ''}`}>
           <div className="wm-terminal-header">
-            <span className="wm-terminal-title">Wingman</span>
+            <span className="wm-terminal-title">Ambulando</span>
             <span className="wm-terminal-status">
               <span className="wm-status-dot"></span>
               Processing

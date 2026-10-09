@@ -8,7 +8,6 @@ const Company = lazy(() => import('./routes/Company'));
 const LevelUp = lazy(() => import('./routes/LevelUp'));
 const Speedrun = lazy(() => import('./routes/Speedrun'));
 const MarginalGains = lazy(() => import('./routes/MarginalGains'));
-const Wingman = lazy(() => import('./routes/Wingman'));
 const TheGoodStuff = lazy(() => import('./routes/TheGoodStuff'));
 const PerthAIRoundtable = lazy(() => import('./routes/PerthAIRoundtable'));
 const Newsletter = lazy(() => import('./routes/Newsletter'));
@@ -17,7 +16,6 @@ const Writing = lazy(() => import('./routes/Writing'));
 const WritingPost = lazy(() => import('./routes/WritingPost'));
 const About = lazy(() => import('./routes/About'));
 const Games = lazy(() => import('./routes/Games'));
-const AIAudit = lazy(() => import('./routes/AIAudit'));
 const Contact = lazy(() => import('./routes/Contact'));
 const Terms = lazy(() => import('./routes/Terms'));
 const Privacy = lazy(() => import('./routes/Privacy'));
@@ -53,10 +51,6 @@ const router = createBrowserRouter([
     element: <Navigate to="/ai-automation" replace />,
   },
   {
-    path: '/wingman',
-    element: <SuspenseWrapper><Wingman /></SuspenseWrapper>,
-  },
-  {
     path: '/the-good-stuff',
     element: <SuspenseWrapper><TheGoodStuff /></SuspenseWrapper>,
   },
@@ -87,10 +81,6 @@ const router = createBrowserRouter([
   {
     path: '/about',
     element: <SuspenseWrapper><About /></SuspenseWrapper>,
-  },
-  {
-    path: '/ai-audit',
-    element: <SuspenseWrapper><AIAudit /></SuspenseWrapper>,
   },
   {
     path: '/contact',

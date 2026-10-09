@@ -23,8 +23,8 @@ export function HeroHomeDuplicate() {
               >
                 Book a Call
               </Button>
-              <a href="/ai-audit" className="btn-secondary hero-cta-dark">
-                Learn about the AI Audit
+              <a href="/ai-automation" className="btn-secondary hero-cta-dark">
+                Learn about Automation Partner
               </a>
             </div>
           </div>

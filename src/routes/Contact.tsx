@@ -10,7 +10,7 @@ export default function Contact() {
     <div className="os-theme os-draft min-h-screen contact-page">
       <SEO
         title="Contact Other Stuff | Start the Conversation"
-        description="Get in touch with Other Stuff about a free AI audit, custom AI systems, Speedrun workshops, or practical AI capability building for your team."
+        description="Get in touch with Other Stuff about Automation Partner, custom AI systems, Speedrun workshops, or practical AI capability building for your team."
         path="/contact"
       />
       <NavigationDraft titleOverride="OTHER STUFF" />
@@ -20,7 +20,7 @@ export default function Contact() {
             <div className="contact-main-copy">
               <h1>Get in touch</h1>
               <p className="contact-main-intro">
-                If you&apos;re exploring a free AI audit, custom AI systems, or practical AI capability
+                If you&apos;re exploring Automation Partner, custom AI systems, or practical AI capability
                 building for your team, this is the best place to start.
               </p>
               <p className="contact-main-intro">
@@ -31,7 +31,7 @@ export default function Contact() {
                 <div className="contact-main-point">
                   <span>01</span>
                   <div>
-                    <strong>Free AI Audit + Custom AI Systems</strong>
+                    <strong>Automation Partner + Custom AI Systems</strong>
                     <p>Best for SMEs that want to identify where AI can make the clearest commercial difference.</p>
                   </div>
                 </div>

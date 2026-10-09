@@ -253,7 +253,7 @@ export function FormProcessingDemo() {
         {/* Terminal Panel */}
         <div className={`fp-terminal ${showTerminal ? 'visible' : ''}`}>
           <div className="fp-terminal-header">
-            <span className="fp-terminal-title">Wingman</span>
+            <span className="fp-terminal-title">Ambulando</span>
             <span className="fp-terminal-status">
               <span className="fp-status-dot"></span>
               Processing

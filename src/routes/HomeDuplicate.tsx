@@ -20,7 +20,7 @@ export default function HomeDuplicate() {
     <div className="os-theme os-draft">
       <SEO
         title="Home (Archived)"
-        description="Custom AI systems for SMEs in Perth and across Australia. Start with a free AI audit, then build working systems around the workflows that improve margins, free up capital, and reduce operational risk."
+        description="Custom AI systems for SMEs in Perth and across Australia, built around the workflows that improve margins, free up capital, and reduce operational risk."
         path="/home-duplicate"
         noindex
         schema={[

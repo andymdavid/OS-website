@@ -185,7 +185,7 @@ export const siteContent: SiteContent = {
             description:
               "This session takes the app built in Speedrun and extends it into a simple operational workflow. AI agents begin carrying work forward across defined stages, following rules and triggers you set.",
             cta: { label: "Learn more", href: "mailto:info@otherstuff.studio" },
-            secondaryNote: "Only available for Wingman & Marginal Gains customers",
+            secondaryNote: "Only available for Ambulando & Automation Partner customers",
           },
         ],
       },
@@ -222,11 +222,11 @@ export const siteContent: SiteContent = {
             imageAlt: "Build your version",
           },
           {
-            label: "Put Wingman to work",
+            label: "Put Ambulando to work",
             body:
               "An agent produces daily summaries, plans your workload, and carries tasks forward like a capable assistant.",
             imageSrc: "/WingmanScreen2.webp",
-            imageAlt: "Put Wingman to work",
+            imageAlt: "Put Ambulando to work",
           },
         ],
       },
@@ -363,7 +363,7 @@ export const siteContent: SiteContent = {
       props: {
         title: "Who we are.",
         body:
-          "Speedrun is delivered by Other Stuff, a Perth-based AI-native product studio that works hands-on with AI systems. We help business leaders understand how AI works by building practical tools with it, not by talking about it in theory.\n\nWe’ve worked with Stakwork, a Silicon Valley company building agent-based systems, and our experience shapes how we approach building internal AI capability for organisations. Understanding comes fastest when teams move from observing AI to working with it directly.\n\nWe operate as an AI-first business ourselves, using these tools across our own operations and building systems like Wingman, our open-source agent management platform.\n\nSpeedrun brings that same build-first approach into your organisation, helping teams develop practical judgement and confidence from direct experience.",
+          "Speedrun is delivered by Other Stuff, a Perth-based AI-native product studio that works hands-on with AI systems. We help business leaders understand how AI works by building practical tools with it, not by talking about it in theory.\n\nWe’ve worked with Stakwork, a Silicon Valley company building agent-based systems, and our experience shapes how we approach building internal AI capability for organisations. Understanding comes fastest when teams move from observing AI to working with it directly.\n\nWe operate as an AI-first business ourselves, using these tools across our own operations and building systems like Ambulando, our open-source workspace for people and agents.\n\nSpeedrun brings that same build-first approach into your organisation, helping teams develop practical judgement and confidence from direct experience.",
         splitModalCta: { label: "Learn more", href: "https://otherstuff.ai" },
         bodyMobileSplitParas: [
           "We’ve worked with Stakwork",

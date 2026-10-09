@@ -18,7 +18,7 @@ const routes = [
     path: '/',
     mustContain: [
       'Your business has more to give',
-      'Wingman is the operating environment',
+      'Ambulando is the shared workspace',
       'Our Infrastructure',
     ],
     mustNotContain: [
@@ -40,18 +40,11 @@ const routes = [
   {
     path: '/ai-automation/',
     mustContain: [
-      'Wingman is the operating environment',
+      'Ambulando is the shared workspace',
     ],
     mustNotContain: [
       'Wingmen',
       'Wingmen Suite',
-    ],
-  },
-  {
-    path: '/ai-audit/',
-    mustContain: [
-      'Every month, we improve one part of how your business works',
-      '$5,000 plus GST per improvement cycle',
     ],
   },
   {
@@ -72,7 +65,7 @@ const routes = [
     path: '/llms.txt',
     mustContain: [
       'Other Stuff',
-      'Wingman',
+      'Ambulando',
     ],
     mustNotContain: [
       'Wingmen',

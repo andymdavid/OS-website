@@ -33,11 +33,10 @@ export function FooterHomeDuplicate() {
 
           <nav className="footer-column" aria-label="Solutions">
             <h4>Solutions</h4>
-            <a href="/ai-audit/">Automation Review</a>
             <a href="/ai-automation/">AI Automation</a>
-            <a href="/wingman/">Wingman</a>
-            <a href="/speedrun/">AI Training</a>
-            <a href="/levelup/">AI School Training</a>
+            <a href="https://ambulando.io" target="_blank" rel="noopener noreferrer">Ambulando</a>
+            <a href="/speedrun/">AI Workshops</a>
+            <a href="/levelup/">AI Workshops for Schools</a>
           </nav>
 
           <nav className="footer-column" aria-label="Media">
@@ -56,7 +55,7 @@ export function FooterHomeDuplicate() {
             <div className="footer-follow">
               <h4>Follow</h4>
               <div className="footer-founder-profile">
-                <img src="/Pete.webp" alt="" aria-hidden="true" />
+                <img src="/Pete-letter.png" alt="" aria-hidden="true" />
                 <span>
                   <strong>Pete Winn</strong>
                   <em>Co-founder</em>
@@ -73,7 +72,7 @@ export function FooterHomeDuplicate() {
                 </div>
               </div>
               <div className="footer-founder-profile">
-                <img src="/Andy.webp" alt="" aria-hidden="true" />
+                <img src="/Andy-letter.png" alt="" aria-hidden="true" />
                 <span>
                   <strong>Andy David</strong>
                   <em>Co-founder</em>

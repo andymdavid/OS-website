@@ -35,11 +35,11 @@ export function WingmanSection() {
         <div className="intro-pill fade-in">THE SYSTEM</div>
 
         <h2 className="intro-heading fade-in fade-in-stagger-1">
-          Introducing Wingman - an agent management system - that helps SMEs automate real work with AI.
+          Introducing Ambulando—a shared workspace that helps SMEs automate real work with AI.
         </h2>
 
         <p className="intro-text fade-in fade-in-stagger-2">
-          Wingman lets you build and run AI agents on real work inside your business - without code, complexity, or being tied to a single vendor. Participants use Wingman in every workshop, and it gives teams a simple, practical way to put AI to work practically.
+          Ambulando lets you build and run AI agents on real work inside your business—without complexity or being tied to a single vendor. It gives teams a practical place to work with AI together.
         </p>
 
         <Button className="followup-cta fade-in fade-in-stagger-3">
@@ -59,7 +59,7 @@ export function WingmanSection() {
           <div className="wingman-contact-card">
             <div>
               <div className="wingman-contact-heading">
-                Want help bringing Wingman into your business?
+                Want help bringing Ambulando into your business?
               </div>
               <p>We’re always happy to advise on setup and best practice.</p>
             </div>

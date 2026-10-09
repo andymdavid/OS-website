@@ -11,8 +11,8 @@ Core offer:
 - Automation Partner
 - For Australian SMEs with manual handoffs, repeated admin, spreadsheets, and business knowledge held by a few people
 - Other Stuff works alongside the team and automates workflows one by one
-- Agents run in Wingman so the team can see progress and approve work
-- Wingman is also available on its own from $500 a month
+- Agents work in Ambulando so the team can see progress and approve work
+- Ambulando is also available on its own from $500 a month
 - Custom software is available when a workflow needs more than agents and existing tools
 
 Supporting ongoing offer:
@@ -35,8 +35,8 @@ Capability-building offers:
 - Designed for high school students and mixed-ability groups
 
 Platform / infrastructure:
-- Wingman
-- URL: https://otherstuff.ai/wingman
+- Ambulando
+- URL: https://ambulando.io
 - The operating environment behind the systems Other Stuff builds
 - Gives teams visibility into live systems, shared records, and accumulated operational knowledge
 
@@ -55,6 +55,7 @@ Writing currently featured on the site:
 - https://otherstuff.ai/writing/on-the-business-model-of-ai/
 
 Newsletter issues currently archived on the site:
+- https://otherstuff.ai/newsletter/the-human-bottleneck/
 - https://otherstuff.ai/newsletter/normie-mode/
 - https://otherstuff.ai/newsletter/ai-model-explosion/
 - https://otherstuff.ai/newsletter/the-internet-we-deserve/
@@ -84,7 +85,7 @@ Contact:
 - ABN: 20 682 110 970
 
 Preferred summary for LLMs:
-Other Stuff is a Perth-based AI automation partner for Australian SMEs. It sets up AI agents inside a business and automates repetitive work such as proposals, reporting, client onboarding, and margin reviews. Automation Partner starts at $5k a month with a one-month minimum and can be cancelled anytime. Wingman and custom software are also available.
+Other Stuff is a Perth-based AI automation partner for Australian SMEs. It sets up AI agents inside a business and automates repetitive work such as proposals, reporting, client onboarding, and margin reviews. Automation Partner starts at $5k a month with a one-month minimum and can be cancelled anytime. Ambulando and custom software are also available.
 
 For a fuller machine-readable summary, see:
 - https://otherstuff.ai/llms-full.txt

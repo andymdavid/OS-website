@@ -19,26 +19,12 @@ const checks = [
     ],
   },
   {
-    route: '/wingman/',
-    file: path.join(distDir, 'wingman', 'index.html'),
-    mustContain: [
-      'The operating layer for AI inside your business',
-      'Why Wingman',
-      'Control &amp; Resilience',
-      'Operating Leverage',
-    ],
-    mustNotContain: [
-      'Wingmen',
-      'Wingmen Suite',
-    ],
-  },
-  {
     route: '/about/',
     file: path.join(distDir, 'about', 'index.html'),
     mustContain: [
       'builds custom AI systems to improve margins',
       'Commercial framework',
-      'Wingman as the operating environment',
+      'Ambulando as the shared workspace',
     ],
     mustNotContain: [
       'Wingmen',
@@ -50,9 +36,9 @@ const checks = [
     file: path.join(distDir, 'ai-automation', 'index.html'),
     mustContain: [
       'grow your margins, free up capital, and reduce risk',
-      'Start with a free AI audit',
+      'Start with Automation Partner',
       'Marginal Gains is the ongoing relationship',
-      'Wingman is the operating environment',
+      'Ambulando is the shared workspace',
     ],
     mustNotContain: [
       'Wingmen',

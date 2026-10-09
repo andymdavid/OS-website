@@ -36,11 +36,10 @@ export function Footer() {
           {/* Column 2: Solutions */}
           <nav className="footer-column" aria-label="Solutions">
             <h4>Solutions</h4>
-            <a href="/ai-audit/">Automation Review</a>
             <a href="/ai-automation/">AI Automation</a>
-            <a href="/wingman/">Wingman</a>
-            <a href="/speedrun/">AI Training</a>
-            <a href="/levelup/">AI School Training</a>
+            <a href="https://ambulando.io" target="_blank" rel="noopener noreferrer">Ambulando</a>
+            <a href="/speedrun/">AI Workshops</a>
+            <a href="/levelup/">AI Workshops for Schools</a>
           </nav>
 
           {/* Column 3: Media */}
