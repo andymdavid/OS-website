@@ -8,6 +8,7 @@ import React, { useState } from "react";
 import { DemoPreview } from "@/levelup/components/sections/demo-previews";
 import { Button as OsButton } from "@/components/Button";
 import { TestimonialCarousel } from "@/speedrun/components/testimonial-carousel";
+import { BookCallContent } from "@/components/BookCallContent";
 
 interface LevelUpCard {
   id: string;
@@ -119,6 +120,13 @@ interface TwoColumnProps {
   disableExpandableHover?: boolean;
   expandableCardFlushMedia?: boolean;
   bodyMaxWidth?: string;
+  callToAction?: {
+    label: string;
+    href: string;
+    bookCall?: boolean;
+    newTab?: boolean;
+    contentGap?: string;
+  };
   testimonials?: Array<{
     quote: string;
     author: string;
@@ -178,6 +186,7 @@ export function TwoColumn({
   disableExpandableHover = false,
   expandableCardFlushMedia = false,
   bodyMaxWidth,
+  callToAction,
   testimonials,
 }: TwoColumnProps) {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
@@ -867,14 +876,36 @@ export function TwoColumn({
               : "md:columns-2 md:gap-10";
             const bodyElement = renderDefaultBody(`${bodyClassName} ${bodyWidthClass}`);
 
-            if (bodyMaxWidth && React.isValidElement(bodyElement)) {
+            if ((bodyMaxWidth || callToAction) && React.isValidElement(bodyElement)) {
               return React.cloneElement(bodyElement, {
-                style: { ...(bodyElement.props.style || {}), maxWidth: bodyMaxWidth },
+                style: {
+                  ...(bodyElement.props.style || {}),
+                  ...(bodyMaxWidth ? { maxWidth: bodyMaxWidth } : {}),
+                  ...(callToAction ? { marginBottom: 0 } : {}),
+                },
               });
             }
 
             return bodyElement;
           })()}
+          {callToAction ? (
+            <div
+              className={`two-column-cta ${isCentered ? "two-column-cta-centered" : ""}`}
+              style={{
+                marginTop: "24px",
+                marginBottom: callToAction.contentGap,
+              }}
+            >
+              <a
+                className={callToAction.bookCall ? "book-call-button" : "btn-primary"}
+                href={callToAction.href}
+                target={callToAction.newTab ? "_blank" : undefined}
+                rel={callToAction.newTab ? "noopener noreferrer" : undefined}
+              >
+                {callToAction.bookCall ? <BookCallContent /> : callToAction.label}
+              </a>
+            </div>
+          ) : null}
           {faqItems && faqItems.length > 0 && (
             <div className="mt-10 max-w-3xl mx-auto">
               {faqItems.map((item, index) => (

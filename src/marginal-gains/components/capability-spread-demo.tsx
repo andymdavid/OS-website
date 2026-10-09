@@ -7,8 +7,8 @@ interface TerminalStep {
 }
 
 const terminalSequence: TerminalStep[] = [
-  { type: "action", content: "Checking Wingman deployments" },
-  { type: "code", content: "agents = wingman.get_active(org_id)" },
+  { type: "action", content: "Checking Ambulando deployments" },
+  { type: "code", content: "agents = ambulando.get_active(org_id)" },
   { type: "status", content: "Found 4 active agents across 3 teams" },
   { type: "action", content: "Analyzing usage patterns" },
   { type: "code", content: "usage = agents.aggregate_metrics(period=\"30d\")" },
@@ -177,7 +177,7 @@ export function CapabilitySpreadDemo() {
       {/* Terminal Panel */}
       <div className={`cs-terminal ${showTerminal ? "visible" : ""}`}>
         <div className="cs-terminal-header">
-          <span className="cs-terminal-title">Wingman</span>
+          <span className="cs-terminal-title">Ambulando</span>
           <span className="cs-terminal-status">
             <span className="cs-status-dot" />
             Running

@@ -1,3 +1,44 @@
+import { CAL_DISCOVERY_URL } from "@/lib/links";
+
+export const automationFaqs = [
+  {
+    question: "Who is Automation Partner for?",
+    answer: "Australian businesses of around 10 to 200 people where too much work still depends on manual handoffs, spreadsheets and people’s memory. We work most often with professional services, project-based and operations-heavy businesses.",
+  },
+  {
+    question: "What happens in the first month?",
+    answer: "We begin with two mornings alongside the people doing the work, identify the pain points and agree what to automate first. We spend the rest of that week building, configuring and testing, with the agreed changes working by Friday. Over the following weeks, we gather feedback and refine them.",
+  },
+  {
+    question: "How do we decide what to automate first?",
+    answer: "Together, we look for the work consuming the most time, slowing decisions, draining margin, tying up capital or creating risk. We agree the priority with your team and start where automation can make the clearest commercial difference.",
+  },
+  {
+    question: "How many automations can we work on at once?",
+    answer: "You set the pace. You can begin with one automation or run several improvement loops at once. Your team takes on as much change as the business can comfortably handle, and you can increase the pace when you’re ready.",
+  },
+  {
+    question: "Will it work with the tools we already use?",
+    answer: "Yes, in most cases. Ambulando connects to the software your team already uses, so automations can work from the same records your people do. If a tool cannot be connected or keeps getting in the way, we can build something that fits better.",
+  },
+  {
+    question: "Do we need technical people?",
+    answer: "No. You know the work and we handle the technical setup. We need access to the people closest to each process so they can explain how it works, test what we build and tell us what needs improving.",
+  },
+  {
+    question: "What happens after the first month?",
+    answer: "Keep going month to month, add more time to move faster, or stop. Each month builds on what is already working, but there are no long contracts and the minimum commitment is one month.",
+  },
+  {
+    question: "Who owns the automations and our data?",
+    answer: "You do. Your automations, your data and the software they run on stay with you whether you keep working with us or not. Everything is built on Ambulando, our open-source agent workspace, so your business is not locked into us or a single AI provider.",
+  },
+  {
+    question: "How much does Automation Partner cost?",
+    answer: "Automation Partner costs $5k per improvement loop, per month + GST, with a one-month minimum. One improvement loop is one focused stream of automation work delivered through the monthly cycle. Add another loop for another $5k a month + GST when you want to automate more concurrently. Ambulando is an additional $500 a month + GST at the early-adopter rate. You can cancel anytime.",
+  },
+];
+
 // Core section keys - must match registry
 export type SectionKey =
   | "navbar"
@@ -78,7 +119,7 @@ export const siteContent: SiteContent = {
           "For Perth SMEs, we identify repeated manual workflows, then design and deliver AI automation systems around the work that drives margin, capital, and risk.",
         subtitleMaxWidth: "48ch",
         centerContent: true,
-        ctaPrimary: { label: "Book a Free AI Audit", href: "/contact" },
+        ctaPrimary: { label: "Book a Call", href: "/contact" },
       },
     },
     {
@@ -99,11 +140,18 @@ export const siteContent: SiteContent = {
       enabled: true,
       id: "twoColumn",
       props: {
-        label: "Marginal Gains",
+        label: "Our Approach",
         title: "Marginal Gains is the idea that many small improvements compound over time.",
         titleMaxWidth: "50rem",
         body:
-          "Marginal Gains takes its name from the approach popularised by Sir Dave Brailsford, who focused on improving many small things by 1% rather than chasing dramatic change all at once. Instead of treating AI transformation as a one-off rollout, we work with your team over time to make steady 1% improvements.",
+          "Marginal Gains, made famous by Sir Dave Brailsford from British Cycling, focuses on improving many small things by 1% rather than chasing dramatic change all at once. Instead of treating AI transformation as a one-off rollout, we work with your team over time to make steady 1% improvements across your business.",
+        callToAction: {
+          label: "Book a Call",
+          href: CAL_DISCOVERY_URL,
+          bookCall: true,
+          newTab: true,
+          contentGap: "clamp(56px, 6vw, 76px)",
+        },
         singleColumn: true,
         maxWidth: "wide",
         blocksVariant: "expandable",
@@ -111,7 +159,7 @@ export const siteContent: SiteContent = {
         expandableCardsLayout: "fullBleed",
         expandableCardsMaxWidth: "wide",
         expandableCardClassName: "speedrun-card mg-philosophy-card",
-        disableExpandableHover: false,
+        disableExpandableHover: true,
         expandableCardFlushMedia: false,
         fullHeight: false,
         sectionMinHeightClass: "min-h-[112vh]",
@@ -120,27 +168,31 @@ export const siteContent: SiteContent = {
         blocks: [
           {
             number: "01",
-            title: "Ongoing development",
-            body: "Each month includes dedicated time to improve the systems already running in your business and to build the next workflow that matters.",
-            demoKey: "monthlyRhythm",
+            title: "It fits how your team works.",
+            body: "We sit with the people doing the job, see how they actually do it, and build the automation around that. Once it’s live, we keep improving it based on what they tell us.",
+            image: "/approach-team-work.webp",
+            imageAlt: "A business interface showing people, processes and tools working together",
           },
           {
             number: "02",
-            title: "System optimisation",
-            body: "Live systems are reviewed and refined as your business grows, so they stay useful, reliable, and aligned with how the work is actually being done.",
-            demoKey: "capabilityDepth",
+            title: "You set the pace.",
+            body: "Start with one automation, or run several at once. Your team takes on as much as the business can handle at the time, and you can step it up whenever you’re ready.",
+            image: "/approach-set-pace.webp",
+            imageAlt: "An improvement plan showing a business building steadily month by month",
           },
           {
             number: "03",
-            title: "Support",
-            body: "When something needs attention, you have ongoing access to the team that built the system, so issues get resolved in context rather than handed to a generic support queue.",
-            demoKey: "discussionThread",
+            title: "Each month compounds.",
+            body: "Each automation keeps running as the next one is added. After six months, you could have six or more working across your business.",
+            image: "/approach-monthly-compounding.webp",
+            imageAlt: "Four monthly improvements compounding from July to October 2026",
           },
           {
             number: "04",
-            title: "Wingman",
-            body: "This is your operating environment. It holds the shared records agents work from, organises the accumulated knowledge in your business, and connects the workspace and workflow engine behind live automation systems.",
-            demoKey: "productGraph",
+            title: "You’re never locked in.",
+            body: "Your automations, your data and the software they run on stay with you, whether you keep working with us or not. It’s all built on Ambulando, which is open source.",
+            image: "/approach-no-lock-in.webp",
+            imageAlt: "Your automations, data and software represented as retained assets",
           },
         ],
       },
@@ -154,53 +206,7 @@ export const siteContent: SiteContent = {
         body: "Here are short answers to the practical questions most teams ask before starting.",
         anchorId: "faq",
         singleColumn: true,
-        faqItems: [
-          {
-            question: "What does the free AI audit involve?",
-            answer:
-              "It starts with a short questionnaire for your team, followed by a working call to review the findings, test where the opportunity is clearest, and identify what is most worth building first.",
-          },
-          {
-            question: "What do we walk away with from the audit?",
-            answer:
-              "A clearer view of where time and money are being lost, a prioritised workflow to focus on, and a practical recommendation on what building the first system would involve.",
-          },
-          {
-            question: "What happens after the audit?",
-            answer:
-              "If there is a clear fit, we scope and build one focused AI system around that workflow. The engagement has a defined start, a defined end, and a working system delivered into your business.",
-          },
-          {
-            question: "Do we need to be technical?",
-            answer:
-              "No. These systems are built around operational workflows in your business, not around your team's ability to code. What matters most is that the people closest to the work can help define how the system should behave.",
-          },
-          {
-            question: "What is Marginal Gains?",
-            answer:
-              "For teams that want to keep going after the first system is live, Marginal Gains is the ongoing relationship. We keep improving the systems already running in your business, support them as your operations evolve, and build the next high-value workflows over time.",
-          },
-          {
-            question: "Do you provide AI automation in Perth?",
-            answer:
-              "Yes. Other Stuff is based in Perth and works with SMEs and small business teams to build AI automation systems around real operational workflows.",
-          },
-          {
-            question: "Is this AI consulting or a done-for-you build?",
-            answer:
-              "It starts with advisory work through the free AI audit, but the goal is a working AI automation system delivered into the business, not a strategy document.",
-          },
-          {
-            question: "What is the difference between an AI agent and an AI automation system?",
-            answer:
-              "An AI agent carries out a defined part of the work. The automation system gives that agent the workflow, records, rules, and handover points it needs to operate reliably. Wingman is the operating environment those agents run inside, connecting the workspace, shared records, business context, and workflow engine behind the system.",
-          },
-          {
-            question: "What does Wingman do?",
-            answer:
-              "Wingman is the operating environment the systems run inside. It holds the shared records agents work from, organises the accumulated knowledge in your business, and connects the workspace and workflow engine behind live automation systems.",
-          },
-        ],
+        faqItems: automationFaqs,
       },
     },
     {

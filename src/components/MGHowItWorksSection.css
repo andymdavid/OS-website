@@ -1,5 +1,5 @@
 .os-theme .section.mg-how-it-works-section {
-  min-height: auto;
+  min-height: 100vh;
   padding: clamp(112px, 12vw, 168px) var(--container-padding);
 }
 
@@ -36,147 +36,16 @@
   margin-top: 24px;
 }
 
-.mg-how-it-works-layout {
-  width: 100%;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: minmax(0, 55fr) minmax(0, 45fr);
-  gap: clamp(64px, 7vw, 112px);
-  align-items: center;
+.mg-how-it-works-hero-centered {
+  max-width: 760px;
+  margin: 0 auto clamp(56px, 6vw, 76px);
+  text-align: center;
 }
 
-.mg-how-it-works-content {
-  min-width: 0;
-}
-
-.mg-how-it-works-accordion {
-  border-top: 0;
-}
-
-.mg-how-it-works-step {
-  position: relative;
-  border-top: 1px solid rgba(240, 240, 240, 0.1);
-  border-bottom: 1px solid rgba(240, 240, 240, 0.1);
-}
-
-.mg-how-it-works-step + .mg-how-it-works-step {
-  border-top: 0;
-}
-
-.mg-how-it-works-progress {
-  position: absolute;
-  top: -1px;
-  left: 0;
-  z-index: 1;
-  width: 100%;
-  height: 1px;
-  background: #f0f0f0;
-  transform: scaleX(0);
-  transform-origin: left center;
-  animation: mg-accordion-progress 9s linear forwards;
-  pointer-events: none;
-}
-
-@keyframes mg-accordion-progress {
-  to {
-    transform: scaleX(1);
-  }
-}
-
-.mg-how-it-works-step > button {
-  width: 100%;
-  min-height: 64px;
-  padding: 17px 0;
-  display: grid;
-  grid-template-columns: 36px minmax(0, 1fr) 24px;
-  gap: 14px;
-  align-items: center;
-  border: 0;
-  background: transparent;
-  color: var(--color-text);
-  cursor: pointer;
-  text-align: left;
-}
-
-.mg-how-it-works-number {
-  color: #72ff72;
-  font-family: var(--font-eyebrow);
-  font-size: 10px;
-  letter-spacing: 0.04em;
-}
-
-.mg-how-it-works-title {
-  font-family: 'Figtree', sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 1.3;
-}
-
-.mg-how-it-works-toggle {
-  color: #f0f0f0;
-  font-family: 'Geist', sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  text-align: right;
-}
-
-.mg-how-it-works-panel {
-  display: grid;
-  grid-template-rows: 0fr;
-  opacity: 0;
-  transition:
-    grid-template-rows 500ms var(--ease-out),
-    opacity 300ms ease;
-}
-
-.mg-how-it-works-panel > div {
-  min-height: 0;
-  overflow: hidden;
-}
-
-.mg-how-it-works-step.is-active .mg-how-it-works-panel {
-  grid-template-rows: 1fr;
-  opacity: 1;
-}
-
-.mg-how-it-works-panel p {
-  margin: 0 38px 24px 50px;
-  max-width: 50ch;
-  color: rgba(240, 240, 240, 0.82);
-  font-family: 'Geist', var(--font-body);
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-.mg-how-it-works-placeholder {
-  width: 100%;
-  aspect-ratio: 5 / 6;
-  min-height: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  border: 1px solid rgba(240, 240, 240, 0.1);
-  border-radius: 6px;
-  background: #0f0e0d;
-}
-
-.mg-how-it-works-placeholder img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  opacity: 1;
-}
-
-@media (max-width: 900px) {
-  .mg-how-it-works-layout {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .mg-how-it-works-placeholder {
-    min-height: 0;
-  }
+.mg-how-it-works-hero-centered .section-heading,
+.mg-how-it-works-hero-centered .mg-how-it-works-subpara {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (max-width: 768px) {
@@ -186,29 +55,5 @@
 
   .mg-how-it-works-subpara {
     max-width: 34ch;
-  }
-
-  .mg-how-it-works-step > button {
-    grid-template-columns: 28px minmax(0, 1fr) 20px;
-    gap: 10px;
-  }
-
-  .mg-how-it-works-panel {
-    padding: 0;
-  }
-
-  .mg-how-it-works-panel p {
-    margin-left: 38px;
-    margin-right: 20px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .mg-how-it-works-progress {
-    display: none;
-  }
-
-  .mg-how-it-works-panel {
-    transition: none;
   }
 }

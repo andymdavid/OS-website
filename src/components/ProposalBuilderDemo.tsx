@@ -31,11 +31,11 @@ interface ProposalSection {
 }
 
 const sourceLines: SourceLine[] = [
-  { type: 'command', content: 'wingman load notes --account "Northern Construction"' },
+  { type: 'command', content: 'ambulando load notes --account "Northern Construction"' },
   { type: 'status', content: 'Discovery notes found · 3 relevant threads' },
-  { type: 'command', content: 'wingman match proposal --service "sales workflow automation"' },
+  { type: 'command', content: 'ambulando match proposal --service "sales workflow automation"' },
   { type: 'status', content: 'Reference proposal: Mitchell rollout v2' },
-  { type: 'command', content: 'wingman fetch rates --current --region uk' },
+  { type: 'command', content: 'ambulando fetch rates --current --region uk' },
   { type: 'status', content: 'Rate card loaded · April 2026' },
 ];
 
@@ -219,7 +219,7 @@ export function ProposalBuilderDemo() {
 
                 <div className="proposal-terminal-panel">
                   <div className="proposal-terminal-header">
-                    <span>wingman session</span>
+                    <span>ambulando session</span>
                     <span className="proposal-terminal-pill">loading inputs</span>
                   </div>
 

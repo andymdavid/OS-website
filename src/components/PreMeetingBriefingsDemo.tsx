@@ -29,13 +29,13 @@ interface BriefingSection {
 }
 
 const contextLines: ContextLine[] = [
-  { type: 'command', content: 'wingman load emails --account "Northern Construction"' },
+  { type: 'command', content: 'ambulando load emails --account "Northern Construction"' },
   { type: 'status', content: 'Recent email thread found · 12 messages in 14 days' },
-  { type: 'command', content: 'wingman fetch crm-notes --latest' },
+  { type: 'command', content: 'ambulando fetch crm-notes --latest' },
   { type: 'status', content: 'CRM notes synced · quarterly review scheduled' },
-  { type: 'command', content: 'wingman check open-actions --owner account-team' },
+  { type: 'command', content: 'ambulando check open-actions --owner account-team' },
   { type: 'status', content: '3 unresolved actions and 1 delivery risk flagged' },
-  { type: 'command', content: 'wingman load previous-meeting-summary' },
+  { type: 'command', content: 'ambulando load previous-meeting-summary' },
   { type: 'status', content: 'Last review summary attached to briefing context' },
 ];
 
@@ -229,7 +229,7 @@ export function PreMeetingBriefingsDemo() {
 
                 <div className="briefings-terminal-panel">
                   <div className="briefings-terminal-header">
-                    <span>wingman session</span>
+                    <span>ambulando session</span>
                     <span className="briefings-terminal-pill">assembling context</span>
                   </div>
 

@@ -26,27 +26,20 @@
 }
 
 .automation-partner-hero .hero-inner {
-  align-items: stretch;
-  padding-left: clamp(32px, 6vw, 120px);
-  padding-right: clamp(32px, 6vw, 120px);
-  text-align: left;
+  align-items: center;
+  text-align: center;
 }
 
 .automation-partner-hero-grid {
-  width: min(100%, 1440px);
+  width: min(100%, 960px);
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: minmax(0, 1.18fr) minmax(0, 0.82fr);
-  align-items: center;
-  column-gap: clamp(48px, 7vw, 112px);
-  transform: translateY(clamp(24px, 4vh, 44px));
 }
 
 .automation-partner-hero .hero-title-block {
   width: 100%;
-  max-width: 860px;
-  margin: 0;
-  align-items: flex-start;
+  max-width: 960px;
+  margin: 0 auto;
+  align-items: center;
 }
 
 .automation-partner-hero .hero-duplicate-heading,
@@ -68,8 +61,8 @@
 
 .automation-partner-hero .hero-cta {
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
 }
 
 .automation-partner-hero .hero-eyebrow,
@@ -99,12 +92,6 @@
   max-width: none;
 }
 
-@media (max-width: 900px) {
-  .automation-partner-hero-grid {
-    grid-template-columns: minmax(0, 1fr);
-  }
-}
-
 @media (max-width: 640px) {
   .automation-partner-hero .hero-inner {
     padding: 104px 16px 32px;
@@ -117,9 +104,5 @@
   .automation-partner-hero .hero-duplicate-heading,
   .marginal-gains-page .automation-partner-hero .hero-duplicate-heading {
     font-size: clamp(38px, 11vw, 52px) !important;
-  }
-
-  .automation-partner-hero-grid {
-    transform: translateY(18px);
   }
 }

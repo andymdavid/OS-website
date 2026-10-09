@@ -358,7 +358,7 @@ function KanbanBuilderDemo() {
       {/* Terminal Panel */}
       <div className={`kb-terminal ${showTerminal ? 'visible' : ''}`}>
         <div className="kb-terminal-header">
-          <span className="kb-terminal-title">Wingman</span>
+          <span className="kb-terminal-title">Ambulando</span>
           <span className="kb-terminal-status">
             <span className="kb-status-dot"></span>
             Building
@@ -680,7 +680,7 @@ function ProjectStatusDemo() {
       {/* Terminal Panel */}
       <div className={`ps-terminal ${showTerminal ? 'visible' : ''}`}>
         <div className="ps-terminal-header">
-          <span className="ps-terminal-title">Wingman</span>
+          <span className="ps-terminal-title">Ambulando</span>
           <span className="ps-terminal-status">
             <span className="ps-status-dot"></span>
             Working

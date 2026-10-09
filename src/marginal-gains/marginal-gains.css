@@ -367,6 +367,15 @@
   margin-right: auto;
 }
 
+.marginal-gains-page #twoColumn .two-column-cta {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.marginal-gains-page #twoColumn .two-column-cta-centered {
+  justify-content: center;
+}
+
 .marginal-gains-page #twoColumn-5 p {
   max-width: 44rem;
 }
@@ -420,14 +429,14 @@
 }
 
 .marginal-gains-page .mg-philosophy-section .intro-pill {
-  margin-bottom: 20px;
+  margin-bottom: 26px;
 }
 
 .marginal-gains-page .mg-philosophy-section .section-heading,
 .marginal-gains-page .mg-philosophy-section h2 {
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
 }
 
 .marginal-gains-page .mg-philosophy-section > p {
@@ -435,7 +444,7 @@
   margin-top: 0;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: clamp(72px, 8vw, 112px);
+  margin-bottom: 0;
   opacity: 0.82;
 }
 
@@ -443,8 +452,21 @@
   margin-top: 0 !important;
 }
 
+.marginal-gains-page .mg-philosophy-blocks > div {
+  gap: clamp(10px, 1vw, 16px) !important;
+}
+
 .marginal-gains-page .mg-philosophy-blocks .mg-philosophy-card {
-  height: 448px !important;
+  height: auto !important;
+  min-height: 430px;
+  padding: 0 16px 20px !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 6px !important;
+  background: #0f0e0d !important;
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.4),
+    0 12px 48px rgba(0, 0, 0, 0.25) !important;
+  transform: none !important;
 }
 
 .marginal-gains-page .mg-philosophy-blocks .speedrun-card,
@@ -455,9 +477,14 @@
 }
 
 .marginal-gains-page .mg-philosophy-blocks .mg-philosophy-card .expandable-card-media {
-  height: 250px;
-  min-height: 250px;
-  border-radius: 8px;
+  height: 220px;
+  min-height: 220px;
+  margin: 0 -16px !important;
+  border-radius: 5px 5px 0 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.025), transparent 55%),
+    #141311;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -468,12 +495,31 @@
 .marginal-gains-page .mg-philosophy-blocks .mg-philosophy-card .expandable-card-media > * {
   width: 100%;
   height: 100%;
+  background: transparent;
 }
 
+.marginal-gains-page .mg-philosophy-blocks .mg-philosophy-card .expandable-card-media > img {
+  height: 100% !important;
+  object-fit: cover;
+  filter: none;
+}
+
+
 .marginal-gains-page .mg-philosophy-blocks .mg-philosophy-card .expandable-card-body {
-  padding-top: 14px !important;
-  padding-bottom: 10px !important;
+  padding: 16px 0 0 !important;
   margin-top: 0 !important;
+}
+
+.marginal-gains-page .mg-philosophy-blocks .mg-philosophy-card .expandable-card-body > span {
+  color: rgba(240, 240, 240, 0.55);
+  font-family: 'Geist', var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+.marginal-gains-page .mg-philosophy-blocks .mg-philosophy-card .expandable-card-body h3 {
+  min-height: 0;
+  margin: 10px 0 0;
 }
 
 @media (max-width: 1279px) {
@@ -496,12 +542,21 @@
 
   .marginal-gains-page .mg-philosophy-blocks .mg-philosophy-card {
     width: 100% !important;
-    height: 448px !important;
+    height: auto !important;
+    min-height: 430px;
   }
 }
 
 .marginal-gains-page .mega-menu-card h4 {
   font-family: 'Figtree', sans-serif;
+}
+
+.marginal-gains-page .faq-home-container {
+  max-width: 1280px;
+}
+
+.marginal-gains-page .mg-final-cta .cta-intro {
+  max-width: 390px;
 }
 
 .marginal-gains-page .speedrun-card .expandable-card-body p {

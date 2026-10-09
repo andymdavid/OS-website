@@ -31,7 +31,7 @@ const steps: ProcessStep[] = [
     number: '04',
     title: 'Operate & Improve',
     description:
-      'Your system runs on Wingman with full visibility through Flight Deck. Over time it learns from the knowledge in your business, improves through use, and compounds in value as your team builds on what is already working.',
+      'Your system runs on Ambulando with full visibility across the work. Over time it learns from the knowledge in your business, improves through use, and compounds in value as your team builds on what is already working.',
   },
 ];
 

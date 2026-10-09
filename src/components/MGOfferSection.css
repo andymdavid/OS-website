@@ -1,0 +1,75 @@
+.os-theme .section.mg-offer-section {
+  min-height: 100vh;
+  padding-top: clamp(112px, 12vw, 168px) !important;
+}
+
+.os-theme .section.mg-offer-section::after {
+  display: block !important;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  background: rgba(240, 240, 240, 0.1);
+}
+
+.mg-offer-hero {
+  max-width: 760px;
+  margin: 0 auto clamp(64px, 6vw, 88px);
+  text-align: center;
+}
+
+.mg-offer-hero .section-heading,
+.mg-offer-hero .mg-how-it-works-subpara {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.os-home-duplicate .mg-offer-section .funnel-cards {
+  gap: clamp(10px, 1vw, 16px) !important;
+  overflow: visible;
+  border: 0;
+}
+
+.os-home-duplicate .mg-offer-section .funnel-card,
+.os-home-duplicate .mg-offer-section .funnel-card:last-child {
+  grid-template-rows: auto auto 1fr;
+  min-height: 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  background: #0f0e0d;
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.4),
+    0 12px 48px rgba(0, 0, 0, 0.25);
+}
+
+.os-home-duplicate .mg-offer-section .funnel-card:hover {
+  background: #0f0e0d;
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 6px 28px rgba(0, 0, 0, 0.42),
+    0 14px 52px rgba(0, 0, 0, 0.28);
+}
+
+.os-home-duplicate .mg-offer-section .funnel-card h4,
+.os-home-duplicate .mg-offer-section .funnel-card:hover h4 {
+  font-family: 'Figtree', sans-serif;
+  font-weight: var(--weight-bold);
+}
+
+.os-home-duplicate .mg-offer-section .funnel-card-description {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.os-home-duplicate .mg-offer-section .funnel-card-body {
+  gap: 12px;
+  padding-top: 16px;
+}
+
+.os-home-duplicate .mg-offer-section .funnel-card h4,
+.os-home-duplicate .mg-offer-section .funnel-card:hover h4 {
+  min-height: 0;
+  margin: 0;
+}
+
+.os-home-duplicate .mg-offer-section .funnel-card-description {
+  margin: 0;
+}

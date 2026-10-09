@@ -3,13 +3,18 @@ import { NavigationDraft } from "@/components/NavigationDraft";
 import { PainRecognition } from "@/components/PainRecognition";
 import { MGGridSection } from "@/components/MGGridSection";
 import { MGHowItWorksSection } from "@/components/MGHowItWorksSection";
+import { MGOfferSection } from "@/components/MGOfferSection";
+import { MGPricingSection } from "@/components/MGPricingSection";
 import { CTAHomeDuplicate } from "@/components/CTAHomeDuplicate";
 import { FooterHomeDuplicate } from "@/components/FooterHomeDuplicate";
 import { AutomationPartnerHero } from "@/components/AutomationPartnerHero";
+import { FAQHomeDuplicate } from "@/components/FAQHomeDuplicate";
 import {
+  MarginalGainsApproachSection,
   MarginalGainsDuplicateBody,
 } from "@/marginal-gains/components/site-shell-duplicate";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { automationFaqs } from "@/marginal-gains/content/site-duplicate";
 import { getServiceSchema } from "@/lib/structured-data";
 import "@/levelup/levelup.fonts.css";
 import "@/levelup/levelup.generated.css";
@@ -32,80 +37,14 @@ export default function MarginalGains() {
           {
             "@context": "https://schema.org",
             "@type": "FAQPage",
-            mainEntity: [
-              {
-                "@type": "Question",
-                name: "What does the free AI audit involve?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "It starts with a short questionnaire for your team, followed by a working call to review the findings, test where the opportunity is clearest, and identify what is most worth building first.",
-                },
+            mainEntity: automationFaqs.map((item) => ({
+              "@type": "Question",
+              name: item.question,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: item.answer,
               },
-              {
-                "@type": "Question",
-                name: "What do we walk away with from the audit?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "A clearer view of where time and money are being lost, a prioritised workflow to focus on, and a practical recommendation on what building the first system would involve.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "What happens after the audit?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "If there is a clear fit, we scope and build one focused AI system around that workflow. The engagement has a defined start, a defined end, and a working system delivered into your business.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Do we need to be technical?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "No. These systems are built around operational workflows in your business, not around your team's ability to code. What matters most is that the people closest to the work can help define how the system should behave.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "What is Marginal Gains?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "For teams that want to keep going after the first system is live, Marginal Gains is the ongoing relationship. We keep improving the systems already running in your business, support them as your operations evolve, and build the next high-value workflows over time.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Do you provide AI automation in Perth?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Yes. Other Stuff is based in Perth and works with SMEs and small business teams to build AI automation systems around real operational workflows.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "Is this AI consulting or a done-for-you build?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "It starts with advisory work through the free AI audit, but the goal is a working AI automation system delivered into the business, not a strategy document.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "What is the difference between an AI agent and an AI automation system?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "An AI agent carries out a defined part of the work. The automation system gives that agent the workflow, records, rules, and handover points it needs to operate reliably. Wingman is the operating environment those agents run inside, connecting the workspace, shared records, business context, and workflow engine behind the system.",
-                },
-              },
-              {
-                "@type": "Question",
-                name: "What does Wingman do?",
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: "Wingman is the operating environment the systems run inside. It holds the shared records agents work from, organises the accumulated knowledge in your business, and connects the workspace and workflow engine behind live automation systems.",
-                },
-              },
-            ],
+            })),
           },
           {
             ...getServiceSchema({
@@ -135,7 +74,6 @@ export default function MarginalGains() {
               "AI Specialists Perth",
               "AI Workflow Automation",
               "AI Agents for Business",
-              "Free AI Audit",
               "AI Product Studio",
             ],
           },
@@ -150,10 +88,23 @@ export default function MarginalGains() {
       />
       <AutomationPartnerHero />
       <PainRecognition />
-      <MGGridSection />
+      <MGOfferSection />
       <MGHowItWorksSection />
+      <MarginalGainsApproachSection />
+      <MGGridSection />
       <MarginalGainsDuplicateBody />
-      <CTAHomeDuplicate />
+      <MGPricingSection />
+      <FAQHomeDuplicate
+        id="faq"
+        items={automationFaqs}
+        heading="Frequently asked questions."
+      />
+      <CTAHomeDuplicate
+        pillLabel="Get started"
+        heading="Find out what we’d automate first."
+        intro="Book a free 45-minute call with Pete and Andy. We’ll look at how work moves through your business and tell you what we’d automate first and what it would cost."
+        className="mg-final-cta"
+      />
       <FooterHomeDuplicate />
     </div>
   );

@@ -13,7 +13,7 @@ const cards = [
     description:
       'Stock levels and sales are tracked continuously, so slow movers and low stock are flagged early. Reorders are based on actual demand, not a spreadsheet. Less cash on shelves, fewer stockouts.',
     demo: <InventoryDemo />,
-    image: '/grid-finance-billing.webp',
+    image: '/examples-inventory-landscape.webp',
   },
   {
     tag: 'SALES & QUOTING',
@@ -21,7 +21,7 @@ const cards = [
     description:
       'When a new opportunity comes in, past work, pricing and case studies are pulled into a structured draft. Your team shapes and sends it instead of starting from scratch. Nothing useful gets forgotten.',
     demo: <ProposalBuilderDemo />,
-    image: '/grid-sales-quoting.webp',
+    image: '/examples-proposals-landscape.webp',
   },
   {
     tag: 'CLIENT SERVICE',
@@ -29,7 +29,7 @@ const cards = [
     description:
       'Before each client meeting, recent conversations, open issues and new flags are pulled into one brief. Your team arrives prepared without digging through emails. Clients notice when you remember everything.',
     demo: <PreMeetingBriefingsDemo />,
-    image: '/grid-internal-knowledge.webp',
+    image: '/examples-briefings-landscape.webp',
   },
   {
     tag: 'REPORTING',
@@ -37,7 +37,7 @@ const cards = [
     description:
       'Project status, progress and issues are pulled from your project data into a report ready to send. Your team reviews it instead of compiling it. Every update reflects where things stand today.',
     demo: <ProjectStatusReportsDemo />,
-    image: '/grid-customer-acquisition.webp',
+    image: '/examples-reporting-landscape.webp',
   },
 ];
 
@@ -46,7 +46,7 @@ export function MGGridSection() {
     <section id="what-we-build" className="section home-duplicate-grid-section">
       <div className="section-container-wide">
         <div className="home-duplicate-grid-intro">
-          <div className="intro-pill fade-in">WHAT WE AUTOMATE</div>
+          <div className="intro-pill fade-in">EXAMPLES OF WHAT WE AUTOMATE</div>
           <h2 className="section-heading fade-in fade-in-stagger-1">
             Automation built around the processes costing your team the most time and money.
           </h2>
