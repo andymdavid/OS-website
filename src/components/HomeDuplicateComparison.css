@@ -67,28 +67,25 @@
   box-shadow: 0 4px 12px rgba(240, 240, 240, 0.2);
 }
 
+.home-comparison-table-shell {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.home-comparison-scroll-cue {
+  display: none;
+}
+
 .home-comparison-table-wrap {
   position: relative;
   overflow-x: auto;
   overflow-y: hidden;
-  max-width: 1280px;
-  margin: 0 auto;
+  width: 100%;
   border: 1px solid rgba(240, 240, 240, 0.1);
   border-radius: 8px;
   background: transparent;
   box-shadow: none;
-}
-
-.home-comparison-table-wrap::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 0;
-  width: 16%;
-  background: rgba(240, 240, 240, 0.055);
-  pointer-events: none;
 }
 
 .home-comparison-table {
@@ -212,7 +209,7 @@
 
 .home-comparison-table th:last-child,
 .home-comparison-table td:last-child {
-  background: transparent;
+  background: rgba(240, 240, 240, 0.055);
 }
 
 .home-comparison-table thead th:last-child {
@@ -283,8 +280,50 @@
     padding-right: 0;
   }
 
+  .home-comparison-table-shell::after {
+    content: '';
+    position: absolute;
+    top: 30px;
+    right: 1px;
+    bottom: 1px;
+    z-index: 3;
+    width: 44px;
+    border-radius: 0 7px 7px 0;
+    background: linear-gradient(90deg, transparent, rgba(15, 14, 13, 0.88));
+    pointer-events: none;
+  }
+
+  .home-comparison-scroll-cue {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 7px;
+    min-height: 22px;
+    margin-bottom: 8px;
+    color: rgba(240, 240, 240, 0.62);
+    font-family: var(--font-ui);
+    font-size: 11px;
+    letter-spacing: 0.02em;
+  }
+
+  .home-comparison-scroll-cue svg {
+    width: 15px;
+    height: 15px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    animation: comparison-scroll-cue 1.8s ease-in-out infinite;
+  }
+
   .home-comparison-table {
-    min-width: 680px;
+    min-width: 900px;
+  }
+
+  .home-comparison-table thead th:first-child,
+  .home-comparison-table tbody th {
+    border-right: 1px solid rgba(240, 240, 240, 0.16);
   }
 
   .home-comparison-table thead th,
@@ -296,5 +335,16 @@
 
   .home-comparison-intro {
     margin-bottom: 40px;
+  }
+}
+
+@keyframes comparison-scroll-cue {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(4px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-comparison-scroll-cue svg {
+    animation: none;
   }
 }

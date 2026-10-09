@@ -97,8 +97,15 @@ export function HomeDuplicateComparison() {
           </div>
         </div>
 
-        <div className="home-comparison-table-wrap fade-in fade-in-stagger-3">
-          <table className="home-comparison-table">
+        <div className="home-comparison-table-shell fade-in fade-in-stagger-3">
+          <div className="home-comparison-scroll-cue" aria-hidden="true">
+            <span>Swipe to compare</span>
+            <svg viewBox="0 0 24 24">
+              <path d="M5 12h14M14 7l5 5-5 5" />
+            </svg>
+          </div>
+          <div className="home-comparison-table-wrap">
+            <table className="home-comparison-table">
             <colgroup>
               <col className="comparison-criteria-col" />
               <col className="comparison-standard-col" />
@@ -146,7 +153,8 @@ export function HomeDuplicateComparison() {
                 </tr>
               ))}
             </tbody>
-          </table>
+            </table>
+          </div>
         </div>
         {tooltip && (
           <div

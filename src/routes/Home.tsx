@@ -40,7 +40,7 @@ export default function Home() {
         <FAQHomeDuplicate />
         <CTAHomeDuplicate
           heading="What’s eating your team’s week?"
-          intro="Book a free 45-minute call. We’ll look at where your team’s time goes and tell you honestly whether AI can help."
+          intro="Book a free 45-minute call with Pete and Andy. We’ll look at how work moves through your business and tell you what we’d automate first and what it would cost."
         />
       </main>
       <HomeDuplicateExitNewsletter />

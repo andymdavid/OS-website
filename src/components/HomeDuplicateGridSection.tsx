@@ -14,7 +14,7 @@ const cards = [
       'Keep your marketing running consistently, even when the team is flat out on client work.',
     tags: ['Lead capture', 'Outreach', 'Campaign reporting'],
     demo: <FormProcessingDemo />,
-    image: '/grid-customer-acquisition.webp',
+    image: '/examples-inventory-landscape.webp',
   },
   {
     title: 'Sales',
@@ -22,7 +22,7 @@ const cards = [
       'Handle the prep, paperwork and follow-up around every deal, so your people spend their time with clients.',
     tags: ['Prospect research', 'Proposals and quotes', 'Follow-up'],
     demo: <AIChatDemo />,
-    image: '/grid-sales-quoting.webp',
+    image: '/examples-proposals-landscape.webp',
   },
   {
     title: 'Operations',
@@ -30,7 +30,7 @@ const cards = [
       "Take care of the updates, handoffs and chasing that keep jobs moving, so it doesn't all depend on a few key people.",
     tags: ['Client onboarding', 'Project updates', 'Handovers'],
     demo: <WingmanDemo />,
-    image: '/grid-internal-knowledge.webp',
+    image: '/examples-briefings-landscape.webp',
   },
   {
     title: 'Finance',
@@ -38,7 +38,7 @@ const cards = [
       "Keep billing, collections and reporting up to date, so you see cash and margin while there's still time to act.",
     tags: ['Invoicing', 'Margin reviews', 'Month-end reporting'],
     demo: <DataAnalysisDemo />,
-    image: '/grid-finance-billing.webp',
+    image: '/examples-reporting-landscape.webp',
   },
 ];
 
