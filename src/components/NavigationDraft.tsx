@@ -11,40 +11,39 @@ type NavDropdownKey = 'solutions' | 'media';
 const solutions = [
   {
     title: 'AI Automation',
-    description: 'Built to grow your margins, free up capital, and reduce risk across the workflows that matter most.',
+    description: 'We work with your team each month to automate and improve the processes costing you the most time.',
     href: '/ai-automation/',
   },
   {
-    title: 'Wingman',
-    description: 'The operating environment for running, monitoring, and managing the AI systems in your business.',
-    href: '/wingman/',
+    title: 'Ambulando',
+    description: 'The shared workspace where your people and AI agents turn conversations into tasks, workflows and applications.',
+    href: 'https://ambulando.io',
   },
   {
-    title: 'AI Training',
-    description: 'Get your team building with AI in a single high-energy session. Perfect for first exposure.',
+    title: 'AI Workshops',
+    description: 'Practical, hands-on workshops that help business teams and students understand, use and build with AI.',
     href: '/speedrun/',
-  },
-  {
-    title: 'AI School Training',
-    description: 'A hands-on AI workshop and school incursion for students in Perth and WA.',
-    href: '/levelup/',
+    children: [
+      { title: 'Business workshops', href: '/speedrun/' },
+      { title: 'School workshops', href: '/levelup/' },
+    ],
   },
 ];
 
 const mediaLinks = [
   {
     title: 'Intelligence Snacks',
-    description: 'Long conversations about AI, software and business, developed into useful ideas.',
+    description: 'Long-form conversations and newsletters exploring useful ideas about AI, software and the future of business.',
     href: 'https://intelligencesnacks.com/',
   },
   {
     title: 'Writing',
-    description: 'Notes, essays, and practical thinking from the work.',
+    description: 'Notes, essays and practical thinking drawn from our work building AI systems with small and medium-sized businesses.',
     href: '/writing/',
   },
   {
     title: 'Games',
-    description: 'Playable examples built through our hands-on work with AI.',
+    description: 'Playable experiments created through our work with AI, software and new ways of interacting with technology.',
     href: '/games/',
   },
 ];
@@ -157,6 +156,19 @@ export function NavigationDraft({ titleOverride, showPromoStrip = true, titleSwa
   const navTitle = titleOverride ?? 'OTHER STUFF';
   const activeDropdownItems = openDropdown === 'media' ? mediaLinks : solutions;
   const isMegaOpen = openDropdown !== null;
+  const megaStrip = openDropdown === 'media'
+    ? {
+        label: 'Intelligence Snacks',
+        text: 'Ideas about AI, software and business, delivered regularly.',
+        action: 'Explore Intelligence Snacks',
+        href: 'https://intelligencesnacks.com/',
+      }
+    : {
+        label: 'Automation Partner',
+        text: 'Automate more of your business each month.',
+        action: 'Explore Automation Partner',
+        href: '/ai-automation/',
+      };
 
   return (
     <>
@@ -286,13 +298,45 @@ export function NavigationDraft({ titleOverride, showPromoStrip = true, titleSwa
           }}
           onMouseLeave={handleDropdownLeave}
         >
-          <div className={`mega-menu-grid ${openDropdown === 'media' ? 'media-grid' : 'solutions-grid'}`}>
-            {activeDropdownItems.map((item) => (
-              <a key={item.title} href={item.href} className="mega-menu-card" onClick={closeMenus}>
-                <h4>{item.title}</h4>
-                <p>{item.description}</p>
-              </a>
-            ))}
+          <div className="mega-menu-surface">
+            <div className="mega-menu-grid">
+              {activeDropdownItems.map((item) => (
+                <div key={item.title} className="mega-menu-column">
+                  <a
+                    href={item.href}
+                    className="mega-menu-primary-link"
+                    onClick={closeMenus}
+                    {...(item.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                  >
+                    <h4>{item.title}</h4>
+                    <p>{item.description}</p>
+                  </a>
+                  {'children' in item && item.children ? (
+                    <div className="mega-menu-secondary-links">
+                      {item.children.map((child) => (
+                        <a key={child.title} href={child.href} onClick={closeMenus}>
+                          {child.title}<span aria-hidden="true">↗</span>
+                        </a>
+                      ))}
+                    </div>
+                  ) : null}
+                </div>
+              ))}
+            </div>
+            <a
+              className="mega-menu-strip"
+              href={megaStrip.href}
+              onClick={closeMenus}
+              {...(megaStrip.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+            >
+              <span className="mega-menu-strip-copy">
+                <strong>{megaStrip.label}</strong>
+                <span>{megaStrip.text}</span>
+              </span>
+              <span className="mega-menu-strip-action">
+                {megaStrip.action}<span aria-hidden="true">→</span>
+              </span>
+            </a>
           </div>
         </div>
       </div>
@@ -324,9 +368,18 @@ export function NavigationDraft({ titleOverride, showPromoStrip = true, titleSwa
               </button>
               <div className={`mobile-menu-submenu ${openDropdown === 'solutions' ? 'visible' : ''}`}>
                 {solutions.map((item) => (
-                  <a key={item.title} href={item.href} className="mobile-menu-subitem" onClick={closeMenus}>
-                    {item.title}
-                  </a>
+                  <React.Fragment key={item.title}>
+                    <a href={item.href} className="mobile-menu-subitem" onClick={closeMenus}>
+                      {item.title}
+                    </a>
+                    {'children' in item && item.children ? (
+                      <div className="mobile-menu-nested-links">
+                        {item.children.map((child) => (
+                          <a key={child.title} href={child.href} onClick={closeMenus}>{child.title}</a>
+                        ))}
+                      </div>
+                    ) : null}
+                  </React.Fragment>
                 ))}
               </div>
             </div>
