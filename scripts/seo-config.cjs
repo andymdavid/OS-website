@@ -870,6 +870,21 @@ function getStaticPages() {
         'Playable games built with AI by Other Stuff in Perth. Examples of rapid AI-assisted development and experimental software built with modern AI tools.',
       ogImage: DEFAULT_OG_IMAGE,
       sitemap: { changefreq: 'monthly', priority: '0.5' },
+      schema: [
+        {
+          '@context': 'https://schema.org',
+          '@type': 'CollectionPage',
+          '@id': `${absoluteUrl('/games')}#collection`,
+          url: absoluteUrl('/games'),
+          name: 'Games Built with AI',
+          description:
+            'Playable games built with AI by Other Stuff in Perth, showing rapid AI-assisted development and experimental software.',
+          isPartOf: getWebsiteRef(),
+          about: getOrganizationRef(),
+          inLanguage: 'en-AU',
+        },
+        buildBreadcrumbSchema('/games', 'Games'),
+      ],
       body: `
         <h1>Games built with AI</h1>
         <p>Simple playable games built with AI as examples of how quickly ideas can turn into working software.</p>

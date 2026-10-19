@@ -45,6 +45,20 @@ const checks = [
       'Wingmen Suite',
     ],
   },
+  {
+    route: '/games/',
+    file: path.join(distDir, 'games', 'index.html'),
+    mustContain: [
+      '<title>Games Built with AI | Other Stuff</title>',
+      '<meta name="description" content="Playable games built with AI by Other Stuff in Perth.',
+      '<link rel="canonical" href="https://otherstuff.ai/games/" />',
+      '"@type":"CollectionPage"',
+      'Games built with AI',
+    ],
+    mustNotContain: [
+      '<title>Games - OtherStuff</title>',
+    ],
+  },
 ];
 
 let failed = false;
