@@ -363,6 +363,67 @@ function buildNewsletterArticleSchema(issue) {
   ];
 }
 
+function buildWritingArchiveSchema(writingPosts) {
+  return [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'CollectionPage',
+      '@id': `${absoluteUrl('/writing')}#collection`,
+      url: absoluteUrl('/writing'),
+      name: 'Writing on AI Systems, Operations, and the Value Trap',
+      description:
+        'Essays and field notes from Other Stuff on custom AI systems, AI workflow automation, operations, and the economic implications of AI.',
+      inLanguage: 'en-AU',
+      isPartOf: getWebsiteRef(),
+      publisher: getOrganizationRef(),
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'ItemList',
+      '@id': `${absoluteUrl('/writing')}#articles`,
+      itemListElement: writingPosts.map((post, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        url: absoluteUrl(`/writing/${post.slug}`),
+        name: post.title,
+        description: post.description,
+      })),
+    },
+  ];
+}
+
+function buildWritingArticleSchema(post) {
+  const postPath = `/writing/${post.slug}`;
+  const postUrl = absoluteUrl(postPath);
+  const schemaImage = post.ogImage || post.thumbnail || DEFAULT_OG_IMAGE;
+
+  return [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      '@id': `${postUrl}#article`,
+      url: postUrl,
+      headline: post.title,
+      description: post.description,
+      image: /^https?:\/\//.test(schemaImage) ? schemaImage : `${SITE_URL}${schemaImage}`,
+      datePublished: post.date,
+      dateModified: post.date,
+      author: getOrganizationRef(),
+      publisher: getOrganizationRef(),
+      mainEntityOfPage: {
+        '@type': 'WebPage',
+        '@id': postUrl,
+      },
+      articleSection: 'Writing',
+      inLanguage: 'en-AU',
+      keywords: post.tags || [],
+    },
+    buildBreadcrumbSchema(postPath, post.title, [
+      { name: 'Writing', path: '/writing' },
+    ]),
+  ];
+}
+
 function loadWritingPosts() {
   if (!fs.existsSync(WRITING_POSTS_PATH)) {
     return [];
@@ -944,6 +1005,7 @@ function getPrerenderPages() {
 
     return {
       ...page,
+      schema: buildWritingArchiveSchema(writingPosts),
       body: `
         <h1>Writing</h1>
         <p>Essays, ideas, and field notes from building with AI.</p>
@@ -961,6 +1023,7 @@ function getPrerenderPages() {
       ogImage: post.ogImage || DEFAULT_OG_IMAGE,
       ogType: 'article',
       publishedTime: post.date,
+      schema: buildWritingArticleSchema(post),
       sitemap: {
         changefreq: 'monthly',
         priority: '0.65',

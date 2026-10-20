@@ -59,6 +59,26 @@ const checks = [
       '<title>Games - OtherStuff</title>',
     ],
   },
+  {
+    route: '/writing/',
+    file: path.join(distDir, 'writing', 'index.html'),
+    mustContain: [
+      '<link rel="canonical" href="https://otherstuff.ai/writing/" />',
+      '"@type":"CollectionPage"',
+      '"@type":"ItemList"',
+      'https://otherstuff.ai/writing/navigating-the-ai-value-trap/',
+    ],
+  },
+  {
+    route: '/writing/navigating-the-ai-value-trap/',
+    file: path.join(distDir, 'writing', 'navigating-the-ai-value-trap', 'index.html'),
+    mustContain: [
+      '<link rel="canonical" href="https://otherstuff.ai/writing/navigating-the-ai-value-trap/" />',
+      '"@type":"Article"',
+      '"@type":"BreadcrumbList"',
+      '"headline":"Navigating the AI Value Trap"',
+    ],
+  },
 ];
 
 let failed = false;
