@@ -46,6 +46,7 @@ yarn-error.log*
 .env.development.local
 .env.test.local
 .env.production.local
+ecosystem.config.cjs
 
 # Vercel
 .vercel
