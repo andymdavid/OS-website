@@ -1,11 +1,11 @@
-FROM node:20-alpine AS build
+FROM node:24.22.1-alpine AS build
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci
 COPY . .
 RUN npm run build
 
-FROM node:20-alpine
+FROM node:24.22.1-alpine
 RUN apk add --no-cache nginx
 WORKDIR /app
 COPY --from=build /app/dist /usr/share/nginx/html
