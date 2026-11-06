@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="NStack is an open-source backend for apps. Build the app. Let people choose where their data lives.">
+<title>NStack — Your apps. Your data. Your cloud.</title>
+<link rel="icon" href="assets/nstack-favicon.svg">
+<link rel="stylesheet" href="style.css">
+<script src="site.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header>
+<a href="#" aria-label="NStack home"><img class="logo" src="assets/nstack-horizontal-white.svg" alt="NStack" width="180" height="64"></a>
+<nav aria-label="Main navigation">
+<a href="#developers">For developers</a>
+<a href="#users">For users</a>
+<a href="#how">How it works</a>
+<a href="#building">Building blocks</a>
+<a href="#roadmap">Roadmap</a>
+<a class="nav-source" href="https://github.com/humansinstitute/nostr-stack" target="_blank" rel="noopener noreferrer">Explore the source ↗</a>
+</nav>
+</header>
+<main id="main">
+<section class="hero wrap">
+<div class="eyebrow"><span></span>NStack · Bring your own cloud</div>
+<div class="hero-grid">
+<div>
+<h1>Your apps.<br>Your data.<br><em>Your cloud.</em></h1>
+<p class="lead">Build the app. Let people choose the backend.</p>
+<p class="intro">Great software shouldn’t decide where everyone’s data has to live. NStack separates the application from the infrastructure behind it.</p>
+<div class="audience-actions" role="group" aria-label="Choose your path">
+<div class="path"><a class="button white" href="#developers" aria-describedby="path-dev">For developers</a><span id="path-dev">Build an app without hosting everyone’s data.</span></div>
+<div class="path"><a class="button outline" href="#users" aria-describedby="path-user">For users</a><span id="path-user">Own your data and choose where it lives.</span></div>
+</div>
+<a class="text-link hero-explainer" href="#how">See how it works ↓</a>
+</div>
+<div class="choice" id="hosting-choices" tabindex="-1">
+<div class="diagram-label">ONE APP. A CHOICE OF FOUNDATIONS.</div>
+<div class="app-node"><span class="node-icon">↗</span><div>Your application<small>The experience people use</small></div></div>
+<div class="connection"><span>Nostr identity + permissions</span></div>
+<div class="backend-node"><img src="assets/nstack-symbol-colour-light.svg" alt="" width="64" height="64"><div><strong id="host-title">Your home</strong><span id="host-sub">Infrastructure you operate</span></div></div>
+<div class="host-choices" role="group" aria-label="Hosting choices">
+<button type="button" aria-pressed="true" data-host="home">Home</button>
+<button type="button" aria-pressed="false" data-host="community">Community</button>
+<button type="button" aria-pressed="false" data-host="provider">Provider</button>
+</div>
+<p id="host-detail" aria-live="polite">Run NStack on a machine you control. Your data stays with you.</p>
+</div>
+</div>
+<div class="hero-foot"><span>Open source</span><span>Nostr identity. Familiar infrastructure.</span></div>
+</section>
+
+<section id="how" class="light">
+<div class="wrap">
+<div class="section-top"><span class="eyebrow">01 / The idea</span></div>
+<div class="split">
+<h2>The app is the interface.<br>The backend is <em>your choice.</em></h2>
+<div>
+<p class="lead">An application brings the experience. NStack provides the foundation for the data, files and permissions it needs.</p>
+<p>Developers build against one backend interface. People and communities choose who runs their NStack: at home, on their own cloud machine, or with a provider.</p>
+<p>Nostr supplies a common identity you own, so you can always reach your data and share it with your web of trust.</p>
+</div>
+</div>
+<div class="steps">
+<article><span>01</span><h3>Build the experience.</h3><p>Create an app for the work people want to do, using NStack’s data and file APIs.</p></article>
+<article><span>02</span><h3>Choose its foundation.</h3><p>Connect to an NStack run by you, your community or a provider you trust.</p></article>
+<article><span>03</span><h3>Work together.</h3><p>Give people and agents access to shared workspace data through explicit permissions.</p></article>
+</div>
+</div>
+</section>
+
+<section id="developers" class="wrap benefits audience" aria-labelledby="developers-title" tabindex="-1">
+<div class="section-top"><span class="eyebrow">02 / For developers</span><a class="text-link" href="#users">Here to use an app? ↓</a></div>
+<div class="split">
+<div class="audience-lead">
+<h2 id="developers-title">Build the experience.<br>Open up the backend.</h2>
+<p class="lead">Create useful apps on standard infrastructure — without the burden of hosting everyone’s data forever.</p>
+<p class="audience-intro">Focus on what makes your application worth using. NStack supplies the records, files and access model behind it.</p>
+<div class="actions">
+<a class="button white" href="https://github.com/humansinstitute/nostr-stack" target="_blank" rel="noopener noreferrer">Explore the code ↗</a>
+<a class="text-link" href="#building">See the building blocks ↓</a>
+</div>
+<ol class="start-steps" aria-label="Where to start">
+<li><strong>Start from the repository.</strong> Run the Docker-based stack and explore the code.</li>
+<li><strong>Build on records, files and permissions.</strong> Use the workspace data and file-storage APIs with Nostr identity.</li>
+<li><strong>Leave the hosting to your users.</strong> They run NStack at home, with a community or through a provider.</li>
+</ol>
+</div>
+<div class="benefit-list">
+<article><span>Familiar services</span><h3>Build on records and files.</h3><p>Work with Postgres-backed workspace data and S3-compatible storage — services your team already understands — for collaborative applications.</p></article>
+<article><span>Identity &amp; access</span><h3>Know who is asking. Limit what they can do.</h3><p>Nostr identities authenticate every request; workspace permissions govern what people and tools can access. No separate identity store for every app.</p></article>
+<article><span>A different operating relationship</span><h3>Make an app without hosting everyone’s work.</h3><p>You ship the application. The operator your users choose runs the hosting, maintenance and backups.</p></article>
+</div>
+</div>
+<aside class="audience-example">
+<span class="eyebrow">Built on NStack / Ambulando</span>
+<h3>A workspace for people and agents.</h3>
+<p>Ambulando brings chats, tasks, documents, files and canvases into one place. Its web and native clients build on NStack’s shared workspace data, identity and permissions — so a team’s work lives on the NStack it chooses, and every authorized app and agent can work with the same context.</p>
+<a class="text-link" href="https://ambulando.io" target="_blank" rel="noopener noreferrer">Explore Ambulando ↗</a>
+</aside>
+</section>
+
+<section id="users" class="audience user-audience" aria-labelledby="users-title" tabindex="-1">
+<div class="wrap">
+<div class="section-top"><span class="eyebrow">03 / For users</span><a class="text-link" href="#developers">Building an app? ↑</a></div>
+<div class="split">
+<div class="audience-lead">
+<h2 id="users-title">You deserve to<br>own your data.</h2>
+<p class="audience-intro">Your choice of app shouldn’t decide who holds your files, business records and shared history. With NStack, you and the people you work with make that decision.</p>
+<div class="actions">
+<a class="button white" href="#examples">See apps that work this way ↓</a>
+<a class="text-link" href="#hosting-compare">Compare hosting choices ↓</a>
+</div>
+</div>
+<div class="benefit-list">
+<article><span>Your home for your data</span><h3>A home, a community or a provider.</h3><p>Run NStack on infrastructure you control, share a community-run service, or choose a provider to look after it. Your data isn’t tied to one host: NStack is being built so you can move to another NStack at any time, and replicate across several for resilience.</p></article>
+<article><span>Your interfaces</span><h3>Different ways into the same work.</h3><p>Use a workspace app to coordinate, a focused client to capture material, and authorized tools to help. They all work with the same shared data, so your team’s context serves every experience.</p></article>
+<article><span>Your rules</span><h3>Access on your terms.</h3><p>Choose the operator and the access rules that suit your group. Give each person, app and agent exactly the access they need.</p></article>
+</div>
+</div>
+<div class="custodians" id="hosting-compare" role="table" aria-label="Comparing hosting choices" tabindex="-1">
+<div class="custodian-row custodian-head" role="row"><span role="columnheader">Choice</span><span role="columnheader">Who runs it</span><span role="columnheader">Best for</span></div>
+<div class="custodian-row" role="row"><strong role="rowheader">Home</strong><span role="cell">You, on a machine you control</span><span role="cell">Full control. You run the updates and backups.</span></div>
+<div class="custodian-row" role="row"><strong role="rowheader">Community</strong><span role="cell">Your community, for its members</span><span role="cell">Groups that want to share the work and keep their data together.</span></div>
+<div class="custodian-row" role="row"><strong role="rowheader">Provider</strong><span role="cell">A provider you choose</span><span role="cell">Hands-off hosting from someone you trust.</span></div>
+</div>
+<aside class="audience-example">
+<span class="eyebrow">For a residents’ association</span>
+<h3>A home for your association’s work.</h3>
+<p>With an NStack for its members, a residents’ association can keep meeting recordings in the shared workspace, with the minutes, plans and documents beside them. Each committee sees what it needs, and when volunteers change, the work stays with the association rather than with an app.</p>
+<a class="text-link" href="#examples">See apps that work this way ↓</a>
+</aside>
+</div>
+</section>
+
+<section id="building" class="light">
+<div class="wrap">
+<span class="eyebrow">04 / Familiar foundations</span>
+<h2>Real applications need<br>more than a stream.</h2>
+<p class="section-lead">Structured state, files and identity belong together. NStack brings familiar services into a modular backend for collaborative apps.</p>
+<div class="blocks">
+<article><span class="block-no">A / DATA</span><h3>Structured records</h3><p>Postgres-backed application data and shared workspace state, with each application’s tables kept separate.</p></article>
+<article><span class="block-no">B / FILES</span><h3>Storage that fits</h3><p>S3-compatible file services for the documents, recordings and other assets your application works with.</p></article>
+<article><span class="block-no">C / ACCESS</span><h3>Identity &amp; permissions</h3><p>Nostr identities and workspace access rules for people, applications and delegated operations.</p></article>
+<article><span class="block-no">D / CONNECTIONS · OPTIONAL</span><h3>Knowledge graphs</h3><p>Connect information through relationships, so apps and agents can explore how people, ideas and records relate.</p></article>
+<article><span class="block-no">E / EVENTS</span><h3>Nostr relays</h3><p>Store and deliver signed Nostr events. Apps can publish updates, query past events and subscribe to new ones.</p></article>
+<article><span class="block-no">F / FILE DELIVERY</span><h3>Blossom</h3><p>Store and retrieve files by their content hash: a fingerprint of the file’s bytes. Runs alongside workspace file storage.</p></article>
+<article><span class="block-no">G / GIT · EXPERIMENTAL</span><h3>GRASP</h3><p>Git repository hosting with Nostr identity and relay support, in active experimentation.</p></article>
+</div>
+<div class="optional">
+<strong>Choose your modules.</strong>
+<p>Run the services your apps need. Knowledge graphs are optional, GRASP is experimental, and each service applies its own access rules.</p>
+</div>
+</div>
+</section>
+
+<section id="examples" class="wrap examples">
+<span class="eyebrow">05 / Different interfaces. Shared work.</span>
+<h2>A workspace.<br>A recorder.<br>A common foundation.</h2>
+<div class="example-grid">
+<article>
+<span class="example-index">01 / COORDINATE</span>
+<h3>Ambulando</h3>
+<p>Chats, tasks, documents, files and canvases give people and agents a place to collaborate. Web and native clients work with shared workspace data through NStack’s identity and permission model.</p>
+<a href="https://ambulando.io" target="_blank" rel="noopener noreferrer">Explore Ambulando ↗</a>
+</article>
+<article>
+<span class="example-index">02 / CAPTURE</span>
+<h3>inDialogue</h3>
+<p>A focused recording and transcription app. It delivers captured material into the workspace conversation you choose, and reads replies from that thread.</p>
+</article>
+</div>
+</section>
+
+<section id="roadmap" class="light">
+<div class="wrap">
+<span class="eyebrow">06 / Open source</span>
+<div class="split">
+<h2>Open source today.<br>Growing in the open.</h2>
+<p class="lead">Run it, read it, build on it — and help shape what comes next.</p>
+</div>
+<div class="status-grid">
+<article>
+<span class="status">Available now</span>
+<h3>In the stack</h3>
+<ul>
+<li>A modular, Docker-based server</li>
+<li>Workspace data and file-storage APIs</li>
+<li>Nostr identity and permissions</li>
+<li>Apps like Ambulando working on shared workspace data</li>
+</ul>
+</article>
+<article>
+<span class="status planned">Roadmap</span>
+<h3>What comes next</h3>
+<ul>
+<li>A versioned backend contract and public test fixtures</li>
+<li>SDK and CLI releases</li>
+<li>Interoperability across independent NStacks</li>
+<li>Portable export, import and restore between NStacks</li>
+<li>Replication across NStacks for resilience</li>
+<li>Encryption tooling and encrypted peer backups</li>
+</ul>
+</article>
+</div>
+</div>
+</section>
+
+<section class="wrap faq">
+<span class="eyebrow">Questions</span>
+<div class="split">
+<h2>Good questions.<br>Straight answers.</h2>
+<div>
+<details><summary>Is NStack a hosting company?</summary><p>No. NStack is open-source software. Run it yourself, share one with your community, or let a provider run it for you.</p></details>
+<details><summary>Can I connect any application?</summary><p>Apps connect through NStack’s data, file and permission APIs. Existing apps join in by building that integration.</p></details>
+<details><summary>Can I move between hosts?</summary><p>That’s the point of NStack: your data isn’t tied to one host. Portable export, import and restore between NStacks are on the roadmap.</p></details>
+<details><summary>Does my Nostr key encrypt my data?</summary><p>Your Nostr key proves who you are and controls what you can access. Encrypting stored data is a separate layer, with encryption tooling on the roadmap — so choose a host you trust with what you store.</p></details>
+<details><summary>Where should developers start?</summary><p>Clone the repository, run the stack with Docker, and build against the workspace data and file APIs.</p></details>
+</div>
+</div>
+</section>
+
+<section class="closing">
+<div class="wrap">
+<span class="eyebrow">Build on an open foundation</span>
+<h2>Build something useful.<br>Leave the hosting choice open.</h2>
+<div class="closing-paths">
+<div>
+<span class="closing-label">Building an app?</span>
+<p>Explore the code, run the stack and help shape the common backend contract.</p>
+<a class="button white" href="https://github.com/humansinstitute/nostr-stack" target="_blank" rel="noopener noreferrer">Explore NStack on GitHub ↗</a>
+</div>
+<div>
+<span class="closing-label">Choosing where your work lives?</span>
+<p>See a workspace built on shared, permissioned data — then choose the NStack that suits you.</p>
+<div class="actions">
+<a class="button outline" href="https://ambulando.io" target="_blank" rel="noopener noreferrer">Explore Ambulando ↗</a>
+<a class="text-link" href="#hosting-compare">Compare hosting choices ↑</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="wrap">
+<img class="logo" src="assets/nstack-horizontal-white.svg" width="180" height="64" alt="NStack">
+<p>Bring your own cloud.<br><span>Open-source software for your apps, your data and your cloud.</span></p>
+<a href="#main">Back to top ↑</a>
+</footer>
+</body>
+</html>

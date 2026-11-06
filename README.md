@@ -41,6 +41,19 @@ Archived routes:
 - `/archive/home`
 - `/archive/company`
 
+## NStack static site
+
+`public/nstack/` contains the standalone NStack marketing site. Vite copies it
+unchanged to `dist/nstack/`; nginx serves it at `/nstack/` and redirects
+`/nstack` to that canonical path while retaining query strings. Keep its HTML,
+CSS, JavaScript and assets together so relative references and section anchors
+continue to work. This directory contains public sales content only.
+
+Validate with `npm run build`, `npm run lint`, and nginx using the production
+configuration. Check both slash forms, asset MIME types, keyboard navigation,
+hosting choices and FAQ at desktop and mobile sizes. Existing root and other
+route output must remain unchanged when updating this standalone site.
+
 ## Project Structure
 
 ```text
