@@ -18,7 +18,8 @@
     "prepare:images": "node scripts/prepare-home-images.mjs",
     "check:browser:astro": "node scripts/check-astro-browser.mjs",
     "check:routes": "node scripts/check-routes-browser.mjs",
-    "check:publishing": "node scripts/check-publishing.mjs"
+    "check:publishing": "node scripts/check-publishing.mjs",
+    "check:workshops": "node scripts/check-workshop-browser.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^7.1.4",

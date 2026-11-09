@@ -11,7 +11,9 @@ const baseUrl = process.env.ASTRO_PREVIEW_URL || 'http://127.0.0.1:4567';
   if(await page.locator('h1').innerText()!=='We put AI to work inside your business.') throw Error('Homepage headline missing');
   if(!(await page.locator('a.hero-cta-book').getAttribute('href')).includes('cal.com'))throw Error('Booking link missing');
   if(setup.name!=='no-js'){
-   const faq=page.locator('.faq-home-question').first();await faq.scrollIntoViewIfNeeded();await faq.click();await page.waitForFunction(()=>document.querySelector('.faq-home-question')?.getAttribute('aria-expanded')==='true',null,{timeout:15000});
+   const faq=page.locator('.faq-home-question').first();await faq.scrollIntoViewIfNeeded();
+   await page.waitForFunction(()=>document.querySelector('.faq-home-question')?.closest('astro-island')?.hasAttribute('ssr') === false);
+   await faq.click();await page.waitForFunction(()=>document.querySelector('.faq-home-question')?.getAttribute('aria-expanded')==='true',null,{timeout:15000});
   }
   if(setup.name!=='no-js') {
    let submitted=false;

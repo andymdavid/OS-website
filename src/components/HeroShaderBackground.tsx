@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const vertexShaderSource = `
 attribute vec2 a_position;
@@ -173,6 +173,7 @@ function createProgram(gl: WebGLRenderingContext) {
 
 export function HeroShaderBackground() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const [staticBackground, setStaticBackground] = useState(false);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -187,10 +188,22 @@ export function HeroShaderBackground() {
       depth: false,
       stencil: false,
       powerPreference: 'high-performance',
+      // Keep the CSS background when WebGL would fall back to costly software rendering.
+      failIfMajorPerformanceCaveat: true,
     });
 
     if (!gl) {
       canvas.dataset.shaderReady = 'false';
+      return undefined;
+    }
+
+    // Some browsers expose SwiftShader despite failIfMajorPerformanceCaveat.
+    // Use capabilities rather than user-agent/test detection for this fallback.
+    const rendererInfo = gl.getExtension('WEBGL_debug_renderer_info');
+    const renderer = rendererInfo ? String(gl.getParameter(rendererInfo.UNMASKED_RENDERER_WEBGL)) : '';
+    if (/swiftshader|llvmpipe|softpipe|software rasterizer/i.test(renderer)) {
+      gl.getExtension('WEBGL_lose_context')?.loseContext();
+      setStaticBackground(true);
       return undefined;
     }
 
@@ -291,5 +304,6 @@ export function HeroShaderBackground() {
     };
   }, []);
 
+  if (staticBackground) return <div className="hero-shader-canvas" data-shader-ready="false" aria-hidden="true" />;
   return <canvas ref={canvasRef} className="hero-shader-canvas" aria-hidden="true" />;
 }
