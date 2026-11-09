@@ -2,7 +2,7 @@
 import SiteLayout from '@/layouts/SiteLayout.astro';
 import WorkshopSections from "@/components/astro/WorkshopSections.astro";
 import {siteContent} from "@/speedrun/content/site";
-import { NavigationDraft } from "@/components/NavigationDraft";
+import NavigationDraft from '@/components/astro/Navigation.astro';
 import CTASection from "@/components/astro/CTA.astro";
 import Footer from '@/components/astro/Footer.astro';
 import { getServiceSchema } from "@/lib/structured-data";
@@ -80,7 +80,7 @@ import "@/speedrun/speedrun.css";
         ]}>
 <div class="os-theme levelup-theme levelup-theme-vars min-h-screen speedrun-page" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
       
-      <NavigationDraft client:load
+      <NavigationDraft
         titleSwapOnScroll={{
           before: "OTHER STUFF",
           after: "SPEEDRUN",

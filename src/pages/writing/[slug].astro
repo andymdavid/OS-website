@@ -1,7 +1,7 @@
 ---
 import SiteLayout from '@/layouts/SiteLayout.astro';
 import {getCollection} from 'astro:content';
-import { NavigationDraft } from "@/components/NavigationDraft";
+import NavigationDraft from '@/components/astro/Navigation.astro';
 import CTASection from "@/components/astro/CTA.astro";
 import Footer from '@/components/astro/Footer.astro';
 import { ValueTrapChart } from "@/components/ValueTrapChart";
@@ -59,7 +59,7 @@ const postUrl = absoluteUrl(`/writing/${post.slug}`);
         }}>
 <div class="os-theme os-draft min-h-screen writing-post-page">
       
-      <NavigationDraft client:load titleOverride="OTHER STUFF" />
+      <NavigationDraft titleOverride="OTHER STUFF" />
       <main>
         <section class="section writing-post-hero">
           <div class="section-container-wide writing-post-hero-inner">

@@ -1,9 +1,11 @@
 const express = require('express');
 
 const app = express();
-const PORT = 3001;
+const PORT = Number(process.env.PORT) || 3001;
 
-app.use(express.json());
+app.use(express.json({ limit: '16kb' }));
+const { createAnalyticsHandler } = require('./analytics');
+app.post('/api/analytics', createAnalyticsHandler());
 
 app.post('/api/subscribe', async (req, res) => {
   try {

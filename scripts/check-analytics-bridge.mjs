@@ -1,0 +1,41 @@
+import assert from 'node:assert/strict';
+import { createRequire } from 'node:module';
+import { once } from 'node:events';
+import { generateSecretKey, getPublicKey, verifyEvent } from 'nostr-tools/pure';
+import { v2 } from 'nostr-tools/nip44';
+import { createAnalyticsEvent } from '../src/lib/analytics-event.mjs';
+const require = createRequire(new URL('../server/package.json', import.meta.url));
+const express = require('express');
+const { WebSocketServer } = require('ws');
+const { createAnalyticsHandler, publishToRelay } = require('../server/analytics.js');
+const secret = generateSecretKey();
+const collector = getPublicKey(secret);
+const event = createAnalyticsEvent({ siteUuid: 'test-site', collectorPubkey: collector, pagePath: '/about/', deviceType: 'mobile' });
+assert.ok(verifyEvent(event));
+const inner = JSON.parse(v2.decrypt(event.content, v2.utils.getConversationKey(secret, event.pubkey)));
+assert.ok(verifyEvent(inner));
+assert.equal(inner.kind, 25910);
+assert.deepEqual(JSON.parse(inner.content).params, { name: 'record_visit', arguments: { siteUuid: 'test-site', pagePath: '/about/', deviceType: 'mobile' } });
+const relay = new WebSocketServer({ port: 0, host: '127.0.0.1' });
+await once(relay, 'listening');
+let accept = true, published = 0;
+relay.on('connection', socket => socket.on('message', data => {
+  const message = JSON.parse(data.toString());
+  assert.equal(message[0], 'EVENT'); assert.ok(verifyEvent(message[1]));
+  published++;
+  socket.send(JSON.stringify(['OK', message[1].id, accept, accept ? '' : 'test rejection']));
+}));
+const app = express(); app.use(express.json());
+app.post('/api/analytics', createAnalyticsHandler({ collector, publish: payload => publishToRelay(payload, `ws://127.0.0.1:${relay.address().port}`) }));
+const server = app.listen(0, '127.0.0.1'); await once(server, 'listening');
+const send = (body, origin = 'https://otherstuff.ai') => fetch(`http://127.0.0.1:${server.address().port}/api/analytics`, { method: 'POST', headers: { 'Content-Type': 'application/json', Origin: origin }, body: JSON.stringify(body) });
+try {
+  assert.equal((await send({ event }, 'https://unrelated.invalid')).status, 403);
+  assert.equal((await send({ event: { ...event, content: 'tampered' } })).status, 400);
+  assert.equal(published, 0);
+  const response = await send({ event }); assert.equal(response.status, 200);
+  assert.deepEqual(await response.json(), { accepted: true, eventId: event.id });
+  accept = false;
+  assert.equal((await send({ event })).status, 502);
+  console.log('Analytics: encrypted CVM compatibility, signed-event validation, origin checks, relay ACK and relay rejection pass (local relay; no production visits).');
+} finally { server.closeAllConnections(); await new Promise(resolve => server.close(resolve)); relay.clients.forEach(socket => socket.terminate()); await new Promise(resolve => relay.close(resolve)); }

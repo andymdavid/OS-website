@@ -1,11 +1,11 @@
 ---
-import { NavigationDraft } from '../NavigationDraft';
+import NavigationDraft from '@/components/astro/Navigation.astro';
 import Footer from '@/components/astro/Footer.astro';
 import '../../routes/WritingPost.css';
 const { backHref, backLabel, title, effectiveDate, summary, sections } = Astro.props;
 ---
 <div class="os-theme os-draft min-h-screen writing-post-page legal-page">
-      <NavigationDraft client:load titleOverride="OTHER STUFF" />
+      <NavigationDraft titleOverride="OTHER STUFF" />
       <main>
         <section class="section writing-post-hero">
           <div class="section-container-wide writing-post-hero-inner legal-page-hero-inner">

@@ -1,0 +1,275 @@
+{
+  "images": {
+    "help-ambulando": {
+      "320": {
+        "width": 320,
+        "height": 320,
+        "webp": "/media/help-ambulando-320.8254f76b07e0.webp",
+        "avif": "/media/help-ambulando-320.c901c64e4413.avif"
+      },
+      "400": {
+        "width": 400,
+        "height": 400,
+        "webp": "/media/help-ambulando-400.6545fda57adb.webp",
+        "avif": "/media/help-ambulando-400.ce0c5a49352a.avif"
+      },
+      "560": {
+        "width": 560,
+        "height": 560,
+        "webp": "/media/help-ambulando-560.5e36ad8b5cd9.webp",
+        "avif": "/media/help-ambulando-560.1c371a829258.avif"
+      },
+      "640": {
+        "width": 640,
+        "height": 640,
+        "webp": "/media/help-ambulando-640.71c18a456e65.webp",
+        "avif": "/media/help-ambulando-640.e84684ac6199.avif"
+      },
+      "800": {
+        "width": 800,
+        "height": 800,
+        "webp": "/media/help-ambulando-800.a48f7ae59bf9.webp",
+        "avif": "/media/help-ambulando-800.0a80bbbe9185.avif"
+      }
+    },
+    "help-automation-partner": {
+      "320": {
+        "width": 320,
+        "height": 320,
+        "webp": "/media/help-automation-partner-320.04f57685289a.webp",
+        "avif": "/media/help-automation-partner-320.1bbb93bcf8d7.avif"
+      },
+      "400": {
+        "width": 400,
+        "height": 400,
+        "webp": "/media/help-automation-partner-400.7d3a509f8151.webp",
+        "avif": "/media/help-automation-partner-400.11dce0b6ebc6.avif"
+      },
+      "560": {
+        "width": 560,
+        "height": 560,
+        "webp": "/media/help-automation-partner-560.5d9edd3464f8.webp",
+        "avif": "/media/help-automation-partner-560.03692b707541.avif"
+      },
+      "640": {
+        "width": 640,
+        "height": 640,
+        "webp": "/media/help-automation-partner-640.03346625f4c5.webp",
+        "avif": "/media/help-automation-partner-640.ac1acfa9a435.avif"
+      },
+      "800": {
+        "width": 800,
+        "height": 800,
+        "webp": "/media/help-automation-partner-800.c5efa6996ff3.webp",
+        "avif": "/media/help-automation-partner-800.11333d19ce55.avif"
+      }
+    },
+    "help-custom-software": {
+      "320": {
+        "width": 320,
+        "height": 320,
+        "webp": "/media/help-custom-software-320.f611b2083f6d.webp",
+        "avif": "/media/help-custom-software-320.8a7119700e7d.avif"
+      },
+      "400": {
+        "width": 400,
+        "height": 400,
+        "webp": "/media/help-custom-software-400.1908acfd3456.webp",
+        "avif": "/media/help-custom-software-400.e0096929d35a.avif"
+      },
+      "560": {
+        "width": 560,
+        "height": 560,
+        "webp": "/media/help-custom-software-560.c6c4cc8686c6.webp",
+        "avif": "/media/help-custom-software-560.a68e2e97e0b8.avif"
+      },
+      "640": {
+        "width": 640,
+        "height": 640,
+        "webp": "/media/help-custom-software-640.c43a710a17f4.webp",
+        "avif": "/media/help-custom-software-640.591c6aaf6d44.avif"
+      },
+      "800": {
+        "width": 800,
+        "height": 800,
+        "webp": "/media/help-custom-software-800.e76f1f626e59.webp",
+        "avif": "/media/help-custom-software-800.b7217767c365.avif"
+      }
+    },
+    "example-inventory": {
+      "360": {
+        "width": 360,
+        "height": 360,
+        "webp": "/media/example-inventory-360.18677499bfa3.webp",
+        "avif": "/media/example-inventory-360.d10ca7cfea38.avif"
+      },
+      "480": {
+        "width": 480,
+        "height": 480,
+        "webp": "/media/example-inventory-480.48910a1f204a.webp",
+        "avif": "/media/example-inventory-480.c05066ea8be7.avif"
+      },
+      "560": {
+        "width": 560,
+        "height": 560,
+        "webp": "/media/example-inventory-560.ba2c22b8e9e8.webp",
+        "avif": "/media/example-inventory-560.4f23810d961a.avif"
+      },
+      "720": {
+        "width": 720,
+        "height": 720,
+        "webp": "/media/example-inventory-720.17fe1f56fb24.webp",
+        "avif": "/media/example-inventory-720.332e996a58b8.avif"
+      },
+      "800": {
+        "width": 800,
+        "height": 800,
+        "webp": "/media/example-inventory-800.fb6056c3dc42.webp",
+        "avif": "/media/example-inventory-800.f4f3f7f8a168.avif"
+      },
+      "1120": {
+        "width": 900,
+        "height": 900,
+        "webp": "/media/example-inventory-1120.9ff2b8b81d01.webp",
+        "avif": "/media/example-inventory-1120.1d1fcffd6c83.avif"
+      }
+    },
+    "example-proposals": {
+      "360": {
+        "width": 360,
+        "height": 360,
+        "webp": "/media/example-proposals-360.cc9b4bcb23a8.webp",
+        "avif": "/media/example-proposals-360.83935df252ce.avif"
+      },
+      "480": {
+        "width": 480,
+        "height": 480,
+        "webp": "/media/example-proposals-480.ba029a42be85.webp",
+        "avif": "/media/example-proposals-480.3b65438f3fd5.avif"
+      },
+      "560": {
+        "width": 560,
+        "height": 560,
+        "webp": "/media/example-proposals-560.d6af0d412967.webp",
+        "avif": "/media/example-proposals-560.930af958fa72.avif"
+      },
+      "720": {
+        "width": 720,
+        "height": 720,
+        "webp": "/media/example-proposals-720.e1dc23520fbb.webp",
+        "avif": "/media/example-proposals-720.f2afeeaf860f.avif"
+      },
+      "800": {
+        "width": 800,
+        "height": 800,
+        "webp": "/media/example-proposals-800.419f71dd3c55.webp",
+        "avif": "/media/example-proposals-800.ac82b6265c2f.avif"
+      },
+      "1120": {
+        "width": 900,
+        "height": 900,
+        "webp": "/media/example-proposals-1120.9cfbb5a382e7.webp",
+        "avif": "/media/example-proposals-1120.6865484cbf4a.avif"
+      }
+    },
+    "example-briefings": {
+      "360": {
+        "width": 360,
+        "height": 360,
+        "webp": "/media/example-briefings-360.26d968200dda.webp",
+        "avif": "/media/example-briefings-360.3104b2c74690.avif"
+      },
+      "480": {
+        "width": 480,
+        "height": 480,
+        "webp": "/media/example-briefings-480.644b4b7ae747.webp",
+        "avif": "/media/example-briefings-480.bf9d3996f9d8.avif"
+      },
+      "560": {
+        "width": 560,
+        "height": 560,
+        "webp": "/media/example-briefings-560.b8665252c8d7.webp",
+        "avif": "/media/example-briefings-560.f31926bdf490.avif"
+      },
+      "720": {
+        "width": 720,
+        "height": 720,
+        "webp": "/media/example-briefings-720.fc7bd9583245.webp",
+        "avif": "/media/example-briefings-720.ad73e6050561.avif"
+      },
+      "800": {
+        "width": 800,
+        "height": 800,
+        "webp": "/media/example-briefings-800.e1a80c35e428.webp",
+        "avif": "/media/example-briefings-800.114ebc530344.avif"
+      },
+      "1120": {
+        "width": 900,
+        "height": 900,
+        "webp": "/media/example-briefings-1120.b94b1f470ff3.webp",
+        "avif": "/media/example-briefings-1120.ce5bc23c9ae1.avif"
+      }
+    },
+    "example-reporting": {
+      "360": {
+        "width": 360,
+        "height": 360,
+        "webp": "/media/example-reporting-360.b5ac7e9ebb47.webp",
+        "avif": "/media/example-reporting-360.d1bb368326fb.avif"
+      },
+      "480": {
+        "width": 480,
+        "height": 480,
+        "webp": "/media/example-reporting-480.c983f422a432.webp",
+        "avif": "/media/example-reporting-480.a641df3b862d.avif"
+      },
+      "560": {
+        "width": 560,
+        "height": 560,
+        "webp": "/media/example-reporting-560.ff60d56d8ba0.webp",
+        "avif": "/media/example-reporting-560.bc7d9577560b.avif"
+      },
+      "720": {
+        "width": 720,
+        "height": 720,
+        "webp": "/media/example-reporting-720.0e53b436133f.webp",
+        "avif": "/media/example-reporting-720.bac2eedf6b91.avif"
+      },
+      "800": {
+        "width": 800,
+        "height": 800,
+        "webp": "/media/example-reporting-800.f29ce336ab6c.webp",
+        "avif": "/media/example-reporting-800.fd89f234c5b2.avif"
+      },
+      "1120": {
+        "width": 900,
+        "height": 900,
+        "webp": "/media/example-reporting-1120.484677b20f7d.webp",
+        "avif": "/media/example-reporting-1120.a820a0e227d2.avif"
+      }
+    }
+  },
+  "fonts": {
+    "/fonts/Alfabet-Black.woff2": "/media/Alfabet-Black.61bd1583080d.woff2",
+    "/fonts/Alfabet-Regular.woff2": "/media/Alfabet-Regular.b2c9fd86ad73.woff2",
+    "/fonts/OffBitTrial-101.ttf": "/media/OffBitTrial-101.7d2f59cd5ef9.ttf",
+    "/fonts/OffBitTrial-101Bold.ttf": "/media/OffBitTrial-101Bold.15fe9a9a9505.ttf",
+    "/fonts/OffBitTrial-Regular.ttf": "/media/OffBitTrial-Regular.bcc7ae5726bb.ttf",
+    "/fonts/OffBitTrial-Bold.ttf": "/media/OffBitTrial-Bold.e7da22f309bd.ttf",
+    "/fonts/OffBitTrial-Dot.ttf": "/media/OffBitTrial-Dot.fa8e949b0f8e.ttf",
+    "/fonts/OffBitTrial-DotBold.ttf": "/media/OffBitTrial-DotBold.016e375a645f.ttf",
+    "/fonts/NeueMontreal-Medium.otf": "/media/NeueMontreal-Medium.3d28dde2df23.otf",
+    "/fonts/google/geist-latin.woff2": "/media/geist-latin.795860239d69.woff2",
+    "/fonts/google/inter-latin.woff2": "/media/inter-latin.ec7a76505cd5.woff2",
+    "/fonts/google/figtree-latin.woff2": "/media/figtree-latin.6e0deea7c79a.woff2",
+    "/fonts/google/caveat-latin.woff2": "/media/caveat-latin.65726be9652b.woff2",
+    "/fonts/google/cormorantgaramond-latin.woff2": "/media/cormorantgaramond-latin.20c69ec51178.woff2",
+    "/fonts/google/anton-latin.woff2": "/media/anton-latin.823073ce64ee.woff2",
+    "/fonts/google/bungee-latin.woff2": "/media/bungee-latin.4d159bd9d5d3.woff2",
+    "/fonts/google/jersey10-latin.woff2": "/media/jersey10-latin.1f3d4358691e.woff2",
+    "/fonts/google/silkscreen-latin.woff2": "/media/silkscreen-latin.278a530874cf.woff2"
+  },
+  "styles": {
+    "demoFonts": "/media/demo-fonts.6d2516792f17.css"
+  }
+}

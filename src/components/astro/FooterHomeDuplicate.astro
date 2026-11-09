@@ -1,10 +1,10 @@
 ---
 import { EmailCaptureForm } from '../EmailCaptureForm';
-import { HeroShaderBackground } from '../HeroShaderBackground';
+import HeroShaderBackground from './ShaderBackground.astro';
 import '../Footer.css';
 ---
 <footer class="footer footer-home-duplicate">
-      <HeroShaderBackground client:visible />
+      <HeroShaderBackground />
       <div class="footer-container">
         <div class="footer-brand">
           <a href="/" class="footer-logo-icon" aria-label="Other Stuff home">

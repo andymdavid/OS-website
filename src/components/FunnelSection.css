@@ -2568,3 +2568,5 @@
     border-color: #ff751f;
   }
 }
+
+.funnel-card-image > picture { display: contents; }

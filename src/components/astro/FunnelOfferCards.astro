@@ -1,5 +1,7 @@
 ---
 import '../FunnelSection.css';
+import { deliveryImage, deliverySrcset } from '../../lib/delivery-assets';
+const productSizes = '(max-width: 533px) calc(100vw - 106px), (max-width: 768px) calc(88vw - 42px), (max-width: 1024px) calc(88vw - 2 * clamp(22px, 2.4vw, 32px) - 2px), calc((100vw - 2 * clamp(32px, 6vw, 120px) - 2 * clamp(10px, 1vw, 16px)) / 3 - 2 * clamp(22px, 2.4vw, 32px) - 2px)';
 import { CAL_DISCOVERY_URL } from '../../lib/links';
 const cards = [
   {
@@ -48,14 +50,17 @@ const {showFooter=true,showRecommendation=true,content}=Astro.props;
         return (
           <article  class="funnel-card fade-in">
             <div class="funnel-card-image">
+              <picture>
+                {!cardContent?.image && <source type="image/avif" srcset={deliverySrcset(card.image.replace('/home-help-', 'help-').replace('.webp', ''), [320,400,560,640,800], 'avif')} sizes={productSizes} />}
               <img
                 class={`static-help-image ${!cardContent && 'imageClassName' in card ? card.imageClassName : ''}`}
-                src={cardContent?.image ?? card.image.replace('/home-help-', '/optimized/help-').replace('.webp', '-640.webp')}
-                srcset={!cardContent?.image ? [400, 640, 800].map(width => `${card.image.replace('/home-help-', '/optimized/help-').replace('.webp', `-${width}.webp`)} ${width}w`).join(', ') : undefined}
-                sizes="(max-width: 767px) calc(100vw - 80px), (max-width: 1100px) 40vw, 400px"
-                width="1254" height="1147" loading="lazy" decoding="async"
+                src={cardContent?.image ?? deliveryImage(card.image.replace('/home-help-', 'help-').replace('.webp', ''), 640)}
+                srcset={!cardContent?.image ? deliverySrcset(card.image.replace('/home-help-', 'help-').replace('.webp', ''), [320,400,560,640,800]) : undefined}
+                sizes={productSizes}
+                width="800" height="800" loading="lazy" decoding="async"
                 alt={cardContent?.imageAlt ?? card.imageAlt}
               />
+              </picture>
               {showRecommendation && card.tag && (
                 <svg class="funnel-card-recommended" viewBox="0 0 180 180" role="img" aria-label={card.tag}>
                   <defs>

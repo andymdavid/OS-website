@@ -8,6 +8,7 @@ export default defineConfig({
   site: 'https://otherstuff.ai',
   output: 'static',
   outDir: './dist',
+  build: { inlineStylesheets: 'auto' },
   integrations: [react()],
-  vite: { css: { postcss: { plugins: [tailwindcss()] } }, resolve: { alias: { 'tailwindcss': fileURLToPath(new URL('./node_modules/tailwindcss/index.css', import.meta.url)), '@': fileURLToPath(new URL('./src', import.meta.url)) } } },
+  vite: { build: { assetsInlineLimit: 12000 }, css: { postcss: { plugins: [tailwindcss()] } }, resolve: { alias: { 'tailwindcss': fileURLToPath(new URL('./node_modules/tailwindcss/index.css', import.meta.url)), '@': fileURLToPath(new URL('./src', import.meta.url)) } } },
 });
