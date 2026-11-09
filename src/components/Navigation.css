@@ -1,4 +1,4 @@
-/* Navigation styles: opaque surface keeps scrolling content out of the header. */
+/* Navigation Component Styles - Glassmorphic Design */
 
 .nav {
   /* Position */
@@ -19,14 +19,16 @@
   padding-right: var(--container-padding);
 }
 
-/* Header Container */
+/* Glass Header Container */
 .nav-container {
   /* Fixed dimensions */
   width: 1000px;
   max-width: 100%;
 
-  /* Opaque header surface */
-  background: #0d0d0d;
+  /* Glassmorphic styling */
+  background: rgba(13, 13, 13, 0.3);
+  -webkit-backdrop-filter: blur(9px);
+  backdrop-filter: blur(9px);
   border: 1px solid rgba(240, 240, 240, 0.1);
   border-radius: 4px;
 
