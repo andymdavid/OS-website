@@ -250,8 +250,8 @@
     }
   },
   "fonts": {
-    "/fonts/Alfabet-Black.woff2": "/media/Alfabet-Black.61bd1583080d.woff2",
-    "/fonts/Alfabet-Regular.woff2": "/media/Alfabet-Regular.b2c9fd86ad73.woff2",
+    "/fonts/Alfabet-Black.woff2": "/media/Alfabet-Black.6e39573da3b3.woff2",
+    "/fonts/Alfabet-Regular.woff2": "/media/Alfabet-Regular.88fec59996dc.woff2",
     "/fonts/OffBitTrial-101.ttf": "/media/OffBitTrial-101.7d2f59cd5ef9.ttf",
     "/fonts/OffBitTrial-101Bold.ttf": "/media/OffBitTrial-101Bold.15fe9a9a9505.ttf",
     "/fonts/OffBitTrial-Regular.ttf": "/media/OffBitTrial-Regular.bcc7ae5726bb.ttf",
@@ -269,7 +269,52 @@
     "/fonts/google/jersey10-latin.woff2": "/media/jersey10-latin.1f3d4358691e.woff2",
     "/fonts/google/silkscreen-latin.woff2": "/media/silkscreen-latin.278a530874cf.woff2"
   },
+  "fontFallbacks": {
+    "/fonts/Alfabet-Regular.woff2": "/media/Alfabet-Regular-extended.b2c9fd86ad73.woff2",
+    "/fonts/Alfabet-Black.woff2": "/media/Alfabet-Black-extended.61bd1583080d.woff2"
+  },
   "styles": {
     "demoFonts": "/media/demo-fonts.6d2516792f17.css"
+  },
+  "assets": {
+    "/favicon-48x48.png": "/media/favicon-48x48.c579b99a4076.png",
+    "/apple-touch-icon.png": "/media/apple-touch-icon.a0dff410b204.png",
+    "/primal-logo-white.svg": "/media/primal-logo-white.059f664eee94.svg",
+    "/wingman-mark-white.png": "/media/wingman-mark-white.bb8742887c53.png",
+    "/logos/home-duplicate/plantrite.svg": "/media/plantrite.346eb4e63462.svg",
+    "/optimized/andy-profile-128.webp": "/media/andy-profile-128.a3665b78a912.webp",
+    "/optimized/andy-profile-64.webp": "/media/andy-profile-64.74a7814a4b81.webp",
+    "/optimized/automation-improvement-loop-1280.webp": "/media/automation-improvement-loop-1280.578b493978f1.webp",
+    "/optimized/automation-improvement-loop-400.webp": "/media/automation-improvement-loop-400.a69d146d6661.webp",
+    "/optimized/automation-improvement-loop-640.webp": "/media/automation-improvement-loop-640.a027e9a10c4b.webp",
+    "/optimized/automation-improvement-loop-800.webp": "/media/automation-improvement-loop-800.d6ffee09df31.webp",
+    "/optimized/automation-monthly-cycle-1280.webp": "/media/automation-monthly-cycle-1280.643074346ea0.webp",
+    "/optimized/automation-monthly-cycle-400.webp": "/media/automation-monthly-cycle-400.f65640b2d39a.webp",
+    "/optimized/automation-monthly-cycle-640.webp": "/media/automation-monthly-cycle-640.8fe4d8a4a777.webp",
+    "/optimized/automation-monthly-cycle-800.webp": "/media/automation-monthly-cycle-800.54d3fe03984e.webp",
+    "/optimized/automation-multiple-loops-1280.webp": "/media/automation-multiple-loops-1280.ce4eb6b992e9.webp",
+    "/optimized/automation-multiple-loops-400.webp": "/media/automation-multiple-loops-400.86f17d309a61.webp",
+    "/optimized/automation-multiple-loops-640.webp": "/media/automation-multiple-loops-640.e0a6dd2d8284.webp",
+    "/optimized/automation-multiple-loops-800.webp": "/media/automation-multiple-loops-800.5b581e262637.webp",
+    "/optimized/brand-icon-192.webp": "/media/brand-icon-192.877c16a5c5b6.webp",
+    "/optimized/brand-icon-96.webp": "/media/brand-icon-96.a02870d61122.webp",
+    "/optimized/client-adapt-200.webp": "/media/client-adapt-200.c2ea6d1e0893.webp",
+    "/optimized/client-rocky-bay-200.webp": "/media/client-rocky-bay-200.ece7298a7f0b.webp",
+    "/optimized/client-stakwork-200.webp": "/media/client-stakwork-200.f89288f6f8f2.webp",
+    "/optimized/pete-profile-128.webp": "/media/pete-profile-128.35aee96afe23.webp",
+    "/optimized/pete-profile-64.webp": "/media/pete-profile-64.556e34cbd697.webp",
+    "/optimized/snacks-cassette-96.webp": "/media/snacks-cassette-96.4c142894b344.webp",
+    "/optimized/writing-ai-value-trap-1456.webp": "/media/writing-ai-value-trap-1456.211c3567236a.webp",
+    "/optimized/writing-ai-value-trap-400.webp": "/media/writing-ai-value-trap-400.df39fa0a3127.webp",
+    "/optimized/writing-ai-value-trap-640.webp": "/media/writing-ai-value-trap-640.ad4c1238f198.webp",
+    "/optimized/writing-ai-value-trap-960.webp": "/media/writing-ai-value-trap-960.d845c1be33ad.webp",
+    "/optimized/writing-business-model-of-ai-1456.webp": "/media/writing-business-model-of-ai-1456.0be544eb3d9f.webp",
+    "/optimized/writing-business-model-of-ai-400.webp": "/media/writing-business-model-of-ai-400.62195ac2ad24.webp",
+    "/optimized/writing-business-model-of-ai-640.webp": "/media/writing-business-model-of-ai-640.b643c4427f9f.webp",
+    "/optimized/writing-business-model-of-ai-960.webp": "/media/writing-business-model-of-ai-960.f3ab6ceaadc3.webp",
+    "/optimized/writing-custom-ai-systems-1456.webp": "/media/writing-custom-ai-systems-1456.6b4ece6abe32.webp",
+    "/optimized/writing-custom-ai-systems-400.webp": "/media/writing-custom-ai-systems-400.0121a4f8603a.webp",
+    "/optimized/writing-custom-ai-systems-640.webp": "/media/writing-custom-ai-systems-640.168c2894d179.webp",
+    "/optimized/writing-custom-ai-systems-960.webp": "/media/writing-custom-ai-systems-960.9e4a6915cc74.webp"
   }
 }

@@ -25,7 +25,9 @@
     "prepare:delivery": "node scripts/prepare-delivery-assets.mjs",
     "check:analytics:bridge": "node scripts/check-analytics-bridge.mjs",
     "check:navigation": "node scripts/check-navigation-browser.mjs",
-    "check:bfcache": "node scripts/check-bfcache.mjs"
+    "check:bfcache": "node scripts/check-bfcache.mjs",
+    "check:static-backgrounds": "node scripts/check-static-backgrounds.mjs",
+    "check:secondary-delivery": "node scripts/check-secondary-delivery.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^7.1.4",

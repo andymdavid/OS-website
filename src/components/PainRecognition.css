@@ -32,7 +32,7 @@
 
 /* Words start muted */
 .pr-word {
-  color: rgba(240, 240, 240, 0.15);
+  color: rgba(240, 240, 240, 0.6);
   transition: color 0.3s ease;
 }
 
@@ -123,3 +123,5 @@
     margin-bottom: 32px;
   }
 }
+
+@media (prefers-reduced-motion: reduce) { .pr-word { color: #ffffff; transition: none; } }

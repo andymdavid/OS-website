@@ -1,4 +1,5 @@
 ---
+import { deliveryStatic } from '../../lib/delivery-assets';
 import { EmailCaptureForm } from '../EmailCaptureForm';
 import '../Footer.css';
 ---
@@ -7,7 +8,7 @@ import '../Footer.css';
         {/* Logo/Icon - Outside Grid */}
         <div class="footer-brand">
           <a href="/" class="footer-logo-icon" aria-label="Other Stuff home">
-            <img src="/optimized/brand-icon-96.webp" srcset="/optimized/brand-icon-96.webp 96w, /optimized/brand-icon-192.webp 192w" sizes="46px" alt="Other Stuff Logo" width="46" height="46" />
+            <img src={deliveryStatic('/optimized/brand-icon-96.webp')} srcset={`${deliveryStatic('/optimized/brand-icon-96.webp')} 96w, ${deliveryStatic('/optimized/brand-icon-192.webp')} 192w`} sizes="46px" alt="Other Stuff Logo" width="46" height="46" />
           </a>
           <a href="/" class="footer-logo">OTHER STUFF</a>
         </div>

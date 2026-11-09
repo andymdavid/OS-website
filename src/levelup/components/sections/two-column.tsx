@@ -189,6 +189,7 @@ export function TwoColumn({
   callToAction,
   testimonials,
 }: TwoColumnProps) {
+  const [videoLoaded, setVideoLoaded] = useState(false);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const isCentered = textAlign === "center";
   const isWide = maxWidth === "wide";
@@ -819,19 +820,24 @@ export function TwoColumn({
                     aspectRatio: "9 / 16",
                   }}
                 >
-                  {splitModalVideoUrl ? (
+                  {splitModalVideoUrl && videoLoaded ? (
                     <iframe
-                      src={splitModalVideoUrl}
+                      src={`${splitModalVideoUrl}${splitModalVideoUrl.includes("?") ? "&" : "?"}autoplay=1`}
+                      ref={element => element?.focus()}
                       title={`${title} video`}
                       className="h-full w-full"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                       allowFullScreen
                     />
-                  ) : (
-                    <div className="h-full w-full flex items-center justify-center text-xs text-neutral-400">
-                      Video placeholder
-                    </div>
-                  )}
+                  ) : splitModalVideoUrl ? (
+                    <button className="os-video-play" type="button" onClick={() => setVideoLoaded(true)}
+                      aria-label={`Play ${title} video`}
+                      style={{ width: '100%', height: '100%', display: 'grid', placeContent: 'center', gap: '12px', background: '#1a1a1a', color: '#ffffff', cursor: 'pointer', border: 0 }}>
+                      <span aria-hidden="true" style={{ fontSize: '40px' }}>▶</span>
+                      <span>Play video</span>
+                    </button>
+                  ) : <div className="h-full w-full flex items-center justify-center text-xs text-neutral-400">Video placeholder</div>}
+                  {splitModalVideoUrl && <noscript><style>{'.os-video-play { display: none !important; }'}</style><a href={splitModalVideoUrl} target="_blank" rel="noopener noreferrer" style={{ display: 'grid', placeContent: 'center', width: '100%', height: '100%', color: '#ffffff' }}>Watch video</a></noscript>}
                 </div>
               </div>
             </div>

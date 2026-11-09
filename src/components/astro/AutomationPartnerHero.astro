@@ -1,15 +1,15 @@
 ---
 import BookCallContent from './BookCallContent.astro';
-import HeroShaderBackground from './ShaderBackground.astro';
-import { HomeDuplicateLogoCarousel } from '../HomeDuplicateLogoCarousel';
+import GradientBackground from './GradientBackground.astro';
+import HomeDuplicateLogoCarousel from './LogoCarousel.astro';
 import { CAL_DISCOVERY_URL } from '../../lib/links';
 import '../IntroSection.css';
 import '../Hero.css';
 import '../AutomationPartnerHero.css';
 ---
 <section class="hero-extended automation-partner-hero" id="hero">
-      <div class="hero-sticky">
-        <HeroShaderBackground />
+      <div class="hero-sticky hero-sticky-static">
+        <GradientBackground />
         <div class="hero-inner">
           <div class="automation-partner-hero-grid">
             <div class="hero-title-block automation-partner-hero-copy">

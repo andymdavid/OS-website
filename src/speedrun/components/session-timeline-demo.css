@@ -102,11 +102,11 @@
   align-items: center;
   gap: 6px;
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .session-timeline-stage.main .session-stage-duration {
-  color: #2ea782;
+  color: #70d7b5;
 }
 
 /* Pulse indicator for main stage */

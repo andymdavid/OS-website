@@ -1,4 +1,5 @@
 ---
+import { deliveryStatic } from '../lib/delivery-assets';
 import '../globals.css';
 import fontFaces from '../delivery-fonts.css?raw';
 import { deliveryFont } from '../lib/delivery-assets';
@@ -28,12 +29,12 @@ const schemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href={deliveryStatic('/favicon-48x48.png')} />
+    <link rel="apple-touch-icon" sizes="180x180" href={deliveryStatic('/apple-touch-icon.png')} />
     <style is:inline set:html={fontFaces} />
     <link rel="preload" href={deliveryFont('/fonts/Alfabet-Regular.woff2')} as="font" type="font/woff2" crossorigin />
     <link rel="preload" href={deliveryFont('/fonts/google/geist-latin.woff2')} as="font" type="font/woff2" crossorigin />
-    {['/', '/home-duplicate', '/home-duplicate/'].includes(Astro.url.pathname) && <link rel="preload" href={deliveryFont('/fonts/google/cormorantgaramond-latin.woff2')} as="font" type="font/woff2" crossorigin />}
+    {['/', '/home-duplicate', '/home-duplicate/', '/ai-automation', '/ai-automation/'].includes(Astro.url.pathname) && <link rel="preload" href={deliveryFont('/fonts/google/cormorantgaramond-latin.woff2')} as="font" type="font/woff2" crossorigin />}
     <title>{title.includes('Other Stuff') ? title : `${title} | Other Stuff`}</title>
     <meta name="description" content={description} />
     {Astro.props.noindex && <meta name="robots" content="noindex, follow" />}

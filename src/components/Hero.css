@@ -51,7 +51,7 @@
   pointer-events: none;
 }
 
-.hero-shader-canvas {
+.hero-gradient-background {
   position: absolute;
   inset: 0;
   z-index: 0;
@@ -378,7 +378,8 @@
   }
 }
 
-.os-theme.os-home-duplicate .hero-sticky {
+.os-theme.os-home-duplicate .hero-sticky,
+.os-theme.os-draft .hero-sticky.hero-sticky-static {
   background:
     radial-gradient(ellipse at 52% 78%, rgba(236, 103, 40, 0.78), transparent 28%),
     radial-gradient(ellipse at 50% 62%, rgba(146, 70, 150, 0.78), transparent 48%),

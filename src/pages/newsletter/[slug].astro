@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import SiteLayout from '@/layouts/SiteLayout.astro';
 import { getCollection } from 'astro:content';
 import NavigationDraft from '@/components/astro/Navigation.astro';
@@ -141,7 +142,7 @@ const seoDescription = issue.seoDescription || issue.description;
 
             {issue.thumbnail ? (
               <div class="writing-post-feature">
-                <img src={issue.thumbnail} alt={issue.title} loading="lazy" />
+                <Image src={issue.thumbnail} alt={issue.title} width={1280} height={720} widths={[400,640,960,1280]} sizes="(max-width: 1080px) calc(100vw - 48px), 1080px" format="webp" quality={72} loading="eager" />
               </div>
             ) : null}
 
@@ -231,7 +232,7 @@ const seoDescription = issue.seoDescription || issue.description;
                     <a class="writing-post-keep-link" href={canonicalPath(entry.path)}>
                       {entry.thumbnail ? (
                         <div class="writing-post-keep-media">
-                          <img src={entry.thumbnail} alt={entry.title} loading="lazy" />
+                          <Image src={entry.thumbnail} alt={entry.title} width={640} height={360} widths={[400,640,960]} sizes="(max-width: 900px) calc(100vw - 48px), 360px" format="webp" quality={72} loading="lazy" />
                         </div>
                       ) : null}
                       <div class="writing-post-keep-meta">

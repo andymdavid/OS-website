@@ -1,4 +1,5 @@
 ---
+import { deliveryStatic } from '../lib/delivery-assets';
 import SiteLayout from '@/layouts/SiteLayout.astro';
 import NavigationDraft from '@/components/astro/Navigation.astro';
 import CTASection from "@/components/astro/CTA.astro";
@@ -150,7 +151,7 @@ import "@/routes/About.css";
                       </svg>
                     </a>
                     <a href="https://primal.net/pw" target="_blank" rel="noopener noreferrer" aria-label="Pete Winn Nostr">
-                      <img src="/primal-logo-white.svg" alt="" aria-hidden="true" class="about-bio-card-social-primal" />
+                      <img src={deliveryStatic('/primal-logo-white.svg')} alt="" aria-hidden="true" class="about-bio-card-social-primal" />
                     </a>
                   </div>
                 </div>
@@ -174,7 +175,7 @@ import "@/routes/About.css";
                       </svg>
                     </a>
                     <a href="https://primal.net/andydavid" target="_blank" rel="noopener noreferrer" aria-label="Andy David Nostr">
-                      <img src="/primal-logo-white.svg" alt="" aria-hidden="true" class="about-bio-card-social-primal" />
+                      <img src={deliveryStatic('/primal-logo-white.svg')} alt="" aria-hidden="true" class="about-bio-card-social-primal" />
                     </a>
                   </div>
                 </div>

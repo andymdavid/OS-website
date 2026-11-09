@@ -97,13 +97,13 @@
   font-size: 11px;
   text-transform: none;
   letter-spacing: 0.02em;
-  color: rgba(240, 240, 240, 0.45);
+  color: rgba(240, 240, 240, 0.6);
 }
 
 .writing-page .writing-post-date {
   margin-top: 8px;
   font-size: 11px;
-  color: rgba(240, 240, 240, 0.35);
+  color: rgba(240, 240, 240, 0.6);
 }
 
 .writing-page .writing-post-media {

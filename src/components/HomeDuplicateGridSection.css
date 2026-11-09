@@ -282,3 +282,15 @@
 }
 
 .home-duplicate-grid-visual > .home-grid-picture { position: absolute; inset: 0; width: 100%; height: 100%; transform: none; z-index: 0; }
+
+/* Keep SSR content searchable while skipping distant demo layout/paint. The
+   browser remembers the measured height once a section has been rendered. */
+@supports (content-visibility: auto) {
+  .home-duplicate-grid-section {
+    content-visibility: auto;
+    contain-intrinsic-block-size: auto 1876px;
+  }
+  @media (max-width: 768px) {
+    .home-duplicate-grid-section { contain-intrinsic-block-size: auto 2878px; }
+  }
+}

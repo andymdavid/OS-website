@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import SiteLayout from '@/layouts/SiteLayout.astro';
 import { getCollection } from 'astro:content';
 import NavigationDraft from '@/components/astro/Navigation.astro';
@@ -104,7 +105,7 @@ const archiveSchema = [
                     <a class="writing-post-link" href={canonicalPath(issue.path)}>
                       <div class="writing-post-media newsletter-post-media">
                         {issue.thumbnail ? (
-                          <img src={issue.thumbnail} alt={issue.title} loading="lazy" />
+                          <Image src={issue.thumbnail} alt={issue.title} width={640} height={360} widths={[400,640,960]} sizes="(max-width: 720px) calc(100vw - 64px), (max-width: 1200px) calc((100vw - 92px) / 2), 300px" format="webp" quality={72} loading="lazy" />
                         ) : (
                           <div class="newsletter-post-media-fallback">
                             <span>Intelligence Snacks</span>
