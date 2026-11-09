@@ -4,7 +4,7 @@ import { Container } from "@/levelup/components/layout/container";
 import { Button } from "@/levelup/components/ui/button";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { DemoPreview } from "@/levelup/components/sections/demo-previews";
 import { Button as OsButton } from "@/components/Button";
 import { TestimonialCarousel } from "@/speedrun/components/testimonial-carousel";
@@ -190,6 +190,10 @@ export function TwoColumn({
   testimonials,
 }: TwoColumnProps) {
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const [videoReady, setVideoReady] = useState(false);
+  useEffect(() => {
+    if (splitModalVideoUrl) setVideoReady(true);
+  }, [splitModalVideoUrl]);
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
   const isCentered = textAlign === "center";
   const isWide = maxWidth === "wide";
@@ -830,11 +834,11 @@ export function TwoColumn({
                       allowFullScreen
                     />
                   ) : splitModalVideoUrl ? (
-                    <button className="os-video-play" type="button" onClick={() => setVideoLoaded(true)}
+                    <button className="os-video-play" type="button" disabled={!videoReady} aria-busy={!videoReady} onClick={() => setVideoLoaded(true)}
                       aria-label={`Play ${title} video`}
-                      style={{ width: '100%', height: '100%', display: 'grid', placeContent: 'center', gap: '12px', background: '#1a1a1a', color: '#ffffff', cursor: 'pointer', border: 0 }}>
+                      style={{ width: '100%', height: '100%', display: 'grid', placeContent: 'center', gap: '12px', background: '#1a1a1a', color: '#ffffff', cursor: videoReady ? 'pointer' : 'wait', border: 0 }}>
                       <span aria-hidden="true" style={{ fontSize: '40px' }}>▶</span>
-                      <span>Play video</span>
+                      <span>{videoReady ? 'Play video' : 'Preparing video…'}</span>
                     </button>
                   ) : <div className="h-full w-full flex items-center justify-center text-xs text-neutral-400">Video placeholder</div>}
                   {splitModalVideoUrl && <noscript><style>{'.os-video-play { display: none !important; }'}</style><a href={splitModalVideoUrl} target="_blank" rel="noopener noreferrer" style={{ display: 'grid', placeContent: 'center', width: '100%', height: '100%', color: '#ffffff' }}>Watch video</a></noscript>}
