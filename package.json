@@ -15,7 +15,8 @@
     "build:astro": "npm run sync:writing && astro build",
     "dev:astro": "astro dev --host 0.0.0.0",
     "check:astro": "node scripts/check-astro-output.mjs",
-    "prepare:images": "node scripts/prepare-home-images.mjs"
+    "prepare:images": "node scripts/prepare-home-images.mjs",
+    "check:browser:astro": "node scripts/check-astro-browser.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^7.1.4",
@@ -33,6 +34,7 @@
     "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.65.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
