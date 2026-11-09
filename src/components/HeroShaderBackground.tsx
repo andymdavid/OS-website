@@ -221,6 +221,7 @@ export function HeroShaderBackground() {
 
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     let animationFrame = 0;
+    let inViewport = false;
     let startTime = performance.now();
 
     const resize = () => {
@@ -238,7 +239,7 @@ export function HeroShaderBackground() {
     };
 
     const render = (now: number) => {
-      resize();
+      if (!inViewport || document.hidden) return;
 
       gl.useProgram(program);
       gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
@@ -257,16 +258,32 @@ export function HeroShaderBackground() {
       }
     };
 
-    if (reducedMotion) {
-      startTime = 0;
-      render(0);
-    } else {
-      animationFrame = window.requestAnimationFrame(render);
-    }
+    const resume = () => {
+      window.cancelAnimationFrame(animationFrame);
+      if (!inViewport || document.hidden) return;
+      resize();
+      if (reducedMotion) {
+        startTime = 0;
+        render(0);
+      } else {
+        animationFrame = window.requestAnimationFrame(render);
+      }
+    };
+    const observer = new IntersectionObserver(([entry]) => {
+      inViewport = entry.isIntersecting;
+      resume();
+    });
+    observer.observe(canvas);
+    document.addEventListener('visibilitychange', resume);
+    const resizeObserver = new ResizeObserver(resume);
+    resizeObserver.observe(canvas);
 
     window.addEventListener('resize', resize);
 
     return () => {
+      observer.disconnect();
+      resizeObserver.disconnect();
+      document.removeEventListener('visibilitychange', resume);
       window.removeEventListener('resize', resize);
       window.cancelAnimationFrame(animationFrame);
       gl.deleteBuffer(buffer);

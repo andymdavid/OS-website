@@ -1,0 +1,26 @@
+---
+import '../IntroSection.css';
+import '../Hero.css';
+import { HeroShaderBackground } from '../HeroShaderBackground';
+import { HomeDuplicateLogoCarousel } from '../HomeDuplicateLogoCarousel';
+import { BookCallContent } from '../BookCallContent';
+import { CAL_DISCOVERY_URL } from '../../lib/links';
+---
+<section class="hero-extended">
+  <div class="hero-sticky">
+    <HeroShaderBackground client:visible />
+    <div class="hero-inner">
+      <div class="hero-title-block">
+        <div class="hero-logo"><img src="/Logo-Main-Icon.webp" alt="Other Stuff — AI product studio in Perth, Western Australia" width="46" height="31" /></div>
+        <div class="intro-pill hero-eyebrow">An AI Partner for SMEs</div>
+        <h1 class="hero-duplicate-heading">We put AI to work inside your business.</h1>
+        <p class="hero-description">As your Automation Partner, we set up AI agents that know your business and automate more of it, workflow by workflow. You'll see results in the first month.</p>
+        <div class="hero-cta">
+          <a href={CAL_DISCOVERY_URL} target="_blank" rel="noopener noreferrer" class="btn-primary hero-cta-book book-call-button"><BookCallContent /></a>
+          <p class="hero-cta-terms">From $5k a month. One-month minimum. Cancel anytime.</p>
+        </div>
+      </div>
+    </div>
+    <HomeDuplicateLogoCarousel />
+  </div>
+</section>

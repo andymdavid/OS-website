@@ -1,31 +1,15 @@
 ---
-import '../globals.css';
+import SiteLayout from './SiteLayout.astro';
 import '../routes/WritingPost.css';
 import { NavigationDraft } from '../components/NavigationDraft';
 import { Footer } from '../components/Footer';
 interface Props { title: string; description: string; canonical: string; image: string; schema: Record<string, unknown>; }
 const { title, description, canonical, image, schema } = Astro.props;
 ---
-<!doctype html>
-<html lang="en-AU">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title} | Other Stuff</title>
-    <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content={canonical} />
-    <meta property="og:image" content={image} />
-    <script type="application/ld+json" set:html={JSON.stringify(schema).replace(/</g, '\\u003c')} />
-  </head>
-  <body>
-    <div class="os-theme os-draft min-h-screen writing-post-page">
-      <NavigationDraft client:load />
-      <main><slot /></main>
-      <Footer client:visible />
-    </div>
-  </body>
-</html>
+<SiteLayout title={title} description={description} path={canonical} image={image} type="article" publishedTime={String(schema.datePublished)} schema={schema}>
+  <div class="os-theme os-draft min-h-screen writing-post-page">
+    <NavigationDraft client:load />
+    <main><slot /></main>
+    <Footer client:visible />
+  </div>
+</SiteLayout>

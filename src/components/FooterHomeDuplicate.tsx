@@ -55,7 +55,7 @@ export function FooterHomeDuplicate() {
             <div className="footer-follow">
               <h4>Follow</h4>
               <div className="footer-founder-profile">
-                <img src="/Pete-letter.png" alt="" aria-hidden="true" />
+                <img src="/optimized/pete-profile-64.webp" srcSet="/optimized/pete-profile-64.webp 64w, /optimized/pete-profile-128.webp 128w" sizes="32px" width="32" height="32" loading="lazy" decoding="async" alt="" aria-hidden="true" />
                 <span>
                   <strong>Pete Winn</strong>
                   <em>Co-founder</em>
@@ -72,7 +72,7 @@ export function FooterHomeDuplicate() {
                 </div>
               </div>
               <div className="footer-founder-profile">
-                <img src="/Andy-letter.png" alt="" aria-hidden="true" />
+                <img src="/optimized/andy-profile-64.webp" srcSet="/optimized/andy-profile-64.webp 64w, /optimized/andy-profile-128.webp 128w" sizes="32px" width="32" height="32" loading="lazy" decoding="async" alt="" aria-hidden="true" />
                 <span>
                   <strong>Andy David</strong>
                   <em>Co-founder</em>

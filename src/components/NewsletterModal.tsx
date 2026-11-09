@@ -16,7 +16,7 @@ export function NewsletterModal({
   isOpen,
   onClose,
   pill = 'INTELLIGENCE SNACKS',
-  profileImageSrc = '/intelligence-snacks-cassette-clean-v3.png',
+  profileImageSrc = '/optimized/snacks-cassette-640.webp',
   heading = 'Get Intelligence Snacks in your inbox.',
   description = 'For people building and running modern businesses, Intelligence Snacks helps you quickly digest the big ideas emerging from the world of AI, delivered to your inbox each week.',
   buttonText = 'Send me snacks',

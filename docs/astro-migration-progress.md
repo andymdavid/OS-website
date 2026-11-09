@@ -9,3 +9,13 @@ Validated: pilot build; generated article headings/body, canonical URLs and stru
 Remaining before a reviewable migration: homepage and all remaining routes including NStack; native validated content collections replacing the temporary generated-writing JSON dependency; complete article metadata, share and related-post parity; original font/visual parity; responsive assets; API/form checks; publishing lifecycle checks; browser checks; baseline profiling and matched performance measurements; dependency audit; full production build integration and release readiness. This foundation is not production-ready and is not the completed homepage/article pilot.
 
 The previous delegated worker did not persist after the parent response. Work resumed directly; no background worker is currently active. Flight Deck task: c65011df-cc2c-4ec5-9046-43e1d50fa070.
+
+## Homepage milestone
+
+The foundation commit was local until 9 November 2026 03:53 UTC. The branch is now pushed to `origin/feat/astro-migration`.
+
+The pilot now emits the homepage plus three writing articles. The homepage has a native Astro hero and booking anchor; static sections have no hydration, while navigation, demos, FAQ/comparison and signup/footer components hydrate individually. Shared Astro metadata preserves social tags and loads analytics with defer. Content remains visible without JavaScript. Footer shader rendering pauses when offscreen or in a hidden document and no longer measures layout every animation frame.
+
+Display-sized WebP derivatives retain original images. The two footer portrait sources and banner cassette derivative total 4,408 bytes at the default sizes (926 + 782 + 2,700), versus approximately 5.5 MB of source images. Larger portrait and modal variants are available. This is asset-level evidence, not a measured whole-page score gain.
+
+Validation: `npm run build:astro` emits four pages; `npm run check:astro` checks native homepage/booking/article body, canonical/schema and replacement asset references; `npm run lint` passes. Browser runtime initially lacked shared libraries; a temporary extracted runtime is being used to complete browser checks. No managed services restarted.
