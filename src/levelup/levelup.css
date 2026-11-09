@@ -63,12 +63,12 @@
   align-items: flex-start;
 }
 
-.levelup-page section {
+.levelup-page main section {
   position: relative;
   min-height: 100vh;
 }
 
-.levelup-page section::after {
+.levelup-page main section::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -80,7 +80,7 @@
   background: rgba(240, 240, 240, 0.08);
 }
 
-.levelup-page section:last-of-type::after {
+.levelup-page main section:last-of-type::after {
   display: none;
 }
 

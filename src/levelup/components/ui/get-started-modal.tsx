@@ -7,15 +7,11 @@ interface GetStartedModalProps {
 }
 
 export function GetStartedModal({ open, onClose }: GetStartedModalProps) {
-  const [submitted, setSubmitted] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [emailDraft, setEmailDraft] = useState<string | null>(null);
 
   useEffect(() => {
     if (!open) {
-      setSubmitted(false);
-      setSubmitting(false);
-      setError(null);
+      setEmailDraft(null);
     }
   }, [open]);
 
@@ -45,62 +41,45 @@ export function GetStartedModal({ open, onClose }: GetStartedModalProps) {
 
           <div className="space-y-3 pr-12 pt-2">
             <h2 className="text-xl sm:text-2xl font-semibold">
-              Interested in Level Up for your school?
+              Let’s talk about your workshop
             </h2>
             <p className="text-sm sm:text-base text-white/70">
-              This is just a starting point so we can understand your context and get back to you.
+              Share a few details, then send your enquiry using your email app.
             </p>
           </div>
 
-          {submitted ? (
+          {emailDraft ? (
             <div className="mt-8 rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-sm text-white/80">
-              Thanks. We’ll be in touch shortly to talk through what might work for your students.
+              Your email draft is ready. Send it from your email app to get in touch.
+              <a className="mt-3 block underline" href={emailDraft}>Open email draft again</a>
+              <a className="mt-2 block underline" href="mailto:info@otherstuff.studio">Or email info@otherstuff.studio directly</a>
             </div>
           ) : (
             <form
               className="mt-8 space-y-4"
-              onSubmit={async (event) => {
+              onSubmit={(event) => {
                 event.preventDefault();
-                setSubmitting(true);
-                setError(null);
-
-                const form = event.currentTarget;
-                const formData = new FormData(form);
-                const payload = {
-                  name: formData.get("name"),
-                  organisation: formData.get("organisation"),
-                  role: formData.get("role"),
-                  email: formData.get("email"),
-                  inquiry: formData.get("inquiry"),
-                };
-
-                try {
-                  const response = await fetch("/api/contact", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify(payload),
-                  });
-
-                  if (!response.ok) {
-                    const data = await response.json().catch(() => ({}));
-                    throw new Error(data.error || "Something went wrong.");
-                  }
-
-                  setSubmitted(true);
-                  form.reset();
-                } catch (err) {
-                  setError(err instanceof Error ? err.message : "Something went wrong.");
-                } finally {
-                  setSubmitting(false);
-                }
+                const data = new FormData(event.currentTarget);
+                const workshop = window.location.pathname.includes('speedrun') ? 'Speedrun' : 'Level Up';
+                const body = [
+                  `Name: ${data.get('name')}`,
+                  `Organisation: ${data.get('organisation')}`,
+                  `Role: ${data.get('role') || 'Not specified'}`,
+                  `Email: ${data.get('email')}`,
+                  `Enquiry: ${data.get('inquiry')}`,
+                ].join('\r\n');
+                const draft = `mailto:info@otherstuff.studio?subject=${encodeURIComponent(`${workshop} workshop enquiry`)}&body=${encodeURIComponent(body)}`;
+                setEmailDraft(draft);
+                window.location.href = draft;
               }}
             >
               <div className="space-y-2">
-                <label className="text-xs font-semibold uppercase text-white/60">
+                <label htmlFor="workshop-name" className="text-xs font-semibold uppercase text-white/60">
                   Name <span className="text-[#a1ff62]">*</span>
                 </label>
                 <input
                   required
+                  id="workshop-name"
                   name="name"
                   type="text"
                   className="w-full rounded-xl border border-white/10 bg-[#2a2a2a] px-4 py-3 text-sm text-white placeholder:text-white/40 focus:border-white/30 focus:outline-none"
@@ -108,11 +87,12 @@ export function GetStartedModal({ open, onClose }: GetStartedModalProps) {
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-xs font-semibold uppercase text-white/60">
+                <label htmlFor="workshop-organisation" className="text-xs font-semibold uppercase text-white/60">
                   School or organisation <span className="text-[#a1ff62]">*</span>
                 </label>
                 <input
                   required
+                  id="workshop-organisation"
                   name="organisation"
                   type="text"
                   className="w-full rounded-xl border border-white/10 bg-[#2a2a2a] px-4 py-3 text-sm text-white placeholder:text-white/40 focus:border-white/30 focus:outline-none"
@@ -120,8 +100,9 @@ export function GetStartedModal({ open, onClose }: GetStartedModalProps) {
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-xs font-semibold uppercase text-white/60">Role (optional, but useful)</label>
+                <label htmlFor="workshop-role" className="text-xs font-semibold uppercase text-white/60">Role (optional, but useful)</label>
                 <input
+                  id="workshop-role"
                   name="role"
                   type="text"
                   className="w-full rounded-xl border border-white/10 bg-[#2a2a2a] px-4 py-3 text-sm text-white placeholder:text-white/40 focus:border-white/30 focus:outline-none"
@@ -129,11 +110,12 @@ export function GetStartedModal({ open, onClose }: GetStartedModalProps) {
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-xs font-semibold uppercase text-white/60">
+                <label htmlFor="workshop-email" className="text-xs font-semibold uppercase text-white/60">
                   Email address <span className="text-[#a1ff62]">*</span>
                 </label>
                 <input
                   required
+                  id="workshop-email"
                   name="email"
                   type="email"
                   className="w-full rounded-xl border border-white/10 bg-[#2a2a2a] px-4 py-3 text-sm text-white placeholder:text-white/40 focus:border-white/30 focus:outline-none"
@@ -141,17 +123,18 @@ export function GetStartedModal({ open, onClose }: GetStartedModalProps) {
                 />
               </div>
               <div className="space-y-2">
-                <label className="text-xs font-semibold uppercase text-white/60">
+                <label htmlFor="workshop-inquiry" className="text-xs font-semibold uppercase text-white/60">
                   I’m inquiring about <span className="text-[#a1ff62]">*</span>
                 </label>
                 <div className="relative">
                   <select
                     required
-                    name="inquiry"
+                    id="workshop-inquiry"
+                  name="inquiry"
                     className="w-full appearance-none rounded-xl border border-white/10 bg-[#2a2a2a] px-4 py-3 pr-10 text-sm text-white focus:border-white/30 focus:outline-none"
-                    defaultValue="Running Level Up at our school"
+                    defaultValue="Arranging a workshop"
                   >
-                    <option>Running Level Up at our school</option>
+                    <option>Arranging a workshop</option>
                     <option>Learning more about suitability</option>
                     <option>Something else</option>
                   </select>
@@ -166,15 +149,11 @@ export function GetStartedModal({ open, onClose }: GetStartedModalProps) {
                   </svg>
                 </div>
               </div>
-              {error ? (
-                <p className="text-xs text-red-300">{error}</p>
-              ) : null}
               <button
                 type="submit"
                 className="mt-2 inline-flex w-full items-center justify-center rounded-xl bg-[#a1ff62] px-4 py-3 text-sm font-semibold text-black hover:bg-[#b5ff7e] transition-colors disabled:cursor-not-allowed disabled:opacity-60"
-                disabled={submitting}
               >
-                {submitting ? "Sending..." : "Get in touch"}
+                Open email draft
               </button>
             </form>
           )}

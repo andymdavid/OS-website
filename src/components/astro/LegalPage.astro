@@ -1,0 +1,50 @@
+---
+import { NavigationDraft } from '../NavigationDraft';
+import { Footer } from '../Footer';
+import '../../routes/WritingPost.css';
+const { backHref, backLabel, title, effectiveDate, summary, sections } = Astro.props;
+---
+<div class="os-theme os-draft min-h-screen writing-post-page legal-page">
+      <NavigationDraft client:load titleOverride="OTHER STUFF" />
+      <main>
+        <section class="section writing-post-hero">
+          <div class="section-container-wide writing-post-hero-inner legal-page-hero-inner">
+            <a href={backHref} class="writing-post-back">
+              {backLabel}
+            </a>
+
+            <h1 class="writing-post-title">{title}</h1>
+
+            <div class="writing-post-meta">
+              <span class="writing-post-author">Other Stuff Pty Ltd</span>
+              <span class="writing-post-date">Effective {effectiveDate}</span>
+            </div>
+
+            <p class="writing-post-subheader">{summary}</p>
+          </div>
+        </section>
+
+        <section class="section writing-post-body">
+          <div class="section-container-wide writing-post-body-inner legal-page-body-inner">
+            <div class="writing-post-content legal-page-content">
+              {sections.map((section) => (
+                <section key={section.title} class="legal-section">
+                  <h2>{section.title}</h2>
+                  {section.paragraphs?.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                  {section.bullets?.length ? (
+                    <ul>
+                      {section.bullets.map((bullet) => (
+                        <li key={bullet}>{bullet}</li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </section>
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer client:visible />
+    </div>

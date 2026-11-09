@@ -67,7 +67,7 @@ export function Hero({
     >
       <Container>
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           className={`flex flex-col items-center text-center max-w-5xl mx-auto ${
@@ -78,7 +78,7 @@ export function Hero({
           {/* Optional Badge */}
           {badge && (
             <motion.div
-              initial={{ opacity: 0, y: 10 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
@@ -103,7 +103,7 @@ export function Hero({
               </h1>
               {/* Subtitle */}
               <motion.p
-                initial={{ opacity: 0, y: 20 }}
+                initial={false}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="speedrun-hero-subtitle"
@@ -118,7 +118,7 @@ export function Hero({
               </motion.p>
               {/* CTA */}
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
+                initial={false}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
                 className="speedrun-hero-cta"
@@ -146,7 +146,7 @@ export function Hero({
             </div>
           ) : (
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
               className="font-anton tracking-tight leading-tight uppercase"
@@ -172,7 +172,7 @@ export function Hero({
           {/* Subtitle */}
           {variant !== "homeStyle" && (
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
               className="text-base text-[#201d1d]"
@@ -185,7 +185,7 @@ export function Hero({
           {/* CTA */}
           {variant !== "homeStyle" && (
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
@@ -213,7 +213,7 @@ export function Hero({
           {/* Social Proof */}
           {socialProof && (
             <motion.div
-              initial={{ opacity: 0 }}
+              initial={false}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.5 }}
               className="w-full flex justify-center sm:w-auto sm:justify-start"

@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const vertexShaderSource = `
 attribute vec2 a_position;
@@ -173,6 +173,7 @@ function createProgram(gl: WebGLRenderingContext) {
 
 export function HeroShaderBackground() {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const [staticBackground, setStaticBackground] = useState(false);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -187,10 +188,22 @@ export function HeroShaderBackground() {
       depth: false,
       stencil: false,
       powerPreference: 'high-performance',
+      // Keep the CSS background when WebGL would fall back to costly software rendering.
+      failIfMajorPerformanceCaveat: true,
     });
 
     if (!gl) {
       canvas.dataset.shaderReady = 'false';
+      return undefined;
+    }
+
+    // Some browsers expose SwiftShader despite failIfMajorPerformanceCaveat.
+    // Use capabilities rather than user-agent/test detection for this fallback.
+    const rendererInfo = gl.getExtension('WEBGL_debug_renderer_info');
+    const renderer = rendererInfo ? String(gl.getParameter(rendererInfo.UNMASKED_RENDERER_WEBGL)) : '';
+    if (/swiftshader|llvmpipe|softpipe|software rasterizer/i.test(renderer)) {
+      gl.getExtension('WEBGL_lose_context')?.loseContext();
+      setStaticBackground(true);
       return undefined;
     }
 
@@ -221,6 +234,7 @@ export function HeroShaderBackground() {
 
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     let animationFrame = 0;
+    let inViewport = false;
     let startTime = performance.now();
 
     const resize = () => {
@@ -238,7 +252,7 @@ export function HeroShaderBackground() {
     };
 
     const render = (now: number) => {
-      resize();
+      if (!inViewport || document.hidden) return;
 
       gl.useProgram(program);
       gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
@@ -257,16 +271,32 @@ export function HeroShaderBackground() {
       }
     };
 
-    if (reducedMotion) {
-      startTime = 0;
-      render(0);
-    } else {
-      animationFrame = window.requestAnimationFrame(render);
-    }
+    const resume = () => {
+      window.cancelAnimationFrame(animationFrame);
+      if (!inViewport || document.hidden) return;
+      resize();
+      if (reducedMotion) {
+        startTime = 0;
+        render(0);
+      } else {
+        animationFrame = window.requestAnimationFrame(render);
+      }
+    };
+    const observer = new IntersectionObserver(([entry]) => {
+      inViewport = entry.isIntersecting;
+      resume();
+    });
+    observer.observe(canvas);
+    document.addEventListener('visibilitychange', resume);
+    const resizeObserver = new ResizeObserver(resume);
+    resizeObserver.observe(canvas);
 
     window.addEventListener('resize', resize);
 
     return () => {
+      observer.disconnect();
+      resizeObserver.disconnect();
+      document.removeEventListener('visibilitychange', resume);
       window.removeEventListener('resize', resize);
       window.cancelAnimationFrame(animationFrame);
       gl.deleteBuffer(buffer);
@@ -274,5 +304,6 @@ export function HeroShaderBackground() {
     };
   }, []);
 
+  if (staticBackground) return <div className="hero-shader-canvas" data-shader-ready="false" aria-hidden="true" />;
   return <canvas ref={canvasRef} className="hero-shader-canvas" aria-hidden="true" />;
 }

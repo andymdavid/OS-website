@@ -1,0 +1,50 @@
+---
+import SiteLayout from '@/layouts/SiteLayout.astro';
+import { Navigation } from '@/components/Navigation';
+import { Hero } from '@/components/Hero';
+import { IntroSection } from '@/components/IntroSection';
+import { FunnelSection } from '@/components/FunnelSection';
+import { FollowUpSection } from '@/components/FollowUpSection';
+import { WingmanSection } from '@/components/WingmanSection';
+import { Testimonials } from '@/components/Testimonials';
+import { GoodStuff } from '@/components/GoodStuff';
+import CTASection from "@/components/astro/CTA.astro";
+import { Footer } from '@/components/Footer';
+
+
+---
+<SiteLayout title="Home (Archived)" description="" path="/archive/home" noindex>
+<div class="os-theme">
+      
+      <Navigation client:load />
+      <main>
+        {/* Hero Section */}
+        <Hero client:visible />
+
+        {/* Intro Section: The Problem */}
+        <IntroSection client:visible />
+
+        {/* Funnel Section: How We Can Help */}
+        <FunnelSection client:visible />
+
+        {/* Follow Up Section (mirrors The Problem) */}
+        <FollowUpSection />
+
+        {/* Follow-up Problem Section */}
+        <WingmanSection client:visible />
+
+        {/* Testimonials Section - Hidden until testimonials are available */}
+        {/* Uncomment the line below when you're ready to show testimonials */}
+        {/* <Testimonials /> */}
+
+        {/* Intelligence Snacks Section */}
+        <GoodStuff client:visible />
+
+        {/* CTA Section */}
+        <CTASection />
+      </main>
+
+      {/* Footer */}
+      <Footer client:visible />
+    </div>
+</SiteLayout>

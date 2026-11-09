@@ -1,0 +1,165 @@
+---
+import SiteLayout from '@/layouts/SiteLayout.astro';
+import {getCollection} from 'astro:content';
+import { NavigationDraft } from "@/components/NavigationDraft";
+import CTASection from "@/components/astro/CTA.astro";
+import { Footer } from "@/components/Footer";
+import { ValueTrapChart } from "@/components/ValueTrapChart";
+import { absoluteUrl, canonicalPath } from "@/lib/structured-data";
+import "@/routes/WritingPost.css";
+const EMBED_MARKER = '<div data-embed="value-trap-chart"></div>';
+const writingImageSrcSet = (src: string) => {
+  const extensionIndex = src.lastIndexOf(".");
+  if (extensionIndex === -1) return undefined;
+
+  const base = src.slice(0, extensionIndex);
+  const extension = src.slice(extensionIndex);
+  return `${base}-480${extension} 480w, ${base}-960${extension} 960w, ${src} 1456w`;
+};
+export async function getStaticPaths(){return (await getCollection('writing')).map(entry=>({params:{slug:entry.id},props:{post:entry.data}}));}
+const {post} = Astro.props;
+const writingPosts = (await getCollection('writing')).map(entry=>entry.data).sort((a,b)=>b.date.localeCompare(a.date));
+const keepReading = writingPosts.filter((entry) => entry.slug !== post.slug).slice(0, 3);
+const bodyParts = post.html.split(EMBED_MARKER);
+const postUrl = absoluteUrl(`/writing/${post.slug}`);
+---
+<SiteLayout title={post.title}
+        description={post.description}
+        path={`/writing/${post.slug}`}
+        ogImage={post.ogImage}
+        ogType="article"
+        publishedTime={post.date}
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "BlogPosting",
+          "@id": `${postUrl}#article`,
+          url: postUrl,
+          headline: post.title,
+          description: post.description,
+          image: `https://otherstuff.ai${post.ogImage ?? post.thumbnail}`,
+          datePublished: post.date,
+          dateModified: post.date,
+          keywords: post.tags.join(', '),
+          author: {
+            "@type": "Organization",
+            name: post.author,
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "Other Stuff",
+            logo: {
+              "@type": "ImageObject",
+              url: "https://otherstuff.ai/Logo-Main-Icon.webp",
+            },
+          },
+          mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": postUrl,
+          },
+        }}>
+<div class="os-theme os-draft min-h-screen writing-post-page">
+      
+      <NavigationDraft client:load titleOverride="OTHER STUFF" />
+      <main>
+        <section class="section writing-post-hero">
+          <div class="section-container-wide writing-post-hero-inner">
+            <a href="/writing/" class="writing-post-back">
+              Back to Writing
+            </a>
+
+            <h1 class="writing-post-title">{post.title}</h1>
+
+            <div class="writing-post-meta">
+              <span class="writing-post-author">{post.author}</span>
+              <span class="writing-post-date">{post.displayDate}</span>
+              <span class="writing-post-date">{post.readTime}</span>
+            </div>
+
+            <div class="writing-post-feature">
+              <img
+                src={post.thumbnail}
+                srcset={writingImageSrcSet(post.thumbnail)}
+                sizes="(max-width: 1080px) calc(100vw - 48px), 1080px"
+                alt={post.title}
+                width="1456"
+                height="816"
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+              />
+            </div>
+
+            <p class="writing-post-subheader">
+              {post.intro}
+            </p>
+
+            <div class="writing-post-share">
+              <span>Share</span>
+              <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(postUrl)}`} target="_blank" rel="noopener noreferrer">
+                LinkedIn
+              </a>
+              <a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(postUrl)}&text=${encodeURIComponent(post.title)}`} target="_blank" rel="noopener noreferrer">
+                X
+              </a>
+              <a href={`mailto:?subject=${encodeURIComponent(post.title)}&body=${encodeURIComponent(postUrl)}`} rel="noopener noreferrer">
+                Email
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="section writing-post-body">
+          <div class="section-container-wide writing-post-body-inner">
+            <div class="writing-post-content">
+              {bodyParts.map((part, index) => (
+                <div key={`${post.slug}-part-${index}`}>
+                  {part ? (
+                    <div set:html={part} />
+                  ) : null}
+                  {index < bodyParts.length - 1 ? <ValueTrapChart client:visible /> : null}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {keepReading.length > 0 ? (
+        <section class="section writing-post-keep-reading">
+          <div class="section-container-wide">
+            <div class="writing-post-keep-header">
+              <h2>Keep reading</h2>
+            </div>
+            <div class="writing-post-keep-grid">
+              {keepReading.map((post) => (
+                <article key={post.slug} class="writing-post-keep-card">
+                  <a class="writing-post-keep-link" href={canonicalPath(`/writing/${post.slug}`)}>
+                    <div class="writing-post-keep-media">
+                      <img
+                        src={post.thumbnail}
+                        srcset={writingImageSrcSet(post.thumbnail)}
+                        sizes="(max-width: 900px) calc(100vw - 48px), 360px"
+                        alt={post.title}
+                        width="480"
+                        height="270"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                    <div class="writing-post-keep-meta">
+                      <div class="writing-post-keep-title">{post.title}</div>
+                      <div class="writing-post-keep-description">{post.description}</div>
+                      <div class="writing-post-keep-date">{post.displayDate}</div>
+                    </div>
+                  </a>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+        ) : null}
+
+        <CTASection />
+      </main>
+      <Footer client:visible />
+    </div>
+</SiteLayout>

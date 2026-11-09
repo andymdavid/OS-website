@@ -1,0 +1,60 @@
+---
+import '../globals.css';
+import { canonicalPath } from '../lib/structured-data';
+interface Props {
+  title: string;
+  description: string;
+  path?: string;
+  image?: string;
+  ogImage?: string;
+  ogType?: string;
+  noindex?: boolean;
+  type?: string;
+  publishedTime?: string;
+  schema?: unknown;
+}
+const { title, description, path = Astro.url.pathname, image = Astro.props.ogImage || '/og-default.png', type = Astro.props.ogType || 'website', publishedTime, schema } = Astro.props;
+const canonicalUrl = new URL(path, Astro.site);
+canonicalUrl.pathname = canonicalPath(canonicalUrl.pathname);
+const canonical = canonicalUrl.href;
+const imageUrl = new URL(image, Astro.site).href;
+const schemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
+---
+<!doctype html>
+<html lang="en-AU">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Anton:wght@400&family=Bungee&family=Caveat:wght@400;500&family=Cormorant+Garamond:wght@300;400&family=Figtree:wght@400;700&family=Inter:wght@400;500;600;700&family=Jersey+10&family=Silkscreen:wght@400&display=swap" rel="stylesheet" />
+    <title>{title.includes('Other Stuff') ? title : `${title} | Other Stuff`}</title>
+    <meta name="description" content={description} />
+    {Astro.props.noindex && <meta name="robots" content="noindex, follow" />}
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content="Other Stuff" />
+    <meta property="og:image" content={imageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+    {publishedTime && <meta property="article:published_time" content={publishedTime} />}
+    {schemas.map(value => <script type="application/ld+json" set:html={JSON.stringify(value).replace(/</g, '\\u003c')} />)}
+  </head>
+  <body>
+    <noscript><style>.os-theme [style*="opacity:0"], .os-theme [style*="opacity: 0"] { opacity: 1 !important; transform: none !important; }</style></noscript>
+    <slot />
+    <script is:inline defer src="https://unpkg.com/nanalytics-tracker@0.1.2/dist/index.global.js" data-site-uuid="c0cb28c5-6b00-4b5d-891a-ea3f8ebb47f8" data-cvm-pubkey="d8a066f85d621d634e24ee0bf741e27b6436af28782195de8aa90972e310e937"></script>
+
+  </body>
+</html>
+<style is:global>
+  .os-theme .fade-in { opacity: 1; transform: none; }
+</style>

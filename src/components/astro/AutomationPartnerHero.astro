@@ -1,0 +1,34 @@
+---
+import { BookCallContent } from '../BookCallContent';
+import { HeroShaderBackground } from '../HeroShaderBackground';
+import { HomeDuplicateLogoCarousel } from '../HomeDuplicateLogoCarousel';
+import { CAL_DISCOVERY_URL } from '../../lib/links';
+import '../IntroSection.css';
+import '../Hero.css';
+import '../AutomationPartnerHero.css';
+---
+<section class="hero-extended automation-partner-hero" id="hero">
+      <div class="hero-sticky">
+        <HeroShaderBackground client:visible />
+        <div class="hero-inner">
+          <div class="automation-partner-hero-grid">
+            <div class="hero-title-block automation-partner-hero-copy">
+              <div class="intro-pill hero-eyebrow">YOUR DEDICATED AUTOMATION PARTNER</div>
+              <h1 class="hero-duplicate-heading">
+                Grow your business without growing your headcount.
+              </h1>
+              <p class="hero-description">
+                We work with your team to automate your processes one workflow at a time, freeing your people for the work that actually grows the business.
+              </p>
+              <div class="hero-cta">
+                <a class="hero-cta-book book-call-button" href={CAL_DISCOVERY_URL} target="_blank" rel="noopener noreferrer">
+                  <BookCallContent />
+                </a>
+                <p class="hero-cta-terms">From $5k a month. One-month minimum. Cancel anytime.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <HomeDuplicateLogoCarousel />
+      </div>
+    </section>

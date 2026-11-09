@@ -1,7 +1,6 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { readFile, writeFile } from "node:fs/promises";
 
 const PUBLIC_OUTPUT_PATH = "public/newsletter-issues.json";
-const GENERATED_OUTPUT_PATH = "src/generated/newsletter-issues.json";
 const SEO_OVERRIDES_PATH = "src/content/newsletter-seo-overrides.json";
 const MAX_ITEMS = 100;
 const MIN_ESSAY_PUBLISHED_AT = new Date("2026-05-08T00:00:00.000Z").getTime();
@@ -27,7 +26,7 @@ const loadSeoOverrides = async () => {
 };
 
 const loadExistingPayload = async () => {
-  for (const payloadPath of [GENERATED_OUTPUT_PATH, PUBLIC_OUTPUT_PATH]) {
+  for (const payloadPath of [PUBLIC_OUTPUT_PATH]) {
     try {
       const raw = await readFile(payloadPath, "utf-8");
       const parsed = JSON.parse(raw);
@@ -48,14 +47,14 @@ const writeUnavailablePayload = async (reason) => {
   if (existingPayload) {
     await writePayload(existingPayload);
     console.warn(
-      `${reason}. Preserved ${existingPayload.items.length} existing newsletter issues in ${PUBLIC_OUTPUT_PATH} and ${GENERATED_OUTPUT_PATH}`,
+      `${reason}. Preserved ${existingPayload.items.length} existing newsletter issues in ${PUBLIC_OUTPUT_PATH}`,
     );
     return;
   }
 
   await writePayload(fallbackPayload);
   console.warn(
-    `${reason}. No existing newsletter payload found, so wrote an empty payload to ${PUBLIC_OUTPUT_PATH} and ${GENERATED_OUTPUT_PATH}`,
+    `${reason}. No existing newsletter payload found, so wrote an empty payload to ${PUBLIC_OUTPUT_PATH}`,
   );
 };
 
@@ -450,10 +449,8 @@ const normalizePost = (post, override = {}) => {
 };
 
 const writePayload = async (payload) => {
-  await mkdir("src/generated", { recursive: true });
   await Promise.all([
     writeFile(PUBLIC_OUTPUT_PATH, JSON.stringify(payload, null, 2)),
-    writeFile(GENERATED_OUTPUT_PATH, JSON.stringify(payload, null, 2)),
   ]);
 };
 
@@ -487,7 +484,7 @@ const main = async () => {
 
   await writePayload(payload);
   console.log(
-    `Wrote ${items.length} newsletter issues to ${PUBLIC_OUTPUT_PATH} and ${GENERATED_OUTPUT_PATH}`,
+    `Wrote ${items.length} newsletter issues to ${PUBLIC_OUTPUT_PATH}`,
   );
 };
 

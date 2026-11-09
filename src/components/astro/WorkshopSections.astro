@@ -1,0 +1,9 @@
+---
+import { WorkshopSection } from '../WorkshopSection';
+import { WorkshopSignup } from '../WorkshopSignup';
+const { sections } = Astro.props;
+---
+<main>
+  {sections.filter((section: { enabled: boolean }) => section.enabled).map((section: object) => <WorkshopSection client:visible section={section} />)}
+</main>
+<WorkshopSignup client:load />

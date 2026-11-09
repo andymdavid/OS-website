@@ -1,0 +1,33 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import { NavigationDraft } from '../components/NavigationDraft';
+import Hero from '../components/astro/Hero.astro';
+import { FunnelHomeDuplicate } from '../components/FunnelHomeDuplicate';
+import { HomeDuplicateGridSection } from '../components/HomeDuplicateGridSection';
+import { HomeDuplicateCanvasSection } from '../components/HomeDuplicateCanvasSection';
+import { HomeDuplicateComparison } from '../components/HomeDuplicateComparison';
+import { FAQHomeDuplicate } from '../components/FAQHomeDuplicate';
+import { CTAHomeDuplicate } from '../components/CTAHomeDuplicate';
+import { HomeDuplicateExitNewsletter } from '../components/HomeDuplicateExitNewsletter';
+import { FooterHomeDuplicate } from '../components/FooterHomeDuplicate';
+import { organizationSchema, websiteSchema } from '../lib/structured-data';
+---
+<SiteLayout title="Other Stuff | AI agents and automation for SMEs | Perth & Australia" description="We set up AI agents inside your business and automate the repetitive work. From $5k a month, cancel anytime. Perth and across Australia." path="/" schema={[
+  { ...organizationSchema, description: 'AI automation partner in Perth, Western Australia setting up agents and automating repetitive work for Australian SMEs.' },
+  websiteSchema,
+]}>
+  <div class="os-theme os-draft os-home-duplicate">
+    <NavigationDraft client:load />
+    <main>
+      <Hero />
+      <FunnelHomeDuplicate />
+      <HomeDuplicateGridSection client:visible />
+      <HomeDuplicateCanvasSection />
+      <HomeDuplicateComparison client:visible />
+      <FAQHomeDuplicate client:visible />
+      <CTAHomeDuplicate client:visible heading="What’s eating your team’s week?" intro="Book a free 45-minute call with Pete and Andy. We’ll look at how work moves through your business and tell you what we’d automate first and what it would cost." />
+    </main>
+    <HomeDuplicateExitNewsletter client:idle />
+    <FooterHomeDuplicate client:visible />
+  </div>
+</SiteLayout>

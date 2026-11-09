@@ -1,0 +1,82 @@
+---
+import SiteLayout from '@/layouts/SiteLayout.astro';
+import { NavigationDraft } from "@/components/NavigationDraft";
+import { Footer } from "@/components/Footer";
+import "@/components/IntroSection.css";
+import "@/routes/Contact.css";
+
+
+---
+<SiteLayout title="Contact Other Stuff | Start the Conversation"
+        description="Get in touch with Other Stuff about Automation Partner, custom AI systems, Speedrun workshops, or practical AI capability building for your team."
+        path="/contact">
+<div class="os-theme os-draft min-h-screen contact-page">
+      
+      <NavigationDraft client:load titleOverride="OTHER STUFF" />
+      <main>
+        <section class="section contact-main">
+          <div class="section-container-wide contact-main-grid">
+            <div class="contact-main-copy">
+              <h1>Get in touch</h1>
+              <p class="contact-main-intro">
+                If you&apos;re exploring Automation Partner, custom AI systems, or practical AI capability
+                building for your team, this is the best place to start.
+              </p>
+              <p class="contact-main-intro">
+                Tell us a bit about the business, the workflow you think may be worth improving, and
+                what prompted the enquiry. We&apos;ll review it and come back to you directly.
+              </p>
+              <div class="contact-main-points">
+                <div class="contact-main-point">
+                  <span>01</span>
+                  <div>
+                    <strong>Automation Partner + Custom AI Systems</strong>
+                    <p>Best for SMEs that want to identify where AI can make the clearest commercial difference.</p>
+                  </div>
+                </div>
+                <div class="contact-main-point">
+                  <span>02</span>
+                  <div>
+                    <strong>Speedrun Workshops</strong>
+                    <p>For teams that want practical hands-on exposure to building workflows with AI agents.</p>
+                  </div>
+                </div>
+                <div class="contact-main-point">
+                  <span>03</span>
+                  <div>
+                    <strong>General Enquiries</strong>
+                    <p>If you&apos;re not sure where the fit is yet, send the context and we&apos;ll point you in the right direction.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="contact-main-actions">
+                <a class="btn-primary" href="mailto:info@otherstuff.studio">
+                  Email Us Directly
+                </a>
+                <a href="mailto:info@otherstuff.studio" class="contact-main-email">
+                  info@otherstuff.studio
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-form-shell" aria-label="Contact form embed area">
+              <div class="contact-form-shell-header">
+                <span>Enquiry Form</span>
+              </div>
+              <div class="contact-form-shell-body">
+                <div class="contact-form-embed-scale">
+                  <iframe
+                    src="https://census.otherstuff.ai/f/f4630fe7-2ce8-44ed-b972-8c84978ee32a"
+                    class="contact-form-embed"
+                    title="Other Stuff contact form"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer client:visible />
+    </div>
+</SiteLayout>
