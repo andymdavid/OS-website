@@ -1,0 +1,258 @@
+---
+import SiteLayout from '@/layouts/SiteLayout.astro';
+import { getCollection } from 'astro:content';
+import { NavigationDraft } from "@/components/NavigationDraft";
+import CTASection from "@/components/astro/CTA.astro";
+import { Footer } from "@/components/Footer";
+import NotFound from "@/routes/NotFound";
+import { absoluteUrl, canonicalPath } from "@/lib/structured-data";
+import type { NewsletterIssue, NewsletterPayload } from "@/types/newsletter";
+import "@/routes/WritingPost.css";
+import "@/routes/NewsletterPost.css";
+import { ArticleSignupPrompt } from "@/components/ArticleSignupPrompt";
+const NEWSLETTER_MODAL_STORAGE_KEY = "newsletter-post-modal-dismissed-at";
+const NEWSLETTER_MODAL_COOLDOWN_MS = 7 * 24 * 60 * 60 * 1000;
+function resolveAbsoluteUrl(value?: string) {
+  if (value && /^https?:\/\//.test(value)) {
+    return value;
+  }
+
+  return `https://otherstuff.ai${value || "/og-default.png"}`;
+}
+function buildAuthorSchema(issue: NewsletterIssue) {
+  if (issue.authors.length === 0) {
+    return {
+      "@type": "Organization",
+      name: "Other Stuff",
+    };
+  }
+
+  return issue.authors.map((name) => ({
+    "@type": "Person",
+    name,
+  }));
+}
+const payload = {configured: true, items: (await getCollection('newsletter')).map(entry => entry.data)};
+export async function getStaticPaths() { return (await getCollection('newsletter')).map(entry => ({params: {slug: entry.id}, props: {issue: entry.data}})); }
+const {issue} = Astro.props;
+const keepReading = payload.items
+    .filter((entry) => entry.slug !== issue.slug && !entry.noindex)
+    .slice(0, 3);
+const indexableIssues = payload.items.filter((entry) => !entry.noindex);
+const issueIndex = indexableIssues.findIndex((entry) => entry.slug === issue.slug);
+const newerIssue = issueIndex > 0 ? indexableIssues[issueIndex - 1] : null;
+const olderIssue =
+    issueIndex >= 0 && issueIndex < indexableIssues.length - 1
+      ? indexableIssues[issueIndex + 1]
+      : null;
+const authorLine = issue.authors.length > 0 ? issue.authors.join(", ") : "Other Stuff";
+const issueUrl = absoluteUrl(issue.path);
+const schemaImage = issue.ogImage || issue.thumbnail || "/og-default.png";
+const seoTitle = issue.seoTitle || issue.title;
+const seoDescription = issue.seoDescription || issue.description;
+---
+<SiteLayout title={seoTitle}
+        description={seoDescription}
+        path={issue.path}
+        ogImage={schemaImage}
+        ogType="article"
+        publishedTime={issue.published}
+        noindex={issue.noindex}
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "@id": `${issueUrl}#article`,
+            url: issueUrl,
+            headline: issue.title,
+            description: seoDescription,
+            image: resolveAbsoluteUrl(schemaImage),
+            datePublished: issue.published,
+            dateModified: issue.published,
+            author: buildAuthorSchema(issue),
+            publisher: {
+              "@type": "Organization",
+              name: "Other Stuff",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://otherstuff.ai/Logo-Main-Icon.webp",
+              },
+            },
+            isPartOf: {
+              "@type": "CreativeWorkSeries",
+              name: "Intelligence Snacks",
+              url: absoluteUrl("/newsletter"),
+            },
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": issueUrl,
+            },
+            articleSection: "Intelligence Snacks Newsletter",
+            inLanguage: "en-AU",
+            keywords: issue.tags,
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "@id": `${issueUrl}#breadcrumb`,
+            itemListElement: [
+              {
+                "@type": "ListItem",
+                position: 1,
+                name: "Home",
+                item: "https://otherstuff.ai/",
+              },
+              {
+                "@type": "ListItem",
+                position: 2,
+                name: "Newsletter",
+                item: absoluteUrl("/newsletter"),
+              },
+              {
+                "@type": "ListItem",
+                position: 3,
+                name: issue.title,
+                item: issueUrl,
+              },
+            ],
+          },
+        ]}>
+<div class="os-theme os-draft min-h-screen writing-post-page newsletter-post-page">
+      
+      <NavigationDraft client:load titleOverride="INTELLIGENCE SNACKS" />
+      <main>
+        <section class="section writing-post-hero">
+          <div class="section-container-wide writing-post-hero-inner">
+            <a href="/newsletter/" class="writing-post-back">
+              Back to Newsletter
+            </a>
+
+            <div class="newsletter-post-kicker">Intelligence Snacks</div>
+            <h1 class="writing-post-title">{issue.title}</h1>
+
+            <div class="writing-post-meta">
+              <span class="writing-post-author">{authorLine}</span>
+              {issue.displayDate ? (
+                <span class="writing-post-date">{issue.displayDate}</span>
+              ) : null}
+              {issue.readTime ? (
+                <span class="writing-post-date">{issue.readTime}</span>
+              ) : null}
+            </div>
+
+            {issue.thumbnail ? (
+              <div class="writing-post-feature">
+                <img src={issue.thumbnail} alt={issue.title} loading="lazy" />
+              </div>
+            ) : null}
+
+            {issue.intro ? (
+              <p class="writing-post-subheader">{issue.intro}</p>
+            ) : null}
+
+            <div class="writing-post-share">
+              <span>Share</span>
+              <a
+                href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(issueUrl)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn
+              </a>
+              <a
+                href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(issueUrl)}&text=${encodeURIComponent(issue.title)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                X
+              </a>
+              <a
+                href={`mailto:?subject=${encodeURIComponent(issue.title)}&body=${encodeURIComponent(issueUrl)}`}
+                rel="noopener noreferrer"
+              >
+                Email
+              </a>
+              {issue.webUrl ? (
+                <a href={issue.webUrl} target="_blank" rel="noopener noreferrer">
+                  Original on Beehiiv
+                </a>
+              ) : null}
+            </div>
+          </div>
+        </section>
+
+        <section class="section writing-post-body">
+          <div class="section-container-wide writing-post-body-inner">
+            <div class="writing-post-content">
+              {issue.html ? (
+                <div set:html={issue.html} />
+              ) : (
+                <p>
+                  Full newsletter content was not available in the local archive for
+                  this issue.
+                </p>
+              )}
+            </div>
+          </div>
+        </section>
+
+        <section class="section newsletter-post-pagination-section">
+          <div class="section-container-wide newsletter-post-pagination">
+            <a class="newsletter-post-nav-link newsletter-post-archive-link" href="/newsletter/">
+              All newsletter issues
+            </a>
+            <div class="newsletter-post-pagination-grid">
+              {olderIssue ? (
+                <a class="newsletter-post-nav-link" href={canonicalPath(olderIssue.path)}>
+                  Previous issue
+                </a>
+              ) : (
+                <span class="newsletter-post-nav-link is-disabled">Previous issue</span>
+              )}
+              {newerIssue ? (
+                <a class="newsletter-post-nav-link" href={canonicalPath(newerIssue.path)}>
+                  Next issue
+                </a>
+              ) : (
+                <span class="newsletter-post-nav-link is-disabled">Next issue</span>
+              )}
+            </div>
+          </div>
+        </section>
+
+        {keepReading.length > 0 ? (
+          <section class="section writing-post-keep-reading">
+            <div class="section-container-wide">
+              <div class="writing-post-keep-header">
+                <h2>More issues</h2>
+              </div>
+              <div class="writing-post-keep-grid">
+                {keepReading.map((entry) => (
+                  <article key={entry.slug} class="writing-post-keep-card">
+                    <a class="writing-post-keep-link" href={canonicalPath(entry.path)}>
+                      {entry.thumbnail ? (
+                        <div class="writing-post-keep-media">
+                          <img src={entry.thumbnail} alt={entry.title} loading="lazy" />
+                        </div>
+                      ) : null}
+                      <div class="writing-post-keep-meta">
+                        <div class="writing-post-keep-title">{entry.title}</div>
+                        <div class="writing-post-keep-description">
+                          {entry.description}
+                        </div>
+                        <div class="writing-post-keep-date">{entry.displayDate}</div>
+                      </div>
+                    </a>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </section>
+        ) : null}
+
+        <CTASection />
+      </main>
+      <Footer client:visible />
+      <ArticleSignupPrompt client:idle slug={issue.slug} />
+    </div>
+</SiteLayout>

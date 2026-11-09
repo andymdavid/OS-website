@@ -1,0 +1,82 @@
+---
+import SiteLayout from '@/layouts/SiteLayout.astro';
+import { NavigationDraft } from "@/components/NavigationDraft";
+import CTASection from "@/components/astro/CTA.astro";
+import { Footer } from "@/components/Footer";
+import { getCollection } from 'astro:content';
+const writingPosts = (await getCollection('writing')).map(entry => entry.data).sort((a,b) => b.date.localeCompare(a.date));
+import { canonicalPath } from "@/lib/structured-data";
+import "@/components/Hero.css";
+import "@/routes/Writing.css";
+const writingImageSrcSet = (src: string) => {
+  const extensionIndex = src.lastIndexOf(".");
+  if (extensionIndex === -1) return undefined;
+
+  const base = src.slice(0, extensionIndex);
+  const extension = src.slice(extensionIndex);
+  return `${base}-480${extension} 480w, ${base}-960${extension} 960w, ${src} 1456w`;
+};
+
+---
+<SiteLayout title="Writing on AI Systems, Operations, and the Value Trap"
+        description="Essays and field notes from Other Stuff on custom AI systems, AI workflow automation, operations, and the economic implications of AI."
+        path="/writing">
+<div class="os-theme os-draft min-h-screen writing-page">
+      
+      <NavigationDraft client:load titleOverride="OTHER STUFF" />
+      <main>
+        <section class="section writing-hero">
+          <div class="section-container-wide writing-hero-inner">
+            <div class="hero-title-block">
+              <h1>Writing</h1>
+              <p class="hero-bridge">
+                Notes, ideas, and fieldwork from building with AI.
+              </p>
+              <div class="hero-cta">
+                <a class="btn-primary" href="/contact">
+                  Talk to Us
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {writingPosts.length > 0 ? (
+          <section class="section writing-posts">
+            <div class="writing-posts-grid">
+              {writingPosts.map((post, index) => (
+                <article key={post.slug} class="writing-post">
+                  <a class="writing-post-link" href={canonicalPath(`/writing/${post.slug}`)}>
+                    <div class="writing-post-media">
+                      <img
+                        src={post.thumbnail}
+                        srcset={writingImageSrcSet(post.thumbnail)}
+                        sizes="(max-width: 720px) calc(100vw - 64px), (max-width: 1200px) calc((100vw - 92px) / 2), 300px"
+                        alt={post.title}
+                        width="480"
+                        height="270"
+                        loading={index < 2 ? "eager" : "lazy"}
+                        fetchpriority={index === 0 ? "high" : "auto"}
+                        decoding="async"
+                      />
+                    </div>
+                    <div class="writing-post-header">
+                      <span class="writing-post-id">[{String(index + 1).padStart(2, "0")}]</span>
+                      <div class="writing-post-meta">
+                        <div class="writing-post-title">{post.title}</div>
+                        <div class="writing-post-description">{post.description}</div>
+                        <div class="writing-post-date">{post.displayDate}</div>
+                      </div>
+                    </div>
+                  </a>
+                </article>
+              ))}
+            </div>
+          </section>
+        ) : null}
+
+        <CTASection />
+      </main>
+      <Footer client:visible />
+    </div>
+</SiteLayout>

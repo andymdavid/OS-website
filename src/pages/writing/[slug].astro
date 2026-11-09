@@ -1,8 +1,9 @@
 ---
 import ArticleLayout from '../../layouts/ArticleLayout.astro';
-import posts from '../../generated/writing-posts.json';
+import { getCollection } from 'astro:content';
 import { ValueTrapChart } from '../../components/ValueTrapChart';
-export function getStaticPaths() {
+export async function getStaticPaths() {
+  const posts = (await getCollection('writing')).map(entry => entry.data);
   return posts.map(post => ({ params: { slug: post.slug }, props: { post } }));
 }
 const { post } = Astro.props;

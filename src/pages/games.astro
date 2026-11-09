@@ -1,0 +1,82 @@
+---
+import SiteLayout from '@/layouts/SiteLayout.astro';
+import { NavigationDraft } from "@/components/NavigationDraft";
+import CTASection from "@/components/astro/CTA.astro";
+import { Footer } from "@/components/Footer";
+import { levelUpGames } from "@/levelup/content/games";
+import "@/components/Hero.css";
+import "@/routes/Writing.css";
+import "@/routes/Games.css";
+
+
+---
+<SiteLayout title="Games Built with AI"
+        description="A playable game built with AI by Other Stuff in Perth — a simple example of what is possible when you use AI tools to build quickly and experiment freely."
+        path="/games"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          "name": "Games Built with AI",
+          "description": "A playable game built with AI by Other Stuff in Perth — a simple example of what is possible when you use AI tools to build quickly and experiment freely.",
+          "url": "https://otherstuff.ai/games",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Other Stuff",
+            "url": "https://otherstuff.ai"
+          }
+        }}>
+<div class="os-theme os-draft min-h-screen writing-page games-page">
+      
+      <NavigationDraft client:load titleOverride="OTHER STUFF" />
+      <main>
+        <section class="section writing-hero">
+          <div class="section-container-wide writing-hero-inner">
+            <div class="hero-title-block">
+              <h1>Through our hands-on work with AI, we accidentally built a game.</h1>
+              <p class="hero-bridge">
+                Word5 is a simple, playable example of what’s possible when you use these tools to build quickly, experiment freely, and turn ideas into working software.
+              </p>
+              <div class="hero-cta">
+                <a class="btn-primary" href="/contact">
+                  Talk to Us
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section writing-posts">
+          <div class="writing-posts-grid">
+            {levelUpGames.map((game, index) => {
+              const isInternal = game.href.startsWith("/");
+
+              return (
+                <article key={game.id} class="writing-post">
+                  <a
+                    href={game.href}
+                    target={isInternal ? undefined : "_blank"}
+                    rel={isInternal ? undefined : "noopener noreferrer"}
+                    class="games-post-link"
+                  >
+                    <div class="writing-post-header">
+                      <span class="writing-post-id">[{String(index + 1).padStart(2, "0")}]</span>
+                      <div class="writing-post-meta">
+                        <div class="writing-post-title">{game.title}</div>
+                        <div class="writing-post-description">{game.description}</div>
+                      </div>
+                    </div>
+                    <div class="writing-post-media">
+                      <img src={game.image} alt={game.title} loading="lazy" />
+                    </div>
+                  </a>
+                </article>
+              );
+            })}
+          </div>
+        </section>
+
+        <CTASection />
+      </main>
+      <Footer client:visible />
+    </div>
+</SiteLayout>

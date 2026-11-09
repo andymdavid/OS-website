@@ -1,16 +1,22 @@
 ---
 import '../globals.css';
+import { canonicalPath } from '../lib/structured-data';
 interface Props {
   title: string;
   description: string;
   path?: string;
   image?: string;
+  ogImage?: string;
+  ogType?: string;
+  noindex?: boolean;
   type?: string;
   publishedTime?: string;
   schema?: unknown;
 }
-const { title, description, path = Astro.url.pathname, image = '/og-default.png', type = 'website', publishedTime, schema } = Astro.props;
-const canonical = new URL(path, Astro.site).href;
+const { title, description, path = Astro.url.pathname, image = Astro.props.ogImage || '/og-default.png', type = Astro.props.ogType || 'website', publishedTime, schema } = Astro.props;
+const canonicalUrl = new URL(path, Astro.site);
+canonicalUrl.pathname = canonicalPath(canonicalUrl.pathname);
+const canonical = canonicalUrl.href;
 const imageUrl = new URL(image, Astro.site).href;
 const schemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
 ---
@@ -27,6 +33,7 @@ const schemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
     <link href="https://fonts.googleapis.com/css2?family=Anton:wght@400&family=Bungee&family=Caveat:wght@400;500&family=Cormorant+Garamond:wght@300;400&family=Figtree:wght@400;700&family=Inter:wght@400;500;600;700&family=Jersey+10&family=Silkscreen:wght@400&display=swap" rel="stylesheet" />
     <title>{title.includes('Other Stuff') ? title : `${title} | Other Stuff`}</title>
     <meta name="description" content={description} />
+    {Astro.props.noindex && <meta name="robots" content="noindex, follow" />}
     <link rel="canonical" href={canonical} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />

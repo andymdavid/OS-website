@@ -1,0 +1,35 @@
+---
+import SiteLayout from '@/layouts/SiteLayout.astro';
+import { NavigationDraft } from "@/components/NavigationDraft";
+import { Footer } from "@/components/Footer";
+import "@/components/Hero.css";
+
+
+---
+<SiteLayout title="Page Not Found"
+        description="The page you're looking for doesn't exist. Head back to the Other Stuff homepage."
+        path="/404"
+        noindex>
+<div class="os-theme os-draft min-h-screen">
+      
+      <NavigationDraft client:load titleOverride="OTHER STUFF" />
+      <main>
+        <section class="section" style={{ paddingTop: "160px", paddingBottom: "120px" }}>
+          <div class="section-container-wide">
+            <div class="hero-title-block">
+              <h1>Page not found</h1>
+              <p class="hero-bridge">
+                The page you're looking for doesn't exist or has been moved.
+              </p>
+              <div class="hero-cta">
+                <a class="btn-primary" href="/">
+                  Back to Home
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer client:visible />
+    </div>
+</SiteLayout>

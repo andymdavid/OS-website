@@ -1,0 +1,185 @@
+---
+import SiteLayout from '@/layouts/SiteLayout.astro';
+import { getCollection } from 'astro:content';
+import { NavigationDraft } from "@/components/NavigationDraft";
+import { EmailCaptureForm } from "@/components/EmailCaptureForm";
+import CTASection from "@/components/astro/CTA.astro";
+import { Footer } from "@/components/Footer";
+import { absoluteUrl, canonicalPath } from "@/lib/structured-data";
+import type { NewsletterPayload } from "@/types/newsletter";
+import "@/components/Hero.css";
+import "@/components/GoodStuff.css";
+import "@/routes/Writing.css";
+import "@/routes/Newsletter.css";
+const INITIAL_VISIBLE_ISSUES = 8;
+const ISSUE_INCREMENT = 8;
+const getPublishedTime = (published: string) => {
+  const date = new Date(published);
+  return Number.isNaN(date.getTime()) ? 0 : date.getTime();
+};
+const payload = {configured: true, items: (await getCollection('newsletter')).map(entry => entry.data)};
+
+const indexableIssues = payload.items
+    .filter((issue) => !issue.noindex)
+    .sort((a, b) => getPublishedTime(b.published) - getPublishedTime(a.published));
+const issues = indexableIssues;
+const archiveSchema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "@id": "https://otherstuff.ai/newsletter#collection",
+      url: absoluteUrl("/newsletter"),
+      name: "Intelligence Snacks Newsletter",
+      description:
+        "Intelligence Snacks develops long conversations about AI, software and business into useful ideas.",
+      inLanguage: "en-AU",
+      isPartOf: {
+        "@type": "WebSite",
+        name: "Other Stuff",
+        url: "https://otherstuff.ai",
+      },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "@id": "https://otherstuff.ai/newsletter#issues",
+      itemListElement: indexableIssues.map((issue, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        url: absoluteUrl(issue.path),
+        name: issue.title,
+        description: issue.seoDescription || issue.description,
+      })),
+    },
+  ];
+---
+<SiteLayout title="Intelligence Snacks | Ideas for the age of AI"
+        description="Long conversations about AI, software and business, developed into useful ideas."
+        path="/newsletter"
+        schema={archiveSchema}>
+<div class="os-theme os-draft min-h-screen writing-page newsletter-page">
+      
+      <NavigationDraft client:load
+        titleSwapOnScroll={{
+          before: "OTHER STUFF",
+          after: "INTELLIGENCE SNACKS",
+          targetId: "newsletter-hero",
+        }}
+      />
+      <main>
+        <section id="newsletter-hero" class="section writing-hero newsletter-hero">
+          <div class="section-container-wide writing-hero-inner">
+            <div class="hero-title-block newsletter-hero-copy">
+              <h1>Big ideas compound.</h1>
+              <p class="hero-bridge">
+                For people building and running modern businesses, Intelligence
+                Snacks helps you quickly digest the big ideas emerging from AI,
+                software, business, work and technological change.
+              </p>
+              <div class="hero-cta newsletter-hero-signup">
+                <EmailCaptureForm client:visible
+                  variant="inline"
+                  placeholder="Enter your email"
+                  buttonText="Send me snacks"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section writing-posts newsletter-issues">
+          <div class="newsletter-section-top">
+            <div class="good-stuff-pill">RECENT ISSUES</div>
+            <p class="newsletter-section-note">
+              The latest ideas from Intelligence Snacks on AI, software and
+              business.
+            </p>
+          </div>
+
+          {issues.length > 0 ? (
+            <>
+              <div class="writing-posts-grid newsletter-posts-grid">
+                {issues.map((issue, index) => (
+                  <article key={issue.id} class="writing-post">
+                    <a class="writing-post-link" href={canonicalPath(issue.path)}>
+                      <div class="writing-post-media newsletter-post-media">
+                        {issue.thumbnail ? (
+                          <img src={issue.thumbnail} alt={issue.title} loading="lazy" />
+                        ) : (
+                          <div class="newsletter-post-media-fallback">
+                            <span>Intelligence Snacks</span>
+                          </div>
+                        )}
+                      </div>
+                      <div class="writing-post-header">
+                        <span class="writing-post-id">
+                          [{String(index + 1).padStart(2, "0")}]
+                        </span>
+                        <div class="writing-post-meta">
+                          <div class="writing-post-title">{issue.title}</div>
+                          <div class="writing-post-description">
+                            {issue.description ||
+                              issue.subtitle ||
+                              "Read the full issue on-site."}
+                          </div>
+                          {issue.displayDate ? (
+                            <div class="writing-post-date">
+                              {issue.displayDate}
+                            </div>
+                          ) : null}
+                        </div>
+                      </div>
+                    </a>
+                  </article>
+                ))}
+              </div>
+              <div class="newsletter-show-more"><button hidden type="button" class="newsletter-show-more-btn" data-show-more>Show more</button></div>
+            </>
+          ) : (
+            <div class="newsletter-empty">
+              <p>
+                {payload.configured
+                  ? "No newsletter issues are currently available in the local archive."
+                  : "The issue archive will populate here from Beehiiv once the publication credentials are present in the build environment."}
+              </p>
+            </div>
+          )}
+        </section>
+
+        <section id="newsletter-signup" class="section good-stuff-section newsletter-signup">
+          <div class="good-stuff-top newsletter-signup-top">
+            <div class="good-stuff-pill">SUBSCRIBE</div>
+            <h2 class="good-stuff-heading">
+              Get each issue direct.
+            </h2>
+            <p class="good-stuff-subpara newsletter-signup-subpara">
+              Quickly digest the big ideas emerging from the world of AI,
+              delivered to your inbox each week.
+            </p>
+            <div class="good-stuff-cta newsletter-signup-cta">
+              <EmailCaptureForm client:visible
+                variant="inline"
+                placeholder="Enter your email"
+                buttonText="Send me snacks"
+              />
+            </div>
+          </div>
+        </section>
+
+        <CTASection />
+      </main>
+      <Footer client:visible />
+    </div>
+</SiteLayout>
+<script>
+  const cards = Array.from(document.querySelectorAll<HTMLElement>('.newsletter-posts-grid > article'));
+  const button = document.querySelector<HTMLButtonElement>('[data-show-more]');
+  let count = 8;
+  const update = () => {
+    cards.forEach((card, index) => { card.hidden = index >= count; });
+    if (button) button.hidden = count >= cards.length;
+  };
+  button?.addEventListener('click', () => { count += 8; update(); });
+  update();
+</script>
+<style is:global>[hidden] { display: none !important; }</style>
