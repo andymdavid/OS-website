@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import './PainRecognition.css';
+import { deliveryStatic } from '../lib/delivery-assets';
 
 const paragraphs = [
   "Every week, someone in your business pulls together the same information they compiled last week. Quotes that need building from scratch. Invoices that need chasing. Reports that need writing.",
@@ -18,7 +19,7 @@ export function PainRecognition() {
 
   useEffect(() => {
     const container = containerRef.current;
-    if (!container) return;
+    if (!container || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     const words = container.querySelectorAll<HTMLSpanElement>('.pr-word');
     if (!words.length) return;
@@ -77,8 +78,8 @@ export function PainRecognition() {
           <p className="pain-recognition-signature">Pete &amp; Andy</p>
           <div className="pain-recognition-signoff-meta">
             <div className="pain-recognition-founders" aria-hidden="true">
-              <img src="/Pete-letter.png" alt="" />
-              <img src="/Andy-letter.png" alt="" />
+              <img src={deliveryStatic('/optimized/pete-profile-128.webp')} width="128" height="128" loading="lazy" decoding="async" alt="" />
+              <img src={deliveryStatic('/optimized/andy-profile-128.webp')} width="128" height="128" loading="lazy" decoding="async" alt="" />
             </div>
             <div className="pain-recognition-company">
               <img src="/optimized/brand-icon-96.webp" srcSet="/optimized/brand-icon-96.webp 96w, /optimized/brand-icon-192.webp 192w" sizes="46px" alt="" aria-hidden="true" />

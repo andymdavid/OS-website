@@ -1,6 +1,6 @@
 # Edge delivery handoff
 
-Status: not configured. The available CapRover management call returns 403; no DNS/CDN management tool is available in this session. CapRover and DNS/CDN access are distinct. Establish the existing DNS provider, zone ownership, proxy topology and an account scoped to otherstuff.ai before applying rules. Do not interpret an origin nginx header or GTmetrix's recogniser as a complete topology inventory.
+Status: not configured. The available CapRover management call returns 403; no DNS/CDN management tool is available in this session. CapRover and DNS/CDN access are distinct. Public DNS currently delegates to nick.ns.cloudflare.com and barbara.ns.cloudflare.com, resolves A to 188.40.69.154, and has no AAAA response. This identifies Cloudflare as DNS provider, not the record proxy/cache status. Establish zone ownership, current proxy topology and an account/API token scoped to otherstuff.ai before applying rules. Do not interpret an origin nginx header or GTmetrix's recogniser as a complete topology inventory.
 
 Use a same-origin edge proxy so asset URLs, worker loading, forms and canonical URLs remain unchanged. Verify the certificate and upstream HTTPS before switching DNS. Keep the origin available as the rollback target.
 

@@ -1,4 +1,5 @@
 import lighthouse from 'lighthouse';
+import desktopConfig from 'lighthouse/core/config/desktop-config.js';
 import * as chromeLauncher from 'chrome-launcher';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { gzipSync } from 'node:zlib';
@@ -17,14 +18,14 @@ for (let run = 1; run <= Number(count); run++) {
       port: chrome.port,
       output: 'json',
       onlyCategories: process.env.PERFORMANCE_ALL_CATEGORIES ? ['performance', 'accessibility', 'best-practices', 'seo', 'agentic-browsing'] : ['performance'],
-      ...(device === 'desktop' ? { preset: 'desktop' } : {}),
       blockedUrlPatterns: ['*unpkg.com/nanalytics-tracker*'],
       disableFullPageScreenshot: true,
       maxWaitForLoad: 45000,
       maxWaitForFcp: 30000,
-    });
+    }, device === 'desktop' ? desktopConfig : undefined);
     if (!result) throw new Error('No Lighthouse result');
     const { lhr, report } = result;
+    if (lhr.configSettings.formFactor !== device) throw new Error(`Expected ${device} emulation, received ${lhr.configSettings.formFactor}`);
     await writeFile(`${directory}/${label}-${device}-${run}.json`, String(report));
     if (process.env.PERFORMANCE_SAVE_TRACE && run === 1) {
       await writeFile(`${directory}/${label}-${device}.trace.json.gz`, gzipSync(JSON.stringify(result.artifacts.Trace)));

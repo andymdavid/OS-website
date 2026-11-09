@@ -353,7 +353,7 @@ function KanbanBuilderDemo() {
             {displayedText}
             <span className={`kb-cursor ${phase === 'typing' ? 'blinking' : ''}`}>|</span>
           </div>
-          <button className={`kb-send-btn ${phase === 'sending' ? 'pressed' : ''}`}>
+          <button type="button" aria-label="Example send button" className={`kb-send-btn ${phase === 'sending' ? 'pressed' : ''}`}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
               <path d="M12 19V5m0 0l-7 7m7-7l7 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>

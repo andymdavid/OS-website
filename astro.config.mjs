@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url';
 export default defineConfig({
   site: 'https://otherstuff.ai',
   output: 'static',
+  image: { remotePatterns: [{ protocol: 'https', hostname: 'beehiiv-images-production.s3.amazonaws.com' }] },
   outDir: './dist',
   build: { inlineStylesheets: 'auto' },
   integrations: [react()],

@@ -34,7 +34,7 @@ const schemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
     <style is:inline set:html={fontFaces} />
     <link rel="preload" href={deliveryFont('/fonts/Alfabet-Regular.woff2')} as="font" type="font/woff2" crossorigin />
     <link rel="preload" href={deliveryFont('/fonts/google/geist-latin.woff2')} as="font" type="font/woff2" crossorigin />
-    {['/', '/home-duplicate', '/home-duplicate/'].includes(Astro.url.pathname) && <link rel="preload" href={deliveryFont('/fonts/google/cormorantgaramond-latin.woff2')} as="font" type="font/woff2" crossorigin />}
+    {['/', '/home-duplicate', '/home-duplicate/', '/ai-automation', '/ai-automation/'].includes(Astro.url.pathname) && <link rel="preload" href={deliveryFont('/fonts/google/cormorantgaramond-latin.woff2')} as="font" type="font/woff2" crossorigin />}
     <title>{title.includes('Other Stuff') ? title : `${title} | Other Stuff`}</title>
     <meta name="description" content={description} />
     {Astro.props.noindex && <meta name="robots" content="noindex, follow" />}

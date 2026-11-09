@@ -23,7 +23,7 @@
   background:
     linear-gradient(180deg, rgba(5, 5, 5, 0.78) 0%, rgba(5, 5, 5, 0.28) 34%, rgba(5, 5, 5, 0.2) 68%, rgba(5, 5, 5, 0.72) 100%),
     linear-gradient(90deg, rgba(5, 5, 5, 0.62) 0%, rgba(5, 5, 5, 0.02) 46%, rgba(5, 5, 5, 0.5) 100%),
-    url('/footer-gradient.png') center 58% / cover no-repeat,
+    url('../assets/footer-gradient.webp?no-inline') center 58% / cover no-repeat,
     #050505;
   opacity: 0.92;
 }

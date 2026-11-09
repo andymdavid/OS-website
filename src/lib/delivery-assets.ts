@@ -11,3 +11,12 @@ export function deliverySrcset(name: string, widths: number[], format: 'webp' | 
 export function deliveryFont(source: string) { return (manifest.fonts as Record<string, string>)[source] || source; }
 
 export function deliveryStatic(source: string) { return (manifest.assets as Record<string, string>)[source] || source; }
+
+export function responsiveStatic(source: string, width: number) {
+  const key = `/optimized/${source.split('/').pop()?.replace(/\.[^.]+$/, '')}-${width}.webp`;
+  return (manifest.assets as Record<string, string>)[key] || source;
+}
+export function responsiveStaticSrcset(source: string, widths: number[]) {
+  const variants = widths.map(width => [width, responsiveStatic(source, width)] as const);
+  return variants.every(([, url]) => url !== source) ? variants.map(([width,url]) => `${url} ${width}w`).join(', ') : undefined;
+}

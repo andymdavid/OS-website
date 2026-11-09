@@ -1,6 +1,6 @@
 ---
 import '../FunnelOffers.css';
-import { deliveryImage, deliverySrcset } from '../../lib/delivery-assets';
+import { deliveryImage, deliverySrcset, responsiveStatic, responsiveStaticSrcset } from '../../lib/delivery-assets';
 const productSizes = '(max-width: 533px) calc(100vw - 106px), (max-width: 768px) calc(88vw - 42px), (max-width: 1024px) calc(88vw - 2 * clamp(22px, 2.4vw, 32px) - 2px), calc((100vw - 2 * clamp(32px, 6vw, 120px) - 2 * clamp(10px, 1vw, 16px)) / 3 - 2 * clamp(22px, 2.4vw, 32px) - 2px)';
 import { CAL_DISCOVERY_URL } from '../../lib/links';
 const cards = [
@@ -54,8 +54,8 @@ const {showFooter=true,showRecommendation=true,content}=Astro.props;
                 {!cardContent?.image && <source type="image/avif" srcset={deliverySrcset(card.image.replace('/home-help-', 'help-').replace('.webp', ''), [320,400,560,640,800], 'avif')} sizes={productSizes} />}
               <img
                 class={`static-help-image ${!cardContent && 'imageClassName' in card ? card.imageClassName : ''}`}
-                src={cardContent?.image ?? deliveryImage(card.image.replace('/home-help-', 'help-').replace('.webp', ''), 640)}
-                srcset={!cardContent?.image ? deliverySrcset(card.image.replace('/home-help-', 'help-').replace('.webp', ''), [320,400,560,640,800]) : undefined}
+                src={cardContent?.image ? responsiveStatic(cardContent.image, 800) : deliveryImage(card.image.replace('/home-help-', 'help-').replace('.webp', ''), 640)}
+                srcset={!cardContent?.image ? deliverySrcset(card.image.replace('/home-help-', 'help-').replace('.webp', ''), [320,400,560,640,800]) : responsiveStaticSrcset(cardContent.image, [400,800,1280])}
                 sizes={productSizes}
                 width="800" height="800" loading="lazy" decoding="async"
                 alt={cardContent?.imageAlt ?? card.imageAlt}
