@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
-import './FAQHomeDuplicate.css';
-
-export interface FAQItem {
+---
+import '../FAQHomeDuplicate.css';
+interface FAQItem {
   question: string;
   answer: string;
 }
@@ -54,54 +53,29 @@ const faqs: FAQItem[] = [
   },
 ];
 
-interface FAQHomeDuplicateProps {
-  items?: FAQItem[];
-  eyebrow?: string;
-  heading?: string;
-  id?: string;
-}
 
-export function FAQHomeDuplicate({
-  items = faqs,
-  eyebrow = 'FAQ',
-  heading = 'Common questions.',
-  id,
-}: FAQHomeDuplicateProps = {}) {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
-  return (
-    <section id={id} className="section faq-section-home">
-      <div className="faq-home-container">
-        <div className="intro-pill fade-in">{eyebrow}</div>
-
-        <h2 className="faq-home-heading fade-in fade-in-stagger-1">
-          {heading}
-        </h2>
-
-        <div className="faq-home-list fade-in fade-in-stagger-2">
-          {items.map((item, index) => {
-            const isOpen = openIndex === index;
-            return (
-              <div
-                key={index}
-                className={`faq-home-item ${isOpen ? 'open' : ''}`}
-              >
-                <button
-                  className="faq-home-question"
-                  onClick={() => setOpenIndex(isOpen ? null : index)}
-                  aria-expanded={isOpen}
-                >
-                  <span>{item.question}</span>
-                  <span className="faq-home-toggle">{isOpen ? '\u00d7' : '+'}</span>
-                </button>
-                <div className={`faq-home-answer ${isOpen ? 'visible' : ''}`}>
-                  <p>{item.answer}</p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    </section>
-  );
-}
+const {items=faqs,eyebrow='FAQ',heading='Common questions.',id}=Astro.props;
+---
+<section id={id} class="section faq-section-home">
+  <div class="faq-home-container">
+    <div class="intro-pill fade-in">{eyebrow}</div>
+    <h2 class="faq-home-heading fade-in fade-in-stagger-1">{heading}</h2>
+    <div class="faq-home-list fade-in fade-in-stagger-2">
+      {items.map((item: FAQItem) => (
+        <details class="faq-home-item" name={id || 'common-questions'}>
+          <summary class="faq-home-question"><span>{item.question}</span><span class="faq-home-toggle" aria-hidden="true"></span></summary>
+          <div class="faq-home-answer"><p>{item.answer}</p></div>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>
+<style>
+  summary { list-style: none; }
+  summary::-webkit-details-marker { display: none; }
+  .faq-home-toggle::before { content: '+'; }
+  details[open] .faq-home-toggle::before { content: '×'; }
+  details[open] .faq-home-question { color: #fff; }
+  details[open] .faq-home-toggle { color: rgba(240,240,240,.7); }
+  details[open] .faq-home-answer { max-height: none; opacity: 1; padding-bottom: 24px; }
+</style>

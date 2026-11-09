@@ -1,0 +1,17 @@
+---
+import '../HomeDuplicateLogoCarousel.css';
+const logos = [
+  {src:'/logos/home-duplicate/adapt.png',alt:'Adapt'},
+  {src:'/logos/home-duplicate/stakwork.png',alt:'Stakwork'},
+  {src:'/logos/home-duplicate/rocky-bay.png',alt:'Rocky Bay'},
+  {src:'/logos/home-duplicate/plantrite.svg',alt:'Plantrite'},
+];
+const logoSet=[...logos,...logos,...logos];
+---
+<section class="home-duplicate-client-bar" aria-label="Selected client logos">
+  <div class="home-duplicate-client-bar__inner"><div class="home-duplicate-client-bar__track"><div class="home-duplicate-client-bar__logos">
+    {[false,true].map(hidden=>(<div class="home-duplicate-client-bar__logo-set" aria-hidden={hidden || undefined}>
+      {logoSet.map((logo,index)=>(<img src={logo.src} alt={hidden || index>=logos.length ? '' : logo.alt} class="home-duplicate-client-bar__logo" loading="eager" decoding="async" />))}
+    </div>))}
+  </div></div></div>
+</section>

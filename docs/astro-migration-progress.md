@@ -49,3 +49,7 @@ Operator explicitly authorized completion and public deployment. Live GET /api/c
 Clean dependency installation, production build, lint and publishing lifecycle checks pass. Representative about, writing, newsletter and workshop layouts were checked at 390px and 1440px; none has horizontal overflow. Final browser and live deployment verification are recorded in the release handoff.
 
 Final browser sweep passed all 37 routes with and without JavaScript. The visual check additionally found that generic workshop section rules applied a full-screen minimum height to the shared newsletter navigation strip; rules are now scoped to `main section`. Workshop checks assert first-screen headline positioning and pass at both widths after the final CSS build. Production build and lint pass after this correction. The existing external analytics script returns HTTP 200.
+
+## Native component cleanup pass
+
+Moved remaining static homepage shells and shared footer markup to native Astro templates; FAQ now uses native grouped details/summary, and booking CTAs use native anchors. Demos and footer form/shader hydrate individually. Removed 36 unreferenced source/style files while retaining content inputs and all supported archived routes. Homepage JavaScript after full scrolling falls from 270,885 to 250,621 uncompressed bytes (7.48%), with distinct module requests reduced from 21 to 17 at both tested widths. Measurement manifests and representative screenshots are under docs/performance/2026-11-09-component-cleanup/. No GitHub language overrides were used.

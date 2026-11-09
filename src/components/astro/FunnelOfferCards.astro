@@ -1,0 +1,88 @@
+---
+import '../FunnelSection.css';
+import { CAL_DISCOVERY_URL } from '../../lib/links';
+const cards = [
+  {
+    category: 'Ambulando',
+    title: 'Build and run your own AI workforce.',
+    titleLines: ['Build and run your', 'own AI workforce.'],
+    description: 'We set up Ambulando, the shared workspace where your people and AI agents build and manage automations together.',
+    price: 'From $500 a month.',
+    image: '/home-help-ambulando.webp',
+    imageAlt: 'Ambulando agents dashboard showing Estimator, Accounts and Research agents.',
+    imageClassName: 'static-help-image-interface-centred',
+    buttonHref: 'https://ambulando.io',
+  },
+  {
+    category: 'Automation Partner',
+    title: 'We automate more of your business each month.',
+    titleLines: ['We automate more of your', 'business each month.'],
+    description: 'We join your team each month, find the work costing you the most time and automate it one workflow at a time.',
+    price: 'From $5k a month. Cancel anytime',
+    image: '/home-help-automation-partner.webp',
+    imageAlt: 'Ambulando automations dashboard showing live workflows and Safety checks next up.',
+    imageClassName: 'static-help-image-interface-centred',
+    tag: 'Most clients start here',
+    buttonHref: CAL_DISCOVERY_URL,
+  },
+  {
+    category: 'Custom Software',
+    title: 'Own the software your business runs on.',
+    titleLines: ['Own the software your', 'business runs on.'],
+    description: 'When a workflow needs its own software, we design and build it around the way your team already works.',
+    price: 'Quoted per project',
+    image: '/home-help-custom-software.webp',
+    imageAlt: 'Northern Construction project software showing an estimate for Cottesloe Residence.',
+    imageClassName: 'static-help-image-interface-centred',
+    buttonHref: '/ai-automation',
+  },
+] as const;
+
+
+const {showFooter=true,showRecommendation=true,content}=Astro.props;
+---
+<div class="funnel-cards funnel-offer-panel">
+      {cards.map((card, index) => {
+        const isExternal = card.buttonHref.startsWith('http');
+        const cardContent = content?.[index];
+        return (
+          <article  class="funnel-card fade-in">
+            <div class="funnel-card-image">
+              <img
+                class={`static-help-image ${!cardContent && 'imageClassName' in card ? card.imageClassName : ''}`}
+                src={cardContent?.image ?? card.image}
+                alt={cardContent?.imageAlt ?? card.imageAlt}
+              />
+              {showRecommendation && card.tag && (
+                <svg class="funnel-card-recommended" viewBox="0 0 180 180" role="img" aria-label={card.tag}>
+                  <defs>
+                    <path id="recommended-ribbon-path" d="M 35 0 C 42 56 110 126 180 138" />
+                  </defs>
+                  <use href="#recommended-ribbon-path" class="recommended-ribbon-band" />
+                  <text class="recommended-ribbon-text">
+                    <textPath href="#recommended-ribbon-path" startOffset="50%" text-anchor="middle">
+                      MOST CLIENTS START HERE
+                    </textPath>
+                  </text>
+                </svg>
+              )}
+            </div>
+            <div class="funnel-card-header"><span class="funnel-card-category">{cardContent?.category ?? card.category}</span></div>
+            <div class="funnel-card-body">
+              <h4>
+                {cardContent ? cardContent.title : (
+                  <Fragment>{card.titleLines[0]}<br class="funnel-card-title-break" />{card.titleLines[1]}</Fragment>
+                )}
+              </h4>
+              <p class="funnel-card-description">{cardContent?.description ?? card.description}</p>
+              {showFooter && <p class="funnel-card-price">{card.price}</p>}
+            </div>
+            {showFooter && (
+              <a class="funnel-card-button" href={card.buttonHref} target={isExternal ? '_blank' : undefined} rel={isExternal ? 'noopener noreferrer' : undefined}>
+                Learn More
+              </a>
+            )}
+          </article>
+        );
+      })}
+    </div>

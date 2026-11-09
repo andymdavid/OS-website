@@ -2,7 +2,7 @@
 import SiteLayout from '@/layouts/SiteLayout.astro';
 import { Navigation } from '@/components/Navigation';
 import { Section } from '@/components/Section';
-import { Footer } from '@/components/Footer';
+import Footer from '@/components/astro/Footer.astro';
 
 
 ---
@@ -69,6 +69,6 @@ import { Footer } from '@/components/Footer';
       </main>
 
       {/* Footer */}
-      <Footer client:visible />
+      <Footer />
     </div>
 </SiteLayout>

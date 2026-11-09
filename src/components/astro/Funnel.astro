@@ -1,0 +1,27 @@
+---
+import '../FunnelSection.css';
+import { CAL_DISCOVERY_URL } from '../../lib/links';
+import BookCallContent from './BookCallContent.astro';
+import FunnelOfferCards from './FunnelOfferCards.astro';
+---
+<section id="services" class="section funnel-section funnel-section-home-duplicate">
+      <div class="section-container-wide">
+        <div class="funnel-offer-header">
+          <div class="funnel-offer-heading">
+            <div class="funnel-pill fade-in">HOW WE HELP SMEs</div>
+            <h2 class="section-heading fade-in fade-in-stagger-1">Get more done, without hiring more people.</h2>
+          </div>
+          <div class="funnel-offer-copy">
+            <p class="funnel-intro fade-in fade-in-stagger-2">
+              We put AI to work where it makes the biggest difference in your business,
+              so your team can get more done without adding headcount.
+            </p>
+            <a class="funnel-offer-cta book-call-button fade-in fade-in-stagger-3" href={CAL_DISCOVERY_URL} target="_blank" rel="noopener noreferrer">
+              <BookCallContent />
+            </a>
+          </div>
+        </div>
+
+          <FunnelOfferCards />
+      </div>
+    </section>

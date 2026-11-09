@@ -1,0 +1,452 @@
+[
+  {
+    "width": 390,
+    "jsBytes": 250621,
+    "jsRequests": 17,
+    "islands": 9,
+    "scripts": [
+      {
+        "path": "/_astro/NavigationDraft.B5q4BfPf.js",
+        "bytes": 9923
+      },
+      {
+        "path": "/_astro/client.CpIC-S6J.js",
+        "bytes": 180594
+      },
+      {
+        "path": "/_astro/rolldown-runtime.BWaJ3C7D.js",
+        "bytes": 911
+      },
+      {
+        "path": "/_astro/HeroShaderBackground.6RLxgSi4.js",
+        "bytes": 6743
+      },
+      {
+        "path": "/_astro/react.BbKCZBWq.js",
+        "bytes": 7532
+      },
+      {
+        "path": "/_astro/NewsletterModal.gGYl34r6.js",
+        "bytes": 1815
+      },
+      {
+        "path": "/_astro/links.n6-qY88K.js",
+        "bytes": 61
+      },
+      {
+        "path": "/_astro/Navigation.B2Le5xEl.js",
+        "bytes": 1157
+      },
+      {
+        "path": "/_astro/BookCallContent.BAdlskq1.js",
+        "bytes": 1579
+      },
+      {
+        "path": "/_astro/jsx-runtime.CAVSUwWZ.js",
+        "bytes": 435
+      },
+      {
+        "path": "/_astro/react-dom.D6k24Xhf.js",
+        "bytes": 3580
+      },
+      {
+        "path": "/_astro/EmailCaptureForm.BtNbcEQ0.js",
+        "bytes": 1621
+      },
+      {
+        "path": "/_astro/HomeDuplicateExitNewsletter.CXQtKeqc.js",
+        "bytes": 1195
+      },
+      {
+        "path": "/_astro/FormProcessingDemo.BgS9TYnp.js",
+        "bytes": 10145
+      },
+      {
+        "path": "/_astro/AIChatDemo.Cbl8AhQA.js",
+        "bytes": 7055
+      },
+      {
+        "path": "/_astro/WingmanDemo.CBKFKQiQ.js",
+        "bytes": 7544
+      },
+      {
+        "path": "/_astro/DataAnalysisDemo.C3FwKcD8.js",
+        "bytes": 8731
+      }
+    ],
+    "landmarks": [
+      {
+        "text": "We put AI to work inside your business.",
+        "x": 16,
+        "y": 380.0625,
+        "width": 358,
+        "height": 85.8125
+      },
+      {
+        "text": "Get more done, without hiring more people.",
+        "x": 32,
+        "y": 1015.65625,
+        "width": 326,
+        "height": 70.375
+      },
+      {
+        "text": "AI that works across your business.",
+        "x": 20,
+        "y": 3265.96875,
+        "width": 350,
+        "height": 57.59375
+      },
+      {
+        "text": "MarketingKeep your marketing running consistently, even when the team is flat out on client work.Lead captureOutreachCampaign reporting",
+        "x": 20,
+        "y": 3544.625,
+        "width": 350,
+        "height": 111.59375
+      },
+      {
+        "text": "SalesHandle the prep, paperwork and follow-up around every deal, so your people spend their time with clients.Prospect researchProposals and quotesFollow-up",
+        "x": 20,
+        "y": 4134.21875,
+        "width": 350,
+        "height": 131.890625
+      },
+      {
+        "text": "OperationsTake care of the updates, handoffs and chasing that keep jobs moving, so it doesn't all depend on a few key people.Client onboardingProject updatesHandovers",
+        "x": 20,
+        "y": 4744.109375,
+        "width": 350,
+        "height": 131.890625
+      },
+      {
+        "text": "FinanceKeep billing, collections and reporting up to date, so you see cash and margin while there's still time to act.InvoicingMargin reviewsMonth-end reporting",
+        "x": 20,
+        "y": 5354,
+        "width": 350,
+        "height": 131.890625
+      },
+      {
+        "text": "Your business already has the structure AI needs.",
+        "x": 32,
+        "y": 6131.546875,
+        "width": 326,
+        "height": 57.59375
+      },
+      {
+        "text": "A better way to bring AIinto your business.",
+        "x": 20,
+        "y": 10109.640625,
+        "width": 350,
+        "height": 70.375
+      },
+      {
+        "text": "Common questions.",
+        "x": 32,
+        "y": 11266.90625,
+        "width": 326,
+        "height": 28.796875
+      },
+      {
+        "text": "Who is this for?",
+        "x": 32,
+        "y": 11344.703125,
+        "width": 326,
+        "height": 66
+      },
+      {
+        "text": "What happens on the first call?",
+        "x": 32,
+        "y": 11411.703125,
+        "width": 326,
+        "height": 66
+      },
+      {
+        "text": "What do you actually do?",
+        "x": 32,
+        "y": 11478.703125,
+        "width": 326,
+        "height": 66
+      },
+      {
+        "text": "How is this different from ChatGPT?",
+        "x": 32,
+        "y": 11545.703125,
+        "width": 326,
+        "height": 66
+      },
+      {
+        "text": "Will it work with the tools we already use?",
+        "x": 32,
+        "y": 11612.703125,
+        "width": 326,
+        "height": 79
+      },
+      {
+        "text": "Do we need technical people?",
+        "x": 32,
+        "y": 11692.703125,
+        "width": 326,
+        "height": 66
+      },
+      {
+        "text": "What happens after the first month?",
+        "x": 32,
+        "y": 11759.703125,
+        "width": 326,
+        "height": 66
+      },
+      {
+        "text": "Why is Ambulando open source?",
+        "x": 32,
+        "y": 11826.703125,
+        "width": 326,
+        "height": 66
+      },
+      {
+        "text": "How much does it cost?",
+        "x": 32,
+        "y": 11893.703125,
+        "width": 326,
+        "height": 66
+      },
+      {
+        "text": "Get StartedWhat’s eating your team’s week?Book a free 45-minute call with Pete and Andy. We’ll look at how work moves through your business and tell you what we’d automate first and what it would cost.Book a Call",
+        "x": 0,
+        "y": 12032.703125,
+        "width": 390,
+        "height": 532.828125
+      },
+      {
+        "text": "What’s eating your team’s week?",
+        "x": 57,
+        "y": 12196,
+        "width": 276,
+        "height": 57.59375
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "jsBytes": 250621,
+    "jsRequests": 17,
+    "islands": 9,
+    "scripts": [
+      {
+        "path": "/_astro/NavigationDraft.B5q4BfPf.js",
+        "bytes": 9923
+      },
+      {
+        "path": "/_astro/client.CpIC-S6J.js",
+        "bytes": 180594
+      },
+      {
+        "path": "/_astro/HeroShaderBackground.6RLxgSi4.js",
+        "bytes": 6743
+      },
+      {
+        "path": "/_astro/rolldown-runtime.BWaJ3C7D.js",
+        "bytes": 911
+      },
+      {
+        "path": "/_astro/react.BbKCZBWq.js",
+        "bytes": 7532
+      },
+      {
+        "path": "/_astro/links.n6-qY88K.js",
+        "bytes": 61
+      },
+      {
+        "path": "/_astro/NewsletterModal.gGYl34r6.js",
+        "bytes": 1815
+      },
+      {
+        "path": "/_astro/Navigation.B2Le5xEl.js",
+        "bytes": 1157
+      },
+      {
+        "path": "/_astro/BookCallContent.BAdlskq1.js",
+        "bytes": 1579
+      },
+      {
+        "path": "/_astro/react-dom.D6k24Xhf.js",
+        "bytes": 3580
+      },
+      {
+        "path": "/_astro/jsx-runtime.CAVSUwWZ.js",
+        "bytes": 435
+      },
+      {
+        "path": "/_astro/EmailCaptureForm.BtNbcEQ0.js",
+        "bytes": 1621
+      },
+      {
+        "path": "/_astro/HomeDuplicateExitNewsletter.CXQtKeqc.js",
+        "bytes": 1195
+      },
+      {
+        "path": "/_astro/FormProcessingDemo.BgS9TYnp.js",
+        "bytes": 10145
+      },
+      {
+        "path": "/_astro/AIChatDemo.Cbl8AhQA.js",
+        "bytes": 7055
+      },
+      {
+        "path": "/_astro/DataAnalysisDemo.C3FwKcD8.js",
+        "bytes": 8731
+      },
+      {
+        "path": "/_astro/WingmanDemo.CBKFKQiQ.js",
+        "bytes": 7544
+      }
+    ],
+    "landmarks": [
+      {
+        "text": "We put AI to work inside your business.",
+        "x": 319.359375,
+        "y": 385.40625,
+        "width": 801.28125,
+        "height": 58.3125
+      },
+      {
+        "text": "Get more done, without hiring more people.",
+        "x": 360,
+        "y": 1063.65625,
+        "width": 720,
+        "height": 46.1875
+      },
+      {
+        "text": "AI that works across your business.",
+        "x": 340,
+        "y": 2296.5625,
+        "width": 760,
+        "height": 37.796875
+      },
+      {
+        "text": "MarketingKeep your marketing running consistently, even when the team is flat out on client work.Lead captureOutreachCampaign reporting",
+        "x": 86.390625,
+        "y": 2573.734375,
+        "width": 601.609375,
+        "height": 111.59375
+      },
+      {
+        "text": "SalesHandle the prep, paperwork and follow-up around every deal, so your people spend their time with clients.Prospect researchProposals and quotesFollow-up",
+        "x": 752,
+        "y": 2573.734375,
+        "width": 601.609375,
+        "height": 111.59375
+      },
+      {
+        "text": "OperationsTake care of the updates, handoffs and chasing that keep jobs moving, so it doesn't all depend on a few key people.Client onboardingProject updatesHandovers",
+        "x": 86.390625,
+        "y": 3267.328125,
+        "width": 601.609375,
+        "height": 111.59375
+      },
+      {
+        "text": "FinanceKeep billing, collections and reporting up to date, so you see cash and margin while there's still time to act.InvoicingMargin reviewsMonth-end reporting",
+        "x": 752,
+        "y": 3267.328125,
+        "width": 601.609375,
+        "height": 111.59375
+      },
+      {
+        "text": "Your business already has the structure AI needs.",
+        "x": 340,
+        "y": 4172.578125,
+        "width": 760,
+        "height": 37.796875
+      },
+      {
+        "text": "A better way to bring AIinto your business.",
+        "x": 340,
+        "y": 6115.125,
+        "width": 760,
+        "height": 92.375
+      },
+      {
+        "text": "Common questions.",
+        "x": 86.390625,
+        "y": 7396.015625,
+        "width": 1267.21875,
+        "height": 37.796875
+      },
+      {
+        "text": "Who is this for?",
+        "x": 86.390625,
+        "y": 7506.8125,
+        "width": 1267.21875,
+        "height": 74
+      },
+      {
+        "text": "What happens on the first call?",
+        "x": 86.390625,
+        "y": 7581.8125,
+        "width": 1267.21875,
+        "height": 74
+      },
+      {
+        "text": "What do you actually do?",
+        "x": 86.390625,
+        "y": 7656.8125,
+        "width": 1267.21875,
+        "height": 74
+      },
+      {
+        "text": "How is this different from ChatGPT?",
+        "x": 86.390625,
+        "y": 7731.8125,
+        "width": 1267.21875,
+        "height": 74
+      },
+      {
+        "text": "Will it work with the tools we already use?",
+        "x": 86.390625,
+        "y": 7806.8125,
+        "width": 1267.21875,
+        "height": 74
+      },
+      {
+        "text": "Do we need technical people?",
+        "x": 86.390625,
+        "y": 7881.8125,
+        "width": 1267.21875,
+        "height": 74
+      },
+      {
+        "text": "What happens after the first month?",
+        "x": 86.390625,
+        "y": 7956.8125,
+        "width": 1267.21875,
+        "height": 74
+      },
+      {
+        "text": "Why is Ambulando open source?",
+        "x": 86.390625,
+        "y": 8031.8125,
+        "width": 1267.21875,
+        "height": 74
+      },
+      {
+        "text": "How much does it cost?",
+        "x": 86.390625,
+        "y": 8106.8125,
+        "width": 1267.21875,
+        "height": 74
+      },
+      {
+        "text": "Get StartedWhat’s eating your team’s week?Book a free 45-minute call with Pete and Andy. We’ll look at how work moves through your business and tell you what we’d automate first and what it would cost.Book a Call",
+        "x": 0,
+        "y": 8293.8125,
+        "width": 1440,
+        "height": 660.65625
+      },
+      {
+        "text": "What’s eating your team’s week?",
+        "x": 489.546875,
+        "y": 8549.109375,
+        "width": 460.90625,
+        "height": 37.796875
+      }
+    ]
+  }
+]

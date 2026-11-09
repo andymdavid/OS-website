@@ -2,15 +2,15 @@
 import SiteLayout from '@/layouts/SiteLayout.astro';
 import { NavigationDraft } from '@/components/NavigationDraft';
 import { HeroHomeDuplicate } from '@/components/HeroHomeDuplicate';
-import { HomeDuplicateGridSection } from '@/components/HomeDuplicateGridSection';
-import { FunnelHomeDuplicate } from '@/components/FunnelHomeDuplicate';
+import HomeDuplicateGridSection from '@/components/astro/UseCases.astro';
+import FunnelHomeDuplicate from '@/components/astro/Funnel.astro';
 import { ProcessTimeline } from '@/components/ProcessTimeline';
 import { ExamplesSection } from '@/components/ExamplesSection';
-import { InfrastructureSection } from '@/components/InfrastructureSection';
-import { FAQHomeDuplicate } from '@/components/FAQHomeDuplicate';
+import InfrastructureSection from '@/components/astro/InfrastructureSection.astro';
+import FAQHomeDuplicate from '@/components/astro/FAQ.astro';
 import { GoodStuffHomeDuplicate } from '@/components/GoodStuffHomeDuplicate';
 import CTAHomeDuplicate from "@/components/astro/CTA.astro";
-import { FooterHomeDuplicate } from '@/components/FooterHomeDuplicate';
+import FooterHomeDuplicate from '@/components/astro/FooterHomeDuplicate.astro';
 import { organizationSchema, websiteSchema } from '../lib/structured-data';
 
 
@@ -32,15 +32,15 @@ import { organizationSchema, websiteSchema } from '../lib/structured-data';
       <NavigationDraft client:load />
       <main>
         <HeroHomeDuplicate client:visible />
-        <HomeDuplicateGridSection client:visible />
+        <HomeDuplicateGridSection />
         <FunnelHomeDuplicate />
         <ProcessTimeline client:visible />
         <ExamplesSection client:visible />
         <InfrastructureSection />
-        <FAQHomeDuplicate client:visible />
+        <FAQHomeDuplicate />
         <GoodStuffHomeDuplicate client:visible />
         <CTAHomeDuplicate />
       </main>
-      <FooterHomeDuplicate client:visible />
+      <FooterHomeDuplicate />
     </div>
 </SiteLayout>

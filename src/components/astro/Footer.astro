@@ -1,30 +1,27 @@
-
-import React from 'react';
-import { EmailCaptureForm } from './EmailCaptureForm';
-import './Footer.css';
-
-export function Footer() {
-  return (
-    <footer className="footer">
-      <div className="footer-container">
+---
+import { EmailCaptureForm } from '../EmailCaptureForm';
+import '../Footer.css';
+---
+<footer class="footer">
+      <div class="footer-container">
         {/* Logo/Icon - Outside Grid */}
-        <div className="footer-brand">
-          <a href="/" className="footer-logo-icon" aria-label="Other Stuff home">
+        <div class="footer-brand">
+          <a href="/" class="footer-logo-icon" aria-label="Other Stuff home">
             <img src="/Logo-Main-Icon.webp" alt="Other Stuff Logo" width="46" height="31" />
           </a>
-          <a href="/" className="footer-logo">OTHER STUFF</a>
+          <a href="/" class="footer-logo">OTHER STUFF</a>
         </div>
 
         {/* Main Grid - 4 Columns */}
-        <div className="footer-grid">
+        <div class="footer-grid">
           {/* Column 1: Tagline & Info (Wider) */}
-          <div className="footer-brand-column">
-            <div className="footer-tagline">
+          <div class="footer-brand-column">
+            <div class="footer-tagline">
               We build custom AI systems that take repetitive work off your team's plate.
             </div>
-            <div className="footer-newsletter">
+            <div class="footer-newsletter">
               <h4>Get weekly Intelligence Snacks</h4>
-              <EmailCaptureForm
+              <EmailCaptureForm client:visible
                 variant="inline"
                 placeholder="Email address"
                 buttonText="Send me snacks"
@@ -34,7 +31,7 @@ export function Footer() {
           </div>
 
           {/* Column 2: Solutions */}
-          <nav className="footer-column" aria-label="Solutions">
+          <nav class="footer-column" aria-label="Solutions">
             <h4>Solutions</h4>
             <a href="/ai-automation/">AI Automation</a>
             <a href="https://ambulando.io" target="_blank" rel="noopener noreferrer">Ambulando</a>
@@ -43,7 +40,7 @@ export function Footer() {
           </nav>
 
           {/* Column 3: Media */}
-          <nav className="footer-column" aria-label="Media">
+          <nav class="footer-column" aria-label="Media">
             <h4>Media</h4>
             <a href="https://intelligencesnacks.com/">Intelligence Snacks</a>
             <a href="/perth-ai-roundtable/">Perth AI Roundtable</a>
@@ -52,20 +49,20 @@ export function Footer() {
           </nav>
 
           {/* Column 4: Company */}
-          <nav className="footer-column" aria-label="Company">
+          <nav class="footer-column" aria-label="Company">
             <h4>Company</h4>
             <a href="/about/">About</a>
             <a href="/contact/">Contact</a>
           </nav>
         </div>
 
-        <div className="footer-meta">
-          <div className="footer-partner">
+        <div class="footer-meta">
+          <div class="footer-partner">
             <span>Partner with us:</span>
             <a href="mailto:info@otherstuff.studio">info@otherstuff.studio</a>
           </div>
 
-          <div className="footer-social" aria-label="Social links">
+          <div class="footer-social" aria-label="Social links">
             <a
               href="https://www.youtube.com/@IntelligenceSnacks"
               target="_blank"
@@ -98,21 +95,19 @@ export function Footer() {
             </a>
           </div>
 
-          <div className="footer-legal">
+          <div class="footer-legal">
             <span>© {new Date().getFullYear()} Other Stuff Pty Ltd. All rights reserved.</span>
-            <span className="footer-separator">•</span>
+            <span class="footer-separator">•</span>
             <a href="/terms/">Terms of Service</a>
-            <span className="footer-separator">•</span>
+            <span class="footer-separator">•</span>
             <a href="/privacy/">Privacy Policy</a>
           </div>
         </div>
 
-        <svg className="footer-wordmark" viewBox="0 0 1000 120" aria-hidden="true" preserveAspectRatio="none">
-          <text x="500" y="100" textAnchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">
+        <svg class="footer-wordmark" viewBox="0 0 1000 120" aria-hidden="true" preserveAspectRatio="none">
+          <text x="500" y="100" text-anchor="middle" textLength="1000" lengthAdjust="spacingAndGlyphs">
             OTHER STUFF
           </text>
         </svg>
       </div>
     </footer>
-  );
-}

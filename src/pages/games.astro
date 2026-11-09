@@ -2,7 +2,7 @@
 import SiteLayout from '@/layouts/SiteLayout.astro';
 import { NavigationDraft } from "@/components/NavigationDraft";
 import CTASection from "@/components/astro/CTA.astro";
-import { Footer } from "@/components/Footer";
+import Footer from '@/components/astro/Footer.astro';
 import { levelUpGames } from "@/levelup/content/games";
 import "@/components/Hero.css";
 import "@/routes/Writing.css";
@@ -77,6 +77,6 @@ import "@/routes/Games.css";
 
         <CTASection />
       </main>
-      <Footer client:visible />
+      <Footer />
     </div>
 </SiteLayout>
