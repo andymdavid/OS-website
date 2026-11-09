@@ -58,3 +58,5 @@ Compressed Lighthouse reports, network logs and before/after mobile traces are i
 ## External blocker
 
 No external CDN was configured. Public DNS delegates to Cloudflare, but the proxy/cache setting cannot be established from nameservers alone. CapRover management returns 403, and no Cloudflare zone credentials or DNS-management tool are available. See cdn-rollout.md for exact cache/bypass rules, regional verification, HTML purge and rollback. This is the remaining infrastructure task; do not call the rollout complete or promise the GTmetrix paint targets until it is measured.
+
+Visual correction: the headless comparison above exercised the original software fallback and missed the hardware shader appearance. The backgrounds are now frozen renders of the original shader; see ../2026-11-09-gradient-restoration/README.md.

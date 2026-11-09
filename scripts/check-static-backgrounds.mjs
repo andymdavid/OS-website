@@ -18,7 +18,8 @@ try {
       await page.goto(`${base}${route}`);
       const hero = page.locator('.hero-gradient-background').first();
       await hero.waitFor({ state: 'visible' });
-      assert.match(await hero.evaluate(e => getComputedStyle(e).backgroundImage), /gradient/);
+      assert.match(await hero.evaluate(e => getComputedStyle(e).backgroundImage), /gradient-(mobile|desktop).*\.webp/);
+      assert.equal(await page.locator('.nav-container').evaluate(e => getComputedStyle(e).backgroundColor), 'rgb(13, 13, 13)');
       await page.locator('footer.footer').scrollIntoViewIfNeeded();
       assert.equal(await page.evaluate(() => window.__graphicsContexts), 0);
       assert.equal(await page.locator('os-shader, canvas.hero-shader-canvas').count(), 0);
