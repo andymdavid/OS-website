@@ -419,12 +419,12 @@
   }
 }
 
-.speedrun-page section {
+.speedrun-page main section {
   position: relative;
   min-height: 100vh;
 }
 
-.speedrun-page section::after {
+.speedrun-page main section::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -436,10 +436,10 @@
   background: rgba(240, 240, 240, 0.08);
 }
 
-.speedrun-page section.speedrun-hero::after {
+.speedrun-page main section.speedrun-hero::after {
   display: none;
 }
 
-.speedrun-page section:last-of-type::after {
+.speedrun-page main section:last-of-type::after {
   display: none;
 }

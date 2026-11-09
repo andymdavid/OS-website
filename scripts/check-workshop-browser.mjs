@@ -13,6 +13,8 @@ try {
     page.on('pageerror', error => errors.push(error.message));
     for (const path of ['/levelup/', '/speedrun/']) {
       await page.goto(`${base}${path}`);
+      const headline = await page.locator('h1').boundingBox();
+      assert.ok(headline && headline.y >= 0 && headline.y < 900, 'Workshop headline must appear in the first screen');
       const trigger = page.getByRole('button', { name: 'Talk to Us', exact: true }).first();
       await trigger.scrollIntoViewIfNeeded();
       await page.waitForFunction(() => document.querySelector('main astro-island')?.hasAttribute('ssr') === false && [...document.querySelectorAll('astro-island')].some(island => island.getAttribute('component-export') === 'WorkshopSignup' && !island.hasAttribute('ssr')));
