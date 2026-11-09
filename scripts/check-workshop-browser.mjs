@@ -12,13 +12,6 @@ try {
     const errors = [];
     page.on('pageerror', error => errors.push(error.message));
     for (const path of ['/levelup/', '/speedrun/']) {
-      let requests = 0;
-      await page.route('**/api/contact', async route => {
-        assert.equal(route.request().method(), 'POST');
-        assert.equal(route.request().postDataJSON().email, 'astro-check@example.invalid');
-        requests++;
-        await route.fulfill({ status: requests === 1 ? 500 : 200, contentType: 'application/json', body: JSON.stringify(requests === 1 ? { error: 'Please try again' } : { ok: true }) });
-      });
       await page.goto(`${base}${path}`);
       const trigger = page.getByRole('button', { name: 'Talk to Us', exact: true }).first();
       await trigger.scrollIntoViewIfNeeded();
@@ -28,15 +21,19 @@ try {
       await form.locator('[name=name]').fill('Astro Check');
       await form.locator('[name=organisation]').fill('Test organisation');
       await form.locator('[name=email]').fill('astro-check@example.invalid');
-      await form.getByRole('button', { name: 'Get in touch' }).click();
-      await expect(form.getByText('Please try again')).toBeVisible();
-      await form.getByRole('button', { name: 'Get in touch' }).click();
-      await expect(page.getByText('Thanks. We’ll be in touch shortly', { exact: false })).toBeVisible();
-      assert.equal(requests, 2);
+      await form.getByRole('button', { name: 'Open email draft' }).click();
+      const draft = page.getByRole('link', { name: 'Open email draft again' });
+      await expect(draft).toBeVisible();
+      const href = await draft.getAttribute('href');
+      assert.ok(href.startsWith('mailto:info@otherstuff.studio?'));
+      const message = new URL(href);
+      assert.match(message.searchParams.get('subject'), path.includes('speedrun') ? /Speedrun/ : /Level Up/);
+      assert.match(message.searchParams.get('body'), /astro-check@example.invalid/);
+      assert.match(message.searchParams.get('body'), /Test organisation/);
+      await expect(page.getByText('Your email draft is ready.', { exact: false })).toBeVisible();
       await page.getByRole('button', { name: 'Close', exact: true }).click();
       await expect(form).toHaveCount(0);
-      await page.unroute('**/api/contact');
-      console.log(`${width}px ${path}: modal, error, retry, success and close pass (mock API)`);
+      console.log(`${width}px ${path}: modal, correct email draft and close pass (no submission)`);
     }
     await page.goto(`${base}/the-good-stuff/`);
     const cards = page.locator('.good-stuff-portfolio > article:visible');
