@@ -180,7 +180,7 @@ export function NavigationDraft({ titleOverride, showPromoStrip = true, titleSwa
           {/* Left Section: Logo Icon + Menu */}
           <div className="nav-left">
             <a className="nav-logo-icon" href="/" onClick={closeMenus}>
-              <img src="/Logo-Main-Icon.webp" alt="Other Stuff — AI product studio" width="46" height="31" />
+              <img src="/optimized/brand-icon-96.webp" srcSet="/optimized/brand-icon-96.webp 96w, /optimized/brand-icon-192.webp 192w" sizes="46px" alt="Other Stuff — AI product studio" width="46" height="46" />
             </a>
 
             <div className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>

@@ -156,8 +156,8 @@
   right: 0;
   bottom: 0;
   background:
-    linear-gradient(rgba(15, 14, 13, 0.7), rgba(15, 14, 13, 0.7)),
-    var(--card-bg) center / cover no-repeat;
+    linear-gradient(rgba(15, 14, 13, 0.7), rgba(15, 14, 13, 0.7));
+  z-index: 1;
 }
 
 .home-duplicate-grid-visual > * {
@@ -268,4 +268,15 @@
     min-height: 468px;
     padding: 10px;
   }
+}
+
+/* Decorative screenshots stay behind the demos and load near the viewport. */
+.home-duplicate-grid-visual > img.home-grid-background {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: none;
 }

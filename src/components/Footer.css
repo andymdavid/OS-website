@@ -142,7 +142,7 @@
   width: min(100%, 330px);
 }
 
-.footer-newsletter h4 {
+.footer-newsletter h2 {
   font-family: var(--font-eyebrow);
   font-size: 12px;
   font-weight: var(--weight-regular);
@@ -192,7 +192,7 @@
   flex-direction: column;
 }
 
-.footer-column h4 {
+.footer-column h2 {
   font-family: var(--font-eyebrow);
   font-size: 12px;
   font-weight: var(--weight-regular);
@@ -220,7 +220,7 @@
   margin-top: 18px;
 }
 
-.footer-follow h4 {
+.footer-follow h2 {
   margin-bottom: 16px;
 }
 
@@ -514,3 +514,7 @@
     grid-column: 1 / -1;
   }
 }
+
+/* Give footer links comfortable, separated touch targets. */
+.footer-column > a { display: flex; align-items: center; min-height: 32px; }
+.footer-founder-social a, .footer-social a { min-width: 32px; min-height: 32px; display: inline-flex; align-items: center; justify-content: center; }

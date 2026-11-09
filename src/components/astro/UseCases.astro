@@ -79,10 +79,12 @@ const cards = [
                   {card.tags.map((tag) => <span >{tag}</span>)}
                 </div>
               </div>
-              <div
-                class="home-duplicate-grid-visual"
-                style={{ '--card-bg': `url('${card.image}')` }}
-              >
+              <div class="home-duplicate-grid-visual">
+                <img class="home-grid-background"
+                  src={card.image.replace('/examples-', '/optimized/example-').replace('-landscape.webp', '-800.webp')}
+                  srcset={[480, 800].map(width => `${card.image.replace('/examples-', '/optimized/example-').replace('-landscape.webp', `-${width}.webp`)} ${width}w`).join(', ')}
+                  sizes="(max-width: 767px) calc(100vw - 48px), 45vw"
+                  width="800" height="450" alt="" loading="lazy" decoding="async" />
                 <div class="home-grid-demo">{card.demo === 'FormProcessingDemo' && <FormProcessingDemo client:visible />}{card.demo === 'AIChatDemo' && <AIChatDemo client:visible />}{card.demo === 'WingmanDemo' && <WingmanDemo client:visible />}{card.demo === 'DataAnalysisDemo' && <DataAnalysisDemo client:visible />}</div>
               </div>
             </article>

@@ -28,9 +28,9 @@ const schemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
     <meta name="theme-color" content="#000000" />
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Anton:wght@400&family=Bungee&family=Caveat:wght@400;500&family=Cormorant+Garamond:wght@300;400&family=Figtree:wght@400;700&family=Inter:wght@400;500;600;700&family=Jersey+10&family=Silkscreen:wght@400&display=swap" rel="stylesheet" />
+    <link rel="preload" href="/fonts/Alfabet-Regular.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/google/geist-latin.woff2" as="font" type="font/woff2" crossorigin />
+    {['/', '/home-duplicate', '/home-duplicate/'].includes(Astro.url.pathname) && <link rel="preload" href="/fonts/google/cormorantgaramond-latin.woff2" as="font" type="font/woff2" crossorigin />}
     <title>{title.includes('Other Stuff') ? title : `${title} | Other Stuff`}</title>
     <meta name="description" content={description} />
     {Astro.props.noindex && <meta name="robots" content="noindex, follow" />}
@@ -51,7 +51,26 @@ const schemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
   <body>
     <noscript><style>.os-theme [style*="opacity:0"], .os-theme [style*="opacity: 0"] { opacity: 1 !important; transform: none !important; }</style></noscript>
     <slot />
-    <script is:inline defer src="https://unpkg.com/nanalytics-tracker@0.1.2/dist/index.global.js" data-site-uuid="c0cb28c5-6b00-4b5d-891a-ea3f8ebb47f8" data-cvm-pubkey="d8a066f85d621d634e24ee0bf741e27b6436af28782195de8aa90972e310e937"></script>
+    <script>
+      // Keep analytics off preview hosts and out of the initial rendering work.
+      const loadAnalytics = () => {
+        if (location.hostname !== 'otherstuff.ai' || navigator.doNotTrack === '1') return;
+        const tracker = document.createElement('script');
+        tracker.src = 'https://unpkg.com/nanalytics-tracker@0.1.2/dist/index.global.js';
+        tracker.async = true;
+        tracker.dataset.siteUuid = 'c0cb28c5-6b00-4b5d-891a-ea3f8ebb47f8';
+        tracker.dataset.cvmPubkey = 'd8a066f85d621d634e24ee0bf741e27b6436af28782195de8aa90972e310e937';
+        // The former cvm.otherstuff.ai relay times out. Keep the verified relay.
+        tracker.dataset.relays = 'wss://relay.contextvm.org';
+        document.body.append(tracker);
+      };
+      const scheduleAnalytics = () => {
+        if ('requestIdleCallback' in window) window.requestIdleCallback(loadAnalytics, { timeout: 3000 });
+        else setTimeout(loadAnalytics, 0);
+      };
+      if (document.readyState === 'complete') scheduleAnalytics();
+      else window.addEventListener('load', scheduleAnalytics, { once: true });
+    </script>
 
   </body>
 </html>
