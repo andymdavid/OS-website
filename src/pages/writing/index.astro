@@ -20,7 +20,10 @@ const writingImageSrcSet = (src: string) => {
 ---
 <SiteLayout title="Writing on AI Systems, Operations, and the Value Trap"
         description="Essays and field notes from Other Stuff on custom AI systems, AI workflow automation, operations, and the economic implications of AI."
-        path="/writing">
+        path="/writing" schema={[
+ { '@context': 'https://schema.org', '@type': 'CollectionPage', url: 'https://otherstuff.ai/writing/', name: 'Writing on AI Systems, Operations, and the Value Trap' },
+ { '@context': 'https://schema.org', '@type': 'ItemList', itemListElement: writingPosts.map((post,index) => ({'@type': 'ListItem',position:index+1,url:'https://otherstuff.ai/writing/'+post.slug+'/',name:post.title})) }
+]}>
 <div class="os-theme os-draft min-h-screen writing-page">
       
       <NavigationDraft client:load titleOverride="OTHER STUFF" />

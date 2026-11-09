@@ -1,137 +1,38 @@
-# Other Stuff Website
+# Other Stuff website
 
-Marketing site for Other Stuff, built with Vite, React 19, TypeScript, and React Router.
+Astro generates the marketing pages, workshops, writing, newsletter archive and podcast index as static HTML. React 19 enhances individual menus, forms, demos and interactive workshop sections. Content navigation uses ordinary links. The separate Express service continues to serve `/api/subscribe` through the existing nginx proxy.
 
-## Stack
+## Development and validation
 
-- Vite for local development and production builds
-- React 19 + TypeScript
-- React Router for route-level pages
-- Framer Motion for animation
-- CSS files colocated with components and routes
+Requires Node >=22.23.4.
 
-## Scripts
-
-```bash
-npm install
+```sh
+npm ci --include=dev
 npm run dev
 npm run build
-npm run preview
 npm run lint
+npm run preview -- --port 4567
+npm run check:browser:astro
+npm run check:routes
+npm run check:publishing
 ```
 
-Local dev runs on the Vite default at `http://localhost:5173`.
+`npm run build` writes ignored `dist/`, including sitemap and LLM reference files, and validates the built homepage and articles. Browser checks use Playwright Chromium and require its browser/runtime dependencies. Set `ASTRO_PREVIEW_URL` when previewing on another address. They block external requests and use reduced motion; they verify local functionality rather than production analytics, external services or visual/performance parity. Subscription checks intercept requests and never submit a real signup.
 
-## Routes
+## Source and publishing
 
-Current primary routes live in [`src/App.tsx`](./src/App.tsx):
+- `src/pages/`: native route templates and collection-backed article routes.
+- `src/layouts/SiteLayout.astro`: document, social metadata, fonts and deferred analytics.
+- `src/content.config.ts`: validated, watched writing and newsletter collections.
+- `content/writing/*.md`: original line-based frontmatter and Markdown conventions; filenames may differ from `slug`. `README.md` is documentation, not an article. Required fields: title, description, intro, date, readTime. Slugs must be unique lowercase words separated by hyphens. The existing Markdown/custom chart renderer is retained.
+- `public/newsletter-issues.json`: the single newsletter archive source, refreshed explicitly with `npm run sync:newsletter` using existing Beehiiv environment configuration. Missing credentials preserve the last available archive. Updating content never requires a generated copy under `src/`.
+- `public/podcast-episodes.json`: podcast index source, refreshed with `npm run update:podcast`.
+- `src/components/astro/`: native hero, CTA, legal and workshop composition.
+- `src/components/` and workshop folders: selectively hydrated React components and colocated CSS.
+- `public/nstack/`: existing self-contained static NStack page, copied without changing its assets or behaviour.
 
-- `/` - current home page
-- `/about`
-- `/speedrun`
-- `/marginal-gains`
-- `/levelup`
-- `/the-good-stuff`
-- `/writing`
-- `/writing/post`
-- `/games`
+After adding, editing, deleting or changing an article slug, run `npm run build`. Astro regenerates the index, article routes, related posts, sitemap and LLM references from the same collections. Development watches content additions/edits/deletions. `sync:writing` runs Astro content validation; `sync:seo` is a compatibility alias for a full build.
 
-Archived routes:
+## Deployment
 
-- `/archive/home`
-- `/archive/company`
-
-## NStack static site
-
-`public/nstack/` contains the standalone NStack marketing site. Vite copies it
-unchanged to `dist/nstack/`; nginx serves it at `/nstack/` and redirects
-`/nstack` to that canonical path while retaining query strings. Keep its HTML,
-CSS, JavaScript and assets together so relative references and section anchors
-continue to work. This directory contains public sales content only.
-
-Validate with `npm run build`, `npm run lint`, and nginx using the production
-configuration. Check both slash forms, asset MIME types, keyboard navigation,
-hosting choices and FAQ at desktop and mobile sizes. Existing root and other
-route output must remain unchanged when updating this standalone site.
-
-## Project Structure
-
-```text
-src/
-  components/         Shared site components such as nav, footer, CTA, hero sections
-  hooks/              Shared React hooks
-  levelup/            Theme, content, and section system used by Level Up and reused elsewhere
-  speedrun/           Speedrun-specific content, demos, and page styling
-  marginal-gains/     Marginal Gains-specific content, demos, and page styling
-  routes/             Route entry components and route-scoped CSS
-public/               Static assets, images, video, icons
-server/               Placeholder backend code and integration notes
-```
-
-## Content Model
-
-This repo mixes two page patterns:
-
-1. Route-authored pages
-
-- Pages like [`src/routes/About.tsx`](./src/routes/About.tsx), [`src/routes/Writing.tsx`](./src/routes/Writing.tsx), and [`src/routes/Games.tsx`](./src/routes/Games.tsx) are written directly as route components.
-
-2. Content-driven themed pages
-
-- [`src/levelup/content/site.ts`](./src/levelup/content/site.ts)
-- [`src/speedrun/content/site.ts`](./src/speedrun/content/site.ts)
-- [`src/marginal-gains/content/site.ts`](./src/marginal-gains/content/site.ts)
-
-These pages are rendered through the shared section system under [`src/levelup/components/sections`](./src/levelup/components/sections), with page-specific theming layered on top through:
-
-- [`src/levelup/levelup.css`](./src/levelup/levelup.css)
-- [`src/speedrun/speedrun.css`](./src/speedrun/speedrun.css)
-- [`src/marginal-gains/marginal-gains.css`](./src/marginal-gains/marginal-gains.css)
-
-If you are updating page copy, card content, CTA text, founder details, or section ordering on those themed pages, start in the corresponding `content/site.ts` file first.
-
-## Shared Navigation and Footer
-
-Global navigation, footer, and CTA components live in [`src/components`](./src/components).
-
-The shared header dropdown data is currently defined in:
-
-- [`src/components/NavigationDraft.tsx`](./src/components/NavigationDraft.tsx)
-
-The shared footer links and social URLs are currently defined in:
-
-- [`src/components/Footer.tsx`](./src/components/Footer.tsx)
-
-## Assets
-
-Static media is stored in [`public`](./public). This repo includes large video files and background images, and they materially affect repository size and build output size.
-
-If you add or replace assets:
-
-- prefer optimized video/image exports
-- keep filenames stable when replacing existing assets
-- remember that anything in `public` is copied into the production build
-
-## Newsletter / Beehiiv
-
-Newsletter signup expects Beehiiv credentials via environment variables:
-
-- `BEEHIIV_PUBLICATION_ID`
-- `BEEHIIV_API_KEY`
-
-Copy `.env.example` to `.env.local` and add those values if you are wiring up newsletter signup locally.
-
-There is placeholder subscription logic in [`server/subscribe.ts`](./server/subscribe.ts), but this repo is not currently a Next.js app. If `/api/subscribe` is required in production, it needs to be hosted behind an equivalent backend endpoint.
-
-## Build Notes
-
-- `npm run build` outputs the production site to `dist/`
-- `dist/` can become large because it includes copied static media from `public/`
-- `.git` is also relatively large because of asset history
-
-## Working Conventions
-
-- Keep styles in existing colocated CSS files unless there is a strong reason to centralize them
-- For Speedrun, Marginal Gains, and Level Up changes, preserve the shared section renderer unless the page truly needs bespoke route markup
-- Run `npm run lint` after UI changes
-- For visual changes, verify both desktop and mobile states
+The existing Dockerfile runs `npm run build` and copies `dist/` to nginx. It retains the Node subscription service and `/api/` proxy. nginx returns a real 404 with the generated 404 page, redirects both `/marginal-gains` forms to `/ai-automation/`, preserves NStack's prefix handling, compresses text and caches hashed `/_astro/` files. Do not infer deployment from a local build or PR. Use the established release process and verify the actual live release separately.

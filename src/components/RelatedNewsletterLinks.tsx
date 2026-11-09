@@ -1,4 +1,4 @@
-import newsletterPayload from "@/generated/newsletter-issues.json";
+import newsletterPayload from "../../public/newsletter-issues.json";
 import { canonicalPath } from "@/lib/structured-data";
 import type { NewsletterIssue, NewsletterPayload } from "@/types/newsletter";
 import "@/components/RelatedNewsletterLinks.css";

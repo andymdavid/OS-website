@@ -1,35 +1,28 @@
-import { SEO } from "@/components/SEO";
+---
+import SiteLayout from '@/layouts/SiteLayout.astro';
 import { NavigationDraft } from "@/components/NavigationDraft";
 import { PainRecognition } from "@/components/PainRecognition";
 import { MGGridSection } from "@/components/MGGridSection";
 import { MGHowItWorksSection } from "@/components/MGHowItWorksSection";
 import { MGOfferSection } from "@/components/MGOfferSection";
 import { MGPricingSection } from "@/components/MGPricingSection";
-import { CTAHomeDuplicate } from "@/components/CTAHomeDuplicate";
+import CTAHomeDuplicate from "@/components/astro/CTA.astro";
 import { FooterHomeDuplicate } from "@/components/FooterHomeDuplicate";
-import { AutomationPartnerHero } from "@/components/AutomationPartnerHero";
+import AutomationPartnerHero from "@/components/astro/AutomationPartnerHero.astro";
 import { FAQHomeDuplicate } from "@/components/FAQHomeDuplicate";
 import {
   MarginalGainsApproachSection,
   MarginalGainsDuplicateBody,
 } from "@/marginal-gains/components/site-shell-duplicate";
-import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { automationFaqs } from "@/marginal-gains/content/site-duplicate";
 import { getServiceSchema } from "@/lib/structured-data";
 import "@/levelup/levelup.fonts.css";
 import "@/levelup/levelup.generated.css";
 import "@/marginal-gains/marginal-gains.css";
 
-export default function MarginalGains() {
-  useScrollAnimation();
 
-  return (
-    <div
-      className="os-theme os-draft levelup-theme levelup-theme-vars min-h-screen marginal-gains-page mg-duplicate"
-      style={{ fontFamily: "'Inter', system-ui, sans-serif" }}
-    >
-      <SEO
-        title="AI Automation & AI Consulting Perth"
+---
+<SiteLayout title="AI Automation & AI Consulting Perth"
         description="Other Stuff helps Perth SMEs identify, design, and deliver AI automation systems that grow margins, free up capital, and reduce operational risk. Practical AI consulting, delivered as working systems."
         path="/ai-automation"
         ogImage="/og-marginal-gains.png"
@@ -77,9 +70,13 @@ export default function MarginalGains() {
               "AI Product Studio",
             ],
           },
-        ]}
-      />
-      <NavigationDraft
+        ]}>
+<div
+      class="os-theme os-draft levelup-theme levelup-theme-vars min-h-screen marginal-gains-page mg-duplicate"
+      style={{ fontFamily: "'Inter', system-ui, sans-serif" }}
+    >
+      
+      <NavigationDraft client:load
         titleSwapOnScroll={{
           before: "OTHER STUFF",
           after: "AUTOMATION PARTNER",
@@ -87,14 +84,14 @@ export default function MarginalGains() {
         }}
       />
       <AutomationPartnerHero />
-      <PainRecognition />
+      <PainRecognition client:visible />
       <MGOfferSection />
       <MGHowItWorksSection />
-      <MarginalGainsApproachSection />
+      <MarginalGainsApproachSection client:visible />
       <MGGridSection />
-      <MarginalGainsDuplicateBody />
-      <MGPricingSection />
-      <FAQHomeDuplicate
+      <MarginalGainsDuplicateBody client:visible />
+      <MGPricingSection client:visible />
+      <FAQHomeDuplicate client:visible
         id="faq"
         items={automationFaqs}
         heading="Frequently asked questions."
@@ -105,7 +102,6 @@ export default function MarginalGains() {
         intro="Book a free 45-minute call with Pete and Andy. We’ll look at how work moves through your business and tell you what we’d automate first and what it would cost."
         className="mg-final-cta"
       />
-      <FooterHomeDuplicate />
+      <FooterHomeDuplicate client:visible />
     </div>
-  );
-}
+</SiteLayout>

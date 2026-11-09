@@ -1,0 +1,46 @@
+---
+import SiteLayout from '@/layouts/SiteLayout.astro';
+import { NavigationDraft } from '@/components/NavigationDraft';
+import { HeroHomeDuplicate } from '@/components/HeroHomeDuplicate';
+import { HomeDuplicateGridSection } from '@/components/HomeDuplicateGridSection';
+import { FunnelHomeDuplicate } from '@/components/FunnelHomeDuplicate';
+import { ProcessTimeline } from '@/components/ProcessTimeline';
+import { ExamplesSection } from '@/components/ExamplesSection';
+import { InfrastructureSection } from '@/components/InfrastructureSection';
+import { FAQHomeDuplicate } from '@/components/FAQHomeDuplicate';
+import { GoodStuffHomeDuplicate } from '@/components/GoodStuffHomeDuplicate';
+import CTAHomeDuplicate from "@/components/astro/CTA.astro";
+import { FooterHomeDuplicate } from '@/components/FooterHomeDuplicate';
+import { organizationSchema, websiteSchema } from '../lib/structured-data';
+
+
+---
+<SiteLayout title="Home (Archived)"
+        description="Custom AI systems for SMEs in Perth and across Australia, built around the workflows that improve margins, free up capital, and reduce operational risk."
+        path="/home-duplicate"
+        noindex
+        schema={[
+          {
+            ...organizationSchema,
+            description:
+              'AI-first product studio in Perth, Western Australia building custom AI systems for SMEs around real operational workflows.',
+          },
+          websiteSchema,
+        ]}>
+<div class="os-theme os-draft">
+      
+      <NavigationDraft client:load />
+      <main>
+        <HeroHomeDuplicate client:visible />
+        <HomeDuplicateGridSection client:visible />
+        <FunnelHomeDuplicate />
+        <ProcessTimeline client:visible />
+        <ExamplesSection client:visible />
+        <InfrastructureSection />
+        <FAQHomeDuplicate client:visible />
+        <GoodStuffHomeDuplicate client:visible />
+        <CTAHomeDuplicate />
+      </main>
+      <FooterHomeDuplicate client:visible />
+    </div>
+</SiteLayout>

@@ -1,18 +1,15 @@
-import { useEffect } from 'react';
-import { SEO } from '../components/SEO';
-import { Navigation } from '../components/Navigation';
-import { Section } from '../components/Section';
-import { Footer } from '../components/Footer';
-import { useScrollAnimation } from '../hooks/useScrollAnimation';
+---
+import SiteLayout from '@/layouts/SiteLayout.astro';
+import { Navigation } from '@/components/Navigation';
+import { Section } from '@/components/Section';
+import { Footer } from '@/components/Footer';
 
-export default function Company() {
-  // Initialize scroll animations
-  useScrollAnimation();
 
-  return (
-    <div className="os-theme">
-      <SEO title="Company (Archived)" description="" path="/archive/company" noindex />
-      <Navigation />
+---
+<SiteLayout title="Company (Archived)" description="" path="/archive/company" noindex>
+<div class="os-theme">
+      
+      <Navigation client:load />
       <main>
         {/* Philosophy Section 1: The Price of Intelligence */}
         <Section
@@ -72,7 +69,6 @@ export default function Company() {
       </main>
 
       {/* Footer */}
-      <Footer />
+      <Footer client:visible />
     </div>
-  );
-}
+</SiteLayout>

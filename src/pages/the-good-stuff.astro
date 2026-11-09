@@ -1,0 +1,120 @@
+---
+import SiteLayout from '@/layouts/SiteLayout.astro';
+import {readFile} from 'node:fs/promises';
+import { NavigationDraft } from "@/components/NavigationDraft";
+import CTASection from "@/components/astro/CTA.astro";
+import { Footer } from "@/components/Footer";
+import "@/components/Hero.css";
+import "@/routes/TheGoodStuff.css";
+const {items: displayedEpisodes} = JSON.parse(await readFile('public/podcast-episodes.json','utf8'));
+const visibleEpisodes = displayedEpisodes;
+const extractEpisodeNumber = (title: string) => {
+    const match = title.match(/\b(?:Intelligence Snacks|Good Stuff)\s+(\d+)/i);
+    return match ? match[1] : null;
+  };
+---
+<SiteLayout title="Intelligence Snacks | Ideas for the age of AI"
+        description="Long conversations about AI, software and business, developed into useful ideas."
+        path="/the-good-stuff"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "PodcastSeries",
+          "name": "Intelligence Snacks",
+          "alternateName": "The Good Stuff",
+          "description": "Long conversations about AI, software and business, developed into useful ideas.",
+          "url": "https://intelligencesnacks.com/episodes/",
+          "webFeed": "https://www.youtube.com/feeds/videos.xml?channel_id=UC_OtherStuffAI",
+          "author": [
+            { "@type": "Person", "name": "Pete Winn" },
+            { "@type": "Person", "name": "Andy David" }
+          ],
+          "publisher": {
+            "@type": "Organization",
+            "name": "Other Stuff",
+            "url": "https://otherstuff.ai"
+          },
+          "inLanguage": "en-AU"
+        }}>
+<div class="os-theme os-draft min-h-screen the-good-stuff-page">
+      
+      <NavigationDraft client:load
+        titleSwapOnScroll={{
+          before: "OTHER STUFF",
+          after: "INTELLIGENCE SNACKS",
+          targetId: "good-stuff-hero",
+        }}
+      />
+      <main>
+        <section id="good-stuff-hero" class="section good-stuff-hero">
+          <div class="section-container-wide good-stuff-hero-inner">
+            <div class="hero-title-block">
+              <h1>
+                {"Depth first. Clarity after."
+                  .split("\n")
+                  .map((line) => (
+                    <span key={line} class="block">
+                      {line}
+                    </span>
+                  ))}
+              </h1>
+              <p class="hero-bridge">
+                Long conversations about AI, software and business, developed
+                into useful ideas.
+              </p>
+              <div class="hero-cta">
+                <a class="btn-primary" href="https://intelligencesnacks.com/">
+                  Explore Intelligence Snacks
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section good-stuff-blank">
+          <div class="good-stuff-portfolio">
+            {visibleEpisodes.map((episode, index) => {
+              const episodeNumber = extractEpisodeNumber(episode.title);
+              const label = episodeNumber
+                ? episodeNumber
+                : String(index + 1).padStart(2, "0");
+              return (
+              <article key={episode.id ?? episode.title} class="good-stuff-episode">
+                <a
+                  class="good-stuff-episode-media"
+                  href={episode.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <img src={episode.thumbnail} alt={episode.title} loading="lazy" />
+                </a>
+                <div class="good-stuff-episode-header">
+                  <span class="good-stuff-episode-id">
+                    [{label}]
+                  </span>
+                  <div>
+                    <div class="good-stuff-episode-title">{episode.title}</div>
+                    <div class="good-stuff-episode-description">{episode.description}</div>
+                  </div>
+                </div>
+              </article>
+            );
+            })}
+          </div>
+          <div class="good-stuff-show-more"><button hidden type="button" class="good-stuff-show-more-btn" data-show-more>Show more</button></div>
+        </section>
+        <CTASection />
+      </main>
+      <Footer client:visible />
+    </div>
+</SiteLayout>
+<script>
+  const cards = Array.from(document.querySelectorAll<HTMLElement>('.good-stuff-portfolio > article'));
+  const button = document.querySelector<HTMLButtonElement>('[data-show-more]');
+  let count = 10;
+  const update = () => {
+    cards.forEach((card, index) => { card.hidden = index >= count; });
+    if (button) button.hidden = count >= cards.length;
+  };
+  button?.addEventListener('click', () => { count += 10; update(); });
+  update();
+</script>
+<style is:global>[hidden] { display: none !important; }</style>

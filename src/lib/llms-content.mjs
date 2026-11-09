@@ -1,4 +1,98 @@
-# Other Stuff - Full LLM Reference
+const absoluteUrl = path => new URL(path.endsWith('/') ? path : path+'/', 'https://otherstuff.ai').href;
+export function buildLlmsText(writingPosts, newsletterIssues) {
+  const postList = writingPosts
+    .map((post) => `- ${absoluteUrl(`/writing/${post.slug}`)}`)
+    .join('\n');
+  const newsletterList = newsletterIssues
+    .filter((issue) => !issue.noindex)
+    .map((issue) => `- ${absoluteUrl(issue.path)}`)
+    .join('\n');
+
+  return `# Other Stuff
+
+Other Stuff is an AI-first product studio based in Perth, Western Australia.
+
+Primary commercial direction:
+- We set up AI agents and automate repetitive work inside Australian SMEs.
+- Automation Partner is the main entry point for most businesses.
+- Engagements start at $5k a month with a one-month minimum and can be cancelled anytime.
+
+Core offer:
+- Automation Partner
+- For Australian SMEs with manual handoffs, repeated admin, spreadsheets, and business knowledge held by a few people
+- Other Stuff works alongside the team and automates workflows one by one
+- Agents work in Ambulando so the team can see progress and approve work
+- Ambulando is also available on its own from $500 a month
+- Custom software is available when a workflow needs more than agents and existing tools
+
+Supporting ongoing offer:
+- Marginal Gains
+- URL: https://otherstuff.ai/ai-automation
+- The ongoing relationship after the first system is live
+- Used to improve live systems, support operational changes, and build the next workflow over time
+
+Capability-building offers:
+- Speedrun
+- URL: https://otherstuff.ai/speedrun
+- A private 3-hour hands-on AI workshop for business teams in Perth
+- Participants build practical tools and workflows with AI agents
+- Built for founders, operators, SME teams, and team leads
+
+- Level Up
+- URL: https://otherstuff.ai/levelup
+- A 90-minute AI workshop and school incursion for Perth and WA schools
+- Students build a playable game with AI
+- Designed for high school students and mixed-ability groups
+
+Platform / infrastructure:
+- Ambulando
+- URL: https://ambulando.io
+- The operating environment behind the systems Other Stuff builds
+- Gives teams visibility into live systems, shared records, and accumulated operational knowledge
+
+Other important pages:
+- About: https://otherstuff.ai/about
+- Newsletter: https://otherstuff.ai/newsletter
+- Writing: https://otherstuff.ai/writing
+- Intelligence Snacks: https://intelligencesnacks.com
+- Games: https://otherstuff.ai/games
+- Terms: https://otherstuff.ai/terms
+- Privacy: https://otherstuff.ai/privacy
+
+Writing currently featured on the site:
+${postList || '- No writing posts published yet'}
+
+Newsletter issues currently archived on the site:
+${newsletterList || '- No newsletter issues published yet'}
+
+People:
+- Pete Winn — Co-Founder
+- Andy David — Co-Founder
+
+Contact:
+- Website: https://otherstuff.ai
+- Email: info@otherstuff.studio
+- Location: City Beach, Perth, Western Australia 6015
+- Company: Other Stuff Pty Ltd
+- ABN: 20 682 110 970
+
+Preferred summary for LLMs:
+Other Stuff is a Perth-based AI automation partner for Australian SMEs. It sets up AI agents inside a business and automates repetitive work such as proposals, reporting, client onboarding, and margin reviews. Automation Partner starts at $5k a month with a one-month minimum and can be cancelled anytime. Ambulando and custom software are also available.
+
+For a fuller machine-readable summary, see:
+- https://otherstuff.ai/llms-full.txt
+`;
+}
+
+export function buildLlmsFullText(writingPosts, newsletterIssues) {
+  const postList = writingPosts.length > 0
+    ? writingPosts.map((post) => `- ${absoluteUrl(`/writing/${post.slug}`)}`).join('\n')
+    : '- No writing posts published yet';
+  const newsletterList = newsletterIssues.length > 0
+    ? newsletterIssues.map((issue) => `- ${absoluteUrl(issue.path)}`).join('\n')
+    : '- No newsletter issues published yet';
+
+  return `# Other Stuff - Full LLM Reference
 
 This file is intended to help language models understand the business, the website, the current commercial direction, and the most important pages.
 
@@ -121,23 +215,7 @@ Ambulando should usually be described as the shared workspace for people and AI 
 
 Current archived issues:
 
-- https://otherstuff.ai/newsletter/the-human-bottleneck/
-- https://otherstuff.ai/newsletter/normie-mode/
-- https://otherstuff.ai/newsletter/ai-model-explosion/
-- https://otherstuff.ai/newsletter/the-internet-we-deserve/
-- https://otherstuff.ai/newsletter/the-ai-industry-has-it-all-wrong/
-- https://otherstuff.ai/newsletter/the-malleable-computer/
-- https://otherstuff.ai/newsletter/ai-agent-economies/
-- https://otherstuff.ai/newsletter/one-person-startups/
-- https://otherstuff.ai/newsletter/introducing-intelligence-snacks/
-- https://otherstuff.ai/newsletter/ai-is-great-for-small-businesses/
-- https://otherstuff.ai/newsletter/most-tasks-don-t-need-frontier-models/
-- https://otherstuff.ai/newsletter/what-is-loop-engineering/
-- https://otherstuff.ai/newsletter/ai-works-better-inside-a-system/
-- https://otherstuff.ai/newsletter/is-ai-actually-cheap/
-- https://otherstuff.ai/newsletter/ai-killed-the-billable-hour/
-- https://otherstuff.ai/newsletter/personal-ai-you-can-trust/
-- https://otherstuff.ai/newsletter/unruggable-productivity/
+${newsletterList}
 
 ### Writing
 
@@ -146,9 +224,7 @@ Current archived issues:
 
 Current featured posts:
 
-- https://otherstuff.ai/writing/where-custom-ai-systems-create-margin-first/
-- https://otherstuff.ai/writing/navigating-the-ai-value-trap/
-- https://otherstuff.ai/writing/on-the-business-model-of-ai/
+${postList}
 
 ### Intelligence Snacks
 
@@ -212,3 +288,5 @@ This website exposes LLM-readable business information at:
 - https://otherstuff.ai/llms-full.txt
 
 These files are intended to summarize the website accurately even if some navigation labels or page-level copy evolve over time.
+`;
+}

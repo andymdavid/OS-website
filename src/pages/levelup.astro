@@ -1,18 +1,18 @@
-import { SEO } from '@/components/SEO';
-import { SiteShell } from '@/levelup/components/sections/site-shell';
+---
+import SiteLayout from '@/layouts/SiteLayout.astro';
+import WorkshopSections from "@/components/astro/WorkshopSections.astro";
+import {siteContent} from "@/levelup/content/site";
 import { NavigationDraft } from '@/components/NavigationDraft';
-import { CTASection } from '@/components/CTASection';
+import CTASection from "@/components/astro/CTA.astro";
 import { Footer } from '@/components/Footer';
 import { getServiceSchema } from '@/lib/structured-data';
 import '@/levelup/levelup.fonts.css';
 import '@/levelup/levelup.generated.css';
 import '@/levelup/levelup.css';
 
-export default function LevelUp() {
-  return (
-    <div className="os-theme levelup-theme levelup-theme-vars min-h-screen levelup-page" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
-      <SEO
-        title="AI Workshop & School Incursion | Perth WA"
+
+---
+<SiteLayout title="AI Workshop & School Incursion | Perth WA"
         description="A 90-minute AI workshop and school incursion for Perth and WA schools. Students build a game with AI in a practical STEM session with no coding required."
         path="/levelup"
         ogImage="/og-levelup.png"
@@ -55,20 +55,20 @@ export default function LevelUp() {
               "AI workshop for students",
             ],
           },
-        ]}
-      />
-      <NavigationDraft
+        ]}>
+<div class="os-theme levelup-theme levelup-theme-vars min-h-screen levelup-page" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
+      
+      <NavigationDraft client:load
         titleSwapOnScroll={{
           before: "OTHER STUFF",
           after: "LEVEL-UP",
           targetId: "hero",
         }}
       />
-      <SiteShell />
+      <WorkshopSections sections={siteContent.sections} />
       <CTASection
         intro="Let's talk about bringing Level-Up to your school."
       />
-      <Footer />
+      <Footer client:visible />
     </div>
-  );
-}
+</SiteLayout>
