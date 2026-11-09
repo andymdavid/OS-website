@@ -1,0 +1,41 @@
+---
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import posts from '../../generated/writing-posts.json';
+import { ValueTrapChart } from '../../components/ValueTrapChart';
+export function getStaticPaths() {
+  return posts.map(post => ({ params: { slug: post.slug }, props: { post } }));
+}
+const { post } = Astro.props;
+const canonical = new URL(`/writing/${post.slug}/`, Astro.site).href;
+const parts = post.html.split('<div data-embed="value-trap-chart"></div>');
+const schema = {
+  '@context': 'https://schema.org', '@type': 'BlogPosting',
+  headline: post.title, description: post.description, url: canonical,
+  datePublished: post.date, dateModified: post.date,
+  author: { '@type': 'Organization', name: post.author },
+  publisher: { '@type': 'Organization', name: 'Other Stuff' },
+  image: new URL(post.ogImage, Astro.site).href,
+};
+---
+<ArticleLayout title={post.title} description={post.description} canonical={canonical} image={new URL(post.ogImage, Astro.site).href} schema={schema}>
+  <section class="section writing-post-hero">
+    <div class="section-container-wide writing-post-hero-inner">
+      <a href="/writing/" class="writing-post-back">← Back to writing</a>
+      <h1 class="writing-post-title">{post.title}</h1>
+      <div class="writing-post-meta">
+        <span class="writing-post-author">{post.author}</span>
+        <span class="writing-post-date">{post.displayDate}</span>
+        <span class="writing-post-date">{post.readTime}</span>
+      </div>
+      <div class="writing-post-feature"><img src={post.thumbnail} alt={post.title} width="1456" height="816" fetchpriority="high" /></div>
+      <p class="writing-post-subheader">{post.intro}</p>
+    </div>
+  </section>
+  <section class="section writing-post-body">
+    <div class="section-container-wide writing-post-body-inner">
+      <div class="writing-post-content">
+        {parts.map((part, index) => <><div set:html={part} />{index < parts.length - 1 && <ValueTrapChart client:visible />}</>)}
+      </div>
+    </div>
+  </section>
+</ArticleLayout>

@@ -54,3 +54,7 @@ ecosystem.config.cjs
 # Typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Astro migration pilot
+.astro/
+dist-astro/
