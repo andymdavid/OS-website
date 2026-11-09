@@ -3,7 +3,7 @@ import { mkdir, stat, readdir } from 'node:fs/promises';
 
 await mkdir('public/optimized', { recursive: true });
 const images = [
-  ...['improvement-loop', 'multiple-loops', 'monthly-cycle'].map(name => [`automation-${name}.webp`, `automation-${name}`, [400, 800, 1280]]),
+  ...['improvement-loop', 'multiple-loops', 'monthly-cycle'].map(name => [`automation-${name}.webp`, `automation-${name}`, [400, 640, 800, 1280]]),
   ['Logo-Main-Icon.webp', 'brand-icon', [96, 192]],
   ['home-help-ambulando.webp', 'help-ambulando', [400, 640, 800]],
   ['home-help-automation-partner.webp', 'help-automation-partner', [400, 640, 800]],
@@ -20,7 +20,7 @@ for (const name of await readdir('public')) {
 for (const [source, name, widths] of images) {
   for (const width of widths) {
     const target = `public/optimized/${name}-${width}.webp`;
-    await sharp(`public/${source}`).resize({ width, withoutEnlargement: true }).webp({ quality: name.startsWith('writing-') ? 72 : 82 }).toFile(target);
+    await sharp(`public/${source}`).resize({ width, withoutEnlargement: true }).webp({ quality: name.startsWith('writing-') ? 72 : name.startsWith('automation-') ? 76 : 82 }).toFile(target);
     console.log(`${source} -> ${target}: ${(await stat(target)).size} bytes`);
   }
 }

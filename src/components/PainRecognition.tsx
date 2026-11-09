@@ -82,7 +82,7 @@ export function PainRecognition() {
               <img src={deliveryStatic('/optimized/andy-profile-128.webp')} width="128" height="128" loading="lazy" decoding="async" alt="" />
             </div>
             <div className="pain-recognition-company">
-              <img src="/optimized/brand-icon-96.webp" srcSet="/optimized/brand-icon-96.webp 96w, /optimized/brand-icon-192.webp 192w" sizes="46px" alt="" aria-hidden="true" />
+              <img src="/optimized/brand-icon-96.webp" srcSet="/optimized/brand-icon-96.webp 96w, /optimized/brand-icon-192.webp 192w" sizes="34px" width="96" height="96" alt="" aria-hidden="true" />
               <p className="pain-recognition-role">
                 <strong>Co-Founders</strong>
                 <span>Other Stuff</span>

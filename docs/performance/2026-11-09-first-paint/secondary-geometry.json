@@ -1,0 +1,1010 @@
+[
+  {
+    "width": 390,
+    "label": "before",
+    "route": "writing",
+    "landmarks": [
+      {
+        "text": "Writing",
+        "tag": "H1",
+        "x": 139.671875,
+        "y": 305.203125,
+        "width": 110.65625,
+        "height": 41
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 32,
+        "y": 722,
+        "width": 326,
+        "height": 183.375
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 32,
+        "y": 1080.34375,
+        "width": 326,
+        "height": 183.375
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 32,
+        "y": 1394.5,
+        "width": 326,
+        "height": 183.375
+      },
+      {
+        "text": "",
+        "tag": "FOOTER",
+        "x": 0,
+        "y": 2286.5,
+        "width": 390,
+        "height": 1099.875
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "label": "before",
+    "route": "newsletter",
+    "landmarks": [
+      {
+        "text": "Big ideas compound.",
+        "tag": "H1",
+        "x": 48.96875,
+        "y": 246.3125,
+        "width": 292.0625,
+        "height": 41
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 32,
+        "y": 826.4375,
+        "width": 326,
+        "height": 183.375
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 32,
+        "y": 1154.890625,
+        "width": 326,
+        "height": 183.375
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 32,
+        "y": 1483.34375,
+        "width": 326,
+        "height": 183.375
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 32,
+        "y": 1811.796875,
+        "width": 326,
+        "height": 183.375
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 32,
+        "y": 2140.25,
+        "width": 326,
+        "height": 183.375
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 32,
+        "y": 2468.703125,
+        "width": 326,
+        "height": 183.375
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 32,
+        "y": 2797.15625,
+        "width": 326,
+        "height": 183.375
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 32,
+        "y": 3125.609375,
+        "width": 326,
+        "height": 183.375
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "text": "",
+        "tag": "FOOTER",
+        "x": 0,
+        "y": 4426.375,
+        "width": 390,
+        "height": 1099.875
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "label": "before",
+    "route": "ai-automation",
+    "landmarks": [
+      {
+        "text": "Grow your business without growing your headcount.",
+        "tag": "H1",
+        "x": 16,
+        "y": 338.609375,
+        "width": 358,
+        "height": 128.71875
+      },
+      {
+        "text": "",
+        "tag": "FOOTER",
+        "x": 0,
+        "y": 14672.203125,
+        "width": 390,
+        "height": 1325.875
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "label": "before",
+    "route": "speedrun",
+    "landmarks": [
+      {
+        "text": "Learn how to work with AI by building with it.",
+        "tag": "H1",
+        "x": 111,
+        "y": 283.515625,
+        "width": 168,
+        "height": 116.625
+      },
+      {
+        "text": "",
+        "tag": "FOOTER",
+        "x": 0,
+        "y": 10672.578125,
+        "width": 390,
+        "height": 1179.078125
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "label": "after",
+    "route": "writing",
+    "landmarks": [
+      {
+        "text": "Writing",
+        "tag": "H1",
+        "x": 139.671875,
+        "y": 305.203125,
+        "width": 110.65625,
+        "height": 41
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 32,
+        "y": 722,
+        "width": 326,
+        "height": 183.375
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 32,
+        "y": 1080.34375,
+        "width": 326,
+        "height": 183.375
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 32,
+        "y": 1394.5,
+        "width": 326,
+        "height": 183.375
+      },
+      {
+        "text": "",
+        "tag": "FOOTER",
+        "x": 0,
+        "y": 2286.5,
+        "width": 390,
+        "height": 1099.875
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "label": "after",
+    "route": "newsletter",
+    "landmarks": [
+      {
+        "text": "Big ideas compound.",
+        "tag": "H1",
+        "x": 48.96875,
+        "y": 246.3125,
+        "width": 292.0625,
+        "height": 41
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 32,
+        "y": 826.4375,
+        "width": 326,
+        "height": 183.375
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 32,
+        "y": 1154.890625,
+        "width": 326,
+        "height": 183.375
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 32,
+        "y": 1483.34375,
+        "width": 326,
+        "height": 183.375
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 32,
+        "y": 1811.796875,
+        "width": 326,
+        "height": 183.375
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 32,
+        "y": 2140.25,
+        "width": 326,
+        "height": 183.375
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 32,
+        "y": 2468.703125,
+        "width": 326,
+        "height": 183.375
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 32,
+        "y": 2797.15625,
+        "width": 326,
+        "height": 183.375
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 32,
+        "y": 3125.609375,
+        "width": 326,
+        "height": 183.375
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "text": "",
+        "tag": "FOOTER",
+        "x": 0,
+        "y": 4426.375,
+        "width": 390,
+        "height": 1099.875
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "label": "after",
+    "route": "ai-automation",
+    "landmarks": [
+      {
+        "text": "Grow your business without growing your headcount.",
+        "tag": "H1",
+        "x": 16,
+        "y": 338.609375,
+        "width": 358,
+        "height": 128.71875
+      },
+      {
+        "text": "",
+        "tag": "FOOTER",
+        "x": 0,
+        "y": 14710.609375,
+        "width": 390,
+        "height": 1325.875
+      }
+    ]
+  },
+  {
+    "width": 390,
+    "label": "after",
+    "route": "speedrun",
+    "landmarks": [
+      {
+        "text": "Learn how to work with AI by building with it.",
+        "tag": "H1",
+        "x": 111,
+        "y": 283.515625,
+        "width": 168,
+        "height": 116.625
+      },
+      {
+        "text": "",
+        "tag": "FOOTER",
+        "x": 0,
+        "y": 10672.578125,
+        "width": 390,
+        "height": 1179.078125
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "label": "before",
+    "route": "writing",
+    "landmarks": [
+      {
+        "text": "Writing",
+        "tag": "H1",
+        "x": 663.34375,
+        "y": 225.703125,
+        "width": 113.3125,
+        "height": 42
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 106.390625,
+        "y": 596,
+        "width": 285.796875,
+        "height": 160.75
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 420.1875,
+        "y": 596,
+        "width": 285.8125,
+        "height": 160.765625
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 734,
+        "y": 596,
+        "width": 285.796875,
+        "height": 160.75
+      },
+      {
+        "text": "",
+        "tag": "FOOTER",
+        "x": 0,
+        "y": 1635.984375,
+        "width": 1440,
+        "height": 676
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "label": "before",
+    "route": "newsletter",
+    "landmarks": [
+      {
+        "text": "Big ideas compound.",
+        "tag": "H1",
+        "x": 570.9375,
+        "y": 206.109375,
+        "width": 298.109375,
+        "height": 42
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 106.390625,
+        "y": 700.4375,
+        "width": 285.796875,
+        "height": 160.75
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 420.1875,
+        "y": 700.4375,
+        "width": 285.8125,
+        "height": 160.765625
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 734,
+        "y": 700.4375,
+        "width": 285.796875,
+        "height": 160.75
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 1047.796875,
+        "y": 700.4375,
+        "width": 285.8125,
+        "height": 160.765625
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 106.390625,
+        "y": 1020.578125,
+        "width": 285.796875,
+        "height": 160.75
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 420.1875,
+        "y": 1020.578125,
+        "width": 285.8125,
+        "height": 160.765625
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 734,
+        "y": 1020.578125,
+        "width": 285.796875,
+        "height": 160.75
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 1047.796875,
+        "y": 1020.578125,
+        "width": 285.8125,
+        "height": 160.765625
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "text": "",
+        "tag": "FOOTER",
+        "x": 0,
+        "y": 2431.859375,
+        "width": 1440,
+        "height": 676
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "label": "before",
+    "route": "ai-automation",
+    "landmarks": [
+      {
+        "text": "Grow your business without growing your headcount.",
+        "tag": "H1",
+        "x": 240,
+        "y": 321.25,
+        "width": 960,
+        "height": 116.625
+      },
+      {
+        "text": "",
+        "tag": "FOOTER",
+        "x": 0,
+        "y": 10184.59375,
+        "width": 1440,
+        "height": 682.984375
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "label": "before",
+    "route": "speedrun",
+    "landmarks": [
+      {
+        "text": "Learn how to work with AI by building with it.",
+        "tag": "H1",
+        "x": 352.796875,
+        "y": 309.90625,
+        "width": 734.390625,
+        "height": 116.625
+      },
+      {
+        "text": "",
+        "tag": "FOOTER",
+        "x": 0,
+        "y": 8998.4375,
+        "width": 1440,
+        "height": 676
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "label": "after",
+    "route": "writing",
+    "landmarks": [
+      {
+        "text": "Writing",
+        "tag": "H1",
+        "x": 663.34375,
+        "y": 225.703125,
+        "width": 113.3125,
+        "height": 42
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 106.390625,
+        "y": 596,
+        "width": 285.796875,
+        "height": 160.75
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 420.1875,
+        "y": 596,
+        "width": 285.8125,
+        "height": 160.765625
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 734,
+        "y": 596,
+        "width": 285.796875,
+        "height": 160.75
+      },
+      {
+        "text": "",
+        "tag": "FOOTER",
+        "x": 0,
+        "y": 1635.984375,
+        "width": 1440,
+        "height": 676
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "label": "after",
+    "route": "newsletter",
+    "landmarks": [
+      {
+        "text": "Big ideas compound.",
+        "tag": "H1",
+        "x": 570.9375,
+        "y": 206.109375,
+        "width": 298.109375,
+        "height": 42
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 106.390625,
+        "y": 700.4375,
+        "width": 285.796875,
+        "height": 160.75
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 420.1875,
+        "y": 700.4375,
+        "width": 285.8125,
+        "height": 160.765625
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 734,
+        "y": 700.4375,
+        "width": 285.796875,
+        "height": 160.75
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 1047.796875,
+        "y": 700.4375,
+        "width": 285.8125,
+        "height": 160.765625
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 106.390625,
+        "y": 1020.578125,
+        "width": 285.796875,
+        "height": 160.75
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 420.1875,
+        "y": 1020.578125,
+        "width": 285.8125,
+        "height": 160.765625
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 734,
+        "y": 1020.578125,
+        "width": 285.796875,
+        "height": 160.75
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 1047.796875,
+        "y": 1020.578125,
+        "width": 285.8125,
+        "height": 160.765625
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "text": "",
+        "tag": "DIV",
+        "x": 0,
+        "y": 0,
+        "width": 0,
+        "height": 0
+      },
+      {
+        "text": "",
+        "tag": "FOOTER",
+        "x": 0,
+        "y": 2431.859375,
+        "width": 1440,
+        "height": 676
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "label": "after",
+    "route": "ai-automation",
+    "landmarks": [
+      {
+        "text": "Grow your business without growing your headcount.",
+        "tag": "H1",
+        "x": 240,
+        "y": 321.25,
+        "width": 960,
+        "height": 116.625
+      },
+      {
+        "text": "",
+        "tag": "FOOTER",
+        "x": 0,
+        "y": 10457.21875,
+        "width": 1440,
+        "height": 682.984375
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "label": "after",
+    "route": "speedrun",
+    "landmarks": [
+      {
+        "text": "Learn how to work with AI by building with it.",
+        "tag": "H1",
+        "x": 352.796875,
+        "y": 309.90625,
+        "width": 734.390625,
+        "height": 116.625
+      },
+      {
+        "text": "",
+        "tag": "FOOTER",
+        "x": 0,
+        "y": 8998.4375,
+        "width": 1440,
+        "height": 676
+      }
+    ]
+  }
+]

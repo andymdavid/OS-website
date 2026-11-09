@@ -55,7 +55,7 @@ const {showFooter=true,showRecommendation=true,content}=Astro.props;
               <img
                 class={`static-help-image ${!cardContent && 'imageClassName' in card ? card.imageClassName : ''}`}
                 src={cardContent?.image ? responsiveStatic(cardContent.image, 800) : deliveryImage(card.image.replace('/home-help-', 'help-').replace('.webp', ''), 640)}
-                srcset={!cardContent?.image ? deliverySrcset(card.image.replace('/home-help-', 'help-').replace('.webp', ''), [320,400,560,640,800]) : responsiveStaticSrcset(cardContent.image, [400,800,1280])}
+                srcset={!cardContent?.image ? deliverySrcset(card.image.replace('/home-help-', 'help-').replace('.webp', ''), [320,400,560,640,800]) : responsiveStaticSrcset(cardContent.image, [400,640,800,1280])}
                 sizes={productSizes}
                 width="800" height="800" loading="lazy" decoding="async"
                 alt={cardContent?.imageAlt ?? card.imageAlt}
