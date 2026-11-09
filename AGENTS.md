@@ -20,6 +20,8 @@ Use Node >=22.23.4. Install with `npm ci --include=dev`. Run `npm run build` and
 
 Use native templates for content and layout. Hydrate small interactions rather than a complete page or router. Preserve existing brand typography, mobile layouts, canonical URLs, metadata/schema, archive indexing policies, booking and signup flows. Retain meaningful source images and generate display-sized derivatives. Keep API keys and local env files out of commits. Build and content generation do not authorize a managed-service restart or production deployment.
 
+Hero and footer gradient backgrounds are intentionally static CSS. Do not add canvas/WebGL animation or graphics-context setup to these decorative backgrounds.
+
 ## Reviews
 
 Work on a scoped branch. Describe user-visible changes, validation and remaining limitations in the PR. UI changes need browser evidence, including representative mobile/desktop and no-JavaScript content. Publishing changes need create/edit/delete/slug-change checks. A local performance run is lab evidence; report settings and compare matched runs. Never claim deployment from a build, PR or webhook response.

@@ -10,6 +10,7 @@ from fontTools import subset
 css = Path('src/fonts.css').read_text()
 out = Path('public/fonts/delivery')
 out.mkdir(parents=True, exist_ok=True)
+latin_points = set()
 for face in re.findall(r'@font-face\s*\{[^}]+\}', css):
     source = re.search(r'url\(([^)]+)\)', face).group(1)
     font = TTFont('public' + source)
@@ -29,6 +30,7 @@ for face in re.findall(r'@font-face\s*\{[^}]+\}', css):
         for start, end in re.findall(r'U\+([0-9A-F]+)(?:-([0-9A-F]+))?', ranges[1]):
             points.update(range(int(start, 16), int(end or start, 16) + 1))
         options = subset.Options()
+        latin_points.update(points)
         options.flavor = 'woff2'
         worker = subset.Subsetter(options=options)
         worker.populate(unicodes=points)
@@ -38,3 +40,33 @@ for face in re.findall(r'@font-face\s*\{[^}]+\}', css):
     destination = out / Path(source).name
     font.save(destination)
     print(Path(source).name, Path('public' + source).stat().st_size, '->', destination.stat().st_size)
+
+# Keep original brand fonts for characters outside the common Latin subset.
+# The delivery generator emits disjoint unicode ranges for subset and fallback.
+def unicode_ranges(points):
+    result = []
+    for point in sorted(points):
+        if result and point == result[-1][1] + 1:
+            result[-1][1] = point
+        else:
+            result.append([point, point])
+    return ', '.join(f'U+{a:04X}' + (f'-{b:04X}' if a != b else '') for a, b in result)
+
+import json
+coverage = {}
+brand_points = latin_points | set(range(0x2190, 0x2200))
+for name in ['Alfabet-Regular', 'Alfabet-Black']:
+    font = TTFont(f'public/fonts/{name}.woff2')
+    original_points = set(font.getBestCmap())
+    options = subset.Options()
+    options.flavor = 'woff2'
+    worker = subset.Subsetter(options=options)
+    worker.populate(unicodes=brand_points)
+    worker.subset(font)
+    font.recalcTimestamp = False
+    font.flavor = 'woff2'
+    destination = out / f'{name}.woff2'
+    font.save(destination)
+    coverage[name] = {'latin': unicode_ranges(original_points & brand_points), 'fallback': unicode_ranges(original_points - brand_points)}
+    print(name, Path(f'public/fonts/{name}.woff2').stat().st_size, '->', destination.stat().st_size)
+(out / 'brand-coverage.json').write_text(json.dumps(coverage, indent=2) + '\n')

@@ -1,14 +1,15 @@
 ---
+import { deliveryStatic } from '../../lib/delivery-assets';
 import { EmailCaptureForm } from '../EmailCaptureForm';
-import HeroShaderBackground from './ShaderBackground.astro';
+import GradientBackground from './GradientBackground.astro';
 import '../Footer.css';
 ---
 <footer class="footer footer-home-duplicate">
-      <HeroShaderBackground />
+      <GradientBackground />
       <div class="footer-container">
         <div class="footer-brand">
           <a href="/" class="footer-logo-icon" aria-label="Other Stuff home">
-            <img src="/optimized/brand-icon-96.webp" srcset="/optimized/brand-icon-96.webp 96w, /optimized/brand-icon-192.webp 192w" sizes="46px" alt="Other Stuff — AI product studio" width="46" height="46" />
+            <img src={deliveryStatic('/optimized/brand-icon-96.webp')} srcset={`${deliveryStatic('/optimized/brand-icon-96.webp')} 96w, ${deliveryStatic('/optimized/brand-icon-192.webp')} 192w`} sizes="46px" alt="Other Stuff — AI product studio" width="46" height="46" />
           </a>
           <a href="/" class="footer-logo">OTHER STUFF</a>
         </div>
@@ -53,7 +54,7 @@ import '../Footer.css';
             <div class="footer-follow">
               <h2>Follow</h2>
               <div class="footer-founder-profile">
-                <img src="/optimized/pete-profile-64.webp" srcset="/optimized/pete-profile-64.webp 64w, /optimized/pete-profile-128.webp 128w" sizes="32px" width="32" height="32" loading="lazy" decoding="async" alt="" aria-hidden="true" />
+                <img src={deliveryStatic('/optimized/pete-profile-64.webp')} srcset={`${deliveryStatic('/optimized/pete-profile-64.webp')} 64w, ${deliveryStatic('/optimized/pete-profile-128.webp')} 128w`} sizes="32px" width="32" height="32" loading="lazy" decoding="async" alt="" aria-hidden="true" />
                 <span>
                   <strong>Pete Winn</strong>
                   <em>Co-founder</em>
@@ -65,12 +66,12 @@ import '../Footer.css';
                     </svg>
                   </a>
                   <a href="https://primal.net/pw" target="_blank" rel="noopener noreferrer" aria-label="Pete Winn Nostr">
-                    <img src="/primal-logo-white.svg" alt="" aria-hidden="true" />
+                    <img src={deliveryStatic('/primal-logo-white.svg')} alt="" aria-hidden="true" />
                   </a>
                 </div>
               </div>
               <div class="footer-founder-profile">
-                <img src="/optimized/andy-profile-64.webp" srcset="/optimized/andy-profile-64.webp 64w, /optimized/andy-profile-128.webp 128w" sizes="32px" width="32" height="32" loading="lazy" decoding="async" alt="" aria-hidden="true" />
+                <img src={deliveryStatic('/optimized/andy-profile-64.webp')} srcset={`${deliveryStatic('/optimized/andy-profile-64.webp')} 64w, ${deliveryStatic('/optimized/andy-profile-128.webp')} 128w`} sizes="32px" width="32" height="32" loading="lazy" decoding="async" alt="" aria-hidden="true" />
                 <span>
                   <strong>Andy David</strong>
                   <em>Co-founder</em>
@@ -82,7 +83,7 @@ import '../Footer.css';
                     </svg>
                   </a>
                   <a href="https://primal.net/andydavid" target="_blank" rel="noopener noreferrer" aria-label="Andy David Nostr">
-                    <img src="/primal-logo-white.svg" alt="" aria-hidden="true" />
+                    <img src={deliveryStatic('/primal-logo-white.svg')} alt="" aria-hidden="true" />
                   </a>
                 </div>
               </div>

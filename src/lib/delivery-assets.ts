@@ -9,3 +9,5 @@ export function deliverySrcset(name: string, widths: number[], format: 'webp' | 
   return widths.map(width => `${deliveryImage(name, width, format)} ${width}w`).join(', ');
 }
 export function deliveryFont(source: string) { return (manifest.fonts as Record<string, string>)[source] || source; }
+
+export function deliveryStatic(source: string) { return (manifest.assets as Record<string, string>)[source] || source; }

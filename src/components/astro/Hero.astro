@@ -1,17 +1,18 @@
 ---
+import { deliveryStatic } from '../../lib/delivery-assets';
 import '../IntroSection.css';
 import '../Hero.css';
-import HeroShaderBackground from './ShaderBackground.astro';
+import GradientBackground from './GradientBackground.astro';
 import HomeDuplicateLogoCarousel from './LogoCarousel.astro';
 import BookCallContent from './BookCallContent.astro';
 import { CAL_DISCOVERY_URL } from '../../lib/links';
 ---
 <section class="hero-extended">
   <div class="hero-sticky">
-    <HeroShaderBackground />
+    <GradientBackground />
     <div class="hero-inner">
       <div class="hero-title-block">
-        <div class="hero-logo"><img src="/optimized/brand-icon-96.webp" srcset="/optimized/brand-icon-96.webp 96w, /optimized/brand-icon-192.webp 192w" sizes="(min-width: 1250px) 75px, (max-width: 750px) 45px, 6vw" alt="Other Stuff — AI product studio in Perth, Western Australia" width="46" height="46" /></div>
+        <div class="hero-logo"><img src={deliveryStatic('/optimized/brand-icon-96.webp')} srcset={`${deliveryStatic('/optimized/brand-icon-96.webp')} 96w, ${deliveryStatic('/optimized/brand-icon-192.webp')} 192w`} sizes="(min-width: 1250px) 75px, (max-width: 750px) 45px, 6vw" alt="Other Stuff — AI product studio in Perth, Western Australia" width="46" height="46" /></div>
         <div class="intro-pill hero-eyebrow">An AI Partner for SMEs</div>
         <h1 class="hero-duplicate-heading">We put AI to work inside your business.</h1>
         <p class="hero-description">As your Automation Partner, we set up AI agents that know your business and automate more of it, workflow by workflow. You'll see results in the first month.</p>

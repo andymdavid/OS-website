@@ -880,3 +880,13 @@ body:has(.os-home-duplicate) #root {
 @media (prefers-reduced-motion: reduce) {
   .micro-record-card::after, .micro-terminal-line::after, .micro-app-row::after { animation: none; }
 }
+
+@supports (content-visibility: auto) {
+  .home-duplicate-canvas-section {
+    content-visibility: auto;
+    contain-intrinsic-block-size: auto 1967px;
+  }
+  @media (max-width: 768px) {
+    .home-duplicate-canvas-section { contain-intrinsic-block-size: auto 3966px; }
+  }
+}

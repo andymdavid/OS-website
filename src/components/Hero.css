@@ -51,7 +51,7 @@
   pointer-events: none;
 }
 
-.hero-shader-canvas {
+.hero-gradient-background {
   position: absolute;
   inset: 0;
   z-index: 0;

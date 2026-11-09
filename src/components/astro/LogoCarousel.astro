@@ -1,10 +1,11 @@
 ---
+import { deliveryStatic } from '../../lib/delivery-assets';
 import '../HomeDuplicateLogoCarousel.css';
 const logos = [
-  {src:'/optimized/client-adapt-200.webp',alt:'Adapt'},
-  {src:'/optimized/client-stakwork-200.webp',alt:'Stakwork'},
-  {src:'/optimized/client-rocky-bay-200.webp',alt:'Rocky Bay'},
-  {src:'/logos/home-duplicate/plantrite.svg',alt:'Plantrite'},
+  {src:deliveryStatic('/optimized/client-adapt-200.webp'),alt:'Adapt'},
+  {src:deliveryStatic('/optimized/client-stakwork-200.webp'),alt:'Stakwork'},
+  {src:deliveryStatic('/optimized/client-rocky-bay-200.webp'),alt:'Rocky Bay'},
+  {src:deliveryStatic('/logos/home-duplicate/plantrite.svg'),alt:'Plantrite'},
 ];
 const logoSet=[...logos,...logos,...logos];
 ---

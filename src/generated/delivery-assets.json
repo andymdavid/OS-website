@@ -250,8 +250,8 @@
     }
   },
   "fonts": {
-    "/fonts/Alfabet-Black.woff2": "/media/Alfabet-Black.61bd1583080d.woff2",
-    "/fonts/Alfabet-Regular.woff2": "/media/Alfabet-Regular.b2c9fd86ad73.woff2",
+    "/fonts/Alfabet-Black.woff2": "/media/Alfabet-Black.6e39573da3b3.woff2",
+    "/fonts/Alfabet-Regular.woff2": "/media/Alfabet-Regular.88fec59996dc.woff2",
     "/fonts/OffBitTrial-101.ttf": "/media/OffBitTrial-101.7d2f59cd5ef9.ttf",
     "/fonts/OffBitTrial-101Bold.ttf": "/media/OffBitTrial-101Bold.15fe9a9a9505.ttf",
     "/fonts/OffBitTrial-Regular.ttf": "/media/OffBitTrial-Regular.bcc7ae5726bb.ttf",
@@ -269,7 +269,47 @@
     "/fonts/google/jersey10-latin.woff2": "/media/jersey10-latin.1f3d4358691e.woff2",
     "/fonts/google/silkscreen-latin.woff2": "/media/silkscreen-latin.278a530874cf.woff2"
   },
+  "fontFallbacks": {
+    "/fonts/Alfabet-Regular.woff2": "/media/Alfabet-Regular-extended.b2c9fd86ad73.woff2",
+    "/fonts/Alfabet-Black.woff2": "/media/Alfabet-Black-extended.61bd1583080d.woff2"
+  },
   "styles": {
     "demoFonts": "/media/demo-fonts.6d2516792f17.css"
+  },
+  "assets": {
+    "/favicon-48x48.png": "/media/favicon-48x48.c579b99a4076.png",
+    "/apple-touch-icon.png": "/media/apple-touch-icon.a0dff410b204.png",
+    "/primal-logo-white.svg": "/media/primal-logo-white.059f664eee94.svg",
+    "/wingman-mark-white.png": "/media/wingman-mark-white.bb8742887c53.png",
+    "/logos/home-duplicate/plantrite.svg": "/media/plantrite.346eb4e63462.svg",
+    "/optimized/andy-profile-128.webp": "/media/andy-profile-128.a3665b78a912.webp",
+    "/optimized/andy-profile-64.webp": "/media/andy-profile-64.74a7814a4b81.webp",
+    "/optimized/brand-icon-192.webp": "/media/brand-icon-192.877c16a5c5b6.webp",
+    "/optimized/brand-icon-96.webp": "/media/brand-icon-96.a02870d61122.webp",
+    "/optimized/client-adapt-200.webp": "/media/client-adapt-200.c2ea6d1e0893.webp",
+    "/optimized/client-rocky-bay-200.webp": "/media/client-rocky-bay-200.ece7298a7f0b.webp",
+    "/optimized/client-stakwork-200.webp": "/media/client-stakwork-200.f89288f6f8f2.webp",
+    "/optimized/example-briefings-480.webp": "/media/example-briefings-480.867d2277ddaa.webp",
+    "/optimized/example-briefings-800.webp": "/media/example-briefings-800.38f24782c7d3.webp",
+    "/optimized/example-inventory-480.webp": "/media/example-inventory-480.520b1c54cd57.webp",
+    "/optimized/example-inventory-800.webp": "/media/example-inventory-800.7ee7508b6e89.webp",
+    "/optimized/example-proposals-480.webp": "/media/example-proposals-480.355d498c6747.webp",
+    "/optimized/example-proposals-800.webp": "/media/example-proposals-800.9ee43ee93290.webp",
+    "/optimized/example-reporting-480.webp": "/media/example-reporting-480.5756ff61f35b.webp",
+    "/optimized/example-reporting-800.webp": "/media/example-reporting-800.876f4e630791.webp",
+    "/optimized/help-ambulando-400.webp": "/media/help-ambulando-400.8723b73c813a.webp",
+    "/optimized/help-ambulando-640.webp": "/media/help-ambulando-640.e0f4f5eff83c.webp",
+    "/optimized/help-ambulando-800.webp": "/media/help-ambulando-800.7b3e1961d935.webp",
+    "/optimized/help-automation-partner-400.webp": "/media/help-automation-partner-400.5d1519b16f5d.webp",
+    "/optimized/help-automation-partner-640.webp": "/media/help-automation-partner-640.8a4d3283ea6a.webp",
+    "/optimized/help-automation-partner-800.webp": "/media/help-automation-partner-800.eded0100028e.webp",
+    "/optimized/help-custom-software-400.webp": "/media/help-custom-software-400.1d7a90870b25.webp",
+    "/optimized/help-custom-software-640.webp": "/media/help-custom-software-640.3b5342665c99.webp",
+    "/optimized/help-custom-software-800.webp": "/media/help-custom-software-800.1e9b1cbaa1c8.webp",
+    "/optimized/pete-profile-128.webp": "/media/pete-profile-128.35aee96afe23.webp",
+    "/optimized/pete-profile-64.webp": "/media/pete-profile-64.556e34cbd697.webp",
+    "/optimized/snacks-cassette-320.webp": "/media/snacks-cassette-320.604b9f1a75b0.webp",
+    "/optimized/snacks-cassette-640.webp": "/media/snacks-cassette-640.1b74cc84af85.webp",
+    "/optimized/snacks-cassette-96.webp": "/media/snacks-cassette-96.4c142894b344.webp"
   }
 }
