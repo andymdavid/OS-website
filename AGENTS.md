@@ -20,7 +20,7 @@ Use Node >=22.23.4. Install with `npm ci --include=dev`. Run `npm run build` and
 
 Use native templates for content and layout. Hydrate small interactions rather than a complete page or router. Preserve existing brand typography, mobile layouts, canonical URLs, metadata/schema, archive indexing policies, booking and signup flows. Retain meaningful source images and generate display-sized derivatives. Keep API keys and local env files out of commits. Build and content generation do not authorize a managed-service restart or production deployment.
 
-Hero and footer gradient backgrounds are intentionally static CSS. Do not add canvas/WebGL animation or graphics-context setup to these decorative backgrounds.
+Hero and footer backgrounds use static stills rendered from the original shader, styled with CSS. Preserve their palette, glow and grain; do not substitute a plain gradient. The offline asset generator may use WebGL, but pages must not create graphics contexts or animate these backgrounds.
 
 ## Reviews
 

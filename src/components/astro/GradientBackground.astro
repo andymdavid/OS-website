@@ -1,2 +1,10 @@
-<!-- Decorative background stays static on every device; no canvas or graphics context. -->
-<div class="hero-gradient-background" aria-hidden="true"></div>
+---
+import desktop from '../../assets/gradient-desktop.webp';
+import mobile from '../../assets/gradient-mobile.webp';
+---
+<!-- Frozen render of the original shader. No canvas, WebGL or animation. -->
+<div class="hero-gradient-background" aria-hidden="true" style={`--gradient-desktop: url('${desktop.src}'); --gradient-mobile: url('${mobile.src}');`}></div>
+<style>
+  .hero-gradient-background { background-image: var(--gradient-desktop); background-size: 100% 100%; background-repeat: no-repeat; }
+  @media (max-width: 768px) { .hero-gradient-background { background-image: var(--gradient-mobile); } }
+</style>
