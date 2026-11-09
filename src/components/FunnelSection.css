@@ -172,7 +172,7 @@
   background: rgba(240, 240, 240, 0.12);
 }
 
-.funnel-card h4 {
+.funnel-card h3 {
   font-family: var(--font-heading);
   font-size: clamp(24px, 2.45vw, 30px);
   font-weight: var(--weight-bold);
@@ -183,11 +183,11 @@
   transition: font-size var(--duration-base) var(--ease-out);
 }
 
-.funnel-card h4.funnel-card-title-wide {
+.funnel-card h3.funnel-card-title-wide {
   max-width: 15ch;
 }
 
-.funnel-card:hover h4 {
+.funnel-card:hover h3 {
   font-size: 21px;
   max-width: none;
   white-space: nowrap;
@@ -401,8 +401,8 @@
   padding-top: clamp(22px, 2.6vw, 34px);
 }
 
-.os-home-duplicate .funnel-section-home-duplicate .funnel-card h4,
-.os-home-duplicate .funnel-section-home-duplicate .funnel-card:hover h4 {
+.os-home-duplicate .funnel-section-home-duplicate .funnel-card h3,
+.os-home-duplicate .funnel-section-home-duplicate .funnel-card:hover h3 {
   min-height: 2.2em;
   max-width: none;
   font-size: clamp(20px, 1.72vw, 22px);
@@ -412,7 +412,7 @@
   text-wrap: balance;
 }
 
-.os-home-duplicate .funnel-section-home-duplicate .funnel-card h4.funnel-card-title-wide {
+.os-home-duplicate .funnel-section-home-duplicate .funnel-card h3.funnel-card-title-wide {
   max-width: none;
 }
 
@@ -2169,7 +2169,7 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .funnel-card h4 {
+  .funnel-card h3 {
     font-size: 24px;
   }
 
@@ -2318,7 +2318,7 @@
     max-height: none;
   }
 
-  .funnel-card h4 {
+  .funnel-card h3 {
     font-size: 20px;
   }
 
@@ -2552,8 +2552,8 @@
     max-width: 14ch;
   }
 
-  .os-home-duplicate .funnel-section-home-duplicate .funnel-card h4,
-  .os-home-duplicate .funnel-section-home-duplicate .funnel-card:hover h4 {
+  .os-home-duplicate .funnel-section-home-duplicate .funnel-card h3,
+  .os-home-duplicate .funnel-section-home-duplicate .funnel-card:hover h3 {
     font-size: 20px;
   }
 

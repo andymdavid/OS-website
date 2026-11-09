@@ -50,7 +50,7 @@ body:has(.os-home-duplicate) #root {
 .home-duplicate-canvas-copy p {
   max-width: 66ch;
   margin: 0 auto;
-  color: rgba(240, 240, 240, 0.72);
+  color: #b8b8b8;
   font-size: 14px;
   line-height: 1.55;
 }
@@ -500,7 +500,7 @@ body:has(.os-home-duplicate) #root {
 .micro-app-metrics span {
   display: block;
   margin-bottom: 4px;
-  color: rgba(240, 240, 240, 0.42);
+  color: #b8b8b8;
   font-size: 10px;
   font-style: normal;
   line-height: 1;
@@ -525,7 +525,7 @@ body:has(.os-home-duplicate) #root {
   display: grid;
   grid-template-columns: 16px minmax(0, 1fr);
   gap: 8px;
-  opacity: 0.42;
+  opacity: 1;
   animation: operating-map-opacity-pulse 5.2s ease-in-out infinite;
   animation-delay: var(--delay, 0s);
 }
@@ -540,7 +540,7 @@ body:has(.os-home-duplicate) #root {
 .micro-terminal-line p {
   overflow: hidden;
   margin: 0;
-  color: rgba(240, 240, 240, 0.64);
+  color: #b8b8b8;
   font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
   font-size: 10px;
   line-height: 1.2;
@@ -555,7 +555,7 @@ body:has(.os-home-duplicate) #root {
   font-family: 'SF Mono', 'Monaco', 'Consolas', monospace;
   font-size: 10px;
   line-height: 1;
-  animation: operating-map-cursor-blink 1s steps(2, start) infinite;
+  /* Keep status text readable; only the decorative cursor blinks. */
 }
 
 .micro-app-window {
@@ -591,7 +591,7 @@ body:has(.os-home-duplicate) #root {
 
 .micro-app-row span {
   overflow: hidden;
-  color: rgba(240, 240, 240, 0.72);
+  color: #b8b8b8;
   font-size: 11px;
   line-height: 1.1;
   text-overflow: ellipsis;
@@ -607,7 +607,7 @@ body:has(.os-home-duplicate) #root {
 
 @keyframes operating-map-opacity-pulse {
   0%, 14% {
-    opacity: 0.42;
+    opacity: 1;
     background-color: rgba(240, 240, 240, 0.02);
   }
   24%, 72% {
@@ -615,7 +615,7 @@ body:has(.os-home-duplicate) #root {
     background-color: rgba(240, 240, 240, 0.045);
   }
   100% {
-    opacity: 0.48;
+    opacity: 1;
     background-color: rgba(240, 240, 240, 0.02);
   }
 }

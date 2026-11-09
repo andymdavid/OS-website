@@ -81,7 +81,7 @@ export function PainRecognition() {
               <img src="/Andy-letter.png" alt="" />
             </div>
             <div className="pain-recognition-company">
-              <img src="/Logo-Main-Icon.webp" alt="" aria-hidden="true" />
+              <img src="/optimized/brand-icon-96.webp" srcSet="/optimized/brand-icon-96.webp 96w, /optimized/brand-icon-192.webp 192w" sizes="46px" alt="" aria-hidden="true" />
               <p className="pain-recognition-role">
                 <strong>Co-Founders</strong>
                 <span>Other Stuff</span>

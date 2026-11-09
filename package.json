@@ -19,7 +19,9 @@
     "check:browser:astro": "node scripts/check-astro-browser.mjs",
     "check:routes": "node scripts/check-routes-browser.mjs",
     "check:publishing": "node scripts/check-publishing.mjs",
-    "check:workshops": "node scripts/check-workshop-browser.mjs"
+    "check:workshops": "node scripts/check-workshop-browser.mjs",
+    "prepare:fonts": "node scripts/prepare-fonts.mjs",
+    "check:analytics": "node scripts/check-analytics-browser.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^7.1.4",

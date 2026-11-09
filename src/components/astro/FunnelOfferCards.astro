@@ -50,7 +50,10 @@ const {showFooter=true,showRecommendation=true,content}=Astro.props;
             <div class="funnel-card-image">
               <img
                 class={`static-help-image ${!cardContent && 'imageClassName' in card ? card.imageClassName : ''}`}
-                src={cardContent?.image ?? card.image}
+                src={cardContent?.image ?? card.image.replace('/home-help-', '/optimized/help-').replace('.webp', '-640.webp')}
+                srcset={!cardContent?.image ? [400, 640, 800].map(width => `${card.image.replace('/home-help-', '/optimized/help-').replace('.webp', `-${width}.webp`)} ${width}w`).join(', ') : undefined}
+                sizes="(max-width: 767px) calc(100vw - 80px), (max-width: 1100px) 40vw, 400px"
+                width="1254" height="1147" loading="lazy" decoding="async"
                 alt={cardContent?.imageAlt ?? card.imageAlt}
               />
               {showRecommendation && card.tag && (
@@ -69,17 +72,17 @@ const {showFooter=true,showRecommendation=true,content}=Astro.props;
             </div>
             <div class="funnel-card-header"><span class="funnel-card-category">{cardContent?.category ?? card.category}</span></div>
             <div class="funnel-card-body">
-              <h4>
+              <h3>
                 {cardContent ? cardContent.title : (
                   <Fragment>{card.titleLines[0]}<br class="funnel-card-title-break" />{card.titleLines[1]}</Fragment>
                 )}
-              </h4>
+              </h3>
               <p class="funnel-card-description">{cardContent?.description ?? card.description}</p>
               {showFooter && <p class="funnel-card-price">{card.price}</p>}
             </div>
             {showFooter && (
               <a class="funnel-card-button" href={card.buttonHref} target={isExternal ? '_blank' : undefined} rel={isExternal ? 'noopener noreferrer' : undefined}>
-                Learn More
+                Explore {card.category}
               </a>
             )}
           </article>

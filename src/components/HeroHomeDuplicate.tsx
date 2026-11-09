@@ -9,7 +9,7 @@ export function HeroHomeDuplicate() {
         <div className="hero-inner">
           <div className="hero-title-block">
             <div className="hero-logo">
-              <img src="/Logo-Main-Icon.webp" alt="Other Stuff — AI product studio in Perth, Western Australia" />
+              <img src="/optimized/brand-icon-96.webp" srcSet="/optimized/brand-icon-96.webp 96w, /optimized/brand-icon-192.webp 192w" sizes="46px" alt="Other Stuff — AI product studio in Perth, Western Australia" />
             </div>
             <h1 className="hero-duplicate-heading">Your business has more to give{' '}<br />than your team has time for</h1>
             <p>
