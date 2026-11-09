@@ -1,8 +1,8 @@
-import { BookCallContent } from './BookCallContent';
-import { FunnelOfferCards } from './FunnelHomeDuplicate';
-import { CAL_DISCOVERY_URL } from '../lib/links';
-import './MGOfferSection.css';
-
+---
+import '../MGOfferSection.css';
+import { CAL_DISCOVERY_URL } from '../../lib/links';
+import BookCallContent from './BookCallContent.astro';
+import FunnelOfferCards from './FunnelOfferCards.astro';
 const improvementCards = [
   {
     category: '01.',
@@ -26,22 +26,20 @@ const improvementCards = [
     imageAlt: 'Monthly automation improvement cycle',
   },
 ] as const;
-
-export function MGOfferSection() {
-  return (
-    <div className="os-home-duplicate">
-      <section id="automation-options" className="section funnel-section funnel-section-home-duplicate mg-offer-section">
-        <div className="section-container-wide">
-          <header className="mg-how-it-works-hero mg-offer-hero">
-            <div className="intro-pill fade-in">HOW IT WORKS</div>
-            <h2 className="section-heading fade-in fade-in-stagger-1">
+---
+<div class="os-home-duplicate">
+      <section id="automation-options" class="section funnel-section funnel-section-home-duplicate mg-offer-section">
+        <div class="section-container-wide">
+          <header class="mg-how-it-works-hero mg-offer-hero">
+            <div class="intro-pill fade-in">HOW IT WORKS</div>
+            <h2 class="section-heading fade-in fade-in-stagger-1">
               We work alongside your team,<br />one workflow at a time.
             </h2>
-            <p className="mg-how-it-works-subpara fade-in fade-in-stagger-2">
+            <p class="mg-how-it-works-subpara fade-in fade-in-stagger-2">
               Each month starts with a week of focused work with your team. The new process goes live on Friday, then we refine it with your team over the rest of the month.
             </p>
             <a
-              className="mg-how-it-works-cta book-call-button fade-in fade-in-stagger-3"
+              class="mg-how-it-works-cta book-call-button fade-in fade-in-stagger-3"
               href={CAL_DISCOVERY_URL}
               target="_blank"
               rel="noopener noreferrer"
@@ -54,5 +52,3 @@ export function MGOfferSection() {
         </div>
       </section>
     </div>
-  );
-}

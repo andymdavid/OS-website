@@ -1,7 +1,7 @@
 ---
 import SiteLayout from '@/layouts/SiteLayout.astro';
 import { NavigationDraft } from "@/components/NavigationDraft";
-import { Footer } from "@/components/Footer";
+import Footer from '@/components/astro/Footer.astro';
 import "@/components/Hero.css";
 
 
@@ -30,6 +30,6 @@ import "@/components/Hero.css";
           </div>
         </section>
       </main>
-      <Footer client:visible />
+      <Footer />
     </div>
 </SiteLayout>

@@ -2,7 +2,7 @@
 import SiteLayout from '@/layouts/SiteLayout.astro';
 import { NavigationDraft } from "@/components/NavigationDraft";
 import CTASection from "@/components/astro/CTA.astro";
-import { Footer } from "@/components/Footer";
+import Footer from '@/components/astro/Footer.astro';
 import { getCollection } from 'astro:content';
 const writingPosts = (await getCollection('writing')).map(entry => entry.data).sort((a,b) => b.date.localeCompare(a.date));
 import { canonicalPath } from "@/lib/structured-data";
@@ -80,6 +80,6 @@ const writingImageSrcSet = (src: string) => {
 
         <CTASection />
       </main>
-      <Footer client:visible />
+      <Footer />
     </div>
 </SiteLayout>

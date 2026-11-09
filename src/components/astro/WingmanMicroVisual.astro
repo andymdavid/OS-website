@@ -1,0 +1,59 @@
+---
+const {visual}=Astro.props;
+const records = [
+      ['Files', '32 synced'],
+      ['Records', 'Live graph'],
+      ['Permissions', 'Team access'],
+      ['APIs', 'Connected'],
+    ];
+const lines = [
+      ['$', 'trigger.received("quote_request")'],
+      ['→', 'context.loaded("Horizon Media")'],
+      ['$', 'run.agent("proposal_builder")'],
+      ['→', 'approval.sent("Flight Deck")'],
+      ['✓', 'pipeline ready'],
+    ];
+---
+{visual === 'tower' ? (<div class="operating-map-micro operating-map-micro-tower">
+        <div class="micro-record-stack">
+          {records.map(([title, meta], index) => (
+            <div  class="micro-record-card" style={{ '--delay': `${index * 0.2}s` }}>
+              <span class="micro-file-icon"></span>
+              <div>
+                <strong>{title}</strong>
+                <em>{meta}</em>
+              </div>
+              <i></i>
+            </div>
+          ))}
+        </div>
+      </div>) : visual === 'autopilot' ? (<div class="operating-map-micro operating-map-micro-autopilot">
+        <div class="micro-terminal-lines">
+          {lines.map(([prefix, line], index) => (
+            <div  class="micro-terminal-line" style={{ '--delay': `${index * 0.26}s` }}>
+              <span>{prefix}</span>
+              <p>{line}</p>
+            </div>
+          ))}
+          <b aria-hidden="true">▋</b>
+        </div>
+      </div>) : (<div class="operating-map-micro operating-map-micro-wapps">
+      <div class="micro-app-window">
+        <div class="micro-app-metrics">
+          <div>
+            <span>Overdue</span>
+            <strong>$39.2k</strong>
+          </div>
+          <div>
+            <span>Actions</span>
+            <strong>12</strong>
+          </div>
+        </div>
+        {['Mitchell & Co', 'Horizon Media', 'Pilbara Projects'].map((item, index) => (
+          <div  class="micro-app-row" style={{ '--delay': `${index * 0.24}s` }}>
+            <span>{item}</span>
+            <i>{index === 0 ? 'Review' : index === 1 ? 'Send' : 'Approve'}</i>
+          </div>
+        ))}
+      </div>
+    </div>)}

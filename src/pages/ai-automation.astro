@@ -4,12 +4,12 @@ import { NavigationDraft } from "@/components/NavigationDraft";
 import { PainRecognition } from "@/components/PainRecognition";
 import { MGGridSection } from "@/components/MGGridSection";
 import { MGHowItWorksSection } from "@/components/MGHowItWorksSection";
-import { MGOfferSection } from "@/components/MGOfferSection";
+import MGOfferSection from '@/components/astro/MGOfferSection.astro';
 import { MGPricingSection } from "@/components/MGPricingSection";
 import CTAHomeDuplicate from "@/components/astro/CTA.astro";
-import { FooterHomeDuplicate } from "@/components/FooterHomeDuplicate";
+import FooterHomeDuplicate from '@/components/astro/FooterHomeDuplicate.astro';
 import AutomationPartnerHero from "@/components/astro/AutomationPartnerHero.astro";
-import { FAQHomeDuplicate } from "@/components/FAQHomeDuplicate";
+import FAQHomeDuplicate from '@/components/astro/FAQ.astro';
 import {
   MarginalGainsApproachSection,
   MarginalGainsDuplicateBody,
@@ -91,7 +91,7 @@ import "@/marginal-gains/marginal-gains.css";
       <MGGridSection />
       <MarginalGainsDuplicateBody client:visible />
       <MGPricingSection client:visible />
-      <FAQHomeDuplicate client:visible
+      <FAQHomeDuplicate
         id="faq"
         items={automationFaqs}
         heading="Frequently asked questions."
@@ -102,6 +102,6 @@ import "@/marginal-gains/marginal-gains.css";
         intro="Book a free 45-minute call with Pete and Andy. We’ll look at how work moves through your business and tell you what we’d automate first and what it would cost."
         className="mg-final-cta"
       />
-      <FooterHomeDuplicate client:visible />
+      <FooterHomeDuplicate />
     </div>
 </SiteLayout>

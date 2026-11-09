@@ -1,6 +1,6 @@
 ---
 import { NavigationDraft } from '../NavigationDraft';
-import { Footer } from '../Footer';
+import Footer from '@/components/astro/Footer.astro';
 import '../../routes/WritingPost.css';
 const { backHref, backLabel, title, effectiveDate, summary, sections } = Astro.props;
 ---
@@ -46,5 +46,5 @@ const { backHref, backLabel, title, effectiveDate, summary, sections } = Astro.p
           </div>
         </section>
       </main>
-      <Footer client:visible />
+      <Footer />
     </div>
