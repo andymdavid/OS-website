@@ -1,6 +1,6 @@
 ---
 import SiteLayout from '@/layouts/SiteLayout.astro';
-import { NavigationDraft } from '@/components/NavigationDraft';
+import NavigationDraft from '@/components/astro/Navigation.astro';
 import { HeroHomeDuplicate } from '@/components/HeroHomeDuplicate';
 import HomeDuplicateGridSection from '@/components/astro/UseCases.astro';
 import FunnelHomeDuplicate from '@/components/astro/Funnel.astro';
@@ -29,7 +29,7 @@ import { organizationSchema, websiteSchema } from '../lib/structured-data';
         ]}>
 <div class="os-theme os-draft">
       
-      <NavigationDraft client:load />
+      <NavigationDraft />
       <main>
         <HeroHomeDuplicate client:visible />
         <HomeDuplicateGridSection />

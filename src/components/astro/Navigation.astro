@@ -1,0 +1,83 @@
+---
+import '../Navigation.css';
+import '../HomeDuplicateGoodStuffStrip.css';
+import BookCallContent from './BookCallContent.astro';
+import { CAL_DISCOVERY_URL } from '../../lib/links';
+const solutions = [
+  {
+    title: 'AI Automation',
+    description: 'We work with your team each month to automate and improve the processes costing you the most time.',
+    href: '/ai-automation/',
+  },
+  {
+    title: 'Ambulando',
+    description: 'The shared workspace where your people and AI agents turn conversations into tasks, workflows and applications.',
+    href: 'https://ambulando.io',
+  },
+  {
+    title: 'AI Workshops',
+    description: 'Practical, hands-on workshops that help business teams and students understand, use and build with AI.',
+    href: '/speedrun/',
+    children: [
+      { title: 'Business workshops', href: '/speedrun/' },
+      { title: 'School workshops', href: '/levelup/' },
+    ],
+  },
+];
+
+const mediaLinks = [
+  {
+    title: 'Intelligence Snacks',
+    description: 'Long-form conversations and newsletters exploring useful ideas about AI, software and the future of business.',
+    href: 'https://intelligencesnacks.com/',
+  },
+  {
+    title: 'Writing',
+    description: 'Notes, essays and practical thinking drawn from our work building AI systems with small and medium-sized businesses.',
+    href: '/writing/',
+  },
+  {
+    title: 'Games',
+    description: 'Playable experiments created through our work with AI, software and new ways of interacting with technology.',
+    href: '/games/',
+  },
+];
+
+
+const {titleOverride='OTHER STUFF',showPromoStrip=true,titleSwapOnScroll}=Astro.props;
+const groups=[{key:'solutions',label:'Solutions',items:solutions,strip:{label:'Automation Partner',text:'Automate more of your business each month.',action:'Explore Automation Partner',href:'/ai-automation/'}},{key:'media',label:'Media',items:mediaLinks,strip:{label:'Intelligence Snacks',text:'Ideas about AI, software and business, delivered regularly.',action:'Explore Intelligence Snacks',href:'https://intelligencesnacks.com/'}}];
+---
+<os-navigation data-title-swap={titleSwapOnScroll ? JSON.stringify(titleSwapOnScroll) : undefined}>
+  {showPromoStrip && <section class="home-duplicate-good-stuff-strip" aria-label="Intelligence Snacks publication"><button type="button" data-newsletter-open><img src="/optimized/snacks-cassette-96.webp" width="28" height="20" alt="" aria-hidden="true" /><span class="home-duplicate-good-stuff-strip-message"><span>Big ideas on AI, software and business, delivered weekly.</span></span><strong>Send me snacks →</strong></button></section>}
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav-container"><div class="nav-row">
+      <div class="nav-left">
+        <a class="nav-logo-icon" href="/"><img src="/optimized/brand-icon-96.webp" srcset="/optimized/brand-icon-96.webp 96w, /optimized/brand-icon-192.webp 192w" sizes="46px" alt="Other Stuff — AI product studio" width="46" height="46" /></a>
+        <div class="nav-menu">
+          {groups.map(group=><div class="nav-link-wrapper" data-hover-dropdown={group.key}><button class="nav-link nav-link-dropdown" data-desktop-dropdown={group.key} aria-expanded="false" aria-controls="navigation-mega-menu" type="button">{group.label}<svg width="10" height="10" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg></button></div>)}
+          <a href="/about/" class="nav-link">Company</a>
+        </div>
+      </div>
+      <div class="nav-center"><a class="nav-logo" href="/">
+        {titleSwapOnScroll ? <span class="nav-logo-swap" aria-label={titleSwapOnScroll.before}><span class="nav-logo-measure" aria-hidden="true">{titleSwapOnScroll.before.length>=titleSwapOnScroll.after.length?titleSwapOnScroll.before:titleSwapOnScroll.after}</span><span class="nav-logo-text is-active" data-title-before aria-hidden="true">{titleSwapOnScroll.before}</span><span class="nav-logo-text" data-title-after aria-hidden="true">{titleSwapOnScroll.after}</span></span> : titleOverride}
+      </a></div>
+      <div class="nav-right"><a href="https://welcome.otherstuff.ai/" class="nav-link nav-contact-link">Sign In</a><a href={CAL_DISCOVERY_URL} class="nav-join-btn book-call-button" target="_blank" rel="noopener noreferrer"><BookCallContent /></a></div>
+      <button class="nav-toggle" data-mobile-toggle aria-label="Toggle menu" aria-controls="mobile-navigation" aria-expanded="false" type="button"><span></span><span></span><span></span></button>
+    </div>
+    <div id="navigation-mega-menu" class="mega-menu" inert></div>
+    {groups.map(group=><template data-mega-template={group.key}><div class="mega-menu-surface"><div class="mega-menu-grid">
+      {group.items.map(item=><div class="mega-menu-column"><a href={item.href} class="mega-menu-primary-link" target={item.href.startsWith('http')?'_blank':undefined} rel={item.href.startsWith('http')?'noopener noreferrer':undefined}><h4>{item.title}</h4><p>{item.description}</p></a>{'children' in item && item.children && <div class="mega-menu-secondary-links">{item.children.map(child=><a href={child.href}>{child.title}<span aria-hidden="true">↗</span></a>)}</div>}</div>)}
+    </div><a class="mega-menu-strip" href={group.strip.href} target={group.strip.href.startsWith('http')?'_blank':undefined} rel={group.strip.href.startsWith('http')?'noopener noreferrer':undefined}><span class="mega-menu-strip-copy"><strong>{group.strip.label}</strong><span>{group.strip.text}</span></span><span class="mega-menu-strip-action">{group.strip.action}<span aria-hidden="true">→</span></span></a></div></template>)}
+    </div>
+    <div id="mobile-navigation" class="mobile-menu-overlay" inert><div class="mobile-menu-panel">
+      <button class="mobile-menu-close" type="button" data-mobile-close aria-label="Close menu"><span></span><span></span></button>
+      <div class="mobile-menu-groups">
+        {groups.map(group=><div class="mobile-menu-group"><button class="mobile-menu-primary mobile-menu-toggle" data-mobile-dropdown={group.key} type="button" aria-expanded="false" aria-controls={`mobile-${group.key}`}><span>{group.label}</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg></button><div class="mobile-menu-submenu" id={`mobile-${group.key}`} data-mobile-submenu={group.key}>{group.items.map(item=><Fragment><a href={item.href} class="mobile-menu-subitem">{item.title}</a>{'children' in item && item.children && <div class="mobile-menu-nested-links">{item.children.map(child=><a href={child.href}>{child.title}</a>)}</div>}</Fragment>)}</div></div>)}
+        <a href="/about/" class="mobile-menu-primary mobile-menu-link">Company</a>
+      </div>
+      <div class="mobile-menu-actions"><a href="https://welcome.otherstuff.ai/" class="mobile-menu-secondary">Sign In</a><a href={CAL_DISCOVERY_URL} class="nav-join-btn mobile-menu-cta book-call-button" target="_blank" rel="noopener noreferrer"><BookCallContent /></a></div>
+    </div></div>
+  </nav>
+</os-navigation>
+<script>import '../../client/navigation';</script>
+<style>os-navigation { display: contents; }</style>

@@ -1,6 +1,6 @@
 ---
 import SiteLayout from '@/layouts/SiteLayout.astro';
-import { NavigationDraft } from "@/components/NavigationDraft";
+import NavigationDraft from '@/components/astro/Navigation.astro';
 import { PainRecognition } from "@/components/PainRecognition";
 import { MGGridSection } from "@/components/MGGridSection";
 import { MGHowItWorksSection } from "@/components/MGHowItWorksSection";
@@ -76,7 +76,7 @@ import "@/marginal-gains/marginal-gains.css";
       style={{ fontFamily: "'Inter', system-ui, sans-serif" }}
     >
       
-      <NavigationDraft client:load
+      <NavigationDraft
         titleSwapOnScroll={{
           before: "OTHER STUFF",
           after: "AUTOMATION PARTNER",

@@ -66,7 +66,7 @@ export function NewsletterModal({
 
         <div className="modal-body">
           {profileImageSrc ? (
-            <img className="modal-profile-image" src={profileImageSrc} alt="Intelligence Snacks cassette" />
+            <img className="modal-profile-image" width="640" height="453" src={profileImageSrc} alt="Intelligence Snacks cassette" />
           ) : (
             <div className="modal-pill">{pill}</div>
           )}

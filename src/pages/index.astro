@@ -1,6 +1,6 @@
 ---
 import SiteLayout from '../layouts/SiteLayout.astro';
-import { NavigationDraft } from '../components/NavigationDraft';
+import NavigationDraft from '@/components/astro/Navigation.astro';
 import Hero from '../components/astro/Hero.astro';
 import FunnelHomeDuplicate from '@/components/astro/Funnel.astro';
 import HomeDuplicateGridSection from '@/components/astro/UseCases.astro';
@@ -8,7 +8,7 @@ import HomeDuplicateCanvasSection from '@/components/astro/OperatingMap.astro';
 import HomeDuplicateComparison from '@/components/astro/Comparison.astro';
 import FAQHomeDuplicate from '@/components/astro/FAQ.astro';
 import CTAHomeDuplicate from '@/components/astro/CTA.astro';
-import { HomeDuplicateExitNewsletter } from '../components/HomeDuplicateExitNewsletter';
+import HomeDuplicateExitNewsletter from '@/components/astro/ExitNewsletter.astro';
 import FooterHomeDuplicate from '@/components/astro/FooterHomeDuplicate.astro';
 import { organizationSchema, websiteSchema } from '../lib/structured-data';
 ---
@@ -17,7 +17,7 @@ import { organizationSchema, websiteSchema } from '../lib/structured-data';
   websiteSchema,
 ]}>
   <div class="os-theme os-draft os-home-duplicate">
-    <NavigationDraft client:load />
+    <NavigationDraft />
     <main>
       <Hero />
       <FunnelHomeDuplicate />
@@ -27,7 +27,7 @@ import { organizationSchema, websiteSchema } from '../lib/structured-data';
       <FAQHomeDuplicate />
       <CTAHomeDuplicate heading="What’s eating your team’s week?" intro="Book a free 45-minute call with Pete and Andy. We’ll look at how work moves through your business and tell you what we’d automate first and what it would cost." />
     </main>
-    <HomeDuplicateExitNewsletter client:idle />
+    <HomeDuplicateExitNewsletter />
     <FooterHomeDuplicate />
   </div>
 </SiteLayout>

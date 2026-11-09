@@ -1,3 +1,8 @@
+function markdownLinks(text) {
+  return text.replace(/^- ([^\n]+)\n- URL: (https?:\/\/\S+)/gm, '- [$1]($2)')
+    .replace(/^- ([^:\n]+): (https?:\/\/\S+)$/gm, '- [$1]($2)')
+    .replace(/^- (https?:\/\/\S+)$/gm, (_, url) => `- [${url.includes('/writing/') ? 'Writing article' : url.includes('/newsletter/') ? 'Newsletter issue' : 'Reference'}](${url})`);
+}
 const absoluteUrl = path => new URL(path.endsWith('/') ? path : path+'/', 'https://otherstuff.ai').href;
 export function buildLlmsText(writingPosts, newsletterIssues) {
   const postList = writingPosts
@@ -8,7 +13,7 @@ export function buildLlmsText(writingPosts, newsletterIssues) {
     .map((issue) => `- ${absoluteUrl(issue.path)}`)
     .join('\n');
 
-  return `# Other Stuff
+  return markdownLinks(`# Other Stuff
 
 Other Stuff is an AI-first product studio based in Perth, Western Australia.
 
@@ -81,7 +86,7 @@ Other Stuff is a Perth-based AI automation partner for Australian SMEs. It sets 
 
 For a fuller machine-readable summary, see:
 - https://otherstuff.ai/llms-full.txt
-`;
+`);
 }
 
 export function buildLlmsFullText(writingPosts, newsletterIssues) {
@@ -92,7 +97,7 @@ export function buildLlmsFullText(writingPosts, newsletterIssues) {
     ? newsletterIssues.map((issue) => `- ${absoluteUrl(issue.path)}`).join('\n')
     : '- No newsletter issues published yet';
 
-  return `# Other Stuff - Full LLM Reference
+  return markdownLinks(`# Other Stuff - Full LLM Reference
 
 This file is intended to help language models understand the business, the website, the current commercial direction, and the most important pages.
 
@@ -288,5 +293,5 @@ This website exposes LLM-readable business information at:
 - https://otherstuff.ai/llms-full.txt
 
 These files are intended to summarize the website accurately even if some navigation labels or page-level copy evolve over time.
-`;
+`);
 }

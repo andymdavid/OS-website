@@ -1,0 +1,17 @@
+<script>
+  const key = 'os-home-duplicate-newsletter-exit-dismissed-at';
+  let armed = false;
+  let triggered = false;
+  if (matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    let dismissed = 0;
+    try { dismissed = Number(localStorage.getItem(key) || 0); } catch { triggered = true; }
+    if (Date.now() - dismissed < 14 * 86400000) triggered = true;
+    setTimeout(() => { armed = true; }, 10000);
+    document.addEventListener('mouseout', event => {
+      if (!armed || triggered || event.clientY > 0 || event.relatedTarget) return;
+      triggered = true;
+      try { localStorage.setItem(key, String(Date.now())); } catch { /* Storage is optional. */ }
+      import('../../lib/newsletter-dialog').then(module => module.openNewsletter({ heading: 'Before you go, get Intelligence Snacks in your inbox.' }));
+    });
+  }
+</script>

@@ -1,6 +1,6 @@
 ---
 import SiteLayout from '@/layouts/SiteLayout.astro';
-import { NavigationDraft } from "@/components/NavigationDraft";
+import NavigationDraft from '@/components/astro/Navigation.astro';
 import { EmailCaptureForm } from "@/components/EmailCaptureForm";
 import Footer from '@/components/astro/Footer.astro';
 import { getOrganizationRef } from "@/lib/structured-data";
@@ -57,7 +57,7 @@ const TOPICS_URL = "https://socratic.otherstuff.ai/";
         ]}>
 <div class="os-theme os-draft min-h-screen roundtable-page">
       
-      <NavigationDraft client:load
+      <NavigationDraft
         titleSwapOnScroll={{
           before: "OTHER STUFF",
           after: "AI ROUNDTABLE",

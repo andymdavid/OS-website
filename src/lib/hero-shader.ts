@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from 'react';
 
 const vertexShaderSource = `
 attribute vec2 a_position;
@@ -171,17 +170,7 @@ function createProgram(gl: WebGLRenderingContext) {
   return program;
 }
 
-export function HeroShaderBackground() {
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const [staticBackground, setStaticBackground] = useState(false);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-
-    if (!canvas) {
-      return undefined;
-    }
-
+export function initializeShader(canvas: HTMLCanvasElement) {
     const gl = canvas.getContext('webgl', {
       alpha: false,
       antialias: false,
@@ -203,7 +192,11 @@ export function HeroShaderBackground() {
     const renderer = rendererInfo ? String(gl.getParameter(rendererInfo.UNMASKED_RENDERER_WEBGL)) : '';
     if (/swiftshader|llvmpipe|softpipe|software rasterizer/i.test(renderer)) {
       gl.getExtension('WEBGL_lose_context')?.loseContext();
-      setStaticBackground(true);
+      const fallback = document.createElement('div');
+      fallback.className = canvas.className;
+      fallback.dataset.shaderReady = 'false';
+      fallback.setAttribute('aria-hidden', 'true');
+      canvas.replaceWith(fallback);
       return undefined;
     }
 
@@ -236,9 +229,12 @@ export function HeroShaderBackground() {
     let animationFrame = 0;
     let inViewport = false;
     let startTime = performance.now();
+    let displayWidth = 0;
+    let displayHeight = 0;
+    let lastDraw = 0;
 
     const resize = () => {
-      const rect = canvas.getBoundingClientRect();
+      const rect = { width: displayWidth, height: displayHeight };
       const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
       const width = Math.max(1, Math.floor(rect.width * dpr));
       const height = Math.max(1, Math.floor(rect.height * dpr));
@@ -252,8 +248,13 @@ export function HeroShaderBackground() {
     };
 
     const render = (now: number) => {
-      if (!inViewport || document.hidden) return;
+      if (!inViewport || document.hidden || !displayWidth || !displayHeight) return;
 
+      if (!reducedMotion && now - lastDraw < 1000 / 24) {
+        animationFrame = window.requestAnimationFrame(render);
+        return;
+      }
+      lastDraw = now;
       gl.useProgram(program);
       gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
       gl.enableVertexAttribArray(positionLocation);
@@ -273,7 +274,7 @@ export function HeroShaderBackground() {
 
     const resume = () => {
       window.cancelAnimationFrame(animationFrame);
-      if (!inViewport || document.hidden) return;
+      if (!inViewport || document.hidden || !displayWidth || !displayHeight) return;
       resize();
       if (reducedMotion) {
         startTime = 0;
@@ -288,22 +289,26 @@ export function HeroShaderBackground() {
     });
     observer.observe(canvas);
     document.addEventListener('visibilitychange', resume);
-    const resizeObserver = new ResizeObserver(resume);
+    const resizeObserver = new ResizeObserver(([entry]) => {
+      displayWidth = entry.contentRect.width;
+      displayHeight = entry.contentRect.height;
+      resume();
+    });
     resizeObserver.observe(canvas);
 
-    window.addEventListener('resize', resize);
+    const pause = () => window.cancelAnimationFrame(animationFrame);
+    window.addEventListener('pagehide', pause);
+    window.addEventListener('pageshow', resume);
 
     return () => {
       observer.disconnect();
       resizeObserver.disconnect();
       document.removeEventListener('visibilitychange', resume);
-      window.removeEventListener('resize', resize);
+      window.removeEventListener('pagehide', pause);
+      window.removeEventListener('pageshow', resume);
       window.cancelAnimationFrame(animationFrame);
       gl.deleteBuffer(buffer);
       gl.deleteProgram(program);
     };
-  }, []);
 
-  if (staticBackground) return <div className="hero-shader-canvas" data-shader-ready="false" aria-hidden="true" />;
-  return <canvas ref={canvasRef} className="hero-shader-canvas" aria-hidden="true" />;
 }

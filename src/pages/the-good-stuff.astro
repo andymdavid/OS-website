@@ -1,7 +1,7 @@
 ---
 import SiteLayout from '@/layouts/SiteLayout.astro';
 import {readFile} from 'node:fs/promises';
-import { NavigationDraft } from "@/components/NavigationDraft";
+import NavigationDraft from '@/components/astro/Navigation.astro';
 import CTASection from "@/components/astro/CTA.astro";
 import Footer from '@/components/astro/Footer.astro';
 import "@/components/Hero.css";
@@ -37,7 +37,7 @@ const extractEpisodeNumber = (title: string) => {
         }}>
 <div class="os-theme os-draft min-h-screen the-good-stuff-page">
       
-      <NavigationDraft client:load
+      <NavigationDraft
         titleSwapOnScroll={{
           before: "OTHER STUFF",
           after: "INTELLIGENCE SNACKS",

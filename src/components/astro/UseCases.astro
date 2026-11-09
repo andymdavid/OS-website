@@ -6,6 +6,8 @@ import { WingmanDemo } from '../WingmanDemo';
 import { CAL_DISCOVERY_URL } from '../../lib/links';
 import BookCallContent from './BookCallContent.astro';
 import '../HomeDuplicateGridSection.css';
+import { deliveryImage, deliverySrcset } from '../../lib/delivery-assets';
+import deliveryAssets from '../../generated/delivery-assets.json';
 
 const cards = [
   {
@@ -80,15 +82,32 @@ const cards = [
                 </div>
               </div>
               <div class="home-duplicate-grid-visual">
-                <img class="home-grid-background"
-                  src={card.image.replace('/examples-', '/optimized/example-').replace('-landscape.webp', '-800.webp')}
-                  srcset={[480, 800].map(width => `${card.image.replace('/examples-', '/optimized/example-').replace('-landscape.webp', `-${width}.webp`)} ${width}w`).join(', ')}
-                  sizes="(max-width: 767px) calc(100vw - 48px), 45vw"
-                  width="800" height="450" alt="" loading="lazy" decoding="async" />
-                <div class="home-grid-demo">{card.demo === 'FormProcessingDemo' && <FormProcessingDemo client:visible />}{card.demo === 'AIChatDemo' && <AIChatDemo client:visible />}{card.demo === 'WingmanDemo' && <WingmanDemo client:visible />}{card.demo === 'DataAnalysisDemo' && <DataAnalysisDemo client:visible />}</div>
+                <picture class="home-grid-picture">
+                  <source type="image/avif" srcset={deliverySrcset(card.image.replace('/examples-', 'example-').replace('-landscape.webp', ''), [360,480,560,720,800,1120], 'avif')} sizes="(max-width: 768px) calc(100vw - 42px), calc((100vw - 2 * clamp(32px, 6vw, 120px) - 64px) / 2)" />
+                  <img class="home-grid-background" src={deliveryImage(card.image.replace('/examples-', 'example-').replace('-landscape.webp', ''), 800)} srcset={deliverySrcset(card.image.replace('/examples-', 'example-').replace('-landscape.webp', ''), [360,480,560,720,800,1120])} sizes="(max-width: 768px) calc(100vw - 42px), calc((100vw - 2 * clamp(32px, 6vw, 120px) - 64px) / 2)" width="800" height="800" alt="" loading="lazy" decoding="async" />
+                </picture>
+                <div class="home-grid-demo" data-font-stylesheet={card.demo === 'FormProcessingDemo' ? deliveryAssets.styles.demoFonts : undefined}>{card.demo === 'FormProcessingDemo' && <FormProcessingDemo client:visible />}{card.demo === 'AIChatDemo' && <AIChatDemo client:visible />}{card.demo === 'WingmanDemo' && <WingmanDemo client:visible />}{card.demo === 'DataAnalysisDemo' && <DataAnalysisDemo client:visible />}</div>
               </div>
             </article>
           ))}
         </div>
       </div>
     </section>
+
+<noscript><link rel="stylesheet" href={deliveryAssets.styles.demoFonts} /></noscript>
+<script>
+  const loaded = new Set<string>();
+  const observer = new IntersectionObserver(entries => {
+    for (const entry of entries) if (entry.isIntersecting) {
+      const element = entry.target as HTMLElement;
+      const href = element.dataset.fontStylesheet!;
+      if (!loaded.has(href)) {
+        loaded.add(href);
+        const link = document.createElement('link');
+        link.rel = 'stylesheet'; link.href = href; document.head.append(link);
+      }
+      observer.unobserve(element);
+    }
+  }, { rootMargin: '200px' });
+  document.querySelectorAll('[data-font-stylesheet]').forEach(element => observer.observe(element));
+</script>
