@@ -11,7 +11,7 @@
       if (!armed || triggered || event.clientY > 0 || event.relatedTarget) return;
       triggered = true;
       try { localStorage.setItem(key, String(Date.now())); } catch { /* Storage is optional. */ }
-      import('../../lib/newsletter-dialog').then(module => module.openNewsletter({ heading: 'Before you go, get Intelligence Snacks in your inbox.' }));
+      import('../../lib/newsletter-dialog').then(module => module.openNewsletter({ heading: 'Before you go, get Intelligence Snacks in your inbox.', description: 'Quickly digest the big ideas emerging from the world of AI, delivered to your inbox each week.' }));
     });
   }
 </script>

@@ -1,5 +1,6 @@
 const { verifyEvent } = require('nostr-tools/pure');
 const { WebSocket } = require('ws');
+const { isIP } = require('node:net');
 const COLLECTOR = 'd8a066f85d621d634e24ee0bf741e27b6436af28782195de8aa90972e310e937';
 const RELAY = 'wss://relay.contextvm.org';
 
@@ -32,7 +33,10 @@ function createAnalyticsHandler({ collector = COLLECTOR, publish = publishToRela
     const event = req.body?.event;
     if (!event || event.kind !== 1059 || typeof event.content !== 'string' || event.content.length > 6000 || Math.abs(Date.now() / 1000 - event.created_at) > 120 || !Array.isArray(event.tags) || event.tags.length !== 1 || event.tags[0]?.[0] !== 'p' || event.tags[0]?.[1] !== collector || !verifyEvent(event)) return res.status(400).json({ error: 'Invalid analytics event' });
     const now = Date.now();
-    const key = req.ip;
+    // Only the loopback-bound API is reachable by nginx, which overwrites this
+    // header. Never accept an arbitrary forwarded chain as the rate-limit key.
+    const forwarded = req.get('x-real-ip');
+    const key = ['127.0.0.1', '::1', '::ffff:127.0.0.1'].includes(req.ip) && isIP(forwarded || '') ? forwarded : req.ip;
     const bucket = buckets.get(key);
     if (bucket && now - bucket.start < 60000 && bucket.count >= 120) return res.status(429).json({ error: 'Too many analytics events' });
     if (!bucket || now - bucket.start >= 60000) buckets.set(key, { start: now, count: 1 }); else bucket.count++;

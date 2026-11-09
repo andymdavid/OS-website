@@ -6,11 +6,11 @@ function markdownLinks(text) {
 const absoluteUrl = path => new URL(path.endsWith('/') ? path : path+'/', 'https://otherstuff.ai').href;
 export function buildLlmsText(writingPosts, newsletterIssues) {
   const postList = writingPosts
-    .map((post) => `- ${absoluteUrl(`/writing/${post.slug}`)}`)
+    .map((post) => `- [${post.title.replace(/[\[\]]/g, '')}](${absoluteUrl(`/writing/${post.slug}`)})`)
     .join('\n');
   const newsletterList = newsletterIssues
     .filter((issue) => !issue.noindex)
-    .map((issue) => `- ${absoluteUrl(issue.path)}`)
+    .map((issue) => `- [${issue.title.replace(/[\[\]]/g, '')}](${absoluteUrl(issue.path)})`)
     .join('\n');
 
   return markdownLinks(`# Other Stuff
@@ -91,10 +91,10 @@ For a fuller machine-readable summary, see:
 
 export function buildLlmsFullText(writingPosts, newsletterIssues) {
   const postList = writingPosts.length > 0
-    ? writingPosts.map((post) => `- ${absoluteUrl(`/writing/${post.slug}`)}`).join('\n')
+    ? writingPosts.map((post) => `- [${post.title.replace(/[\[\]]/g, '')}](${absoluteUrl(`/writing/${post.slug}`)})`).join('\n')
     : '- No writing posts published yet';
   const newsletterList = newsletterIssues.length > 0
-    ? newsletterIssues.map((issue) => `- ${absoluteUrl(issue.path)}`).join('\n')
+    ? newsletterIssues.map((issue) => `- [${issue.title.replace(/[\[\]]/g, '')}](${absoluteUrl(issue.path)})`).join('\n')
     : '- No newsletter issues published yet';
 
   return markdownLinks(`# Other Stuff - Full LLM Reference

@@ -15,7 +15,7 @@ for (let run = 1; run <= Number(count); run++) {
     const result = await lighthouse(url, {
       port: chrome.port,
       output: 'json',
-      onlyCategories: ['performance'],
+      onlyCategories: process.env.PERFORMANCE_ALL_CATEGORIES ? ['performance', 'accessibility', 'best-practices', 'seo', 'agentic-browsing'] : ['performance'],
       ...(device === 'desktop' ? { preset: 'desktop' } : {}),
       blockedUrlPatterns: ['*unpkg.com/nanalytics-tracker*'],
       disableFullPageScreenshot: true,

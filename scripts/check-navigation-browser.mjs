@@ -27,10 +27,19 @@ try {
     }
     await page.getByRole('button', { name: /Big ideas on AI/ }).click();
     const modal = page.locator('.modal-overlay'); await expect(modal).toBeVisible();
+    await expect(modal.getByRole('button', { name: 'Close modal' })).toBeFocused();
     await modal.locator('input[type=email]').fill('navigation-check@example.invalid');
     await modal.locator('button[type=submit]').click(); await expect(modal).toHaveCount(0);
     await page.getByRole('button', { name: /Big ideas on AI/ }).click(); await expect(modal).toBeVisible();
     await page.keyboard.press('Escape'); await expect(modal).toHaveCount(0);
+    if (width === 1440) {
+      await page.waitForTimeout(10100);
+      await page.dispatchEvent('html', 'mouseout', { clientY: 0, relatedTarget: null });
+      await expect(modal.locator('h2')).toHaveText('Before you go, get Intelligence Snacks in your inbox.');
+      await expect(modal.locator('.modal-subpara')).toHaveText('Quickly digest the big ideas emerging from the world of AI, delivered to your inbox each week.');
+      await page.keyboard.press('Escape');
+      assert.ok(Number(await page.evaluate(() => localStorage.getItem('os-home-duplicate-newsletter-exit-dismissed-at'))) > 0);
+    }
     assert.deepEqual(errors, []); console.log(`${width}px native menus, keyboard/focus, lazy newsletter, mocked signup and Escape pass.`);
     await context.close();
   }

@@ -2,7 +2,7 @@ import { createElement } from 'react';
 import { createRoot, type Root } from 'react-dom/client';
 import { NewsletterModal } from '../components/NewsletterModal';
 let root: Root | undefined;
-export function openNewsletter(options: { heading?: string } = {}) {
+export function openNewsletter(options: { heading?: string; description?: string } = {}) {
   if (root) return;
   const previousFocus = document.activeElement as HTMLElement | null;
   const host = document.createElement('div');
