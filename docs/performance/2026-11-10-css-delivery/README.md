@@ -14,7 +14,7 @@ Keep production CSS delivery unchanged. Two native Astro inlining experiments im
 
 ## Matched local experiments
 
-Baseline source: main/deployed `a1c16ac170c40922395f115fc61a19a9bfbb116f`. Both builds served by the same local Node static server on separate ports, with gzip for HTML/CSS/JS and identical handling of assets and API failures. Chromium 150 from Playwright 1254, Lighthouse 13.6 default mobile simulated throttling, fresh Chrome process per run. No simultaneous browser test workload. These are local lab comparisons, not Google server reproductions. Local response latency differs substantially from Google's test location.
+Baseline source: main/deployed `a1c16ac170c40922395f115fc61a19a9bfbb116f`. Both builds served by the same local Node static server on separate ports, with gzip for HTML/CSS/JS and identical handling of assets and API failures. Chromium 158 from Playwright 1254, Lighthouse 13.6 default mobile simulated throttling, fresh Chrome process per run. No simultaneous browser test workload. These are local lab comparisons, not Google server reproductions. Local response latency differs substantially from Google's test location.
 
 | Variant/run | FCP/LCP ms | Speed Index ms | TBT ms |
 | --- | ---: | ---: | ---: |
