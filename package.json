@@ -27,7 +27,8 @@
     "check:navigation": "node scripts/check-navigation-browser.mjs",
     "check:bfcache": "node scripts/check-bfcache.mjs",
     "check:static-backgrounds": "node scripts/check-static-backgrounds.mjs",
-    "check:secondary-delivery": "node scripts/check-secondary-delivery.mjs"
+    "check:secondary-delivery": "node scripts/check-secondary-delivery.mjs",
+    "check:home-critical-css": "node scripts/check-home-critical-css.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^7.1.4",
@@ -49,6 +50,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "beasties": "0.5.5",
     "eslint": "^9",
     "lighthouse": "^13.6.0",
     "sharp": "^0.35.5",

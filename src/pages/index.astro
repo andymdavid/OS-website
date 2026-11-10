@@ -20,14 +20,44 @@ import { organizationSchema, websiteSchema } from '../lib/structured-data';
     <NavigationDraft />
     <main>
       <Hero />
+      <!-- critical-css:main:start -->
       <FunnelHomeDuplicate />
       <HomeDuplicateGridSection />
       <HomeDuplicateCanvasSection />
       <HomeDuplicateComparison />
       <FAQHomeDuplicate />
       <CTAHomeDuplicate heading="What’s eating your team’s week?" intro="Book a free 45-minute call with Pete and Andy. We’ll look at how work moves through your business and tell you what we’d automate first and what it would cost." />
+      <!-- critical-css:main:end -->
     </main>
+    <!-- critical-css:footer:start -->
     <HomeDuplicateExitNewsletter />
     <FooterHomeDuplicate />
+    <!-- critical-css:footer:end -->
   </div>
 </SiteLayout>
+
+<style is:global>
+  /* Reserve offscreen section space without laying out its contents on load.
+     Auto remembers the real height once rendered; unsupported browsers render normally. */
+  @supports (content-visibility: auto) {
+    .os-home-duplicate .funnel-section-home-duplicate { content-visibility: auto; contain-intrinsic-block-size: auto 950px; }
+    .os-home-duplicate .home-comparison-section { content-visibility: auto; contain-intrinsic-block-size: auto 995px; }
+    .os-home-duplicate .faq-section-home { content-visibility: auto; contain-intrinsic-block-size: auto 835px; }
+    .os-home-duplicate .cta-section-home { content-visibility: auto; contain-intrinsic-block-size: auto 381px; }
+    .os-home-duplicate .footer-home-duplicate { content-visibility: auto; contain-intrinsic-block-size: auto 630px; }
+    @media (min-width: 769px) and (max-width: 1199px) {
+      .os-home-duplicate .funnel-section-home-duplicate { contain-intrinsic-block-size: auto 1887px; }
+      .os-home-duplicate .home-comparison-section { contain-intrinsic-block-size: auto 975px; }
+      .os-home-duplicate .faq-section-home { contain-intrinsic-block-size: auto 815px; }
+      .os-home-duplicate .cta-section-home { contain-intrinsic-block-size: auto 360px; }
+      .os-home-duplicate .footer-home-duplicate { contain-intrinsic-block-size: auto 945px; }
+    }
+    @media (max-width: 768px) {
+      .os-home-duplicate .funnel-section-home-duplicate { contain-intrinsic-block-size: auto 2150px; }
+      .os-home-duplicate .home-comparison-section { contain-intrinsic-block-size: auto 950px; }
+      .os-home-duplicate .faq-section-home { contain-intrinsic-block-size: auto 740px; }
+      .os-home-duplicate .cta-section-home { contain-intrinsic-block-size: auto 350px; }
+      .os-home-duplicate .footer-home-duplicate { contain-intrinsic-block-size: auto 1185px; }
+    }
+  }
+</style>

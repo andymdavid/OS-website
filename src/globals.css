@@ -1,4 +1,6 @@
-@import "tailwindcss";
+/* Only application and editorial sources may generate utility CSS. */
+@import "tailwindcss" source("./");
+@source "../content";
 
 
 /* ==========================================================================
