@@ -7,7 +7,6 @@ const cards = [
   {
     category: 'Ambulando',
     title: 'Build and run your own AI workforce.',
-    titleLines: ['Build and run your', 'own AI workforce.'],
     description: 'We set up Ambulando, the shared workspace where your people and AI agents build and manage automations together.',
     price: 'From $500 a month.',
     image: '/home-help-ambulando.webp',
@@ -18,7 +17,6 @@ const cards = [
   {
     category: 'Automation Partner',
     title: 'We automate more of your business each month.',
-    titleLines: ['We automate more of your', 'business each month.'],
     description: 'We join your team each month, find the work costing you the most time and automate it one workflow at a time.',
     price: 'From $5k a month. Cancel anytime',
     image: '/home-help-automation-partner.webp',
@@ -30,7 +28,6 @@ const cards = [
   {
     category: 'Custom Software',
     title: 'Own the software your business runs on.',
-    titleLines: ['Own the software your', 'business runs on.'],
     description: 'When a workflow needs its own software, we design and build it around the way your team already works.',
     price: 'Quoted per project',
     image: '/home-help-custom-software.webp',
@@ -78,9 +75,7 @@ const {showFooter=true,showRecommendation=true,content}=Astro.props;
             <div class="funnel-card-header"><span class="funnel-card-category">{cardContent?.category ?? card.category}</span></div>
             <div class="funnel-card-body">
               <h3>
-                {cardContent ? cardContent.title : (
-                  <Fragment>{card.titleLines[0]}<br class="funnel-card-title-break" />{card.titleLines[1]}</Fragment>
-                )}
+                {cardContent?.title ?? card.title}
               </h3>
               <p class="funnel-card-description">{cardContent?.description ?? card.description}</p>
               {showFooter && <p class="funnel-card-price">{card.price}</p>}

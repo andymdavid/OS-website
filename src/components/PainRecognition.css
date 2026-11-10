@@ -1,3 +1,13 @@
+/* Fixed signature subset of the original Caveat, licensed under the OFL.
+   Source/licence: public/fonts/google. Regenerate with prepare-signature-font.py. */
+@font-face {
+  font-family: 'Caveat Signature';
+  src: url('../assets/caveat-signature.woff2?no-inline') format('woff2');
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+}
+
 /* ==========================================================================
    PAIN RECOGNITION SECTION — SCROLL REVEAL
    ========================================================================== */
@@ -48,7 +58,7 @@
 .pain-recognition-signature {
   margin: 0 0 18px;
   color: #ffffff;
-  font-family: 'Caveat', cursive !important;
+  font-family: 'Caveat Signature', cursive !important;
   font-size: clamp(34px, 4vw, 46px) !important;
   font-weight: 500 !important;
   line-height: 1 !important;

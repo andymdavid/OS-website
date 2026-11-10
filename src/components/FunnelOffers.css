@@ -324,7 +324,8 @@
 
 .os-home-duplicate .funnel-section-home-duplicate .funnel-card {
   display: grid;
-  grid-template-rows: auto auto 1fr auto;
+  grid-template-rows: auto auto auto auto;
+  align-content: start;
   min-height: 580px;
   aspect-ratio: auto;
   padding: clamp(22px, 2.4vw, 32px);
@@ -392,16 +393,21 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
-  gap: 18px;
-  padding-top: clamp(22px, 2.6vw, 34px);
+  gap: var(--space-card-copy);
+  padding-top: 16px;
 }
 
 .os-home-duplicate .funnel-section-home-duplicate .funnel-card h3,
 .os-home-duplicate .funnel-section-home-duplicate .funnel-card:hover h3 {
-  min-height: 2.2em;
+  min-height: 0;
   max-width: none;
-  font-size: clamp(20px, 1.72vw, 22px);
-  line-height: 1.1;
+  margin: 0;
+  font-family: var(--font-card-title);
+  font-size: var(--size-card-title);
+  font-weight: var(--weight-bold);
+  line-height: var(--line-card-title);
+  letter-spacing: 0;
+  text-transform: none;
   white-space: normal;
   overflow-wrap: break-word;
   text-wrap: balance;
@@ -423,10 +429,11 @@
   max-height: none;
   overflow: visible;
   white-space: pre-line;
+  margin: 0;
 }
 
 .os-home-duplicate .funnel-section-home-duplicate .funnel-card-price {
-  margin-top: auto;
+  margin: 0;
   color: rgba(240, 240, 240, 0.92);
   font-family: var(--font-ui);
   font-size: 13px;
@@ -504,9 +511,15 @@
 
 .os-home-duplicate .funnel-section-home-duplicate .funnel-card-button {
   align-self: start;
-  width: 132px;
-  min-width: 132px;
-  margin-top: clamp(20px, 2vw, 28px);
+  width: fit-content;
+  min-width: 0;
+  max-width: 100%;
+  height: auto;
+  min-height: 35px;
+  padding: 9px 18px;
+  white-space: normal;
+  text-align: center;
+  margin-top: var(--space-card-copy);
   background: #f0f0f0;
   color: #050505;
   border-color: #f0f0f0;
@@ -730,7 +743,7 @@
   }
 
   .os-home-duplicate .funnel-section-home-duplicate .funnel-card-button {
-    width: 132px;
+    width: fit-content;
   }
 }
 
@@ -761,11 +774,11 @@
 
   .os-home-duplicate .funnel-section-home-duplicate .funnel-card h3,
 .os-home-duplicate .funnel-section-home-duplicate .funnel-card:hover h3 {
-    font-size: 20px;
+    font-size: var(--size-card-title);
   }
 
   .os-home-duplicate .funnel-section-home-duplicate .funnel-card-button {
-    width: 132px;
+    width: fit-content;
   }
 
   .os-home-duplicate .funnel-section-home-duplicate .funnel-card-button:hover,

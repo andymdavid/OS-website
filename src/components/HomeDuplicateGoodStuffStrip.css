@@ -5,10 +5,9 @@
   right: 0;
   z-index: calc(var(--z-nav) + 1);
   padding: 0;
-  background: rgba(5, 5, 5, 0.66);
+  background: #050505;
   border-bottom: 1px solid rgba(240, 240, 240, 0.1);
-  backdrop-filter: blur(9px);
-  -webkit-backdrop-filter: blur(9px);
+
 }
 
 .home-duplicate-good-stuff-strip button {

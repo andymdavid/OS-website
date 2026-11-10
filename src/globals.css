@@ -25,6 +25,11 @@
   --font-heading: 'Figtree', sans-serif;
   --font-eyebrow: 'Silkscreen', monospace;
   --font-body: 'Inter', sans-serif;
+  --font-card-title: 'Figtree', sans-serif;
+  --size-card-title: 22px;
+  --line-card-title: 1.2;
+  --space-card-copy: 12px;
+
   --font-ui: 'Alfabet Regular', 'Alfabet', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
   /* Font Weights */

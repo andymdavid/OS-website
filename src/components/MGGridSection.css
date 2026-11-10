@@ -48,3 +48,33 @@
     margin-bottom: 64px;
   }
 }
+
+/* Keep the sizing transform on a real element around each lazy Astro island. */
+.automation-demo-live {
+  width: 100%;
+}
+
+.home-duplicate-grid-visual > noscript {
+  display: contents;
+}
+
+.automation-demo-fallback {
+  position: absolute;
+  z-index: 2;
+  color: var(--color-text);
+  inset: 28px;
+  padding: 24px;
+  border: 1px solid rgba(240, 240, 240, 0.12);
+  border-radius: 8px;
+  background: #0c0c0b;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+.automation-demo-fallback strong {
+  font-family: var(--font-card-title);
+  font-size: var(--size-card-title);
+  line-height: var(--line-card-title);
+}
