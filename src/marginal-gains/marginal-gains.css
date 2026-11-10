@@ -308,8 +308,8 @@
 .marginal-gains-page .speedrun-card .expandable-card-body h3 {
   color: #ffffff;
   margin: 9px 0 0;
-  font-family: 'Figtree', sans-serif;
-  font-size: 22px;
+  font-family: var(--font-card-title);
+  font-size: var(--size-card-title);
   font-weight: var(--weight-bold);
   line-height: 1.2;
   text-transform: none;
@@ -323,8 +323,8 @@
 }
 
 .marginal-gains-page .speedrun-levelup-card h3 {
-  font-family: 'Figtree', sans-serif;
-  font-size: 22px;
+  font-family: var(--font-card-title);
+  font-size: var(--size-card-title);
   font-weight: var(--weight-bold);
   line-height: 1.2;
   text-transform: none;
