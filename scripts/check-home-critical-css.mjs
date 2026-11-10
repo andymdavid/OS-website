@@ -62,7 +62,7 @@ try {
       assert.ok(await slowPage.locator('h1').isVisible());
       release();
       await slowPage.waitForFunction(() => !document.querySelector('link[data-home-css]'));
-      assert.equal(await slowPage.evaluate(() => Array.from(document.styleSheets).filter(s => s.href?.includes('/_astro/')).length), stylesheets.length);
+      await slowPage.waitForFunction(count => Array.from(document.styleSheets).filter(s => s.href?.includes('/_astro/')).length === count, stylesheets.length);
       const question = slowPage.locator('.faq-section-home summary').first();
       await question.scrollIntoViewIfNeeded(); await question.click();
       assert.equal(await slowPage.locator('.faq-section-home details').first().getAttribute('open'), '');
