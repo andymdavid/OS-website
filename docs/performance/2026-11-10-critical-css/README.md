@@ -23,7 +23,7 @@ Baseline: rebuilt main `a1c16ac170c40922395f115fc61a19a9bfbb116f`. Both versions
 | Candidate run 2 | 0.802s | 0.802s | 63ms | 100 |
 | Final mobile, all categories | 0.885s | 0.885s | 105ms | 99 |
 
-Final mobile accessibility, best practices and SEO all scored 100; CLS was 0.00038. The render-blocking request audit lists no blocking stylesheets, versus four for the baseline. Main-thread work was 1.76–1.93s, compared with 2.05s in the matched baseline.
+Final desktop scored 100 in all four categories, with FCP/LCP 0.262s, Speed Index 0.377s and TBT 0ms. Final mobile accessibility, best practices and SEO all scored 100; CLS was 0.00038. The render-blocking request audit lists no blocking stylesheets, versus four for the baseline. Main-thread work was 1.76–1.93s, compared with 2.05s in the matched baseline.
 
 The gain is earlier visual progress with some work now occurring after first paint. TBT is higher than the baseline, although below 200ms in these runs. This is not a claim of zero blocking or guaranteed public scores. The extra compressed HTML is about 5.1KB (27,348 → 32,460 bytes); sampled total transfer grew approximately 4.9KB. Complete cacheable stylesheets remain available for other routes and warm navigation.
 
