@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
+import homeCriticalCss from './integrations/home-critical-css.mjs';
 import tailwindcss from '@tailwindcss/postcss';
 import { fileURLToPath } from 'node:url';
 
@@ -10,6 +11,6 @@ export default defineConfig({
   image: { remotePatterns: [{ protocol: 'https', hostname: 'beehiiv-images-production.s3.amazonaws.com' }] },
   outDir: './dist',
   build: { inlineStylesheets: 'auto' },
-  integrations: [react()],
+  integrations: [react(), homeCriticalCss()],
   vite: { build: { assetsInlineLimit: 12000 }, css: { postcss: { plugins: [tailwindcss()] } }, resolve: { alias: { 'tailwindcss': fileURLToPath(new URL('./node_modules/tailwindcss/index.css', import.meta.url)), '@': fileURLToPath(new URL('./src', import.meta.url)) } } },
 });

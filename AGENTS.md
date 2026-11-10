@@ -25,3 +25,5 @@ Hero and footer backgrounds use static stills rendered from the original shader,
 ## Reviews
 
 Work on a scoped branch. Describe user-visible changes, validation and remaining limitations in the PR. UI changes need browser evidence, including representative mobile/desktop and no-JavaScript content. Publishing changes need create/edit/delete/slug-change checks. A local performance run is lab evidence; report settings and compare matched runs. Never claim deployment from a build, PR or webhook response.
+
+Homepage critical CSS is extracted at build time using marked main/footer boundaries in `src/pages/index.astro`. Preserve those boundaries and run `npm run check:home-critical-css` when changing the homepage or CSS delivery. Keep complete CSS and no-JavaScript/fragment fallbacks; verify header/menu states with deferred CSS unavailable.
