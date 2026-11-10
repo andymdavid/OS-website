@@ -72,7 +72,7 @@ try {
 
     const anchor = await browser.newPage({ viewport: { width, height: 900 } });
     await anchor.goto(`${base}/#services`);
-    assert.ok(await anchor.evaluate(() => scrollY > 0));
+    await anchor.waitForFunction(() => scrollY > 0, null, { timeout: 5000 });
     assert.equal(await anchor.locator('link[data-home-css]').count(), 0);
     assert.equal(await anchor.evaluate(() => Array.from(document.styleSheets).filter(s => s.href?.includes('/_astro/')).length), stylesheets.length);
     await anchor.close();
