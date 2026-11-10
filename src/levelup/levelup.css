@@ -19,7 +19,7 @@
   text-transform: none !important;
 }
 
-.levelup-page h2 {
+.levelup-page h2:where(:not(.footer h2)) {
   font-family: 'Cormorant Garamond', serif !important;
   font-weight: 400 !important;
   font-size: clamp(26px, 4.2vw, 42px) !important;
@@ -138,7 +138,7 @@
 }
 
 @media (max-width: 768px) {
-  .levelup-page h2 {
+  .levelup-page h2:where(:not(.footer h2)) {
     font-size: 32px !important;
   }
 

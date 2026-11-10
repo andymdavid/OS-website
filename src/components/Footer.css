@@ -1,6 +1,11 @@
 /* Footer Styles */
 
 .footer {
+  /* Own the inherited values so workshop and editorial themes cannot change the footer. */
+  --color-background: #0f0e0d;
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.3;
   position: relative;
   isolation: isolate;
   background: var(--color-background);
@@ -36,13 +41,13 @@
   opacity: 0.18;
 }
 
-.os-home-duplicate .footer-home-duplicate {
+.footer.footer-home-duplicate {
   background: #050505;
   border-top: 0;
   min-height: 75vh;
 }
 
-.os-home-duplicate .footer-home-duplicate .hero-gradient-background {
+.footer.footer-home-duplicate .hero-gradient-background {
   position: absolute;
   inset: 0;
   z-index: 0;
@@ -50,7 +55,7 @@
   height: 100%;
 }
 
-.os-home-duplicate .footer-home-duplicate::before {
+.footer.footer-home-duplicate::before {
   left: 0;
   right: 0;
   top: auto;
@@ -67,7 +72,7 @@
   opacity: 1;
 }
 
-.os-home-duplicate .footer-home-duplicate::after {
+.footer.footer-home-duplicate::after {
   z-index: 1;
   background:
     radial-gradient(circle at 50% 51%, rgba(5, 5, 5, 0.24), transparent 34%),
@@ -77,7 +82,7 @@
   opacity: 1;
 }
 
-.os-home-duplicate .footer-home-duplicate .footer-container {
+.footer.footer-home-duplicate .footer-container {
   z-index: 3;
 }
 
@@ -142,7 +147,7 @@
   width: min(100%, 330px);
 }
 
-.footer-newsletter h2 {
+.footer .footer-newsletter h2 {
   font-family: var(--font-eyebrow);
   font-size: 12px;
   font-weight: var(--weight-regular);
@@ -192,7 +197,7 @@
   flex-direction: column;
 }
 
-.footer-column h2 {
+.footer .footer-column h2 {
   font-family: var(--font-eyebrow);
   font-size: 12px;
   font-weight: var(--weight-regular);
