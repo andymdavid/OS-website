@@ -16,6 +16,8 @@ Sales proposal preparation means reconciling what the client asked for, what the
 
 Choose a repeatable proposal type before designing its preparation workflow. If you're still deciding which work to automate, start with [choosing a first automation workflow](/writing/where-custom-ai-systems-create-margin-first/). For proposals, the job is to turn approved material into a document someone can authorise for release.
 
+![Proposal preparation moves from approved inputs to a draft, then through human review. Missing information returns to its owner. Only an authorised person releases the approved version.](/images/writing/proposal-review-flow.svg)
+
 ## Define the proposal and its source material
 
 Begin with one proposal type, such as a fixed-scope discovery workshop and operations review. Gather the records that authorise its contents. A previous proposal can help with structure, but its prices, client details and commitments need fresh authority before reuse. For each input, [record its owner, version or date, permitted use](/writing/getting-business-knowledge-ready-for-ai/) and what happens if it's missing.

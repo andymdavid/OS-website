@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import {renderMarkdown} from '../src/lib/writing-source.mjs';
+const table=renderMarkdown('Before\n| Measure | Result |\n| --- | --- |\n| **Capacity** | 60 hours |\n\nAfter');
+assert(table.includes('<p>Before</p>'));assert(table.includes('<th scope="col">Measure</th>'));assert(table.includes('<td><strong>Capacity</strong></td>'));assert(table.includes('<p>After</p>'));assert(table.includes('tabindex="0"'));
+const unsafe=renderMarkdown('| Name | Value |\n| --- | --- |\n| <script>alert(1)</script> | [unsafe](javascript:alert) |');
+assert(!unsafe.includes('<script>'));assert(unsafe.includes('&lt;script&gt;'));assert(unsafe.includes('href="#"'));
+const escaped=renderMarkdown('| Name | Value |\n| --- | --- |\n| A \\| B | 1 |');assert(escaped.includes('<td>A | B</td>'));
+assert(!renderMarkdown('| Name | Value |\n| nope | --- |').includes('<table>'));
+const end=renderMarkdown('| Name | Value |\n| --- | --- |\n| A | 1 |\n| malformed |\n\n## Next');assert(end.includes('<p>| malformed |</p>'));assert(end.includes('<h2>Next</h2>'));
+console.log('Table rendering, accessibility, escaped pipes, malformed boundaries and HTML/URL safety pass.');

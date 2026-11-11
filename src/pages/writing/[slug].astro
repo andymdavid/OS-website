@@ -71,20 +71,6 @@ const postUrl = absoluteUrl(`/writing/${post.slug}`);
               <span class="writing-post-date">{post.readTime}</span>
             </div>
 
-            {post.thumbnail !== "/Hero-Background.webp" && <div class="writing-post-feature">
-              <img
-                src={writingImage(post.thumbnail)}
-                srcset={writingImageSrcSet(post.thumbnail)}
-                sizes="(max-width: 1080px) calc(100vw - 48px), 1080px"
-                alt={post.title}
-                width="1456"
-                height="816"
-                loading="eager"
-                fetchpriority="high"
-                decoding="async"
-              />
-            </div>}
-
             <p class="writing-post-subheader">
               {post.intro}
             </p>

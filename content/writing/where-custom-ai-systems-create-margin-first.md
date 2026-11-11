@@ -89,6 +89,15 @@ Write acceptance checks for routine and awkward cases.
 
 Expand only when the required checks pass on unseen cases and the complete handling effort compares favourably with the matched manual baseline. Critical failures mean stopping. For correctable gaps, revise and retest. If review consumes the expected benefit, defer the workflow. Even after a successful small trial, you'll need to establish readiness for broader use.
 
+Use the trial findings to decide what happens next:
+
+| Decision | Evidence from the trial |
+| --- | --- |
+| Expand within the tested boundary | Required checks pass on unseen cases and complete handling effort compares favourably with the manual baseline |
+| Revise and retest | A correctable gap remains in sources, drafting or review |
+| Stop and review | A critical failure breaks the agreed boundary |
+| Defer | Checking consumes the expected benefit or ownership remains unresolved |
+
 ## Make the first workflow a useful test
 
 The best first workflow gives you a useful result you can check, with records you can trust and someone who owns the decision. A frequent task is a promising candidate, but its value depends on how much work remains after the draft is produced. The comparison above helps make that trade-off visible before you invest.

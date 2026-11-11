@@ -84,6 +84,17 @@ First-year economic ROI is AUD12,000 ÷ AUD16,800 × 100, or approximately 71.4%
 
 The AUD2,700 capacity valuation stays outside the ROI numerator. Payroll remains unchanged, and the incremental contribution uses that baseline. Cash payback needs its own schedule of actual receipts and payments, consistently excluding opportunity costs. You can't turn this economic payback into cash payback by changing only the setup figure.
 
+The same example separates available capacity from a financial return:
+
+| Measure | Hypothetical result | What it means |
+| --- | --- | --- |
+| Recovered staff capacity | 60 hours per month | Time available for another use, with payroll unchanged |
+| Capacity valued at AUD45 per hour | AUD2,700 per month | Excluded from the ROI numerator |
+| Setup and first-year running costs | AUD16,800 | Full first-year economic cost |
+| Financial benefit without an evidenced use of time | AUD0 | No payback under the stated recognition rule |
+| Conditional monthly net benefit | AUD1,500 | Depends on actually realising the stated additional contribution |
+| Conditional simple economic payback | Four months | Assumes steady benefits and costs, rather than a cash-flow schedule |
+
 ## Test the assumptions that decide the result
 
 Even if the technology works, lower adoption can push payback further out. Hold all other costs and handling times fixed, but reduce adoption to 50%. Now 200 reports release 200 × 12 ÷ 60 = 40 hours a month. If demand and scheduling allow only 30 of those hours to earn AUD60 contribution each, monthly benefit is AUD1,800. Monthly net economic benefit is AUD900 and simple economic payback is AUD6,000 ÷ AUD900, or about 6.7 months.
