@@ -344,7 +344,37 @@
 .writing-post-page .writing-post-table td { color: rgba(240,240,240,.8); }
 .writing-post-page .writing-post-table tbody tr:last-child td { border-bottom: 0; }
 
-.writing-post-page .writing-post-content figure img[src$=".svg"] { max-width: 480px; height: auto; }
+
 @media (max-width: 600px) {
   .writing-post-page .writing-post-table::before { content: 'Scroll to see all columns →'; display: block; position: sticky; left: 0; padding: 8px 12px; font: 12px var(--font-ui); color: rgba(240,240,240,.7); }
+}
+
+/* Editorial headers size to their content, rather than the homepage section height. */
+.writing-post-page:not(.legal-page) .writing-post-hero.section {
+  min-height: 0;
+  height: auto;
+  padding-top: clamp(172px, 16vw, 224px) !important;
+  padding-bottom: 48px !important;
+}
+.writing-post-page:not(.legal-page) .writing-post-hero-inner { display: flex; flex-direction: column; align-items: flex-start; }
+.writing-post-page:not(.legal-page) .writing-post-title { margin: 28px 0 0; max-width: 20ch; line-height: 1.1; }
+.writing-post-page:not(.legal-page) .writing-post-meta { margin-top: 28px; column-gap: 18px; row-gap: 12px; }
+.writing-post-page:not(.legal-page) .writing-post-subheader { margin: 32px 0 0; max-width: 68ch; line-height: 1.65; }
+.writing-post-page:not(.legal-page) .writing-post-share { margin-top: 28px; gap: 20px; line-height: 1.5; }
+.writing-post-page:not(.legal-page) .writing-post-body.section { padding-top: 16px !important; }
+.writing-post-page .writing-workflow { margin: 32px 0 40px; padding: 24px; border: 1px solid var(--color-border); border-radius: 8px; }
+.writing-post-page .writing-workflow figcaption { margin: 0 0 24px; font: 500 20px/1.4 var(--font-ui); color: var(--color-text); }
+.writing-post-page .writing-post-content .writing-workflow ol { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px; padding: 0; margin: 0; list-style: none; }
+.writing-post-page .writing-post-content .writing-workflow li { padding: 16px 0 0; margin: 0; border-top: 1px solid var(--color-border); }
+.writing-post-page .writing-workflow-step { display: block; margin-bottom: 12px; font: 400 12px/1.4 var(--font-ui); color: rgba(240,240,240,.5); }
+.writing-post-page .writing-workflow-title { display: block; margin-bottom: 8px; font: 500 17px/1.4 var(--font-ui); color: var(--color-text); }
+.writing-post-page .writing-workflow-detail { display: block; font: 400 15px/1.65 var(--font-ui); color: rgba(240,240,240,.75); }
+@media (max-width:600px) {
+  .writing-post-page:not(.legal-page) .writing-post-hero.section { padding-top: 164px !important; padding-bottom: 40px !important; }
+  .writing-post-page:not(.legal-page) .writing-post-title { margin-top: 24px; font-size: clamp(34px,8.7vw,44px); }
+  .writing-post-page:not(.legal-page) .writing-post-meta { margin-top: 24px; }
+  .writing-post-page:not(.legal-page) .writing-post-author { flex-basis: 100%; }
+  .writing-post-page:not(.legal-page) .writing-post-subheader { margin-top: 28px; }
+  .writing-post-page .writing-workflow { padding: 20px; }
+  .writing-post-page .writing-post-content .writing-workflow ol { grid-template-columns: 1fr; gap: 20px; }
 }

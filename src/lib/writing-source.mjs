@@ -89,6 +89,21 @@ export function renderMarkdown(markdown) {
       continue;
     }
 
+    if (line.startsWith(':::workflow ')) {
+      const title = line.slice(':::workflow '.length).trim();
+      const end = lines.findIndex((candidate, at) => at > index && candidate.trim() === ':::');
+      if (end === -1) throw new Error('Unclosed workflow block.');
+      const steps = lines.slice(index + 1, end).filter(item => item.trim()).map(item => {
+        const separator = item.indexOf('|');
+        if (separator < 1 || !item.slice(separator + 1).trim()) throw new Error('Workflow steps require a title and detail separated by |.');
+        return [item.slice(0, separator).trim(), item.slice(separator + 1).trim()];
+      });
+      if (!title || steps.length < 2 || steps.length > 8) throw new Error('Workflow requires a title and two to eight steps.');
+      blocks.push(`<figure class="writing-workflow"><figcaption>${renderInline(title)}</figcaption><ol>${steps.map(([label, detail], step) => `<li><span class="writing-workflow-step" aria-hidden="true">${String(step + 1).padStart(2, '0')}</span><strong class="writing-workflow-title">${renderInline(label)}</strong><span class="writing-workflow-detail">${renderInline(detail)}</span></li>`).join('')}</ol></figure>`);
+      index = end + 1;
+      continue;
+    }
+
     if (isTableStart(lines, index)) {
       const headers = tableCells(line);
       index += 2;
@@ -175,6 +190,7 @@ export function renderMarkdown(markdown) {
     while (index < lines.length && lines[index].trim()) {
       const currentLine = lines[index].trim();
       if (
+        currentLine.startsWith(':::workflow ') ||
         isTableStart(lines, index) ||
         currentLine.startsWith("# ") ||
         currentLine.startsWith("## ") ||

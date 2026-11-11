@@ -8,3 +8,9 @@ const escaped=renderMarkdown('| Name | Value |\n| --- | --- |\n| A \\| B | 1 |')
 assert(!renderMarkdown('| Name | Value |\n| nope | --- |').includes('<table>'));
 const end=renderMarkdown('| Name | Value |\n| --- | --- |\n| A | 1 |\n| malformed |\n\n## Next');assert(end.includes('<p>| malformed |</p>'));assert(end.includes('<h2>Next</h2>'));
 console.log('Table rendering, accessibility, escaped pipes, malformed boundaries and HTML/URL safety pass.');
+const flow=renderMarkdown('Before\n:::workflow Approval flow\nDraft | Prepare a traceable draft.\nReview | [Check the exact version](/writing/example/).\n:::');
+assert(flow.includes('<p>Before</p>'));assert(flow.includes('<figure class="writing-workflow">'));assert(flow.includes('<figcaption>Approval flow</figcaption>'));assert.equal((flow.match(/class="writing-workflow-title"/g)||[]).length,2);assert(flow.includes('href="/writing/example/"'));
+assert.throws(()=>renderMarkdown(':::workflow Incomplete\nDraft | Prepare it.'),/Unclosed/);
+assert.throws(()=>renderMarkdown(':::workflow Invalid\nDraft without detail\nReview | Check it.\n:::'),/title and detail/);
+const unsafeFlow=renderMarkdown(':::workflow <script>bad</script>\nDraft | <img src=x onerror=bad>\nReview | Keep it held.\n:::');assert(!unsafeFlow.includes('<script>'));assert(!unsafeFlow.includes('<img'));assert(unsafeFlow.includes('&lt;img'));
+console.log('Workflow structure, links, malformed blocks and escaped content pass.');
