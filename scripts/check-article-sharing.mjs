@@ -1,5 +1,7 @@
 import assert from 'node:assert/strict';
 import {chromium} from '@playwright/test';
+import {readWritingPosts} from '../src/lib/writing-source.mjs';
+const expectedArticleCount=readWritingPosts().length;
 const base=process.env.ASTRO_PREVIEW_URL||'http://127.0.0.1:4567';
 const slug='ai-automation-roi-for-smes';
 const canonical=`https://otherstuff.ai/writing/${slug}/`;
@@ -26,7 +28,7 @@ try{
   await page.evaluate(()=>{window.testShareCancel=true;document.querySelector('[data-share-status]').textContent=''});await share.getByRole('button',{name:'More sharing options'}).click();assert.equal(await share.locator('[data-share-status]').textContent(),'');
   await page.evaluate(()=>{window.testCopyFails=true});await share.getByRole('button',{name:'Copy article link',exact:true}).click();await share.locator('[data-share-fallback]').waitFor();assert.equal(await share.getByRole('textbox',{name:'Article link to copy'}).inputValue(),canonical);
   const related=page.locator('.writing-post-keep-grid');assert.equal(await related.locator('.article-card').count(),3);assert.equal(await related.locator('img').count(),0);assert.equal(await related.locator('h3.article-card-title').count(),3);
-  await page.goto(`${base}/writing/`,{waitUntil:'networkidle'});const cards=page.locator('.writing-posts-grid .article-card');assert.equal(await cards.count(),7);assert.equal(await cards.locator('img').count(),0);assert.equal(await cards.locator('h2.article-card-title').count(),7);await cards.first().locator('a').focus();await page.keyboard.press('Tab');assert.equal(await page.locator(':focus').evaluate(x=>x.classList.contains('article-card-link')),true);assert.equal(await page.locator(':focus').evaluate(x=>getComputedStyle(x).outlineWidth),'2px');assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),true);
+  await page.goto(`${base}/writing/`,{waitUntil:'networkidle'});const cards=page.locator('.writing-posts-grid .article-card');assert.equal(await cards.count(),expectedArticleCount);assert.equal(await cards.locator('img').count(),0);assert.equal(await cards.locator('h2.article-card-title').count(),expectedArticleCount);await cards.first().locator('a').focus();await page.keyboard.press('Tab');assert.equal(await page.locator(':focus').evaluate(x=>x.classList.contains('article-card-link')),true);assert.equal(await page.locator(':focus').evaluate(x=>getComputedStyle(x).outlineWidth),'2px');assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),true);
   await page.getByRole('link').filter({has:page.getByRole('heading',{name:'Calculating AI automation ROI for a small business',exact:true})}).click();await page.locator('h1').filter({hasText:'Calculating AI automation ROI'}).waitFor();
   await page.goto(`${base}/games/`,{waitUntil:'networkidle'});assert.equal(await page.locator('.writing-posts-grid').evaluate(x=>getComputedStyle(x).gridTemplateColumns.split(' ').length),width===390?1:4);
   await context.close();
