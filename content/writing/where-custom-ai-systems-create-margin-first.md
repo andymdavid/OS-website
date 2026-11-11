@@ -39,6 +39,35 @@ Make notes against these six questions for each candidate. This is an Other Stuf
 
 A workflow can recur every day and still be blocked. Record unresolved questions beside each candidate and ask its owner to resolve them. If nobody can identify the approved pricing source, more proposals won't fix that.
 
+The readiness check below uses two of the prerequisites above. It is an editorial guide, not a scored ranking: the business case, access rules and consequence of error still need to pass their own checks.
+
+```insight-visual
+{
+  "type": "matrix",
+  "title": "Usable sources and an accountable reviewer are both prerequisites",
+  "xAxis": "Source problems increase \u2192",
+  "yAxis": "Review ownership increases \u2191",
+  "items": [
+    {
+      "title": "Ready sources, review owner",
+      "description": "Define a bounded pilot and its acceptance checks."
+    },
+    {
+      "title": "Source gaps, review owner",
+      "description": "Resolve the input problems with the accountable owner before building."
+    },
+    {
+      "title": "Ready sources, no reviewer",
+      "description": "Name someone who can check and accept the output."
+    },
+    {
+      "title": "Source gaps, no reviewer",
+      "description": "Defer until source and ownership blockers can be resolved."
+    }
+  ]
+}
+```
+
 ## A hypothetical choice between three workflows
 
 Imagine an Australian project-services firm with 35 staff. Every frequency, source condition and ownership arrangement in this example is invented to show how the decision aid works. These are possible workflows, not OS client results.

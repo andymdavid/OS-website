@@ -1,0 +1,365 @@
+/* Adapted from Off Piste insight.css; source lineage in docs/writing-visuals-provenance.json. */
+.writing-post-page .writing-post-content .insight-visual {
+  --visual-text: rgba(255, 255, 255, 0.92);
+  --visual-muted: rgba(255, 255, 255, 0.58);
+  --visual-soft: rgba(255, 255, 255, 0.38);
+  --visual-rule: rgba(255, 255, 255, 0.2);
+  --visual-rule-soft: rgba(255, 255, 255, 0.1);
+  --visual-surface: rgba(255, 255, 255, 0.035);
+  --series-1: #f5f5f4;
+  --series-2: #ababab;
+  --series-3: #70706e;
+  --series-4: #484846;
+  --series-5: #292928;
+  width: min(100%, 58rem);
+  margin: clamp(3rem, 7vw, 5.5rem) 0;
+  color: var(--visual-text);
+  font-family: var(--font-ui);
+  border-top: 1px solid var(--visual-rule);
+  border-bottom: 1px solid var(--visual-rule);
+}
+
+.writing-post-page .writing-post-content .insight-visual__header {
+  padding: clamp(1.25rem, 3vw, 2rem) 0;
+}
+
+.writing-post-page .writing-post-content .insight-visual__title {
+  margin: 0;
+  color: var(--visual-text);
+  max-width: 42rem;
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.writing-post-page .writing-post-content .insight-visual__body {
+  border-top: 1px solid var(--visual-rule);
+}
+
+.writing-post-page .writing-post-content .insight-visual__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.writing-post-page .writing-post-content .insight-visual__stat {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  margin: 0;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  border-right: 1px solid var(--visual-rule-soft);
+}
+
+.writing-post-page .writing-post-content .insight-visual__stat:last-child { border-right: 0; }
+.writing-post-page .writing-post-content .insight-visual__stat strong {
+  color: var(--visual-text);
+  font-size: clamp(3rem, 7vw, 5.75rem);
+  font-weight: 400;
+  line-height: 0.85;
+  letter-spacing: -0.075em;
+}
+.writing-post-page .writing-post-content .insight-visual__stat > span {
+  max-width: 15rem;
+  margin-top: 1.4rem;
+  color: var(--visual-text);
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+.writing-post-page .writing-post-content .insight-visual__stat .insight-visual__stat-detail {
+  margin-top: 0.55rem;
+  color: var(--visual-muted);
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.writing-post-page .writing-post-content .insight-visual__bars,
+.writing-post-page .writing-post-content .insight-visual__grouped-bars,
+.writing-post-page .writing-post-content .insight-visual__stacks {
+  max-width: none;
+  margin: 0;
+  padding: clamp(1.25rem, 3vw, 2rem) 0;
+  list-style: none;
+}
+
+.writing-post-page .writing-post-content .insight-visual__bar-row {
+  margin: 0;
+  padding: 0.75rem 0;
+}
+.writing-post-page .writing-post-content .insight-visual__bar-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.45rem;
+  color: var(--visual-text);
+  font-size: 0.84rem;
+  line-height: 1.3;
+}
+.writing-post-page .writing-post-content .insight-visual__bar-meta strong { font-weight: 500; }
+.writing-post-page .writing-post-content .insight-visual__bar-track {
+  height: 1.15rem;
+  background: var(--visual-surface);
+  border-bottom: 1px solid var(--visual-rule-soft);
+}
+.writing-post-page .writing-post-content .insight-visual__bar {
+  display: block;
+  width: var(--bar-size);
+  height: 100%;
+  background: var(--series-1);
+}
+
+.writing-post-page .writing-post-content .insight-visual__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.25rem;
+  max-width: none;
+  margin: 0;
+  padding: 1rem 0;
+  color: var(--visual-muted);
+  font-size: 0.8rem;
+  list-style: none;
+  border-bottom: 1px solid var(--visual-rule-soft);
+}
+.writing-post-page .writing-post-content .insight-visual__legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  max-width: none;
+  margin: 0;
+  color: inherit;
+  font-size: inherit;
+  line-height: 1.3;
+}
+.writing-post-page .writing-post-content .insight-visual__swatch {
+  width: 0.8rem;
+  height: 0.8rem;
+  background: var(--series-1);
+}
+.writing-post-page .writing-post-content .insight-visual [data-series="1"] { background: var(--series-1); }
+.writing-post-page .writing-post-content .insight-visual [data-series="2"] { background: var(--series-2); }
+.writing-post-page .writing-post-content .insight-visual [data-series="3"] { background: var(--series-3); }
+.writing-post-page .writing-post-content .insight-visual [data-series="4"] { background: var(--series-4); }
+.writing-post-page .writing-post-content .insight-visual [data-series="5"] { background: var(--series-5); }
+
+.writing-post-page .writing-post-content .insight-visual__bar-group,
+.writing-post-page .writing-post-content .insight-visual__stack-row {
+  display: grid;
+  grid-template-columns: minmax(8rem, 2fr) minmax(0, 7fr);
+  gap: 1rem;
+  align-items: center;
+  margin: 0;
+  padding: 0.8rem 0;
+}
+.writing-post-page .writing-post-content .insight-visual__group-label {
+  color: var(--visual-text);
+  font-size: 0.82rem;
+  line-height: 1.25;
+}
+.writing-post-page .writing-post-content .insight-visual__group-bars {
+  display: grid;
+  gap: 0.25rem;
+}
+.writing-post-page .writing-post-content .insight-visual__group-bar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 3.5rem;
+  align-items: center;
+  gap: 0.65rem;
+  height: 0.8rem;
+  background: var(--visual-surface);
+}
+.writing-post-page .writing-post-content .insight-visual__group-bar .insight-visual__bar { height: 0.8rem; }
+.writing-post-page .writing-post-content .insight-visual__group-bar strong {
+  color: var(--visual-muted);
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+.writing-post-page .writing-post-content .insight-visual__stack {
+  display: flex;
+  min-width: 0;
+  height: 2rem;
+  overflow: hidden;
+}
+.writing-post-page .writing-post-content .insight-visual__segment {
+  display: flex;
+  flex: 0 0 var(--segment-size);
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  color: #121212;
+  font-size: 0.8rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.writing-post-page .writing-post-content .insight-visual__segment span:first-child { overflow: hidden; }
+
+.writing-post-page .writing-post-content .insight-visual h4,
+.writing-post-page .writing-post-content .insight-module h4 {
+  margin: 0;
+  color: var(--visual-text);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.writing-post-page .writing-post-content .insight-visual__matrix-wrap {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 0.75rem 1rem;
+  padding: clamp(1.25rem, 3vw, 2rem) 0;
+}
+.writing-post-page .writing-post-content .insight-visual__matrix {
+  display: grid;
+  grid-column: 2;
+  grid-row: 1;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--visual-rule);
+  border-left: 1px solid var(--visual-rule);
+}
+.writing-post-page .writing-post-content .insight-visual__quadrant {
+  min-height: 11rem;
+  padding: clamp(1.1rem, 2.5vw, 1.6rem);
+  border-right: 1px solid var(--visual-rule);
+  border-bottom: 1px solid var(--visual-rule);
+}
+.writing-post-page .writing-post-content .insight-visual__quadrant[data-quadrant="1"] {
+  background: #f5f5f4;
+  color: #121212;
+}
+.writing-post-page .writing-post-content .insight-visual__quadrant[data-quadrant="1"] h4,
+.writing-post-page .writing-post-content .insight-visual__quadrant[data-quadrant="1"] p { color: #121212; }
+.writing-post-page .writing-post-content .insight-visual__quadrant p {
+  max-width: 17rem;
+  margin: clamp(2rem, 5vw, 4rem) 0 0;
+  color: var(--visual-muted);
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+.writing-post-page .writing-post-content .insight-visual__axis {
+  max-width: none;
+  margin: 0;
+  color: var(--visual-soft);
+  font-size: 0.8rem;
+  line-height: 1.2;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.writing-post-page .writing-post-content .insight-visual__axis--y {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: center;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+.writing-post-page .writing-post-content .insight-visual__axis--x { grid-column: 2; grid-row: 2; justify-self: end; }
+
+.writing-post-page .writing-post-content .insight-visual__source {
+  max-width: none;
+  margin: 0;
+  padding: 0.8rem 0;
+  color: var(--visual-soft);
+  font-size: 0.8rem;
+  line-height: 1.4;
+  border-top: 1px solid var(--visual-rule-soft);
+}
+
+.writing-post-page .writing-post-content .insight-module {
+  width: min(100%, 58rem);
+  margin: clamp(2.5rem, 6vw, 4.5rem) 0;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.045);
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+.writing-post-page .writing-post-content .insight-module > header {
+  display: grid;
+  grid-template-columns: minmax(7rem, 2fr) minmax(0, 8fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.writing-post-page .writing-post-content .insight-module__label {
+  max-width: none;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.42);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.writing-post-page .writing-post-content .insight-module h3 {
+  margin: 0;
+  font-size: clamp(1.2rem, 2vw, 1.65rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.035em;
+}
+.writing-post-page .writing-post-content .insight-module__body { margin-left: 20%; }
+.writing-post-page .writing-post-content .insight-module__intro {
+  max-width: 38rem;
+  margin: 0 0 1rem;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.writing-post-page .writing-post-content .insight-module__list,
+.writing-post-page .writing-post-content .insight-module__takeaways {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.writing-post-page .writing-post-content .insight-module__list li {
+  max-width: none;
+  margin: 0;
+  padding: 0.75rem 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.88rem;
+  line-height: 1.4;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.writing-post-page .writing-post-content .insight-module__takeaways li {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr;
+  gap: 1rem;
+  max-width: none;
+  margin: 0;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.writing-post-page .writing-post-content .insight-module__takeaways li > span { color: rgba(255, 255, 255, 0.38); font-size: 0.8rem; }
+.writing-post-page .writing-post-content .insight-module__takeaways p {
+  max-width: 36rem;
+  margin: 0.4rem 0 0;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 600px) {
+  .writing-post-page .writing-post-content .insight-visual,
+  .writing-post-page .writing-post-content .insight-module { margin: 3rem 0; }
+  .writing-post-page .writing-post-content .insight-module > header { grid-template-columns: 1fr; }
+  .writing-post-page .writing-post-content .insight-visual__stat { border-right: 0; border-bottom: 1px solid var(--visual-rule-soft); }
+  .writing-post-page .writing-post-content .insight-visual__stat:last-child { border-bottom: 0; }
+  .writing-post-page .writing-post-content .insight-visual__bar-group,
+  .writing-post-page .writing-post-content .insight-visual__stack-row { grid-template-columns: 1fr; gap: 0.45rem; }
+  .writing-post-page .writing-post-content .insight-module__body { margin-left: 0; }
+}
+
+@media (max-width: 480px) {
+  .writing-post-page .writing-post-content .insight-visual__matrix-wrap { grid-template-columns: 1fr; }
+  .writing-post-page .writing-post-content .insight-visual__matrix { grid-column: 1; grid-template-columns: 1fr; }
+  .writing-post-page .writing-post-content .insight-visual__quadrant { min-height: 0; }
+  .writing-post-page .writing-post-content .insight-visual__quadrant p { margin-top: 1.5rem; }
+  .writing-post-page .writing-post-content .insight-visual__axis--y { grid-column: 1; grid-row: auto; justify-self: start; writing-mode: initial; transform: none; }
+  .writing-post-page .writing-post-content .insight-visual__axis--x { grid-column: 1; grid-row: auto; }
+}
+
+
+.writing-post-page .writing-post-content .insight-module { --visual-text: var(--color-text); font-family: var(--font-ui); }
+/* OS article columns are narrower than the original Off Piste reading surface. */
+.writing-post-page .writing-post-content .insight-visual__stat strong { font-size: clamp(2.5rem, 3.2vw, 3.5rem); }

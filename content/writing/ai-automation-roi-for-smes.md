@@ -84,16 +84,33 @@ First-year economic ROI is AUD12,000 ÷ AUD16,800 × 100, or approximately 71.4%
 
 The AUD2,700 capacity valuation stays outside the ROI numerator. Payroll remains unchanged, and the incremental contribution uses that baseline. Cash payback needs its own schedule of actual receipts and payments, consistently excluding opportunity costs. You can't turn this economic payback into cash payback by changing only the setup figure.
 
-The same example separates available capacity from a financial return:
-
-| Measure | Hypothetical result | What it means |
-| --- | --- | --- |
-| Recovered staff capacity | 60 hours per month | Time available for another use, with payroll unchanged |
-| Capacity valued at AUD45 per hour | AUD2,700 per month | Excluded from the ROI numerator |
-| Setup and first-year running costs | AUD16,800 | Full first-year economic cost |
-| Financial benefit without an evidenced use of time | AUD0 | No payback under the stated recognition rule |
-| Conditional monthly net benefit | AUD1,500 | Depends on actually realising the stated additional contribution |
-| Conditional simple economic payback | Four months | Assumes steady benefits and costs, rather than a cash-flow schedule |
+```insight-visual
+{
+  "type": "headline-stat",
+  "title": "Recovered time has no financial return until it has an evidenced use",
+  "items": [
+    {
+      "value": 60,
+      "display": "60",
+      "label": "staff hours recovered each month",
+      "detail": "Capacity available in the hypothetical reporting workflow"
+    },
+    {
+      "value": 2700,
+      "display": "2,700",
+      "label": "AUD of monthly capacity value",
+      "detail": "Excluded from the ROI numerator; payroll is unchanged"
+    },
+    {
+      "value": 0,
+      "display": "0",
+      "label": "AUD of recognised financial benefit",
+      "detail": "Before any evidenced spending reduction or extra contribution"
+    }
+  ],
+  "source": "Hypothetical worked example in this article, before conditional redeployment; not client results."
+}
+```
 
 ## Test the assumptions that decide the result
 
@@ -104,6 +121,35 @@ Extra review time can push payback out too. Return to 75% adoption but let assis
 In the pilot, verify how the business will use the released time. Both scenarios depend on it. Test a higher recurring quote and a slower adoption ramp in your own monthly schedule. Check whether subscriptions or ownership labour change with volume instead of assuming fixed costs at every scale.
 
 If faster reports contain material errors or clients reject them, the accepted-output assumption fails. The benefit depends on quality. Include correction effort and lost usable output before claiming a gain. For longer investment horizons, consider [how competition can change the margin over time](/writing/navigating-the-ai-value-trap/). A project that pays back under today's contribution assumptions may earn less if prices or demand change.
+
+These are comparisons between assumptions in the same worked example. Longer bars mean a longer wait for economic payback; neither sensitivity case is an observed result.
+
+```insight-visual
+{
+  "type": "ranked-bars",
+  "title": "Lower adoption or more review pushes payback beyond six months",
+  "unit": " months",
+  "max": 7,
+  "items": [
+    {
+      "label": "75% adoption, eight-minute handling",
+      "value": 4,
+      "display": "4 months"
+    },
+    {
+      "label": "50% adoption, eight-minute handling",
+      "value": 6.666666666666667,
+      "display": "6.7 months"
+    },
+    {
+      "label": "75% adoption, 14-minute handling",
+      "value": 6.666666666666667,
+      "display": "6.7 months"
+    }
+  ],
+  "source": "Hypothetical sensitivities calculated above. Setup AUD6,000; monthly net benefit AUD1,500 or AUD900; economic, not cash payback."
+}
+```
 
 ## Give the pilot a decision rule
 

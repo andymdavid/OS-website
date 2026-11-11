@@ -73,6 +73,32 @@ Under the illustrative audience rule, staff may read it. External wording requir
 
 Before connection, select a smaller approved subset from this register. K4 is outside the workflow, K5 has unresolved approval details, and K2 and K3 have narrowly limited uses. An authorised reviewer might need them to understand a conflict without admitting them as sources for routine answers.
 
+```insight-module
+{
+  "type": "takeaways",
+  "label": "Source authority",
+  "title": "Current authority, history and restrictions give records different jobs",
+  "items": [
+    {
+      "title": "K1 supports the current standard scope",
+      "body": "The approved scope covers a workshop and review, with implementation excluded. Check that it applies to the question."
+    },
+    {
+      "title": "K2 and K3 do not change current commitments",
+      "body": "The old proposal is historical reference. The newer policy draft is unapproved; a reviewer resolves any conflict."
+    },
+    {
+      "title": "K4 stays outside this workflow",
+      "body": "The supplier-cost note is restricted and has no customer-facing authority."
+    },
+    {
+      "title": "K5 needs an approval decision",
+      "body": "Confirm its version, date and owner. Do not claim the requested certification without approved evidence."
+    }
+  ]
+}
+```
+
 ## Work through three customer questions
 
 These are expected outcomes for a future check. No system has been tested against them here.

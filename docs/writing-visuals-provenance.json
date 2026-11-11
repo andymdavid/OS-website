@@ -1,0 +1,18 @@
+{
+  "sourceRepository": "https://github.com/andymdavid/off-piste-studio",
+  "sourceCommit": "c0bae023bff229749ae313ceb3bc3f3a80bce3d2",
+  "sourceRenderer": "scripts/render-insight-visual.mjs",
+  "sourceRendererHash": "1ad0e8c4f58e3fc964c754bc9a610f60488cd21d0fea10e93086627c4efd28ad",
+  "targetRenderer": "src/lib/insight-components.mjs",
+  "rendererCopiedExactly": true,
+  "sourceCss": "src/styles/site/insight.css",
+  "sourceCssRange": "insight-visual through insight-module responsive rules",
+  "cssAdaptations": [
+    "scope to writing page",
+    "reuse homepage font-ui token",
+    "omit unused light-theme selectors",
+    "minimum12.8px small labels",
+    "fit headline figures to narrower OS article columns"
+  ],
+  "sourceCssHash": "328d4483b1d999b2616d56f73cde5515ba5217ee2e64d09dab6017917937af7d"
+}

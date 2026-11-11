@@ -16,12 +16,31 @@ Sales proposal preparation means reconciling what the client asked for, what the
 
 Choose a repeatable proposal type before designing its preparation workflow. If you're still deciding which work to automate, start with [choosing a first automation workflow](/writing/where-custom-ai-systems-create-margin-first/). For proposals, the job is to turn approved material into a document someone can authorise for release.
 
-:::workflow Proposal preparation keeps approval with a person
-Gather approved inputs | Use the current scope, pricing, evidence and proposal template.
-Prepare the draft | Keep claims traceable. Return missing or conflicting information to its owner.
-Review and correct | Check scope, price, promises and the exact draft. Hold release while commercial decisions remain unresolved.
-Authorise release | An authorised person approves and releases the finished proposal.
-:::
+```insight-module
+{
+  "type": "takeaways",
+  "label": "In practice",
+  "title": "Preparation can be delegated while release stays with a person",
+  "items": [
+    {
+      "title": "Gather approved inputs",
+      "body": "Use the current scope, pricing, evidence and proposal template."
+    },
+    {
+      "title": "Prepare a traceable draft",
+      "body": "Return missing or conflicting information to its owner."
+    },
+    {
+      "title": "Review the exact version",
+      "body": "Check scope, price and promises. Hold release while commercial decisions remain unresolved."
+    },
+    {
+      "title": "Authorise release",
+      "body": "An authorised person approves and releases the finished proposal."
+    }
+  ]
+}
+```
 
 ## Define the proposal and its source material
 

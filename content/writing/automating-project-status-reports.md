@@ -20,6 +20,21 @@ Cedar, Wattle and Banksia are fictional throughout this guide. Their records ill
 
 As an owner or operations lead in a service business, you need a draft you can check. That means a source for each material claim and a visible place for each gap. If you're still deciding whether reporting is the right starting point, first [choose a first workflow to automate](/writing/where-custom-ai-systems-create-margin-first/).
 
+```insight-module
+{
+  "type": "practice",
+  "label": "The reporting boundary",
+  "title": "A useful draft keeps unresolved work visible",
+  "intro": "Use the same boundary for the manual baseline and the assisted report.",
+  "items": [
+    "Name the audience, reporting period, cutoff and included projects.",
+    "Keep each material statement tied to a dated source and its approval state.",
+    "Surface missing, stale or conflicting information with an owner and next action.",
+    "Have the operations lead accept the exact draft version before wider use."
+  ]
+}
+```
+
 ## Define one report before connecting tools
 
 Start with a weekly internal report for the operations lead and project owners. In this fictional example, the reporting period is 2–6 November 2026, with a cutoff of Friday 6 November at 3 pm Australia/Perth. These dates, times, identifiers and milestone names are illustrative additions to the fictional records. They aren't delivery commitments or observations from a real business.
