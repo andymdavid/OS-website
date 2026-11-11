@@ -1,3 +1,4 @@
+import {renderInsightVisual, renderInsightModule} from './insight-components.mjs';
 import { readdirSync, readFileSync } from 'node:fs';
 import { basename, resolve } from 'node:path';
 function escapeHtml(value) {
@@ -66,7 +67,17 @@ function renderInline(markdown) {
     .replace(/\*([^*]+)\*/g, "<em>$1</em>");
 }
 
-function renderMarkdown(markdown) {
+function tableCells(line) {
+  return line.trim().replace(/^\|/, '').replace(/(?<!\\)\|$/, '').split(/(?<!\\)\|/).map(cell => cell.trim().replaceAll('\\|', '|'));
+}
+function isTableStart(lines, index) {
+  if (!lines[index]?.includes('|') || !lines[index + 1]) return false;
+  const cells = tableCells(lines[index]);
+  const separators = tableCells(lines[index + 1]);
+  return cells.length > 1 && cells.length === separators.length && separators.every(cell => /^:?-{3,}:?$/.test(cell));
+}
+
+export function renderMarkdown(markdown) {
   const lines = markdown.split("\n");
   const blocks = [];
   let index = 0;
@@ -76,6 +87,30 @@ function renderMarkdown(markdown) {
 
     if (!line) {
       index += 1;
+      continue;
+    }
+
+    if (line === '```insight-visual' || line === '```insight-module') {
+      const kind = line.slice(3);
+      const end = lines.findIndex((candidate, at) => at > index && candidate.trim() === '```');
+      if (end === -1) throw new Error('Unclosed ' + kind + ' block.');
+      const spec = lines.slice(index + 1, end).join('\n');
+      blocks.push(kind === 'insight-visual' ? renderInsightVisual(spec) : renderInsightModule(spec));
+      index = end + 1;
+      continue;
+    }
+
+    if (isTableStart(lines, index)) {
+      const headers = tableCells(line);
+      index += 2;
+      const rows = [];
+      while (index < lines.length && lines[index].trim() && lines[index].includes('|')) {
+        const cells = tableCells(lines[index]);
+        if (cells.length !== headers.length) break;
+        rows.push(`<tr>${cells.map(cell => `<td>${renderInline(cell)}</td>`).join('')}</tr>`);
+        index += 1;
+      }
+      blocks.push(`<div class="writing-post-table" role="region" aria-label="Article table" tabindex="0"><table><thead><tr>${headers.map(cell => `<th scope="col">${renderInline(cell)}</th>`).join('')}</tr></thead><tbody>${rows.join('')}</tbody></table></div>`);
       continue;
     }
 
@@ -151,6 +186,9 @@ function renderMarkdown(markdown) {
     while (index < lines.length && lines[index].trim()) {
       const currentLine = lines[index].trim();
       if (
+        currentLine === '```insight-visual' ||
+        currentLine === '```insight-module' ||
+        isTableStart(lines, index) ||
         currentLine.startsWith("# ") ||
         currentLine.startsWith("## ") ||
         currentLine.startsWith("### ") ||

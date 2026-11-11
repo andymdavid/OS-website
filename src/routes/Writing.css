@@ -161,3 +161,6 @@
     grid-template-columns: 1fr;
   }
 }
+
+.writing-page.writing-index-page .writing-posts-grid { grid-template-columns: repeat(2,minmax(0,1fr)); max-width: 1080px; gap: 24px; padding: 24px var(--container-padding); }
+@media (max-width:720px) { .writing-page.writing-index-page .writing-posts-grid { grid-template-columns: 1fr; } }

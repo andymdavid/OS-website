@@ -5,10 +5,9 @@ import CTASection from "@/components/astro/CTA.astro";
 import Footer from '@/components/astro/Footer.astro';
 import { getCollection } from 'astro:content';
 const writingPosts = (await getCollection('writing')).map(entry => entry.data).sort((a,b) => b.date.localeCompare(a.date));
-import { canonicalPath } from "@/lib/structured-data";
 import "@/components/Hero.css";
 import "@/routes/Writing.css";
-import { writingImage, writingImageSrcSet } from '../../lib/writing-images';
+import ArticleCard from '@/components/astro/ArticleCard.astro';
 
 ---
 <SiteLayout title="Writing on AI Systems, Operations, and the Value Trap"
@@ -17,7 +16,7 @@ import { writingImage, writingImageSrcSet } from '../../lib/writing-images';
  { '@context': 'https://schema.org', '@type': 'CollectionPage', url: 'https://otherstuff.ai/writing/', name: 'Writing on AI Systems, Operations, and the Value Trap' },
  { '@context': 'https://schema.org', '@type': 'ItemList', itemListElement: writingPosts.map((post,index) => ({'@type': 'ListItem',position:index+1,url:'https://otherstuff.ai/writing/'+post.slug+'/',name:post.title})) }
 ]}>
-<div class="os-theme os-draft min-h-screen writing-page">
+<div class="os-theme os-draft min-h-screen writing-page writing-index-page">
       
       <NavigationDraft titleOverride="OTHER STUFF" />
       <main>
@@ -40,33 +39,7 @@ import { writingImage, writingImageSrcSet } from '../../lib/writing-images';
         {writingPosts.length > 0 ? (
           <section class="section writing-posts">
             <div class="writing-posts-grid">
-              {writingPosts.map((post, index) => (
-                <article key={post.slug} class="writing-post">
-                  <a class="writing-post-link" href={canonicalPath(`/writing/${post.slug}`)}>
-                    <div class="writing-post-media">
-                      <img
-                        src={writingImage(post.thumbnail)}
-                        srcset={writingImageSrcSet(post.thumbnail)}
-                        sizes="(max-width: 720px) calc(100vw - 64px), (max-width: 1200px) calc((100vw - 92px) / 2), 300px"
-                        alt={post.title}
-                        width="480"
-                        height="270"
-                        loading={index < 2 ? "eager" : "lazy"}
-                        fetchpriority={index === 0 ? "high" : "auto"}
-                        decoding="async"
-                      />
-                    </div>
-                    <div class="writing-post-header">
-                      <span class="writing-post-id">[{String(index + 1).padStart(2, "0")}]</span>
-                      <div class="writing-post-meta">
-                        <div class="writing-post-title">{post.title}</div>
-                        <div class="writing-post-description">{post.description}</div>
-                        <div class="writing-post-date">{post.displayDate}</div>
-                      </div>
-                    </div>
-                  </a>
-                </article>
-              ))}
+              {writingPosts.map((post) => <ArticleCard post={post} />)}
             </div>
           </section>
         ) : null}
