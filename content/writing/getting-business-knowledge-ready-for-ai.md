@@ -11,9 +11,9 @@ thumbnail: /Hero-Background.webp
 ogImage: /og-default.png
 ---
 
-A customer asks whether implementation is included in your standard review. The approved service scope says it isn't. An older proposal includes implementation language. Both documents look relevant, and both are sitting in the folder you're about to connect to an AI workflow. In the fictional service business we'll use here, those records are K1 and K2. All records, dates and example answers in this article are illustrative.
+Connecting company documents to an AI workflow exposes a problem many businesses already have: several files give different answers to the same question. An old proposal may promise work that the current service scope excludes. Unless someone decides which source applies, the workflow has no dependable basis for its answer.
 
-If the answer borrows the old proposal's wording, staff could prepare a commitment that the current service doesn't cover. That makes authority part of preparing company documents for AI. Decide what each record may support, who may see it and who resolves disagreement before connecting the folder.
+Before connecting a folder, establish what each record may support, who may see it and who resolves disagreements. We'll work through a fictional service business with an approved scope, an old proposal and restricted records to make those decisions concrete. The records labelled K1–K5, dates and example answers are all illustrative.
 
 ## Define the answer the workflow is allowed to prepare
 
@@ -129,6 +129,6 @@ An ordinary shared register and a smaller approved subset may be enough to prepa
 - **Clean up first** when a specific gap has an accountable repair, such as confirming K1's applicability or establishing the credentials owner's approval process.
 - **Defer** when ownership, approval or suitable access cannot be established for the proposed workflow.
 
-The register and unresolved questions also give you a starting point for scoping work to [prepare a bounded automation workflow](/ai-automation/).
+Preparing business knowledge starts with deciding what the business can stand behind. A current source, a named owner and a clear permission boundary give an AI workflow something dependable to work with. A larger folder cannot resolve disagreement about which document is authoritative.
 
-For this fictional source set, the next decision belongs with the delivery lead and operations lead. Confirm the approved scope subset, resolve its outstanding access and applicability questions, and keep the remaining records outside it until their permitted use is clear.
+To [prepare a first automation workflow](/ai-automation/), choose a small set of records and ask their owners to confirm what each one may support. Resolve the conflicts that would change an answer before connecting them. You can then test a useful question against sources whose limits you understand.

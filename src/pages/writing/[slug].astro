@@ -34,7 +34,7 @@ const postUrl = absoluteUrl(`/writing/${post.slug}`);
           dateModified: post.date,
           keywords: post.tags.join(', '),
           author: {
-            "@type": "Organization",
+            "@type": post.author === "Lara" ? "Person" : "Organization",
             name: post.author,
           },
           publisher: {
@@ -63,12 +63,15 @@ const postUrl = absoluteUrl(`/writing/${post.slug}`);
             <h1 class="writing-post-title">{post.title}</h1>
 
             <div class="writing-post-meta">
-              <span class="writing-post-author">{post.author}</span>
+              <span class="writing-post-author">
+                {post.author === 'Lara' && <img class="writing-post-avatar" src="/images/lara.webp" alt="" width="40" height="40" />}
+                {post.author === 'Lara' ? 'Lara at Other Stuff' : post.author}
+              </span>
               <span class="writing-post-date">{post.displayDate}</span>
               <span class="writing-post-date">{post.readTime}</span>
             </div>
 
-            <div class="writing-post-feature">
+            {post.thumbnail !== "/Hero-Background.webp" && <div class="writing-post-feature">
               <img
                 src={writingImage(post.thumbnail)}
                 srcset={writingImageSrcSet(post.thumbnail)}
@@ -80,7 +83,7 @@ const postUrl = absoluteUrl(`/writing/${post.slug}`);
                 fetchpriority="high"
                 decoding="async"
               />
-            </div>
+            </div>}
 
             <p class="writing-post-subheader">
               {post.intro}

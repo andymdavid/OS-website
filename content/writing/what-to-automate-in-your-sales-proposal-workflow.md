@@ -103,8 +103,8 @@ Consider an integration when approved information and review steps span several 
 
 Custom work needs a specific unresolved requirement and someone to own it. That might be preserving source references across systems or binding approval to a particular document version. Use those gaps to brief anyone providing [help connecting proposal sources and approval steps](/ai-automation/).
 
-## Start with one bounded run
+## Make the draft easier to stand behind
 
-Choose one proposal type and gather its approved inputs. Walk the fictional cases through your intended process with the person who can authorise release, adapting them to your own records and decisions. Keep the first run small enough that each exception can be examined.
+Proposal automation is most useful when it removes repeated assembly and makes missing information easier to spot. The proposal still needs a person who can stand behind its scope, price and promises. Keeping those responsibilities visible is what makes a faster draft useful to the business.
 
-Record what the system may prepare, which decisions remain open and who can release the finished proposal. Resolve unclear source ownership or approval rules before making preparation routine.
+Start with one proposal type, its approved source material and the person who signs it off. Walk a real proposal through that arrangement and record what still needs chasing or correction. That gives you a practical basis for deciding which part to automate next.

@@ -107,4 +107,6 @@ Agree a spending ceiling, minimum quality standard and maximum acceptable paybac
 
 Continue if accepted output, ownership costs and evidenced benefits meet the agreed case. If one bounded assumption needs testing, such as a different review procedure or better staff adoption, revise the pilot with a limit on further spending and testing. Stop if the workflow repeatedly fails acceptance or the evidence shows no viable financial benefit. A pilot needs an end date.
 
-If important integration or ownership costs are still unknown, [scoping an automation around the workflow](/ai-automation/) can help define them. Bring the baseline, cost inventory and unresolved assumptions to a scoping discussion through [the Automation Partner engagement](/). Record the decision, the evidence supporting it and the conditions that would trigger a review.
+An automation earns its place when the business can show a worthwhile benefit after paying for implementation, operation and the human work around it. Hours recovered are part of that case; the decision depends on what those hours let the business do and whether the output remains useful.
+
+Before committing to a larger rollout, put your baseline, full costs and assumptions on one page. If integration or ownership costs are still unknown, use those gaps to [scope the automation](/ai-automation/). Agree what a worthwhile result would look like, then use the pilot to replace assumptions with evidence. That leaves you with a decision you can explain and revisit as the workflow changes.

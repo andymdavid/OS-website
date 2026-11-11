@@ -89,8 +89,8 @@ Write acceptance checks for routine and awkward cases.
 
 Expand only when the required checks pass on unseen cases and the complete handling effort compares favourably with the matched manual baseline. Critical failures mean stopping. For correctable gaps, revise and retest. If review consumes the expected benefit, defer the workflow. Even after a successful small trial, you'll need to establish readiness for broader use.
 
-## Give the first workflow a clear owner
+## Make the first workflow a useful test
 
-A pilot may expose missing inputs and awkward handoffs you need to resolve before choosing the next workflow. Let the trial findings guide that choice. Wider benefits depend on what the trial shows. Once you've selected the task, you can work through [the operating structure around an AI workflow](/newsletter/ai-works-better-inside-a-system). Your candidate notes and pilot boundary also give you a starting brief for [help scoping and delivering a first workflow](/ai-automation).
+The best first workflow gives you a useful result you can check, with records you can trust and someone who owns the decision. A frequent task is a promising candidate, but its value depends on how much work remains after the draft is produced. The comparison above helps make that trade-off visible before you invest.
 
-Before building, ask the owner to agree what goes in, what comes out, who can accept it and what would make you stop. Any unresolved blocker belongs in that brief.
+Choose one candidate and write down its inputs, expected output, reviewer and stopping conditions. Those notes become a brief for [help scoping a first workflow](/ai-automation/) and [the operating structure around it](/newsletter/ai-works-better-inside-a-system). Use the first trial to find out whether the complete job becomes easier. Expand from evidence that it does.

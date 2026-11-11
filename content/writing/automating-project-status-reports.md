@@ -119,3 +119,7 @@ If you need implementation help, take the report format, source rules, exception
 Go forward with the same internal scope when claims are traceable, exceptions remain visible, the reviewer accepts the exact draft and the full handling effort justifies continued use.
 
 Revise when the boundaries work but source collection, drafting or checking needs improvement. Defer when authority is unresolved, evidence can't be accessed appropriately or nobody can own review. An unsupported material claim must be corrected before any go decision.
+
+A useful automated status report makes it easier to see what has changed, what is uncertain and who needs to act. That depends on traceable claims and visible gaps as much as it depends on drafting. If reviewers have to reconstruct the evidence from scratch, the workflow still has work to do.
+
+Start with one internal report and compare the complete preparation and review effort with your manual process. Keep the same source rules and acceptance standard for both. Continue when the report is useful, the checking is manageable and someone can own the next reporting round.
