@@ -5,11 +5,12 @@ import NavigationDraft from '@/components/astro/Navigation.astro';
 import CTASection from "@/components/astro/CTA.astro";
 import Footer from '@/components/astro/Footer.astro';
 import { ValueTrapChart } from "@/components/ValueTrapChart";
-import { absoluteUrl, canonicalPath } from "@/lib/structured-data";
+import { absoluteUrl } from "@/lib/structured-data";
 import "@/routes/WritingPost.css";
 import "@/routes/WritingVisuals.css";
 const EMBED_MARKER = '<div data-embed="value-trap-chart"></div>';
-import { writingImage, writingImageSrcSet } from '../../lib/writing-images';
+import ArticleCard from '@/components/astro/ArticleCard.astro';
+import ArticleShare from '@/components/astro/ArticleShare.astro';
 export async function getStaticPaths(){return (await getCollection('writing')).map(entry=>({params:{slug:entry.id},props:{post:entry.data}}));}
 const {post} = Astro.props;
 const writingPosts = (await getCollection('writing')).map(entry=>entry.data).sort((a,b)=>b.date.localeCompare(a.date));
@@ -76,18 +77,7 @@ const postUrl = absoluteUrl(`/writing/${post.slug}`);
               {post.intro}
             </p>
 
-            <div class="writing-post-share">
-              <span>Share</span>
-              <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(postUrl)}`} target="_blank" rel="noopener noreferrer">
-                LinkedIn
-              </a>
-              <a href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(postUrl)}&text=${encodeURIComponent(post.title)}`} target="_blank" rel="noopener noreferrer">
-                X
-              </a>
-              <a href={`mailto:?subject=${encodeURIComponent(post.title)}&body=${encodeURIComponent(postUrl)}`} rel="noopener noreferrer">
-                Email
-              </a>
-            </div>
+            <div class="writing-post-share"><ArticleShare title={post.title} url={postUrl} /></div>
           </div>
         </section>
 
@@ -113,29 +103,7 @@ const postUrl = absoluteUrl(`/writing/${post.slug}`);
               <h2>Keep reading</h2>
             </div>
             <div class="writing-post-keep-grid">
-              {keepReading.map((post) => (
-                <article key={post.slug} class="writing-post-keep-card">
-                  <a class="writing-post-keep-link" href={canonicalPath(`/writing/${post.slug}`)}>
-                    <div class="writing-post-keep-media">
-                      <img
-                        src={writingImage(post.thumbnail)}
-                        srcset={writingImageSrcSet(post.thumbnail)}
-                        sizes="(max-width: 900px) calc(100vw - 48px), 360px"
-                        alt={post.title}
-                        width="480"
-                        height="270"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </div>
-                    <div class="writing-post-keep-meta">
-                      <div class="writing-post-keep-title">{post.title}</div>
-                      <div class="writing-post-keep-description">{post.description}</div>
-                      <div class="writing-post-keep-date">{post.displayDate}</div>
-                    </div>
-                  </a>
-                </article>
-              ))}
+              {keepReading.map((post) => <ArticleCard post={post} heading="h3" />)}
             </div>
           </div>
         </section>

@@ -369,3 +369,8 @@
   .writing-post-page:not(.legal-page) .writing-post-author { flex-basis: 100%; }
   .writing-post-page:not(.legal-page) .writing-post-subheader { margin-top: 28px; }
 }
+
+.writing-post-page .writing-post-share { display: block; margin-top: 0; }
+.writing-post-page:not(.legal-page) .writing-post-share { margin-top: 0; }
+.writing-post-page .writing-post-keep-header, .writing-post-page .writing-post-keep-grid { max-width: 1080px; }
+.writing-post-page .writing-post-keep-header h2 { font-family: var(--font-ui); letter-spacing: -.025em; line-height: 1.2; }
