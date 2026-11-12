@@ -1,10 +1,10 @@
 .os-theme .article-card { min-width: 0; height: 100%; border-top: 1px solid var(--color-border); }
-.os-theme .article-card-link { display: flex; flex-direction: column; height: 100%; padding: 18px 0 8px; color: var(--color-text); font-family: var(--font-ui); text-decoration: none; }
+.os-theme .article-card-link { display: flex; flex-direction: column; height: 100%; padding: 18px 0 8px; color: var(--color-text); font-family: var(--font-body); text-decoration: none; }
 .os-theme .article-card-heading { display: flex; align-items: flex-start; gap: 16px; width: 100%; }
-.os-theme .article-card-title { flex: 1; min-width: 0; margin: 0; font: 400 22px/1.2 var(--font-ui); letter-spacing: -.025em; text-transform: none; overflow-wrap: anywhere; }
+.os-theme .article-card-title { flex: 1; min-width: 0; margin: 0; font: 700 22px/1.2 var(--font-card-title); letter-spacing: normal; text-transform: none; overflow-wrap: anywhere; }
 .os-theme .article-card-arrow { flex: none; margin-top: 3px; opacity: .6; transition: transform 150ms, opacity 150ms; }
-.os-theme .article-card-description { margin: 17px 0 24px; max-width: 42ch; color: rgba(240,240,240,.75); font: 400 14px/1.6 var(--font-ui); letter-spacing: 0; }
-.os-theme .article-card-meta { display: flex; flex-wrap: wrap; gap: 6px 8px; margin-top: auto; font: 400 12px/1.5 var(--font-ui); color: rgba(240,240,240,.6); }
+.os-theme .article-card-description { margin: 17px 0 24px; max-width: 42ch; color: rgba(240,240,240,.75); font: 400 14px/1.6 var(--font-body); letter-spacing: 0; }
+.os-theme .article-card-meta { display: flex; flex-wrap: wrap; gap: 6px 8px; margin-top: auto; font: 400 12px/1.5 var(--font-body); color: rgba(240,240,240,.6); }
 .os-theme .article-card-link:hover .article-card-title { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
 .os-theme .article-card-link:hover .article-card-arrow { opacity: 1; transform: translate(2px,-2px); }
 .os-theme .article-card-link:focus-visible { outline: 2px solid var(--color-text); outline-offset: 5px; }
