@@ -2,6 +2,7 @@
 title: Where human approval belongs in an AI workflow
 slug: where-human-approval-belongs-in-an-ai-workflow
 description: Decide who checks an AI draft, who authorises business commitments and who permits the workflow to send or change something.
+cardSummary: Who reviews a draft, approves a commitment and authorises the next action?
 intro: Checking a draft can leave the next decision unresolved. Set out what each approval permits, who can give it and where the workflow must wait.
 date: 2026-11-11
 readTime: 7 min read

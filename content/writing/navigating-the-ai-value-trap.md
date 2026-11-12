@@ -2,6 +2,7 @@
 title: Navigating the AI Value Trap
 slug: navigating-the-ai-value-trap
 description: Don't debate AI doomerism, use the AI Value Trap to your advantage. Build businesses with huge profit margins, farm corn and live well.
+cardSummary: What cheaper intelligence means for margins, businesses and how we live.
 intro: Don't debate AI doomerism, use the AI Value Trap to your advantage. Build businesses with huge profit margins, farm corn and live well.
 date: 2025-05-23
 readTime: 8 min read

@@ -231,6 +231,7 @@ export function readWritingPosts(rootDir = process.cwd()) {
       slug: data.slug || basename(file, ".md"),
       title: data.title,
       description: data.description,
+      cardSummary: data.cardSummary?.trim() || undefined,
       intro: data.intro,
       date: data.date,
       displayDate: formatDate(data.date),

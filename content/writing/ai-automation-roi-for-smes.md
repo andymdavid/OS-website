@@ -2,6 +2,7 @@
 title: Calculating AI automation ROI for a small business
 slug: ai-automation-roi-for-smes
 description: Calculate AI automation ROI with full ownership costs, realised benefits and a worked SME example that separates recovered capacity from financial return.
+cardSummary: A worked example of costs, recovered capacity and financial return.
 intro: Fewer hours spent on reporting can free up your team without reducing payroll. Calculate what the automation costs to own and how the recovered time will become a financial benefit before approving the spend.
 date: 2026-11-10
 readTime: 10 min read
