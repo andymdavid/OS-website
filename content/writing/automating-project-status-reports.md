@@ -2,6 +2,7 @@
 title: Automating project status reports from business records
 slug: automating-project-status-reports
 description: Plan one internal project status report from dated records with traceable updates, visible gaps and a named reviewer.
+cardSummary: Turn dated business records into reports a reviewer can trace and trust.
 intro: A useful project report keeps missing updates and unresolved dates visible. Define the records, cutoff and review rules before automating the draft.
 date: 2026-11-10
 readTime: 8 min read

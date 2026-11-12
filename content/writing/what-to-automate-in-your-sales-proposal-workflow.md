@@ -2,6 +2,7 @@
 title: What to automate in your sales proposal workflow
 slug: what-to-automate-in-your-sales-proposal-workflow
 description: A practical sales proposal workflow using approved sources, visible information gaps and commercial checks before a draft is released.
+cardSummary: Where AI can help with drafting, and where commercial judgement stays.
 intro: Sales proposal preparation brings together discovery notes, scope, pricing and evidence. Decide which parts a system can assemble, what it can draft and who must approve the commitments.
 date: 2026-11-10
 readTime: 9 min read

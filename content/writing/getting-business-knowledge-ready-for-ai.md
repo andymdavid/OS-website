@@ -2,6 +2,7 @@
 title: Getting your business knowledge ready for an AI workflow
 slug: getting-business-knowledge-ready-for-ai
 description: Decide which business records an AI workflow can use, resolve conflicting sources and check access before connecting company knowledge.
+cardSummary: Choose reliable sources, resolve conflicts and set access boundaries.
 intro: An approved scope, an old proposal and a newer draft can give different answers to the same customer question. A useful AI workflow needs a clear decision about which source can support each answer.
 date: 2026-11-10
 readTime: 10 min read

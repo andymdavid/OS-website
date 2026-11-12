@@ -2,6 +2,7 @@
 title: On the Business Model of AI
 slug: on-the-business-model-of-ai
 description: Its not about the bigger models, it's about transforming traditional businesses with 'humans at the edge' for software-style margins and in a stroke of good fortune its the small, orange friendly businesses that are set to see the biggest returns.
+cardSummary: Why the opportunity lies in changing how a business operates.
 intro: Its not about the bigger models, it's about transforming traditional businesses with 'humans at the edge' for software-style margins and in a stroke of good fortune its the small, orange friendly businesses that are set to see the biggest returns.
 date: 2025-05-16
 readTime: 8 min read

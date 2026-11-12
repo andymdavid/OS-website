@@ -162,5 +162,24 @@
   }
 }
 
-.writing-page.writing-index-page .writing-posts-grid { grid-template-columns: repeat(2,minmax(0,1fr)); max-width: 1080px; gap: 24px; padding: 24px var(--container-padding); }
-@media (max-width:720px) { .writing-page.writing-index-page .writing-posts-grid { grid-template-columns: 1fr; } }
+/* The Writing collection has its own density; Games and newsletter retain their layouts. */
+.writing-page.writing-index-page { --writing-gutter: clamp(24px,4.45vw,80px); }
+.writing-page.writing-index-page .writing-hero.section { min-height: 0; height: auto; display: block; padding: 176px 0 48px !important; }
+.writing-page.writing-index-page .writing-hero::after { display: none; }
+.writing-page.writing-index-page .writing-hero-inner { display: block; max-width: 1600px; padding: 0 var(--writing-gutter); }
+.writing-page.writing-index-page .hero-title-block { max-width: none; margin: 0; text-align: left; align-items: flex-start; transform: none; }
+.writing-page.writing-index-page .hero-title-block h1 { margin: 0 0 22px; max-width: none; font: 400 clamp(44px,5.2vw,72px)/1.05 var(--font-ui) !important; letter-spacing: -.045em; }
+.writing-page.writing-index-page .hero-title-block .hero-bridge { margin: 0; max-width: 560px; font: 400 18px/1.55 var(--font-ui); color: rgba(240,240,240,.75); }
+.writing-page.writing-index-page .writing-posts.section { padding: 0 0 72px !important; }
+.writing-page.writing-index-page .writing-collection { max-width: 1600px; margin: 0 auto; padding: 0 var(--writing-gutter); }
+.writing-page.writing-index-page .writing-collection-header { display: flex; justify-content: space-between; gap: 16px; padding: 18px 0 25px; border-top: 1px solid rgba(240,240,240,.4); font: 400 13px/1.5 var(--font-ui); }
+.writing-page.writing-index-page .writing-collection-header span { color: rgba(240,240,240,.6); }
+.writing-page.writing-index-page .writing-posts-grid { grid-template-columns: repeat(4,minmax(0,1fr)); max-width: none; gap: 32px; padding: 0; }
+@media (max-width:1100px) { .writing-page.writing-index-page .writing-posts-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+@media (max-width:640px) {
+  .writing-page.writing-index-page .writing-hero.section { padding-top: 152px !important; padding-bottom: 32px !important; }
+  .writing-page.writing-index-page .hero-title-block h1 { margin-bottom: 18px; }
+  .writing-page.writing-index-page .hero-title-block .hero-bridge { font-size: 16px; }
+  .writing-page.writing-index-page .writing-posts.section { padding-bottom: 40px !important; }
+  .writing-page.writing-index-page .writing-posts-grid { grid-template-columns: 1fr; gap: 24px; }
+}

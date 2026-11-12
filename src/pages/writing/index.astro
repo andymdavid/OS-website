@@ -27,19 +27,17 @@ import ArticleCard from '@/components/astro/ArticleCard.astro';
               <p class="hero-bridge">
                 Notes, ideas, and fieldwork from building with AI.
               </p>
-              <div class="hero-cta">
-                <a class="btn-primary" href="/contact">
-                  Talk to Us
-                </a>
-              </div>
             </div>
           </div>
         </section>
 
         {writingPosts.length > 0 ? (
           <section class="section writing-posts">
+            <div class="writing-collection">
+            <div class="writing-collection-header"><div>Latest writing <span>/ {writingPosts.length}</span></div><span>Newest first</span></div>
             <div class="writing-posts-grid">
               {writingPosts.map((post) => <ArticleCard post={post} />)}
+            </div>
             </div>
           </section>
         ) : null}

@@ -2,6 +2,7 @@
 title: Where custom AI systems create margin first
 slug: where-custom-ai-systems-create-margin-first
 description: Compare business workflows by repetition, source readiness, review effort and exception cost, then define a useful first AI automation pilot.
+cardSummary: Compare possible workflows and choose a useful first automation pilot.
 intro: Proposals, reports and client decisions can all take time. Choosing the first workflow means checking which repeated work has usable inputs, a clear output and someone who can review it.
 date: 2026-04-21
 updatedDate: 2026-11-10

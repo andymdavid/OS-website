@@ -39,7 +39,7 @@ function localCollection(name: string, source: string, read: () => Promise<Recor
 const writing = defineCollection({
   loader: localCollection('writing-markdown', 'content/writing', async () => readWritingPosts(), true),
   schema: z.object({
-    slug: z.string(), title: z.string().min(1), description: z.string().min(1), intro: z.string().min(1),
+    slug: z.string(), title: z.string().min(1), description: z.string().min(1), cardSummary: z.string().optional(), intro: z.string().min(1),
     date: z.string(), displayDate: z.string(), readTime: z.string(), tags: z.array(z.string()),
     author: z.string(), thumbnail: z.string(), ogImage: z.string(), html: z.string(),
   }),
