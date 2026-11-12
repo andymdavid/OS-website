@@ -334,7 +334,9 @@
 .writing-post-page .writing-post-content a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; border-radius: 2px; }
 .writing-post-page .writing-post-meta { text-transform: none; letter-spacing: 0; align-items: center; flex-wrap: wrap; gap: 12px; font-size: 14px; }
 .writing-post-page .writing-post-author { display: inline-flex; align-items: center; gap: 10px; color: var(--color-text); }
-.writing-post-page .writing-post-avatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; }
+.writing-post-page .writing-post-avatar { display: block; flex: 0 0 40px; width: 40px; height: 40px; border-radius: 50%; overflow: hidden; }
+/* Frame the head from the original Off Piste About portrait. */
+.writing-post-page .writing-post-avatar img { display: block; width: 100%; height: 100%; max-width: none; object-fit: cover; transform: scale(2); transform-origin: 52% 0; }
 
 .writing-post-page .writing-post-table { overflow-x: auto; margin: 28px 0; border: 1px solid var(--color-border); border-radius: 6px; }
 .writing-post-page .writing-post-table:focus-visible { outline: 2px solid var(--color-text); outline-offset: 4px; }

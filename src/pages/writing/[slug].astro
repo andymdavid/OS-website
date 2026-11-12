@@ -66,7 +66,7 @@ const postUrl = absoluteUrl(`/writing/${post.slug}`);
 
             <div class="writing-post-meta">
               <span class="writing-post-author">
-                {post.author === 'Lara' && <img class="writing-post-avatar" src="/images/lara.webp" alt="" width="40" height="40" />}
+                {post.author === 'Lara' && <span class="writing-post-avatar" aria-hidden="true"><img src="/images/lara-about.webp" alt="" width="1200" height="1200" /></span>}
                 {post.author === 'Lara' ? 'Lara at Other Stuff' : post.author}
               </span>
               <span class="writing-post-date">{post.displayDate}</span>
